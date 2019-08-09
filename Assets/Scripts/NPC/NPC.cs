@@ -6,7 +6,6 @@ public class NPC : MonoBehaviour ,IInteractable
 {
     [SerializeField]
     private Window window;
-    private int teste = 0;
 
     public bool IsInteracting { get; set; }
 
