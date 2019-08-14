@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
     
-    public ItemName itemInicial;
+    public ItemName initialItem;
     private ItemName item; //item no slot
-    private double pontos = 0;
+    private double points = 0;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -16,19 +16,31 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
         //inicia seleção
 
         Debug.Log("clicou no momento");
+        //to-do: passar própria referência para manager, inventário vai usar referência para colocar item
+
     }
 
-    public double Pontos() {
+    //chame essa função para mudar o item no momento
+    public void AddItem(ItemName newItem) {
+        item = newItem;
+        Debug.Log("novo item no momento");
+    }
+    
+    public double Points() {
         //pega pontuação no contexto do momento
         switch (item) {
-            case ItemName.Livro: return pontos = 1;
-            default: return pontos = 0;
+            case ItemName.Livro: return points = 1;
+            default: return points = 0;
         }
+    }
+
+    public ItemName getItem() {
+        return item;
     }
 
     // Use this for initialization
     void Start () {
-        item = itemInicial;
+        item = initialItem;
         UpdateSprite();
 	}
 	
