@@ -21,10 +21,12 @@ public class PlanManager : MonoBehaviour {
         }
     }
 
+    //MidiaMomento usa essa função para dizer que momento vai ser alterado
     public void setSelectedMoment(GameObject newMoment) {
         selectedMoment = newMoment;
     }
 
+    //inventário usa isso para deselecionar o momento alterado depois de fazer as mudanças
     public void unselectMoment() {
         selectedMoment = null;
     }
@@ -42,6 +44,32 @@ public class PlanManager : MonoBehaviour {
 
     public double getTotalMissionPoints() {
         return totalMissionPoints;
+    }
+
+    //então, esses aqui estão hardcoded pra pegar específicamente a melhor/pior mídia da missão 1 apenas, poisé.
+    //eu sei, não é bonito, mas é tudo que a gente precisa agora.
+    //para deixar mais genérico pra depois, que tal multiplicar todos os índices por uma variável igual ao número da missão?
+    //só uma ideia, só dizendo, pode funcionar.
+    public ItemName getBestMedia() {
+        if (points[1] > points[2] && points[1] > points[3])
+            return chosenMedia[1];
+        else if (points[2] > points[1] && points[2] > points[3])
+            return chosenMedia[2];
+        else if (points[3] > points[1] && points[3] > points[2])
+            return chosenMedia[3];
+        else
+            return chosenMedia[1];
+    }
+
+    public ItemName getWorstMedia() {
+        if (points[1] < points[2] && points[1] < points[3])
+            return chosenMedia[1];
+        else if (points[2] < points[1] && points[2] < points[3])
+            return chosenMedia[2];
+        else if (points[3] < points[1] && points[3] < points[2])
+            return chosenMedia[3];
+        else
+            return chosenMedia[1];
     }
 
 	// Use this for initialization

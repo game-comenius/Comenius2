@@ -17,7 +17,7 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
 
         Debug.Log("clicou no momento");
         //to-do: passar própria referência para manager, inventário vai usar referência para colocar item
-
+        GameObject.Find("PlanManager").GetComponent<PlanManager>().setSelectedMoment(gameObject);
     }
 
     //chame essa função para mudar o item no momento
