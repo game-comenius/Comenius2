@@ -69,7 +69,7 @@ public class DialogueSystem : MonoBehaviour {
             if (texto_numero == 6)
             {
                 GameObject.Find("Personagem Rosto").GetComponent<Image>().sprite = Lurdinha;
-            }
+            }   
             else
             {
                 GameObject.Find("Personagem Rosto").GetComponent<Image>().sprite = Drica;
