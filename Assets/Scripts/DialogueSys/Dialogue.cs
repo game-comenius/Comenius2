@@ -1,15 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-
-[System.Serializable]
-public class Dialogue  {
-
-    /* public string name;
-
-     [TextArea(3,10)]
-     public string[] sentences;*/
-
-    public DialogueSentence[] sentences;
+﻿[System.Serializable]
+public class Dialogue
+{
+    public DialogueImage[] personagens = new DialogueImage [1];
+    public DialogueSentence[] sentences = new DialogueSentence [1];
+    
 }

@@ -369,7 +369,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4461833825255054, guid: 785b4933b63fa8e4ca302a60fa303a50, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -541
+      value: -89
       objectReference: {fileID: 0}
     - target: {fileID: 4461833825255054, guid: 785b4933b63fa8e4ca302a60fa303a50, type: 2}
       propertyPath: m_LocalPosition.z
@@ -399,7 +399,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 207632694}
+      objectReference: {fileID: 1838689792}
     - target: {fileID: 4476012404759166, guid: 785b4933b63fa8e4ca302a60fa303a50, type: 2}
       propertyPath: m_LocalPosition.y
       value: -59.4
@@ -564,9 +564,28 @@ Prefab:
       propertyPath: m_SizeDelta.x
       value: 46.32
       objectReference: {fileID: 0}
+    - target: {fileID: 95681703101111180, guid: 785b4933b63fa8e4ca302a60fa303a50,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675778381261042, guid: 785b4933b63fa8e4ca302a60fa303a50, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114455389816300728, guid: 785b4933b63fa8e4ca302a60fa303a50,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ProximaFala
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 785b4933b63fa8e4ca302a60fa303a50, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &136497374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1675778381261042, guid: 785b4933b63fa8e4ca302a60fa303a50,
+    type: 2}
+  m_PrefabInternal: {fileID: 136497373}
 --- !u!1 &140903428 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1369032240085632, guid: d78103df27fa72542b4cb0bc6eef690c,
@@ -650,7 +669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &207632693
 Transform:
   m_ObjectHideFlags: 0
@@ -675,18 +694,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eecc3327f1d480544a9e90536de5a300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 896256242}
-  dialogueText: {fileID: 740649273}
-  needSpeed: 0
-  animator: {fileID: 1940877524}
-  timeleaft: 0
-  Actvate: 0
-  x2: 0
-  Diretor: {fileID: 21300000, guid: ba321d2b6a3828f489c2c9c57c116fc9, type: 3}
-  Lurdinha: {fileID: 21300000, guid: cacd57d35cce5e1418237b60610d4bbf, type: 3}
-  Drica: {fileID: 21300000, guid: 712261efcd506eb4490d4df7c5e1edb9, type: 3}
-  Vazio: {fileID: 21300002, guid: cacd57d35cce5e1418237b60610d4bbf, type: 3}
-  texto_numero: 0
+  sistemaDialogo: {fileID: 0}
+  textoDialogo: {fileID: 0}
+  npcNome: {fileID: 0}
+  personagemRosto:
+  - {fileID: 0}
+  - {fileID: 0}
+  opacidade:
+    alphaLigado: 0
+    alphaDesligado: 0
+  dialogo:
+    personagens:
+    - personagem: {fileID: 0}
+      nome: 
+    sentences:
+    - sentence: ' '
+      personagem: 0
+  velocidade: 0
+  escrevendo: 0
 --- !u!1 &210209006
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,8 +895,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8587598}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3, y: 0}
-  m_SizeDelta: {x: 0, y: -5.944385}
+  m_AnchoredPosition: {x: 3, y: 0.0000076293945}
+  m_SizeDelta: {x: 0, y: -10.0196085}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &319253610
 CanvasRenderer:
@@ -1760,7 +1785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 488010180}
   player: {fileID: 1095807888}
-  npc: {fileID: 1531061655}
+  npc: {fileID: 0}
   backBtn: {fileID: 1045277581}
   botaoMenu: {fileID: 900119508}
 --- !u!1 &493187037
@@ -2861,9 +2886,20 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114910334171666042, guid: c10babca20aa6d14e911c5b12c4af923,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c10babca20aa6d14e911c5b12c4af923, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &753448748 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114910334171666042, guid: c10babca20aa6d14e911c5b12c4af923,
+    type: 2}
+  m_PrefabInternal: {fileID: 753448747}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!224 &788393892 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224191550155019148, guid: 53ff3f949984b9c469b7e9ade9424fa0,
@@ -4737,9 +4773,35 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: cacd57d35cce5e1418237b60610d4bbf,
         type: 3}
+    - target: {fileID: 114910334171666042, guid: c10babca20aa6d14e911c5b12c4af923,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114910334171666042, guid: c10babca20aa6d14e911c5b12c4af923,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114910334171666042, guid: c10babca20aa6d14e911c5b12c4af923,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114910334171666042, guid: c10babca20aa6d14e911c5b12c4af923,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c10babca20aa6d14e911c5b12c4af923, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1357707341 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114910334171666042, guid: c10babca20aa6d14e911c5b12c4af923,
+    type: 2}
+  m_PrefabInternal: {fileID: 1357707340}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1378313164
 GameObject:
   m_ObjectHideFlags: 0
@@ -5254,10 +5316,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1531061657}
   - component: {fileID: 1531061656}
-  - component: {fileID: 1531061655}
   - component: {fileID: 1531061654}
-  - component: {fileID: 1531061653}
   - component: {fileID: 1531061652}
+  - component: {fileID: 1531061653}
   m_Layer: 0
   m_Name: Diretor(NPC)
   m_TagString: Diretor
@@ -5322,23 +5383,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3550cbb303ac7da4381ec4f6140392e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-  - sentences:
-    - characterName: Diretor Johan
-      sentence: "Ah! Ent\xE3o voc\xEA \xE9 a nova m\xEDdia-educadora. N\xE3o temos
-        tempo para conversar, o per\xEDodo letivo est\xE1 para come\xE7ar e essa escola
-        ficou uma bagun\xE7a durante as f\xE9rias."
-    - characterName: Lurdinha
-      sentence: Ah, claro! O que eu preciso fazer?
-    - characterName: Diretor Johan
-      sentence: "A sala multimeios fica logo a frente, l\xE1 voc\xEA encontrar\xE1
-        sua primeira tarefa com a monitora Drica."
-    - characterName: Diretor Johan
-      sentence: Nos vemos mais tarde, tenho assuntos a tratar em minha sala.
-  - sentences:
-    - characterName: Diretor Johan
-      sentence: "Bem, o que est\xE1 esperando? V\xE1 para a sala multimeios!"
-  player: {fileID: 1095807888}
+  dialogoPrincipal:
+    personagens:
+    - personagem: {fileID: 21300000, guid: cacd57d35cce5e1418237b60610d4bbf, type: 3}
+      nome: Lurdinha
+    - personagem: {fileID: 21300000, guid: ba321d2b6a3828f489c2c9c57c116fc9, type: 3}
+      nome: Diretor
+    - personagem: {fileID: 21300000, guid: 712261efcd506eb4490d4df7c5e1edb9, type: 3}
+      nome: Drica
+    sentences:
+    - sentence: Oi, tudo bem?
+      personagem: 1
+    - sentence: "Tudo e com voc\xEAs?"
+      personagem: 0
+    - sentence: Tudo bem.
+      personagem: 2
+    - sentence: "Tudo bem tamb\xE9m."
+      personagem: 1
+  dialogosSecundarios:
+  - personagens:
+    - personagem: {fileID: 21300000, guid: cacd57d35cce5e1418237b60610d4bbf, type: 3}
+      nome: Lurdinha
+    - personagem: {fileID: 21300000, guid: ba321d2b6a3828f489c2c9c57c116fc9, type: 3}
+      nome: Diretor
+    sentences:
+    - sentence: "J\xE1 termiaste?"
+      personagem: 1
+  - personagens:
+    - personagem: {fileID: 21300000, guid: cacd57d35cce5e1418237b60610d4bbf, type: 3}
+      nome: Lurdinha
+    - personagem: {fileID: 21300000, guid: 712261efcd506eb4490d4df7c5e1edb9, type: 3}
+      nome: Drica
+    sentences:
+    - sentence: "J\xE1 termiaste?"
+      personagem: 1
+  - personagens:
+    - personagem: {fileID: 21300000, guid: cacd57d35cce5e1418237b60610d4bbf, type: 3}
+      nome: Lurdinha
+    - personagem: {fileID: 21300000, guid: ba321d2b6a3828f489c2c9c57c116fc9, type: 3}
+      nome: Diretor
+    sentences:
+    - sentence: "Vais l\xE1 ou n\xE3o?"
+      personagem: 1
+  - personagens:
+    - personagem: {fileID: 21300000, guid: cacd57d35cce5e1418237b60610d4bbf, type: 3}
+      nome: Lurdinha
+    - personagem: {fileID: 21300000, guid: 712261efcd506eb4490d4df7c5e1edb9, type: 3}
+      nome: Drica
+    sentences:
+    - sentence: "Vais l\xE1 ou n\xE3o?"
+      personagem: 1
+  jaFalou: 0
 --- !u!61 &1531061654
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5365,18 +5460,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.3047366, y: 4.317444}
   m_EdgeRadius: 0
---- !u!114 &1531061655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114276202150153572, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1531061651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &1531061656
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6760,6 +6843,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1838689791}
+  - component: {fileID: 1838689792}
   m_Layer: 5
   m_Name: Dialogue
   m_TagString: Untagged
@@ -6786,6 +6870,35 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1838689792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1838689790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eecc3327f1d480544a9e90536de5a300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sistemaDialogo: {fileID: 136497374}
+  textoDialogo: {fileID: 740649273}
+  npcNome: {fileID: 896256242}
+  personagemRosto:
+  - {fileID: 1357707341}
+  - {fileID: 753448748}
+  opacidade:
+    alphaLigado: 1
+    alphaDesligado: 0.5
+  dialogo:
+    personagens:
+    - personagem: {fileID: 0}
+      nome: 
+    sentences:
+    - sentence: ' '
+      personagem: 0
+  velocidade: 25
+  escrevendo: 0
 --- !u!1 &1845642794
 GameObject:
   m_ObjectHideFlags: 0
@@ -7157,11 +7270,6 @@ CanvasRenderer:
 --- !u!4 &1940877523 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4461833825255054, guid: 785b4933b63fa8e4ca302a60fa303a50,
-    type: 2}
-  m_PrefabInternal: {fileID: 136497373}
---- !u!95 &1940877524 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 95681703101111180, guid: 785b4933b63fa8e4ca302a60fa303a50,
     type: 2}
   m_PrefabInternal: {fileID: 136497373}
 --- !u!1 &1941861109
@@ -8210,12 +8318,12 @@ Prefab:
     - target: {fileID: 224978367005550970, guid: 05d75529e6c4343bd96e84e170c42feb,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.000000050839255
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224722052025604404, guid: 05d75529e6c4343bd96e84e170c42feb,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000001842616
+      value: -0.000012910528
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05d75529e6c4343bd96e84e170c42feb, type: 2}

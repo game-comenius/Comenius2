@@ -1,44 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class npcDialogue : MonoBehaviour
 {
-    public Dialogue[] dialogue;
-    private int DialogueCount = 0;
-    public Player player;
-    
+    public Dialogue dialogoPrincipal;
 
-    private void Start()
-    {
+    public Dialogue[] dialogosSecundarios;
 
-    }
+    [HideInInspector]
+    public bool jaFalou = false;
 
-    //diálogo por movimentação
-    //public void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.tag == "Player" && player.dialogue == null)
-    //    {
-    //        Debug.Log("GG");
-    //        FindObjectOfType<DialogueSystem>().StartDialogue(dialogue[DialogueCount]);
-    //        if (dialogue[DialogueCount++] != null) {
-    //            DialogueCount++;
-    //        }
-            
-    //    }
-    //}
-
-    //diálogo por clique
     public void OnMouseUp()
     {
-        Debug.Log(DialogueCount);
-        if (DialogueCount < dialogue.Length){
-            FindObjectOfType<DialogueSystem>().StartDialogue(dialogue[DialogueCount]);
-            DialogueCount++;
+        if (!jaFalou)
+        {
+            DialogueSystem.dialogue.dialogo = dialogoPrincipal;
+            DialogueSystem.dialogue.IniciarConversa(this);
         }
         else
         {
-            FindObjectOfType<DialogueSystem>().StartDialogue(dialogue[DialogueCount - 1]);
+            int i = Mathf.FloorToInt(Random.Range(0, dialogosSecundarios.Length));
+
+            if (i == dialogosSecundarios .Length) { i -= 1; }
+
+            DialogueSystem.dialogue.dialogo = dialogosSecundarios[i];
+            DialogueSystem.dialogue.IniciarConversa(this);
         }
     }
 }
+

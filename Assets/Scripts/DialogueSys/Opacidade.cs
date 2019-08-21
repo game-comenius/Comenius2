@@ -1,20 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Opacidade : MonoBehaviour {
+[System.Serializable]
+public class Opacidade
+{
+    [Range(0, 1)]
+    public float alphaLigado;
 
+    [Range(0, 1)]
+    public float alphaDesligado;
     
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyDown("k"))
-        {
-            
-        }
-	}
+    public Color Ligar()
+    {
+        return new Color(1, 1, 1, alphaLigado);
+    }
+
+    public Color Desligar()
+    {
+        return new Color(1, 1, 1, alphaDesligado);
+    }
 }
