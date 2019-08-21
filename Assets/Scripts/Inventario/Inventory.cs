@@ -14,18 +14,29 @@ public class Inventory
         return items.Values;
     }
 
+    public bool Contains(ItemName itemName)
+    {
+        return items.ContainsKey(itemName);
+    }
+
     public void Add(ItemName itemName)
     {
         if (!items.ContainsKey(itemName))
         {
             items.Add(itemName, new Item(itemName));
 
-            var inventoryUI = Object.FindObjectOfType<InventorySheetUI>();
-            inventoryUI.DisplayItems(Items());
+            DisplayItems();
         }
     }
 
-    
+    private void DisplayItems()
+    {
+        var inventoryUIArray = Object.FindObjectsOfType<InventorySheetUI>();
+        foreach (var inventoryUI in inventoryUIArray)
+        {
+            inventoryUI.DisplayItems(Items());
+        }
+    }
 
 
     public override string ToString()
