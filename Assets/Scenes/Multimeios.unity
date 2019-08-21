@@ -872,18 +872,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eecc3327f1d480544a9e90536de5a300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 896256242}
-  dialogueText: {fileID: 740649273}
-  needSpeed: 0
-  animator: {fileID: 1940877524}
-  timeleaft: 0
-  Actvate: 0
-  x2: 0
-  Diretor: {fileID: 21300000, guid: ba321d2b6a3828f489c2c9c57c116fc9, type: 3}
-  Lurdinha: {fileID: 21300000, guid: cacd57d35cce5e1418237b60610d4bbf, type: 3}
-  Drica: {fileID: 21300000, guid: 712261efcd506eb4490d4df7c5e1edb9, type: 3}
-  Vazio: {fileID: 21300002, guid: cacd57d35cce5e1418237b60610d4bbf, type: 3}
-  texto_numero: 0
+  sistemaDialogo: {fileID: 0}
+  textoDialogo: {fileID: 0}
+  npcNome: {fileID: 0}
+  personagemRosto:
+  - {fileID: 0}
+  - {fileID: 0}
+  opacidade:
+    alphaLigado: 0
+    alphaDesligado: 0
+  dialogo:
+    personagens:
+    - personagem: {fileID: 0}
+      nome: 
+    sentences:
+    - sentence: ' '
+      personagem: 0
+  velocidade: 5
 --- !u!1 &210209006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,8 +1137,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8587598}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3, y: 0.0000009536743}
-  m_SizeDelta: {x: 0, y: -3.7797718}
+  m_AnchoredPosition: {x: 3, y: 0}
+  m_SizeDelta: {x: 0, y: -10.238523}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &319253610
 CanvasRenderer:
@@ -2810,12 +2815,6 @@ RectTransform:
   m_AnchoredPosition: {x: -2.4, y: -16}
   m_SizeDelta: {x: 76.27, y: 45.97}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &740649273 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114422914417050062, guid: 785b4933b63fa8e4ca302a60fa303a50,
-    type: 2}
-  m_PrefabInternal: {fileID: 136497373}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &858674990
 GameObject:
   m_ObjectHideFlags: 0
@@ -3064,12 +3063,6 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 1
---- !u!114 &896256242 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114399975272116794, guid: 785b4933b63fa8e4ca302a60fa303a50,
-    type: 2}
-  m_PrefabInternal: {fileID: 136497373}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &901696128
 GameObject:
   m_ObjectHideFlags: 0
@@ -3685,19 +3678,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3550cbb303ac7da4381ec4f6140392e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-  - sentences:
-    - characterName: Drica
-      sentence: "Antes de adicionar um item no seu invent\xE1rio, voc\xEA precisa
-        abrir ele..."
-    - characterName: Drica
-      sentence: "Clique no bot\xE3o de menu, que est\xE1 localizado no centro superior..."
-    - characterName: Drica
-      sentence: "E depois selecione a aba \"Invent\xE1rio\"."
-    - characterName: Drica
-      sentence: "Ap\xF3s abrir essa aba, aperte a tecla \"L\" para adicionar o item
-        ao seu invent\xE1rio."
-  player: {fileID: 0}
+  dialogoPrincipal:
+    personagens:
+    - personagem: {fileID: 0}
+      nome: 
+    sentences:
+    - sentence: ' '
+      personagem: 0
+  dialogosSecundarios: []
+  jaFalou: 0
 --- !u!1 &1058307652
 GameObject:
   m_ObjectHideFlags: 0
@@ -3727,7 +3716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42c5cfa54777a24a98c01468b90715b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 0
+  sceneName: Patio
 --- !u!61 &1058307654
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4087,7 +4076,7 @@ Prefab:
     - target: {fileID: 224978367005550970, guid: 05d75529e6c4343bd96e84e170c42feb,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.000000050839255
+      value: 0.00000010265244
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05d75529e6c4343bd96e84e170c42feb, type: 2}
@@ -6762,11 +6751,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4461833825255054, guid: 785b4933b63fa8e4ca302a60fa303a50,
     type: 2}
   m_PrefabInternal: {fileID: 136497373}
---- !u!95 &1940877524 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 95681703101111180, guid: 785b4933b63fa8e4ca302a60fa303a50,
-    type: 2}
-  m_PrefabInternal: {fileID: 136497373}
 --- !u!1 &1941861109
 GameObject:
   m_ObjectHideFlags: 0
@@ -7495,35 +7479,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3550cbb303ac7da4381ec4f6140392e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-  - sentences:
-    - characterName: Drica
-      sentence: Bom dia! Como posso ajudar?
-    - characterName: Drica
-      sentence: "... Pera! Pera! Pera! Voc\xEA \xE9 a tal da Lurdinha? Aquela que
-        vai trabalhar aqui comigo?"
-    - characterName: Drica
-      sentence: "Eu nem acredito que voc\xEA j\xE1 chegou! Eu nem t\xF4 arrumada,
-        espera um segundinho a\xED."
-    - characterName: Drica ajeita o cabelo e veste um jaleco
-      sentence: ' '
-    - characterName: Drica
-      sentence: Prontinho, agora estou arrumadinha.
-    - characterName: Lurdinha
-      sentence: "...Oi, o diretor Johan disse que minha primeira tarefa me esperava
-        aqui, voc\xEA tem alguma ideia do que ele quis dizer?"
-    - characterName: Drica
-      sentence: "Ah, sim! S\xF3 um momento..."
-    - characterName: Drica
-      sentence: "Aqui est\xE1. Um professor novato pediu ajuda para preparar a sua
-        primeira aula do ano, s\xF3 que n\xE3o aguentei esperar voc\xEA chegar e j\xE1
-        preparei tudo o que foi pedido."
-    - characterName: Drica
-      sentence: "Agora \xE9 s\xF3 pegar o material na prateleira, logo ali, ok?"
-  - sentences:
-    - characterName: Drica
-      sentence: Clique na prateleira!
-  player: {fileID: 0}
+  dialogoPrincipal:
+    personagens:
+    - personagem: {fileID: 0}
+      nome: 
+    sentences:
+    - sentence: ' '
+      personagem: 0
+  dialogosSecundarios: []
+  jaFalou: 0
 --- !u!61 &2100348674
 BoxCollider2D:
   m_ObjectHideFlags: 0
