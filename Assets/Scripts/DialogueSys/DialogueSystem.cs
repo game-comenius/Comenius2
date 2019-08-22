@@ -46,7 +46,23 @@ public class DialogueSystem : MonoBehaviour
 
         sistemaDialogo.SetActive(true);
 
-        personagemRosto[0].sprite = dialogo.personagens[0].personagem;        
+        personagemRosto[0].sprite = dialogo.personagens[0].personagem;
+
+        int i = 0;
+
+        while (i < dialogo.personagens.Length && dialogo.sentences[i].personagem == 0) 
+        {
+            i += 1;
+        }
+
+        if (i == 0) 
+        {
+            Debug.LogWarning("Lurdinha está falando sozinha.");
+        }
+        else
+        {
+            personagemRosto[1].sprite = dialogo.personagens[dialogo.sentences[i].personagem].personagem;
+        }
 
         ProximaFala();
     }
@@ -89,6 +105,7 @@ public class DialogueSystem : MonoBehaviour
             if (dialogo.sentences[proximaFala].personagem == 0)
             {
                 personagemRosto[0].color = opacidade.Ligar();
+
             }
             else
             {
