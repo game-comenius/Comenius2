@@ -44,24 +44,41 @@ public class DialogueSystem : MonoBehaviour
     {
         npcDialogo = _dialogo;
 
+        proximaFala = 0;
+
         sistemaDialogo.SetActive(true);
 
         personagemRosto[0].sprite = dialogo.personagens[0].personagem;
 
         int i = 0;
+        int j = 0;
 
-        while (i < dialogo.personagens.Length && dialogo.sentences[i].personagem == 0) 
+        while (i < dialogo.sentences.Length) 
         {
-            i += 1;
+            if (dialogo.sentences[i].personagem == 0)
+            {
+                i += 1;
+            }
+            else
+            {
+                j = dialogo.sentences[i].personagem;
+                break;
+            }
         }
 
-        if (i == 0) 
+        if (j == 0 && dialogo.personagens.Length > 1)
+        {
+            j = 1;
+        }
+        
+        if (j == 0) 
         {
             Debug.LogWarning("Lurdinha está falando sozinha.");
+            Destroy(personagemRosto[1]); 
         }
         else
         {
-            personagemRosto[1].sprite = dialogo.personagens[dialogo.sentences[i].personagem].personagem;
+            personagemRosto[1].sprite = dialogo.personagens[j].personagem;
         }
 
         ProximaFala();
