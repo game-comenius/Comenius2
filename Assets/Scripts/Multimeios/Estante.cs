@@ -22,11 +22,10 @@ public class Estante : MonoBehaviour {
         };
     }
 
-    private static bool PlayerHas() { return true; }
-
     private void Start()
     {
         estanteUI = modoEstanteAbertaUI.GetComponentInChildren<EstanteUI>();
+        modoEstanteAbertaUI.SetActive(false);
 
         // Remover items da estante que o jogador já coletou
         var playerInventory = Player.Instance.Inventory;

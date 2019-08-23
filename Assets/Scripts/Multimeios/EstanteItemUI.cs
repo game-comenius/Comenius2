@@ -19,6 +19,7 @@ public class EstanteItemUI : MonoBehaviour, IPointerClickHandler {
         {
             item = value;
             imageComponent.sprite = ItemSpriteDatabase.GetSpriteOf(item);
+            
             gameObject.SetActive(true);
         }
     }
