@@ -181,7 +181,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.000013351, y: 60.610012}
-  m_SizeDelta: {x: 175.24, y: 16}
+  m_SizeDelta: {x: 175.24, y: 10.212765}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &112408715
 MonoBehaviour:
@@ -454,14 +454,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eecc3327f1d480544a9e90536de5a300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sistemaDialogo: {fileID: 0}
-  textoDialogo: {fileID: 0}
-  npcNome: {fileID: 0}
+  sistemaDialogo: {fileID: 1770439220}
+  textoDialogo: {fileID: 1912901367}
+  npcNome: {fileID: 326149372}
   personagemRosto:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 469720400}
+  - {fileID: 418292006}
   opacidade:
-    alphaLigado: 0
+    alphaLigado: 0.549
     alphaDesligado: 0
   dialogo:
     personagens:
@@ -581,8 +581,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.8587598}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3, y: 0.0000076293945}
-  m_SizeDelta: {x: 0, y: -12.1893}
+  m_AnchoredPosition: {x: 3, y: 0.000019073486}
+  m_SizeDelta: {x: 0, y: -12.317749}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &319253610
 CanvasRenderer:
@@ -702,6 +702,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 325710310}
   m_CullTransparentMesh: 0
+--- !u!114 &326149372 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114664842601140816, guid: 582f03c18c65f0445a5719bcf9bf7421,
+    type: 2}
+  m_PrefabInternal: {fileID: 1013065046}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &339728139
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,6 +855,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &418292006 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114597512913095196, guid: 582f03c18c65f0445a5719bcf9bf7421,
+    type: 2}
+  m_PrefabInternal: {fileID: 1013065046}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &439430205
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,6 +923,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &469720400 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114317503025279170, guid: 582f03c18c65f0445a5719bcf9bf7421,
+    type: 2}
+  m_PrefabInternal: {fileID: 1013065046}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &493187037
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,8 +2058,8 @@ RectTransform:
   m_Father: {fileID: 339728140}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.00000017881393, y: 0}
+  m_AnchorMax: {x: 0.9999998, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2284,27 +2302,27 @@ Prefab:
     - target: {fileID: 224362485175611398, guid: 582f03c18c65f0445a5719bcf9bf7421,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000035982157
+      value: -0.000020097694
       objectReference: {fileID: 0}
     - target: {fileID: 224471555374160864, guid: 582f03c18c65f0445a5719bcf9bf7421,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0.00000023841858
+      value: 0.00000035762787
       objectReference: {fileID: 0}
     - target: {fileID: 224362485175611398, guid: 582f03c18c65f0445a5719bcf9bf7421,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.00021505356
+      value: -0.00024414065
       objectReference: {fileID: 0}
     - target: {fileID: 224372522601441614, guid: 582f03c18c65f0445a5719bcf9bf7421,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.0000016937654
+      value: 0.0000015760169
       objectReference: {fileID: 0}
     - target: {fileID: 224372522601441614, guid: 582f03c18c65f0445a5719bcf9bf7421,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.99999964
       objectReference: {fileID: 0}
     - target: {fileID: 114679280056321602, guid: 582f03c18c65f0445a5719bcf9bf7421,
         type: 2}
@@ -2319,11 +2337,11 @@ Prefab:
     - target: {fileID: 224471555374160864, guid: 582f03c18c65f0445a5719bcf9bf7421,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0.99999976
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1353241921319186, guid: 582f03c18c65f0445a5719bcf9bf7421, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901316692318086, guid: 582f03c18c65f0445a5719bcf9bf7421, type: 2}
       propertyPath: m_IsActive
@@ -3506,8 +3524,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 977375117}
   m_HandleRect: {fileID: 977375116}
   m_Direction: 1
-  m_Value: 1
-  m_Size: 1
+  m_Value: 0
+  m_Size: 0.9999998
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4590,6 +4608,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1719657658}
   m_CullTransparentMesh: 0
+--- !u!1 &1770439220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1353241921319186, guid: 582f03c18c65f0445a5719bcf9bf7421,
+    type: 2}
+  m_PrefabInternal: {fileID: 1013065046}
 --- !u!1 &1804115124
 GameObject:
   m_ObjectHideFlags: 0
@@ -4876,6 +4899,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1845642794}
   m_CullTransparentMesh: 0
+--- !u!114 &1912901367 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114434041241854944, guid: 582f03c18c65f0445a5719bcf9bf7421,
+    type: 2}
+  m_PrefabInternal: {fileID: 1013065046}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1941861109
 GameObject:
   m_ObjectHideFlags: 0
@@ -5601,8 +5630,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2029522868}
   m_HandleRect: {fileID: 2029522867}
   m_Direction: 1
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
