@@ -2,16 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cursor1: MonoBehaviour {
-    public Texture2D select;
+public class Cursor1: MonoBehaviour
+{
+    [Header("Cursor Base")]
     public Texture2D cursorImage;
+    [SerializeField] Vector2 offset = Vector2.zero;
+
+    [Header("Cursor 2")]
+    public Texture2D select;
     public CursorMode curmode = CursorMode.Auto;
     public Vector2 hotspot = Vector2.zero;
 
 
 	void Start ()
     {
-		Cursor.SetCursor  (cursorImage,Vector2.zero,CursorMode.Auto);
+        Cursor.SetCursor(cursorImage, offset, CursorMode.Auto);
 	}			
 
     void OnMouseEnter()

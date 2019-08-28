@@ -1,146 +1,178 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class DialogueSystem : MonoBehaviour {
+public class DialogueSystem : MonoBehaviour
+{
+    static public DialogueSystem dialogue;
 
-    public Text nameText;
-    public Text dialogueText;
-    public float needSpeed;
-    private Queue<DialogueSentence> dialogueSentences;
-    private DialogueSentence currentSentence;
+    public GameObject sistemaDialogo;
+    public Text textoDialogo;
+    public Text npcNome;
 
-    public Animator animator;
-    public float timeleaft;
-    public bool Actvate;
-    public bool x2;
+    [Tooltip("O primeiro rosto tem que ser SEMPRE o da Lurdinha.")]
+    public Image[] personagemRosto = new Image[2];
 
-    public Sprite Diretor;
-    public Sprite Lurdinha;
-    public Sprite Drica;
-    public Sprite Vazio;
+    public Opacidade opacidade = new Opacidade();
 
-    public int texto_numero;
-    
+    [HideInInspector]
+    public Dialogue dialogo = new Dialogue();
 
-	// Use this for initialization
-	void Start ()
+    private npcDialogue npcDialogo = null;
+
+    private int proximaFala = 0;
+
+    [Header("Escrita")] public float velocidade = 5;
+
+    private float tempo;
+
+    private bool escrevendo = false;
+
+    private Coroutine corrotina;
+
+    private void Awake()
     {
-        //names = new Queue<string>();
-        //sentences = new Queue<string>();
-        dialogueSentences = new Queue<DialogueSentence>();
-        timeleaft = 0.5f;
-        GameObject.Find("Personagem Rosto").GetComponent<Image>().sprite = Vazio;
-        texto_numero = 0;
-
-    }
-
-    //------------------------------------------------------------------------------------------------------------------------//
-    //-----------------------------------------------------------------------------------------------------------------------//
-
-    public void StartDialogue(Dialogue dialogue)
-    {
-
-        animator.SetBool("IsOpen", true);
-
-        //nameText.text = dialogue.name;
-        //names.Clear();
-        //sentences.Clear();
-        dialogueSentences.Clear();
-        Actvate = true;
-
-        foreach(DialogueSentence x in dialogue.sentences)
+        if (dialogue != null)
         {
-            dialogueSentences.Enqueue(x);
+            Debug.LogError("Mais que um DialogueSystem");
         }
-        DisplayNextSentence();
+
+        dialogue = this;
     }
 
-    //-----------------------------------------------------------------------------------------------------------------//
-    //----------------------------------------------------------------------------------------------------------------//
-
-    public void DisplayNextSentence()
+    public void IniciarConversa(npcDialogue _dialogo)
     {
-        texto_numero += 1;
-        if (SceneManager.GetActiveScene().name == "Multimeios")
+        npcDialogo = _dialogo;
+
+        proximaFala = 0;
+
+        sistemaDialogo.SetActive(true);
+
+        personagemRosto[0].sprite = dialogo.personagens[0].personagem;
+
+        int i = 0;
+        int j = 0;
+
+        while (i < dialogo.sentences.Length) 
         {
-            if (texto_numero == 6)
+            if (dialogo.sentences[i].personagem == 0)
             {
-                GameObject.Find("Personagem Rosto").GetComponent<Image>().sprite = Lurdinha;
+                i += 1;
             }
             else
             {
-                GameObject.Find("Personagem Rosto").GetComponent<Image>().sprite = Drica;
+                j = dialogo.sentences[i].personagem;
+                break;
             }
         }
 
-        if (SceneManager.GetActiveScene().name == "Patio")
+        if (j == 0 && dialogo.personagens.Length > 1)
         {
-            if (texto_numero == 2)
+            j = 1;
+        }
+        
+        if (j == 0) 
+        {
+            Debug.LogWarning("Lurdinha está falando sozinha.");
+            Destroy(personagemRosto[1]); 
+        }
+        else
+        {
+            personagemRosto[1].sprite = dialogo.personagens[j].personagem;
+        }
+
+        ProximaFala();
+    }
+
+    public void AcabarConversa()
+    {
+        npcDialogo.jaFalou = true;
+        npcDialogo = null;
+
+        sistemaDialogo.SetActive(false);
+    }
+
+    public void ProximaFala()
+    {
+        if (!escrevendo)
+        {
+            ComeçarProximaFala();
+        }
+        else
+        {
+            TerminarFala();
+        }
+    }
+
+    public void ComeçarProximaFala()
+    {
+        for (int i = 0; i < personagemRosto.Length; i++)
+        {
+            personagemRosto[i].color = opacidade.Desligar();
+        }
+
+        if (proximaFala < dialogo.sentences.Length)
+        {
+            corrotina = StartCoroutine(Escrever());
+
+            //Acessa o personagem que tem a próxima fala, que está registrado em dialogo.sentences, e 
+            //retorna o nome do mesmo, que está registrado em dialogo.personagens
+            npcNome.text = dialogo.personagens[dialogo.sentences[proximaFala].personagem].nome;
+
+            if (dialogo.sentences[proximaFala].personagem == 0)
             {
-                GameObject.Find("Personagem Rosto").GetComponent<Image>().sprite = Lurdinha;
+                personagemRosto[0].color = opacidade.Ligar();
+
             }
             else
             {
-                GameObject.Find("Personagem Rosto").GetComponent<Image>().sprite = Diretor;
+                //Acessa o personagem que tem a próxima fala, que está registrado em dialogo.sentences, e 
+                //retorna a imagem do mesmo, que está registrado em dialogo.personagens
+                personagemRosto[1].sprite =
+                    dialogo.personagens[dialogo.sentences[proximaFala].personagem].personagem;
+                personagemRosto[1].color = opacidade.Ligar();
             }
         }
-
-        if (dialogueSentences.Count == 0)
+        else
         {
-            EndDialogue();  //Manda um Sinal para a função de finalização do dialogo;
-            Time.timeScale = 1f; //Function 
-            return;
+            proximaFala = 0;
+
+            dialogo = null;
+
+            AcabarConversa();
         }
-        currentSentence = dialogueSentences.Dequeue();
-        nameText.text = currentSentence.characterName;
-        string sentence = currentSentence.sentence;
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
     }
 
-    IEnumerator TypeSentence (string sentence)
+    public void TerminarFala()
     {
+        StopCoroutine(corrotina);
 
-        dialogueText.text = "";
-        foreach (char letter in sentence.ToCharArray())
+        escrevendo = false;
+
+        textoDialogo.text = dialogo.sentences[proximaFala].sentence;
+
+        proximaFala += 1;
+    }
+
+    private IEnumerator Escrever()
+    {
+        escrevendo = true;
+
+        tempo = 0;
+
+        textoDialogo.text = "";
+
+        while (textoDialogo.text.Length < dialogo.sentences[proximaFala].sentence.Length) 
         {
-            dialogueText.text += letter;
+            textoDialogo.text = dialogo.sentences[proximaFala].sentence.Substring(0, Mathf.FloorToInt(tempo * velocidade));
+
             yield return null;
+
+            tempo += Time.deltaTime;
         }
 
-    }
+        proximaFala += 1;
 
-    public void EndDialogue()
-    {
-        Debug.Log("End of Conversation.");
-        animator.SetBool("IsOpen", false);
-        Actvate = false;
-        dialogueText.text = "";
-        GameObject.Find("Personagem Rosto").GetComponent<Image>().sprite = Vazio;
-    }
-
-    private void Update()
-    {
-        timeleaft -= Time.deltaTime;
-
-        if (Actvate == true)
-        {
-            if (timeleaft < 0 )
-            {
-
-                Time.timeScale = 0f; //function for pause the game
-
-            }
-        }
-
-        if(Actvate == false)
-        {
-
-            timeleaft = 0.5f;
-
-        }
+        escrevendo = false;
     }
 }

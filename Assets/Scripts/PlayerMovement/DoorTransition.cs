@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DoorTransition : MonoBehaviour
 {
-    [HideInInspector] public int sceneIndex;
-
+    public string sceneName;
     float timer = 0.0f;
     float timerMax = 3.5f;
     bool comecarTimer = false;
@@ -29,13 +28,11 @@ public class DoorTransition : MonoBehaviour
         AudioSource asource = GetComponent<AudioSource>();
         asource.Play();
         comecarTimer = true;
-
     }
 
 
     public void LoadProximaSala()
     {
-        SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene(sceneName);
     }
-
 }
