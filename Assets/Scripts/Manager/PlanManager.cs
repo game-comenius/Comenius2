@@ -39,7 +39,8 @@ public class PlanManager : MonoBehaviour {
         points[0] = GameObject.Find("Midia1").GetComponent<MidiaMomento>().Points();
         points[1] = GameObject.Find("Midia2").GetComponent<MidiaMomento>().Points();
         points[2] = GameObject.Find("Midia3").GetComponent<MidiaMomento>().Points();
-        totalMissionPoints = points[0] + points[2] + points[3];
+        totalMissionPoints = points[0] + points[1] + points[2];
+        Debug.Log("pontuação da missão: " + totalMissionPoints);
     }
 
     public double getTotalMissionPoints() {

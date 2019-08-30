@@ -22,14 +22,14 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
         //inicia seleção
 
         GameObject.Find("PlanManager").GetComponent<PlanManager>().setSelectedMoment(gameObject);
-        Debug.Log("momento selecionado");
+        Debug.Log("momento selecionado: " + GameObject.Find("PlanManager").GetComponent<PlanManager>().getSelectedMoment().name);
         //to-do: destaque visual no momento selecionado
     }
 
     //chame essa função para mudar o item no momento
     public void AddItem(ItemName newItem) {
         item = newItem;
-        Debug.Log("novo item no momento");
+        Debug.Log("novo item no momento: " + item);
     }
     
     public double Points() {

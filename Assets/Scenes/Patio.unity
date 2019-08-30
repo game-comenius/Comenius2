@@ -655,18 +655,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eecc3327f1d480544a9e90536de5a300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 896256242}
-  dialogueText: {fileID: 740649273}
-  needSpeed: 0
-  animator: {fileID: 1940877524}
-  timeleaft: 0
-  Actvate: 0
-  x2: 0
-  Diretor: {fileID: 21300000, guid: ba321d2b6a3828f489c2c9c57c116fc9, type: 3}
-  Lurdinha: {fileID: 21300000, guid: cacd57d35cce5e1418237b60610d4bbf, type: 3}
-  Drica: {fileID: 21300000, guid: 712261efcd506eb4490d4df7c5e1edb9, type: 3}
-  Vazio: {fileID: 21300002, guid: cacd57d35cce5e1418237b60610d4bbf, type: 3}
-  texto_numero: 0
+  sistemaDialogo: {fileID: 0}
+  textoDialogo: {fileID: 0}
+  npcNome: {fileID: 0}
+  personagemRosto:
+  - {fileID: 0}
+  - {fileID: 0}
+  opacidade:
+    alphaLigado: 0
+    alphaDesligado: 0
+  dialogo:
+    personagens:
+    - personagem: {fileID: 0}
+      nome: 
+    sentences:
+    - sentence: ' '
+      personagem: 0
+  velocidade: 5
 --- !u!1 &210209006
 GameObject:
   m_ObjectHideFlags: 0
@@ -2676,12 +2681,6 @@ RectTransform:
   m_AnchoredPosition: {x: -2.4, y: -16}
   m_SizeDelta: {x: 76.27, y: 45.97}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &740649273 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114422914417050062, guid: 785b4933b63fa8e4ca302a60fa303a50,
-    type: 2}
-  m_PrefabInternal: {fileID: 136497373}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &747957554
 Prefab:
   m_ObjectHideFlags: 0
@@ -3081,12 +3080,6 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 1
---- !u!114 &896256242 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114399975272116794, guid: 785b4933b63fa8e4ca302a60fa303a50,
-    type: 2}
-  m_PrefabInternal: {fileID: 136497373}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &900119508 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1156238997582998, guid: 827c87faec9ab564a92b5c36b05faa4d,
@@ -3964,7 +3957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42c5cfa54777a24a98c01468b90715b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 2
+  sceneName: SalaProfessores
 --- !u!61 &1209380847
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3997,7 +3990,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1209380844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.82, y: -0.40004897, z: -0.051389806}
+  m_LocalPosition: {x: -5.5, y: -0.5, z: -0.051389806}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4120,8 +4113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aafdc2d1edb6f4c459afea9f5a951974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  select: {fileID: 2800000, guid: 4be23c15a0935a146ad39021b221c63b, type: 3}
   cursorImage: {fileID: 2800000, guid: 847e56370facd0a4a8530c8fa2b8e8b3, type: 3}
+  offset: {x: 0, y: 0}
+  select: {fileID: 2800000, guid: 4be23c15a0935a146ad39021b221c63b, type: 3}
   curmode: 0
   hotspot: {x: 0, y: 0}
 --- !u!114 &1273688269
@@ -4498,7 +4492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42c5cfa54777a24a98c01468b90715b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 1
+  sceneName: Multimeios
 --- !u!82 &1349916202
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5176,23 +5170,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3550cbb303ac7da4381ec4f6140392e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-  - sentences:
-    - characterName: Diretor Johan
-      sentence: "Ah! Ent\xE3o voc\xEA \xE9 a nova m\xEDdia-educadora. N\xE3o temos
-        tempo para conversar, o per\xEDodo letivo est\xE1 para come\xE7ar e essa escola
-        ficou uma bagun\xE7a durante as f\xE9rias."
-    - characterName: Lurdinha
-      sentence: Ah, claro! O que eu preciso fazer?
-    - characterName: Diretor Johan
-      sentence: "A sala multimeios fica logo a frente, l\xE1 voc\xEA encontrar\xE1
-        sua primeira tarefa com a monitora Drica."
-    - characterName: Diretor Johan
-      sentence: Nos vemos mais tarde, tenho assuntos a tratar em minha sala.
-  - sentences:
-    - characterName: Diretor Johan
-      sentence: "Bem, o que est\xE1 esperando? V\xE1 para a sala multimeios!"
-  player: {fileID: 1095807888}
+  dialogoPrincipal:
+    personagens:
+    - personagem: {fileID: 21300000, guid: cacd57d35cce5e1418237b60610d4bbf, type: 3}
+      nome: Lurdinha
+    - personagem: {fileID: 21300000, guid: ba321d2b6a3828f489c2c9c57c116fc9, type: 3}
+      nome: Diretor
+    sentences:
+    - sentence: "Ol\xE1!"
+      personagem: 0
+    - sentence: "Fa\xE7a seu trabalho!"
+      personagem: 1
+  dialogosSecundarios:
+  - personagens:
+    - personagem: {fileID: 21300000, guid: cacd57d35cce5e1418237b60610d4bbf, type: 3}
+      nome: Lurdinha
+    - personagem: {fileID: 21300000, guid: ba321d2b6a3828f489c2c9c57c116fc9, type: 3}
+      nome: Diretor
+    sentences:
+    - sentence: Testando 1
+      personagem: 0
+    - sentence: Testando 2
+      personagem: 1
+  - personagens: []
+    sentences: []
+  jaFalou: 0
 --- !u!61 &1531061654
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6494,7 +6496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42c5cfa54777a24a98c01468b90715b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 3
+  sceneName: Sala_de_aula_Jean
 --- !u!61 &1804115127
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6527,7 +6529,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1804115124}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.82, y: -0.40004897, z: -0.051389806}
+  m_LocalPosition: {x: 7, y: -2, z: -0.051389806}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7011,11 +7013,6 @@ CanvasRenderer:
 --- !u!4 &1940877523 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4461833825255054, guid: 785b4933b63fa8e4ca302a60fa303a50,
-    type: 2}
-  m_PrefabInternal: {fileID: 136497373}
---- !u!95 &1940877524 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 95681703101111180, guid: 785b4933b63fa8e4ca302a60fa303a50,
     type: 2}
   m_PrefabInternal: {fileID: 136497373}
 --- !u!1 &1941861109
@@ -8064,7 +8061,7 @@ Prefab:
     - target: {fileID: 224978367005550970, guid: 05d75529e6c4343bd96e84e170c42feb,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.00000005132622
+      value: 0.000000050839255
       objectReference: {fileID: 0}
     - target: {fileID: 224722052025604404, guid: 05d75529e6c4343bd96e84e170c42feb,
         type: 2}

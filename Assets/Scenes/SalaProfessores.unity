@@ -4506,7 +4506,7 @@ Prefab:
     - target: {fileID: 224978367005550970, guid: 05d75529e6c4343bd96e84e170c42feb,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.00000015397868
+      value: 0.00000010265244
       objectReference: {fileID: 0}
     - target: {fileID: 224722052025604404, guid: 05d75529e6c4343bd96e84e170c42feb,
         type: 2}
@@ -4647,8 +4647,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aafdc2d1edb6f4c459afea9f5a951974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  select: {fileID: 2800000, guid: 4be23c15a0935a146ad39021b221c63b, type: 3}
   cursorImage: {fileID: 2800000, guid: 847e56370facd0a4a8530c8fa2b8e8b3, type: 3}
+  offset: {x: 0, y: 0}
+  select: {fileID: 2800000, guid: 4be23c15a0935a146ad39021b221c63b, type: 3}
   curmode: 0
   hotspot: {x: 0, y: 0}
 --- !u!114 &1273688269
@@ -5741,7 +5742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.7647059, g: 0.7647059, b: 0.7647059, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5774,7 +5775,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11fca1a2d5586041b9b97e58461f192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialItem: 0
+  initialItem: 2
+  livroPoints: 0
+  cartazesPoints: 0
+  tvPoints: 2
 --- !u!1001 &1539482633
 Prefab:
   m_ObjectHideFlags: 0
@@ -7902,7 +7906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.7647059, g: 0.7647059, b: 0.7647059, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7935,7 +7939,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11fca1a2d5586041b9b97e58461f192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialItem: 0
+  initialItem: 3
+  livroPoints: 0
+  cartazesPoints: 3
+  tvPoints: 0
 --- !u!1 &2029522866
 GameObject:
   m_ObjectHideFlags: 0
@@ -8610,7 +8617,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11fca1a2d5586041b9b97e58461f192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialItem: 0
+  initialItem: 1
+  livroPoints: 1
+  cartazesPoints: 0
+  tvPoints: 0
 --- !u!114 &2096625481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8623,7 +8633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8864,7 +8874,7 @@ Prefab:
     - target: {fileID: 224978367005550970, guid: 05d75529e6c4343bd96e84e170c42feb,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.00000005132622
+      value: 0.000000050839255
       objectReference: {fileID: 0}
     - target: {fileID: 224722052025604404, guid: 05d75529e6c4343bd96e84e170c42feb,
         type: 2}
