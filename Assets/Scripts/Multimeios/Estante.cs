@@ -18,7 +18,9 @@ public class Estante : MonoBehaviour {
         {
             // Itens que aparecem por padrão dentro da estante
             ItemName.Livro,
-            ItemName.Cartazes
+            ItemName.Cartazes,
+            ItemName.QuadroNegro,
+            ItemName.Camera
         };
     }
 
@@ -41,6 +43,7 @@ public class Estante : MonoBehaviour {
     public void OnMouseUpAsButton()
     {
         modoEstanteAbertaUI.SetActive(true);
+        estanteUI.DisplayItems();
     }
 
 

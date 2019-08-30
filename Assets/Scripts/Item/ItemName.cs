@@ -5,4 +5,12 @@ public enum ItemName
     Livro,
     TV,
     Cartazes,
+    Caderno,
+    Gravador,
+    ReprodutorAudio,
+    VHS,
+    Camera,
+    Jornais,
+    Fotografia,
+    QuadroNegro
 }

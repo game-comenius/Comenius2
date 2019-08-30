@@ -10,10 +10,6 @@ public class EstanteUI : MonoBehaviour {
     [SerializeField]
     private Estante estante;
 
-    // Use this for initialization
-    void Start () {
-        DisplayItems();
-	}
 
     public void DisplayItems()
     {
