@@ -11,7 +11,7 @@ namespace GameComenius.Dialogo
         Diretor
     }
 
-    public enum Emocoes
+    public enum Expressao
     {
         Neutro,
         Feliz,
@@ -21,11 +21,31 @@ namespace GameComenius.Dialogo
     }
 
     [Serializable]
+    public class Opacidade
+    {
+        [Range(0, 1)]
+        public float alphaLigado;
+
+        [Range(0, 1)]
+        public float alphaDesligado;
+
+        public Color Ligar()
+        {
+            return new Color(1, 1, 1, alphaLigado);
+        }
+
+        public Color Desligar()
+        {
+            return new Color(1, 1, 1, alphaDesligado);
+        }
+    }
+
+    [Serializable]
     public class Fala
     {
         public Personagens personagem = Personagens.Diretor;
 
-        public Emocoes emocao = Emocoes.Assustado;
+        public Expressao emocao = Expressao.Assustado;
 
         [TextArea(3, 3)]
         public string fala = "";
@@ -39,18 +59,18 @@ namespace GameComenius.Dialogo
     }
     
     [Serializable]
-    public class DialogoQuizzNodulo
+    public class DialogoNodulo
     {
         public Fala[] falas = new Fala[0];
 
-        [Tooltip("Resposta conter:\n" + "0 resposta indica que o dialogo será encerrado;\n" + "1 resposta indica que não haverá escolha e que este nodolo deve levar a outro;" + "2+ respostas indica que haverá escolha e cada escolha pode levar a um novo nodolo.")]
+        [Tooltip("Resposta conter:\n" + "0 resposta indica que o dialogo será encerrado;\n" + "1 resposta indica que não haverá escolha e que este nodolo deve levar a outro;\n" + "2+ respostas indica que haverá escolha e cada escolha pode levar a um novo nodolo.")]
         public Resposta[] respostas = new Resposta[0];
     }
 
     [Serializable]
-    public class DialogoQuizz
+    public class Dialogo
     {
-        public DialogoQuizzNodulo[] nodulos = new DialogoQuizzNodulo[0];
+        public DialogoNodulo[] nodulos = new DialogoNodulo[0];
     }
 
     [Serializable]
@@ -59,7 +79,7 @@ namespace GameComenius.Dialogo
         public Sprite personagem;
         public string nome;
 
-        static public Falador BuscarPolaroideNosAssets(Personagens _personagem, Emocoes _emocao)
+        static public Falador BuscarPolaroideNosAssets(Personagens _personagem, Expressao _emocao)
         {
             Falador personagem = new Falador();
 
@@ -87,19 +107,19 @@ namespace GameComenius.Dialogo
 
             switch (_emocao)
             {
-                case Emocoes.Assustado:
+                case Expressao.Assustado:
                     emocao = "Assustado";
                     break;
-                case Emocoes.Feliz:
+                case Expressao.Feliz:
                     emocao = "Feliz";
                     break;
-                case Emocoes.Impressionado:
+                case Expressao.Impressionado:
                     emocao = "Impressionado";
                     break;
-                case Emocoes.Neutro:
+                case Expressao.Neutro:
                     emocao = "Neutro";
                     break;
-                case Emocoes.Triste:
+                case Expressao.Triste:
                     emocao = "Triste";
                     break;
             }

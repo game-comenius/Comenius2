@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using GameComenius.Dialogo;
 
-public class SistemaDialogoQA : MonoBehaviour
+public class SistemaDialogo : MonoBehaviour
 {
-    static public SistemaDialogoQA sistemaDialogo;
+    static public SistemaDialogo sistemaDialogo;
 
     #region Referências para os GameObject na UI
     [SerializeField] private GameObject sistemaDialogoUI;
@@ -27,7 +27,7 @@ public class SistemaDialogoQA : MonoBehaviour
     public Opacidade opacidade = new Opacidade();
 
     #region Escrita
-    [Header("Escrita")] [SerializeField] private float velocidade = 5;
+    [Header("Escrita")] [SerializeField] private float velocidade = 20f;
 
     private float tempo;
 
@@ -38,9 +38,9 @@ public class SistemaDialogoQA : MonoBehaviour
 
     #endregion
 
-    public DialogoQuizz dialogo = new DialogoQuizz(); //alterar para se passar um nódulo de cada vez
+    public Dialogo dialogo = new Dialogo(); //alterar para se passar um nódulo de cada vez
 
-    private NpcDialogoQA npcDialogo = null;
+    private NpcDialogo npcDialogo = null;
 
     private Falador faladorAtual = new Falador();
 
@@ -57,7 +57,7 @@ public class SistemaDialogoQA : MonoBehaviour
         sistemaDialogo = this;
     }
 
-    public void ComecarDialogo(DialogoQuizz _dialogo, NpcDialogoQA _npcDialogoQA)
+    public void ComecarDialogo(Dialogo _dialogo, NpcDialogo _npcDialogoQA)
     {
         if (npcDialogo == null) 
         {
@@ -80,7 +80,7 @@ public class SistemaDialogoQA : MonoBehaviour
 
         escrevendo = false;
 
-        personagemRosto[0].sprite = Falador.BuscarPolaroideNosAssets(Personagens.Lurdinha, Emocoes.Neutro).personagem;
+        personagemRosto[0].sprite = Falador.BuscarPolaroideNosAssets(Personagens.Lurdinha, Expressao.Neutro).personagem;
 
         for (int i = 0; i < dialogo.nodulos[nodulo].falas.Length; i++)
         {
@@ -89,7 +89,7 @@ public class SistemaDialogoQA : MonoBehaviour
 
             if (_personagem != Personagens.Lurdinha)
             {
-                personagemRosto[1].sprite = Falador.BuscarPolaroideNosAssets(_personagem, Emocoes.Neutro).personagem;
+                personagemRosto[1].sprite = Falador.BuscarPolaroideNosAssets(_personagem, Expressao.Neutro).personagem;
 
                 i = dialogo.nodulos[nodulo].falas.Length;
             }
@@ -147,7 +147,7 @@ public class SistemaDialogoQA : MonoBehaviour
     {
         StopCoroutine(corrotina);
 
-        textoDialogo.text = dialogo.nodulos[nodulo].falas[proximaFala].fala;
+        textoDialogo.text = falaAtual.fala;
 
         proximaFala += 1;
 

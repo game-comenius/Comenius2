@@ -2,15 +2,15 @@
 using UnityEngine.SceneManagement;
 using GameComenius.Dialogo;
 
-public class NpcDialogoQA : MonoBehaviour
+public class NpcDialogo : MonoBehaviour
 {
-    [SerializeField] private DialogoQuizz dialogoPrincipal = new DialogoQuizz();
+    [SerializeField] private Dialogo dialogoPrincipal = new Dialogo();
 
     [HideInInspector] public bool jaFalou = false;
 
     public void OnMouseUp()
     {
-        SistemaDialogoQA.sistemaDialogo.ComecarDialogo(dialogoPrincipal, this);
+        SistemaDialogo.sistemaDialogo.ComecarDialogo(dialogoPrincipal, this);
 
         if (!jaFalou)
         {
