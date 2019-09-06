@@ -90,20 +90,17 @@ namespace GameComenius.Dialogo
             switch (_personagem)
             {
                 case Personagens.Diretor:
-                    path = path + "Diretor";
                     nome = "Diretor";
                     break;
                 case Personagens.Drika:
-                    path = path + "Drika";
                     nome = "Drika";
                     break;
                 case Personagens.Lurdinha:
-                    path = path + "Lurdinha";
                     nome = "Lurdinha";
                     break;
             }
 
-            path = path + ".png";
+            path = path + nome + ".png";
 
             switch (_emocao)
             {
@@ -139,7 +136,7 @@ namespace GameComenius.Dialogo
 
             Debug.Log("Não foi encontrado " + emocao + " em " + path + ".");
 
-            return null;
+            return personagem;
         }
     }
 }

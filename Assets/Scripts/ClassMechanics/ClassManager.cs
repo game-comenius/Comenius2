@@ -5,29 +5,28 @@ using UnityEngine.UI;
 
 public class ClassManager : MonoBehaviour
 {
-    static private ClassManager _classManager;
-
-    static public ClassManager classManager
-    {
-        get
-        {
-            return _classManager;
-        }
-    }
+    static public ClassManager classManager { get; private set; }
 
     static private List<StudentScript> students = new List<StudentScript>();
 
     static private List<bool> studentIsProblem = new List<bool>();
 
-    [SerializeField] private GameObject cloud;
-
     static private List<ProblemCloudScript> clouds = new List<ProblemCloudScript>();
+
+    public delegate void ClassEnded();
+
+    static public event ClassEnded EndClass;
+
+    [SerializeField] private GameObject cloud;
 
     [SerializeField] private Canvas canvas;
 
     [Header("Class Moment")]
 
     [SerializeField] Text timer;
+
+    [Tooltip("Se refere a quanto tempo tem-se que esperar para a aula começar.")]
+    [SerializeField] private float classWait;
 
     [Tooltip ("A componente \"X\" se refere à duração de cada momento da aula, \"Y\" ao  tempo que se tem que esperar para surgir o primeiro problema e \"Z\" ao tempo que tem que sobrar quando surgir o último problema. Tudo em segundos")]
     [SerializeField] private Vector3[] momentsTime = new Vector3[3];
@@ -39,30 +38,28 @@ public class ClassManager : MonoBehaviour
     [SerializeField] [Range(1, 300)] private float timeAcceleration;
 
     [Tooltip("Aceleração do tempo quando houverem problemas")]
-    [SerializeField] [Range(1, 300)] private float normalTimeAcceleration;
+    [SerializeField] [Range(1, 300)] private float problemTimeAcceleration;
 
-    private float _timeAcceleration;
+    private float _timeAcceleration; // aceleração que está sendo usada
 
     [SerializeField] private float problemDuration;
-
-    [SerializeField] private float classWait;
 
     [Tooltip("Espera entre o início dos problemas")]
     [SerializeField] private float waitBetweenProblems;
 
-    private int classMoment;
+    private int classMoment = 0;
 
-    private float momentTimer;
+    private float momentTimer = 0;
 
-    private float previousProblemTime;
+    private float previousProblemTime = 0;
 
-    private float nextProblemTime;
+    private float nextProblemTime = 0;
 
     private void Awake()
     {
-        if (_classManager == null)
+        if (classManager == null)
         {
-            _classManager = this;
+            classManager = this;
         }
         else
         {
@@ -89,9 +86,7 @@ public class ClassManager : MonoBehaviour
     private IEnumerator StartClass()
     {
         timer.text = "Iniciando aula";
-
-        previousProblemTime = momentsTime[classMoment].y;
-
+        
         momentTimer = classWait;
 
         while (momentTimer >= 0)
@@ -103,7 +98,12 @@ public class ClassManager : MonoBehaviour
 
         momentTimer = momentsTime[classMoment].x;
 
-        nextProblemTime = NextProblem(0f); //gera o tempo para o primeiro problema
+        previousProblemTime = momentsTime[classMoment].y; //Usa-se o previousProblemTime para o tempo que se tem que esperar para surgir o primeiro problema.
+
+        if (problemQuantity[classMoment] != 0) // impede que seja gerado um tempo para problema caso não haja mais problemas
+        {
+            nextProblemTime = NextProblem(0f); //Gera o tempo para o primeiro problema. Este pode ter tmin = 0 pois o previousProblemTime controlará para que não se gere problema antes do que se quer.
+        }
 
         while (classMoment < 3)
         {
@@ -113,6 +113,8 @@ public class ClassManager : MonoBehaviour
 
             momentTimer -= Time.deltaTime * _timeAcceleration;
 
+            //A primeira parte do cálculo do if se justifica porque o momentTimer e contagem regressiva e o nextProblemTime, não, assim eles são complementares.
+            //Como no nextProblemTime já se leva em conta o tempo que tem que sobrar quando surgir o último problema, este pode ser subitraido da duração do momento.
             if (nextProblemTime + momentTimer < momentsTime[classMoment].x - momentsTime[classMoment].z && problemQuantity[classMoment] != 0) //verifica se está na hora do primeiro problema
             {
                 GenerateProblem();
@@ -121,7 +123,7 @@ public class ClassManager : MonoBehaviour
 
                 previousProblemTime = nextProblemTime;
 
-                if (problemQuantity[classMoment] != 0) // impede que seja gerado um tempo para um problema do próximo momento da aula
+                if (problemQuantity[classMoment] != 0)
                 {
                     nextProblemTime = NextProblem(waitBetweenProblems);
                 }
@@ -134,11 +136,12 @@ public class ClassManager : MonoBehaviour
                 {
                     momentTimer = momentsTime[classMoment].x;
 
-                    nextProblemTime = momentsTime[classMoment].y;
+                    previousProblemTime = momentsTime[classMoment].y;
 
-                    previousProblemTime = nextProblemTime;
-
-                    nextProblemTime = NextProblem(waitBetweenProblems);
+                    if (problemQuantity[classMoment] != 0)
+                    {
+                        nextProblemTime = NextProblem(0f);
+                    }
                 }
             }
 
@@ -146,19 +149,30 @@ public class ClassManager : MonoBehaviour
         }
 
         timer.text = "Aula terminada";
+
+        if (EndClass != null)
+        {
+            EndClass();
+        }
     }
 
     private float NextProblem(float tmin)
     {
         float t = 0;
 
+        //momentsTime[classMoment].x é a duração do momento da aula. Deste é subtraido quando tempo tem que restar na aula (momentsTime[classMoment].z)
+        // e o tempo de quando surgiu o problema anterior (previousProblemTime) - deve ser um tempo atual ou o tempo que se tem que esperar para surgir o primeiro problema.
+        //O resultado disso é quando tempo de ainda se tem para todos os futuros problemas.
+        //Isso é divido pelo quantidade de problemas que resta (problemQuantity[classMoment]) para ser ter um tempo máximo para o surgimento do próximo problema.
         t = (momentsTime[classMoment].x - momentsTime[classMoment].z - previousProblemTime) / problemQuantity[classMoment];
 
-        t = Random.Range(tmin, t);
+        t = Random.Range(tmin, t); //É gerado o número de segundos até o próximo problema.
 
-        t = t + previousProblemTime;
+        Debug.Log(t);
 
-        //Debug.Log(t);
+        //É somado o tempo de quando surgiu o problema anterior (previousProblemTime) - deve ser um tempo atual ou o  tempo que se tem que esperar para surgir o primeiro problema - 
+        //para se ter o tempo do próximo problema.
+        t += previousProblemTime;
 
         return t;
     }
@@ -180,23 +194,17 @@ public class ClassManager : MonoBehaviour
 
     private void GenerateProblem()
     {
-        //Debug.Log("--------------------------------------");
-
-        _timeAcceleration = normalTimeAcceleration;
+        _timeAcceleration = problemTimeAcceleration;
 
         int n = 0;
 
         for (int i = 0; i < studentIsProblem.Count; i++) 
         {
-            //Debug.Log(students[i] + " " + studentIsProblem[i]);
-
             if (!studentIsProblem[i]) 
             {
                 n += 1;
             }
         }
-
-        //Debug.Log("a = " + n);
 
         int m = n;
 
@@ -204,8 +212,6 @@ public class ClassManager : MonoBehaviour
         {
             m = Mathf.FloorToInt(Random.Range(0, n));
         }
-
-        //Debug.Log("m = " + m);
 
         n = -1;
 
@@ -219,8 +225,6 @@ public class ClassManager : MonoBehaviour
             }
         }
 
-        //Debug.Log("nf = " + n);
-
         Vector3 pos = Camera.main.WorldToScreenPoint(students[n].transform.position + students[n].cloudOffset) + new Vector3(cloud.GetComponent<RectTransform>().rect.width / 2, cloud.GetComponent<RectTransform>().rect.height / 2, 0);
 
         GameObject go = Instantiate(cloud, pos, Quaternion.identity, canvas.transform);
@@ -232,8 +236,6 @@ public class ClassManager : MonoBehaviour
         clouds[clouds.Count - 1].studentIndex = n;
 
         studentIsProblem[n] = true;
-
-        //gerar problema em students[n]
     }
 
     public void RemoveCloud(ProblemCloudScript problem)

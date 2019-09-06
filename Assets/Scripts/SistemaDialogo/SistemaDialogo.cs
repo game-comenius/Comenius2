@@ -38,7 +38,8 @@ public class SistemaDialogo : MonoBehaviour
 
     #endregion
 
-    public Dialogo dialogo = new Dialogo(); //alterar para se passar um nódulo de cada vez
+    #region Variaveis
+    public Dialogo dialogo; //alterar para se passar um nódulo de cada vez
 
     private NpcDialogo npcDialogo = null;
 
@@ -51,6 +52,7 @@ public class SistemaDialogo : MonoBehaviour
     private int nodulo = 0;
 
     private int dropdownIndex;
+    #endregion
 
     private void Awake()
     {

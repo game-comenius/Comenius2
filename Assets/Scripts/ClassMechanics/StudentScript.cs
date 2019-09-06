@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StudentScript : MonoBehaviour
+public class StudentScript : AgenteAulaScript
 {
     [SerializeField] private Vector3 _cloudOffset;
+
+    [SerializeField] private bool drawGizmos;
 
     public Vector3 cloudOffset
     {
@@ -13,12 +15,12 @@ public class StudentScript : MonoBehaviour
             return _cloudOffset;
         }
     }
-    
-    [SerializeField] private bool drawGizmos;
 
-    private void Start()
+    protected override void Start()
     {
         ClassManager.AddStundent(this);
+
+        base.Start();
     }
 
     private void OnDrawGizmos()
