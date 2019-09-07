@@ -29,7 +29,7 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
     //chame essa função para mudar o item no momento
     public void AddItem(ItemName newItem) {
         item = newItem;
-        Debug.Log("novo item no momento: " + item);
+        UpdateSprite();
     }
     
     public double Points() {

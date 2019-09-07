@@ -8,7 +8,7 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerClickHandler {
 
     private static Image enabledItemBorder;
 
-    private Item myItem;
+    protected Item myItem;
 
     public GameObject DescriptionSlot { get; set; }
 
@@ -27,7 +27,7 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerClickHandler {
         slotText.text = item.FriendlyName;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public virtual void OnPointerClick(PointerEventData eventData)
     {
         // Desabilitar o último destaque de slot de item
         if (enabledItemBorder) enabledItemBorder.enabled = false;
@@ -37,5 +37,13 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerClickHandler {
 
         // Colocar a descrição na caixa de descrição
         DescriptionSlot.GetComponent<Text>().text = myItem.Description;
+
+        // Caso esta folha de inventário esteja sendo usada em um planejamento
+        GameObject selectedMoment = null;
+        var planManager = FindObjectOfType<PlanManager>();
+        if (planManager)
+            selectedMoment = planManager.getSelectedMoment();
+        if (selectedMoment)
+            selectedMoment.GetComponent<MidiaMomento>().AddItem(this.myItem.ItemName);
     }
 }

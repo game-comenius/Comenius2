@@ -15,7 +15,7 @@ public class InventorySheetUI : MonoBehaviour {
 
     private Inventory inventory;
 
-    void Start () {
+    public void Start () {
         itemSlots = new List<GameObject>();
 
         inventory = Player.Instance.Inventory;
