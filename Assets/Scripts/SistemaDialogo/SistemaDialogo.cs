@@ -82,7 +82,7 @@ public class SistemaDialogo : MonoBehaviour
 
         escrevendo = false;
 
-        personagemRosto[0].sprite = Falador.BuscarPolaroideNosAssets(Personagens.Lurdinha, Expressao.Neutro).personagem;
+        personagemRosto[0].sprite = Falador.BuscarPolaroideNosAssets(Personagens.Lurdinha, Expressao.Serio).personagem;
 
         for (int i = 0; i < dialogo.nodulos[nodulo].falas.Length; i++)
         {
@@ -91,7 +91,7 @@ public class SistemaDialogo : MonoBehaviour
 
             if (_personagem != Personagens.Lurdinha)
             {
-                personagemRosto[1].sprite = Falador.BuscarPolaroideNosAssets(_personagem, Expressao.Neutro).personagem;
+                personagemRosto[1].sprite = Falador.BuscarPolaroideNosAssets(_personagem, Expressao.Serio).personagem;
 
                 i = dialogo.nodulos[nodulo].falas.Length;
             }
@@ -118,10 +118,8 @@ public class SistemaDialogo : MonoBehaviour
         faladorAtual = Falador.BuscarPolaroideNosAssets(falaAtual.personagem, falaAtual.emocao);
 
         npcNome.text = faladorAtual.nome;
-            
-        corrotina = StartCoroutine(Escrever());
 
-        if (falaAtual.personagem == Personagens.Lurdinha) 
+        if (falaAtual.personagem == Personagens.Lurdinha)
         {
             personagemRosto[0].color = opacidade.Ligar();
             personagemRosto[0].sprite = faladorAtual.personagem;
@@ -130,6 +128,19 @@ public class SistemaDialogo : MonoBehaviour
         {
             personagemRosto[1].color = opacidade.Ligar();
             personagemRosto[1].sprite = faladorAtual.personagem;
+        }
+
+        if (falaAtual.fala == "")
+        {
+            proximaFala++;
+
+            Analise();
+
+            botao.onClick.Invoke();
+        }
+        else
+        {
+            corrotina = StartCoroutine(Escrever());
         }
     }
 
@@ -226,7 +237,7 @@ public class SistemaDialogo : MonoBehaviour
 
         for (int i = 0; i < dialogo.nodulos[nodulo].respostas.Length; i++)
         {
-            opcoes.Add(dialogo.nodulos[nodulo].respostas[i].resumo);
+            opcoes.Add(dialogo.nodulos[nodulo].respostas[i].resumo);            
         }
 
         opcoes.Add("(Escolha uma opção)");
@@ -234,6 +245,12 @@ public class SistemaDialogo : MonoBehaviour
         dropdown.AddOptions(opcoes);
 
         dropdown.value = opcoes.Count - 1;
+
+        //for (int i = 0; i < dropdown.options.Count; i++)
+        //{
+        //    dropdown.itemText.color = Color.blue;
+        //    dropdown.itemImage.color = Color.red;
+        //}
     }
 
     public void RespostaEscolhida(int escolha)
@@ -256,6 +273,7 @@ public class SistemaDialogo : MonoBehaviour
         falaAtual.fala = dialogo.nodulos[nodulo].respostas[dropdownIndex].fala;
 
         faladorAtual = Falador.BuscarPolaroideNosAssets(falaAtual.personagem, falaAtual.emocao);
+        npcNome.text = faladorAtual.nome;
 
         nodulo = dialogo.nodulos[nodulo].respostas[dropdownIndex].conexao;
         proximaFala = -1;
@@ -278,9 +296,15 @@ public class SistemaDialogo : MonoBehaviour
 
     public void AcabarConversa()
     {
-        npcDialogo.jaFalou = true;
+        npcDialogo.SetQuestControl();
         npcDialogo = null;
+        personagemRosto[1].sprite = null;
+
+        nodulo = 0;
+        proximaFala = 0;
 
         sistemaDialogoUI.SetActive(false);
+
+        GameManager.uiSendoUsada = false;
     }
 }

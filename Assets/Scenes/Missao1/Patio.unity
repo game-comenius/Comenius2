@@ -1931,74 +1931,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  questControlIndex: {x: 0, y: 0}
+  dialogoObrigatorio: 1
+  esperaDialogoObrigatorio: 2
   dialogoPrincipal:
     nodulos:
     - falas:
       - personagem: 0
-        emocao: 0
-        fala: 'Bom Dia!
-
-'
-      - personagem: 0
-        emocao: 0
-        fala: 'Tudo bem?
-
-'
+        emocao: 2
+        fala: 
       - personagem: 2
         emocao: 0
-        fala: 'Tudo!
-
-'
-      - personagem: 1
-        emocao: 0
-        fala: 'Tudo bem e contigo?
-
-'
-      respostas:
+        fala: "Boa aurora, Maria de Lourdes, seja bem recebida ao seu primeiro dia
+          de trabalho na nossa escola. Eu sou o Diretor Jo\xE3o Frederico, mas me
+          chame s\xF3 de Diretor.\r"
+      - personagem: 0
+        emocao: 2
+        fala: "Ol\xE1 Diretor, muito prazer! Estou muito ansiosa e animada para ajudar.
+          O senhor poderia me indicar quais fun\xE7\xF5es eu vou exercer aqui na escola?"
+      - personagem: 2
+        emocao: 3
+        fala: "\xC9 para isso que estou aqui. Voc\xEA vai ser a professora auxiliar
+          de m\xEDdias. Sua fun\xE7\xE3o \xE9 ajudar os outros professores a desenvolver
+          os seus planejamentos levando em considera\xE7\xE3o o uso de m\xEDdias em
+          sala de aula."
+      - personagem: 2
+        emocao: 2
+        fala: "Em outros voc\xE1bulos, voc\xEA vai ser uma m\xEDdia-educadora!\n"
       - personagem: 0
         emocao: 0
-        fala: Tudo bem!
-        resumo: Bem
-        conexao: 1
-      - personagem: 0
-        emocao: 0
-        fala: Estou me sentindo meio mal.
-        resumo: Mal
-        conexao: 2
-    - falas:
+        fala: "Ah Diretor, muito obrigada pela oportunidade! Eu tamb\xE9m gostaria
+          muito de saber como posso come\xE7ar a trabalhar hoje?"
       - personagem: 2
         emocao: 0
-        fala: 'Que bom!
-
-'
-      respostas:
-      - personagem: 0
-        emocao: 0
-        fala: 
-        resumo: 
-        conexao: 3
-    - falas:
-      - personagem: 1
-        emocao: 0
-        fala: 'Melhoras!
-
-'
-      respostas:
-      - personagem: 0
-        emocao: 0
-        fala: 
-        resumo: 
-        conexao: 3
-    - falas:
-      - personagem: 0
-        emocao: 0
-        fala: 'Obrigado!
-
-'
+        fala: "Simples! Hoje voc\xEA foi escalada para prestar ajuda ao professor
+          Jean em sua aula de Ci\xEAncias, ent\xE3o dirija-se a sala dos professores
+          imediatamente para poder come\xE7ar a discutir os temas de seu ensino."
+      - personagem: 2
+        emocao: 1
+        fala: "Uma \xFAltima coisa, temos uma sala especial para voc\xEA e uma estagi\xE1ria
+          designada para ajud\xE1-la em  sua fun\xE7\xE3o na escola, ent\xE3o n\xE3o
+          esque\xE7a de passar l\xE1. Bom afazer e at\xE9 mais, auxiliar Maria de
+          Lourdes!"
       respostas: []
-  dialogosSecundarios:
-  - nodulos: []
-  jaFalou: 0
+  dialogosSecundarios: []
 --- !u!61 &683037573
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4223,6 +4199,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42c5cfa54777a24a98c01468b90715b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isQuest: 0
+  questControlIndex: {x: 0, y: 0}
+  seta: {fileID: 0}
   sceneName: SalaProfessores
 --- !u!61 &1209380847
 BoxCollider2D:
@@ -4470,7 +4449,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.998
+      value: 1.9979999
       objectReference: {fileID: 0}
     - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4478,15 +4457,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
       propertyPath: m_LocalRotation.w
@@ -4751,8 +4730,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &1349916199
-BoxCollider2D:
+--- !u!60 &1349916199
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -4760,10 +4739,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.11798906}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4773,9 +4752,12 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 3.312581}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.54052687, y: 1.9802688}
+      - {x: -0.5388408, y: -1.0486778}
+      - {x: 0.6241183, y: -1.7070196}
+      - {x: 0.625329, y: 1.3129605}
 --- !u!4 &1349916200
 Transform:
   m_ObjectHideFlags: 0
@@ -4800,6 +4782,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42c5cfa54777a24a98c01468b90715b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isQuest: 1
+  questControlIndex: {x: 0, y: 1}
+  seta: {fileID: 140903428}
   sceneName: Multimeios
 --- !u!82 &1349916202
 AudioSource:
@@ -6973,7 +6958,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00020836294, y: 0.000000078270155}
+  m_AnchoredPosition: {x: -0.00020836294, y: -0.0000073018105}
   m_SizeDelta: {x: 0.00027466, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1784362335
@@ -7137,6 +7122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42c5cfa54777a24a98c01468b90715b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isQuest: 0
+  questControlIndex: {x: 0, y: 0}
+  seta: {fileID: 0}
   sceneName: Sala_de_aula_Jean
 --- !u!61 &1804115127
 BoxCollider2D:
