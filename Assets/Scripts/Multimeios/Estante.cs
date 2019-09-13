@@ -17,10 +17,10 @@ public class Estante : MonoBehaviour {
         Items = new List<ItemName>
         {
             // Itens que aparecem por padrão dentro da estante
-            ItemName.Livro,
-            ItemName.Cartazes,
-            ItemName.QuadroNegro,
-            ItemName.Camera
+            ItemName.ReprodutorAudio,
+            ItemName.Gravador,
+            ItemName.Camera,
+            ItemName.TV
         };
     }
 
