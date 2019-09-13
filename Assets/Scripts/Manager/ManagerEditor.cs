@@ -29,7 +29,7 @@ class MyClass
             for (int i = 0; i < EditorSceneManager.sceneCount; i++)
             {
 
-                if (EditorSceneManager.GetSceneAt(i).name == "QuestManagerScene")
+                if (EditorSceneManager.GetSceneAt(i).name == "ManagerScene")
                 {
                     isOpen = true;
 
@@ -50,15 +50,15 @@ class MyClass
             {
                 for (int i = 0; i < EditorSceneManager.sceneCount; i++)
                 {
-                    if (EditorSceneManager.GetSceneAt(i).name == "QuestManagerScene")
+                    if (EditorSceneManager.GetSceneAt(i).name == "ManagerScene")
                     {
                         EditorSceneManager.CloseScene(EditorSceneManager.GetSceneAt(i), true);
                     }
                 }
             }
-            else if (File.Exists(ioSubpath + subpath + "QuestManagerScene.unity"))
+            else if (File.Exists(ioSubpath + subpath + "ManagerScene.unity"))
             {
-                EditorSceneManager.OpenScene(subpath + "QuestManagerScene.unity", OpenSceneMode.Additive);
+                EditorSceneManager.OpenScene(subpath + "ManagerScene.unity", OpenSceneMode.Additive);
             }
         }
     }
