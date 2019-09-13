@@ -7,17 +7,17 @@ namespace GameComenius.Dialogo
     public enum Personagens
     {
         Lurdinha,
-        Drika,
+        Drica,
         Diretor
     }
 
     public enum Expressao
     {
-        Neutro,
-        Feliz,
-        Triste,
-        Assustado,
-        Impressionado
+        Serio,
+        Bravo,
+        Sorrindo,
+        CaraFechada,
+        Rindo
     }
 
     [Serializable]
@@ -45,7 +45,7 @@ namespace GameComenius.Dialogo
     {
         public Personagens personagem = Personagens.Diretor;
 
-        public Expressao emocao = Expressao.Assustado;
+        public Expressao emocao = Expressao.Bravo;
 
         [TextArea(3, 3)]
         public string fala = "";
@@ -83,7 +83,7 @@ namespace GameComenius.Dialogo
         {
             Falador personagem = new Falador();
 
-            string path = "Assets/Sprites/Personagem/";
+            string path = "Assets/Sprites/Personagem/Polaroides/";
             string nome = "";
             string emocao = "";
 
@@ -92,36 +92,40 @@ namespace GameComenius.Dialogo
                 case Personagens.Diretor:
                     nome = "Diretor";
                     break;
-                case Personagens.Drika:
-                    nome = "Drika";
+                case Personagens.Drica:
+                    nome = "Drica";
                     break;
                 case Personagens.Lurdinha:
                     nome = "Lurdinha";
                     break;
             }
 
-            path = path + nome + ".png";
+            path = path + nome + "/";
 
             switch (_emocao)
             {
-                case Expressao.Assustado:
-                    emocao = "Assustado";
+                case Expressao.Bravo:
+                    emocao = "Bravo";
                     break;
-                case Expressao.Feliz:
-                    emocao = "Feliz";
+                case Expressao.CaraFechada:
+                    emocao = "CaraFechada";
                     break;
-                case Expressao.Impressionado:
-                    emocao = "Impressionado";
+                case Expressao.Rindo:
+                    emocao = "Rindo";
                     break;
-                case Expressao.Neutro:
-                    emocao = "Neutro";
+                case Expressao.Serio:
+                    emocao = "Serio";
                     break;
-                case Expressao.Triste:
-                    emocao = "Triste";
+                case Expressao.Sorrindo:
+                    emocao = "Sorrindo";
                     break;
             }
 
+            path = path + emocao + ".png";
+
             UnityEngine.Object[] objects = AssetDatabase.LoadAllAssetsAtPath(path);
+
+            //Debug.Log(objects.Length);
 
             foreach (UnityEngine.Object obj in objects)
             {
