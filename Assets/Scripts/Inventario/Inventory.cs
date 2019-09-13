@@ -7,6 +7,10 @@ public class Inventory
 
     public Inventory() {
         items = new Dictionary<ItemName, Item>();
+
+        items.Add(ItemName.Cartazes, new Item(ItemName.Cartazes));
+        items.Add(ItemName.Caderno, new Item(ItemName.Caderno));
+        items.Add(ItemName.Jornais, new Item(ItemName.Jornais));
     }
 
     public ICollection<Item> Items()
