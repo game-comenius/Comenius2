@@ -26,9 +26,10 @@ public class DoorTransition : MonoBehaviour
 
     public void OnMouseUp()
     {
-        if (!GameManager.uiSendoUsada )
+        if (!GameManager.uiSendoUsada)
         {
             AudioSource asource = GetComponent<AudioSource>();
+            GameManager.uiSendoUsada = true;
             asource.Play();
             StartCoroutine(CarregarProximaSala());
         }
@@ -43,5 +44,6 @@ public class DoorTransition : MonoBehaviour
 
         QuestManager.SetQuestControl(questControlIndex, true);
         sceneLoad.allowSceneActivation = true;
+        GameManager.uiSendoUsada = false;
     }
 }
