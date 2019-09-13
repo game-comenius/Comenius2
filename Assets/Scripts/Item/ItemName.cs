@@ -12,5 +12,6 @@ public enum ItemName
     Camera,
     Jornais,
     Fotografia,
-    QuadroNegro
+    QuadroNegro,
+    LivroIlustrado
 }

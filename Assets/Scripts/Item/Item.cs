@@ -19,9 +19,14 @@ public class Item
         switch (itemName)
         {
             case ItemName.Livro:
-                FriendlyName = "Livro";
+                FriendlyName = "Livro Didático";
                 Description = "Para fazer atividades, aprender e revisar o conteúdo. Um clássico!";
                 FullDescription = "É um livro de cunho pedagógico composto de conteúdo do currículo escolar. Pode ser usado para pesquisa e resolução de exercícios. A linguagem presente no livro didático é visual e principalmente textual, trazendo o conteúdo de forma intercalada entre textos e imagens.";
+                break;
+            case ItemName.LivroIlustrado:
+                FriendlyName = "Livro Ilustrado";
+                Description = "Uaaaaau, quantas figuras lindas! Os alunos vão adorar!";
+                FullDescription = "É um livro belamente ilustrado com desenhos, gravuras e fotos coloridas concatenadas a textos explicativos. Usa uma linguagem visual, que exprime certos conteúdos mais facilmente.";
                 break;
             case ItemName.Cartazes:
                 FriendlyName = "Cartazes";
@@ -47,6 +52,11 @@ public class Item
                 FriendlyName = "Gravador";
                 Description = "Para capturar os sons da natureza… Os alunos também podem usar para gravar algo durante a aula. Uma entrevista, ou ainda o que aprenderam sobre o conteúdo.";
                 FullDescription = "É um aparelho de gravação e reprodução de áudio. Pode ser utilizado possibilitando uma maior autonomia para criação de conteúdo. Possui um uso mais específico, fazendo com que sua linguagem seja praticamente apenas verbal, a sua formalidade vai depender de quem está fazendo a produção do conteúdo.";
+                break;
+            case ItemName.ReprodutorAudio:
+                FriendlyName = "Reprodutor de Áudio";
+                Description = "Hmmm… Preciso achar um CD em algum lugar para isso daqui ser útil.";
+                FullDescription = "Um sistema reprodutor de áudio com leitor de CDs.";
                 break;
             case ItemName.VHS:
                 FriendlyName = "Fita VHS";
