@@ -444,6 +444,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eecc3327f1d480544a9e90536de5a300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sistemaDialogo: {fileID: 0}
+  textoDialogo: {fileID: 0}
+  npcNome: {fileID: 0}
+  personagemRosto:
+  - {fileID: 0}
+  - {fileID: 0}
+  opacidade:
+    alphaLigado: 0
+    alphaDesligado: 0
+  dialogo:
+    personagens:
+    - personagem: {fileID: 0}
+      nome: 
+    sentences:
+    - sentence: ' '
+      personagem: 0
+  velocidade: 5
 --- !u!1 &228842673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,7 +1942,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00024430815, y: -0.000024149203}
+  m_AnchoredPosition: {x: -0.00024430815, y: -0.000012662503}
   m_SizeDelta: {x: 0.00027466, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &733378466
@@ -2644,9 +2661,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42c5cfa54777a24a98c01468b90715b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isQuest: 0
-  questControlIndex: {x: 0, y: 0}
-  seta: {fileID: 0}
   sceneName: Patio
 --- !u!61 &1058307654
 BoxCollider2D:
@@ -4150,7 +4164,7 @@ GameObject:
   - component: {fileID: 2100348674}
   - component: {fileID: 2100348672}
   m_Layer: 0
-  m_Name: Drika(NPC)
+  m_Name: Drica(NPC)
   m_TagString: QuestGiver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4167,55 +4181,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questControlIndex: {x: 0, y: 0}
-  dialogoObrigatorio: 0
-  esperaDialogoObrigatorio: 2
   dialogoPrincipal:
-    nodulos:
-    - falas:
-      - personagem: 0
-        emocao: 4
-        fala: 
-      - personagem: 1
-        emocao: 2
-        fala: "Ol\xE1, professora Lurdinha! Eu sou a Drica e eu cuido dessa sala.
-          Essa \xE9 a Sala de M\xEDdias e acho que a Mad\xE1 te trouxe aqui por um
-          motivo bem claro: para guardar todas essas m\xEDdias que voc\xEA achar nas
-          suas aventuras pela escola."
-      - personagem: 1
-        emocao: 2
-        fala: "Eu gosto de deixar tudo no seu devido lugar, ent\xE3o sempre que quiser
-          guardar uma m\xEDdia por aqui, basta levar at\xE9 a estante que depois eu
-          organizo e coloco no local adequado."
-      - personagem: 0
-        emocao: 4
-        fala: "Muito prazer Drica, vai ser uma honra trabalhar com uma aluna t\xE3o
-          caprichosa."
-      - personagem: 1
-        emocao: 4
-        fala: "Voc\xEA est\xE1 ajudando o professor Jean, n\xE3o \xE9? Eu adorava
-          as aulas dele quando era menorzinha..."
-      - personagem: 0
-        emocao: 0
-        fala: "Mas me diga, como sabe da minha miss\xE3o?"
-      - personagem: 1
-        emocao: 2
-        fala: "O Professor Jean me contou. Mas professora Lurdinha, n\xE3o esque\xE7a
-          que tem m\xEDdias por aqui tamb\xE9m! Inclusive o Diretor me pediu para
-          te entregar isso aqui pessoalmente: a mais nova compra da escola, um gravador
-          de primeira!"
-      - personagem: 0
-        emocao: 4
-        fala: "Obrigada Drica! Esse gravador parece ser j\xF3ia!"
-      - personagem: 1
-        emocao: 2
-        fala: "Isso mesmo, professora Lurdinha! Volte aqui e me pergunte alguma outra
-          coisa se voc\xEA precisar saber mais sobre as m\xEDdias, j\xE1 que a minha
-          fun\xE7\xE3o \xE9 te ajudar com isso. Ah, e n\xE3o se esque\xE7a de me emprestar
-          as canetas coloridas depois, viu?"
-      respostas: []
-  dialogosSecundarios:
-  - nodulos: []
+    nodulos: []
+  jaFalou: 0
 --- !u!61 &2100348674
 BoxCollider2D:
   m_ObjectHideFlags: 0
