@@ -6,22 +6,23 @@ public class AgenteAulaScript : MonoBehaviour
 {
     virtual protected void Start()
     {
-        if (GetComponent<Collider2D>())
+        if (GetComponent<NpcDialogo>() && GetComponent<BoxCollider2D>()) 
         {
-            ClassManager.EndClass += EnableCollider;
+            ClassManager.EndClass += HabilitarDialogo;
         }
     }
 
-    virtual protected void EnableCollider()
+    virtual protected void HabilitarDialogo()
     {
-        GetComponent<Collider2D>().enabled = true;
+        GetComponent<NpcDialogo>().enabled = true;
+        GetComponent<BoxCollider2D>().enabled = true;
     }
 
     virtual protected void OnDisable()
     {
-        if (GetComponent<Collider>())
+        if (GetComponent<NpcDialogo>() && GetComponent<BoxCollider2D>())
         {
-            ClassManager.EndClass -= EnableCollider;
+            ClassManager.EndClass += HabilitarDialogo;
         }
     }
 }

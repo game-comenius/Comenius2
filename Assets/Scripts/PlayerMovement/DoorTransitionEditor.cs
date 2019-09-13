@@ -17,6 +17,8 @@ public class DoorTransitionEditor : Editor
 
     public override void OnInspectorGUI()
     {
+        DrawDefaultInspector();
+
         DoorTransition myScript = (DoorTransition)target;
 
         sceneCount = SceneManager.sceneCountInBuildSettings;
