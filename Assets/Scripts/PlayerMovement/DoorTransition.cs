@@ -5,43 +5,34 @@ using UnityEngine.SceneManagement;
 
 public class DoorTransition : MonoBehaviour
 {
-    [SerializeField] private bool isQuest;
-    [SerializeField] private Vector2Int questControlIndex;
+    public string sceneName;
+    float timer = 0.0f;
+    float timerMax = 3.5f;
+    bool comecarTimer = false;
 
-    [SerializeField] private GameObject seta;
-
-    [HideInInspector] public string sceneName;
-
-    private AsyncOperation sceneLoad;
-
-    private float timerMax = 3.5f;
-
-    private void Start()
+    private void LateUpdate()
     {
-        if (QuestManager.GetQuestControl(questControlIndex))
+        if (comecarTimer)
         {
-            Destroy(seta);
+            timer += Time.deltaTime;
+            if (timer > timerMax)
+            {
+                LoadProximaSala();
+            }
         }
+
     }
 
     public void OnMouseUp()
     {
-        if (!GameManager.uiSendoUsada )
-        {
-            AudioSource asource = GetComponent<AudioSource>();
-            asource.Play();
-            StartCoroutine(CarregarProximaSala());
-        }
+        AudioSource asource = GetComponent<AudioSource>();
+        asource.Play();
+        comecarTimer = true;
     }
 
-    private IEnumerator CarregarProximaSala()
+
+    public void LoadProximaSala()
     {
-        sceneLoad = SceneManager.LoadSceneAsync(sceneName);
-        sceneLoad.allowSceneActivation = false;
-
-        yield return new WaitForSeconds(timerMax);
-
-        QuestManager.SetQuestControl(questControlIndex, true);
-        sceneLoad.allowSceneActivation = true;
+        SceneManager.LoadScene(sceneName);
     }
 }
