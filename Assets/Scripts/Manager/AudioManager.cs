@@ -23,6 +23,8 @@ public class AudioManager : MonoBehaviour {
         {
             instance = this;
         }
+
+        transform.parent = null;
         DontDestroyOnLoad(this.gameObject);
 
         instance._audioSource = GetComponent<AudioSource>();

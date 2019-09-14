@@ -15,18 +15,28 @@ public class StartSceneScript : MonoBehaviour
         {
             StartCoroutine(InicializarManagerSceneEJogo());
 
+            transform.SetParent(null);
+
+            DontDestroyOnLoad(gameObject);
+
             sendoUsado = true;
         }
     }
 
     private IEnumerator InicializarManagerSceneEJogo()
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(5, LoadSceneMode.Additive);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(firstSceneName, LoadSceneMode.Single);
 
-        yield return new WaitUntil(() => operation.progress == 1);
+        yield return new WaitUntil(() => operation.isDone);
 
-        yield return null;
+        operation = SceneManager.LoadSceneAsync(5, LoadSceneMode.Additive);
 
-        SceneManager.LoadScene(firstSceneName);
+        yield return new WaitUntil(() => operation.isDone);
+
+        Scene scene = SceneManager.GetSceneByBuildIndex(5);
+
+        SceneManager.UnloadSceneAsync(scene);
+
+        Destroy(gameObject);
     }
 }

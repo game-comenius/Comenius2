@@ -19,6 +19,7 @@ public class InventorySheetUI : MonoBehaviour {
         itemSlots = new List<GameObject>();
 
         inventory = Player.Instance.Inventory;
+
         if (inventory.Items().Count > 0)
             DisplayItems(inventory.Items());
     }

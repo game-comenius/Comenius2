@@ -18,7 +18,7 @@ public class DoorTransition : MonoBehaviour
 
     private void Start()
     {
-        if (QuestManager.GetQuestControl(questControlIndex))
+        if (isQuest && QuestManager.GetQuestControl(questControlIndex)) 
         {
             Destroy(seta);
         }
@@ -41,8 +41,11 @@ public class DoorTransition : MonoBehaviour
         sceneLoad.allowSceneActivation = false;
 
         yield return new WaitForSeconds(timerMax);
+        if (isQuest)
+        {
+            QuestManager.SetQuestControl(questControlIndex, true);
+        }
 
-        QuestManager.SetQuestControl(questControlIndex, true);
         sceneLoad.allowSceneActivation = true;
         GameManager.uiSendoUsada = false;
     }
