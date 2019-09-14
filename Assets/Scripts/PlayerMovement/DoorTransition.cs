@@ -5,24 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class DoorTransition : MonoBehaviour
 {
-    [SerializeField] private bool isQuest;
-    [SerializeField] private Vector2Int questControlIndex;
-
-    [SerializeField] private GameObject seta;
-
     [HideInInspector] public string sceneName;
 
     private AsyncOperation sceneLoad;
 
     private float timerMax = 3.5f;
 
-    private void Start()
-    {
-        if (isQuest && QuestManager.GetQuestControl(questControlIndex)) 
-        {
-            Destroy(seta);
-        }
-    }
 
     public void OnMouseUp()
     {
@@ -41,9 +29,10 @@ public class DoorTransition : MonoBehaviour
         sceneLoad.allowSceneActivation = false;
 
         yield return new WaitForSeconds(timerMax);
-        if (isQuest)
+
+        if (GetComponent<QuestScript>()) 
         {
-            QuestManager.SetQuestControl(questControlIndex, true);
+            QuestManager.SetQuestControl(GetComponent<QuestScript>().questInfo.questIndex, true);
         }
 
         sceneLoad.allowSceneActivation = true;

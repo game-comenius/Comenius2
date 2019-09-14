@@ -9,6 +9,8 @@ public class CanvasCodigoScript : MonoBehaviour
 
     [SerializeField] private Text questLog;
 
+    [SerializeField] private Text uiSendoUsada;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -16,6 +18,8 @@ public class CanvasCodigoScript : MonoBehaviour
 
     void Update ()
     {
+        uiSendoUsada.enabled = GameManager.uiSendoUsada;
+       
         if(canvas.activeSelf)
         {
             if (questLog.gameObject.activeSelf) 

@@ -3,10 +3,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using GameComenius.Dialogo;
 
-public class NpcDialogo : MonoBehaviour
+public class NpcDialogo : QuestScript
 {
-    [SerializeField] private Vector2Int questControlIndex;
-
     [SerializeField] private bool dialogoObrigatorio = false;
 
     [SerializeField] private float esperaDialogoObrigatorio = 2f;
@@ -16,9 +14,11 @@ public class NpcDialogo : MonoBehaviour
     [SerializeField] private Dialogo[] dialogosSecundarios = new Dialogo[1];
 
 
-    private void Start()
+    protected override void Start()
     {
-        if (dialogoObrigatorio && !QuestManager.GetQuestControl(questControlIndex)) 
+        base.Start();
+
+        if (dialogoObrigatorio && !QuestManager.GetQuestControl(_questInfo.questIndex))  
         {
             GameManager.uiSendoUsada = true;
             StartCoroutine(DialogoObrigatorio());
@@ -29,7 +29,7 @@ public class NpcDialogo : MonoBehaviour
     {
         if (!GameManager.uiSendoUsada)
         {
-            if (!QuestManager.GetQuestControl(questControlIndex))
+            if (!QuestManager.GetQuestControl(_questInfo.questIndex))
             {
                 SistemaDialogo.sistemaDialogo.ComecarDialogo(dialogoPrincipal, this);
             }
@@ -52,6 +52,7 @@ public class NpcDialogo : MonoBehaviour
 
     public void SetQuestControl()
     {
-        QuestManager.SetQuestControl(questControlIndex, true);
+        QuestManager.SetQuestControl(_questInfo.questIndex, true);
+        ReavaliarTodasQuests();
     }
 }

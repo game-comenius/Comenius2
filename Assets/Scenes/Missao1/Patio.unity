@@ -113,29 +113,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &140903428 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1369032240085632, guid: d78103df27fa72542b4cb0bc6eef690c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1283412941}
---- !u!95 &140903429
-Animator:
-  serializedVersion: 3
+--- !u!1001 &179638058
+Prefab:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 140903428}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3fc7d1019b4efb24a83936d5c4b0333b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4577136663548204, guid: e43313b6dd6ee6941aaa7b34ebeaa1bb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577136663548204, guid: e43313b6dd6ee6941aaa7b34ebeaa1bb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577136663548204, guid: e43313b6dd6ee6941aaa7b34ebeaa1bb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577136663548204, guid: e43313b6dd6ee6941aaa7b34ebeaa1bb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577136663548204, guid: e43313b6dd6ee6941aaa7b34ebeaa1bb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577136663548204, guid: e43313b6dd6ee6941aaa7b34ebeaa1bb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577136663548204, guid: e43313b6dd6ee6941aaa7b34ebeaa1bb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577136663548204, guid: e43313b6dd6ee6941aaa7b34ebeaa1bb, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e43313b6dd6ee6941aaa7b34ebeaa1bb, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1 &179638059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1716038275743428, guid: e43313b6dd6ee6941aaa7b34ebeaa1bb,
+    type: 2}
+  m_PrefabInternal: {fileID: 179638058}
 --- !u!1 &394168225
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,7 +357,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questControlIndex: {x: 0, y: 0}
+  _questInfo:
+    isQuest: 0
+    questIndex: {x: 0, y: 0}
+    isQuestDependent: 0
+    questDependencias: []
+  questFeita:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 683037571}
+        m_MethodName: DestroirObjeto
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 683037571}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasFeitas:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasNaoFeitas:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 1
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
@@ -654,9 +708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42c5cfa54777a24a98c01468b90715b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isQuest: 0
-  questControlIndex: {x: 0, y: 0}
-  seta: {fileID: 0}
   sceneName: SalaProfessores
 --- !u!61 &1209380847
 BoxCollider2D:
@@ -738,52 +789,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d11b1c849be53453587e960dd2049b74, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &1283412941
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 7.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.9979999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1369032240085632, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
-      propertyPath: m_Name
-      value: Seta(Indicador)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &1349916198
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,8 +798,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1349916200}
   - component: {fileID: 1349916199}
-  - component: {fileID: 1349916201}
   - component: {fileID: 1349916202}
+  - component: {fileID: 1349916201}
+  - component: {fileID: 1349916203}
   m_Layer: 0
   m_Name: Porta Multimeios
   m_TagString: Door1
@@ -854,9 +860,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42c5cfa54777a24a98c01468b90715b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isQuest: 1
-  questControlIndex: {x: 0, y: 1}
-  seta: {fileID: 140903428}
   sceneName: Multimeios
 --- !u!82 &1349916202
 AudioSource:
@@ -953,6 +956,71 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1349916203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1349916198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471d7830f5edfe04598f66fa78a9a6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _questInfo:
+    isQuest: 1
+    questIndex: {x: 0, y: 1}
+    isQuestDependent: 1
+    questDependencias:
+    - {x: 0, y: 0}
+  questFeita:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 179638059}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasFeitas:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 179638059}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasNaoFeitas:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 179638059}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1500249363
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,9 +1232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42c5cfa54777a24a98c01468b90715b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isQuest: 0
-  questControlIndex: {x: 0, y: 0}
-  seta: {fileID: 0}
   sceneName: Sala_de_aula_Jean
 --- !u!61 &1804115127
 BoxCollider2D:

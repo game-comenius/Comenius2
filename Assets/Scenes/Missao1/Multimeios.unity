@@ -434,9 +434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42c5cfa54777a24a98c01468b90715b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isQuest: 0
-  questControlIndex: {x: 0, y: 0}
-  seta: {fileID: 0}
   sceneName: Patio
 --- !u!61 &1058307654
 BoxCollider2D:
@@ -612,52 +609,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d11b1c849be53453587e960dd2049b74, type: 2}
-  m_IsPrefabAsset: 0
---- !u!1001 &1359037698
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 3.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.997
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4582205220992196, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1369032240085632, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
-      propertyPath: m_Name
-      value: "Seta(Indica\xE7\xE3o)"
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d78103df27fa72542b4cb0bc6eef690c, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1424486048
 Prefab:
@@ -839,29 +790,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1679929426 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1369032240085632, guid: d78103df27fa72542b4cb0bc6eef690c,
-    type: 2}
-  m_PrefabInternal: {fileID: 1359037698}
---- !u!95 &1679929427
-Animator:
-  serializedVersion: 3
+--- !u!1001 &1711282258
+Prefab:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1679929426}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7272a9d941c165642ab3e657bd3c580b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4577136663548204, guid: e43313b6dd6ee6941aaa7b34ebeaa1bb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577136663548204, guid: e43313b6dd6ee6941aaa7b34ebeaa1bb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577136663548204, guid: e43313b6dd6ee6941aaa7b34ebeaa1bb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577136663548204, guid: e43313b6dd6ee6941aaa7b34ebeaa1bb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577136663548204, guid: e43313b6dd6ee6941aaa7b34ebeaa1bb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577136663548204, guid: e43313b6dd6ee6941aaa7b34ebeaa1bb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577136663548204, guid: e43313b6dd6ee6941aaa7b34ebeaa1bb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577136663548204, guid: e43313b6dd6ee6941aaa7b34ebeaa1bb, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e43313b6dd6ee6941aaa7b34ebeaa1bb, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &1733572489
 Prefab:
   m_ObjectHideFlags: 0
@@ -1101,7 +1071,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questControlIndex: {x: 0, y: 2}
+  _questInfo:
+    isQuest: 1
+    questIndex: {x: 0, y: 2}
+    isQuestDependent: 0
+    questDependencias: []
+  questFeita:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2100348672}
+        m_MethodName: DestroirObjeto
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100348672}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasFeitas:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasNaoFeitas:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 0
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
