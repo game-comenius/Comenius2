@@ -99,7 +99,12 @@ namespace GameComenius.Dialogo
                 case Personagens.Lurdinha:
                     nome = "Lurdinha";
                     break;
+                case Personagens.Jean:
+                    nome = "Jean";
+                    break;
             }
+
+            personagem.nome = nome;
 
             path = path + nome + "/";
 
@@ -132,7 +137,6 @@ namespace GameComenius.Dialogo
             {
                 if (obj.GetType() == typeof(Sprite) && obj.name == emocao)
                 {
-                    personagem.nome = nome;
                     personagem.personagem = (Sprite)obj;
 
                     return personagem;
