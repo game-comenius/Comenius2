@@ -10,6 +10,10 @@ public class Player : MonoBehaviour
 
     public Inventory Inventory { get; private set; }
 
+    public ItemName[] chosenMedia;
+    public double[] points;
+    public double totalMissionPoints;
+
 
     private void Awake()
     {
@@ -19,6 +23,9 @@ public class Player : MonoBehaviour
             DontDestroyOnLoad(gameObject);
 
             Inventory = new Inventory();
+            chosenMedia = new ItemName[3];
+            points = new double[3];
+            totalMissionPoints = 0;
         }
         else
         {
