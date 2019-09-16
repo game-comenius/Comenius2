@@ -21,6 +21,8 @@ public class ClassManager : MonoBehaviour
 
     [SerializeField] private Canvas canvas;
 
+    [SerializeField] private Camera mainCamera;
+
     [Header("Class Moment")]
 
     [SerializeField] Text timer;
@@ -225,7 +227,7 @@ public class ClassManager : MonoBehaviour
             }
         }
 
-        Vector3 pos = Camera.main.WorldToScreenPoint(students[n].transform.position + students[n].cloudOffset) + new Vector3(cloud.GetComponent<RectTransform>().rect.width / 2, cloud.GetComponent<RectTransform>().rect.height / 2, 0);
+        Vector3 pos = mainCamera.WorldToScreenPoint(students[n].transform.position + students[n].cloudOffset) + new Vector3(cloud.GetComponent<RectTransform>().rect.width / 2, cloud.GetComponent<RectTransform>().rect.height / 2, 0);
 
         GameObject go = Instantiate(cloud, pos, Quaternion.identity, canvas.transform);
 
