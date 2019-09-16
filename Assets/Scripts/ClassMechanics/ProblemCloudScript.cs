@@ -19,6 +19,13 @@ public class ProblemCloudScript : MonoBehaviour
     private void Awake()
     {
         InitializeProblem();
+
+        ClassManager.EndClass += WrongSolution;
+    }
+
+    private void OnDestroy()
+    {
+        ClassManager.EndClass -= WrongSolution;
     }
 
     private void InitializeProblem()

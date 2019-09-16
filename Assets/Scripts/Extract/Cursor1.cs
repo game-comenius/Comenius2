@@ -31,4 +31,9 @@ public class Cursor1: MonoBehaviour
     {
         Cursor.SetCursor(cursorImage, hotspot, curmode);
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(FindObjectOfType<Camera>().ScreenToWorldPoint(Input.mousePosition) + 10 * Vector3.forward, 0.1f);
+    }
 }
