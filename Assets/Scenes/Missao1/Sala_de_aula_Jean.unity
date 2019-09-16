@@ -1158,7 +1158,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questControlIndex: {x: 0, y: 0}
+  _questInfo:
+    isQuest: 0
+    questIndex: {x: 0, y: 0}
+    isQuestDependent: 0
+    questDependencias: []
+  questFeita:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasFeitas:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasNaoFeitas:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 0
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
@@ -1376,9 +1395,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42c5cfa54777a24a98c01468b90715b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isQuest: 0
-  questControlIndex: {x: 0, y: 0}
-  seta: {fileID: 0}
   sceneName: Patio
 --- !u!82 &1349916202
 AudioSource:
@@ -2133,7 +2149,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.288, y: 2.976}
+    oldSize: {x: 6.49, y: 15.22}
     newSize: {x: 5.79, y: 15.14}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2153,13 +2169,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questControlIndex: {x: 0, y: 0}
+  _questInfo:
+    isQuest: 0
+    questIndex: {x: 0, y: 0}
+    isQuestDependent: 0
+    questDependencias: []
+  questFeita:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasFeitas:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasNaoFeitas:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 1
   esperaDialogoObrigatorio: 1
   dialogoPrincipal:
     nodulos:
     - falas:
-      - personagem: 0
+      - personagem: 2
         emocao: 0
         fala: "N\xE3o quero falar!!!"
       - personagem: 1
@@ -2215,7 +2250,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 359d6c331379f466291c9c2a2c2f0a65, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 82348ef9a5627314395c870d58c7439a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2235,7 +2270,7 @@ Transform:
   m_GameObject: {fileID: 2029659085}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.62, y: -0.38, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -2289,8 +2324,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialItem: 0
   livroPoints: 0
+  livroilustradoPoints: 0
   cartazesPoints: 0
   tvPoints: 0
+  cadernoPoints: 0
+  gravadorPoints: 0
+  reprodutoraudioPoints: 0
+  vhsPoints: 0
+  cameraPoints: 0
+  jornaisPoints: 0
+  fotografiaPoints: 0
+  quadronegroPoints: 0
 --- !u!114 &2096625481
 MonoBehaviour:
   m_ObjectHideFlags: 0

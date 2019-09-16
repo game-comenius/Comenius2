@@ -8,6 +8,7 @@ namespace GameComenius.Dialogo
     {
         Lurdinha,
         Drica,
+        Jean,
         Diretor
     }
 
