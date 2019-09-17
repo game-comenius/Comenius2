@@ -490,7 +490,6 @@ MonoBehaviour:
   questInfo:
     isQuest: 1
     questIndex: {x: 0, y: 0}
-    isQuestDependent: 0
     questDependencias: []
   questFeita:
     m_PersistentCalls:
@@ -916,6 +915,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 20545476364865102, guid: d11b1c849be53453587e960dd2049b74,
+        type: 2}
+      propertyPath: orthographic size
+      value: 5.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d11b1c849be53453587e960dd2049b74, type: 2}
   m_IsPrefabAsset: 0
@@ -1100,7 +1104,6 @@ MonoBehaviour:
   questInfo:
     isQuest: 1
     questIndex: {x: 0, y: 1}
-    isQuestDependent: 1
     questDependencias:
     - {x: 0, y: 0}
   questFeita:
@@ -1401,6 +1404,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1883794105 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1569246484329550, guid: d11b1c849be53453587e960dd2049b74,
+    type: 2}
+  m_PrefabInternal: {fileID: 1228962010}
+--- !u!114 &1883794106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1883794105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ea411ccb0cc4c4facc39668b011fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dimensoesTelaStandart: {x: 1920, y: 1080}
 --- !u!1 &1969715224
 GameObject:
   m_ObjectHideFlags: 0
