@@ -45,7 +45,7 @@ public class QuestScript : MonoBehaviour
 
     public void Avaliar()
     {
-        if (questInfo.isQuestDependent)
+        if (questInfo.questDependencias.Length != 0)
         {
             bool controlador = true;
 

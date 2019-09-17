@@ -69,14 +69,14 @@ public class ClassManager : MonoBehaviour
 
     [System.Serializable] private class AlunosComentaristas
     {
-        public StudentScript aluno;
+        public StudentScript aluno = null;
 
-        public Vector2Int questIndex;
+        public Vector2Int questIndex = Vector2Int.zero;
     }
 
     [System.Serializable] private class DialogoGeneralista
     {
-        public Vector2 rangeNota;
+        public Vector2 rangeNota = Vector2.zero;
 
         public Dialogo[] dialogos = new Dialogo[2];
     }
@@ -86,7 +86,7 @@ public class ClassManager : MonoBehaviour
 
     [System.Serializable] private class FalaSobreMidias
     {
-        public ItemName item;
+        public ItemName item = ItemName.Caderno;
 
         public Dialogo dialogo = new Dialogo();
     }

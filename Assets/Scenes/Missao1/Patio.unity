@@ -194,7 +194,7 @@ Prefab:
     - target: {fileID: 114800071295093106, guid: 9ca61051bf0590849b7701b3465f19a5,
         type: 2}
       propertyPath: questInfo.questDependencias.Array.data[0].y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114800071295093106, guid: 9ca61051bf0590849b7701b3465f19a5,
         type: 2}
@@ -230,7 +230,7 @@ Prefab:
         type: 2}
       propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 179638060}
+      objectReference: {fileID: 0}
     - target: {fileID: 114800071295093106, guid: 9ca61051bf0590849b7701b3465f19a5,
         type: 2}
       propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -281,7 +281,8 @@ Prefab:
       propertyPath: dependenciasNaoFeitas.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114800071295093106, guid: 9ca61051bf0590849b7701b3465f19a5, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 9ca61051bf0590849b7701b3465f19a5, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &179638059 stripped
@@ -289,12 +290,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1105263910288578, guid: 9ca61051bf0590849b7701b3465f19a5,
     type: 2}
   m_PrefabInternal: {fileID: 179638058}
---- !u!114 &179638060 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114800071295093106, guid: 9ca61051bf0590849b7701b3465f19a5,
-    type: 2}
-  m_PrefabInternal: {fileID: 179638058}
-  m_Script: {fileID: 11500000, guid: 471d7830f5edfe04598f66fa78a9a6d5, type: 3}
 --- !u!1 &394168225
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,7 +488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questInfo:
-    isQuest: 0
+    isQuest: 1
     questIndex: {x: 0, y: 0}
     isQuestDependent: 0
     questDependencias: []
@@ -1103,10 +1098,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questInfo:
-    isQuest: 0
-    questIndex: {x: 0, y: 0}
-    isQuestDependent: 0
-    questDependencias: []
+    isQuest: 1
+    questIndex: {x: 0, y: 1}
+    isQuestDependent: 1
+    questDependencias:
+    - {x: 0, y: 0}
   questFeita:
     m_PersistentCalls:
       m_Calls:
