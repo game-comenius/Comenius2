@@ -7,6 +7,7 @@ public class QuestScript : MonoBehaviour
 {
     private static List<QuestScript> questList = new List<QuestScript>();
 
+    [HideInInspector]
     public QuestStruct questInfo = new QuestStruct
     {
         isQuest = false,
@@ -37,33 +38,35 @@ public class QuestScript : MonoBehaviour
 
     public void Avaliar()
     {
-        if (questInfo.questDependencias.Length != 0)
-        {
-            bool controlador = true;
-
-            foreach (Vector2Int quest in questInfo.questDependencias)
-            {
-                if (!QuestManager.GetQuestControl(quest)) 
-                {
-                    controlador = false;
-                    break;
-                }
-            }
-
-
-            if (controlador)
-            {
-                dependenciasFeitas.Invoke();
-            }
-            else
-            {
-                dependenciasNaoFeitas.Invoke();
-            }
-        }
-
         if (questInfo.isQuest && QuestManager.GetQuestControl(questInfo.questIndex))
         {
             questFeita.Invoke();
+        }
+        else
+        {
+            if (questInfo.questDependencias.Length != 0)
+            {
+                bool controlador = true;
+
+                foreach (Vector2Int quest in questInfo.questDependencias)
+                {
+                    if (!QuestManager.GetQuestControl(quest))
+                    {
+                        controlador = false;
+                        break;
+                    }
+                }
+
+
+                if (controlador)
+                {
+                    dependenciasFeitas.Invoke();
+                }
+                else
+                {
+                    dependenciasNaoFeitas.Invoke();
+                }
+            }
         }
     }
 
