@@ -11,7 +11,7 @@ public class NpcDialogo : QuestScript
 
     public Dialogo dialogoPrincipal = new Dialogo();
 
-    public Dialogo[] dialogosSecundarios = new Dialogo[0];
+    public Dialogo[] dialogosSecundarios = new Dialogo[1];
 
 
     protected override void Start()

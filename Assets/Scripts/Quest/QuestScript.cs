@@ -7,6 +7,7 @@ public class QuestScript : MonoBehaviour
 {
     private static List<QuestScript> questList = new List<QuestScript>();
 
+
     [SerializeField] public QuestStruct questInfo = new QuestStruct();
 
     //public QuestStruct questInfo

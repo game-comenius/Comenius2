@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         if (_gameManager == null)
         {
             _gameManager = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(this);
         }
         else
         {
