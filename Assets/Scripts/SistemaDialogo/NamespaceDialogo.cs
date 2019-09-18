@@ -97,34 +97,41 @@ namespace GameComenius.Dialogo
             {
                 case Personagens.Diretor:
                     nome = "Diretor";
+                    personagem.nome = "Diretor";
                     break;
                 case Personagens.Drica:
                     nome = "Drica";
+                    personagem.nome = "Drica";
                     break;
                 case Personagens.Lurdinha:
                     nome = "Lurdinha";
+                    personagem.nome = "Lurdinha";
                     break;
                 case Personagens.Jean:
                     nome = "Jean";
+                    personagem.nome = "Jean";
                     break;
                 case Personagens.Leitura:
                     nome = "Leitura";
+                    personagem.nome = "Leitura";
                     break;
                 case Personagens.MeioAmbiente:
                     nome = "MeioAmbiente";
+                    personagem.nome = "Meio Ambiente";
                     break;
                 case Personagens.Madá:
                     nome = "Madá";
+                    personagem.nome = "Madá";
                     break;
                 case Personagens.Antonia:
                     nome = "Antonia";
+                    personagem.nome = "Antonia";
                     break;
                 case Personagens.Alice:
                     nome = "Alice";
+                    personagem.nome = "Alice";
                     break;
             }
-
-            personagem.nome = nome;
 
             path = path + nome + "/";
 
@@ -164,6 +171,8 @@ namespace GameComenius.Dialogo
             }
 
             Debug.Log("Não foi encontrado " + emocao + " em " + path + ".");
+
+            personagem.personagem = null;
 
             return personagem;
         }
