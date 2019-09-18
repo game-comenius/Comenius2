@@ -141,6 +141,7 @@ public class ClassManager : MonoBehaviour
             alunosComentaristas[i].aluno.gameObject.AddComponent<PolygonCollider2D>();
             NpcDialogo d = alunosComentaristas[i].aluno.gameObject.AddComponent<NpcDialogo>();
 
+            d.questInfo.isQuest = true;
             d.questInfo.questIndex = alunosComentaristas[i].questIndex;
 
             if ( i <= 1)

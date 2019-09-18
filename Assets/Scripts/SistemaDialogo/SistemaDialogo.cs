@@ -59,6 +59,11 @@ public class SistemaDialogo : MonoBehaviour
         sistemaDialogo = this;
     }
 
+    private void Start()
+    {
+        botao.onClick.AddListener(() => { ComecarProximaFala(); });
+    }
+
     public void ComecarDialogo(Dialogo _dialogo, NpcDialogo _npcDialogoQA)
     {
         if (npcDialogo == null) 
@@ -79,8 +84,6 @@ public class SistemaDialogo : MonoBehaviour
         proximaFala = 0;
 
         nodulo = 0;
-
-        botao.onClick.AddListener(() => { ComecarProximaFala(); });
 
         escrevendo = false;
 
@@ -304,6 +307,7 @@ public class SistemaDialogo : MonoBehaviour
         npcDialogo.SetQuestControl();
         npcDialogo = null;
         personagemRosto[1].sprite = null;
+        escrevendo = false;
 
         nodulo = 0;
         proximaFala = 0;
