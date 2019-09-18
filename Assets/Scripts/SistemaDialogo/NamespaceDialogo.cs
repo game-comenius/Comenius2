@@ -124,6 +124,8 @@ namespace GameComenius.Dialogo
                     break;
             }
 
+            personagem.nome = nome;
+
             path = path + nome + "/";
 
             switch (_emocao)
@@ -155,7 +157,6 @@ namespace GameComenius.Dialogo
             {
                 if (obj.GetType() == typeof(Sprite) && obj.name == emocao)
                 {
-                    personagem.nome = nome;
                     personagem.personagem = (Sprite)obj;
 
                     return personagem;
