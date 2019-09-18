@@ -7,7 +7,6 @@ public class QuestScript : MonoBehaviour
 {
     private static List<QuestScript> questList = new List<QuestScript>();
 
-    [HideInInspector]
     public QuestStruct questInfo = new QuestStruct
     {
         isQuest = false,

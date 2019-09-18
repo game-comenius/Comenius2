@@ -23,9 +23,9 @@ public class Player : MonoBehaviour
             DontDestroyOnLoad(gameObject);
 
             Inventory = new Inventory();
-            chosenMedia = new ItemName[3];
-            points = new double[3];
-            totalMissionPoints = 0;
+            //chosenMedia = new ItemName[3];
+            //points = new double[3];
+            //totalMissionPoints = 0;
         }
         else
         {

@@ -331,7 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 18165488}
   questLog: {fileID: 222204535}
-  uiSendoUsada: {fileID: 561471486}
+  uiSendoUsada: {fileID: 0}
 --- !u!1 &439430205
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,15 +438,6 @@ MonoBehaviour:
     - Falar com o diretor na cena do patio pela primeira vez.
     - "Ir do p\xE1tio para a sala de multimeios"
     - Falar con Drica na cena Multimeios
-    - Falar com aluno 0
-    - Falar com aluno 1
-    - Falar com aluno 2
-    - Falar com aluno 3
-    - Falar com aluno 04
-  - descriptions:
-    - falar com jean ao fim da aula
-    - 
-    - 
     - 
     - 
     - 
@@ -547,11 +538,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114503154807306450, guid: 1b6c49b19dad20743b1747f89762fdfb,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 224749702433286852, guid: 1b6c49b19dad20743b1747f89762fdfb,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -645,7 +631,7 @@ Prefab:
     - target: {fileID: 224133778600991500, guid: 1b6c49b19dad20743b1747f89762fdfb,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000010242534
+      value: -0.0000025107634
       objectReference: {fileID: 0}
     - target: {fileID: 224346846980454750, guid: 1b6c49b19dad20743b1747f89762fdfb,
         type: 2}
@@ -660,7 +646,7 @@ Prefab:
     - target: {fileID: 224133778600991500, guid: 1b6c49b19dad20743b1747f89762fdfb,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.00021756192
+      value: -0.00020890127
       objectReference: {fileID: 0}
     - target: {fileID: 114605524550760440, guid: 1b6c49b19dad20743b1747f89762fdfb,
         type: 2}
@@ -690,97 +676,12 @@ Prefab:
     - target: {fileID: 224346846980454750, guid: 1b6c49b19dad20743b1747f89762fdfb,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0.99999976
+      value: 0.9999999
       objectReference: {fileID: 0}
-    - target: {fileID: 114503154807306450, guid: 1b6c49b19dad20743b1747f89762fdfb,
+    - target: {fileID: 223446192694570176, guid: 1b6c49b19dad20743b1747f89762fdfb,
         type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: Sem_Npc
-      objectReference: {fileID: 0}
-    - target: {fileID: 114503154807306450, guid: 1b6c49b19dad20743b1747f89762fdfb,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114503154807306450, guid: 1b6c49b19dad20743b1747f89762fdfb,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 114503154807306450, guid: 1b6c49b19dad20743b1747f89762fdfb,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1531179808255426, guid: 1b6c49b19dad20743b1747f89762fdfb, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1533648897906402, guid: 1b6c49b19dad20743b1747f89762fdfb, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1655371197626812, guid: 1b6c49b19dad20743b1747f89762fdfb, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1883049599350614, guid: 1b6c49b19dad20743b1747f89762fdfb, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1463599110984692, guid: 1b6c49b19dad20743b1747f89762fdfb, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224346846980454750, guid: 1b6c49b19dad20743b1747f89762fdfb,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224346846980454750, guid: 1b6c49b19dad20743b1747f89762fdfb,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 224038509023401578, guid: 1b6c49b19dad20743b1747f89762fdfb,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 224038509023401578, guid: 1b6c49b19dad20743b1747f89762fdfb,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224038509023401578, guid: 1b6c49b19dad20743b1747f89762fdfb,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: -17
-      objectReference: {fileID: 0}
-    - target: {fileID: 224038509023401578, guid: 1b6c49b19dad20743b1747f89762fdfb,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224767882469796202, guid: 1b6c49b19dad20743b1747f89762fdfb,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224767882469796202, guid: 1b6c49b19dad20743b1747f89762fdfb,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 224767882469796202, guid: 1b6c49b19dad20743b1747f89762fdfb,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224767882469796202, guid: 1b6c49b19dad20743b1747f89762fdfb,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 0
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b6c49b19dad20743b1747f89762fdfb, type: 2}
@@ -814,10 +715,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorImage: {fileID: 2800000, guid: 847e56370facd0a4a8530c8fa2b8e8b3, type: 3}
-  offset: {x: 22, y: 4}
+  offset: {x: 0, y: 0}
   select: {fileID: 2800000, guid: 4be23c15a0935a146ad39021b221c63b, type: 3}
   curmode: 0
-  hotspot: {x: 53, y: 10}
+  hotspot: {x: 0, y: 0}
 --- !u!114 &1877534426
 MonoBehaviour:
   m_ObjectHideFlags: 0
