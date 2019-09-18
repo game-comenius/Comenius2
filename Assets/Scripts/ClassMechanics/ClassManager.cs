@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using GameComenius.Dialogo;
 
 public class ClassManager : MonoBehaviour
 {
+    #region Geral
     static public ClassManager classManager { get; private set; }
 
     static private List<StudentScript> students = new List<StudentScript>();
@@ -21,6 +23,10 @@ public class ClassManager : MonoBehaviour
 
     [SerializeField] private Canvas canvas;
 
+    [SerializeField] private Camera mainCamera;
+    #endregion
+
+    #region MomentoAula
     [Header("Class Moment")]
 
     [SerializeField] Text timer;
@@ -54,6 +60,56 @@ public class ClassManager : MonoBehaviour
     private float previousProblemTime = 0;
 
     private float nextProblemTime = 0;
+    #endregion
+
+    [Header("Post-Class Moment")]
+
+    [Tooltip("Os dois primeiros são os generalistas. O resto, em ordem, correspondem a cada momento de aula.")]
+    [SerializeField] private AlunosComentaristas[] alunosComentaristas = new AlunosComentaristas[5];
+
+    [System.Serializable] private class AlunosComentaristas
+    {
+        public StudentScript aluno = null;
+
+        public Vector2Int questIndex = Vector2Int.zero;
+    }
+
+    [System.Serializable] private class DialogoGeneralista
+    {
+        public Vector2 rangeNota = Vector2.zero;
+
+        public Dialogo[] dialogos = new Dialogo[2];
+    }
+
+    [Tooltip("O elemento 0 corresponde a Tier 1, e1 - t2, e2 - t3 e e3 - t4.")]
+    [SerializeField] private DialogoGeneralista[] falasGeneralistas = new DialogoGeneralista[4];
+
+    [System.Serializable] private class FalaSobreMidias
+    {
+        public ItemName item = ItemName.Caderno;
+
+        public Dialogo dialogo = new Dialogo();
+    }
+
+    [System.Serializable] private class FalasSobreMomentos
+    {
+        public FalaSobreMidias[] falaSobreMidias = new FalaSobreMidias[13];
+
+        public Dialogo EncontrarFalaCerta(ItemName item)
+        {
+            foreach (FalaSobreMidias f in falaSobreMidias)
+            {
+                if (f.item == item)
+                {
+                    return f.dialogo;
+                }
+            }
+
+            return null;
+        }
+    }
+
+    [SerializeField] private FalasSobreMomentos[] falasSobreMomentos = new FalasSobreMomentos[3];
 
     private void Awake()
     {
@@ -74,6 +130,34 @@ public class ClassManager : MonoBehaviour
         _timeAcceleration = timeAcceleration;
 
         StartCoroutine(StartClass());
+
+        for (int i = 0; i < problemQuantity.Length; i++) 
+        {
+            problemQuantity[i] = (int)Player.Instance.points[i];
+        }
+
+        for (int i = 0; i < alunosComentaristas.Length; i++)
+        {
+            alunosComentaristas[i].aluno.gameObject.AddComponent<PolygonCollider2D>();
+            NpcDialogo d = alunosComentaristas[i].aluno.gameObject.AddComponent<NpcDialogo>();
+
+            d.questInfo.questIndex = alunosComentaristas[i].questIndex;
+
+            if ( i <= 1)
+            {
+                for (int j = 0; j < falasGeneralistas.Length; j++)
+                {
+                    if (Player.Instance.totalMissionPoints >= falasGeneralistas[j].rangeNota.x && Player.Instance.totalMissionPoints <= falasGeneralistas[j].rangeNota.y)
+                    {
+                        d.dialogoPrincipal = falasGeneralistas[j].dialogos[i];
+                    }
+                }
+            }
+            else
+            {
+                d.dialogoPrincipal = falasSobreMomentos[i - 2].EncontrarFalaCerta(Player.Instance.chosenMedia[i - 2]);
+            }
+        }
     }
 
     static public void AddStundent(StudentScript student)
@@ -86,6 +170,8 @@ public class ClassManager : MonoBehaviour
     private IEnumerator StartClass()
     {
         timer.text = "Iniciando aula";
+
+        GameManager.uiSendoUsada = true;
         
         momentTimer = classWait;
 
@@ -149,6 +235,8 @@ public class ClassManager : MonoBehaviour
         }
 
         timer.text = "Aula terminada";
+
+        GameManager.uiSendoUsada = false; ;
 
         if (EndClass != null)
         {
@@ -225,7 +313,7 @@ public class ClassManager : MonoBehaviour
             }
         }
 
-        Vector3 pos = Camera.main.WorldToScreenPoint(students[n].transform.position + students[n].cloudOffset) + new Vector3(cloud.GetComponent<RectTransform>().rect.width / 2, cloud.GetComponent<RectTransform>().rect.height / 2, 0);
+        Vector3 pos = mainCamera.WorldToScreenPoint(students[n].transform.position + students[n].cloudOffset) + new Vector3(cloud.GetComponent<RectTransform>().rect.width / 2, cloud.GetComponent<RectTransform>().rect.height / 2, 0);
 
         GameObject go = Instantiate(cloud, pos, Quaternion.identity, canvas.transform);
 
