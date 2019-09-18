@@ -7,7 +7,5 @@ public struct QuestStruct
 
     public Vector2Int questIndex;
 
-    public bool isQuestDependent;
-
     public Vector2Int[] questDependencias;
 }

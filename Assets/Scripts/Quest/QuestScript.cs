@@ -7,15 +7,20 @@ public class QuestScript : MonoBehaviour
 {
     private static List<QuestScript> questList = new List<QuestScript>();
 
-    [SerializeField] protected QuestStruct _questInfo = new QuestStruct();
+    [SerializeField] public QuestStruct questInfo = new QuestStruct();
 
-    public QuestStruct questInfo
-    {
-        get
-        {
-            return _questInfo;
-        }
-    }
+    //public QuestStruct questInfo
+    //{
+    //    get
+    //    {
+    //        return _questInfo;
+    //    }
+
+    //    set
+    //    {
+    //        questInfo = value;
+    //    }
+    //}
 
     public UnityEvent questFeita;
 
@@ -40,11 +45,11 @@ public class QuestScript : MonoBehaviour
 
     public void Avaliar()
     {
-        if (_questInfo.isQuestDependent)
+        if (questInfo.questDependencias.Length != 0)
         {
             bool controlador = true;
 
-            foreach (Vector2Int quest in _questInfo.questDependencias)
+            foreach (Vector2Int quest in questInfo.questDependencias)
             {
                 if (!QuestManager.GetQuestControl(quest)) 
                 {
@@ -64,7 +69,7 @@ public class QuestScript : MonoBehaviour
             }
         }
 
-        if (_questInfo.isQuest && QuestManager.GetQuestControl(_questInfo.questIndex))
+        if (questInfo.isQuest && QuestManager.GetQuestControl(questInfo.questIndex))
         {
             questFeita.Invoke();
         }
