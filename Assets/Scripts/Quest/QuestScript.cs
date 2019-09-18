@@ -7,20 +7,12 @@ public class QuestScript : MonoBehaviour
 {
     private static List<QuestScript> questList = new List<QuestScript>();
 
-    [SerializeField] public QuestStruct questInfo = new QuestStruct();
-
-    //public QuestStruct questInfo
-    //{
-    //    get
-    //    {
-    //        return _questInfo;
-    //    }
-
-    //    set
-    //    {
-    //        questInfo = value;
-    //    }
-    //}
+    public QuestStruct questInfo = new QuestStruct
+    {
+        isQuest = false,
+        questIndex = Vector2Int.zero,
+        questDependencias = new Vector2Int[0]
+    };
 
     public UnityEvent questFeita;
 
