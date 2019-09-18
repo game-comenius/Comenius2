@@ -9,6 +9,11 @@ namespace GameComenius.Dialogo
         Lurdinha,
         Drica,
         Jean,
+        Leitura,
+        MeioAmbiente,
+        Madá,
+        Antonia,
+        Alice,
         Diretor
     }
 
@@ -98,6 +103,24 @@ namespace GameComenius.Dialogo
                     break;
                 case Personagens.Lurdinha:
                     nome = "Lurdinha";
+                    break;
+                case Personagens.Jean:
+                    nome = "Jean";
+                    break;
+                case Personagens.Leitura:
+                    nome = "Leitura";
+                    break;
+                case Personagens.MeioAmbiente:
+                    nome = "MeioAmbiente";
+                    break;
+                case Personagens.Madá:
+                    nome = "Madá";
+                    break;
+                case Personagens.Antonia:
+                    nome = "Antonia";
+                    break;
+                case Personagens.Alice:
+                    nome = "Alice";
                     break;
             }
 
