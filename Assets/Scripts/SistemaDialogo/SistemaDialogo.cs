@@ -63,6 +63,8 @@ public class SistemaDialogo : MonoBehaviour
     {
         if (npcDialogo == null) 
         {
+            GameManager.uiSendoUsada = true;
+
             dialogo = _dialogo;
             npcDialogo = _npcDialogoQA;
 
@@ -113,7 +115,10 @@ public class SistemaDialogo : MonoBehaviour
             image.color = opacidade.Desligar();
         }
 
-        falaAtual = dialogo.nodulos[nodulo].falas[proximaFala];
+        if (dialogo.nodulos[nodulo].falas.Length > proximaFala)
+        {
+            falaAtual = dialogo.nodulos[nodulo].falas[proximaFala];
+        }
 
         faladorAtual = Falador.BuscarPolaroideNosAssets(falaAtual.personagem, falaAtual.emocao);
 

@@ -29,11 +29,11 @@ public class StartSceneScript : MonoBehaviour
 
         yield return new WaitUntil(() => operation.isDone);
 
-        operation = SceneManager.LoadSceneAsync(5, LoadSceneMode.Additive);
+        operation = SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
 
         yield return new WaitUntil(() => operation.isDone);
 
-        Scene scene = SceneManager.GetSceneByBuildIndex(5);
+        Scene scene = SceneManager.GetSceneByBuildIndex(1);
 
         SceneManager.UnloadSceneAsync(scene);
 
