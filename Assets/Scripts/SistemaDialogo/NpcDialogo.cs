@@ -9,16 +9,16 @@ public class NpcDialogo : QuestScript
 
     [SerializeField] private float esperaDialogoObrigatorio = 2f;
 
-    public Dialogo dialogoPrincipal = new Dialogo();
+    [SerializeField] private Dialogo dialogoPrincipal = new Dialogo();
 
-    public Dialogo[] dialogosSecundarios = new Dialogo[0];
+    [SerializeField] private Dialogo[] dialogosSecundarios = new Dialogo[1];
 
 
     protected override void Start()
     {
         base.Start();
 
-        if (dialogoObrigatorio && !QuestManager.GetQuestControl(questInfo.questIndex))  
+        if (dialogoObrigatorio && !QuestManager.GetQuestControl(_questInfo.questIndex))  
         {
             GameManager.uiSendoUsada = true;
             StartCoroutine(DialogoObrigatorio());
@@ -29,7 +29,7 @@ public class NpcDialogo : QuestScript
     {
         if (!GameManager.uiSendoUsada)
         {
-            if (!QuestManager.GetQuestControl(questInfo.questIndex))
+            if (!QuestManager.GetQuestControl(_questInfo.questIndex))
             {
                 SistemaDialogo.sistemaDialogo.ComecarDialogo(dialogoPrincipal, this);
             }
@@ -52,7 +52,7 @@ public class NpcDialogo : QuestScript
 
     public void SetQuestControl()
     {
-        QuestManager.SetQuestControl(questInfo.questIndex, true);
+        QuestManager.SetQuestControl(_questInfo.questIndex, true);
         ReavaliarTodasQuests();
     }
 }
