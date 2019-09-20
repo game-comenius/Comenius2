@@ -14,7 +14,9 @@ namespace GameComenius.Dialogo
         Madá,
         Antonia,
         Alice,
-        Diretor
+        Diretor,
+        MariaMontanari,
+        Comenius
     }
 
     public enum Expressao
@@ -130,6 +132,14 @@ namespace GameComenius.Dialogo
                 case Personagens.Alice:
                     nome = "Alice";
                     personagem.nome = "Alice";
+                    break;
+                case Personagens.MariaMontanari:
+                    nome = "MariaMontanari";
+                    personagem.nome = "Maria Montanari";
+                    break;
+                case Personagens.Comenius:
+                    nome = "Comenius";
+                    personagem.nome = "Comenius";
                     break;
             }
 

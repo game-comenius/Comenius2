@@ -35,9 +35,49 @@ public class QuestScript : MonoBehaviour
         questList.Remove(this);
     }
 
+    //retorna true se a quest está apto a ser feita
+    public bool Analise()
+    {
+        if (questInfo.isQuest && QuestManager.GetQuestControl(questInfo.questIndex) && questFeita != null)
+        {
+            return false;
+        }
+        else
+        {
+            if (questInfo.questDependencias.Length != 0)
+            {
+                bool controlador = true;
+
+                foreach (Vector2Int quest in questInfo.questDependencias)
+                {
+                    if (!QuestManager.GetQuestControl(quest))
+                    {
+                        controlador = false;
+                        break;
+                    }
+                }
+
+
+                if (controlador)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+    }
+
     public void Avaliar()
     {
-        if (questInfo.isQuest && QuestManager.GetQuestControl(questInfo.questIndex))
+        if (questInfo.isQuest && QuestManager.GetQuestControl(questInfo.questIndex) && questFeita != null) 
         {
             questFeita.Invoke();
         }

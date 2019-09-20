@@ -5,20 +5,28 @@ using GameComenius.Dialogo;
 
 public class NpcDialogo : QuestScript
 {
-    [SerializeField] private bool dialogoObrigatorio = false;
+    public bool dialogoObrigatorio = false;
 
-    [SerializeField] private float esperaDialogoObrigatorio = 2f;
+    public float esperaDialogoObrigatorio = 2f;
 
     public Dialogo dialogoPrincipal = new Dialogo();
 
     public Dialogo[] dialogosSecundarios = new Dialogo[0];
 
-
     protected override void Start()
     {
         base.Start();
 
-        if (dialogoObrigatorio && !QuestManager.GetQuestControl(questInfo.questIndex))  
+        if (dialogoObrigatorio && Analise())  
+        {
+            GameManager.uiSendoUsada = true;
+            StartCoroutine(DialogoObrigatorio());
+        }
+    }
+
+    public void Restart()
+    {
+        if (dialogoObrigatorio && Analise())
         {
             GameManager.uiSendoUsada = true;
             StartCoroutine(DialogoObrigatorio());

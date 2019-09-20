@@ -62,28 +62,20 @@ public class ClassManager : MonoBehaviour
     private float nextProblemTime = 0;
     #endregion
 
+    #region Momento Pós-Aula
     [Header("Post-Class Moment")]
 
     [Tooltip("Os dois primeiros são os generalistas. O resto, em ordem, correspondem a cada momento de aula.")]
     [SerializeField] private AlunosComentaristas[] alunosComentaristas = new AlunosComentaristas[5];
 
-    [System.Serializable] private class AlunosComentaristas
-    {
-        public StudentScript aluno = null;
-
-        public Vector2Int questIndex = Vector2Int.zero;
-    }
-
-    [System.Serializable] private class DialogoGeneralista
-    {
-        public Vector2 rangeNota = Vector2.zero;
-
-        public Dialogo[] dialogos = new Dialogo[2];
-    }
+    [SerializeField] private AlunosComentaristas professor = new AlunosComentaristas();
 
     [Tooltip("O elemento 0 corresponde a Tier 1, e1 - t2, e2 - t3 e e3 - t4.")]
     [SerializeField] private DialogoGeneralista[] falasGeneralistas = new DialogoGeneralista[4];
 
+    [SerializeField] private FalasSobreMomentos[] falasSobreMomentos = new FalasSobreMomentos[3];
+
+    #region Classes
     [System.Serializable] private class FalaSobreMidias
     {
         public ItemName item = ItemName.Caderno;
@@ -109,7 +101,22 @@ public class ClassManager : MonoBehaviour
         }
     }
 
-    [SerializeField] private FalasSobreMomentos[] falasSobreMomentos = new FalasSobreMomentos[3];
+    [System.Serializable] private class AlunosComentaristas
+    {
+        public AgenteAulaScript aluno = null;
+
+        public Vector2Int questIndex = Vector2Int.zero;
+    }
+
+    [System.Serializable] private class DialogoGeneralista
+    {
+        public Vector2 rangeNota = Vector2.zero;
+
+        [Tooltip("O terceiro diálogo é do professor.")]
+        public Dialogo[] dialogos = new Dialogo[3];
+    }
+    #endregion
+    #endregion
 
     private void Awake()
     {
@@ -136,6 +143,25 @@ public class ClassManager : MonoBehaviour
             problemQuantity[i] = (int)Player.Instance.points[i];
         }
 
+        professor.aluno.gameObject.AddComponent<PolygonCollider2D>();
+        NpcDialogo b = professor.aluno.gameObject.AddComponent<NpcDialogo>();
+
+        b.questInfo.isQuest = true;
+        b.questInfo.questIndex = professor.questIndex;
+
+        b.dialogoObrigatorio = true;
+        b.esperaDialogoObrigatorio = 1f;
+
+        b.enabled = false;
+
+        for (int j = 0; j < falasGeneralistas.Length; j++)
+        {
+            if (Player.Instance.totalMissionPoints >= falasGeneralistas[j].rangeNota.x && Player.Instance.totalMissionPoints <= falasGeneralistas[j].rangeNota.y)
+            {
+                b.dialogoPrincipal = falasGeneralistas[j].dialogos[2];
+            }
+        }
+
         for (int i = 0; i < alunosComentaristas.Length; i++)
         {
             alunosComentaristas[i].aluno.gameObject.AddComponent<PolygonCollider2D>();
@@ -158,7 +184,32 @@ public class ClassManager : MonoBehaviour
             {
                 d.dialogoPrincipal = falasSobreMomentos[i - 2].EncontrarFalaCerta(Player.Instance.chosenMedia[i - 2]);
             }
+
+            d.enabled = false;
         }
+
+        EndClass += (() =>
+        {
+            professor.aluno.gameObject.GetComponent<NpcDialogo>().enabled = true;
+
+            foreach (AlunosComentaristas aluno in alunosComentaristas)
+            {
+                aluno.aluno.gameObject.GetComponent<NpcDialogo>().enabled = true;
+            }
+        });
+    }
+
+    private void OnDestroy()
+    {
+        EndClass -= (() =>
+        {
+            professor.aluno.gameObject.GetComponent<NpcDialogo>().enabled = true;
+
+            foreach (AlunosComentaristas aluno in alunosComentaristas)
+            {
+                aluno.aluno.gameObject.GetComponent<NpcDialogo>().enabled = true;
+            }
+        });
     }
 
     static public void AddStundent(StudentScript student)

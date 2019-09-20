@@ -13,5 +13,17 @@ public enum ItemName
     Jornais,
     Fotografia,
     QuadroNegro,
-    LivroIlustrado
+    LivroIlustrado,
+    CartazComColecaoDePenas,
+    QuadroNegroComEstencil,
+    Mapa,
+    JornaisEResvistas,
+    Revistas,
+    CdECdplayer,
+    Cd,
+    Cdplayer,
+    Gravacao,
+    Polariod,
+    TvVhs,
+    ColecaoDePenas
 }

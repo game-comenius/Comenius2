@@ -43,7 +43,7 @@ public class QuestManager : MonoBehaviour
     //x corresponde à posição no array e y, no bit;
     public static bool GetQuestControl(Vector2Int r_questControlIndex)
     {
-        return ((questControl[r_questControlIndex.x] & 1 << r_questControlIndex.y) == 1 << r_questControlIndex.y);
+        return ((questControl[r_questControlIndex.x] & (1 << r_questControlIndex.y)) == 1 << r_questControlIndex.y);
     }
 
     public static void SetQuestControl(Vector2Int r_questControlIndex, bool questFeita)
