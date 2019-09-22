@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEditor;
+using System.Collections.Generic;
 
 namespace GameComenius.Dialogo
 {
@@ -64,6 +65,13 @@ namespace GameComenius.Dialogo
     {
         public string resumo = "";
         public int conexao = 0;
+
+        public QuestStruct questInfo = new QuestStruct
+        {
+            isQuest = false,
+            questIndex = Vector2Int.zero,
+            questDependencias = new Vector2Int[0]
+        };
     }
     
     [Serializable]
@@ -72,13 +80,63 @@ namespace GameComenius.Dialogo
         public Fala[] falas = new Fala[0];
 
         [Tooltip("Resposta conter:\n" + "0 resposta indica que o dialogo será encerrado;\n" + "1 resposta indica que não haverá escolha e que este nodolo deve levar a outro;\n" + "2+ respostas indica que haverá escolha e cada escolha pode levar a um novo nodolo.")]
-        public Resposta[] respostas = new Resposta[0];
+        public List<Resposta> respostas = new List<Resposta>();
     }
 
     [Serializable]
     public class Dialogo
     {
         public DialogoNodulo[] nodulos = new DialogoNodulo[0];
+
+        public Dialogo Clone()
+        {
+            Dialogo dialogo = new Dialogo();
+
+            dialogo.nodulos = new DialogoNodulo[nodulos.Length];
+
+            for (int i = 0; i < dialogo.nodulos.Length; i++)
+            {
+                dialogo.nodulos[i] = new DialogoNodulo
+                {
+                    falas = new Fala[nodulos[i].falas.Length]
+                };
+
+                for (int j = 0; j < dialogo.nodulos[i].falas.Length; j++)
+                {
+                    dialogo.nodulos[i].falas[j] = new Fala
+                    {
+                        personagem = nodulos[i].falas[j].personagem,
+                        emocao = nodulos[i].falas[j].emocao,
+                        fala = nodulos[i].falas[j].fala
+                    };
+                }
+
+                dialogo.nodulos[i].respostas = new List<Resposta>();
+                dialogo.nodulos[i].respostas.Capacity = nodulos[i].respostas.Count;
+
+                for (int j = 0; j < dialogo.nodulos[i].respostas.Capacity; j++)
+                {
+                    dialogo.nodulos[i].respostas.Add(new Resposta());
+
+                    dialogo.nodulos[i].respostas[j] = new Resposta
+                    {
+                        personagem = nodulos[i].respostas[j].personagem,
+                        emocao = nodulos[i].respostas[j].emocao,
+                        resumo = nodulos[i].respostas[j].resumo,
+                        fala = nodulos[i].respostas[j].fala,
+                        conexao = nodulos[i].respostas [j].conexao,
+                        questInfo = new QuestStruct
+                        {
+                            isQuest = nodulos[i].respostas[j].questInfo.isQuest,
+                            questIndex = nodulos[i].respostas[j].questInfo.questIndex,
+                            questDependencias = nodulos[i].respostas[j].questInfo.questDependencias
+                        }
+                    };
+                }
+            }
+
+            return dialogo;
+        }
     }
 
     [Serializable]

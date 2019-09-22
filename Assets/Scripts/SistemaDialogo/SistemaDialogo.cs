@@ -66,11 +66,27 @@ public class SistemaDialogo : MonoBehaviour
 
     public void ComecarDialogo(Dialogo _dialogo, NpcDialogo _npcDialogoQA)
     {
-        if (npcDialogo == null) 
+        if (npcDialogo == null && _dialogo != null && _npcDialogoQA != null) 
         {
             GameManager.uiSendoUsada = true;
 
             dialogo = _dialogo;
+
+            for (int i = 0; i < dialogo.nodulos.Length; i++)
+            {
+                for (int j = 0; j < dialogo.nodulos[i].respostas.Count; j++)
+                {
+                    for (int k = 0; k < dialogo.nodulos[i].respostas[j].questInfo.questDependencias.Length; k++)
+                    {
+                        if (!QuestManager.GetQuestControl(dialogo.nodulos[i].respostas[j].questInfo.questDependencias[k]))
+                        {
+                            dialogo.nodulos[i].respostas.RemoveAt(j);
+                            j--;
+                        }
+                    }
+                }
+            }
+
             npcDialogo = _npcDialogoQA;
 
             InicializarDialogo();
@@ -207,7 +223,7 @@ public class SistemaDialogo : MonoBehaviour
         {
             botao.onClick.RemoveAllListeners();
 
-            switch (dialogo.nodulos[nodulo].respostas.Length)
+            switch (dialogo.nodulos[nodulo].respostas.Count)
             {
                 case 0:
                     botao.onClick.AddListener(() => 
@@ -243,7 +259,7 @@ public class SistemaDialogo : MonoBehaviour
     {
         List<string> opcoes = new List<string>();
 
-        for (int i = 0; i < dialogo.nodulos[nodulo].respostas.Length; i++)
+        for (int i = 0; i < dialogo.nodulos[nodulo].respostas.Count; i++)
         {
             opcoes.Add(dialogo.nodulos[nodulo].respostas[i].resumo);            
         }
@@ -279,6 +295,11 @@ public class SistemaDialogo : MonoBehaviour
         falaAtual.personagem = dialogo.nodulos[nodulo].respostas[dropdownIndex].personagem;
         falaAtual.emocao = dialogo.nodulos[nodulo].respostas[dropdownIndex].emocao;
         falaAtual.fala = dialogo.nodulos[nodulo].respostas[dropdownIndex].fala;
+
+        if (dialogo.nodulos[nodulo].respostas[dropdownIndex].questInfo.isQuest)
+        {
+            QuestManager.SetQuestControl(dialogo.nodulos[nodulo].respostas[dropdownIndex].questInfo.questIndex, true);
+        }
 
         faladorAtual = Falador.BuscarPolaroideNosAssets(falaAtual.personagem, falaAtual.emocao);
         npcNome.text = faladorAtual.nome;

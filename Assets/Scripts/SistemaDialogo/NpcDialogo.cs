@@ -37,16 +37,16 @@ public class NpcDialogo : QuestScript
     {
         if (!GameManager.uiSendoUsada)
         {
-            if (!QuestManager.GetQuestControl(questInfo.questIndex))
+            if (!QuestManager.GetQuestControl(questInfo.questIndex) || !questInfo.isQuest)
             {
-                SistemaDialogo.sistemaDialogo.ComecarDialogo(dialogoPrincipal, this);
+                SistemaDialogo.sistemaDialogo.ComecarDialogo(dialogoPrincipal.Clone(), this);
             }
             else if (dialogosSecundarios.Length > 0) 
             {
                 int i = Random.Range(0, dialogosSecundarios.Length);
 
                 SistemaDialogo.sistemaDialogo.dialogo = dialogosSecundarios[i];
-                SistemaDialogo.sistemaDialogo.ComecarDialogo(dialogosSecundarios[i], this);
+                SistemaDialogo.sistemaDialogo.ComecarDialogo(dialogosSecundarios[i].Clone(), this);
             }
         }
     }
