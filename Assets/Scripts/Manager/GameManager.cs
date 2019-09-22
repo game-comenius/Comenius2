@@ -6,10 +6,6 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager _gameManager;
 
-    //public int textOnScene = 0;
-
-    //public bool findOneText = false;
-
     public static GameManager gameManager
     {
         get
@@ -26,12 +22,14 @@ public class GameManager : MonoBehaviour
         {
             return _uiSendoUsada;
         }
-
-        set
-        {
-            _uiSendoUsada = value;
-        }
     }
+
+
+    public delegate void UsoUI();
+
+    public static event UsoUI uiSendoUsadaEvent;
+
+    public static event UsoUI uiNaoSendoUsadaEvent;
 
     private void Awake()
     {
@@ -44,28 +42,36 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Tem 2 GameManagers");
         }
+
+        uiSendoUsadaEvent += () => { _uiSendoUsada = true; };
+
+        uiNaoSendoUsadaEvent += () => { _uiSendoUsada = false; };
     }
 
-    //private void OnDrawGizmosSelected()
-    //{
-    //    textOnScene = FindObjectsOfType<UnityEngine.UI.Text>().Length;
+    private void OnDestroy()
+    {
+        uiSendoUsadaEvent -= () => { _uiSendoUsada = true; };
 
-    //    if (findOneText && textOnScene != 0) 
-    //    {
-    //        GameObject go = FindObjectsOfType<UnityEngine.UI.Text>()[0].gameObject;
+        uiNaoSendoUsadaEvent -= () => { _uiSendoUsada = false; };
+    }
 
-    //        string path = go.name;
+    public static void UISendoUsada()
+    {
+        uiSendoUsadaEvent();
+    }
 
-    //        while (go.transform.root != go.transform)
-    //        {
-    //            go = go.transform.parent.gameObject;
+    public static void UINaoSendoUsada()
+    {
+        uiNaoSendoUsadaEvent();
+    }
 
-    //            path = go.name + " -> " + path;
-    //        }
+    public void UISendoUsadaParaBotao()
+    {
+        uiSendoUsadaEvent();
+    }
 
-    //        findOneText = false;
-
-    //        Debug.Log(path);
-    //    }
-    //}
+    public void UINaoSendoUsadaParaBotao()
+    {
+        uiNaoSendoUsadaEvent();
+    }
 }

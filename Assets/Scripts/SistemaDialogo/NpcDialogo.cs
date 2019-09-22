@@ -19,7 +19,7 @@ public class NpcDialogo : QuestScript
 
         if (dialogoObrigatorio && Analise())  
         {
-            GameManager.uiSendoUsada = true;
+            GameManager.UISendoUsada();
             StartCoroutine(DialogoObrigatorio());
         }
     }
@@ -28,7 +28,7 @@ public class NpcDialogo : QuestScript
     {
         if (dialogoObrigatorio && Analise())
         {
-            GameManager.uiSendoUsada = true;
+            GameManager.UISendoUsada();
             StartCoroutine(DialogoObrigatorio());
         }
     }

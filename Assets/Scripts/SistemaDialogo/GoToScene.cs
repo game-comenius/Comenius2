@@ -9,7 +9,6 @@ public class GoToScene : MonoBehaviour
 
     public void IrParaCena()
     {
-        GameManager.uiSendoUsada = true;
         SceneManager.LoadScene(sceneIndex);
     }
 }

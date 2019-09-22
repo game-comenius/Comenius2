@@ -223,7 +223,7 @@ public class ClassManager : MonoBehaviour
     {
         timer.text = "Iniciando aula";
 
-        GameManager.uiSendoUsada = true;
+        GameManager.UISendoUsada();
         
         momentTimer = classWait;
 
@@ -288,7 +288,7 @@ public class ClassManager : MonoBehaviour
 
         timer.text = "Aula terminada";
 
-        GameManager.uiSendoUsada = false; ;
+        GameManager.UINaoSendoUsada();
 
         if (EndClass != null)
         {

@@ -69,7 +69,7 @@ public class SistemaDialogo : MonoBehaviour
     {
         if (npcDialogo == null && _dialogo != null && _npcDialogoQA != null) 
         {
-            GameManager.uiSendoUsada = true;
+            GameManager.UISendoUsada();
 
             dialogo = _dialogo;
 
@@ -336,6 +336,6 @@ public class SistemaDialogo : MonoBehaviour
 
         sistemaDialogoUI.SetActive(false);
 
-        GameManager.uiSendoUsada = false;
+        GameManager.UINaoSendoUsada();
     }
 }
