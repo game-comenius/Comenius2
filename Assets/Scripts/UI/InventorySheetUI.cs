@@ -15,8 +15,16 @@ public class InventorySheetUI : MonoBehaviour {
 
     private Inventory inventory;
 
-    public void Start () {
+    public void Start ()
+    {
         itemSlots = new List<GameObject>();
+
+        StartCoroutine(FindPlayer());
+    }
+
+    private IEnumerator FindPlayer()
+    {
+        yield return new WaitWhile(() => Player.Instance == null);
 
         inventory = Player.Instance.Inventory;
 
