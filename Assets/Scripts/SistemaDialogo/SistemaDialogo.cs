@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using GameComenius.Dialogo;
+using TMPro;
 
 public class SistemaDialogo : MonoBehaviour
 {
@@ -11,13 +12,13 @@ public class SistemaDialogo : MonoBehaviour
     #region Referências para os GameObject na UI
     [SerializeField] private GameObject sistemaDialogoUI;
 
-    [SerializeField] private Text textoDialogo;
+    [SerializeField] private TMP_Text textoDialogo;
 
-    [SerializeField] private Text npcNome;
+    [SerializeField] private TMP_Text npcNome;
 
     [SerializeField] private Button botao;
 
-    [SerializeField] private Dropdown dropdown;
+    [SerializeField] private TMP_Dropdown  dropdown;
 
     [Tooltip("O primeiro rosto tem que ser SEMPRE o da Lurdinha.")]
     public Image[] personagemRosto = new Image[2];
