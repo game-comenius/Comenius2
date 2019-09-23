@@ -31,7 +31,8 @@ public class PlanManager : MonoBehaviour {
         selectedMoment = null;
     }
 
-    public void ConfirmPlan() {
+    public void ConfirmPlan()
+    {
         chosenMedia[0] = GameObject.Find("Midia1").GetComponent<MidiaMomento>().getItem();
         chosenMedia[1] = GameObject.Find("Midia2").GetComponent<MidiaMomento>().getItem();
         chosenMedia[2] = GameObject.Find("Midia3").GetComponent<MidiaMomento>().getItem();
@@ -39,8 +40,11 @@ public class PlanManager : MonoBehaviour {
         points[0] = GameObject.Find("Midia1").GetComponent<MidiaMomento>().Points();
         points[1] = GameObject.Find("Midia2").GetComponent<MidiaMomento>().Points();
         points[2] = GameObject.Find("Midia3").GetComponent<MidiaMomento>().Points();
+
         totalMissionPoints = points[0] + points[1] + points[2];
+
         Debug.Log("pontuação da missão: " + totalMissionPoints);
+
         Player.Instance.chosenMedia = chosenMedia;
         Player.Instance.points = points;
         Player.Instance.totalMissionPoints = totalMissionPoints;

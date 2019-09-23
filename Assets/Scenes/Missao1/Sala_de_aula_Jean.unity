@@ -1574,6 +1574,11 @@ MonoBehaviour:
   - {x: 900, y: 60, z: 20}
   - {x: 900, y: 20, z: 20}
   - {x: 900, y: 20, z: 60}
+  traducaoPontoProblema:
+  - {x: 10, y: 0}
+  - {x: 8, y: 1}
+  - {x: 7, y: 2}
+  - {x: 0, y: 3}
   problemQuantity: 030000000200000001000000
   timeAcceleration: 300
   problemTimeAcceleration: 6
@@ -1593,8 +1598,57 @@ MonoBehaviour:
   professor:
     aluno: {fileID: 2029659088}
     questIndex: {x: 1, y: 3}
+    falasGeneralistas:
+    - rangeNota: {x: 26, y: 30}
+      dialogos:
+      - nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 2
+            fala: 
+          - personagem: 2
+            emocao: 4
+            fala: "A aula foi fant\xE1stica, consegui ver o interesse nos olhos dos
+              alunos, Lurdinha! Muito obrigado pela sua ajuda!"
+          respostas: []
+    - rangeNota: {x: 21, y: 25}
+      dialogos:
+      - nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 2
+            fala: 
+          - personagem: 2
+            emocao: 2
+            fala: Excelente trabalho, minha filha, acho que a aula foi muito bem!
+              Muito obrigado!
+          respostas: []
+    - rangeNota: {x: 14, y: 20}
+      dialogos:
+      - nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 2
+            fala: 
+          - personagem: 2
+            emocao: 2
+            fala: "Apesar de algumas distra\xE7\xF5es essa foi uma boa aula. Obrigado
+              pela ajuda, Lurdinha."
+          respostas: []
+    - rangeNota: {x: 0, y: 10}
+      dialogos:
+      - nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 2
+            emocao: 0
+            fala: "Ahn\u2026 Acho que aula poderia ter ido melhor, minha filha\u2026
+              De qualquer forma obrigado pelo seu trabalho. "
+          respostas: []
   falasGeneralistas:
-  - rangeNota: {x: 0, y: 0}
+  - rangeNota: {x: 26, y: 30}
     dialogos:
     - nodulos:
       - falas:
@@ -1616,17 +1670,7 @@ MonoBehaviour:
           fala: "Essa foi a melhor aula do ano! Na pr\xF3xima ser\xE1 que vamos aprender
             mais sobre os p\xE1ssaros?"
         respostas: []
-    - nodulos:
-      - falas:
-        - personagem: 0
-          emocao: 2
-          fala: 
-        - personagem: 2
-          emocao: 4
-          fala: "A aula foi fant\xE1stica, consegui ver o interesse nos olhos dos
-            alunos, Lurdinha! Muito obrigado pela sua ajuda!"
-        respostas: []
-  - rangeNota: {x: 1, y: 1}
+  - rangeNota: {x: 21, y: 25}
     dialogos:
     - nodulos:
       - falas:
@@ -1647,17 +1691,7 @@ MonoBehaviour:
           fala: "Foi divertida a aula! N\xE3o achei que ia gostar muito, mas acabei
             me surpreendendo."
         respostas: []
-    - nodulos:
-      - falas:
-        - personagem: 0
-          emocao: 2
-          fala: 
-        - personagem: 2
-          emocao: 2
-          fala: Excelente trabalho, minha filha, acho que a aula foi muito bem! Muito
-            obrigado!
-        respostas: []
-  - rangeNota: {x: 2, y: 2}
+  - rangeNota: {x: 14, y: 20}
     dialogos:
     - nodulos:
       - falas:
@@ -1677,17 +1711,7 @@ MonoBehaviour:
           emocao: 1
           fala: A aula foi boa, mas fiquei com sono em alguns momentos...
         respostas: []
-    - nodulos:
-      - falas:
-        - personagem: 0
-          emocao: 2
-          fala: 
-        - personagem: 2
-          emocao: 2
-          fala: "Apesar de algumas distra\xE7\xF5es essa foi uma boa aula. Obrigado
-            pela ajuda, Lurdinha."
-        respostas: []
-  - rangeNota: {x: 3, y: 3}
+  - rangeNota: {x: 0, y: 10}
     dialogos:
     - nodulos:
       - falas:
@@ -1706,16 +1730,6 @@ MonoBehaviour:
         - personagem: 2
           emocao: 1
           fala: "Que aula chata, at\xE9 dormi em alguns momentos."
-        respostas: []
-    - nodulos:
-      - falas:
-        - personagem: 0
-          emocao: 2
-          fala: 
-        - personagem: 2
-          emocao: 0
-          fala: "Ahn\u2026 Acho que aula poderia ter ido melhor, minha filha\u2026
-            De qualquer forma obrigado pelo seu trabalho. "
         respostas: []
   falasSobreMomentos:
   - falaSobreMidias:

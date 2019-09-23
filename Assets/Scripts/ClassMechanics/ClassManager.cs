@@ -37,6 +37,9 @@ public class ClassManager : MonoBehaviour
     [Tooltip ("A componente \"X\" se refere à duração de cada momento da aula, \"Y\" ao  tempo que se tem que esperar para surgir o primeiro problema e \"Z\" ao tempo que tem que sobrar quando surgir o último problema. Tudo em segundos")]
     [SerializeField] private Vector3[] momentsTime = new Vector3[3];
 
+    [Tooltip ("x é o ponto e y é a quantidade de problemas")]
+    [SerializeField] private Vector2Int[] traducaoPontoProblema = new Vector2Int[4];
+
     [Tooltip("Se refere a quantidade de problemas cada momento da aula terá.")]
     [SerializeField] private int[] problemQuantity = new int[3];
 
@@ -68,7 +71,7 @@ public class ClassManager : MonoBehaviour
     [Tooltip("Os dois primeiros são os generalistas. O resto, em ordem, correspondem a cada momento de aula.")]
     [SerializeField] private AlunosComentaristas[] alunosComentaristas = new AlunosComentaristas[5];
 
-    [SerializeField] private AlunosComentaristas professor = new AlunosComentaristas();
+    [SerializeField] private ComentarioProfessor professor = new ComentarioProfessor();
 
     [Tooltip("O elemento 0 corresponde a Tier 1, e1 - t2, e2 - t3 e e3 - t4.")]
     [SerializeField] private DialogoGeneralista[] falasGeneralistas = new DialogoGeneralista[4];
@@ -76,6 +79,7 @@ public class ClassManager : MonoBehaviour
     [SerializeField] private FalasSobreMomentos[] falasSobreMomentos = new FalasSobreMomentos[3];
 
     #region Classes
+
     [System.Serializable] private class FalaSobreMidias
     {
         public ItemName item = ItemName.Caderno;
@@ -101,6 +105,11 @@ public class ClassManager : MonoBehaviour
         }
     }
 
+    [System.Serializable] private class ComentarioProfessor : AlunosComentaristas
+    {
+        [SerializeField] public DialogoGeneralista[] falasGeneralistas = new DialogoGeneralista[4];
+    }
+
     [System.Serializable] private class AlunosComentaristas
     {
         public AgenteAulaScript aluno = null;
@@ -112,8 +121,7 @@ public class ClassManager : MonoBehaviour
     {
         public Vector2 rangeNota = Vector2.zero;
 
-        [Tooltip("O terceiro diálogo é do professor.")]
-        public Dialogo[] dialogos = new Dialogo[3];
+        public Dialogo[] dialogos = new Dialogo[2];
     }
     #endregion
     #endregion
@@ -140,7 +148,7 @@ public class ClassManager : MonoBehaviour
 
         for (int i = 0; i < problemQuantity.Length; i++) 
         {
-            problemQuantity[i] = (int)Player.Instance.points[i];
+            problemQuantity[i] = TraduzirPontoProblema((int)Player.Instance.points[i]);
         }
 
         professor.aluno.gameObject.AddComponent<PolygonCollider2D>();
@@ -154,11 +162,11 @@ public class ClassManager : MonoBehaviour
 
         b.enabled = false;
 
-        for (int j = 0; j < falasGeneralistas.Length; j++)
+        for (int j = 0; j < professor.falasGeneralistas.Length; j++)
         {
             if (Player.Instance.totalMissionPoints >= falasGeneralistas[j].rangeNota.x && Player.Instance.totalMissionPoints <= falasGeneralistas[j].rangeNota.y)
             {
-                b.dialogoPrincipal = falasGeneralistas[j].dialogos[2];
+                b.dialogoPrincipal = falasGeneralistas[j].dialogos[0].Clone();
             }
         }
 
@@ -176,13 +184,13 @@ public class ClassManager : MonoBehaviour
                 {
                     if (Player.Instance.totalMissionPoints >= falasGeneralistas[j].rangeNota.x && Player.Instance.totalMissionPoints <= falasGeneralistas[j].rangeNota.y)
                     {
-                        d.dialogoPrincipal = falasGeneralistas[j].dialogos[i];
+                        d.dialogoPrincipal = falasGeneralistas[j].dialogos[i].Clone();
                     }
                 }
             }
             else
             {
-                d.dialogoPrincipal = falasSobreMomentos[i - 2].EncontrarFalaCerta(Player.Instance.chosenMedia[i - 2]);
+                d.dialogoPrincipal = falasSobreMomentos[i - 2].EncontrarFalaCerta(Player.Instance.chosenMedia[i - 2]).Clone();
             }
 
             d.enabled = false;
@@ -308,8 +316,6 @@ public class ClassManager : MonoBehaviour
 
         t = Random.Range(tmin, t); //É gerado o número de segundos até o próximo problema.
 
-        Debug.Log(t);
-
         //É somado o tempo de quando surgiu o problema anterior (previousProblemTime) - deve ser um tempo atual ou o  tempo que se tem que esperar para surgir o primeiro problema - 
         //para se ter o tempo do próximo problema.
         t += previousProblemTime;
@@ -388,5 +394,20 @@ public class ClassManager : MonoBehaviour
         {
             _timeAcceleration = timeAcceleration;
         }
+    }
+
+    private int TraduzirPontoProblema(int ponto)
+    {
+        for (int i = 0; i < traducaoPontoProblema.Length; i++)
+        {
+            if (ponto == traducaoPontoProblema [i].x)
+            {
+                return traducaoPontoProblema[i].y;
+            }
+        }
+
+        Debug.Log("Pontuação não tem quantidade de problema");
+
+        return 3;
     }
 }

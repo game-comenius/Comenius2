@@ -35,6 +35,13 @@ public class QuestScript : MonoBehaviour
         questList.Remove(this);
     }
 
+    public void CompletarQuest()
+    {
+        QuestManager.SetQuestControl(questInfo.questIndex, true);
+
+        ReavaliarTodasQuests();
+    }
+
     //retorna true se a quest está apto a ser feita
     public bool Analise()
     {

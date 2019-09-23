@@ -1,47 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-//public class Plan : MonoBehaviour
-//{
-//    [SerializeField] GameObject planejamentoUi;
-
-//    private Vector2 mousePosition;
-
-//    [Header("Gizmos")]
-
-//    [SerializeField] bool drawClickableArea;
-
-//    private void Update()
-//    {
-//        if (Input.GetMouseButtonUp(0)) 
-//        {
-//            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-//            //verificar se o mouse esta sobre o sprite e, se tiver, ativar o UI do planejamento
-
-//            if ((Mathf.Abs(transform.position.x - mousePosition.x) < GetComponent<SpriteRenderer>().sprite.bounds.extents.x) && (Mathf.Abs(transform.position.y - mousePosition.y) < GetComponent<SpriteRenderer>().sprite.bounds.extents.y))
-//            {
-//                planejamentoUi.SetActive(true);
-//            }
-//        }
-//    }
-
-//    private void OnDrawGizmos()
-//    {
-//        if (drawClickableArea)
-//        {
-//            Gizmos.color = new Color (Color.blue.r, Color.blue.g, Color.blue.b, 0.3f);
-
-//            Gizmos.DrawCube(transform.position, 2 * GetComponent<SpriteRenderer>().sprite.bounds.extents);
-//        }
-//    }
-//}
-
+using UnityEngine.UI;
 
 public class Plan : MonoBehaviour
 {
     [SerializeField] GameObject planejamentoUi;
+
+    [SerializeField] private Button confirmarPlan;
 
     [SerializeField] [Range(0, 10)] float distFromPlayer;
 
@@ -49,13 +15,24 @@ public class Plan : MonoBehaviour
 
     [Header("Gizmos")]
 
-    [SerializeField] bool drawClickableArea;
-
     [SerializeField] bool drawDistFromPlayer;
 
     private void Start()
     {
-        StartCoroutine(VerifyClick());
+        confirmarPlan.onClick.AddListener(() => GameManager.UINaoSendoUsada());
+
+        //StartCoroutine(VerifyClick());
+    }
+
+
+    private void OnMouseUp()
+    {
+        if (!GameManager.uiSendoUsada)
+        {
+            planejamentoUi.SetActive(true);
+
+            GameManager.UISendoUsada();
+        }
     }
 
     private IEnumerator VerifyClick()
@@ -123,12 +100,6 @@ public class Plan : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (drawClickableArea)
-        {
-            Gizmos.color = new Color(Color.blue.r, Color.blue.g, Color.blue.b, 0.3f);
-
-            Gizmos.DrawCube(transform.position, 2 * GetComponent<SpriteRenderer>().sprite.bounds.extents);
-        }
         if (drawDistFromPlayer)
         {
             Gizmos.color = Color.red;
