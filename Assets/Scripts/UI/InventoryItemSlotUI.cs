@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class InventoryItemSlotUI : MonoBehaviour, IPointerClickHandler {
 
-    private static Image enabledItemBorder;
+    //private static Image enabledItemBorder;
 
     protected Item myItem;
 
@@ -30,10 +30,10 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerClickHandler {
     public virtual void OnPointerClick(PointerEventData eventData)
     {
         // Desabilitar o último destaque de slot de item
-        if (enabledItemBorder) enabledItemBorder.enabled = false;
+        //if (enabledItemBorder) enabledItemBorder.enabled = false;
         // Habilitar o destaque para este item
-        enabledItemBorder = transform.GetChild(0).GetComponent<Image>();
-        enabledItemBorder.enabled = true;
+        //enabledItemBorder = transform.GetChild(0).GetComponent<Image>();
+        //enabledItemBorder.enabled = true;
 
         // Colocar a descrição na caixa de descrição
         DescriptionSlot.GetComponent<Text>().text = myItem.Description;
