@@ -1,0 +1,361 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1266891186796208}
+  m_IsPrefabAsset: 1
+--- !u!1 &1266891186796208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4937365919288762}
+  - component: {fileID: 212721867874743362}
+  - component: {fileID: 61816541737890664}
+  - component: {fileID: 114643760213871238}
+  - component: {fileID: 114560106354944180}
+  m_Layer: 0
+  m_Name: JeanSalaProfessores
+  m_TagString: Diretor
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4937365919288762
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266891186796208}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.68, y: -0.63, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61816541737890664
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266891186796208}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.05}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.86013985, y: 2.013986}
+    newSize: {x: 6.02, y: 14.44}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.5, y: 14.5}
+  m_EdgeRadius: 0
+--- !u!114 &114560106354944180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266891186796208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471d7830f5edfe04598f66fa78a9a6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questInfo:
+    isQuest: 0
+    questIndex: {x: 0, y: 0}
+    questDependencias:
+    - {x: 1, y: 1}
+  questFeita:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasFeitas:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1266891186796208}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasNaoFeitas:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114643760213871238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266891186796208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questInfo:
+    isQuest: 1
+    questIndex: {x: 0, y: 4}
+    questDependencias:
+    - {x: 0, y: 1}
+  questFeita:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114643760213871238}
+        m_MethodName: DestroirObjeto
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 114643760213871238}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasFeitas:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasNaoFeitas:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dialogoObrigatorio: 1
+  esperaDialogoObrigatorio: 1
+  dialogoPrincipal:
+    nodulos:
+    - falas:
+      - personagem: 0
+        emocao: 2
+        fala: 
+      - personagem: 2
+        emocao: 0
+        fala: "Ol\xE1, Lurdinha!  Tudo bem? Sou o professor Jean, dou aula de ci\xEAncias
+          aqui na escola e j\xE1 estou nessa vida faz algum tempo. Mas esse neg\xF3cio
+          de m\xEDdias sempre foi complicado pra mim... \r\n"
+      - personagem: 0
+        emocao: 0
+        fala: "Ah, professor, muito prazer, estou muito alegre em poder te ajudar!
+          Me fale um pouco sobre a sua aula e assim vou poder pensar quais s\xE3o
+          as m\xEDdias mais adequadas para a sua proposta.\r\n"
+      - personagem: 2
+        emocao: 2
+        fala: "Claro, minha filha\u2026 Hoje vou dar uma aula sobre p\xE1ssaros. Vamos
+          falar sobre sua anatomia: corpo e cor. Tamb\xE9m quero falar sobre aspectos
+          do comportamento, como: canto, habitat, ciclo reprodutivo e intera\xE7\xE3o
+          social."
+      - personagem: 2
+        emocao: 0
+        fala: "Seria interessante que os alunos pudessem usar as m\xEDdias para perceber
+          melhor todas essas caracter\xEDsticas. Tenho certeza que assim a aula pode
+          ficar muito mais interessante e divertida do que aquela que eu daria sem
+          a sua ajuda.\r\n"
+      - personagem: 0
+        emocao: 0
+        fala: "Espero que eu realmente consiga ajudar o senhor, professor. Voc\xEA
+          acha que toda e qualquer m\xEDdia \xE9 adequada para os seus alunos?\r\n"
+      - personagem: 2
+        emocao: 4
+        fala: "Ah... bem lembrado! A turma \xE9 dos anos iniciais do ensino fundamental,
+          ent\xE3o, segundo as minhas pesquisas, as crian\xE7as dessa idade t\xEAm
+          mais dificuldade de assimilar do que dos anos finais. Espero que voc\xEA
+          leve isso em considera\xE7\xE3o.  \r\n"
+      - personagem: 0
+        emocao: 2
+        fala: "Muito bem, vou levar isso em conta! Me conte um pouco mais sobre o
+          seu planejamento, assim vou poder escolher as melhores m\xEDdias para cada
+          momento de sua aula!"
+      - personagem: 2
+        emocao: 4
+        fala: "Vou dividir a minha aula em tr\xEAs momentos, no primeiro pretendo
+          apresentar as caracter\xEDsticas mais gerais dos p\xE1ssaros, por isso vou
+          realizar uma aula expositiva.\r\n"
+      - personagem: 2
+        emocao: 4
+        fala: "Na segunda parte quero que eles realizem uma atividade.\r\n"
+      - personagem: 2
+        emocao: 4
+        fala: "Para encerrar, quero falar sobre os p\xE1ssaros locais e de cada regi\xE3o,
+          para isso vou fazer mais uma exposi\xE7\xE3o de conte\xFAdo. "
+      - personagem: 2
+        emocao: 4
+        fala: "Eu acredito que a melhor forma de um aluno equilibrar o conte\xFAdo
+          \xE9 quando ele se coloca em uma posi\xE7\xE3o ativa no processo de aprendizagem,
+          ent\xE3o a minha escolha vai ser manter o agrupamento individual em todos
+          os momentos.\r\n"
+      - personagem: 0
+        emocao: 0
+        fala: "Perfeito! Estou animada para come\xE7ar a procurar pelas m\xEDdias
+          que vamos usar em sua aula!\r\n"
+      - personagem: 2
+        emocao: 2
+        fala: "Claro, qualquer d\xFAvida volte aqui e venha falar comigo que eu posso
+          aprofundar um pouco mais sobre os meus objetivos para essa aula. Ah, e tamb\xE9m
+          assim que voc\xEA estiver pronta confirme as suas escolhas no livro do planejamento,
+          que est\xE1 na mesa ao lado. Boa sorte! \r\n"
+      respostas: []
+  dialogosSecundarios:
+  - nodulos:
+    - falas:
+      - personagem: 0
+        emocao: 4
+        fala: 
+      - personagem: 0
+        emocao: 2
+        fala: " Professor, voc\xEA pode me falar mais um pouco a respeito da sua pesquisa
+          sobre a aprendizagem das crian\xE7as? "
+      - personagem: 2
+        emocao: 2
+        fala: "Claro! Vou explicar mais da minha pesquisa com um exemplo. Vamos supor
+          que voc\xEA mostre para uma crian\xE7a nesse est\xE1gio de desenvolvimento,
+          dois copos que comportem o mesmo volume, um mais fino s\xF3 que mais alto
+          e outro mais grosso s\xF3 que mais baixo."
+      - personagem: 2
+        emocao: 2
+        fala: "Cada crian\xE7a pode perceber de maneira diferente qual dos dois copos
+          tem mais \xE1gua, j\xE1 que essa capacidade n\xE3o est\xE1 plenamente desenvolvida
+          nessa idade."
+      - personagem: 0
+        emocao: 2
+        fala: "Entendi, que interessante. E as crian\xE7as da sua turma teriam dificuldade
+          com o qu\xEA?"
+      - personagem: 2
+        emocao: 0
+        fala: "Ah, uma coisa que pode ser complicada \xE9 a pesquisa em livros mais
+          rebuscados como enciclop\xE9dias, dicion\xE1rios ou at\xE9 atlas geogr\xE1ficos. "
+      - personagem: 0
+        emocao: 0
+        fala: "\xD3timo, d\xFAvida esclarecida! "
+      respostas: []
+  - nodulos:
+    - falas:
+      - personagem: 0
+        emocao: 2
+        fala: " Professor Jean, desculpe te incomodar novamente, mas tenho mais uma
+          d\xFAvida. Sobre a anatomia dos p\xE1ssaros, como o senhor acha que podemos
+          mostrar isso para os alunos?\r\n"
+      - personagem: 2
+        emocao: 4
+        fala: "Ah, \xF3tima d\xFAvida minha filha! Acho que se os alunos pudessem,
+          al\xE9m de ouvir a minha explica\xE7\xE3o, visualizar imagens, v\xEDdeos,
+          esquemas, gravuras, ou qualquer outra coisa desse tipo poderia ajudar e
+          muito a minha aula."
+      - personagem: 0
+        emocao: 0
+        fala: Perfeito, entendi. E sobre o comportamento?
+      - personagem: 2
+        emocao: 4
+        fala: "Se eles pudessem escutar o canto dos p\xE1ssaros de alguma forma seria
+          magn\xEDfico! Ah, e tamb\xE9m gostaria que de alguma outra forma fosse poss\xEDvel
+          perceber as diferen\xE7as regionais entre eles. Quem sabe uma indica\xE7\xE3o
+          visual em que eu pudesse mostrar isso, ou um livro bem ilustrado e que tivesse
+          isso registrado\u2026 Uhmm\u2026"
+      - personagem: 0
+        emocao: 0
+        fala: "Acho que j\xE1 entendi, obrigadinha!"
+      respostas: []
+  - nodulos:
+    - falas:
+      - personagem: 0
+        emocao: 4
+        fala: "Professor, s\xF3 mais uma coisinha, o senhor pode me indicar onde procurar
+          essas m\xEDdias?\t"
+      - personagem: 2
+        emocao: 4
+        fala: "Boa pergunta, minha filha! Como eu disse, esse neg\xF3cio de m\xEDdias
+          \xE9 muito complicado para mim, mas sei que voc\xEA vai poder encontrar
+          elas espalhadas pela escola toda. Fale com a Mad\xE1, ela \xE9 neta de meu
+          colega e conhece muito bem a escola, al\xE9m de estar sempre disposta a
+          ajudar!"
+      - personagem: 0
+        emocao: 0
+        fala: 'Maravilha, muito obrigada pela dica, nos vemos na aula! '
+      respostas: []
+  - nodulos:
+    - falas:
+      - personagem: 0
+        emocao: 4
+        fala: 
+      - personagem: 2
+        emocao: 0
+        fala: "Ah querida, voc\xEA ainda est\xE1 aqui? Registre o seu planejamento
+          para podermos come\xE7ar a aula, ok?"
+      respostas: []
+--- !u!212 &212721867874743362
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266891186796208}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 028a97bef703a2b4b92826bd31933103, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.02, y: 14.44}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
