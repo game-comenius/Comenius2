@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using GameComenius.Dialogo;
+//using UnityEditor;
 
 public class ClassManager : MonoBehaviour
 {
@@ -76,18 +77,18 @@ public class ClassManager : MonoBehaviour
     [Tooltip("O elemento 0 corresponde a Tier 1, e1 - t2, e2 - t3 e e3 - t4.")]
     [SerializeField] private DialogoGeneralista[] falasGeneralistas = new DialogoGeneralista[4];
 
-    [SerializeField] private FalasSobreMomentos[] falasSobreMomentos = new FalasSobreMomentos[3];
+    [SerializeField] public FalasSobreMomentos[] falasSobreMomentos = new FalasSobreMomentos[3];
 
     #region Classes
 
-    [System.Serializable] private class FalaSobreMidias
+    [System.Serializable] public class FalaSobreMidias
     {
         public ItemName item = ItemName.Caderno;
 
         public Dialogo dialogo = new Dialogo();
     }
 
-    [System.Serializable] private class FalasSobreMomentos
+    [System.Serializable] public class FalasSobreMomentos
     {
         public FalaSobreMidias[] falaSobreMidias = new FalaSobreMidias[13];
 
@@ -101,7 +102,7 @@ public class ClassManager : MonoBehaviour
                 }
             }
 
-            return null;
+            return falaSobreMidias[falaSobreMidias.Length - 1].dialogo;
         }
     }
 
@@ -166,7 +167,7 @@ public class ClassManager : MonoBehaviour
         {
             if (Player.Instance.totalMissionPoints >= falasGeneralistas[j].rangeNota.x && Player.Instance.totalMissionPoints <= falasGeneralistas[j].rangeNota.y)
             {
-                b.dialogoPrincipal = falasGeneralistas[j].dialogos[0].Clone();
+                b.dialogoPrincipal = professor.falasGeneralistas[j].dialogos[0].Clone();
             }
         }
 
@@ -177,6 +178,8 @@ public class ClassManager : MonoBehaviour
 
             d.questInfo.isQuest = true;
             d.questInfo.questIndex = alunosComentaristas[i].questIndex;
+
+            d.dialogoObrigatorio = false;
 
             if ( i <= 1)
             {
@@ -411,3 +414,41 @@ public class ClassManager : MonoBehaviour
         return 3;
     }
 }
+
+//[CustomEditor (typeof(ClassManager))]
+//public class ClassManagerEditor : Editor
+//{
+//    public override void OnInspectorGUI()
+//    {
+//        ClassManager script = target as ClassManager;
+
+//        DrawDefaultInspector();
+
+//        if (GUILayout.Button("Execute")) 
+//        {
+//            for (int i = 0; i < script.falasSobreMomentos.Length; i++) 
+//            {
+//                ClassManager.FalasSobreMomentos m = script.falasSobreMomentos[i];
+
+//                for (int j = 0; j < m.falaSobreMidias.Length; j++) 
+//                {
+//                    ClassManager.FalaSobreMidias n = m.falaSobreMidias[j];
+
+//                    for (int k = 0; k < n.dialogo.nodulos.Length; k++)
+//                    {
+//                        DialogoNodulo o = n.dialogo.nodulos[k];
+
+//                        if (o.falas.Length == 2)
+//                        {
+//                            o.falas[1].personagem = Personagens.AlunoTipo;
+//                        }
+//                        else
+//                        {
+//                            Debug.Log("Numero de falas errada em " + " " + i + " " + j + " " + k);
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}

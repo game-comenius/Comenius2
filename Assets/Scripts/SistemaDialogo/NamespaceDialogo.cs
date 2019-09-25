@@ -17,7 +17,8 @@ namespace GameComenius.Dialogo
         Alice,
         Diretor,
         MariaMontanari,
-        Comenius
+        Comenius,
+        AlunoTipo
     }
 
     public enum Expressao
@@ -199,6 +200,10 @@ namespace GameComenius.Dialogo
                     nome = "Comenius";
                     personagem.nome = "Comenius";
                     break;
+                case Personagens.AlunoTipo:
+                    nome = "AlunoTipo";
+                    personagem.nome = "Aluno";
+                    break;
             }
 
             path = path + nome + "/";
@@ -239,8 +244,6 @@ namespace GameComenius.Dialogo
             }
 
             Debug.Log("Não foi encontrado " + emocao + " em " + path + ".");
-
-            personagem.personagem = null;
 
             return personagem;
         }

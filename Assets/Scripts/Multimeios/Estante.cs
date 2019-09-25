@@ -42,8 +42,12 @@ public class Estante : MonoBehaviour {
 
     public void OnMouseUpAsButton()
     {
-        modoEstanteAbertaUI.SetActive(true);
-        estanteUI.DisplayItems();
+        if (!GameManager.uiSendoUsada)
+        {
+            modoEstanteAbertaUI.SetActive(true);
+            estanteUI.DisplayItems();
+            GameManager.UISendoUsada();
+        }
     }
 
 
@@ -52,6 +56,7 @@ public class Estante : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Escape) && modoEstanteAbertaUI.activeInHierarchy == true) {
             modoEstanteAbertaUI.SetActive(false);
+            GameManager.UINaoSendoUsada();
         }
     }
 }

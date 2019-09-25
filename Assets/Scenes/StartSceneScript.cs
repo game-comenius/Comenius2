@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StartSceneScript : MonoBehaviour
 {
@@ -14,8 +15,6 @@ public class StartSceneScript : MonoBehaviour
         if (!sendoUsado) 
         {
             StartCoroutine(InicializarManagerSceneEJogo());
-
-            transform.SetParent(null);
 
             DontDestroyOnLoad(gameObject);
 

@@ -14,6 +14,7 @@ public class CanvasCodigoScript : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        canvas.SetActive(false);
     }
 
     void Update ()
