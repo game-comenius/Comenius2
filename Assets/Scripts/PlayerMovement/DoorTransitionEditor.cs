@@ -1,11 +1,13 @@
-﻿using System.Collections;
+﻿#if UNITY_EDITOR
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 
 [CustomEditor(typeof(DoorTransition))]
-public class DoorTransitionEditor : Editor
+public class DoorTransitionEditor : UnityEditor.Editor
 {
     private int sceneCount;
 
@@ -65,3 +67,5 @@ public class DoorTransitionEditor : Editor
         }
     }
 }
+
+#endif

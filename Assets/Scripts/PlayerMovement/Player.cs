@@ -33,27 +33,6 @@ public class Player : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            Inventory.Add(ItemName.Livro);
-        }
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            Inventory.Add(ItemName.Cartazes);
-        }
-
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //    target.z = transform.position.z;
-        //}
-
-        //// movimentação
-        //transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-    }
 }
 
 

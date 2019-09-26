@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿#if UNITY_EDITOR
+
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEditor.SceneManagement;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 
 [InitializeOnLoad]
 class MyClass
@@ -63,3 +65,5 @@ class MyClass
         }
     }
 }
+
+#endif

@@ -181,7 +181,7 @@ namespace GameComenius.Dialogo
                     personagem.nome = "Meio Ambiente";
                     break;
                 case Personagens.Madá:
-                    nome = "Madá";
+                    nome = "Mada";
                     personagem.nome = "Madá";
                     break;
                 case Personagens.Antonia:
