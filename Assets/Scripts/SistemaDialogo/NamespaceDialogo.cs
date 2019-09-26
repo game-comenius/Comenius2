@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using UnityEditor;
 using System.Collections.Generic;
 
 namespace GameComenius.Dialogo
@@ -150,7 +149,8 @@ namespace GameComenius.Dialogo
         {
             Falador personagem = new Falador();
 
-            string path = "Assets/Sprites/Personagem/Polaroides/";
+            //string path = "Assets/Sprites/Personagem/Polaroides/";
+            string path = "Polaroides/";
             string nome = "";
             string emocao = "";
 
@@ -227,23 +227,18 @@ namespace GameComenius.Dialogo
                     break;
             }
 
-            path = path + emocao + ".png";
+            path = path + emocao;
 
-            UnityEngine.Object[] objects = AssetDatabase.LoadAllAssetsAtPath(path);
+            Texture2D texture = Resources.Load(path) as Texture2D;
 
-            //Debug.Log(objects.Length);
-
-            foreach (UnityEngine.Object obj in objects)
+            try
             {
-                if (obj.GetType() == typeof(Sprite) && obj.name == emocao)
-                {
-                    personagem.personagem = (Sprite)obj;
-
-                    return personagem;
-                }
+                personagem.personagem = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
             }
-
-            Debug.Log("Não foi encontrado " + emocao + " em " + path + ".");
+            catch(NullReferenceException)
+            {
+                Debug.LogWarning("Não foi encontrado sprite em " + path);
+            }
 
             return personagem;
         }
