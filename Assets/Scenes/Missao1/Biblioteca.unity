@@ -181,6 +181,26 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 61497410571923142, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61497410571923142, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61497410571923142, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 61497410571923142, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 2.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1cf818579acdde4f96b99ea030f29d7, type: 2}
   m_IsPrefabAsset: 0
@@ -330,8 +350,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 448296473}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.41, y: 3.7, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalPosition: {x: -6.27, y: 3.1, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -374,8 +394,8 @@ MonoBehaviour:
       - personagem: 0
         emocao: 2
         fala: 
-      - personagem: 2
-        emocao: 1
+      - personagem: 11
+        emocao: 2
         fala: "Tem um coleguinha meu que sempre anda com uma cole\xE7\xE3o de penas
           na mochila, \xE9 o orgulho da fam\xEDlia dele. Voc\xEA o viu?"
       respostas: []
@@ -396,7 +416,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.9, y: 2.86}
+    oldSize: {x: 0.76, y: 1.144}
     newSize: {x: 4.48, y: 6.74}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -404,90 +424,46 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.38, y: -2.58}
-      - {x: 1.62, y: -2.36}
-      - {x: 1.87, y: -2.1399999}
-      - {x: 1.92, y: -2.01}
-      - {x: 1.92, y: -1.87}
-      - {x: 1.9, y: -1.76}
-      - {x: 1.68, y: -1.61}
-      - {x: 1.4599999, y: -1.61}
-      - {x: 1.36, y: -1.5699999}
-      - {x: 1.36, y: -1.42}
-      - {x: 1.3399999, y: -1.22}
-      - {x: 1.27, y: -1.01}
-      - {x: 1.18, y: -0.9}
-      - {x: 1.0699999, y: -0.81}
-      - {x: 0.84999996, y: -0.69}
-      - {x: 0.59, y: -0.56}
-      - {x: 0.58, y: -0.47}
-      - {x: 0.48999998, y: -0.37}
-      - {x: 0.42, y: -0.32999998}
-      - {x: 0.35, y: -0.17999999}
-      - {x: 0.28, y: 0.25}
-      - {x: 0.29, y: 0.48999998}
-      - {x: 0.24, y: 0.82}
-      - {x: 0.19999999, y: 0.93}
-      - {x: 0.14999999, y: 1.05}
-      - {x: 0.06, y: 1.14}
-      - {x: 0.13, y: 1.18}
-      - {x: 0.29999998, y: 1.35}
-      - {x: 0.39, y: 1.55}
-      - {x: 0.39999998, y: 1.77}
-      - {x: 0.38, y: 1.91}
-      - {x: 0.38, y: 2.5}
-      - {x: 0.35999998, y: 2.6}
-      - {x: 0.32, y: 2.6699998}
-      - {x: 0.17, y: 2.84}
-      - {x: -0.049999997, y: 3}
-      - {x: -0.31, y: 3.07}
-      - {x: -0.44, y: 3.08}
-      - {x: -0.75, y: 3.08}
-      - {x: -0.98999995, y: 3.01}
-      - {x: -1.18, y: 2.8899999}
-      - {x: -1.3299999, y: 2.73}
-      - {x: -1.42, y: 2.55}
-      - {x: -1.48, y: 2.4099998}
-      - {x: -1.51, y: 2.05}
-      - {x: -1.5, y: 1.9599999}
-      - {x: -1.4499999, y: 1.8199999}
-      - {x: -1.4699999, y: 1.76}
-      - {x: -1.4699999, y: 1.63}
-      - {x: -1.4399999, y: 1.55}
-      - {x: -1.3399999, y: 1.4599999}
-      - {x: -1.25, y: 1.4499999}
-      - {x: -1.18, y: 1.39}
-      - {x: -1.05, y: 1.25}
-      - {x: -0.9, y: 1.17}
-      - {x: -1.15, y: 1.01}
-      - {x: -1.25, y: 0.95}
-      - {x: -1.38, y: 0.82}
-      - {x: -1.4399999, y: 0.72999996}
-      - {x: -1.51, y: 0.48}
-      - {x: -1.52, y: 0.35}
-      - {x: -1.52, y: 0.089999996}
-      - {x: -1.49, y: -0.01}
-      - {x: -1.4699999, y: -0.29}
-      - {x: -1.39, y: -0.52}
-      - {x: -1.28, y: -0.68}
-      - {x: -1.26, y: -0.87}
-      - {x: -1.1999999, y: -0.97999996}
-      - {x: -1.13, y: -1.01}
-      - {x: -0.96999997, y: -1.04}
-      - {x: -0.71, y: -1.27}
-      - {x: -0.61, y: -1.3399999}
-      - {x: -0.35999998, y: -1.48}
-      - {x: 0.049999997, y: -1.6899999}
-      - {x: 0.19, y: -1.8}
-      - {x: 0.29999998, y: -2.09}
-      - {x: 0.32, y: -2.3999999}
-      - {x: 0.48999998, y: -2.6699998}
-      - {x: 0.62, y: -2.8}
-      - {x: 0.7, y: -2.84}
-      - {x: 0.91999996, y: -2.84}
-      - {x: 0.98999995, y: -2.81}
-      - {x: 1.1899999, y: -2.6599998}
-      - {x: 1.26, y: -2.6599998}
+    - - {x: 0.328, y: -0.3}
+      - {x: 0.28800002, y: -0.268}
+      - {x: 0.24000001, y: -0.272}
+      - {x: 0.22800002, y: -0.18}
+      - {x: 0.20400001, y: -0.14400001}
+      - {x: 0.14400001, y: -0.112}
+      - {x: 0.104, y: -0.076000005}
+      - {x: 0.060000002, y: 0.020000001}
+      - {x: 0.052, y: 0.14400001}
+      - {x: 0.028, y: 0.18400002}
+      - {x: 0.072000004, y: 0.256}
+      - {x: 0.072000004, y: 0.296}
+      - {x: 0.068, y: 0.42800003}
+      - {x: 0.060000002, y: 0.46400002}
+      - {x: -0.008, y: 0.52000004}
+      - {x: -0.032, y: 0.52400005}
+      - {x: -0.16800001, y: 0.52400005}
+      - {x: -0.19600001, y: 0.504}
+      - {x: -0.256, y: 0.432}
+      - {x: -0.26000002, y: 0.356}
+      - {x: -0.26000002, y: 0.30800003}
+      - {x: -0.256, y: 0.264}
+      - {x: -0.172, y: 0.192}
+      - {x: -0.224, y: 0.16000001}
+      - {x: -0.252, y: 0.128}
+      - {x: -0.26000002, y: 0.096}
+      - {x: -0.26000002, y: -0.004}
+      - {x: -0.24800001, y: -0.080000006}
+      - {x: -0.22000001, y: -0.16800001}
+      - {x: -0.16000001, y: -0.192}
+      - {x: -0.108, y: -0.23200001}
+      - {x: 0.028, y: -0.30400002}
+      - {x: 0.044000003, y: -0.34}
+      - {x: 0.052, y: -0.41200003}
+      - {x: 0.096, y: -0.476}
+      - {x: 0.120000005, y: -0.48800004}
+      - {x: 0.164, y: -0.48800004}
+      - {x: 0.23600002, y: -0.448}
+      - {x: 0.324, y: -0.36400002}
+      - {x: 0.328, y: -0.35200003}
 --- !u!1 &498661571
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,21 +713,37 @@ MonoBehaviour:
         fala: "Acho que seria legal voc\xEA ler Dom Casmurro"
         resumo: Dom Casmurro
         conexao: 1
+        questInfo:
+          isQuest: 0
+          questIndex: {x: 0, y: 0}
+          questDependencias: []
       - personagem: 0
         emocao: 0
         fala: "Acho que seria legal voc\xEA ler Harry Potter"
         resumo: Harry Potter
         conexao: 2
+        questInfo:
+          isQuest: 0
+          questIndex: {x: 0, y: 0}
+          questDependencias: []
       - personagem: 0
         emocao: 0
         fala: "Acho que seria legal voc\xEA ler Os tr\xEAs porquinhos"
         resumo: "Os tr\xEAs porquinhos"
         conexao: 1
+        questInfo:
+          isQuest: 0
+          questIndex: {x: 0, y: 0}
+          questDependencias: []
       - personagem: 0
         emocao: 0
         fala: "Acho que seria legal voc\xEA ler Hamlet"
         resumo: Hamlet
         conexao: 1
+        questInfo:
+          isQuest: 0
+          questIndex: {x: 0, y: 0}
+          questDependencias: []
     - falas:
       - personagem: 0
         emocao: 2
@@ -786,10 +778,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.05}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -800,7 +792,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.5, y: 14.5}
+  m_Size: {x: 0.93, y: 2.25}
   m_EdgeRadius: 0
 --- !u!212 &1097882986
 SpriteRenderer:
@@ -1338,10 +1330,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.05}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1352,7 +1344,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.5, y: 14.5}
+  m_Size: {x: 1.25, y: 2.88}
   m_EdgeRadius: 0
 --- !u!212 &1691235257
 SpriteRenderer:
