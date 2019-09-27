@@ -10,13 +10,13 @@ public class Cursor1: MonoBehaviour
 
     [Header("Cursor 2")]
     public Texture2D select;
-    public CursorMode curmode = CursorMode.Auto;
+    public CursorMode curmode = CursorMode.ForceSoftware;
     public Vector2 hotspot = Vector2.zero;
 
 
 	void Start ()
     {
-        Cursor.SetCursor(cursorImage, offset, CursorMode.Auto);
+        Cursor.SetCursor(cursorImage, offset, CursorMode.ForceSoftware);
 	}			
 
     void OnMouseEnter()
