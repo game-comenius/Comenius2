@@ -13,7 +13,7 @@ public class CanvasCodigoScript : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         canvas.SetActive(false);
     }
 
