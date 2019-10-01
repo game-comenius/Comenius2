@@ -17,7 +17,8 @@ namespace GameComenius.Dialogo
         Diretor,
         MariaMontanari,
         Comenius,
-        AlunoTipo
+        AlunoTipo,
+        Aluno
     }
 
     public enum Expressao
@@ -202,6 +203,10 @@ namespace GameComenius.Dialogo
                     break;
                 case Personagens.AlunoTipo:
                     nome = "AlunoTipo";
+                    personagem.nome = "Aluno";
+                    break;
+                case Personagens.Aluno:
+                    nome = "Aluno";
                     personagem.nome = "Aluno";
                     break;
             }
