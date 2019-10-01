@@ -6,6 +6,14 @@ public class DontDestroyScript : MonoBehaviour
 {
     protected virtual void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (transform.parent == null)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            transform.parent = null;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }
