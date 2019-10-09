@@ -138,6 +138,30 @@ public class SistemaDialogo : MonoBehaviour
         if (dialogo.nodulos[nodulo].falas.Length > proximaFala)
         {
             falaAtual = dialogo.nodulos[nodulo].falas[proximaFala];
+
+            for (int i = 0; i < falaAtual.fala.ToCharArray().Length; i++)
+            {
+                if ((int)falaAtual.fala.ToCharArray()[i] == 13)
+                {
+                    char[] m = new char[falaAtual.fala.ToCharArray().Length - 1];
+
+                    for (int j = 0; j < m.Length; j++)
+                    {
+                        if (j < i)
+                        {
+                            m[j] = falaAtual.fala.ToCharArray()[j];
+                        }
+                        else
+                        {
+                            m[j] = falaAtual.fala.ToCharArray()[j + 1];
+                        }
+
+                        //Debug.Log(m[j]);
+                    }
+
+                    falaAtual.fala = m.ArrayToString();
+                }
+            }
         }
 
         faladorAtual = Falador.BuscarPolaroideNosAssets(falaAtual.personagem, falaAtual.emocao);

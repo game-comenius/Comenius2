@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 18071940}
   - component: {fileID: 18071939}
   - component: {fileID: 18071938}
+  - component: {fileID: 18071941}
   m_Layer: 0
   m_Name: Montanari
   m_TagString: Untagged
@@ -218,6 +219,101 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &18071941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 18071937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questInfo:
+    isQuest: 1
+    questIndex: {x: 2, y: 6}
+    questDependencias: []
+  questFeita:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 18071941}
+        m_MethodName: DestroirObjeto
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 683037570}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 18071939}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasFeitas:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasNaoFeitas:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dialogoObrigatorio: 0
+  esperaDialogoObrigatorio: 2
+  dialogoPrincipal:
+    nodulos:
+    - falas:
+      - personagem: 0
+        emocao: 2
+        fala: 
+      - personagem: 8
+        emocao: 1
+        fala: "Boa v\xE9spera, auxiliar Maria de Lourdes. Percebi que desde que o\r
+          professor Jean pediu a sua ajuda para a aula dele a escola esteve bem\r
+          movimentada. N\xE3o sei dizer se de um jeito bom ou ruim\u2026\r\n"
+      - personagem: 8
+        emocao: 2
+        fala: "De qualquer forma,\r gostaria de te apresentar a respons\xE1vel pelo
+          Laborat\xF3rio: Maria Montanari.\r\n"
+      - personagem: 8
+        emocao: 2
+        fala: "Ela \xE9 extremamente competente e muito inteligente. Voc\xEA poderia
+          aprender muito com ela, auxiliar Maria de Lourdes."
+      - personagem: 9
+        emocao: 2
+        fala: "Obrigada pela apresenta\xE7\xE3o, Diretor."
+      - personagem: 9
+        emocao: 2
+        fala: "Sempre que precisar de ajuda ou se quiser que eu te ensine sobre algum
+          assunto, basta me procurar no Laborat\xF3rio, xar\xE1."
+      - personagem: 9
+        emocao: 0
+        fala: "Concordo com o Diretor, voc\xEA com certeza pode aprender muito comigo.
+          Eu fui intitulada como a melhor aluna em quase todas os cursos que fiz.
+          Gosto de estar sempre aprendendo."
+      - personagem: 0
+        emocao: 2
+        fala: "Nossa, voc\xEA deve ser extremamente inteligente ent\xE3o. N\xE3o vejo
+          a hora de aprender com voc\xEA. Muito obrigada pelo convite."
+      - personagem: 8
+        emocao: 2
+        fala: "Bom, n\xF3s j\xE1 vamos indo, auxiliar Maria de Lourdes. J\xE1 est\xE1
+          tarde. Bom mort\xF3rio"
+      respostas: []
+  dialogosSecundarios: []
 --- !u!1 &138462396
 GameObject:
   m_ObjectHideFlags: 0
