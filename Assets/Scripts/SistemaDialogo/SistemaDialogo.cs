@@ -262,7 +262,29 @@ public class SistemaDialogo : MonoBehaviour
 
         for (int i = 0; i < dialogo.nodulos[nodulo].respostas.Count; i++)
         {
-            opcoes.Add(dialogo.nodulos[nodulo].respostas[i].resumo);            
+            if (dialogo.nodulos[nodulo].respostas[i].questInfo.questDependencias.Length > 0)
+            {
+                bool depenciasFeitas = true;
+
+                for (int j = 0; j < dialogo.nodulos[nodulo].respostas[i].questInfo.questDependencias.Length; j++)
+                {
+                    if (!QuestManager.GetQuestControl(dialogo.nodulos[nodulo].respostas[i].questInfo.questDependencias[j]))
+                    {
+                        depenciasFeitas = false;
+
+                        j = dialogo.nodulos[nodulo].respostas[i].questInfo.questDependencias.Length;
+                    }
+                }
+
+                if (depenciasFeitas)
+                {
+                    opcoes.Add(dialogo.nodulos[nodulo].respostas[i].resumo);
+                }
+            }
+            else
+            {
+                opcoes.Add(dialogo.nodulos[nodulo].respostas[i].resumo);
+            }
         }
 
         opcoes.Add("(Escolha uma opção)");
