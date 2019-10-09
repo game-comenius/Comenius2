@@ -18,7 +18,8 @@ namespace GameComenius.Dialogo
         MariaMontanari,
         Comenius,
         AlunoTipo,
-        Aluno
+        Aluno,
+        Esquisito
     }
 
     public enum Expressao
@@ -175,11 +176,11 @@ namespace GameComenius.Dialogo
                     break;
                 case Personagens.Leitura:
                     nome = "Leitura";
-                    personagem.nome = "Leitura";
+                    personagem.nome = "Aluno";
                     break;
                 case Personagens.MeioAmbiente:
                     nome = "MeioAmbiente";
-                    personagem.nome = "Meio Ambiente";
+                    personagem.nome = "Aluno";
                     break;
                 case Personagens.Madá:
                     nome = "Mada";
@@ -207,6 +208,10 @@ namespace GameComenius.Dialogo
                     break;
                 case Personagens.Aluno:
                     nome = "Aluno";
+                    personagem.nome = "Aluno";
+                    break;
+                case Personagens.Esquisito:
+                    nome = "Esquisito";
                     personagem.nome = "Aluno";
                     break;
             }
