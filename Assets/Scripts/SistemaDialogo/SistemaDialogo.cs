@@ -155,8 +155,6 @@ public class SistemaDialogo : MonoBehaviour
                         {
                             m[j] = falaAtual.fala.ToCharArray()[j + 1];
                         }
-
-                        //Debug.Log(m[j]);
                     }
 
                     falaAtual.fala = m.ArrayToString();
