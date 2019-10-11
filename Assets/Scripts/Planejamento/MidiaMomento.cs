@@ -24,7 +24,9 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
     public double jornaisPoints = 0;
     public double fotografiaPoints = 0;
     public double quadronegroPoints = 0;
-
+    public double jornaiserevistasPoints = 0;
+    public double revistasPoints = 0;
+    public double mapaPoints = 0;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -56,6 +58,9 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
             case ItemName.Jornais: return jornaisPoints;
             case ItemName.Fotografia: return fotografiaPoints;
             case ItemName.QuadroNegro: return quadronegroPoints;
+            case ItemName.JornaisEResvistas: return jornaiserevistasPoints;
+            case ItemName.Revistas: return revistasPoints;
+            case ItemName.Mapa: return mapaPoints;
             default: return 0;
         }
     }
