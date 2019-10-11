@@ -22,6 +22,15 @@ public class Fichario : MonoBehaviour {
 
 	}
 
+    private void OnEnable()
+    {
+        if (!GameManager.uiSendoUsada) GameManager.UISendoUsada();
+    }
+    private void OnDisable()
+    {
+        if (GameManager.uiSendoUsada) GameManager.UINaoSendoUsada();
+    }
+
     public void SelecionarDiario()
     {
         if (folhaSelecionada == folhaDiario) return;
