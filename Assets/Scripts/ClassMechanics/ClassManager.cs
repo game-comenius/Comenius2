@@ -64,6 +64,11 @@ public class ClassManager : MonoBehaviour
     private float previousProblemTime = 0;
 
     private float nextProblemTime = 0;
+
+    private bool jeanFalando = false;
+
+    [SerializeField] private Dialogo[] falas = new Dialogo[3];
+
     #endregion
 
     #region Momento Pós-Aula
@@ -254,11 +259,13 @@ public class ClassManager : MonoBehaviour
             nextProblemTime = NextProblem(0f); //Gera o tempo para o primeiro problema. Este pode ter tmin = 0 pois o previousProblemTime controlará para que não se gere problema antes do que se quer.
         }
 
+        SistemaDialogo.sistemaDialogo.ComecarDialogo(falas[0], null);
+
         while (classMoment < 3)
         {
             timer.text = "M" + (classMoment + 1) + " - " + Mathf.FloorToInt(momentTimer / 60).ToString("00") + ":" + Mathf.FloorToInt(momentTimer % 60).ToString("00");
 
-            yield return null;
+            yield return new WaitUntil(() => !SistemaDialogo.sistemaDialogo.transform.GetChild(0).gameObject.activeSelf);
 
             momentTimer -= Time.deltaTime * _timeAcceleration;
 
@@ -291,6 +298,8 @@ public class ClassManager : MonoBehaviour
                     {
                         nextProblemTime = NextProblem(0f);
                     }
+
+                    SistemaDialogo.sistemaDialogo.ComecarDialogo(falas[classMoment], null);
                 }
             }
 

@@ -11,7 +11,6 @@ public class DoorTransition : MonoBehaviour
 
     private float timerMax = 3.5f;
 
-
     public void OnMouseUp()
     {
         if (!GameManager.uiSendoUsada)

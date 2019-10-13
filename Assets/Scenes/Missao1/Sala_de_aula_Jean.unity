@@ -1660,6 +1660,28 @@ MonoBehaviour:
   problemTimeAcceleration: 2
   problemDuration: 60
   waitBetweenProblems: 60
+  falas:
+  - nodulos:
+    - falas:
+      - personagem: 2
+        emocao: 2
+        fala: "Meus alunos, eu quero explicar para voc\xEAs hoje sobre os p\xE1ssaros.
+          Vamos come\xE7ar falando sobre as caracter\xEDsticas gerais deles?"
+      respostas: []
+  - nodulos:
+    - falas:
+      - personagem: 2
+        emocao: 2
+        fala: "Agora que voc\xEAs j\xE1 sabem sobre as caracter\xEDsticas gerais dos
+          p\xE1ssaros, quero que fa\xE7am uma atividade!"
+      respostas: []
+  - nodulos:
+    - falas:
+      - personagem: 2
+        emocao: 2
+        fala: "Eu quero falar nessa \xFAltima parte da aula sobre os p\xE1ssaros da
+          nossa regi\xE3o. Ent\xE3o\u2026"
+      respostas: []
   alunosComentaristas:
   - aluno: {fileID: 1187637560}
     questIndex: {x: 1, y: 4}
@@ -1672,7 +1694,7 @@ MonoBehaviour:
   - aluno: {fileID: 179691152}
     questIndex: {x: 2, y: 0}
   professor:
-    aluno: {fileID: 2029659088}
+    aluno: {fileID: 2029659086}
     questIndex: {x: 1, y: 3}
     falasGeneralistas:
     - rangeNota: {x: 26, y: 30}
@@ -2648,6 +2670,7 @@ GameObject:
   - component: {fileID: 1349916199}
   - component: {fileID: 1349916201}
   - component: {fileID: 1349916202}
+  - component: {fileID: 1349916203}
   m_Layer: 0
   m_Name: Porta Patio Noite
   m_TagString: Door1
@@ -2800,6 +2823,59 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1349916203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1349916198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471d7830f5edfe04598f66fa78a9a6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questInfo:
+    isQuest: 0
+    questIndex: {x: 0, y: 0}
+    questDependencias:
+    - {x: 1, y: 3}
+  questFeita:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasFeitas:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1349916199}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasNaoFeitas:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1349916199}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1386433346
 GameObject:
   m_ObjectHideFlags: 0
@@ -3616,7 +3692,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2029659090}
   - component: {fileID: 2029659089}
-  - component: {fileID: 2029659088}
+  - component: {fileID: 2029659086}
   m_Layer: 0
   m_Name: Prof
   m_TagString: Diretor
@@ -3624,7 +3700,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2029659088
+--- !u!114 &2029659086
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3632,9 +3708,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2029659085}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3afc8701aafa6ed4193e6e1f5503f31f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b0f889fb5691504590e28da2f050592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inicio: {x: -3.9, y: 0.03}
+  vector: {x: 0.87, y: 0.5}
+  magnitude: 3
+  velocity: 1
 --- !u!212 &2029659089
 SpriteRenderer:
   m_ObjectHideFlags: 0

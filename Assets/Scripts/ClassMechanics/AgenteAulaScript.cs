@@ -22,7 +22,7 @@ public class AgenteAulaScript : MonoBehaviour
     {
         if (GetComponent<NpcDialogo>() && GetComponent<BoxCollider2D>())
         {
-            ClassManager.EndClass += HabilitarDialogo;
+            ClassManager.EndClass -= HabilitarDialogo;
         }
     }
 }

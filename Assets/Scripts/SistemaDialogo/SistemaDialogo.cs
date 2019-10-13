@@ -12,6 +12,8 @@ public class SistemaDialogo : MonoBehaviour
     #region Referências para os GameObject na UI
     [SerializeField] private GameObject sistemaDialogoUI;
 
+    [SerializeField] private GameObject painel;
+
     [SerializeField] private TMP_Text textoDialogo;
 
     [SerializeField] private TMP_Text npcNome;
@@ -67,7 +69,7 @@ public class SistemaDialogo : MonoBehaviour
 
     public void ComecarDialogo(Dialogo _dialogo, NpcDialogo _npcDialogoQA)
     {
-        if (npcDialogo == null && _dialogo != null && _npcDialogoQA != null) 
+        if (npcDialogo == null && _dialogo != null) 
         {
             GameManager.UISendoUsada();
 
@@ -104,16 +106,39 @@ public class SistemaDialogo : MonoBehaviour
 
         escrevendo = false;
 
-        personagemRosto[0].sprite = Falador.BuscarPolaroideNosAssets(Personagens.Lurdinha, Expressao.Serio).personagem;
+        for (int i = 0; i < dialogo.nodulos[nodulo].falas.Length; i++) 
+        {
+            Personagens _personagem = dialogo.nodulos[nodulo].falas[i].personagem;
+
+            if (_personagem == Personagens.Lurdinha)
+            {
+                personagemRosto[0].sprite = Falador.BuscarPolaroideNosAssets(_personagem, Expressao.Serio).personagem;
+
+                personagemRosto[0].transform.GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
+
+                i = dialogo.nodulos[nodulo].falas.Length;
+            }
+            else if (i + 1 == dialogo.nodulos[nodulo].falas.Length)
+            {
+                Debug.Log("Ludinha não está aqui");
+
+                personagemRosto[0].sprite = null;
+
+                personagemRosto[0].color = new Color(0f, 0f, 0f, 0f);
+
+                personagemRosto[0].transform.GetChild(0).GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
+            }
+        }
 
         for (int i = 0; i < dialogo.nodulos[nodulo].falas.Length; i++)
         {
-
             Personagens _personagem = dialogo.nodulos[nodulo].falas[i].personagem;
 
             if (_personagem != Personagens.Lurdinha)
             {
                 personagemRosto[1].sprite = Falador.BuscarPolaroideNosAssets(_personagem, Expressao.Serio).personagem;
+
+                personagemRosto[1].transform.GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
 
                 i = dialogo.nodulos[nodulo].falas.Length;
             }
@@ -121,7 +146,11 @@ public class SistemaDialogo : MonoBehaviour
             {
                 Debug.Log("Monologo da Lurdinha");
 
+                personagemRosto[1].sprite = null;
+
                 personagemRosto[1].color = new Color(0f, 0f, 0f, 0f);
+
+                personagemRosto[1].transform.GetChild(0).GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
             }
         }
 
@@ -132,7 +161,10 @@ public class SistemaDialogo : MonoBehaviour
     {
         foreach (Image image in personagemRosto)
         {
-            image.color = opacidade.Desligar();
+            if (image.sprite != null)
+            {
+                image.color = opacidade.Desligar();
+            }
         }
 
         if (dialogo.nodulos[nodulo].falas.Length > proximaFala)
@@ -170,11 +202,22 @@ public class SistemaDialogo : MonoBehaviour
         {
             personagemRosto[0].color = opacidade.Ligar();
             personagemRosto[0].sprite = faladorAtual.personagem;
+            painel.transform.rotation = Quaternion.identity;
+            npcNome.gameObject.transform.localPosition = new Vector2
+            { x = -Mathf.Abs(npcNome.gameObject.transform.localPosition.x), y = npcNome.gameObject.transform.localPosition.y };
+            textoDialogo.gameObject.transform.localPosition = new Vector2
+            { x = -Mathf.Abs(textoDialogo.gameObject.transform.localPosition.x), y = textoDialogo.gameObject.transform.localPosition.y };
+
         }
         else
         {
             personagemRosto[1].color = opacidade.Ligar();
             personagemRosto[1].sprite = faladorAtual.personagem;
+            painel.transform.rotation = Quaternion.Euler(0, 180, 0);
+            npcNome.gameObject.transform.localPosition = new Vector2
+            { x = Mathf.Abs(npcNome.gameObject.transform.localPosition.x), y = npcNome.gameObject.transform.localPosition.y };
+            textoDialogo.gameObject.transform.localPosition = new Vector2
+            { x = Mathf.Abs(textoDialogo.gameObject.transform.localPosition.x), y = textoDialogo.gameObject.transform.localPosition.y };
         }
 
         if (falaAtual.fala == "")
@@ -370,7 +413,10 @@ public class SistemaDialogo : MonoBehaviour
 
     public void AcabarConversa()
     {
-        npcDialogo.SetQuestControl();
+        if (npcDialogo != null)
+        {
+            npcDialogo.SetQuestControl();
+        }
         npcDialogo = null;
         personagemRosto[1].sprite = null;
         escrevendo = false;
