@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using GameComenius.Dialogo;
-//using UnityEditor;
 
 public class ClassManager : MonoBehaviour
 {
@@ -267,6 +266,8 @@ public class ClassManager : MonoBehaviour
 
             yield return new WaitUntil(() => !SistemaDialogo.sistemaDialogo.transform.GetChild(0).gameObject.activeSelf);
 
+            TeacherScript.teacher.StartWalk();
+
             momentTimer -= Time.deltaTime * _timeAcceleration;
 
             //A primeira parte do cálculo do if se justifica porque o momentTimer e contagem regressiva e o nextProblemTime, não, assim eles são complementares.
@@ -300,6 +301,8 @@ public class ClassManager : MonoBehaviour
                     }
 
                     SistemaDialogo.sistemaDialogo.ComecarDialogo(falas[classMoment], null);
+
+                    TeacherScript.teacher.PauseWalk();
                 }
             }
 
@@ -423,41 +426,3 @@ public class ClassManager : MonoBehaviour
         return 3;
     }
 }
-
-//[CustomEditor (typeof(ClassManager))]
-//public class ClassManagerEditor : Editor
-//{
-//    public override void OnInspectorGUI()
-//    {
-//        ClassManager script = target as ClassManager;
-
-//        DrawDefaultInspector();
-
-//        if (GUILayout.Button("Execute")) 
-//        {
-//            for (int i = 0; i < script.falasSobreMomentos.Length; i++) 
-//            {
-//                ClassManager.FalasSobreMomentos m = script.falasSobreMomentos[i];
-
-//                for (int j = 0; j < m.falaSobreMidias.Length; j++) 
-//                {
-//                    ClassManager.FalaSobreMidias n = m.falaSobreMidias[j];
-
-//                    for (int k = 0; k < n.dialogo.nodulos.Length; k++)
-//                    {
-//                        DialogoNodulo o = n.dialogo.nodulos[k];
-
-//                        if (o.falas.Length == 2)
-//                        {
-//                            o.falas[1].personagem = Personagens.AlunoTipo;
-//                        }
-//                        else
-//                        {
-//                            Debug.Log("Numero de falas errada em " + " " + i + " " + j + " " + k);
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
