@@ -31,7 +31,7 @@ public class TeacherScript : AgenteAulaScript
 
     [SerializeField] private GameObject canvas;
 
-    [SerializeField] private Camera camera;
+    [SerializeField] private Camera _camera;
 
     [SerializeField] private GameObject balao;
 
@@ -65,7 +65,7 @@ public class TeacherScript : AgenteAulaScript
     {
         if (walk == null)
         {
-            balaoIns = Instantiate(balao, camera.WorldToScreenPoint((Vector2)transform.position + offset), balao.transform.rotation, canvas.transform);
+            balaoIns = Instantiate(balao, _camera.WorldToScreenPoint((Vector2)transform.position + offset), balao.transform.rotation, canvas.transform);
 
             text = balaoIns.GetComponentInChildren<TMP_Text>();
 
@@ -104,7 +104,7 @@ public class TeacherScript : AgenteAulaScript
             transform.position = Vector2.Lerp(transform.position, inicio + (vector * posicao), 
                 (velocity * Time.deltaTime) / ((inicio + (vector * posicao)) - (Vector2)transform.position).magnitude);
 
-            balaoIns.transform.position = camera.WorldToScreenPoint((Vector2)transform.position + offset);
+            balaoIns.transform.position = _camera.WorldToScreenPoint((Vector2)transform.position + offset);
 
             yield return null;
 
@@ -153,7 +153,7 @@ public class TeacherScript : AgenteAulaScript
 
         walk = null;
 
-        StopCoroutine(Speak());
+        StopCoroutine(speech);
 
         Destroy(balaoIns);
     }

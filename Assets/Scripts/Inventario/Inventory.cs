@@ -31,6 +31,8 @@ public class Inventory
 
             DisplayItems();
         }
+
+        QuestScript.ReavaliarTodasQuests();
     }
 
     private void DisplayItems()

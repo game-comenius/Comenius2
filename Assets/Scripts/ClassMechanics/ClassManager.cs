@@ -64,8 +64,6 @@ public class ClassManager : MonoBehaviour
 
     private float nextProblemTime = 0;
 
-    private bool jeanFalando = false;
-
     [SerializeField] private Dialogo[] falas = new Dialogo[3];
 
     #endregion

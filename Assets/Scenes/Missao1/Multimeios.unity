@@ -113,6 +113,375 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &50149398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1168052678347018, guid: eb606aeaeb5e46943bcda34299bae69c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 50149402}
+  - component: {fileID: 50149401}
+  - component: {fileID: 50149400}
+  - component: {fileID: 50149399}
+  - component: {fileID: 50149403}
+  m_Layer: 0
+  m_Name: Drica(NPC) (1)
+  m_TagString: QuestGiver
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &50149399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 50149398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questInfo:
+    isQuest: 0
+    questIndex: {x: 3, y: 5}
+    questDependencias:
+    - {x: 3, y: 6}
+  questFeita:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasFeitas:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 50149399}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 50149400}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasNaoFeitas:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 50149399}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 50149400}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dialogoObrigatorio: 0
+  esperaDialogoObrigatorio: 2
+  dialogoPrincipal:
+    nodulos:
+    - falas:
+      - personagem: 0
+        emocao: 2
+        fala: "Me conte mais sobre as m\xEDdias que eu achei"
+      - personagem: 1
+        emocao: 2
+        fala: "Vamos dar uma olhada nas m\xEDdias que voc\xEA j\xE1 achou."
+      - personagem: 1
+        emocao: 4
+        fala: "Pelo visto voc\xEA encontrou os cartazes com cole\xE7\xE3o de penas
+          e a c\xE2mera fotogr\xE1fica do p\xE1tio, n\xE3o \xE9? Sabia que a nomenclatura
+          da c\xE2mera fotogr\xE1fica tem rela\xE7\xE3o com a origem dela?"
+      - personagem: 1
+        emocao: 4
+        fala: "Eu li isso em um livro da minha av\xF3 e me lembro que a c\xE2mera
+          se chama assim por conta da c\xE2mera escura de Arist\xF3teles. Legal, n\xE3o
+          acha?"
+      - personagem: 1
+        emocao: 4
+        fala: "Voc\xEA tamb\xE9m achou um atlas, um livro ilustrado\u2026 canetas
+          coloridas! Nossa, como eu adoro usar elas para colorir algum trabalho manual.
+          Posso usar elas depois, quando voc\xEA n\xE3o precisar mais delas?"
+      - personagem: 1
+        emocao: 4
+        fala: "Nossa, um reprodutor de \xE1udio e um CD! Est\xE1 realmente equipada,
+          n\xE3o \xE9, professora Lurdinha?"
+      respostas:
+      - personagem: 0
+        emocao: 2
+        fala: "Voc\xEA pode me tirar uma d\xFAvida, o que \xE9 uma m\xEDdia?"
+        resumo: "M\xEDdias"
+        conexao: 1
+        questInfo:
+          isQuest: 0
+          questIndex: {x: 0, y: 0}
+          questDependencias: []
+      - personagem: 0
+        emocao: 2
+        fala: "Drika, me d\xE1 uma m\xE3o, onde voc\xEA acha que posso achar umas
+          m\xEDdias batutas?"
+        resumo: "Cad\xEA as m\xEDdias? "
+        conexao: 2
+        questInfo:
+          isQuest: 0
+          questIndex: {x: 0, y: 0}
+          questDependencias: []
+      - personagem: 0
+        emocao: 2
+        fala: "Como se aprende com uma m\xEDdia? "
+        resumo: "Aprender com m\xEDdia"
+        conexao: 3
+        questInfo:
+          isQuest: 0
+          questIndex: {x: 0, y: 0}
+          questDependencias: []
+    - falas:
+      - personagem: 1
+        emocao: 0
+        fala: "Hum, deixe eu pensar aqui na melhor forma de te explicar o que \xE9\u2026"
+      - personagem: 1
+        emocao: 2
+        fala: "J\xE1 sei! M\xEDdia \xE9 como se fosse um instrumento, que te passa
+          alguma informa\xE7\xE3o. E que atrav\xE9s dele, voc\xEA aprende sobre algo."
+      - personagem: 0
+        emocao: 4
+        fala: E esse instrumento, pode ser qualquer coisa? Tipo, poderia ser um lugar?
+      - personagem: 1
+        emocao: 2
+        fala: "O instrumento pode ser um aparato, aparelho ou dispositivo f\xEDsico
+          e tecnol\xF3gico, que fornece textos para interpreta\xE7\xE3o, e que por
+          meio dele, voc\xEA adquire o conhecimento."
+      - personagem: 1
+        emocao: 4
+        fala: "Dai sobre o lugar eu j\xE1 n\xE3o sei\u2026 mas pode ser um espa\xE7o
+          de negocia\xE7\xE3o de conte\xFAdos, distribuindo bens culturais, atrav\xE9s
+          da informa\xE7\xE3o."
+      - personagem: 0
+        emocao: 0
+        fala: "Est\xE1 certo, agora est\xE1 tudo mais claro. Obrigada!"
+      respostas: []
+    - falas:
+      - personagem: 1
+        emocao: 0
+        fala: "Acho que a Alice poderia te ajudar com isso. Ela estava me falando
+          de uma fita VHS sobre\u2026 p\xE1ssaros eu acho. \xC9 o assunto preferido
+          do Professor Jean. \xC9 sobre isso a aula, acertei?"
+      - personagem: 0
+        emocao: 0
+        fala: "Isso mesmo! Tem mais algu\xE9m que poderia me ajudar?"
+      - personagem: 1
+        emocao: 2
+        fala: "Eu acho que tem uma m\xE1quina fotogr\xE1fica Polaroid na Coordena\xE7\xE3o,
+          d\xE1 uma olhada por l\xE1."
+      - personagem: 0
+        emocao: 0
+        fala: Obrigadinha, Drika! Se cuide, menina.
+      respostas: []
+    - falas:
+      - personagem: 1
+        emocao: 2
+        fala: "Tem um macete legal para aprender a teoria por tr\xE1s disso. \xC9
+          o CSA: com, sobre e atrav\xE9s."
+      - personagem: 1
+        emocao: 2
+        fala: "S\xE3o dessas formas que \xE9 poss\xEDvel aprender com as m\xEDdias."
+      - personagem: 1
+        emocao: 2
+        fala: "O conceito do \u201Ccom as m\xEDdias\u201D \xE9 quando um professor
+          usa a m\xEDdia como um instrumento para melhorar a suas aulas."
+      - personagem: 1
+        emocao: 2
+        fala: "J\xE1 o conceito de \u201Csobre m\xEDdias\u201D acontece quando o professor
+          discute com os alunos os pontos positivos e negativos sobre as m\xEDdias,
+          de forma cr\xEDtica e reflexiva. "
+      - personagem: 1
+        emocao: 2
+        fala: "E quando o professor prop\xF5e que os alunos utilizem as m\xEDdias
+          para fazer alguma produ\xE7\xE3o pr\xE1tica, como por exemplo: constru\xE7\xE3o
+          coletiva, produ\xE7\xE3o de um v\xEDdeo, desenvolvimento de um jogo, ele
+          est\xE1 usando a educa\xE7\xE3o \u201Catrav\xE9s da m\xEDdia\u201D."
+      - personagem: 1
+        emocao: 4
+        fala: Deu pra entender, Professora?
+      - personagem: 0
+        emocao: 0
+        fala: "Claro, \xE9 um \xF3timo macete, na minha \xE9poca n\xE3o tinha muito
+          disso. Obrigada, Drika! "
+      respostas: []
+  dialogosSecundarios: []
+--- !u!61 &50149400
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 61207428146409614, guid: eb606aeaeb5e46943bcda34299bae69c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 50149398}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.67832166, y: 1.5734266}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.67832166, y: 1.5734266}
+  m_EdgeRadius: 0
+--- !u!212 &50149401
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 212720145021219412, guid: eb606aeaeb5e46943bcda34299bae69c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 50149398}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 3682f7bb26c37394ca7bf88a526684c4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &50149402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4244713818645660, guid: eb606aeaeb5e46943bcda34299bae69c,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 50149398}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.95, y: 1.12, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &50149403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 50149398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31fbff221968a674b85ec1d3121fea8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questInfo:
+    isQuest: 1
+    questIndex: {x: 3, y: 6}
+    questDependencias:
+    - {x: 0, y: 7}
+  questFeita:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasFeitas:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 50149398}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasNaoFeitas:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 50149398}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  itens: 03000000090000000400000005000000
 --- !u!1001 &118483742
 Prefab:
   m_ObjectHideFlags: 0
@@ -1267,7 +1636,7 @@ Transform:
   m_LocalScale: {x: 1.0311, y: 1.0311, z: 1.0311}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &779750502
 GameObject:
@@ -1597,7 +1966,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1048948753
 MonoBehaviour:
@@ -2184,7 +2553,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &1424486048
 Prefab:
@@ -2397,7 +2766,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1662868393
 GameObject:
@@ -2700,7 +3069,7 @@ MonoBehaviour:
         m_MethodName: DestroirObjeto
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2100348672}
+          m_ObjectArgument: {fileID: 2100348671}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0

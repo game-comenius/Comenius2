@@ -82,7 +82,7 @@ public class QuestScript : MonoBehaviour
 
     }
 
-    public void Avaliar()
+    public virtual void Avaliar()
     {
         if (questInfo.isQuest && QuestManager.GetQuestControl(questInfo.questIndex) && questFeita != null) 
         {
@@ -116,17 +116,12 @@ public class QuestScript : MonoBehaviour
         }
     }
 
-    public void ReavaliarTodasQuests()
+    public static void ReavaliarTodasQuests()
     {
         foreach (QuestScript quest in questList)
         {
-            if (quest != this)
-            {
-                quest.Avaliar();
-            }
+            quest.Avaliar();
         }
-
-        Avaliar();
     }
 
     public void ReavaliarTodasMenosEssa()
