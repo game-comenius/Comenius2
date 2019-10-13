@@ -20,7 +20,7 @@ public class SistemaDialogo : MonoBehaviour
 
     [SerializeField] private Button botao;
 
-    [SerializeField] private TMP_Dropdown  dropdown;
+    [SerializeField] private TMP_Dropdown dropdown;
 
     [Tooltip("O primeiro rosto tem que ser SEMPRE o da Lurdinha.")]
     public Image[] personagemRosto = new Image[2];
@@ -55,6 +55,18 @@ public class SistemaDialogo : MonoBehaviour
     private int nodulo = 0;
 
     private int dropdownIndex;
+
+    private string[] richText = new string[]
+    {
+        "<b>",
+        "</b>",
+        "<i>",
+        "</i>",
+        "<s>",
+        "</s>",
+        "<u>",
+        "</u>"
+    };
     #endregion
 
     private void Awake()
@@ -267,14 +279,37 @@ public class SistemaDialogo : MonoBehaviour
 
         textoDialogo.text = "";
 
-        while (textoDialogo.text.Length < falaAtual.fala.Length)
+        while (Mathf.FloorToInt(tempo * velocidade) < falaAtual.fala.Length)
         {
+            if (falaAtual.fala[Mathf.FloorToInt(tempo * velocidade)] == '<')
+            {
+                string text = falaAtual.fala.Substring(Mathf.FloorToInt(tempo * velocidade));
+
+                text = text.Substring(0, text.IndexOf('>') + 1);
+
+                foreach (string i in richText)
+                {
+                    if (i == text)
+                    {
+                        tempo += ((float)i.Length) / velocidade;
+
+                        break;
+                    }
+                }
+            }
+            else if (falaAtual.fala[Mathf.FloorToInt(tempo * velocidade)] == ' ')
+            {
+                tempo += 1 / velocidade;
+            }
+
             textoDialogo.text = falaAtual.fala.Substring(0, Mathf.FloorToInt(tempo * velocidade));
 
             yield return null;
 
             tempo += Time.deltaTime;
         }
+
+        textoDialogo.text = falaAtual.fala.Substring(0, Mathf.FloorToInt(tempo * velocidade));
 
         proximaFala += 1;
 
