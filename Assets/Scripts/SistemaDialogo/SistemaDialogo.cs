@@ -215,10 +215,10 @@ public class SistemaDialogo : MonoBehaviour
             personagemRosto[0].color = opacidade.Ligar();
             personagemRosto[0].sprite = faladorAtual.personagem;
             painel.transform.rotation = Quaternion.identity;
-            npcNome.gameObject.transform.localPosition = new Vector2
-            { x = -Mathf.Abs(npcNome.gameObject.transform.localPosition.x), y = npcNome.gameObject.transform.localPosition.y };
-            textoDialogo.gameObject.transform.localPosition = new Vector2
-            { x = -Mathf.Abs(textoDialogo.gameObject.transform.localPosition.x), y = textoDialogo.gameObject.transform.localPosition.y };
+            //npcNome.gameObject.transform.localPosition = new Vector2
+            //{ x = -Mathf.Abs(npcNome.gameObject.transform.localPosition.x), y = npcNome.gameObject.transform.localPosition.y };
+            //textoDialogo.gameObject.transform.localPosition = new Vector2
+            //{ x = -Mathf.Abs(textoDialogo.gameObject.transform.localPosition.x), y = textoDialogo.gameObject.transform.localPosition.y };
 
         }
         else
@@ -226,10 +226,10 @@ public class SistemaDialogo : MonoBehaviour
             personagemRosto[1].color = opacidade.Ligar();
             personagemRosto[1].sprite = faladorAtual.personagem;
             painel.transform.rotation = Quaternion.Euler(0, 180, 0);
-            npcNome.gameObject.transform.localPosition = new Vector2
-            { x = Mathf.Abs(npcNome.gameObject.transform.localPosition.x), y = npcNome.gameObject.transform.localPosition.y };
-            textoDialogo.gameObject.transform.localPosition = new Vector2
-            { x = Mathf.Abs(textoDialogo.gameObject.transform.localPosition.x), y = textoDialogo.gameObject.transform.localPosition.y };
+            //npcNome.gameObject.transform.localPosition = new Vector2
+            //{ x = Mathf.Abs(npcNome.gameObject.transform.localPosition.x), y = npcNome.gameObject.transform.localPosition.y };
+            //textoDialogo.gameObject.transform.localPosition = new Vector2
+            //{ x = Mathf.Abs(textoDialogo.gameObject.transform.localPosition.x), y = textoDialogo.gameObject.transform.localPosition.y };
         }
 
         if (falaAtual.fala == "")
