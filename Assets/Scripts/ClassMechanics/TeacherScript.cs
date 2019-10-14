@@ -48,6 +48,13 @@ public class TeacherScript : AgenteAulaScript
     protected void Awake()
     {
         teacher = this;
+
+        ClassManager.EndClass += PauseWalk;
+    }
+
+    private void OnDestroy()
+    {
+        ClassManager.EndClass -= PauseWalk;
     }
 
     protected override void Start()

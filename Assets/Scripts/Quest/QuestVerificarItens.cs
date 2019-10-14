@@ -8,8 +8,12 @@ public class QuestVerificarItens : QuestScript
 
 	public override void Avaliar() 
     {
+        Debug.Log(1);
+
         if (questInfo.questDependencias.Length != 0)
         {
+            Debug.Log(2);
+
             bool controlador = true;
 
             foreach (Vector2Int quest in questInfo.questDependencias)
@@ -21,7 +25,6 @@ public class QuestVerificarItens : QuestScript
                 }
             }
 
-
             if (controlador)
             {
                 dependenciasFeitas.Invoke();
@@ -31,12 +34,20 @@ public class QuestVerificarItens : QuestScript
                 dependenciasNaoFeitas.Invoke();
             }
 
+            Debug.Log(!QuestManager.GetQuestControl(questInfo.questIndex));
+
+            Debug.Log(Analise());
+
             if (!QuestManager.GetQuestControl(questInfo.questIndex) && Analise())
             {
                 bool temItens = true;
 
                 foreach (ItemName item in itens)
                 {
+                    Debug.Log(item.ToString());
+
+                    Debug.Log(!Player.Instance.Inventory.Contains(item));
+
                     if (!Player.Instance.Inventory.Contains(item))
                     {
                         temItens = false;
@@ -47,6 +58,8 @@ public class QuestVerificarItens : QuestScript
 
                 if (temItens)
                 {
+                    Debug.Log(3);
+
                     CompletarQuest();
                 }
             }
