@@ -32,7 +32,10 @@ public class Inventory
             DisplayItems();
         }
 
-        QuestScript.ReavaliarTodasQuests();
+        if (QuestScript.questList.Count != 0)
+        {
+            QuestScript.questList[0].ReavaliarTodasQuests();
+        }
     }
 
     private void DisplayItems()

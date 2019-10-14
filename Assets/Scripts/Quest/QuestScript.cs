@@ -5,7 +5,20 @@ using UnityEngine.Events;
 
 public class QuestScript : MonoBehaviour
 {
-    private static List<QuestScript> questList = new List<QuestScript>();
+    private static List<QuestScript> _questList = new List<QuestScript>();
+
+    public static List<QuestScript> questList
+    {
+        get
+        {
+            return _questList;
+        }
+
+        private set
+        {
+            _questList = value;
+        }
+    }
 
     public QuestStruct questInfo = new QuestStruct
     {
@@ -116,8 +129,17 @@ public class QuestScript : MonoBehaviour
         }
     }
 
-    public static void ReavaliarTodasQuests()
+    public void ReavaliarTodasQuests()
     {
+        //Debug.Log(questList.Count);
+
+        //for (int i = 0; i < questList.Count; i++)
+        //{
+        //    questList[i].Avaliar();
+        //}
+
+        Avaliar();
+
         foreach (QuestScript quest in questList)
         {
             quest.Avaliar();

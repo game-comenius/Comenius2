@@ -16,6 +16,6 @@ public class ScriptProvisorio : MonoBehaviour
 
         QuestManager.SetQuestControl(GetComponent<QuestScript>().questInfo.questIndex, true);
 
-        QuestScript.ReavaliarTodasQuests();
+        GetComponent<QuestScript>().ReavaliarTodasQuests();
     }
 }
