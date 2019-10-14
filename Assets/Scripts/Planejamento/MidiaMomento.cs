@@ -8,25 +8,29 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
     
     public ItemName initialItem;
     private ItemName item; //item no slot
-    //private double points = 0;
+                           //private double points = 0;
 
     //se você tiver uma ideia melhor pra fazer isso, por favor melhore isso.
     //está feito assim porque cada momento tem pontuações diferentes pra cada mídia, por isso todos são públicos para serem editados no unity.
-    public double livroPoints = 0;
-    public double livroilustradoPoints = 0;
-    public double cartazesPoints = 0;
-    public double tvPoints = 0;
-    public double cadernoPoints = 0;
-    public double gravadorPoints = 0;
-    public double reprodutoraudioPoints = 0;
-    public double vhsPoints = 0;
-    public double cameraPoints = 0;
-    public double jornaisPoints = 0;
-    public double fotografiaPoints = 0;
-    public double quadronegroPoints = 0;
-    public double jornaiserevistasPoints = 0;
-    public double revistasPoints = 0;
-    public double mapaPoints = 0;
+    public int reprodutoraudioPoints = 0;
+    public int cdPoints = 0;
+    public int gravadorPoints = 0;
+    public int gravacaoPoints = 0;
+    public int cameraPolaroidPoints = 0;
+    public int fotografiaPoints = 0;
+    public int tvPoints = 0;
+    public int vhsPoints = 0;
+    public int cartazComPenasPoints = 0;
+    public int livroPoints = 0;
+    public int livroilustradoPoints = 0;
+    public int quadroNegroPoints = 0;
+    public int quadroNegroStencilPoints = 0;
+    public int cartazesPoints = 0;
+    public int mapaPoints = 0;
+    public int cadernoPoints = 0;        
+    public int jornaisPoints = 0;        
+    public int jornaiserevistasPoints = 0;
+    
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -47,20 +51,24 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
     public double Points() {
         //pega pontuação no contexto do momento
         switch (item) {
+            case ItemName.ReprodutorAudio: return reprodutoraudioPoints;
+            case ItemName.Cd: return cdPoints;
+            case ItemName.Gravador: return gravadorPoints;
+            case ItemName.Gravacao: return gravacaoPoints;
+            case ItemName.CameraPolaroid: return cameraPolaroidPoints;
+            case ItemName.Fotografia: return fotografiaPoints;
+            case ItemName.TV: return tvPoints;
+            case ItemName.VHS: return vhsPoints;
+            case ItemName.CartazComColecaoDePenas: return cartazComPenasPoints;
             case ItemName.Livro: return livroPoints;
             case ItemName.LivroIlustrado: return livroilustradoPoints;
+            case ItemName.QuadroNegro: return quadroNegroPoints;
+            case ItemName.QuadroNegroComEstencil: return quadroNegroStencilPoints;
             case ItemName.Cartazes: return cartazesPoints;
-            case ItemName.TV: return tvPoints;
-            case ItemName.Caderno: return cadernoPoints;
-            case ItemName.ReprodutorAudio: return reprodutoraudioPoints;
-            case ItemName.VHS: return vhsPoints;
-            case ItemName.Camera: return cameraPoints;
-            case ItemName.Jornais: return jornaisPoints;
-            case ItemName.Fotografia: return fotografiaPoints;
-            case ItemName.QuadroNegro: return quadronegroPoints;
-            case ItemName.JornaisEResvistas: return jornaiserevistasPoints;
-            case ItemName.Revistas: return revistasPoints;
             case ItemName.Mapa: return mapaPoints;
+            case ItemName.Caderno: return cadernoPoints;
+            case ItemName.Jornais: return jornaisPoints;
+            case ItemName.JornaisEResvistas: return jornaiserevistasPoints;
             default: return 0;
         }
     }

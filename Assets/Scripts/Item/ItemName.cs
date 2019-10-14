@@ -9,7 +9,6 @@ public enum ItemName
     Gravador,
     ReprodutorAudio,
     VHS,
-    Camera,
     Jornais,
     Fotografia,
     QuadroNegro,
@@ -18,12 +17,7 @@ public enum ItemName
     QuadroNegroComEstencil,
     Mapa,
     JornaisEResvistas,
-    Revistas,
-    CdECdplayer,
     Cd,
-    Cdplayer,
     Gravacao,
-    Polariod,
-    TvVhs,
-    ColecaoDePenas
+    CameraPolaroid
 }
