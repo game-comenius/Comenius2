@@ -7,14 +7,24 @@ using System;
 
 public class InventoryItemSlotUI : MonoBehaviour, IPointerClickHandler {
 
-    //private static Image enabledItemBorder;
+    private static Image activeItemBorder;
+
+    [SerializeField]
+    private Image myItemBorder;
+    [SerializeField]
+    private Sprite selectedItemBorder;
+    [SerializeField]
+    private Sprite neutralItemBorder;
+
+    public GameObject DescriptionSlot { get; set; }
+
+    [SerializeField]
+    private Image imageComponent;
+
 
     private LinkedList<Item> myItems;
     private LinkedListNode<Item> myCurrentItem;
 
-    public GameObject DescriptionSlot { get; set; }
-    [SerializeField]
-    private Image imageComponent;
 
     private void Awake()
     {
@@ -35,10 +45,6 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerClickHandler {
         var item = myCurrentItem.Value;
 
         // Colocar o sprite do item no slot.
-        // Referência para o GameObject que representa a imagem de um item
-        // var image = transform.GetChild(0);
-        // Referência para o componente Image do item no inventário
-        //var image = imageObject.GetComponent<Image>();
         imageComponent.sprite = item.Sprite;
 
         // Colocar o nome do item no slot.
@@ -63,39 +69,42 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerClickHandler {
     {
         myCurrentItem = myCurrentItem.Previous ?? myItems.Last;
         DisplayInfo();
-        DisplayDescription();
+        HandleClick();
     }
 
     public void DisplayNextItem()
     {
         myCurrentItem = myCurrentItem.Next ?? myItems.First;
         DisplayInfo();
-        DisplayDescription();
+        HandleClick();
     }
 
-    public void DisplayDescription()
+    
+
+    private void HandleClick()
     {
+        // Desabilitar o último destaque de slot de item
+        if (activeItemBorder) activeItemBorder.sprite = neutralItemBorder;
+        // Habilitar o destaque para este item
+        myItemBorder.sprite = selectedItemBorder;
+        // A borda ativa/selecionada agora é a borda deste item
+        activeItemBorder = myItemBorder;
+
         var item = myCurrentItem.Value;
         // Colocar a descrição na caixa de descrição
         DescriptionSlot.GetComponent<Text>().text = item.Description;
-    }
-
-    public virtual void OnPointerClick(PointerEventData eventData)
-    {
-        // Desabilitar o último destaque de slot de item
-        //if (enabledItemBorder) enabledItemBorder.enabled = false;
-        // Habilitar o destaque para este item
-        //enabledItemBorder = transform.GetChild(0).GetComponent<Image>();
-        //enabledItemBorder.enabled = true;
-        DisplayDescription();
 
         // Caso esta folha de inventário esteja sendo usada em um planejamento
-        var item = myCurrentItem.Value;
         GameObject selectedMoment = null;
         var planManager = FindObjectOfType<PlanManager>();
         if (planManager)
             selectedMoment = planManager.getSelectedMoment();
         if (selectedMoment)
             selectedMoment.GetComponent<MidiaMomento>().AddItem(item.ItemName);
+    }
+
+    public virtual void OnPointerClick(PointerEventData eventData)
+    {
+        HandleClick();
     }
 }
