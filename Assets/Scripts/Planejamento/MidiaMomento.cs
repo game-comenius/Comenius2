@@ -54,7 +54,7 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
             case ItemName.ReprodutorAudio: return reprodutoraudioPoints;
             case ItemName.Cd: return cdPoints;
             case ItemName.Gravador: return gravadorPoints;
-            case ItemName.Gravacao: return gravacaoPoints;
+            case ItemName.GravacaoPassaro: return gravacaoPoints;
             case ItemName.CameraPolaroid: return cameraPolaroidPoints;
             case ItemName.Fotografia: return fotografiaPoints;
             case ItemName.TV: return tvPoints;

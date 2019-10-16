@@ -18,6 +18,6 @@ public enum ItemName
     Mapa,
     JornaisEResvistas,
     Cd,
-    Gravacao,
+    GravacaoPassaro,
     CameraPolaroid
 }

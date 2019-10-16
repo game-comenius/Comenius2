@@ -8,6 +8,7 @@ public class Inventory
     public Inventory() {
         items = new Dictionary<ItemName, Item>();
 
+        // Itens iniciais
         items.Add(ItemName.Cartazes, new Item(ItemName.Cartazes));
         items.Add(ItemName.Caderno, new Item(ItemName.Caderno));
         items.Add(ItemName.Jornais, new Item(ItemName.Jornais));
@@ -25,9 +26,22 @@ public class Inventory
 
     public void Add(ItemName itemName)
     {
-        if (!items.ContainsKey(itemName))
+        if (!this.Contains(itemName))
         {
-            items.Add(itemName, new Item(itemName));
+            var item = new Item(itemName);
+
+            // Se é um upgrade mas o jogador não possui o item base para
+            // realizar o upgrade, aborta esta adição de item ao inventário
+            if (item.IsUpgrade())
+            {
+                var validUpgrade = false;
+                foreach (var baseItem in item.UpgradeFrom)
+                    validUpgrade = this.Contains(baseItem);
+
+                if (!validUpgrade) return;
+            }
+
+            items.Add(itemName, item);
 
             DisplayItems();
         }
@@ -48,6 +62,7 @@ public class Inventory
     }
 
 
+    // Para testes usando o console
     public override string ToString()
     {
         var returnString = "";

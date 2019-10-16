@@ -12,6 +12,8 @@ public class Item
     public string FullDescription { get; private set; }
     public ItemName[] UpgradeFrom = new ItemName[2];
 
+    // Se esta mídia é uma mídia após um upgrade ou não é
+    public bool IsUpgrade() { return this.UpgradeFrom[0] != 0; }
 
     public Item(ItemName itemName)
     {
@@ -36,7 +38,7 @@ public class Item
                 Description = "Para capturar os sons da natureza… Os alunos também podem usar para gravar algo durante a aula. Uma entrevista, ou ainda o que aprenderam sobre o conteúdo.";
                 FullDescription = "É um aparelho de gravação e reprodução de áudio. Pode ser utilizado possibilitando uma maior autonomia para criação de conteúdo. Possui um uso mais específico, fazendo com que sua linguagem seja praticamente apenas verbal, a sua formalidade vai depender de quem está fazendo a produção do conteúdo.";
                 break;
-            case ItemName.Gravacao:
+            case ItemName.GravacaoPassaro:
                 FriendlyName = "Gravação do Pássaro";
                 Description = "Gravação do canto do pássaro no pátio da escola";
                 FullDescription = "Gravação do canto do pássaro no pátio da escola";
