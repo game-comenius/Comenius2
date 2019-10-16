@@ -19,6 +19,8 @@ public class ClassManager : MonoBehaviour
 
     static public event ClassEnded EndClass;
 
+    [SerializeField] private Sprite[] alunos = new Sprite[12];
+
     [SerializeField] private GameObject cloud;
 
     [SerializeField] private Canvas canvas;
@@ -210,6 +212,30 @@ public class ClassManager : MonoBehaviour
                 aluno.aluno.gameObject.GetComponent<NpcDialogo>().enabled = true;
             }
         });
+
+        int m = 0;
+
+        for(int i = 0; i < students.Count; i++)
+        {
+            int n = Random.Range(0, alunos.Length - i);
+
+            for (int j = 0; j <= n; j++)
+            {
+                if ((m & (1 << j)) == (1 << j)) 
+                {
+                    n++;
+                    if (n == alunos.Length)
+                    {
+                        n = 0;
+                        j = 0;
+                    }
+                }
+            }
+
+            students[i].GetComponent<SpriteRenderer>().sprite = alunos[n];
+
+            m = (m | 1 << n);
+        }
     }
 
     private void OnDestroy()

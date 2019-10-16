@@ -16,11 +16,9 @@ public class StudentScript : AgenteAulaScript
         }
     }
 
-    protected override void Start()
+    protected void Awake()
     {
         ClassManager.AddStundent(this);
-
-        base.Start();
     }
 
     private void OnDrawGizmos()

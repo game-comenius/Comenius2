@@ -33,17 +33,17 @@ public class TeacherScript : AgenteAulaScript
 
     [SerializeField] private Camera _camera;
 
-    [SerializeField] private GameObject balao;
+    //[SerializeField] private GameObject balao;
 
-    private GameObject balaoIns;
+    //private GameObject balaoIns;
 
-    private TMP_Text text;
+    //private TMP_Text text;
 
     [SerializeField] private float speechWait;
 
     [SerializeField] private Vector2 offset;
 
-    private Coroutine speech;
+    //private Coroutine speech;
 
     protected void Awake()
     {
@@ -72,13 +72,13 @@ public class TeacherScript : AgenteAulaScript
     {
         if (walk == null)
         {
-            balaoIns = Instantiate(balao, _camera.WorldToScreenPoint((Vector2)transform.position + offset), balao.transform.rotation, canvas.transform);
+            //balaoIns = Instantiate(balao, _camera.WorldToScreenPoint((Vector2)transform.position + offset), balao.transform.rotation, canvas.transform);
 
-            text = balaoIns.GetComponentInChildren<TMP_Text>();
+            //text = balaoIns.GetComponentInChildren<TMP_Text>();
 
             walk = StartCoroutine(Walk());
 
-            speech = StartCoroutine(Speak());
+            //speech = StartCoroutine(Speak());
         }
     }
 
@@ -111,7 +111,7 @@ public class TeacherScript : AgenteAulaScript
             transform.position = Vector2.Lerp(transform.position, inicio + (vector * posicao), 
                 (velocity * Time.deltaTime) / ((inicio + (vector * posicao)) - (Vector2)transform.position).magnitude);
 
-            balaoIns.transform.position = _camera.WorldToScreenPoint((Vector2)transform.position + offset);
+            //balaoIns.transform.position = _camera.WorldToScreenPoint((Vector2)transform.position + offset);
 
             yield return null;
 
@@ -126,29 +126,29 @@ public class TeacherScript : AgenteAulaScript
         }
     }
 
-    private IEnumerator Speak()
-    {
-        text.text = "...";
+    //private IEnumerator Speak()
+    //{
+    //    text.text = "...";
 
-        while (true) 
-        {
-            yield return new WaitForSeconds(speechWait);
+    //    while (true) 
+    //    {
+    //        yield return new WaitForSeconds(speechWait);
 
-            text.text = "";
+    //        text.text = "";
 
-            yield return new WaitForSeconds(speechWait);
+    //        yield return new WaitForSeconds(speechWait);
 
-            text.text = ".  ";
+    //        text.text = ".  ";
 
-            yield return new WaitForSeconds(speechWait);
+    //        yield return new WaitForSeconds(speechWait);
 
-            text.text = ".. ";
+    //        text.text = ".. ";
 
-            yield return new WaitForSeconds(speechWait);
+    //        yield return new WaitForSeconds(speechWait);
 
-            text.text = "...";
-        }
-    }
+    //        text.text = "...";
+    //    }
+    //}
 
     public void PauseWalk()
     {
@@ -160,9 +160,9 @@ public class TeacherScript : AgenteAulaScript
 
         walk = null;
 
-        StopCoroutine(speech);
+        //StopCoroutine(speech);
 
-        Destroy(balaoIns);
+        //Destroy(balaoIns);
     }
 
     private void OnDrawGizmosSelected()
