@@ -30,7 +30,7 @@ public class Plan : MonoBehaviour
         if (!GameManager.uiSendoUsada)
         {
             planejamentoUi.SetActive(true);
-
+            GameObject.Find("Fade").GetComponent<SpriteRenderer>().enabled = true;
             GameManager.UISendoUsada();
         }
     }
