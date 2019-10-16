@@ -22,13 +22,13 @@ public class InventorySheetUI : MonoBehaviour {
         StartCoroutine(FindPlayer());
     }
 
-    private void OnEnable()
-    {
-        inventory = Player.Instance.Inventory;
+    //private void OnEnable()
+    //{
+    //    inventory = Player.Instance.Inventory;
 
-        if (inventory != null && inventory.Items().Count > 0)
-            DisplayItems(inventory.Items());
-    }
+    //    if (inventory != null && inventory.Items().Count > 0)
+    //        DisplayItems(inventory.Items());
+    //}
 
     private IEnumerator FindPlayer()
     {
