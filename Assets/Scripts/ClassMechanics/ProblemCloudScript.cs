@@ -6,18 +6,42 @@ using UnityEngine.UI;
 
 public class ProblemCloudScript : MonoBehaviour
 {
-    [SerializeField] Image mainProblem;
+    [SerializeField] private Image mainProblem;
 
-    [SerializeField] Sprite[] problemSprites = new Sprite[3];
+    [SerializeField] private Sprite[] problemSprites = new Sprite[3];
 
-    [SerializeField] Button[] solutionButtons = new Button[3];
+    [SerializeField] private Button[] solutionButtons = new Button[3];
+
+    [SerializeField] private Image[] solutionAnswer = new Image[3];
+
+    [SerializeField] private Sprite[] rightWrong = new Sprite[2];
+
+    [SerializeField] private float waitToDestroy = 1f;
+
+    [SerializeField] private Vector2 scaleDelta;
+
+    [SerializeField] private float scalingDuration = 0.5f;
+
+    private Vector3 originalScale;
+
+    private Vector3 anchor;
 
     [HideInInspector] public float problemDuration;
 
     [HideInInspector] public int studentIndex;
 
+
+
     private void Awake()
     {
+        originalScale = transform.localScale;
+
+        anchor = transform.position;
+
+        transform.localScale = scaleDelta.x * originalScale;
+
+        transform.position = anchor + new Vector3(transform.localScale.x * GetComponent<RectTransform>().rect.width / 2, 
+                                                    transform.localScale.y * GetComponent<RectTransform>().rect.height / 2, 0);
         InitializeProblem();
 
         ClassManager.EndClass += WrongSolution;
@@ -44,29 +68,64 @@ public class ProblemCloudScript : MonoBehaviour
             if (j == i)
             {
                 solutionButtons[j].onClick.AddListener(() => RightSolution());
+                solutionAnswer[j].sprite = rightWrong[0];
             }
             else
             {
                 solutionButtons[j].onClick.AddListener(() => WrongSolution());
+                solutionAnswer[j].sprite = rightWrong[1];
             }
         }
 
+        StartCoroutine(Animation());
+    }
+
+    private IEnumerator Animation()
+    {
+        float t = 0;
+
+        while (t < scalingDuration)
+        {
+            yield return null;
+
+            t += Time.deltaTime;
+
+            transform.localScale = Vector3.Lerp(scaleDelta.x * originalScale, scaleDelta.y * originalScale, t / scalingDuration);
+
+            transform.position = anchor + new Vector3(transform.localScale.x * GetComponent<RectTransform>().rect.width / 2,
+                                            transform.localScale.y * GetComponent<RectTransform>().rect.height / 2, 0);
+        }
+
+        foreach (Button button in solutionButtons)
+        {
+            button.interactable = true;
+        }
     }
 
     private void RightSolution()
     {
         Debug.Log("Parabens");
 
-        ClassManager.classManager.RemoveCloud(this);
-
-        Destroy(gameObject);
+        StartCoroutine(WaitToDestroy());
     }
 
     public void WrongSolution()
     {
         Debug.Log("Oops");
 
+        StartCoroutine(WaitToDestroy());
+    }
+
+    private IEnumerator WaitToDestroy()
+    {
         ClassManager.classManager.RemoveCloud(this);
+
+        foreach (Image image in solutionAnswer)
+        {
+            image.color += new Color(0f, 0f, 0f, 1f);
+        }
+
+        yield return new WaitForSeconds(waitToDestroy);
 
         Destroy(gameObject);
     }

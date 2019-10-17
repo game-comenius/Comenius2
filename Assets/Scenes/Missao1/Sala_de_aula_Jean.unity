@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac95184715fb7ad4eb72daef0ac64834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloudOffset: {x: 0.2, y: 1, z: 0}
+  _cloudOffset: {x: 0.4, y: 0.4, z: 0}
   drawGizmos: 1
 --- !u!212 &77789706
 SpriteRenderer:
@@ -370,7 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac95184715fb7ad4eb72daef0ac64834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloudOffset: {x: 0.2, y: 1, z: 0}
+  _cloudOffset: {x: 0.4, y: 0.4, z: 0}
   drawGizmos: 1
 --- !u!212 &179691153
 SpriteRenderer:
@@ -595,7 +595,6 @@ RectTransform:
   m_Children:
   - {fileID: 922724483}
   - {fileID: 332784609}
-  - {fileID: 693551728}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -739,7 +738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac95184715fb7ad4eb72daef0ac64834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloudOffset: {x: 0.2, y: 1, z: 0}
+  _cloudOffset: {x: 0.4, y: 0.4, z: 0}
   drawGizmos: 1
 --- !u!212 &440190140
 SpriteRenderer:
@@ -883,7 +882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac95184715fb7ad4eb72daef0ac64834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloudOffset: {x: 0.2, y: 1, z: 0}
+  _cloudOffset: {x: 0.4, y: 0.4, z: 0}
   drawGizmos: 1
 --- !u!212 &491417310
 SpriteRenderer:
@@ -1135,111 +1134,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1001 &693551727
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 353030541}
-    m_Modifications:
-    - target: {fileID: 224864797377182176, guid: 4876726aaa56b3a49b77d5bc68a0929e,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224864797377182176, guid: 4876726aaa56b3a49b77d5bc68a0929e,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224864797377182176, guid: 4876726aaa56b3a49b77d5bc68a0929e,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224864797377182176, guid: 4876726aaa56b3a49b77d5bc68a0929e,
-        type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224864797377182176, guid: 4876726aaa56b3a49b77d5bc68a0929e,
-        type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224864797377182176, guid: 4876726aaa56b3a49b77d5bc68a0929e,
-        type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224864797377182176, guid: 4876726aaa56b3a49b77d5bc68a0929e,
-        type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224864797377182176, guid: 4876726aaa56b3a49b77d5bc68a0929e,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 224864797377182176, guid: 4876726aaa56b3a49b77d5bc68a0929e,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -889.50665
-      objectReference: {fileID: 0}
-    - target: {fileID: 224864797377182176, guid: 4876726aaa56b3a49b77d5bc68a0929e,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -497.74716
-      objectReference: {fileID: 0}
-    - target: {fileID: 224864797377182176, guid: 4876726aaa56b3a49b77d5bc68a0929e,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 224864797377182176, guid: 4876726aaa56b3a49b77d5bc68a0929e,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 224864797377182176, guid: 4876726aaa56b3a49b77d5bc68a0929e,
-        type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224864797377182176, guid: 4876726aaa56b3a49b77d5bc68a0929e,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224864797377182176, guid: 4876726aaa56b3a49b77d5bc68a0929e,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224864797377182176, guid: 4876726aaa56b3a49b77d5bc68a0929e,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224864797377182176, guid: 4876726aaa56b3a49b77d5bc68a0929e,
-        type: 2}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224864797377182176, guid: 4876726aaa56b3a49b77d5bc68a0929e,
-        type: 2}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4876726aaa56b3a49b77d5bc68a0929e, type: 2}
-  m_IsPrefabAsset: 0
---- !u!224 &693551728 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 224864797377182176, guid: 4876726aaa56b3a49b77d5bc68a0929e,
-    type: 2}
-  m_PrefabInternal: {fileID: 693551727}
 --- !u!1 &704088610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,22 +1288,22 @@ Prefab:
     - target: {fileID: 114123597930835050, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
         type: 2}
       propertyPath: points.Array.data[0]
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114123597930835050, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
         type: 2}
       propertyPath: points.Array.data[1]
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114123597930835050, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
         type: 2}
       propertyPath: points.Array.data[2]
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114123597930835050, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
         type: 2}
       propertyPath: totalMissionPoints
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
@@ -1448,7 +1342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac95184715fb7ad4eb72daef0ac64834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloudOffset: {x: 0.2, y: 1, z: 0}
+  _cloudOffset: {x: 0.4, y: 0.4, z: 0}
   drawGizmos: 1
 --- !u!212 &843460828
 SpriteRenderer:
@@ -1644,7 +1538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac95184715fb7ad4eb72daef0ac64834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloudOffset: {x: 0.2, y: 1, z: 0}
+  _cloudOffset: {x: 0.4, y: 0.4, z: 0}
   drawGizmos: 1
 --- !u!212 &927705598
 SpriteRenderer:
@@ -1765,7 +1659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac95184715fb7ad4eb72daef0ac64834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloudOffset: {x: 0.2, y: 1, z: 0}
+  _cloudOffset: {x: 0.4, y: 0.4, z: 0}
   drawGizmos: 1
 --- !u!212 &1114658416
 SpriteRenderer:
@@ -1981,7 +1875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac95184715fb7ad4eb72daef0ac64834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloudOffset: {x: 0.2, y: 1, z: 0}
+  _cloudOffset: {x: 0.4, y: 0.4, z: 0}
   drawGizmos: 1
 --- !u!212 &1187637564
 SpriteRenderer:
@@ -3039,7 +2933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac95184715fb7ad4eb72daef0ac64834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloudOffset: {x: 0.2, y: 1, z: 0}
+  _cloudOffset: {x: 0.4, y: 0.4, z: 0}
   drawGizmos: 1
 --- !u!212 &1253454485
 SpriteRenderer:
@@ -3624,7 +3518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac95184715fb7ad4eb72daef0ac64834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloudOffset: {x: 0.2, y: 1, z: 0}
+  _cloudOffset: {x: 0.4, y: 0.4, z: 0}
   drawGizmos: 1
 --- !u!212 &1565948741
 SpriteRenderer:
@@ -3716,7 +3610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac95184715fb7ad4eb72daef0ac64834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloudOffset: {x: 0.2, y: 1, z: 0}
+  _cloudOffset: {x: 0.4, y: 0.4, z: 0}
   drawGizmos: 1
 --- !u!212 &1683431679
 SpriteRenderer:
@@ -4258,7 +4152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac95184715fb7ad4eb72daef0ac64834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cloudOffset: {x: 0.2, y: 1, z: 0}
+  _cloudOffset: {x: 0.4, y: 0.4, z: 0}
   drawGizmos: 1
 --- !u!212 &2047822804
 SpriteRenderer:

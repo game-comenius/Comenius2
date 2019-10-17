@@ -28,12 +28,13 @@ public class GridScriptEditor : Editor
 
         gridDim = gridDimSP.vector2IntValue;
 
-        if ((target as GridScript).vacancy == null || (target as GridScript).vacancy.GetLength(0) == 0 || (target as GridScript).vacancy.GetLength(1) == 0)
-        {
-            vacancy = new bool[gridDim.x, gridDim.y];
+        string path = EditorSceneManager.GetActiveScene().path;
 
-            (target as GridScript).vacancy = vacancy;
-        }
+        path = path.Substring(14, path.IndexOf('.') - 14);
+
+        path = path.Replace('/', '-');
+
+        Load(Application.dataPath + "/" + path + ".txt");
     }
 
     public override void OnInspectorGUI()
