@@ -35,6 +35,8 @@ public class GridScriptEditor : Editor
         path = path.Replace('/', '-');
 
         Load(Application.dataPath + "/" + path + ".txt");
+
+        (target as GridScript).vacancy = vacancy;
     }
 
     public override void OnInspectorGUI()
@@ -189,8 +191,6 @@ public class GridScriptEditor : Editor
 
             file.Close();
         }
-
-        Debug.Log("Load ended");
     }
 }
 
