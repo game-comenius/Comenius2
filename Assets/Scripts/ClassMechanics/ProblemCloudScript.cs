@@ -30,8 +30,6 @@ public class ProblemCloudScript : MonoBehaviour
 
     [HideInInspector] public int studentIndex;
 
-
-
     private void Awake()
     {
         originalScale = transform.localScale;
@@ -122,7 +120,7 @@ public class ProblemCloudScript : MonoBehaviour
 
         foreach (Image image in solutionAnswer)
         {
-            image.color += new Color(0f, 0f, 0f, 1f);
+            image.gameObject.SetActive(true);
         }
 
         yield return new WaitForSeconds(waitToDestroy);

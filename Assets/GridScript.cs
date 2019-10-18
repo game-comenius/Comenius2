@@ -111,7 +111,7 @@ public class GridScript : MonoBehaviour
         return cell;
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         Gizmos.color = gridColor;
 

@@ -177,7 +177,7 @@ public class ClassManager : MonoBehaviour
 
         for (int i = 0; i < alunosComentaristas.Length; i++)
         {
-            alunosComentaristas[i].aluno.gameObject.AddComponent<PolygonCollider2D>();
+            alunosComentaristas[i].aluno.gameObject.AddComponent<PolygonCollider2D>().enabled = false;
             NpcDialogo d = alunosComentaristas[i].aluno.gameObject.AddComponent<NpcDialogo>();
 
             d.questInfo.isQuest = true;
@@ -210,6 +210,7 @@ public class ClassManager : MonoBehaviour
             foreach (AlunosComentaristas aluno in alunosComentaristas)
             {
                 aluno.aluno.gameObject.GetComponent<NpcDialogo>().enabled = true;
+                aluno.aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
             }
         });
 
@@ -247,6 +248,7 @@ public class ClassManager : MonoBehaviour
             foreach (AlunosComentaristas aluno in alunosComentaristas)
             {
                 aluno.aluno.gameObject.GetComponent<NpcDialogo>().enabled = true;
+                aluno.aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
             }
         });
     }
@@ -289,6 +291,11 @@ public class ClassManager : MonoBehaviour
             timer.text = "M" + (classMoment + 1) + " - " + Mathf.FloorToInt(momentTimer / 60).ToString("00") + ":" + Mathf.FloorToInt(momentTimer % 60).ToString("00");
 
             yield return new WaitUntil(() => !SistemaDialogo.sistemaDialogo.transform.GetChild(0).gameObject.activeSelf);
+
+            if (!GameManager.uiSendoUsada) 
+            {
+                GameManager.UISendoUsada();
+            }
 
             TeacherScript.teacher.StartWalk();
 
