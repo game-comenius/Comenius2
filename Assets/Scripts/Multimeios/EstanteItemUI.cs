@@ -36,5 +36,10 @@ public class EstanteItemUI : MonoBehaviour, IPointerClickHandler {
         var clickedItem = Item;
         Estante.Remove(clickedItem);
         Player.Instance.Inventory.Add(clickedItem);
+
+        if (QuestScript.questList.Count != 0)
+        {
+            QuestScript.questList[0].ReavaliarTodasQuests();
+        }
     }
 }
