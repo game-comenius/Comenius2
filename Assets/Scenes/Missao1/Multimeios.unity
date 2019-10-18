@@ -1632,6 +1632,7 @@ GameObject:
   - component: {fileID: 2100348676}
   - component: {fileID: 2100348675}
   - component: {fileID: 2100348674}
+  - component: {fileID: 2100348673}
   - component: {fileID: 2100348672}
   m_Layer: 0
   m_Name: Drica(NPC)
@@ -1663,6 +1664,17 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2100348671}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2100348673}
+        m_MethodName: addItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -1728,6 +1740,18 @@ MonoBehaviour:
           as canetas coloridas depois, viu?"
       respostas: []
   dialogosSecundarios: []
+--- !u!114 &2100348673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2100348671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722b3663c27596a44be0c38f4b167b1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: 5
 --- !u!61 &2100348674
 BoxCollider2D:
   m_ObjectHideFlags: 0

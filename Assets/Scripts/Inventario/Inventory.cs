@@ -46,10 +46,6 @@ public class Inventory
             DisplayItems();
         }
 
-        if (QuestScript.questList.Count != 0)
-        {
-            QuestScript.questList[0].ReavaliarTodasQuests();
-        }
     }
 
     private void DisplayItems()
