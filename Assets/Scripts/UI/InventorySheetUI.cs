@@ -11,28 +11,33 @@ public class InventorySheetUI : MonoBehaviour {
     [SerializeField]
     private GameObject itemSlotPrefab;
 
-    private List<GameObject> gameObjectSlots;
+    private List<GameObject> gameObjectSlots = new List<GameObject>();
 
     private Inventory inventory;
 
     public void Start ()
     {
-        gameObjectSlots = new List<GameObject>();
+        // StartCoroutine(FindPlayer());
 
-        StartCoroutine(FindPlayer());
+        inventory = Player.Instance.Inventory;
+
+        if (inventory.Items().Count > 0)
+            DisplayItems(inventory.Items());
     }
 
-    //private void OnEnable()
+    //private IEnumerator FindPlayer()
     //{
+    //    yield return new WaitWhile(() => Player.Instance == null);
+
     //    inventory = Player.Instance.Inventory;
 
-    //    if (inventory != null && inventory.Items().Count > 0)
+    //    if (inventory.Items().Count > 0)
     //        DisplayItems(inventory.Items());
     //}
 
-    private IEnumerator FindPlayer()
+    private void OnEnable()
     {
-        yield return new WaitWhile(() => Player.Instance == null);
+        if (Player.Instance == null) return;
 
         inventory = Player.Instance.Inventory;
 
