@@ -153,26 +153,33 @@ public class GridScript : MonoBehaviour
 
         Gizmos.color = Color.red;
 
-        for (int j = 0; j < gridDim.y; j++)
+        try
         {
-            for (int i = 0; i < gridDim.x; i++)
+            for (int j = 0; j < gridDim.y; j++)
             {
-                if (vacancy[i, j]) 
+                for (int i = 0; i < gridDim.x; i++)
                 {
-                    Gizmos.DrawSphere(Cell(new Vector2Int(i, j))[0], 0.1f);
+                    if (vacancy[i, j])
+                    {
+                        Gizmos.DrawSphere(Cell(new Vector2Int(i, j))[0], 0.1f);
+                    }
+                }
+            }
+
+            for (int j = 0; j < gridDim.y; j++)
+            {
+                for (int i = 0; i < gridDim.x; i++)
+                {
+                    if (vacancy[i, j])
+                    {
+                        Gizmos.DrawSphere(CellR(new Vector2Int(i, j))[0], 0.1f);
+                    }
                 }
             }
         }
-
-        for (int j = 0; j < gridDim.y; j++)
+        catch (System.NullReferenceException)
         {
-            for (int i = 0; i < gridDim.x; i++)
-            {
-                if (vacancy[i, j]) 
-                {
-                    Gizmos.DrawSphere(CellR(new Vector2Int(i, j))[0], 0.1f);
-                }
-            }
+
         }
 
         if (draw && obj != null) 

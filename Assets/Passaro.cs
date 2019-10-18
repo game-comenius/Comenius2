@@ -13,7 +13,7 @@ public class Passaro : MonoBehaviour {
     {
         if (!a)
         {
-            Player.Instance.Inventory.Add(ItemName.Gravador);
+            //Player.Instance.Inventory.Add(ItemName.Gravador);
             Player.Instance.Inventory.Add(ItemName.GravacaoPassaro);
             Debug.Log("Pássaro Cantou!");
             a = true;
