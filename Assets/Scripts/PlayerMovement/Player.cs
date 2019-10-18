@@ -29,7 +29,8 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Instance.gameObject.transform.position = this.gameObject.transform.position;
+            Instance.transform.position = this.transform.position;
+            Instance.GetComponent<SpriteRenderer>().sprite = GetComponent<SpriteRenderer>().sprite;
             Destroy(this.gameObject);
         }
     }
