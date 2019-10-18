@@ -34,7 +34,7 @@ public class PlanManager : MonoBehaviour {
     public void ResetPlan() {
         GameObject.Find("Midia1").GetComponent<MidiaMomento>().ResetItem();
         GameObject.Find("Midia2").GetComponent<MidiaMomento>().ResetItem();
-        GameObject.Find("Midia2").GetComponent<MidiaMomento>().ResetItem();
+        GameObject.Find("Midia3").GetComponent<MidiaMomento>().ResetItem();
     }
 
     public void ConfirmPlan()
