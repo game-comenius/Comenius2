@@ -47,7 +47,12 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
         item = newItem;
         UpdateSprite();
     }
-    
+
+    public void ResetItem() {
+        item = initialItem;
+        UpdateSprite();
+    }
+
     public double Points() {
         //pega pontuação no contexto do momento
         switch (item) {

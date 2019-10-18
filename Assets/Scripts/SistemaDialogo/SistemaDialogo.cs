@@ -79,6 +79,14 @@ public class SistemaDialogo : MonoBehaviour
         botao.onClick.AddListener(() => { ComecarProximaFala(); });
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown (KeyCode.Escape))
+        {
+            AcabarConversa();
+        }
+    }
+
     public void ComecarDialogo(Dialogo _dialogo, NpcDialogo _npcDialogoQA)
     {
         if (npcDialogo == null && _dialogo != null) 
