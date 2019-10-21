@@ -17,9 +17,9 @@ public class Estante : MonoBehaviour {
         Items = new List<ItemName>
         {
             // Itens que aparecem por padrão dentro da estante
-            ItemName.ReprodutorAudio,
+            //ItemName.ReprodutorAudio,
             //ItemName.Gravador,
-            ItemName.CameraPolaroid,
+            //ItemName.CameraPolaroid,
             ItemName.TV
         };
     }
