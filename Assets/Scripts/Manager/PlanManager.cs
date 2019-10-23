@@ -54,8 +54,6 @@ public class PlanManager : MonoBehaviour {
         Player.Instance.chosenMedia = chosenMedia;
         Player.Instance.points = points;
         Player.Instance.totalMissionPoints = totalMissionPoints;
-
-        GameObject.Find("Fade").GetComponent<SpriteRenderer>().enabled = false;
     }
 
     public double getTotalMissionPoints() {

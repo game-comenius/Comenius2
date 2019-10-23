@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FadeEffect : MonoBehaviour {
-
-    bool faded = false;
     Color tmp;
 
     // Use this for initialization
@@ -15,34 +13,28 @@ public class FadeEffect : MonoBehaviour {
         
 	}
 	
-	// Update is called once per frame
-	void Update () {
+    IEnumerator FadeBackground(bool faded)
+    {
         if (faded) {
-            while (tmp.a < 0.7f) {
-                tmp.a += 0.001f;
+            for (float i = 0.7f; i >= 0; i -= Time.deltaTime) {
+                tmp.a = i;
                 this.GetComponent<SpriteRenderer>().color = tmp;
-                //Debug.Log("alpha = " + tmp.a);
+                yield return null;
             }
-            tmp.a = 0.7f;
-        }
-        else {
-            while (tmp.a > 0f)
-            {
-                tmp.a -= 0.001f;
+        } else {
+            for (float i = 0; i <= 0.7f; i += Time.deltaTime) {
+                tmp.a = i;
                 this.GetComponent<SpriteRenderer>().color = tmp;
-                //Debug.Log("alpha = " + tmp.a);
+                yield return null;
             }
-            tmp.a = 0f;
         }
-	}
+    }
 
     public void Fadeout() {
-        //this.GetComponent<SpriteRenderer>().enabled = true;
-        faded = true;
+        StartCoroutine(FadeBackground(false));
     }
 
     public void Fadein() {
-        //this.GetComponent<SpriteRenderer>().enabled = false;
-        faded = false;
+        StartCoroutine(FadeBackground(true));
     }
 }
