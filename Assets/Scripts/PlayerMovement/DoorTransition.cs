@@ -9,7 +9,7 @@ public class DoorTransition : MonoBehaviour
 
     private AsyncOperation sceneLoad;
 
-    private float timerMax = 3.5f;
+    private float timerMax = 1.5f;
 
     public void OnMouseUp()
     {
