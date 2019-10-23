@@ -446,7 +446,7 @@ public class ClassManager : MonoBehaviour
     {
         for (int i = 0; i < traducaoPontoProblema.Length; i++)
         {
-            if (ponto == traducaoPontoProblema [i].x)
+            if (ponto == traducaoPontoProblema[i].x)
             {
                 return traducaoPontoProblema[i].y;
             }
