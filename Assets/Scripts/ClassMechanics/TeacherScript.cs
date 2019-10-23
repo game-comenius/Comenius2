@@ -21,6 +21,14 @@ public class TeacherScript : AgenteAulaScript
 
     [SerializeField] private float velocity = 0;
 
+    [SerializeField] private float frameLonging = 0.3f;
+
+    [SerializeField] private Sprite[] goRight = new Sprite[4];
+
+    [SerializeField] private Sprite[] goLeft = new Sprite[4];
+
+    private bool goingRight = false;
+
     private Coroutine walk = null;
 
     [SerializeField] private Sprite[] sprites = new Sprite[4];
@@ -39,7 +47,7 @@ public class TeacherScript : AgenteAulaScript
 
     //private TMP_Text text;
 
-    [SerializeField] private float speechWait;
+    //[SerializeField] private float speechWait;
 
     [SerializeField] private Vector2 offset;
 
@@ -91,12 +99,16 @@ public class TeacherScript : AgenteAulaScript
             novaPos = 1 - ((1 - novaPos) * (1 - novaPos));
 
             sprite.sprite = sprites[2];
+
+            goingRight = true;
         }
         else
         {
             novaPos = novaPos * novaPos;
 
             sprite.sprite = sprites[1];
+
+            goingRight = false;
         }
 
         posicao = novaPos * magnitude;
@@ -105,6 +117,10 @@ public class TeacherScript : AgenteAulaScript
     private IEnumerator Walk()
     {
         Gerar();
+
+        float t = 0;
+
+        int frame = 0;
 
         while(true)
         {
@@ -115,13 +131,48 @@ public class TeacherScript : AgenteAulaScript
 
             yield return null;
 
+            t += Time.deltaTime;
+
+            frame = Mathf.FloorToInt(t / frameLonging);
+
+            if (goingRight) 
+            {
+                if (frame >= goRight.Length)
+                {
+                    t -= frame * frameLonging;
+
+                    frame = frame % goRight.Length;
+                }
+
+                GetComponent<SpriteRenderer>().sprite = goRight[frame];
+
+                transform.localScale = new Vector3(0.6f, 0.6f, 1f);
+            }
+            else
+            {
+                if (frame >= goLeft.Length)
+                {
+                    t -= frame * frameLonging;
+
+                    frame = frame % goLeft.Length;
+                }
+
+                GetComponent<SpriteRenderer>().sprite = goLeft[frame];
+
+                transform.localScale = new Vector3(0.6f, 0.6f, 1f);
+            }
+
             if ((Vector2)transform.position == inicio + vector * posicao) 
             {
                 sprite.sprite = sprites[0];
 
+                transform.localScale = new Vector3(1f, 1f, 1f);
+
                 yield return new WaitForSeconds(Random.Range(stopTimeRange.x, stopTimeRange.y));
 
                 Gerar();
+
+                t = 0;
             }
         }
     }

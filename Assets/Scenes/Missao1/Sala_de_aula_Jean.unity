@@ -671,8 +671,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 394168225}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: -0.005, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -835,7 +835,6 @@ MonoBehaviour:
   cellAngle: 30
   gridDim: {x: 17, y: 15}
   gridRotation: 210
-  color: {r: 1, g: 0, b: 0, a: 0}
   draw: 1
   obj: {fileID: 523846544}
 --- !u!4 &476785493
@@ -1041,7 +1040,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 523846543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.07, y: -2.96, z: 0}
+  m_LocalPosition: {x: -0.03, y: -0.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 476785493}
@@ -3282,6 +3281,24 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1386433346}
   m_CullTransparentMesh: 0
+--- !u!1 &1403518116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000791995703708, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
+    type: 2}
+  m_PrefabInternal: {fileID: 747957554}
+--- !u!114 &1403518117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1403518116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 613550230bcdd034e85e3424ada76a05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 760544255}
+  footbaseOffset: {x: -0.08, y: -0.75, z: 0}
 --- !u!1 &1474590274
 GameObject:
   m_ObjectHideFlags: 0
@@ -4051,7 +4068,18 @@ MonoBehaviour:
   inicio: {x: -3.9, y: 0.03}
   vector: {x: 0.87, y: 0.5}
   magnitude: 3
-  velocity: 1
+  velocity: 0.6
+  frameLonging: 0.3
+  goRight:
+  - {fileID: 21300000, guid: 78c46065fe96c5f438ee4b8deddd10d8, type: 3}
+  - {fileID: 21300000, guid: c482f87dc77401142acb67b5148f1565, type: 3}
+  - {fileID: 21300000, guid: 323b15075d63e304c9fe0e0e40bd1baa, type: 3}
+  - {fileID: 21300000, guid: b2e8a0f50d4d3d143ab2f7ac718ca640, type: 3}
+  goLeft:
+  - {fileID: 21300000, guid: 5610178982936f64e8c0f9bb84f50bd5, type: 3}
+  - {fileID: 21300000, guid: b8d705e619d32d743aeeb7f16aaeef43, type: 3}
+  - {fileID: 21300000, guid: f60d6d7bcf2a0e544bbf9045096b4655, type: 3}
+  - {fileID: 21300000, guid: 207476a46a7715f41ade22a912a8a543, type: 3}
   sprites:
   - {fileID: 21300000, guid: 028a97bef703a2b4b92826bd31933103, type: 3}
   - {fileID: 21300000, guid: e2b70fcd04c15c045a43ec2ee735be2d, type: 3}
@@ -4060,7 +4088,6 @@ MonoBehaviour:
   stopTimeRange: {x: 1.5, y: 4}
   canvas: {fileID: 353030537}
   _camera: {fileID: 760544255}
-  speechWait: 0.4
   offset: {x: 0.7, y: 0.6}
 --- !u!212 &2029659089
 SpriteRenderer:

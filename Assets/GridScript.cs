@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GridScript : MonoBehaviour
 {
+    public static GridScript gridScript;
+
     [SerializeField] private Color gridColor;
 
     [SerializeField] private Vector2 cellSize;
@@ -14,15 +16,26 @@ public class GridScript : MonoBehaviour
 
     [SerializeField] private float gridRotation;
 
-    [SerializeField] private Color color;
-
     [SerializeField] private bool draw;
 
     [SerializeField] private Transform obj;
 
     public bool[,] vacancy;
 
-    private Vector2[] Cell(Vector2Int r_cell)
+    private void Awake()
+    {
+        if (gridScript == null)
+        {
+            gridScript = this;            
+        }
+        else
+        {
+            Debug.Log("Há dois GridScripts");
+        }
+    }
+
+    #region Grid and transformations
+    public Vector2[] Cell(Vector2Int r_cell)
     {
         Vector2[] infos = new Vector2[5];
 
@@ -49,7 +62,7 @@ public class GridScript : MonoBehaviour
         return infos;
     }
 
-    private Vector2[] CellR(Vector2Int r_cell)
+    public Vector2[] CellR(Vector2Int r_cell)
     {
         Vector2[] infos = new Vector2[5];
 
@@ -76,7 +89,7 @@ public class GridScript : MonoBehaviour
         return infos;
     }
 
-    private Vector2 Regression(Vector2 position)
+    public Vector2 Regression(Vector2 position)
     {
         Vector2 regression = Vector2.zero;
 
@@ -96,7 +109,7 @@ public class GridScript : MonoBehaviour
         return regression;
     }
 
-    private Vector2Int P2G(Vector2 point)
+    public Vector2Int P2G(Vector2 point)
     {
         Vector2Int cell = Vector2Int.zero;
 
@@ -110,6 +123,7 @@ public class GridScript : MonoBehaviour
 
         return cell;
     }
+    #endregion
 
     private void OnDrawGizmos()
     {
