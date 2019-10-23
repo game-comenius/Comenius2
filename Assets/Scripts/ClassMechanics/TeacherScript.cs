@@ -145,8 +145,6 @@ public class TeacherScript : AgenteAulaScript
                 }
 
                 GetComponent<SpriteRenderer>().sprite = goRight[frame];
-
-                transform.localScale = new Vector3(0.6f, 0.6f, 1f);
             }
             else
             {
@@ -158,15 +156,11 @@ public class TeacherScript : AgenteAulaScript
                 }
 
                 GetComponent<SpriteRenderer>().sprite = goLeft[frame];
-
-                transform.localScale = new Vector3(0.6f, 0.6f, 1f);
             }
 
             if ((Vector2)transform.position == inicio + vector * posicao) 
             {
                 sprite.sprite = sprites[0];
-
-                transform.localScale = new Vector3(1f, 1f, 1f);
 
                 yield return new WaitForSeconds(Random.Range(stopTimeRange.x, stopTimeRange.y));
 

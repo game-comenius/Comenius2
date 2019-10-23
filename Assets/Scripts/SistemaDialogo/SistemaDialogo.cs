@@ -144,8 +144,6 @@ public class SistemaDialogo : MonoBehaviour
             }
             else if (i + 1 == dialogo.nodulos[nodulo].falas.Length)
             {
-                Debug.Log("Ludinha não está aqui");
-
                 personagemRosto[0].sprite = null;
 
                 personagemRosto[0].color = new Color(0f, 0f, 0f, 0f);

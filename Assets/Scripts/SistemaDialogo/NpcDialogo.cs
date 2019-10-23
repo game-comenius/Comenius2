@@ -61,6 +61,7 @@ public class NpcDialogo : QuestScript
     public void SetQuestControl()
     {
         QuestManager.SetQuestControl(questInfo.questIndex, true);
+
         ReavaliarTodasQuests();
     }
 }

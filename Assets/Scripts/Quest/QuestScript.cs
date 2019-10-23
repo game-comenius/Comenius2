@@ -131,15 +131,6 @@ public class QuestScript : MonoBehaviour
 
     public void ReavaliarTodasQuests()
     {
-        //Debug.Log(questList.Count);
-
-        //for (int i = 0; i < questList.Count; i++)
-        //{
-        //    questList[i].Avaliar();
-        //}
-
-        Avaliar();
-
         foreach (QuestScript quest in questList)
         {
             quest.Avaliar();
