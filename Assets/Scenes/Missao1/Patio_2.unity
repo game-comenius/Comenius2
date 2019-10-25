@@ -226,9 +226,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 674089062}
-  - component: {fileID: 674089061}
   - component: {fileID: 674089060}
   - component: {fileID: 674089059}
+  - component: {fileID: 674089061}
   m_Layer: 0
   m_Name: Passaro (Foto)
   m_TagString: Untagged
@@ -294,7 +294,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 674089061}
+      - m_Target: {fileID: 0}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -321,7 +321,7 @@ MonoBehaviour:
   dependenciasNaoFeitas:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 674089061}
+      - m_Target: {fileID: 0}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -376,8 +376,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: 9
---- !u!61 &674089061
-BoxCollider2D:
+--- !u!60 &674089061
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -388,7 +388,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.099398315, y: -0.006986499}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -398,9 +398,22 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.74531233, y: 0.9161632}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.37264037, y: 0.45199955}
+      - {x: -0.4963441, y: 0.3418842}
+      - {x: -0.33944964, y: 0.26647037}
+      - {x: -0.27591038, y: -0.011165962}
+      - {x: -0.27815938, y: -0.15821724}
+      - {x: -0.2809888, y: -0.24887244}
+      - {x: 0.0075614452, y: -0.293056}
+      - {x: 0.114608884, y: -0.480519}
+      - {x: 0.28973722, y: -0.41014314}
+      - {x: 0.11140883, y: -0.1311134}
+      - {x: 0.19128501, y: -0.08096759}
+      - {x: 0.12406576, y: 0.13472463}
+      - {x: -0.025975108, y: 0.27602375}
+      - {x: -0.21618438, y: 0.46793717}
 --- !u!4 &674089062
 Transform:
   m_ObjectHideFlags: 0
@@ -1283,9 +1296,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1418994392}
-  - component: {fileID: 1418994391}
   - component: {fileID: 1418994390}
   - component: {fileID: 1418994389}
+  - component: {fileID: 1418994391}
   m_Layer: 0
   m_Name: "Passaro (Grava\xE7\xE3o)"
   m_TagString: Untagged
@@ -1351,7 +1364,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 1418994391}
+      - m_Target: {fileID: 0}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -1378,7 +1391,7 @@ MonoBehaviour:
   dependenciasNaoFeitas:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1418994391}
+      - m_Target: {fileID: 0}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -1433,8 +1446,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: 17
---- !u!61 &1418994391
-BoxCollider2D:
+--- !u!60 &1418994391
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1445,7 +1458,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.099398315, y: -0.006986499}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1455,9 +1468,23 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.74531233, y: 0.9161632}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.36716032, y: 0.45747966}
+      - {x: -0.49621606, y: 0.34737697}
+      - {x: -0.3447206, y: 0.2424592}
+      - {x: -0.33879542, y: 0.056744486}
+      - {x: -0.19853425, y: -0.14341496}
+      - {x: -0.31425452, y: -0.19397752}
+      - {x: -0.2540536, y: -0.2549435}
+      - {x: 0.016207218, y: -0.28221393}
+      - {x: 0.10910201, y: -0.47693217}
+      - {x: 0.30657434, y: -0.39990336}
+      - {x: 0.12243748, y: -0.15299456}
+      - {x: 0.2169478, y: -0.117763236}
+      - {x: 0.058855295, y: 0.23766364}
+      - {x: -0.058855414, y: 0.29794377}
+      - {x: -0.1613841, y: 0.42957723}
 --- !u!4 &1418994392
 Transform:
   m_ObjectHideFlags: 0
@@ -1949,8 +1976,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1539148954}
-  - component: {fileID: 1539148953}
   - component: {fileID: 1539148951}
+  - component: {fileID: 1539148952}
   m_Layer: 0
   m_Name: Passaro (Inicial)
   m_TagString: Untagged
@@ -2011,8 +2038,8 @@ MonoBehaviour:
         emocao: 4
         fala: "Talvez eu possa conseguir algo \xFAtil para a aula do professor Jean?"
       respostas: []
---- !u!61 &1539148953
-BoxCollider2D:
+--- !u!60 &1539148952
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -2023,7 +2050,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.099398315, y: -0.006986499}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2033,9 +2060,23 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.74531233, y: 0.9161632}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.31784034, y: 0.45747966}
+      - {x: -0.45888352, y: 0.40037173}
+      - {x: -0.4962163, y: 0.33093703}
+      - {x: -0.36202073, y: 0.260144}
+      - {x: -0.33230996, y: 0.14801706}
+      - {x: -0.27316558, y: -0.24384157}
+      - {x: -0.072533965, y: -0.262241}
+      - {x: 0.013186693, y: -0.27103782}
+      - {x: 0.08290088, y: -0.48530382}
+      - {x: 0.28493786, y: -0.41646934}
+      - {x: 0.115057945, y: -0.13698922}
+      - {x: 0.17941523, y: -0.1020966}
+      - {x: 0.0936389, y: 0.16434273}
+      - {x: -0.06433499, y: 0.30342385}
+      - {x: -0.15590405, y: 0.43505716}
 --- !u!4 &1539148954
 Transform:
   m_ObjectHideFlags: 0
