@@ -30,8 +30,6 @@ public class Item
                 FriendlyName = "CD";
                 Description = "É um CD.";
                 FullDescription = "Um CD para ser utilizado com um reprodutor de áudio";
-                UpgradeFrom[0] = ItemName.ReprodutorAudio;
-                UpgradeFrom[1] = ItemName.ReprodutorAudio;
                 break;
             case ItemName.Gravador:
                 FriendlyName = "Gravador";

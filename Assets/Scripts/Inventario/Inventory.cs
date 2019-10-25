@@ -12,6 +12,8 @@ public class Inventory
         items.Add(ItemName.Cartazes, new Item(ItemName.Cartazes));
         items.Add(ItemName.Caderno, new Item(ItemName.Caderno));
         items.Add(ItemName.Jornais, new Item(ItemName.Jornais));
+        //items.Add(ItemName.Livro, new Item(ItemName.Livro));
+        items.Add(ItemName.QuadroNegro, new Item(ItemName.QuadroNegro));
     }
 
     public ICollection<Item> Items()
