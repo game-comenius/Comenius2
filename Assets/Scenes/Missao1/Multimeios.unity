@@ -652,7 +652,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 392384700}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.32, y: -0.2, z: -10}
+  m_LocalPosition: {x: 0.32, y: -0.2, z: 0}
   m_LocalScale: {x: 188.29288, y: 112.38698, z: 8.823315}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1618,6 +1618,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1753231616}
     m_Modifications:
+    - target: {fileID: 114234429894686396, guid: 2d61794c7b05543b383592a46c69019b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 224148842521617860, guid: 2d61794c7b05543b383592a46c69019b,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1716,7 +1721,37 @@ Prefab:
     - target: {fileID: 224105809437167266, guid: 2d61794c7b05543b383592a46c69019b,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.00000013411045
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224912068482267886, guid: 2d61794c7b05543b383592a46c69019b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000001102227
+      objectReference: {fileID: 0}
+    - target: {fileID: 114234429894686396, guid: 2d61794c7b05543b383592a46c69019b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114234429894686396, guid: 2d61794c7b05543b383592a46c69019b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114234429894686396, guid: 2d61794c7b05543b383592a46c69019b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 392384702}
+    - target: {fileID: 114234429894686396, guid: 2d61794c7b05543b383592a46c69019b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Fadein
+      objectReference: {fileID: 0}
+    - target: {fileID: 114234429894686396, guid: 2d61794c7b05543b383592a46c69019b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d61794c7b05543b383592a46c69019b, type: 2}
