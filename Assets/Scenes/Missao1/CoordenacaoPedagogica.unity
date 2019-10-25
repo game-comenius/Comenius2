@@ -397,8 +397,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 618125479}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.98, y: -1.5, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.29, y: -1.94, z: 0}
   m_LocalScale: {x: 0.223608, y: 0.2082573, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -450,6 +450,125 @@ PolygonCollider2D:
       - {x: -0.19999999, y: -0.78999996}
       - {x: 0.11, y: -0.59999996}
       - {x: 0.17, y: -0.66999996}
+--- !u!1 &720358380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 720358383}
+  - component: {fileID: 720358382}
+  - component: {fileID: 720358381}
+  m_Layer: 0
+  m_Name: Armarios
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &720358381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 720358380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questInfo:
+    isQuest: 0
+    questIndex: {x: 0, y: 0}
+    questDependencias: []
+  questFeita:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasFeitas:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasNaoFeitas:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dialogoObrigatorio: 0
+  esperaDialogoObrigatorio: 2
+  dialogoPrincipal:
+    nodulos:
+    - falas:
+      - personagem: 0
+        emocao: 0
+        fala: 
+      - personagem: 6
+        emocao: 0
+        fala: "Por favor, n\xE3o mexa a\xED."
+      respostas: []
+  dialogosSecundarios: []
+--- !u!60 &720358382
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 720358380}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.077172756, y: 0.85286385}
+      - {x: -0.89317703, y: 0.35403448}
+      - {x: -0.7164068, y: -1.6707811}
+      - {x: 0.5826149, y: -1.351889}
+      - {x: 0.7176671, y: -1.3004403}
+      - {x: 2.036889, y: -0.54135513}
+      - {x: 2.6635513, y: -0.18314928}
+      - {x: 2.6561985, y: 0.23106402}
+      - {x: 2.642745, y: 0.59179145}
+      - {x: 2.6987333, y: 0.69926447}
+      - {x: 2.8943768, y: 0.8519209}
+      - {x: 3.0749314, y: 0.86346406}
+      - {x: 3.3035312, y: 0.82114464}
+      - {x: 3.3302014, y: 0.41508907}
+      - {x: 3.4240398, y: 0.48396295}
+      - {x: 3.4686592, y: 0.7419117}
+      - {x: 4.198656, y: 1.1611931}
+      - {x: 4.22317, y: 1.0289319}
+      - {x: 4.3556833, y: 1.0909534}
+      - {x: 4.3871403, y: 2.2249606}
+      - {x: 4.341487, y: 3.0318155}
+      - {x: 4.029612, y: 3.1715393}
+--- !u!4 &720358383
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 720358380}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.22, y: 0.92, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &780849387 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4167545212279808, guid: 5b29e7b78647d4500abec5bb67ffab34,
@@ -641,8 +760,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1704199097}
   - component: {fileID: 1704199096}
-  - component: {fileID: 1704199095}
   - component: {fileID: 1704199094}
+  - component: {fileID: 1704199095}
   m_Layer: 0
   m_Name: Antonia(NPC)
   m_TagString: Diretor
@@ -737,11 +856,10 @@ MonoBehaviour:
           achar a m\xEDdia dessa sala, mas muito obrigada mesmo."
       respostas: []
   dialogosSecundarios: []
---- !u!61 &1704199095
-BoxCollider2D:
+--- !u!60 &1704199095
+PolygonCollider2D:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 61499242745621090, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1704199093}
   m_Enabled: 1
@@ -760,9 +878,55 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.18, y: 2.88}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.2937063, y: -0.8321678}
+      - {x: 0.3216783, y: -0.79720277}
+      - {x: 0.3216783, y: -0.72727275}
+      - {x: 0.1958042, y: -0.62237763}
+      - {x: 0.23076923, y: -0.5104895}
+      - {x: 0.21678321, y: -0.34265733}
+      - {x: 0.25174826, y: -0.26573426}
+      - {x: 0.23776224, y: -0.23776224}
+      - {x: 0.22377622, y: -0.034965035}
+      - {x: 0.25174826, y: 0}
+      - {x: 0.25874126, y: 0.11188811}
+      - {x: 0.24475524, y: 0.16083916}
+      - {x: 0.23076923, y: 0.22377622}
+      - {x: 0.2097902, y: 0.26573426}
+      - {x: 0.26573426, y: 0.36363637}
+      - {x: 0.2937063, y: 0.4965035}
+      - {x: 0.3076923, y: 0.5244755}
+      - {x: 0.3076923, y: 0.55244756}
+      - {x: 0.3216783, y: 0.6083916}
+      - {x: 0.3216783, y: 0.7762238}
+      - {x: 0.2097902, y: 0.9020979}
+      - {x: 0.16083916, y: 0.9230769}
+      - {x: 0.11188811, y: 0.9300699}
+      - {x: -0.013986014, y: 0.9300699}
+      - {x: -0.1048951, y: 0.91608393}
+      - {x: -0.2027972, y: 0.85314685}
+      - {x: -0.28671327, y: 0.7692308}
+      - {x: -0.34265733, y: 0.68531466}
+      - {x: -0.34265733, y: 0.5244755}
+      - {x: -0.32867134, y: 0.46153846}
+      - {x: -0.23776224, y: 0.3146853}
+      - {x: -0.15384614, y: 0.27272728}
+      - {x: -0.23076923, y: 0.2027972}
+      - {x: -0.27972028, y: 0.0979021}
+      - {x: -0.3216783, y: -0.09090909}
+      - {x: -0.3146853, y: -0.22377622}
+      - {x: -0.2937063, y: -0.3006993}
+      - {x: -0.26573426, y: -0.4055944}
+      - {x: -0.23076923, y: -0.44055945}
+      - {x: -0.23076923, y: -0.8321678}
+      - {x: -0.18881118, y: -0.8811189}
+      - {x: -0.04195804, y: -0.9230769}
+      - {x: 0.02097902, y: -0.9230769}
+      - {x: 0.062937066, y: -0.91608393}
+      - {x: 0.0979021, y: -0.8951049}
+      - {x: 0.11888112, y: -0.8251748}
+      - {x: 0.1958042, y: -0.85314685}
 --- !u!212 &1704199096
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -818,7 +982,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1704199093}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1, y: 1.4, z: 0}
+  m_LocalPosition: {x: -3.23, y: 0.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -853,6 +1017,115 @@ Transform:
   - {fileID: 780849387}
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1873379840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1873379843}
+  - component: {fileID: 1873379842}
+  - component: {fileID: 1873379841}
+  m_Layer: 0
+  m_Name: Armarios(1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1873379841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1873379840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questInfo:
+    isQuest: 0
+    questIndex: {x: 0, y: 0}
+    questDependencias: []
+  questFeita:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasFeitas:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasNaoFeitas:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dialogoObrigatorio: 0
+  esperaDialogoObrigatorio: 2
+  dialogoPrincipal:
+    nodulos:
+    - falas:
+      - personagem: 0
+        emocao: 0
+        fala: 
+      - personagem: 6
+        emocao: 2
+        fala: Lugar errado Lurdinha, tente denovo.
+      respostas: []
+  dialogosSecundarios: []
+--- !u!60 &1873379842
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1873379840}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.29155374, y: 0.2795546}
+      - {x: 0.19308734, y: 0.23088968}
+      - {x: 0.16979194, y: 1.052244}
+      - {x: -0.8351935, y: 1.5869577}
+      - {x: -1.1224109, y: 1.4229665}
+      - {x: -1.1273788, y: 0.35473013}
+      - {x: -1.1114463, y: -0.34007156}
+      - {x: -0.74316525, y: -0.42128974}
+      - {x: -0.6139071, y: -0.80901706}
+      - {x: 1.1232834, y: -1.6971596}
+      - {x: 1.4181087, y: -1.5300149}
+      - {x: 1.395128, y: -0.3636204}
+--- !u!4 &1873379843
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1873379840}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.82, y: 1.21, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1936472437
 GameObject:
@@ -905,7 +1178,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -5
-  m_Sprite: {fileID: 21300000, guid: 4f6edd2ce30cb439aa10df8ea8c99d0f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4f69c6392e04dc841a19e0954ac3750e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
