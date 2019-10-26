@@ -40,8 +40,6 @@ public class Item
                 FriendlyName = "Gravação do Pássaro";
                 Description = "Gravação do canto do pássaro no pátio da escola";
                 FullDescription = "Gravação do canto do pássaro no pátio da escola";
-                UpgradeFrom[0] = ItemName.Gravador;
-                UpgradeFrom[1] = ItemName.Gravador;
                 break;
             case ItemName.CameraPolaroid:
                 FriendlyName = "Camera Fotográfica Polaroid";
@@ -52,8 +50,6 @@ public class Item
                 FriendlyName = "Fotografia";
                 Description = "É a foto de um pássaro local pousado em um banco de escola";
                 FullDescription = "É um recurso imagético de expressão de amplo uso. Seu uso pedagógico serve para ilustrar, apresentar e demonstrar conteúdo, permitir a elaboração de novos aprendizados e ampliação de conhecimento. O estudante usa para expressar ideias, ilustrar a elaboração dos conhecimentos aprendidos, apresentar e socializar com o grande grupo. Sua prática social é a de guardar recordações, registrar momentos e locais, denunciar fatos e divulgação. Esta mídia de linguagem não verbal, serve perfeitamente para trabalhar com imagens específicas.";
-                UpgradeFrom[0] = ItemName.CameraPolaroid;
-                UpgradeFrom[1] = ItemName.CameraPolaroid;
                 break;
             case ItemName.TV:
                 FriendlyName = "TV com reprodutor de VHS";
