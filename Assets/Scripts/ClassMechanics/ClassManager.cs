@@ -253,9 +253,11 @@ public class ClassManager : MonoBehaviour
         });
     }
 
-    static public void AddStundent(StudentScript student)
+    static public void AddStudent(StudentScript student)
     {
         students.Add(student);
+
+        Debug.Log("Added " + student.name);
 
         studentIsProblem.Add(false);
     }

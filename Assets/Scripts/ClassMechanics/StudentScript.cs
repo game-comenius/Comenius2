@@ -18,7 +18,7 @@ public class StudentScript : AgenteAulaScript
 
     protected void Awake()
     {
-        ClassManager.AddStundent(this);
+        ClassManager.AddStudent(this);
     }
 
     private void OnDrawGizmos()

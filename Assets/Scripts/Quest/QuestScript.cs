@@ -77,7 +77,6 @@ public class QuestScript : MonoBehaviour
                     }
                 }
 
-
                 if (controlador)
                 {
                     return true;
@@ -116,7 +115,6 @@ public class QuestScript : MonoBehaviour
                     }
                 }
 
-
                 if (controlador)
                 {
                     dependenciasFeitas.Invoke();
@@ -131,19 +129,37 @@ public class QuestScript : MonoBehaviour
 
     public void ReavaliarTodasQuests()
     {
-        foreach (QuestScript quest in questList)
+        int count = questList.Count;
+
+        for (int i = 0; i < questList.Count; i++)
         {
-            quest.Avaliar();
+            questList[i].Avaliar();
+
+            if (questList.Count != count)
+            {
+                i -= 1;
+
+                count = questList.Count;
+            }
         }
     }
 
     public void ReavaliarTodasMenosEssa()
     {
-        foreach (QuestScript quest in questList)
+        int count = questList.Count;
+
+        for (int i = 0; i < questList.Count; i++)
         {
-            if (quest != this)
+            if (questList[i] != this)
             {
-                quest.Avaliar();
+                questList[i].Avaliar();
+
+                if (questList.Count != count)
+                {
+                    i -= 1;
+
+                    count = questList.Count;
+                }
             }
         }
     }
@@ -152,7 +168,7 @@ public class QuestScript : MonoBehaviour
     {
         if (obj is QuestScript)
         {
-            QuestScript.questList.Remove(obj as QuestScript);
+            questList.Remove(obj as QuestScript);
         }
 
         Destroy(obj);

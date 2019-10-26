@@ -24,15 +24,6 @@ public class NpcDialogo : QuestScript
         }
     }
 
-    public void Restart()
-    {
-        if (dialogoObrigatorio && Analise())
-        {
-            GameManager.UISendoUsada();
-            StartCoroutine(DialogoObrigatorio());
-        }
-    }
-
     public void OnMouseUp()
     {
         if (!GameManager.uiSendoUsada)

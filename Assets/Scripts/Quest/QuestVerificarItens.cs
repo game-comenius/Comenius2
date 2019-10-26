@@ -8,12 +8,8 @@ public class QuestVerificarItens : QuestScript
 
 	public override void Avaliar() 
     {
-        Debug.Log(1);
-
         if (questInfo.questDependencias.Length != 0)
         {
-            Debug.Log(2);
-
             bool controlador = true;
 
             foreach (Vector2Int quest in questInfo.questDependencias)
@@ -33,10 +29,6 @@ public class QuestVerificarItens : QuestScript
             {
                 dependenciasNaoFeitas.Invoke();
             }
-
-            Debug.Log(!QuestManager.GetQuestControl(questInfo.questIndex));
-
-            Debug.Log(Analise());
 
             if (!QuestManager.GetQuestControl(questInfo.questIndex) && Analise())
             {
@@ -58,8 +50,6 @@ public class QuestVerificarItens : QuestScript
 
                 if (temItens)
                 {
-                    Debug.Log(3);
-
                     CompletarQuest();
                 }
             }
