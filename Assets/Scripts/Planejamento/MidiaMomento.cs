@@ -30,7 +30,22 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
     public int cadernoPoints = 0;        
     public int jornaisPoints = 0;        
     public int jornaiserevistasPoints = 0;
-    
+
+
+    // Campos relacionados a UI para destacar o momento selecionado
+    private static Image activeItemBorder;
+    [SerializeField]
+    private Image myItemBorder;
+    [SerializeField]
+    private Sprite selectedItemBorder;
+    [SerializeField]
+    private Sprite neutralItemBorder;
+
+    [SerializeField]
+    private Text descricaoGameObject;
+    [SerializeField]
+    private string minhaDescricao;
+
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -39,7 +54,17 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
 
         GameObject.Find("PlanManager").GetComponent<PlanManager>().setSelectedMoment(gameObject);
         Debug.Log("momento selecionado: " + GameObject.Find("PlanManager").GetComponent<PlanManager>().getSelectedMoment().name);
-        //to-do: destaque visual no momento selecionado
+
+        // Destaque visual do momento selecionado
+        // Desabilitar o último destaque de slot de item
+        if (activeItemBorder) activeItemBorder.sprite = neutralItemBorder;
+        // Habilitar o destaque para este item
+        myItemBorder.sprite = selectedItemBorder;
+        // A borda ativa/selecionada agora é a borda deste item
+        activeItemBorder = myItemBorder;
+
+        // Apresenta a descrição deste momento na folha do planejamento
+        descricaoGameObject.text = minhaDescricao;
     }
 
     //chame essa função para mudar o item no momento
