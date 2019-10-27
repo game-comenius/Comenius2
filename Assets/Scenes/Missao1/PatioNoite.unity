@@ -2016,6 +2016,7 @@ GameObject:
   - component: {fileID: 1465918036}
   - component: {fileID: 1465918035}
   - component: {fileID: 1465918034}
+  - component: {fileID: 1465918033}
   - component: {fileID: 1465918037}
   m_Layer: 0
   m_Name: Comenius
@@ -2024,6 +2025,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1465918033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1465918032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34ea57c0f79eed429d1bbfa7283faf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneIndex: 10
 --- !u!61 &1465918034
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2129,7 +2142,18 @@ MonoBehaviour:
     - {x: 2, y: 6}
   questFeita:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1465918033}
+        m_MethodName: IrParaCena
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   dependenciasFeitas:
