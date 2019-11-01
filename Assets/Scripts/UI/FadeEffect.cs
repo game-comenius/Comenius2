@@ -2,10 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FadeEffect : MonoBehaviour {
+public class FadeEffect : MonoBehaviour
+{
+
     Color tmp;
 
     // Use this for initialization
+    private void Awake()
+    {
+        if (gameObject.tag == "fadeMenu")
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     void Start () {
         tmp = this.GetComponent<SpriteRenderer>().color;
         tmp.a = 0f;

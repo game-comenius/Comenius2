@@ -46,7 +46,7 @@ public class Estante : MonoBehaviour {
     {
         if (!GameManager.uiSendoUsada)
         {
-            GameObject.Find("Fade").GetComponent<FadeEffect>().Fadeout();
+            GameObject.Find("LocalFade").GetComponent<FadeEffect>().Fadeout();
             modoEstanteAbertaUI.SetActive(true);
             estanteUI.DisplayItems();
             GameManager.UISendoUsada();
