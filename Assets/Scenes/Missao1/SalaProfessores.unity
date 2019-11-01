@@ -1607,7 +1607,7 @@ GameObject:
   - component: {fileID: 788723997}
   - component: {fileID: 788723999}
   m_Layer: 0
-  m_Name: Fade
+  m_Name: LocalFade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3598,6 +3598,26 @@ Prefab:
     - target: {fileID: 1411278852955012, guid: 7990bf86da10a4af080e4f7e315625c1, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857174292407686, guid: 7990bf86da10a4af080e4f7e315625c1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Fadein
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857174292407686, guid: 7990bf86da10a4af080e4f7e315625c1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857174292407686, guid: 7990bf86da10a4af080e4f7e315625c1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114857174292407686, guid: 7990bf86da10a4af080e4f7e315625c1,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7990bf86da10a4af080e4f7e315625c1, type: 2}
