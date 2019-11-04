@@ -257,8 +257,6 @@ public class ClassManager : MonoBehaviour
     {
         students.Add(student);
 
-        Debug.Log("Added " + student.name);
-
         studentIsProblem.Add(false);
     }
 

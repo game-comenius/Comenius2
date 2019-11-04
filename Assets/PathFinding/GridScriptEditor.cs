@@ -9,16 +9,55 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEditor;
 
+[InitializeOnLoad]
 [CustomEditor(typeof(GridScript))]
 public class GridScriptEditor : Editor
 {
-    bool[,] vacancy;
+    static bool[,] vacancy;
 
     Vector2Int gridDim;
 
     SerializedProperty gridDimSP;
 
     bool open = true;
+
+    //static GridScriptEditor ()
+    //{
+    //    EditorApplication.update += Update;
+
+    //    EditorApplication.update += CheckIn;
+    //}
+
+    //private static void Update()
+    //{
+    //    SerializedObject so = new SerializedObject(FindObjectOfType<GridScript>() as UnityEngine.Object);
+
+    //    Load(so);
+
+    //    EditorApplication.update -= Update;
+    //}
+
+    //private static void CheckIn()
+    //{
+    //    if (EditorApplication .isPlaying)
+    //    {
+    //        EditorApplication.update += CheckOut;
+
+    //        EditorApplication.update -= CheckIn;
+    //    }
+    //}
+
+    //private static void CheckOut()
+    //{
+    //    if (!EditorApplication.isPlaying)
+    //    {
+    //        EditorApplication.update += Update;
+
+    //        EditorApplication.update += CheckIn;
+
+    //        EditorApplication.update -= CheckOut;
+    //    }
+    //}
 
     private void OnEnable()
     {
@@ -28,13 +67,7 @@ public class GridScriptEditor : Editor
 
         gridDim = gridDimSP.vector2IntValue;
 
-        string path = EditorSceneManager.GetActiveScene().path;
-
-        path = path.Substring(14, path.IndexOf('.') - 14);
-
-        path = path.Replace('/', '-');
-
-        Load(Application.dataPath + "/" + path + ".txt");
+        Load();
 
         (target as GridScript).vacancy = vacancy;
     }
@@ -121,24 +154,12 @@ public class GridScriptEditor : Editor
 
                 if (GUILayout.Button("Save", GUILayout.Width(45)))
                 {
-                    string path = EditorSceneManager.GetActiveScene().path;
-
-                    path = path.Substring(14, path.IndexOf('.') - 14);
-
-                    path = path.Replace('/', '-');
-
-                    Save(Application.dataPath + "/" + path + ".txt");
+                    Save();
                 }
 
                 if (GUILayout.Button("Load", GUILayout.Width(45)))
                 {
-                    string path = EditorSceneManager.GetActiveScene().path;
-
-                    path = path.Substring(14, path.IndexOf('.') - 14);
-
-                    path = path.Replace('/', '-');
-
-                    Load(Application.dataPath + "/" + path + ".txt");
+                    Load();
                 }
             }
             EditorGUILayout.EndHorizontal();
@@ -165,11 +186,30 @@ public class GridScriptEditor : Editor
             UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
         }
 
+        if (serializedObject.FindProperty("save") != null)
+        {
+            EditorGUILayout.LabelField(serializedObject.FindProperty("save").stringValue);
+        }
+
         serializedObject.ApplyModifiedProperties();
     }
 
-    private void Save(string path)
+    private void Save()
     {
+        string path = (serializedObject.targetObject as GridScript).gameObject.scene.path;
+
+        path = path.Substring(0, path.LastIndexOf('.'));
+
+        string name = path.Substring(path.LastIndexOf('/') + 1);
+
+        path = path.Substring(0, path.LastIndexOf('/'));
+
+        string mission = path.Substring(path.LastIndexOf('/') + 1);
+
+        path = path.Substring(0, path.LastIndexOf('/'));
+
+        path = Application.streamingAssetsPath + "/Grids/" + mission + "/" + name + ".txt";
+
         BinaryFormatter bf = new BinaryFormatter();
 
         FileStream file = File.Create(path);
@@ -177,21 +217,45 @@ public class GridScriptEditor : Editor
         bf.Serialize(file, vacancy);
 
         file.Close();
+
+        SerializedProperty sp = serializedObject.FindProperty("save");
+
+        sp.stringValue = path;
+
+        serializedObject.ApplyModifiedProperties();
     }
 
-    private void Load(string path)
+    private void Load()
     {
-        if (File.Exists(path))
+        if (File.Exists(serializedObject.FindProperty("save").stringValue))
         {
+            Debug.Log("Loaded");
+
             BinaryFormatter bf = new BinaryFormatter();
 
-            FileStream file = File.Open(path,FileMode.Open);
+            FileStream file = File.Open(serializedObject.FindProperty("save").stringValue, FileMode.Open);
 
             vacancy = bf.Deserialize(file) as bool[,];
 
             file.Close();
         }
     }
+
+    //private static void Load(SerializedObject so)
+    //{
+    //    if (File.Exists(so.FindProperty("save").stringValue))
+    //    {
+    //        BinaryFormatter bf = new BinaryFormatter();
+
+    //        FileStream file = File.Open(so.FindProperty("save").stringValue, FileMode.Open);
+
+    //        vacancy = bf.Deserialize(file) as bool[,];
+
+    //        file.Close();
+
+    //        (so.targetObject as GridScript).vacancy = vacancy;
+    //    }
+    //}
 }
 
 #endif

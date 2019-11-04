@@ -91,6 +91,7 @@ public class SistemaDialogo : MonoBehaviour
 
 #endif
 
+    #region Logica do Sistema de Fala
     public void ComecarDialogo(Dialogo _dialogo, NpcDialogo _npcDialogoQA)
     {
         if (npcDialogo == null && _dialogo != null) 
@@ -473,4 +474,17 @@ public class SistemaDialogo : MonoBehaviour
 
         GameManager.UINaoSendoUsada();
     }
+    #endregion
+
+    #region FontSize
+    public void IncreaseFontSize()
+    {
+        textoDialogo.fontSize = Mathf.Min(textoDialogo.fontSize + 6f, 32);
+    }
+
+    public void DecreaseFontSize()
+    {
+        textoDialogo.fontSize = Mathf.Max(textoDialogo.fontSize - 6f, 14);
+    }
+    #endregion 
 }
