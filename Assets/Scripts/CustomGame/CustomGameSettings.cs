@@ -7,11 +7,18 @@ using UnityEngine;
 [System.Serializable]
 public class CustomGameSettings {
 
-    public byte Professor;
-    public string FalaDoProfessor;
+    private static CustomGameSettings currentSettings;
+
+    // Dados da tela customizar que serão salvos no disco
+    public CharacterName Professor;
+    public string FalaProfessorSalaProfessores;
 
     public static CustomGameSettings ReadCustomGameSettingsFromDisk()
     {
+        // Para economizar, existe uma variável que guarda a leitura do disco
+        // O jogo só lê uma vez o arquivo no disco
+        if (currentSettings != null) return currentSettings;
+
         // Criar objeto para receber informações lidas do disco
         CustomGameSettings settings = null;
 
@@ -27,7 +34,7 @@ public class CustomGameSettings {
         }
         #endif
          
-        return settings;
+        return currentSettings = settings;
     }
 
     public void SaveCustomGameSettingsToDisk()

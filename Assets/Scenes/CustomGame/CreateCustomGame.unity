@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 36033747}
   - component: {fileID: 36033746}
   - component: {fileID: 36033745}
+  - component: {fileID: 36033748}
   m_Layer: 5
   m_Name: Professor2
   m_TagString: Untagged
@@ -188,18 +189,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 36033746}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 604211957}
-        m_MethodName: SelectTeacher
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 36033745}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &36033746
@@ -236,6 +226,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 36033743}
   m_CullTransparentMesh: 0
+--- !u!114 &36033748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 36033743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a26a7d0fb89f843019525150d381ddd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSelected: 0
+  professor: 1
 --- !u!1 &254144382
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,9 +293,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6de1a1f2d0277ba4c9d2dd4a9e4f58d8, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -569,9 +572,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e2b70fcd04c15c045a43ec2ee735be2d, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -670,7 +673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProfessorSelecionado: {fileID: 1793784702}
-  falaDoProfessor: {fileID: 1457675870}
+  falaProfessorSalaProfessores: {fileID: 1457675870}
   submitButton: {fileID: 1402345486}
 --- !u!1 &868020355
 GameObject:
@@ -1126,7 +1129,7 @@ MonoBehaviour:
   m_LineType: 0
   m_HideMobileInput: 0
   m_CharacterValidation: 0
-  m_CharacterLimit: 0
+  m_CharacterLimit: 300
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -1189,6 +1192,7 @@ GameObject:
   - component: {fileID: 1474552658}
   - component: {fileID: 1474552657}
   - component: {fileID: 1474552656}
+  - component: {fileID: 1474552659}
   m_Layer: 5
   m_Name: Professor3
   m_TagString: Untagged
@@ -1253,18 +1257,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1474552657}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 604211957}
-        m_MethodName: SelectTeacher
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1474552656}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1474552657
@@ -1301,6 +1294,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1474552654}
   m_CullTransparentMesh: 0
+--- !u!114 &1474552659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1474552654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a26a7d0fb89f843019525150d381ddd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSelected: 0
+  professor: 2
 --- !u!1 &1515190788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,9 +1361,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 89a5d8762dbb0634989d512757873583, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1531,7 +1537,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fala do professor...
+  m_Text: Fala do professor na sala dos professores...
 --- !u!222 &1686993533
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1550,6 +1556,7 @@ GameObject:
   - component: {fileID: 1793784704}
   - component: {fileID: 1793784703}
   - component: {fileID: 1793784702}
+  - component: {fileID: 1793784705}
   m_Layer: 5
   m_Name: Professor1
   m_TagString: Untagged
@@ -1614,18 +1621,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1793784703}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 604211957}
-        m_MethodName: SelectTeacher
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1793784702}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1793784703
@@ -1662,6 +1658,19 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1793784700}
   m_CullTransparentMesh: 0
+--- !u!114 &1793784705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1793784700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a26a7d0fb89f843019525150d381ddd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startSelected: 1
+  professor: 0
 --- !u!1 &1852908020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,5 +1731,47 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2026804961
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4911140188785298, guid: 0f3e8a22410a74fe1b4b987ebdd9a839, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4911140188785298, guid: 0f3e8a22410a74fe1b4b987ebdd9a839, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4911140188785298, guid: 0f3e8a22410a74fe1b4b987ebdd9a839, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4911140188785298, guid: 0f3e8a22410a74fe1b4b987ebdd9a839, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4911140188785298, guid: 0f3e8a22410a74fe1b4b987ebdd9a839, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4911140188785298, guid: 0f3e8a22410a74fe1b4b987ebdd9a839, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4911140188785298, guid: 0f3e8a22410a74fe1b4b987ebdd9a839, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4911140188785298, guid: 0f3e8a22410a74fe1b4b987ebdd9a839, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0f3e8a22410a74fe1b4b987ebdd9a839, type: 2}
+  m_IsPrefabAsset: 0

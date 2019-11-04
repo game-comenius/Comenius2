@@ -7,48 +7,34 @@ using UnityEngine.UI;
 
 public class ChooseCustomGamePanel : MonoBehaviour {
 
-    [SerializeField]
-    private Sprite jeanSprite;
-    [SerializeField]
-    private Sprite montanariSprite;
-    [SerializeField]
-    private Sprite alunoEstranhoSprite;
+    private CustomGameSettings currentSettings;
 
+    // Campos relacionados à UI
     [SerializeField]
     private Image professorImage;
 
-    private CustomGameSettings currentSettings;
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         try
         {
-            currentSettings = CustomGameLoadedSettings.Settings;
+            currentSettings = CustomGameSettings.ReadCustomGameSettingsFromDisk();
 
             // Mostrar professor selecionado
-            switch (currentSettings.Professor)
-            {
-                case 0:
-                    professorImage.sprite = jeanSprite;
-                    break;
-                case 1:
-                    professorImage.sprite = montanariSprite;
-                    break;
-                case 2:
-                    professorImage.sprite = alunoEstranhoSprite;
-                    break;
-                default:
-                    break;
-            }
+            var teacher = currentSettings.Professor;
+            professorImage.sprite = CharacterSpriteDatabase.SpriteSW(teacher);
+            professorImage.preserveAspect = true;
 
-            Debug.Log(currentSettings.FalaDoProfessor);
+            // Se o sprite existe, alpha se torna igual a 1 e ele é mostrado
+            if (professorImage.sprite)
+                professorImage.color = new Color(1, 1, 1, 1);
+
+            // Debug.Log(currentSettings.FalaProfessorSalaProfessores);
         }
         catch (System.Exception)
         {
             Debug.Log("Impossível ler o arquivo de jogo custom...");
         }
         
-        if (professorImage.sprite)
-            professorImage.color = new Color(1, 1, 1, 1);
+        
     }
 }
