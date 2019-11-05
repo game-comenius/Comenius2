@@ -16,18 +16,35 @@ public class CreateCustomGamePanel : MonoBehaviour {
     [SerializeField]
     private Button submitButton;
 
+    [SerializeField]
+    private AvailableItemsPanel panelDeMidiasDisponiveis;
+    
 
-    //private void Start()
-    //{
-    //    SelectTeacher(ProfessorSelecionado);
-    //}
+    [SerializeField]
+    private List<GameObject> paginas;
+    private List<GameObject>.Enumerator paginasEnumerator;
 
-    //public void SelectTeacher(Button teacher)
-    //{
-    //    ProfessorSelecionado.image.color = new Color(0.6483624f, 0.6640738f, 0.8867924f, 0.8f);
-    //    teacher.image.color = new Color(0.700088f, 0.8862745f, 0.6470588f);
-    //    ProfessorSelecionado = teacher;
-    //}
+    private void Start()
+    {
+        // Desativar todas as páginas deste panel e ativar apenas a primeira
+        foreach (var pagina in paginas) pagina.SetActive(false);
+        paginasEnumerator = paginas.GetEnumerator();
+        if (paginasEnumerator.MoveNext())
+            paginasEnumerator.Current.SetActive(true);
+    }
+
+
+
+    // Métodos vinculados a botões
+    public void IrParaProximaPagina()
+    {
+        var paginaAnterior = paginasEnumerator.Current;
+        if (paginasEnumerator.MoveNext())
+        {
+            paginaAnterior.SetActive(false);
+            paginasEnumerator.Current.SetActive(true);
+        }
+    }
 
     public void PressSubmitButton()
     {
