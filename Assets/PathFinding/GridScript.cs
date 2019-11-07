@@ -155,7 +155,7 @@ public class GridScript : MonoBehaviour
         }
         else
         {
-            List<HeuristicTile> paths = new List<HeuristicTile>();//deletar
+            List<HeuristicTile> paths = new List<HeuristicTile>();
 
             paths.Add(new HeuristicTile(destino, origem));
 
@@ -169,7 +169,32 @@ public class GridScript : MonoBehaviour
             }
         }
     }
-    
+
+    public List<Vector2Int> FindPathToInteractable(Vector3 _origemWorldpoint, Vector3[] _destinoWorldPoint)
+    {
+        Vector2Int origem = P2G(_origemWorldpoint);
+
+        Vector2Int[] destino = new Vector2Int[_destinoWorldPoint.Length];
+
+        List<HeuristicTile> paths = new List<HeuristicTile>();
+
+        for (int i = 0; i < destino.Length; i++)
+        {
+            destino[i] = P2G(_destinoWorldPoint[i]);
+
+            if (destino[i] == origem)
+            {
+                return null;
+            }
+            else
+            {
+                paths.Add(new HeuristicTile(destino[i], origem));
+            }
+        }
+
+        return AvailableEnd(origem, paths);
+    }
+
     private List<Vector2Int> UnavailableEnd(Vector2Int origem, List<HeuristicTile> paths)
     {
         bool[,] wasAnalysed = new bool[vacancy.GetLength(0), vacancy.GetLength(1)];
@@ -505,8 +530,6 @@ public class GridScript : MonoBehaviour
             Gizmos.DrawLine(ipos, fpos);
         }
 
-        Gizmos.color = Color.red;
-
         try
         {
             for (int j = 0; j < gridDim.y; j++)
@@ -515,10 +538,18 @@ public class GridScript : MonoBehaviour
                 {
                     if (vacancy[i, j])
                     {
-                        Gizmos.DrawSphere(Cell(new Vector2Int(i, j))[0], 0.1f);
+                        Gizmos.color = Color.red;
                     }
+                    else
+                    {
+                        Gizmos.color = Color.cyan;
+                    }
+
+                    Gizmos.DrawSphere(Cell(new Vector2Int(i, j))[0], 0.06f);
                 }
             }
+
+            Gizmos.color = Color.red;
 
             for (int j = 0; j < gridDim.y; j++)
             {

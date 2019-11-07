@@ -11,15 +11,36 @@ public class DoorTransition : MonoBehaviour
 
     private float timerMax = 1.5f;
 
-    public void OnMouseUp()
+    [SerializeField] private Vector3[] interactOffset = new Vector3[1];
+
+    private void OnMouseUp()
     {
         if (!GameManager.uiSendoUsada)
         {
-            AudioSource asource = GetComponent<AudioSource>();
-            GameManager.UISendoUsada();
-            asource.Play();
-            StartCoroutine(CarregarProximaSala());
+            Vector3[] point = new Vector3[interactOffset.Length];
+
+            for (int i = 0; i < point.Length; i++)
+            {
+                point[i] = transform.position + interactOffset[i];
+            }
+
+            Player.Instance.GetComponent<PathFinder>().NullifyGotToInteractable();
+
+            PathFinder.gotToInteractable += Interact;
+
+            Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point);
         }
+    }
+
+    private void Interact()
+    {
+        AudioSource asource = GetComponent<AudioSource>();
+
+        GameManager.UISendoUsada();
+
+        asource.Play();
+
+        StartCoroutine(CarregarProximaSala());
     }
 
     private IEnumerator CarregarProximaSala()
@@ -36,5 +57,15 @@ public class DoorTransition : MonoBehaviour
 
         sceneLoad.allowSceneActivation = true;
         GameManager.UINaoSendoUsada();
+    }
+
+    protected virtual void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.magenta;
+
+        for (int i = 0; i < interactOffset.Length; i++)
+        {
+            Gizmos.DrawSphere(transform.position + interactOffset[i], 0.07f);
+        }
     }
 }

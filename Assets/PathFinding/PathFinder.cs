@@ -16,13 +16,13 @@ public class PathFinder : MonoBehaviour
 
     [SerializeField] private SpriteRenderer spriteRenderer = null;
 
-    [SerializeField] Sprite forward;
+    [SerializeField] Sprite forward = null;
 
-    [SerializeField] Sprite backward;
+    [SerializeField] Sprite backward = null;
 
-    [SerializeField] Sprite left;
+    [SerializeField] Sprite left = null;
 
-    [SerializeField] Sprite right;
+    [SerializeField] Sprite right = null;
 
     [SerializeField] Sprite[] walkForward = new Sprite[4];
 
@@ -33,6 +33,12 @@ public class PathFinder : MonoBehaviour
     [SerializeField] Sprite[] walkRight = new Sprite[4];
 
     Coroutine coroutine = null;
+
+    private Vector3[] lookTo = null;
+
+    public delegate void GotToInteractable();
+
+    public static event GotToInteractable gotToInteractable;
 
     private void Awake()
     {
@@ -50,7 +56,14 @@ public class PathFinder : MonoBehaviour
         {
             if (Input.GetMouseButtonUp(1) && coroutine == null)
             {
+                NullifyGotToInteractable();
+
                 //.DateTime t = System.DateTime.UtcNow;
+
+                if (_camera == null)
+                {
+                    _camera = Camera.main;
+                }
 
                 path = GridScript.gridScript.FindPath(transform.position + footbaseOffset, _camera.ScreenToWorldPoint(Input.mousePosition));
 
@@ -65,9 +78,16 @@ public class PathFinder : MonoBehaviour
             }
             else if (Input.GetMouseButtonUp(1))
             {
+                NullifyGotToInteractable();
+
                 StartCoroutine(WaitFor());
             }
         }
+    }
+
+    public void NullifyGotToInteractable()
+    {
+        gotToInteractable -= gotToInteractable;
     }
 
     private void Turn(Vector3 point)
@@ -106,15 +126,12 @@ public class PathFinder : MonoBehaviour
 
         for (int i = 1; i < 4; i++)
         {
-            Debug.Log(list2[i].magnitude + " " + list2[minor].magnitude);
 
             if (list2[i].magnitude < list2[minor].magnitude) 
             {
                 minor = i;
             }
         }
-
-        Debug.Log(minor);
 
         switch (minor)
         {
@@ -237,11 +254,39 @@ public class PathFinder : MonoBehaviour
             }
         }
 
+        if (gotToInteractable != null)
+        {
+            gotToInteractable();
+
+            gotToInteractable -= gotToInteractable;
+
+            Vector3 point = lookTo[0];
+
+            for (int i = 1; i < lookTo.Length; i++)
+            {
+                if ((point - transform.position).magnitude > (lookTo[i] - transform.position).magnitude)
+                {
+                    point = lookTo[i];
+                }
+            }
+
+            Turn(point);
+
+            lookTo = null;
+        }
+
         path = null;
 
         StartCoroutine(WalkDecision());
 
         coroutine = null;
+    }
+
+    public void WalkToInteractable(Vector3[] _destinoWorldPoint)
+    {
+        path = GridScript.gridScript.FindPathToInteractable(transform.position + footbaseOffset, _destinoWorldPoint);
+
+        lookTo = _destinoWorldPoint;
     }
 
     private void OnDrawGizmos()
