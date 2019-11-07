@@ -22,11 +22,6 @@ public class GridScript : MonoBehaviour
 
     public bool[,] vacancy;
 
-    [SerializeField] List<HeuristicTile> paths = new List<HeuristicTile>();//deletar
-
-    Vector2Int _destino = Vector2Int.zero;
-    Vector2Int _origem = Vector2Int.zero;
-
     private void Awake()
     {
         if (gridScript == null)
@@ -151,195 +146,164 @@ public class GridScript : MonoBehaviour
     //a nálise é feita de forma reversa, não da origam ao destino mas do destino à origem
     public List<Vector2Int> FindPath(Vector3 _origemWorldpoint, Vector3 _destinoWorldPoint)
     {
-        paths.Clear();
-
         Vector2Int origem = P2G(_origemWorldpoint);
         Vector2Int destino = P2G(_destinoWorldPoint);
-        _origem = origem;
-        _destino = destino;
 
         if (origem == destino)
         {
-            Debug.Log("Não anda");
-
             return null;
         }
         else
         {
+            List<HeuristicTile> paths = new List<HeuristicTile>();//deletar
+
             paths.Add(new HeuristicTile(destino, origem));
 
             if (vacancy[destino.x, destino.y])
             {
                 return UnavailableEnd(origem, paths);
-
-                //AvailableEnd(origem, paths);
-
-                //return AvailableEnd(origem, paths);
             }
             else
             {
-                //AvailableEnd(origem, paths);
-
                 return AvailableEnd(origem, paths);
             }
         }
     }
-
+    
     private List<Vector2Int> UnavailableEnd(Vector2Int origem, List<HeuristicTile> paths)
     {
-        while (true) 
+        bool[,] wasAnalysed = new bool[vacancy.GetLength(0), vacancy.GetLength(1)];
+
+        wasAnalysed[paths[0].path[0].x, paths[0].path[0].y] = true;
+
+        List<Vector2Int> positions = new List<Vector2Int>();
+
+        positions.Add(paths[0].path[0]);
+
+        bool found = false;
+
+        while (!found)
         {
-            List<HeuristicTile> newList = new List<HeuristicTile>();
+            List<Vector2Int> newPositions = new List<Vector2Int>();
 
-            while (paths.Count > 0)
+            while (positions.Count > 0)
             {
-                HeuristicTile tile = new HeuristicTile(paths[paths.Count - 1], origem);
+                newPositions.AddRange(NewPositionsUnavailableEnd(positions[0]));
 
-                paths.RemoveAt(paths.Count - 1);
-
-                newList.AddRange(NewPositionsUnavailableEnd(origem, tile));
+                positions.RemoveAt(0);
             }
 
-            bool achouLugar = false;
-
-            for (int i = 0; i < newList.Count; i++)
+            for (int i = 0; i < newPositions.Count - 1; i++) 
             {
-                Vector2Int position = newList[i].path[newList[i].path.Count - 1];
-
-                if (!vacancy[position.x, position.y])
+                for (int j = i + 1; j < newPositions.Count; j++)
                 {
-                    achouLugar = true;
+                    if (newPositions[i] == newPositions[j])
+                    {
+                        newPositions.RemoveAt(j);
 
-                    break;
+                        j--;
+                    }
+                }
+            }
+
+            for (int i = 0; i < newPositions.Count; i++)
+            {
+                if (wasAnalysed[newPositions[i].x, newPositions[i].y])
+                {
+                    newPositions.RemoveAt(i);
+
+                    i--;
+                }
+                else if (!vacancy[newPositions[i].x, newPositions[i].y])
+                {
+                    found = true;
+
+                    i = newPositions.Count;
                 }
             }
 
-            if (achouLugar)
+            positions.AddRange(newPositions);
+        }
+
+        for (int i = 0; i < positions.Count; i++)
+        {
+            if (positions[i] == origem)
             {
-                for (int i = 0; i < newList.Count; i++)
-                {
-                    Vector2Int position = newList[i].path[newList[i].path.Count - 1];
-
-                    if (vacancy[position.x, position.y])
-                    {
-                        newList.RemoveAt(i);
-
-                        i--;
-                    }
-                    else
-                    {
-                        while (newList[i].path.Count > 1)
-                        {
-                            newList[i].path.RemoveAt(0);
-                        }
-
-                        newList[i].CalculateDistToGoal(origem);
-
-                        if (paths.Count == 0)
-                        {
-                            paths.Add(newList[i]);
-                        }
-                        else
-                        {
-                            for (int j = 0; j < paths.Count; j++)
-                            {
-                                if (newList[i].path[newList[i].path.Count - 1] == origem)
-                                {
-                                    paths.Clear();
-
-                                    return newList[i].path;
-                                }
-                                else if (paths[j].totalTileValue > newList[i].totalTileValue)
-                                {
-                                    paths.Insert(j, newList[i]);
-
-                                    break;
-                                }
-                                else if (j == paths.Count - 1)
-                                {
-                                    paths.Add(newList[i]);
-
-                                    break;
-                                }
-                            }
-
-                            newList.RemoveAt(i);
-                        }
-                    }
-                }
-
-                return AvailableEnd(origem, paths);
+                return null;
             }
-            else
+            else if (!vacancy[positions[i].x, positions[i].y])
             {
-                paths.AddRange(newList);
+                paths.Add(new HeuristicTile(positions[i], origem));                
             }
         }
+
+        return AvailableEnd(origem, paths);
     }
 
-    private List<HeuristicTile> NewPositionsUnavailableEnd(Vector2Int destino, HeuristicTile tile)
+    private List<Vector2Int> NewPositionsUnavailableEnd(Vector2Int origem)
     {
-        List<HeuristicTile> newTiles = new List<HeuristicTile>();
+        List<Vector2Int> newList = new List<Vector2Int>();
 
-        Vector2Int newPosition = tile.path[tile.path.Count - 1] + new Vector2Int(1, 0);
-
-        if (!tile.path.Contains(newPosition) && VerifyTileIsInGrid(newPosition))
+        for (int i = 0; i < 4; i++)
         {
-            HeuristicTile newTile = new HeuristicTile(tile, destino);
+            Vector2Int position = Vector2Int.zero;
 
-            newTile.path.Add(newPosition);
+            switch (i)
+            {
+                case 0:
+                    position = origem + Vector2Int.up;
+                    break;
+                case 1:
+                    position = origem + Vector2Int.down;
+                    break;
+                case 2:
+                    position = origem + Vector2Int.left;
+                    break;
+                case 3:
+                    position = origem + Vector2Int.right;
+                    break;
+                //case 4:
+                //    position = origem + Vector2Int.down + Vector2Int.left;
+                //    break;
+                //case 5:
+                //    position = origem + Vector2Int.down + Vector2Int.right;
+                //    break;
+                //case 6:
+                //    position = origem + Vector2Int.up + Vector2Int.left;
+                //    break;
+                //case 7:
+                //    position = origem + Vector2Int.up + Vector2Int.right;
+                //    break;
+            }
 
-            newTiles.Add(newTile);
+            if (VerifyTileIsInGrid(position))
+            {
+                newList.Add(position);
+            }
         }
 
-        newPosition = tile.path[tile.path.Count - 1] + new Vector2Int(-1, 0);
-
-        if (!tile.path.Contains(newPosition) && VerifyTileIsInGrid(newPosition))
-        {
-            HeuristicTile newTile = new HeuristicTile(tile, destino);
-
-            newTile.path.Add(newPosition);
-
-            newTiles.Add(newTile);
-        }
-
-        newPosition = tile.path[tile.path.Count - 1] + new Vector2Int(0, 1);
-
-        if (!tile.path.Contains(newPosition) && VerifyTileIsInGrid(newPosition))
-        {
-            HeuristicTile newTile = new HeuristicTile(tile, destino);
-
-            newTile.path.Add(newPosition);
-
-            newTiles.Add(newTile);
-        }
-
-        newPosition = tile.path[tile.path.Count - 1] + new Vector2Int(0, -1);
-
-        if (!tile.path.Contains(newPosition) && VerifyTileIsInGrid(newPosition))
-        {
-            HeuristicTile newTile = new HeuristicTile(tile, destino);
-
-            newTile.path.Add(newPosition);
-
-            newTiles.Add(newTile);
-        }
-
-        return newTiles;
+        return newList;
     }
 
     private List<Vector2Int> AvailableEnd(Vector2Int origem, List<HeuristicTile> paths)
     {
-        while(true)
+        int z = 0;
+
+        while (true)
         {
             List<HeuristicTile> newList = new List<HeuristicTile>();
 
             newList.AddRange(NewPositionsAvailableEnd(origem, paths[0]));
 
-            paths.RemoveAt(0);
+            paths.RemoveAt(0);            
 
-            if (paths.Count == 0)
+            if (paths.Count == 0 && newList.Count != 0)
             {
+                if (newList[0].path[newList[0].path.Count - 1] == origem)
+                {
+                    return newList[0].path;
+                }
+
                 paths.Add(newList[0]);
 
                 newList.RemoveAt(0);
@@ -349,7 +313,7 @@ public class GridScript : MonoBehaviour
             {
                 for (int j = 0; j < paths.Count; j++)
                 {
-                    if (paths[j].path.Count > 0 && paths[j].path[paths[j].path.Count - 1] == newList[i].path[newList[i].path.Count - 1])
+                    if (paths[j].path[paths[j].path.Count - 1] == newList[i].path[newList[i].path.Count - 1])
                     {
                         if (paths[j].partialTileValue < newList[i].partialTileValue)
                         {
@@ -366,6 +330,26 @@ public class GridScript : MonoBehaviour
                             j--;
                         }
                     }
+                    else
+                    {
+                        for (int k = 0; k < paths[j].path.Count - 1 && k < newList[i].path.Count; k++)
+                        {
+                            if (paths[j].path[k] == newList[i].path[newList[i].path.Count - 1])
+                            {
+                                if (10 * k + 5 * (newList[i].directionChanges + 1) * (newList[i].directionChanges + 1) <
+                                    10 * newList[i].path.Count + 5 * (newList[i].directionChanges + 1) * (newList[i].directionChanges + 1))
+                                {
+                                    newList.RemoveAt(i);
+
+                                    i--;
+
+                                    j = paths.Count;
+
+                                    break;
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
@@ -373,31 +357,52 @@ public class GridScript : MonoBehaviour
             {
                 if (newList[i].path[newList[i].path.Count - 1] == origem)
                 {
-                    paths.Clear();
-
                     return newList[i].path;
-
-                    //paths.Add(newList[i]);
-
-                    //return;
                 }
 
-                for (int j = 0; j < paths.Count; j++)
+                if (newList[i].totalTileValue < paths[0].totalTileValue)
                 {
-                    if (paths[j].totalTileValue > newList[i].totalTileValue)
-                    {
-                        paths.Insert(j, newList[i]);
+                    paths.Insert(0, newList[i]);
+                }
+                else if (newList[i].totalTileValue > paths[paths.Count - 1].totalTileValue)
+                {
+                    paths.Add(newList[i]);
+                }
+                else
+                {
+                    int a = 0;
+                    int b = paths.Count - 1;
 
-                        break;
-                    }
-                    else if (j == paths.Count - 1)
+                    while (a < b)
                     {
-                        paths.Add(newList[i]);
+                        if (a + 1 == b)
+                        {
+                            paths.Insert(b, newList[i]);
 
-                        break;
+                            break;
+                        }
+
+                        int j = (a + b) / 2;
+
+                        if (paths[j].totalTileValue > newList[i].totalTileValue)
+                        {
+                            b = j;
+                        }
+                        else if (paths[j].totalTileValue < newList[i].totalTileValue)
+                        {
+                            a = j;
+                        }
+                        else if (paths[j].totalTileValue == newList[i].totalTileValue)
+                        {
+                            paths.Insert(j, newList[i]);
+
+                            break;
+                        }
                     }
                 }
             }
+
+            z++;
         }
     }
 
@@ -405,92 +410,49 @@ public class GridScript : MonoBehaviour
     {
         List<HeuristicTile> newTiles = new List<HeuristicTile>();
 
-        Vector2Int newDir = Vector2Int.up;
-
-        Vector2Int newPosition = tile.path[tile.path.Count - 1] + newDir;
-
-        if (!tile.path.Contains(newPosition) && VerifyTileIsInGrid(newPosition) && !vacancy[newPosition.x, newPosition.y]) 
+        for (int i = 0; i < 4; i++)
         {
-            HeuristicTile newTile = new HeuristicTile(tile, destino);
+            Vector2Int newDir = Vector2Int.zero;
 
-            newTile.path.Add(newPosition);
+            Vector2Int newPosition = tile.path[tile.path.Count - 1];
 
-            if (tile.direction != newDir)
+            switch (i)
             {
-                newTile.direction = newDir;
-
-                newTile.directionChanges++;
+                case 0:
+                    newDir = Vector2Int.up;
+                    newPosition += newDir;
+                    break;
+                case 1:
+                    newDir = Vector2Int.down;
+                    newPosition += newDir;
+                    break;
+                case 2:
+                    newDir = Vector2Int.left;
+                    newPosition += newDir;
+                    break;
+                case 3:
+                    newDir = Vector2Int.right;
+                    newPosition += newDir;
+                    break;
             }
 
-            newTile.CalculateDistToGoal(destino);
-
-            newTiles.Add(newTile);
-        }
-
-        newDir = Vector2Int.down;
-
-        newPosition = tile.path[tile.path.Count - 1] + newDir;
-
-        if (!tile.path.Contains(newPosition) && VerifyTileIsInGrid(newPosition) && !vacancy[newPosition.x, newPosition.y])
-        {
-            HeuristicTile newTile = new HeuristicTile(tile, destino);
-
-            newTile.path.Add(newPosition);
-
-            if (tile.direction != newDir)
+            if (!tile.path.Contains(newPosition) && VerifyTileIsInGrid(newPosition) && !vacancy[newPosition.x, newPosition.y])
             {
-                newTile.direction = newDir;
+                HeuristicTile newTile = new HeuristicTile(tile, destino);
 
-                newTile.directionChanges++;
+                newTile.path.Add(newPosition);
+
+                if (tile.direction != newDir)
+                {
+                    newTile.direction = newDir;
+
+                    newTile.directionChanges++;
+                }
+
+                newTile.CalculateDistToGoal(destino);
+
+                newTiles.Add(newTile);
             }
-
-            newTile.CalculateDistToGoal(destino);
-
-            newTiles.Add(newTile);
-        }
-
-        newDir = Vector2Int.left;
-
-        newPosition = tile.path[tile.path.Count - 1] + newDir;
-
-        if (!tile.path.Contains(newPosition) && VerifyTileIsInGrid(newPosition) && !vacancy[newPosition.x, newPosition.y])
-        {
-            HeuristicTile newTile = new HeuristicTile(tile, destino);
-
-            newTile.path.Add(newPosition);
-
-            if (tile.direction != newDir)
-            {
-                newTile.direction = newDir;
-
-                newTile.directionChanges++;
-            }
-
-            newTile.CalculateDistToGoal(destino);
-
-            newTiles.Add(newTile);
-        }
-
-        newDir = Vector2Int.right;
-
-        newPosition = tile.path[tile.path.Count - 1] + newDir;
-
-        if (!tile.path.Contains(newPosition) && VerifyTileIsInGrid(newPosition) && !vacancy[newPosition.x, newPosition.y])
-        {
-            HeuristicTile newTile = new HeuristicTile(tile, destino);
-
-            newTile.path.Add(newPosition);
-
-            if (tile.direction != newDir)
-            {
-                newTile.direction = newDir;
-
-                newTile.directionChanges++;
-            }
-            
-            newTile.CalculateDistToGoal(destino);
-
-            newTiles.Add(newTile);
         }
 
         return newTiles;
@@ -572,36 +534,6 @@ public class GridScript : MonoBehaviour
         catch (System.NullReferenceException)
         {
 
-        }
-
-        if (paths.Count > 0)
-        {
-            for (int i = paths.Count - 1; i >= 0; i--)
-            {
-                Gizmos.color = Color.Lerp(Color.cyan, Color.yellow, ((float)i) / Mathf.Clamp((float)paths.Count - 1, 1, paths.Count));
-
-                Gizmos.DrawCube(GridScript.gridScript.CellR(paths[i].path[paths[i].path.Count - 1])[0], new Vector3(0.3f, 0.3f, 0.3f));
-
-            }
-
-            Gizmos.color = Color.green;
-            Gizmos.DrawCube(GridScript.gridScript.CellR(_origem)[0], new Vector3(0.3f, 0.3f, 0.3f));
-
-            Gizmos.color = Color.red;
-            Gizmos.DrawCube(GridScript.gridScript.CellR(_destino)[0], new Vector3(0.3f, 0.3f, 0.3f));
-
-            //if (paths[0].path.Count > 1)
-            //{
-            //    Gizmos.color = Color.blue;
-
-            //    for (int i = 1; i < paths[0].path.Count; i++)
-            //    {
-            //        Gizmos.DrawLine(GridScript.gridScript.CellR(paths[0].path[i - 1])[0], GridScript.gridScript.CellR(paths[0].path[i])[0]);
-            //        Gizmos.DrawLine(GridScript.gridScript.Cell(paths[0].path[i - 1])[0], GridScript.gridScript.Cell(paths[0].path[i])[0]);
-            //    }
-
-            //    Gizmos.DrawSphere(GridScript.gridScript.Cell(paths[0].path[0])[0], 0.15f);
-            //}
         }
     }
 }

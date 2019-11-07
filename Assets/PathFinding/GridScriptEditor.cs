@@ -21,44 +21,6 @@ public class GridScriptEditor : Editor
 
     bool open = true;
 
-    //static GridScriptEditor ()
-    //{
-    //    EditorApplication.update += Update;
-
-    //    EditorApplication.update += CheckIn;
-    //}
-
-    //private static void Update()
-    //{
-    //    SerializedObject so = new SerializedObject(FindObjectOfType<GridScript>() as UnityEngine.Object);
-
-    //    Load(so);
-
-    //    EditorApplication.update -= Update;
-    //}
-
-    //private static void CheckIn()
-    //{
-    //    if (EditorApplication .isPlaying)
-    //    {
-    //        EditorApplication.update += CheckOut;
-
-    //        EditorApplication.update -= CheckIn;
-    //    }
-    //}
-
-    //private static void CheckOut()
-    //{
-    //    if (!EditorApplication.isPlaying)
-    //    {
-    //        EditorApplication.update += Update;
-
-    //        EditorApplication.update += CheckIn;
-
-    //        EditorApplication.update -= CheckOut;
-    //    }
-    //}
-
     private void OnEnable()
     {
         vacancy = (target as GridScript).vacancy;
@@ -84,32 +46,35 @@ public class GridScriptEditor : Editor
 
         if (open)
         {
-            EditorGUILayout.BeginHorizontal();
-            {
-                GUILayout.Label(new GUIContent { text = "" }, GUILayout.Width(20));
-
-                for (int i = 0; i < vacancy.GetLength(1); i++)
-                {
-                    GUILayout.Label(new GUIContent { text = (i + 1).ToString() }, GUILayout.Width(20));
-                }
-            }
-            EditorGUILayout.EndHorizontal();
-
-            for (int j = 0; j < vacancy.GetLength(0); j++)
+            if (vacancy != null)
             {
                 EditorGUILayout.BeginHorizontal();
                 {
-                    GUILayout.Label(new GUIContent { text = (j + 1).ToString() }, GUILayout.Width(20), GUILayout.Height(20));
+                    GUILayout.Label(new GUIContent { text = "" }, GUILayout.Width(20));
 
                     for (int i = 0; i < vacancy.GetLength(1); i++)
                     {
-                        vacancy[j, i] = EditorGUILayout.Toggle(vacancy[j, i], GUILayout.Width(20), GUILayout.Height(20));
+                        GUILayout.Label(new GUIContent { text = (i + 1).ToString() }, GUILayout.Width(20));
                     }
                 }
                 EditorGUILayout.EndHorizontal();
-            }
 
-            GUILayout.Space(15);
+                for (int j = 0; j < vacancy.GetLength(0); j++)
+                {
+                    EditorGUILayout.BeginHorizontal();
+                    {
+                        GUILayout.Label(new GUIContent { text = (j + 1).ToString() }, GUILayout.Width(20), GUILayout.Height(20));
+
+                        for (int i = 0; i < vacancy.GetLength(1); i++)
+                        {
+                            vacancy[j, i] = EditorGUILayout.Toggle(vacancy[j, i], GUILayout.Width(20), GUILayout.Height(20));
+                        }
+                    }
+                    EditorGUILayout.EndHorizontal();
+                }
+
+                GUILayout.Space(15);
+            }
 
             EditorGUILayout.BeginHorizontal();
             {
@@ -229,8 +194,6 @@ public class GridScriptEditor : Editor
     {
         if (File.Exists(serializedObject.FindProperty("save").stringValue))
         {
-            Debug.Log("Loaded");
-
             BinaryFormatter bf = new BinaryFormatter();
 
             FileStream file = File.Open(serializedObject.FindProperty("save").stringValue, FileMode.Open);

@@ -113,6 +113,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!20 &322350082 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 20545476364865102, guid: d11b1c849be53453587e960dd2049b74,
+    type: 2}
+  m_PrefabInternal: {fileID: 1228962010}
 --- !u!1 &394168225
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,6 +456,21 @@ Prefab:
     - target: {fileID: 1000791995703708, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
       propertyPath: m_Name
       value: Jogador
+      objectReference: {fileID: 0}
+    - target: {fileID: 114337595524292166, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
+        type: 2}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 322350082}
+    - target: {fileID: 114337595524292166, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
+        type: 2}
+      propertyPath: velocity
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114337595524292166, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
+        type: 2}
+      propertyPath: frameDuration
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
@@ -1063,6 +1083,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6fb8c3b29c18584296c1625ef5ebd6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2084594511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2084594513}
+  - component: {fileID: 2084594512}
+  m_Layer: 0
+  m_Name: Grid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2084594512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2084594511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8056351885f5a76438866e79586deb59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridColor: {r: 1, g: 0, b: 0, a: 1}
+  cellSize: {x: 0.5, y: 0.5}
+  cellAngle: 30
+  gridDim: {x: 27, y: 30}
+  gridRotation: 210
+  save: C:/Users/henri/OneDrive/Documentos/Comenius/GitHub/Comenius2/Assets/StreamingAssets/Grids/Missao1/Patio_1.txt
+--- !u!4 &2084594513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2084594511}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.11, y: 3.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2099584914
 Prefab:
   m_ObjectHideFlags: 0

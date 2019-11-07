@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4151625970373360}
   - component: {fileID: 212835090484309842}
   - component: {fileID: 114123597930835050}
+  - component: {fileID: 114337595524292166}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -35,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000791995703708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.03, y: 0.52, z: 0}
+  m_LocalPosition: {x: -3.68, y: 1.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,6 +56,47 @@ MonoBehaviour:
   chosenMedia: 
   points: []
   totalMissionPoints: 0
+--- !u!114 &114337595524292166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000791995703708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 613550230bcdd034e85e3424ada76a05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 0}
+  footbaseOffset: {x: 0, y: -0.9, z: 0}
+  path: []
+  frameDuration: 0.1
+  velocity: 0.01
+  spriteRenderer: {fileID: 212835090484309842}
+  forward: {fileID: 21300000, guid: 27f800c7430411a4cb7e43c2e5dc1ba0, type: 3}
+  backward: {fileID: 21300000, guid: 797bdc626a53ec244a5c4144b137db2b, type: 3}
+  left: {fileID: 21300000, guid: 42e403ffed470a34f9fd817a928ea045, type: 3}
+  right: {fileID: 21300000, guid: 9830991e1037ec44d8c2e0d5188ecbf6, type: 3}
+  walkForward:
+  - {fileID: 21300000, guid: e88863cde2b82084ab120a6b543f108c, type: 3}
+  - {fileID: 21300000, guid: f6a0f317c8b45a2468702f877a056553, type: 3}
+  - {fileID: 21300000, guid: 681a64f3b0198de499faff1df57eab05, type: 3}
+  - {fileID: 21300000, guid: b3a5306d0bc11a04fb713b5f838bc67d, type: 3}
+  walkBackward:
+  - {fileID: 21300000, guid: 65a91be78de8e194d8b7ab82fe642d52, type: 3}
+  - {fileID: 21300000, guid: 35a26ec6bd98937409ba01fd94d57ea2, type: 3}
+  - {fileID: 21300000, guid: 017583e15471f1c42b849ceb84fa7f00, type: 3}
+  - {fileID: 21300000, guid: e9088c322583d014481b0c7276f1f570, type: 3}
+  walkLeft:
+  - {fileID: 21300000, guid: 6375238284136ea4487230e3de963c46, type: 3}
+  - {fileID: 21300000, guid: e04a1a22f00094a41aee9ef3fc598905, type: 3}
+  - {fileID: 21300000, guid: 952f31a0669f7e34dbfc78b3a9e5227d, type: 3}
+  - {fileID: 21300000, guid: b628b0e3188da654eac0740bc1c1ee6c, type: 3}
+  walkRight:
+  - {fileID: 21300000, guid: 97396d92d619852458562836a70a5a20, type: 3}
+  - {fileID: 21300000, guid: ae89d6d8710586844a18c8bff24a5b5d, type: 3}
+  - {fileID: 21300000, guid: a47932444d785c948b7bbd6932af9306, type: 3}
+  - {fileID: 21300000, guid: ceaf07489dca37740a0884bcd7b40304, type: 3}
 --- !u!212 &212835090484309842
 SpriteRenderer:
   m_ObjectHideFlags: 1

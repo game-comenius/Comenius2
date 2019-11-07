@@ -804,7 +804,7 @@ Transform:
 --- !u!1 &476785491
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1347987403534916, guid: e4ad828bd3e545a4f85c5f9d1b8e6650,
+  m_CorrespondingSourceObject: {fileID: 1532916209000662, guid: 926e3ff207f2ea147ab4387cec3757a6,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
@@ -821,7 +821,7 @@ GameObject:
 --- !u!114 &476785492
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114695590996514410, guid: e4ad828bd3e545a4f85c5f9d1b8e6650,
+  m_CorrespondingSourceObject: {fileID: 114728311753375852, guid: 926e3ff207f2ea147ab4387cec3757a6,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 476785491}
@@ -835,22 +835,19 @@ MonoBehaviour:
   cellAngle: 30
   gridDim: {x: 17, y: 15}
   gridRotation: 210
-  draw: 1
-  obj: {fileID: 523846544}
   save: C:/Users/henri/OneDrive/Documentos/Comenius/GitHub/Comenius2/Assets/StreamingAssets/Grids/Missao1/Sala_de_aula_Jean.txt
   paths: []
 --- !u!4 &476785493
 Transform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4941475905112144, guid: e4ad828bd3e545a4f85c5f9d1b8e6650,
+  m_CorrespondingSourceObject: {fileID: 4072954472029092, guid: 926e3ff207f2ea147ab4387cec3757a6,
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 476785491}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.558, y: 2.756, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 523846544}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1018,36 +1015,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 494599973}
   m_CullTransparentMesh: 0
---- !u!1 &523846543
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1122648567301052, guid: e4ad828bd3e545a4f85c5f9d1b8e6650,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 523846544}
-  m_Layer: 0
-  m_Name: Pointer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &523846544
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4276090435001112, guid: e4ad828bd3e545a4f85c5f9d1b8e6650,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 523846543}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -0.21, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 476785493}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &542165679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,8 +1294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 760544255}
   footbaseOffset: {x: -0.1, y: -0.7, z: 0}
-  paths: []
-  seeCalculations: 0
+  path: []
 --- !u!20 &760544255 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20545476364865102, guid: d11b1c849be53453587e960dd2049b74,

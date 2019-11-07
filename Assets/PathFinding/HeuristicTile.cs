@@ -17,16 +17,15 @@ public class HeuristicTile
     {
         get
         {
-            return path.Count + directionChanges;
+            return 10 * path.Count + 10 * directionChanges;
         }
     }
-
 
     public int totalTileValue
     {
         get
         {
-            return 10 * path.Count + 5 * (directionChanges * directionChanges) + 11 * distToGoal;
+            return 10 * path.Count + 5 * (directionChanges * directionChanges) + 15 * distToGoal;
         }
     }
 
