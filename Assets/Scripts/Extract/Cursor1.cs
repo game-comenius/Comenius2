@@ -19,16 +19,4 @@ public class Cursor1: MonoBehaviour
         Cursor.SetCursor(cursorImage, offset, CursorMode.ForceSoftware);
 	}			
 
-    void OnMouseEnter()
-    {
-        if (gameObject.tag == "usavel")
-        {
-            Cursor.SetCursor(select, hotspot, curmode);
-        }
-    }
-
-    private void OnMouseExit()
-    {
-        Cursor.SetCursor(cursorImage, hotspot, curmode);
-    }
 }
