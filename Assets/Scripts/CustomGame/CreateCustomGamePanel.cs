@@ -17,7 +17,7 @@ public class CreateCustomGamePanel : MonoBehaviour {
     private Button submitButton;
 
     [SerializeField]
-    private AvailableItemsPanel panelDeMidiasDisponiveis;
+    private AvailableItemsPanel panelMidiasDisponiveis;
     
 
     [SerializeField]
@@ -52,6 +52,7 @@ public class CreateCustomGamePanel : MonoBehaviour {
         CustomGameSettings settings = new CustomGameSettings();
         settings.Professor = SelectProfessorButton.CurrentlySelectedButton.Professor;
         settings.FalaProfessorSalaProfessores = falaProfessorSalaProfessores.text;
+        settings.midiasDisponiveis = panelMidiasDisponiveis.MidiasSelecionadas();
 
         settings.SaveCustomGameSettingsToDisk();
     }
