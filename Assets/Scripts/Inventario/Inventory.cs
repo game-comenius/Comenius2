@@ -50,6 +50,11 @@ public class Inventory
 
     }
 
+    public void Remove(ItemName itemName)
+    {
+        items.Remove(itemName);
+    }
+
     private void DisplayItems()
     {
         var inventoryUIArray = Object.FindObjectsOfType<InventorySheetUI>();

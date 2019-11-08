@@ -13,6 +13,9 @@ public class CustomLurdinha : MonoBehaviour {
         yield return StartCoroutine(UpdateInventory());
 	}
 
+    // Estabelecer novamente quais são os itens no inventário da Lurdinha
+    // Os items do jogo tradicional serão deletados e os items escolhidos
+    // pelo jogador no momento de criar o custom serão adicionados
     private IEnumerator UpdateInventory()
     {
         // Esperar um tempo para que o script Player inicialize o inventário
