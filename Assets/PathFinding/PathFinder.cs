@@ -49,7 +49,6 @@ public class PathFinder : MonoBehaviour
     {
         StartCoroutine(WalkDecision());
     }
-
     private void LateUpdate()
     {
         if (!GameManager.uiSendoUsada)

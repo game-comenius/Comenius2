@@ -835,8 +835,7 @@ MonoBehaviour:
   cellAngle: 30
   gridDim: {x: 17, y: 15}
   gridRotation: 210
-  save: C:/Users/henri/OneDrive/Documentos/Comenius/GitHub/Comenius2/Assets/StreamingAssets/Grids/Missao1/Sala_de_aula_Jean.txt
-  paths: []
+  save: /Grids/Missao1/Sala_de_aula_Jean.txt
 --- !u!4 &476785493
 Transform:
   m_ObjectHideFlags: 0
@@ -1294,7 +1293,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 760544255}
   footbaseOffset: {x: -0.1, y: -0.7, z: 0}
-  path: []
+  frameDuration: 0.1
+  velocity: 0.1
+  spriteRenderer: {fileID: 0}
+  forward: {fileID: 0}
+  backward: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  walkForward:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  walkBackward:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  walkLeft:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  walkRight:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!20 &760544255 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20545476364865102, guid: d11b1c849be53453587e960dd2049b74,
@@ -3052,6 +3077,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: PatioNoite
+  interactOffset:
+  - {x: 0, y: 0, z: 0}
 --- !u!82 &1349916202
 AudioSource:
   m_ObjectHideFlags: 0
