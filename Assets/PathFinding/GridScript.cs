@@ -128,11 +128,11 @@ public class GridScript : MonoBehaviour
 
     public void Load()
     {
-        if (File.Exists(save))
+        if (File.Exists(Application.streamingAssetsPath + save))
         {
             BinaryFormatter bf = new BinaryFormatter();
 
-            FileStream file = File.Open(save, FileMode.Open);
+            FileStream file = File.Open(Application.streamingAssetsPath + save, FileMode.Open);
 
             vacancy = bf.Deserialize(file) as bool[,];
 
