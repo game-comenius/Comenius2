@@ -12,6 +12,7 @@ public class CustomGameSettings {
     // Dados da tela customizar que serão salvos no disco
     public CharacterName Professor;
     public string FalaProfessorSalaProfessores;
+    public ItemName[] midiasDisponiveis;
 
     public static CustomGameSettings ReadCustomGameSettingsFromDisk()
     {

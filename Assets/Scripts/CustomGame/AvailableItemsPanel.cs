@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class AvailableItemsPanel : MonoBehaviour {
 
+    
     private ItemName[] midiasDisponiveis;
 
+    // Prefab do botão que será instanciado para cada uma das mídias
     [SerializeField]
-    private Button botaoSelecionarMidia;
+    private SelectItemButton botaoSelecionarMidia;
 
     // Use this for initialization
     void Start () {
@@ -28,9 +30,22 @@ public class AvailableItemsPanel : MonoBehaviour {
         // Popular o panel de mídias disponíveis com as mídias do jogo custom
         foreach (var midia in midiasDisponiveis)
         {
-            var b = Instantiate(botaoSelecionarMidia, this.transform);
-            b.image.sprite = ItemSpriteDatabase.GetSpriteOf(midia);
-            b.image.preserveAspect = true;
+            var b = Instantiate<SelectItemButton>(botaoSelecionarMidia, this.transform);
+            b.Item = midia;
         }
+    }
+
+    public ItemName[] MidiasSelecionadas()
+    {
+        var midiasSelecionadas = new List<ItemName>();
+
+        var botoes = GetComponentsInChildren<SelectItemButton>();
+        foreach (var botao in botoes)
+        {
+            if (botao.Selected)
+                midiasSelecionadas.Add(botao.Item);
+        }
+
+        return midiasSelecionadas.ToArray();
     }
 }

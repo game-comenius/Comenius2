@@ -29,6 +29,10 @@ public class ChooseCustomGamePanel : MonoBehaviour {
                 professorImage.color = new Color(1, 1, 1, 1);
 
             // Debug.Log(currentSettings.FalaProfessorSalaProfessores);
+            foreach (var item in currentSettings.midiasDisponiveis)
+            {
+                Debug.Log(item.ToString());
+            }
         }
         catch (System.Exception)
         {
