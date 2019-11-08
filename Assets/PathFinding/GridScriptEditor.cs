@@ -173,11 +173,11 @@ public class GridScriptEditor : Editor
 
         path = path.Substring(0, path.LastIndexOf('/'));
 
-        path = Application.streamingAssetsPath + "/Grids/" + mission + "/" + name + ".txt";
+        path = "/Grids/" + mission + "/" + name + ".txt";
 
         BinaryFormatter bf = new BinaryFormatter();
 
-        FileStream file = File.Create(path);
+        FileStream file = File.Create(Application.streamingAssetsPath + path);
 
         bf.Serialize(file, vacancy);
 
@@ -192,11 +192,11 @@ public class GridScriptEditor : Editor
 
     private void Load()
     {
-        if (File.Exists(serializedObject.FindProperty("save").stringValue))
+        if (File.Exists(Application.streamingAssetsPath + serializedObject.FindProperty("save").stringValue))
         {
             BinaryFormatter bf = new BinaryFormatter();
 
-            FileStream file = File.Open(serializedObject.FindProperty("save").stringValue, FileMode.Open);
+            FileStream file = File.Open(Application.streamingAssetsPath + serializedObject.FindProperty("save").stringValue, FileMode.Open);
 
             vacancy = bf.Deserialize(file) as bool[,];
 
