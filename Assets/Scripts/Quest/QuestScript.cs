@@ -115,11 +115,11 @@ public class QuestScript : MonoBehaviour
                     }
                 }
 
-                if (controlador)
+                if (controlador && dependenciasFeitas != null) 
                 {
                     dependenciasFeitas.Invoke();
                 }
-                else
+                else if (dependenciasNaoFeitas != null) 
                 {
                     dependenciasNaoFeitas.Invoke();
                 }
