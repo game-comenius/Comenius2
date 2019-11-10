@@ -16,6 +16,11 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerClickHandler {
     [SerializeField]
     private Sprite neutralItemBorder;
 
+    [SerializeField]
+    private GameObject previousItemButton;
+    [SerializeField]
+    private GameObject nextItemButton;
+
     public GameObject DescriptionSlot { get; set; }
 
     [SerializeField]
@@ -57,12 +62,18 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerClickHandler {
         if (myItems.Count == 0)
             myCurrentItem = myItems.AddLast(item);
 
+        previousItemButton.SetActive(false);
+        nextItemButton.SetActive(false);
+
         DisplayInfo();
     }
 
     public void AddUpgrade(Item item)
     {
         if (!myItems.Contains(item)) myItems.AddLast(item);
+
+        previousItemButton.SetActive(true);
+        nextItemButton.SetActive(true);
     }
 
     public void DisplayPreviousItem()
