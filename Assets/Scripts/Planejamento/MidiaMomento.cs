@@ -49,11 +49,7 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        //throw new System.NotImplementedException();
-        //inicia seleção
-
         GameObject.Find("PlanManager").GetComponent<PlanManager>().setSelectedMoment(gameObject);
-        Debug.Log("momento selecionado: " + GameObject.Find("PlanManager").GetComponent<PlanManager>().getSelectedMoment().name);
 
         // Destaque visual do momento selecionado
         // Desabilitar o último destaque de slot de item
@@ -112,13 +108,19 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
         item = initialItem;
         UpdateSprite();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     private void UpdateSprite() {
-        this.GetComponent<Image>().sprite = ItemSpriteDatabase.GetSpriteOf(item);
+        var image = GetComponent<Image>();
+        if (item == ItemName.SemNome)
+        {
+            image.sprite = null;
+            image.color = new Color(1, 1, 1, 0);
+
+        }
+        else
+        {
+            image.sprite = ItemSpriteDatabase.GetSpriteOf(item);
+            image.color = new Color(1, 1, 1, 1);
+        }
     }
 }
