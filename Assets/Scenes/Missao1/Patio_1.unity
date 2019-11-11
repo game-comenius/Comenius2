@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 683037574}
   - component: {fileID: 683037573}
   - component: {fileID: 683037571}
+  - component: {fileID: 683037572}
   m_Layer: 0
   m_Name: Diretor(NPC)
   m_TagString: Untagged
@@ -329,6 +330,17 @@ MonoBehaviour:
   dialogosSecundarios: []
   interactOffset:
   - {x: 0.6, y: -1.1, z: 0}
+--- !u!114 &683037572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 683037570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &683037573
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -480,6 +492,7 @@ GameObject:
   - component: {fileID: 1209380847}
   - component: {fileID: 1209380846}
   - component: {fileID: 1209380849}
+  - component: {fileID: 1209380850}
   m_Layer: 0
   m_Name: Porta Sala Professores
   m_TagString: Door1
@@ -729,6 +742,17 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1209380850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1209380844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1228962010
 Prefab:
   m_ObjectHideFlags: 0

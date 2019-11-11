@@ -13,10 +13,8 @@ public class DynamicCursor : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnMouseEnter()
     {
-        if (gameObject.tag == "usavel")
-        {
+        
             Cursor.SetCursor(select, hotspot, curmode);
-        }
     }
 
     public void OnMouseExit()
