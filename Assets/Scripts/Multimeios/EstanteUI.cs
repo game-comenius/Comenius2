@@ -9,8 +9,7 @@ public class EstanteUI : MonoBehaviour {
 
     [SerializeField]
     private Estante estante;
-
-
+    
     public void DisplayItems()
     {
         // Limpar slots

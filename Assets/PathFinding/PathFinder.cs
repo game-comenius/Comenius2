@@ -40,6 +40,10 @@ public class PathFinder : MonoBehaviour
 
     public static event GotToInteractable gotToInteractable;
 
+    public bool hasTarget = false;
+
+    private bool uiFoiUsada = false;
+
     private void Awake()
     {
         _camera = FindObjectOfType<Camera>();
@@ -49,11 +53,12 @@ public class PathFinder : MonoBehaviour
     {
         StartCoroutine(WalkDecision());
     }
+
     private void LateUpdate()
     {
-        if (!GameManager.uiSendoUsada)
+        if (!GameManager.uiSendoUsada && !uiFoiUsada && !hasTarget)
         {
-            if (Input.GetMouseButtonUp(1) && coroutine == null)
+            if (Input.GetMouseButtonUp(0) && coroutine == null)
             {
                 NullifyGotToInteractable();
 
@@ -75,13 +80,15 @@ public class PathFinder : MonoBehaviour
 
                 //Debug.Log(s.TotalMilliseconds + " ms");
             }
-            else if (Input.GetMouseButtonUp(1))
+            else if (Input.GetMouseButtonUp(0))
             {
                 NullifyGotToInteractable();
 
                 StartCoroutine(WaitFor());
             }
         }
+
+        uiFoiUsada = GameManager.uiSendoUsada;
     }
 
     public void NullifyGotToInteractable()

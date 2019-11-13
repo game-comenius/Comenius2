@@ -15,6 +15,18 @@ public class DoorTransition : MonoBehaviour
 
     private void OnMouseUp()
     {
+        if (!GameManager.uiSendoUsada && !Player.Instance.GetComponent<PathFinder>().hasTarget)
+        {
+            Player.Instance.GetComponent<PathFinder>().hasTarget = true;
+
+            StartCoroutine(Test());
+        }
+    }
+
+    private IEnumerator Test()
+    {
+        yield return new WaitForEndOfFrame();
+
         if (!GameManager.uiSendoUsada)
         {
             Vector3[] point = new Vector3[interactOffset.Length];

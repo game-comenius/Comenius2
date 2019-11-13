@@ -167,8 +167,6 @@ public class SistemaDialogo : MonoBehaviour
             }
             else if (i + 1 == dialogo.nodulos[nodulo].falas.Length) 
             {
-                Debug.Log("Monologo da Lurdinha");
-
                 personagemRosto[1].sprite = null;
 
                 personagemRosto[1].color = new Color(0f, 0f, 0f, 0f);

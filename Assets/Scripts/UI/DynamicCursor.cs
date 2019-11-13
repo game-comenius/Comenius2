@@ -6,15 +6,14 @@ using UnityEngine.EventSystems;
 public class DynamicCursor : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
     private Texture2D cursorImage;
-    private Vector2 offset = Vector2.zero;
+    //private Vector2 offset = Vector2.zero;
     private Texture2D select;
     private CursorMode curmode;
     private Vector2 hotspot;
 
     public void OnMouseEnter()
-    {
-        
-            Cursor.SetCursor(select, hotspot, curmode);
+    {        
+        Cursor.SetCursor(select, hotspot, curmode);
     }
 
     public void OnMouseExit()
