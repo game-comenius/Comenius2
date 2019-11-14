@@ -89,6 +89,8 @@ public class PathFinder : MonoBehaviour
         }
 
         uiFoiUsada = GameManager.uiSendoUsada;
+
+        hasTarget = false;
     }
 
     public void NullifyGotToInteractable()

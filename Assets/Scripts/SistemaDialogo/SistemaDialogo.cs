@@ -457,6 +457,8 @@ public class SistemaDialogo : MonoBehaviour
 
     public void AcabarConversa()
     {
+        GameManager.UINaoSendoUsada();
+
         if (npcDialogo != null)
         {
             npcDialogo.SetQuestControl();
@@ -469,8 +471,6 @@ public class SistemaDialogo : MonoBehaviour
         proximaFala = 0;
 
         sistemaDialogoUI.SetActive(false);
-
-        GameManager.UINaoSendoUsada();
     }
     #endregion
 
