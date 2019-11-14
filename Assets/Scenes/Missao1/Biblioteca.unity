@@ -122,11 +122,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4323690141640222, guid: a1cf818579acdde4f96b99ea030f29d7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.78
+      value: 1.85
       objectReference: {fileID: 0}
     - target: {fileID: 4323690141640222, guid: a1cf818579acdde4f96b99ea030f29d7, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.91
+      value: -0.552
       objectReference: {fileID: 0}
     - target: {fileID: 4323690141640222, guid: a1cf818579acdde4f96b99ea030f29d7, type: 2}
       propertyPath: m_LocalPosition.z
@@ -245,6 +245,16 @@ Prefab:
         type: 2}
       propertyPath: dialogoPrincipal.nodulos.Array.data[2].falas.Array.data[2].emocao
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: interactOffset.Array.data[0].x
+      value: -0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: interactOffset.Array.data[0].y
+      value: -0.96
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1cf818579acdde4f96b99ea030f29d7, type: 2}
@@ -610,7 +620,7 @@ MonoBehaviour:
         fala: "J\xE1 peguei o que queria daqui."
       respostas: []
   interactOffset:
-  - {x: 0, y: 0, z: 0}
+  - {x: -4.74, y: 1.74, z: 0}
 --- !u!114 &445809147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -942,7 +952,7 @@ MonoBehaviour:
       respostas: []
   dialogosSecundarios: []
   interactOffset:
-  - {x: 0, y: 0, z: 0}
+  - {x: 0.87, y: -0.58, z: 0}
 --- !u!60 &448296477
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1353,6 +1363,7 @@ GameObject:
   - component: {fileID: 640837544}
   - component: {fileID: 640837548}
   - component: {fileID: 640837549}
+  - component: {fileID: 640837550}
   m_Layer: 0
   m_Name: Reprodutor
   m_TagString: Untagged
@@ -1377,95 +1388,7 @@ MonoBehaviour:
     questDependencias: []
   questFeita:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 640837545}
-        m_MethodName: addItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 640837544}
-        m_MethodName: DestroirObjeto
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 640837543}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 493845278}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 330332451}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1765757309}
-        m_MethodName: Fadeout
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1744910294}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1154034826}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 578468654}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   dependenciasFeitas:
@@ -1492,7 +1415,7 @@ MonoBehaviour:
       respostas: []
   dialogosSecundarios: []
   interactOffset:
-  - {x: 0, y: 0, z: 0}
+  - {x: -0.4, y: -1.28, z: 0}
 --- !u!114 &640837545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1622,6 +1545,147 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &640837550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 640837543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471d7830f5edfe04598f66fa78a9a6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questInfo:
+    isQuest: 1
+    questIndex: {x: 5, y: 4}
+    questDependencias:
+    - {x: 3, y: 7}
+  questFeita:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasFeitas:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1034850998}
+        m_MethodName: addItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 493845278}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1154034826}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 330332451}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1744910294}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 578468654}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1765757309}
+        m_MethodName: Fadeout
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 640837550}
+        m_MethodName: UISendoUsada
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 640837550}
+        m_MethodName: CompletarQuest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  dependenciasNaoFeitas:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1034850996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,7 +1756,7 @@ MonoBehaviour:
         fala: "J\xE1 peguei o que queria dessa estante."
       respostas: []
   interactOffset:
-  - {x: 0, y: 0, z: 0}
+  - {x: 2.52, y: -2.61, z: 0}
 --- !u!114 &1034850998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2054,7 +2118,7 @@ MonoBehaviour:
       respostas: []
   dialogosSecundarios: []
   interactOffset:
-  - {x: 0, y: 0, z: 0}
+  - {x: -0.75, y: -0.96, z: 0}
 --- !u!61 &1097882985
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2136,7 +2200,7 @@ Transform:
   m_PrefabInternal: {fileID: 16460560}
   m_GameObject: {fileID: 1097882983}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.78, y: -0.91, z: 0}
+  m_LocalPosition: {x: 1.85, y: -0.552, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2250,7 +2314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: Patio_2
   interactOffset:
-  - {x: 0, y: 0, z: 0}
+  - {x: 0.24, y: -0.16, z: 0}
 --- !u!82 &1117550315
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2369,7 +2433,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1117550311}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d882bdab05745a4e9f44cd031e622b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1154034826
@@ -2668,7 +2732,7 @@ MonoBehaviour:
       respostas: []
   dialogosSecundarios: []
   interactOffset:
-  - {x: 0, y: 0, z: 0}
+  - {x: 0.29, y: -1.83, z: 0}
 --- !u!60 &1678784043
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2843,7 +2907,7 @@ MonoBehaviour:
       respostas: []
   dialogosSecundarios: []
   interactOffset:
-  - {x: 0, y: 0, z: 0}
+  - {x: 1.01, y: -1.19, z: 0}
 --- !u!61 &1691235256
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3367,11 +3431,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4151625970373360, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.42
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4151625970373360, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.58
+      value: -3.6
       objectReference: {fileID: 0}
     - target: {fileID: 4151625970373360, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3425,6 +3489,11 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 9830991e1037ec44d8c2e0d5188ecbf6,
         type: 3}
+    - target: {fileID: 114123597930835050, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
+        type: 2}
+      propertyPath: sceneName
+      value: Patio_2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50069204649065760, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
     - {fileID: 58580363816616498, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
@@ -3668,7 +3737,7 @@ MonoBehaviour:
       respostas: []
   dialogosSecundarios: []
   interactOffset:
-  - {x: 0, y: 0, z: 0}
+  - {x: 2.58, y: -1.56, z: 0}
 --- !u!60 &2004755886
 PolygonCollider2D:
   m_ObjectHideFlags: 0
