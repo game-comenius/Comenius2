@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Estante : MonoBehaviour {
+public class Estante : QuestScript {
 
     [SerializeField]
     private GameObject modoEstanteAbertaUI;
@@ -14,8 +14,10 @@ public class Estante : MonoBehaviour {
 
     [SerializeField] private Vector3[] interactOffset = new Vector3[1];
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         Items = new List<ItemName>
         {
             // Itens que aparecem por padrão dentro da estante
@@ -28,8 +30,9 @@ public class Estante : MonoBehaviour {
         };
     }
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         estanteUI = modoEstanteAbertaUI.GetComponentInChildren<EstanteUI>();
         modoEstanteAbertaUI.SetActive(false);
 
@@ -71,6 +74,8 @@ public class Estante : MonoBehaviour {
 
             Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point, Interact);
         }
+
+        CompletarQuest();
     }
 
     private void Interact()
@@ -79,6 +84,7 @@ public class Estante : MonoBehaviour {
         modoEstanteAbertaUI.SetActive(true);
         estanteUI.DisplayItems();
         GameManager.UISendoUsada();
+        
     }
 
     // Trocar por algo melhor para fechar a interface da estante
