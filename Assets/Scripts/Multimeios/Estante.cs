@@ -12,6 +12,8 @@ public class Estante : MonoBehaviour {
 
     public List<ItemName> Items { get; private set; }
 
+    [SerializeField] private Vector3[] interactOffset = new Vector3[1];
+
     private void Awake()
     {
         Items = new List<ItemName>
@@ -42,17 +44,44 @@ public class Estante : MonoBehaviour {
         estanteUI.DisplayItems();
     }
 
-    public void OnMouseUpAsButton()
+    private void OnMouseUpAsButton()
     {
-        if (!GameManager.uiSendoUsada)
+        if (!GameManager.uiSendoUsada && !Player.Instance.GetComponent<PathFinder>().hasTarget)
         {
-            GameObject.Find("LocalFade").GetComponent<FadeEffect>().Fadeout();
-            modoEstanteAbertaUI.SetActive(true);
-            estanteUI.DisplayItems();
-            GameManager.UISendoUsada();
+            Player.Instance.GetComponent<PathFinder>().hasTarget = true;
+
+            StartCoroutine(Test());
         }
     }
 
+    private IEnumerator Test()
+    {
+        yield return new WaitForEndOfFrame();
+
+        if (!GameManager.uiSendoUsada)
+        {
+            Vector3[] point = new Vector3[interactOffset.Length];
+
+            for (int i = 0; i < point.Length; i++)
+            {
+                point[i] = transform.position + interactOffset[i];
+            }
+
+            Player.Instance.GetComponent<PathFinder>().NullifyGotToInteractable();
+
+            PathFinder.gotToInteractable += Interact;
+
+            Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point);
+        }
+    }
+
+    private void Interact()
+    {
+        GameObject.Find("LocalFade").GetComponent<FadeEffect>().Fadeout();
+        modoEstanteAbertaUI.SetActive(true);
+        estanteUI.DisplayItems();
+        GameManager.UISendoUsada();
+    }
 
     // Trocar por algo melhor para fechar a interface da estante
     private void Update()
@@ -60,6 +89,16 @@ public class Estante : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape) && modoEstanteAbertaUI.activeInHierarchy == true) {
             modoEstanteAbertaUI.SetActive(false);
             GameManager.UINaoSendoUsada();
+        }
+    }
+
+    protected virtual void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.magenta;
+
+        for (int i = 0; i < interactOffset.Length; i++)
+        {
+            Gizmos.DrawSphere(transform.position + interactOffset[i], 0.07f);
         }
     }
 }

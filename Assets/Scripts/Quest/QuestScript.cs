@@ -173,4 +173,14 @@ public class QuestScript : MonoBehaviour
 
         Destroy(obj);
     }
+
+    public void UISendoUsada()
+    {
+        GameManager.UISendoUsada();
+    }
+
+    public void UINaoSendoUsada()
+    {
+        GameManager.UINaoSendoUsada();
+    }
 }

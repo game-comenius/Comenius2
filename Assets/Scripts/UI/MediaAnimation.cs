@@ -7,7 +7,7 @@ public class MediaAnimation : MonoBehaviour {
     public Animator animator;
 
     public void exitAnimation()
-    {
+    {        
         animator.SetBool("Exit", true);
     }
 
@@ -17,13 +17,9 @@ public class MediaAnimation : MonoBehaviour {
         GameObject.Find("MediaAnimationCanvas").SetActive(false);
     }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public void UINaoSendoUsada()
+    {
+        GameManager.UINaoSendoUsada();
+    }
 }

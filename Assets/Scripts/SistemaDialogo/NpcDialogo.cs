@@ -49,40 +49,50 @@ public class NpcDialogo : QuestScript
 
     public void OnMouseUp()
     {
-        if (!GameManager.uiSendoUsada)
+        if (!GameManager.uiSendoUsada && !Player.Instance.GetComponent<PathFinder>().hasTarget)
         {
-            if (!QuestManager.GetQuestControl(questInfo.questIndex) || !questInfo.isQuest)
-            {
-                Vector3[] point = new Vector3[interactOffset.Length];
+            Player.Instance.GetComponent<PathFinder>().hasTarget = true;
 
-                for (int i = 0; i < point.Length; i++)
-                {
-                    point[i] = transform.position + interactOffset[i];
-                }
-
-                Player.Instance.GetComponent<PathFinder>().NullifyGotToInteractable();
-
-                PathFinder.gotToInteractable += ComecarDialogoPrincipal;
-
-                Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point);
-            }
-            else if (dialogosSecundarios.Length > 0) 
-            {
-                Vector3[] point = new Vector3[interactOffset.Length];
-
-                for (int i = 0; i < point.Length; i++)
-                {
-                    point[i] = transform.position + interactOffset[i];
-                }
-
-                Player.Instance.GetComponent<PathFinder>().NullifyGotToInteractable();
-
-                PathFinder.gotToInteractable += ComecarDialogoSecundario;
-
-                Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point);
-            }
+            StartCoroutine(Test());
         }
     }
+
+    private IEnumerator Test()
+    {
+        yield return new WaitForEndOfFrame();
+
+        if (!QuestManager.GetQuestControl(questInfo.questIndex) || !questInfo.isQuest)
+        {
+            Vector3[] point = new Vector3[interactOffset.Length];
+
+            for (int i = 0; i < point.Length; i++)
+            {
+                point[i] = transform.position + interactOffset[i];
+            }
+
+            Player.Instance.GetComponent<PathFinder>().NullifyGotToInteractable();
+
+            PathFinder.gotToInteractable += ComecarDialogoPrincipal;
+
+            Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point);
+        }
+        else if (dialogosSecundarios.Length > 0)
+        {
+            Vector3[] point = new Vector3[interactOffset.Length];
+
+            for (int i = 0; i < point.Length; i++)
+            {
+                point[i] = transform.position + interactOffset[i];
+            }
+
+            Player.Instance.GetComponent<PathFinder>().NullifyGotToInteractable();
+
+            PathFinder.gotToInteractable += ComecarDialogoSecundario;
+
+            Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point);
+        }
+    }
+
 
     private void ComecarDialogoObrigatorio()
     {

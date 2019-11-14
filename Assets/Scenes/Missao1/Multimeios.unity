@@ -343,7 +343,7 @@ MonoBehaviour:
       respostas: []
   dialogosSecundarios: []
   interactOffset:
-  - {x: 0, y: 0, z: 0}
+  - {x: 0.81, y: -0.96, z: 0}
 --- !u!61 &50149400
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -605,11 +605,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4151625970373360, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.93
+      value: -5.32
       objectReference: {fileID: 0}
     - target: {fileID: 4151625970373360, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.33
+      value: -0.49
       objectReference: {fileID: 0}
     - target: {fileID: 4151625970373360, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
       propertyPath: m_LocalPosition.z
@@ -639,6 +639,17 @@ Prefab:
       propertyPath: m_Name
       value: Jogador
       objectReference: {fileID: 0}
+    - target: {fileID: 114123597930835050, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
+        type: 2}
+      propertyPath: sceneName
+      value: Patio_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212835090484309842, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9830991e1037ec44d8c2e0d5188ecbf6,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
   m_IsPrefabAsset: 0
@@ -1084,7 +1095,7 @@ RectTransform:
   - {fileID: 620374887}
   - {fileID: 796067099}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1186,7 +1197,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: Patio_2
   interactOffset:
-  - {x: 0, y: 0, z: 0}
+  - {x: 0.47, y: -0.59, z: 0}
+  - {x: 0.87, y: -0.89, z: 0}
 --- !u!82 &682706862
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1453,6 +1465,52 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224148842521617860, guid: 2d61794c7b05543b383592a46c69019b,
     type: 2}
   m_PrefabInternal: {fileID: 1790473349}
+--- !u!1 &912302808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 912302810}
+  - component: {fileID: 912302809}
+  m_Layer: 0
+  m_Name: Grid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &912302809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 912302808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8056351885f5a76438866e79586deb59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridColor: {r: 1, g: 0, b: 0, a: 1}
+  cellSize: {x: 0.5, y: 0.5}
+  cellAngle: 30
+  gridDim: {x: 14, y: 17}
+  gridRotation: 210
+  save: /Grids/Missao1/Multimeios.txt
+--- !u!4 &912302810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 912302808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.195, y: 2.85, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1048893780 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224326550545267914, guid: 0bd1c0cc58e1eb64c940399d1d01bf5b,
@@ -1526,6 +1584,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modoEstanteAbertaUI: {fileID: 835782043}
+  interactOffset:
+  - {x: 0, y: 0, z: 0}
 --- !u!114 &1048948754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1693,7 +1753,7 @@ MonoBehaviour:
       respostas: []
   dialogosSecundarios: []
   interactOffset:
-  - {x: 0, y: 0, z: 0}
+  - {x: -0.67, y: -0.84, z: 0}
 --- !u!212 &1305003677
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2106,12 +2166,12 @@ Prefab:
     - target: {fileID: 224105809437167266, guid: 2d61794c7b05543b383592a46c69019b,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.00000011920929
       objectReference: {fileID: 0}
     - target: {fileID: 224912068482267886, guid: 2d61794c7b05543b383592a46c69019b,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000026780677
+      value: 0.000026858244
       objectReference: {fileID: 0}
     - target: {fileID: 114234429894686396, guid: 2d61794c7b05543b383592a46c69019b,
         type: 2}
@@ -2137,6 +2197,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 224010104017046054, guid: 2d61794c7b05543b383592a46c69019b,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d61794c7b05543b383592a46c69019b, type: 2}
@@ -2375,7 +2440,7 @@ MonoBehaviour:
       respostas: []
   dialogosSecundarios: []
   interactOffset:
-  - {x: 0, y: 0, z: 0}
+  - {x: 0.76, y: -0.96, z: 0}
 --- !u!114 &2100348673
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -34,7 +34,7 @@ public class GridScript : MonoBehaviour
         }
 
         Load();
-    }    
+    }
 
     #region Grid and transformations
     public Vector2[] Cell(Vector2Int r_cell)

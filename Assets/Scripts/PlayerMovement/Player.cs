@@ -14,12 +14,16 @@ public class Player : MonoBehaviour
     public double[] points;
     public double totalMissionPoints;
 
+    public string sceneName;
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+
+            sceneName = gameObject.scene.name;
+
             DontDestroyOnLoad(gameObject);
 
             Inventory = new Inventory();
@@ -29,8 +33,15 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Instance.transform.position = this.transform.position;
-            Instance.GetComponent<SpriteRenderer>().sprite = GetComponent<SpriteRenderer>().sprite;
+            if (Instance.sceneName == sceneName)
+            {
+                Instance.transform.position = this.transform.position;
+
+                Instance.GetComponent<SpriteRenderer>().sprite = GetComponent<SpriteRenderer>().sprite;
+
+                Instance.sceneName = gameObject.scene.name;
+            }
+
             Destroy(this.gameObject);
         }
     }
