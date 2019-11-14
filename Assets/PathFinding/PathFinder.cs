@@ -38,7 +38,7 @@ public class PathFinder : MonoBehaviour
 
     public delegate void GotToInteractable();
 
-    public static event GotToInteractable gotToInteractable;
+    private static event GotToInteractable gotToInteractable;
 
     public bool hasTarget = false;
 
@@ -58,33 +58,36 @@ public class PathFinder : MonoBehaviour
     {
         if (!GameManager.uiSendoUsada && !uiFoiUsada && !hasTarget)
         {
-            if (Input.GetMouseButtonUp(0) && coroutine == null)
+            if(Input.GetMouseButtonUp(0))
             {
-                NullifyGotToInteractable();
-
-                //.DateTime t = System.DateTime.UtcNow;
-
-                if (_camera == null)
+                if (coroutine == null)
                 {
-                    _camera = Camera.main;
+                    NullifyGotToInteractable();
+
+                    //.DateTime t = System.DateTime.UtcNow;
+
+                    if (_camera == null)
+                    {
+                        _camera = Camera.main;
+                    }
+
+                    path = GridScript.gridScript.FindPath(transform.position + footbaseOffset, _camera.ScreenToWorldPoint(Input.mousePosition));
+
+                    if (path == null)
+                    {
+                        Turn(_camera.ScreenToWorldPoint(Input.mousePosition));
+                    }
+
+                    //System.TimeSpan s = System.DateTime.UtcNow - t;
+
+                    //Debug.Log(s.TotalMilliseconds + " ms");
                 }
-
-                path = GridScript.gridScript.FindPath(transform.position + footbaseOffset, _camera.ScreenToWorldPoint(Input.mousePosition));
-
-                if (path == null)
+                else
                 {
-                    Turn(_camera.ScreenToWorldPoint(Input.mousePosition));
+                    NullifyGotToInteractable();
+
+                    StartCoroutine(WaitFor());
                 }
-
-                //System.TimeSpan s = System.DateTime.UtcNow - t;
-
-                //Debug.Log(s.TotalMilliseconds + " ms");
-            }
-            else if (Input.GetMouseButtonUp(0))
-            {
-                NullifyGotToInteractable();
-
-                StartCoroutine(WaitFor());
             }
         }
 
@@ -165,9 +168,18 @@ public class PathFinder : MonoBehaviour
             path.RemoveRange(0, path.Count - 2);
         }
 
+        List<Vector2> _path = new List<Vector2>();
+
+        Vector3 pointer = _camera.ScreenToWorldPoint(Input.mousePosition);
+
         yield return new WaitUntil(() => coroutine == null);
 
-        path = GridScript.gridScript.FindPath(transform.position + footbaseOffset, _camera.ScreenToWorldPoint(Input.mousePosition));
+        if (_camera == null)
+        {
+            _camera = FindObjectOfType<Camera>();
+        }
+
+        path = GridScript.gridScript.FindPath(transform.position + footbaseOffset, pointer);
 
         if (path == null)
         {
@@ -197,7 +209,7 @@ public class PathFinder : MonoBehaviour
             newPosition = GridScript.gridScript.Cell(path[path.Count - 1])[0] - (Vector2)footbaseOffset;
 
             Vector2 direction = (newPosition - (Vector2)transform.position).normalized;
-            
+
             while (newPosition != (Vector2)transform.position)
             {
                 int frame = Mathf.FloorToInt(t / frameDuration);
@@ -290,12 +302,49 @@ public class PathFinder : MonoBehaviour
         coroutine = null;
     }
 
-    public void WalkToInteractable(Vector3[] _destinoWorldPoint)
+    //public void WalkToInteractable(Vector3[] _destinoWorldPoint)
+    //{        
+    //    path = GridScript.gridScript.FindPathToInteractable(transform.position + footbaseOffset, _destinoWorldPoint);
+
+    //    if (path == null)
+    //    {
+    //        path = new List<Vector2Int>();
+    //    }
+
+    //    lookTo = _destinoWorldPoint;
+    //}
+
+    public void WalkToInteractable(Vector3[] _destinoWorldPoint, GotToInteractable _event)
     {
+        lookTo = _destinoWorldPoint;
+
+        StartCoroutine(WaitForInteractable(_destinoWorldPoint, _event));
+    }
+
+    private IEnumerator WaitForInteractable(Vector3[] _destinoWorldPoint, GotToInteractable _event)
+    {
+        if (path != null && path.Count > 1)
+        {
+            path.RemoveRange(0, path.Count - 2);
+        }
+
+        yield return new WaitUntil(() => coroutine == null);
+
+        if (_camera == null)
+        {
+            _camera = FindObjectOfType<Camera>();
+        }
+
         path = GridScript.gridScript.FindPathToInteractable(transform.position + footbaseOffset, _destinoWorldPoint);
 
-        lookTo = _destinoWorldPoint;
+        PathFinder.gotToInteractable += _event;
+
+        if (path == null)
+        {
+            Turn(_camera.ScreenToWorldPoint(Input.mousePosition));
+        }
     }
+
 
     private void OnDrawGizmos()
     {

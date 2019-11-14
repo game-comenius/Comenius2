@@ -17,6 +17,5 @@ public class Cursor1: MonoBehaviour
 	void Start ()
     {
         Cursor.SetCursor(cursorImage, offset, CursorMode.ForceSoftware);
-	}			
-
+	}			    
 }

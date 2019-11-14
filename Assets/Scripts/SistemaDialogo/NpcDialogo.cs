@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using GameComenius.Dialogo;
 
+[RequireComponent(typeof(DynamicCursor))]
 public class NpcDialogo : QuestScript
 {
     public bool dialogoObrigatorio = false;
@@ -32,9 +33,7 @@ public class NpcDialogo : QuestScript
 
             Player.Instance.GetComponent<PathFinder>().NullifyGotToInteractable();
 
-            PathFinder.gotToInteractable += ComecarDialogoObrigatorio;
-
-            Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point);
+            Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point, ComecarDialogoObrigatorio);
         }
     }
 
@@ -72,9 +71,7 @@ public class NpcDialogo : QuestScript
 
             Player.Instance.GetComponent<PathFinder>().NullifyGotToInteractable();
 
-            PathFinder.gotToInteractable += ComecarDialogoPrincipal;
-
-            Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point);
+            Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point, ComecarDialogoPrincipal);
         }
         else if (dialogosSecundarios.Length > 0)
         {
@@ -87,12 +84,9 @@ public class NpcDialogo : QuestScript
 
             Player.Instance.GetComponent<PathFinder>().NullifyGotToInteractable();
 
-            PathFinder.gotToInteractable += ComecarDialogoSecundario;
-
-            Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point);
+            Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point, ComecarDialogoSecundario);
         }
     }
-
 
     private void ComecarDialogoObrigatorio()
     {

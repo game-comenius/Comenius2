@@ -69,9 +69,7 @@ public class Estante : MonoBehaviour {
 
             Player.Instance.GetComponent<PathFinder>().NullifyGotToInteractable();
 
-            PathFinder.gotToInteractable += Interact;
-
-            Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point);
+            Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point, Interact);
         }
     }
 
