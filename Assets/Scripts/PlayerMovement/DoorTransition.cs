@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(DynamicCursorForDoors))]
 public class DoorTransition : MonoBehaviour
 {
     [HideInInspector] public string sceneName;
@@ -67,7 +68,10 @@ public class DoorTransition : MonoBehaviour
             QuestManager.SetQuestControl(GetComponent<QuestScript>().questInfo.questIndex, true);
         }
 
+        Cursor.SetCursor(GameObject.FindObjectOfType<Cursor1>().cursorImage, GameObject.FindObjectOfType<Cursor1>().hotspot, GameObject.FindObjectOfType<Cursor1>().curmode);
+
         sceneLoad.allowSceneActivation = true;
+
         GameManager.UINaoSendoUsada();
     }
 

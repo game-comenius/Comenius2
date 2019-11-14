@@ -167,6 +167,11 @@ public class PathFinder : MonoBehaviour
 
         yield return new WaitUntil(() => coroutine == null);
 
+        if (_camera == null)
+        {
+            _camera = FindObjectOfType<Camera>();
+        }
+
         path = GridScript.gridScript.FindPath(transform.position + footbaseOffset, _camera.ScreenToWorldPoint(Input.mousePosition));
 
         if (path == null)
@@ -197,7 +202,7 @@ public class PathFinder : MonoBehaviour
             newPosition = GridScript.gridScript.Cell(path[path.Count - 1])[0] - (Vector2)footbaseOffset;
 
             Vector2 direction = (newPosition - (Vector2)transform.position).normalized;
-            
+
             while (newPosition != (Vector2)transform.position)
             {
                 int frame = Mathf.FloorToInt(t / frameDuration);
@@ -293,6 +298,11 @@ public class PathFinder : MonoBehaviour
     public void WalkToInteractable(Vector3[] _destinoWorldPoint)
     {
         path = GridScript.gridScript.FindPathToInteractable(transform.position + footbaseOffset, _destinoWorldPoint);
+
+        if (path == null)
+        {
+            path = new List<Vector2Int>();
+        }
 
         lookTo = _destinoWorldPoint;
     }

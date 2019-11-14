@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using GameComenius.Dialogo;
 
+[RequireComponent(typeof(DynamicCursor))]
 public class NpcDialogo : QuestScript
 {
     public bool dialogoObrigatorio = false;

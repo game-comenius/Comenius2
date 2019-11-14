@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DynamicCursor : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler 
+public class DynamicCursorForDoors : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler 
 {
     private Texture2D cursorImage;
     private Texture2D select;
     private CursorMode curmode;
     private Vector2 hotspot;
-
-    private bool pointerIn = false;
 
     public void OnMouseEnter()
     {        
@@ -39,22 +37,11 @@ public class DynamicCursor : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        pointerIn = true;
-
-        Cursor.SetCursor(select, hotspot, curmode);
+            Cursor.SetCursor(select, hotspot, curmode);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        pointerIn = false;
         Cursor.SetCursor(cursorImage, hotspot, curmode);
-    }
-
-    public void OnDisable()
-    {
-        if (pointerIn)
-        {
-            Cursor.SetCursor(GameObject.FindObjectOfType<Cursor1>().cursorImage, GameObject.FindObjectOfType<Cursor1>().hotspot, GameObject.FindObjectOfType<Cursor1>().curmode);
-        }
     }
 }
