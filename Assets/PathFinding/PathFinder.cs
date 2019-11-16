@@ -168,8 +168,6 @@ public class PathFinder : MonoBehaviour
             path.RemoveRange(0, path.Count - 2);
         }
 
-        List<Vector2> _path = new List<Vector2>();
-
         Vector3 pointer = _camera.ScreenToWorldPoint(Input.mousePosition);
 
         yield return new WaitUntil(() => coroutine == null);

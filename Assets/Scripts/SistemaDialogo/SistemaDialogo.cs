@@ -477,12 +477,14 @@ public class SistemaDialogo : MonoBehaviour
     #region FontSize
     public void IncreaseFontSize()
     {
-        textoDialogo.fontSize = Mathf.Min(textoDialogo.fontSize + 6f, 32);
+        textoDialogo.fontSize = Mathf.Min(textoDialogo.fontSize + 4f, 26);
+        npcNome.fontSize = Mathf.Min(npcNome.fontSize + 4f, 32);
     }
 
     public void DecreaseFontSize()
     {
-        textoDialogo.fontSize = Mathf.Max(textoDialogo.fontSize - 6f, 14);
+        textoDialogo.fontSize = Mathf.Max(textoDialogo.fontSize - 4f, 14);
+        npcNome.fontSize = Mathf.Max(npcNome.fontSize - 4f, 20);
     }
     #endregion 
 }
