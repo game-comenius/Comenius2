@@ -10,6 +10,9 @@ public class CustomPlanejamento : MonoBehaviour {
         AnularQuestsParaIniciarPlanejamento();
 
         ZerarMidiasPadraoDoProfessor();
+
+        var s = CustomGameSettings.ReadCustomGameSettingsFromDisk();
+        DefinirProcedimentos(s.Procedimento1, s.Procedimento2, s.Procedimento3);
 	}
 
     private void AnularQuestsParaIniciarPlanejamento()
@@ -31,5 +34,10 @@ public class CustomPlanejamento : MonoBehaviour {
             momento.initialItem = ItemName.SemNome;
             momento.AddItem(ItemName.SemNome);
         }
+    }
+
+    private void DefinirProcedimentos(Procedimento p1, Procedimento p2, Procedimento p3)
+    {
+        Debug.Log("Procedimentos escolhidos: " + p1 + ", " + p2 + " e " + p3);
     }
 }

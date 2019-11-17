@@ -9,16 +9,18 @@ using UnityEngine.SceneManagement;
 public class CreateCustomGamePanel : MonoBehaviour {
 
     [SerializeField]
-    private Button ProfessorSelecionado;
-
-    [SerializeField]
     private InputField falaProfessorSalaProfessores;
-    [SerializeField]
-    private Button submitButton;
 
     [SerializeField]
     private AvailableItemsPanel panelMidiasDisponiveis;
-    
+
+    [SerializeField]
+    private MomentoUICriarCustom momento1;
+    [SerializeField]
+    private MomentoUICriarCustom momento2;
+    [SerializeField]
+    private MomentoUICriarCustom momento3;
+
 
     [SerializeField]
     private List<GameObject> paginas;
@@ -53,6 +55,10 @@ public class CreateCustomGamePanel : MonoBehaviour {
         settings.Professor = SelectProfessorButton.CurrentlySelectedButton.Professor;
         settings.FalaProfessorSalaProfessores = falaProfessorSalaProfessores.text;
         settings.midiasDisponiveis = panelMidiasDisponiveis.MidiasSelecionadas();
+
+        settings.Procedimento1 = momento1.ProcedimentoSelecionado;
+        settings.Procedimento2 = momento2.ProcedimentoSelecionado;
+        settings.Procedimento3 = momento3.ProcedimentoSelecionado;
 
         settings.SaveCustomGameSettingsToDisk();
     }

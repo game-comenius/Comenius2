@@ -13,6 +13,7 @@ public class CustomGameSettings {
     public CharacterName Professor;
     public string FalaProfessorSalaProfessores;
     public ItemName[] midiasDisponiveis;
+    public Procedimento Procedimento1, Procedimento2, Procedimento3;
 
     public static CustomGameSettings ReadCustomGameSettingsFromDisk()
     {

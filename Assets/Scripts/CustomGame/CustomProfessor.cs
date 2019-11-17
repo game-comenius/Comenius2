@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class CustomProfessor : MonoBehaviour {
 
+    private GameObject professorGO;
+
     private enum Direction { NW, NE, SE, SW }
     [SerializeField]
     private Direction facingDirection;
@@ -22,6 +24,9 @@ public class CustomProfessor : MonoBehaviour {
     void Start () {
         var settings = CustomGameSettings.ReadCustomGameSettingsFromDisk();
 
+        professorGO = GameObject.Find("JeanSalaProfessores");
+        professorGO.GetComponent<QuestScript>().enabled = false;
+
         professor = settings.Professor;
 
         falaSalaProfessores = settings.FalaProfessorSalaProfessores;
@@ -34,7 +39,7 @@ public class CustomProfessor : MonoBehaviour {
         spriteSE = CharacterSpriteDatabase.SpriteSE(professor);
         spriteSW = CharacterSpriteDatabase.SpriteSW(professor);
 
-        SpriteRenderer mySP = GetComponent<SpriteRenderer>();
+        SpriteRenderer mySP = professorGO.GetComponent<SpriteRenderer>();
         switch (facingDirection)
         {
             case Direction.NW:
@@ -88,7 +93,7 @@ public class CustomProfessor : MonoBehaviour {
         }
 
         // Adicionar falas ao diálogo do professor
-        var npc = GetComponent<NpcDialogo>();
+        var npc = professorGO.GetComponent<NpcDialogo>();
         npc.dialogoPrincipal = new GameComenius.Dialogo.Dialogo();
         npc.dialogoPrincipal.nodulos = new GameComenius.Dialogo.DialogoNodulo[1];
         npc.dialogoPrincipal.nodulos[0] = new GameComenius.Dialogo.DialogoNodulo();
