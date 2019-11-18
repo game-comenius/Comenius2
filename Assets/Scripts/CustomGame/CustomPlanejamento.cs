@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class CustomPlanejamento : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    void Start () {
         AnularQuestsParaIniciarPlanejamento();
-
         ZerarMidiasPadraoDoProfessor();
 
         var s = CustomGameSettings.ReadCustomGameSettingsFromDisk();
@@ -17,10 +15,11 @@ public class CustomPlanejamento : MonoBehaviour {
 
     private void AnularQuestsParaIniciarPlanejamento()
     {
-        var objetoQueIniciaPlanejamento = FindObjectOfType<Plan>();
+        var objetoQueIniciaPlanejamento = GameObject.Find("IniciaPlanejamento");
         var quest = objetoQueIniciaPlanejamento.GetComponent<QuestScript>();
-        quest.enabled = false;
         var c = objetoQueIniciaPlanejamento.GetComponent<PolygonCollider2D>();
+        quest.dependenciasNaoFeitas.AddListener(() => c.enabled = true);
+        quest.enabled = false;
         c.enabled = true;
     }
 

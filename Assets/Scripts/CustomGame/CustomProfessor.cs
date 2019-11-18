@@ -21,11 +21,20 @@ public class CustomProfessor : MonoBehaviour {
     private Sprite spriteSW;
 
     // Use this for initialization
+    private void Awake()
+    {
+        // Zerar os campos que estão relacionados às quests do jogo principal
+        professorGO = GameObject.Find("JeanSalaProfessores");
+        var npc = professorGO.GetComponent<NpcDialogo>();
+        npc.questFeita.AddListener(() => professorGO.SetActive(true));
+        npc.dialogoObrigatorio = false;
+        var qs = professorGO.GetComponent<QuestScript>();
+        // qs.dependenciasFeitas.AddListener(() => professorGO.SetActive(true));
+        qs.enabled = false;
+    }
+
     void Start () {
         var settings = CustomGameSettings.ReadCustomGameSettingsFromDisk();
-
-        professorGO = GameObject.Find("JeanSalaProfessores");
-        professorGO.GetComponent<QuestScript>().enabled = false;
 
         professor = settings.Professor;
 
