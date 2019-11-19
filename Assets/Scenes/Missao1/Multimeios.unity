@@ -751,7 +751,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 1
-  esperaDialogoObrigatorio: 2
+  esperaDialogoObrigatorio: 0
   dialogoPrincipal:
     nodulos:
     - falas:
@@ -783,7 +783,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 197136442}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.95, y: 1.12, z: 0}
+  m_LocalPosition: {x: -2.6, y: -0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1845,6 +1845,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 682706860}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   dependenciasFeitas:
@@ -1911,6 +1922,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 682706860}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1005269311}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   dependenciasFeitas:
@@ -1930,10 +1963,17 @@ MonoBehaviour:
     - falas:
       - personagem: 0
         emocao: 0
-        fala: dtgsdf
-      - personagem: 1
-        emocao: 1
-        fala: dfgdfg
+        fala: 
+      - personagem: 10
+        emocao: 2
+        fala: "Clique em cada uma das <b>m\xEDdias</b> no <b>arm\xE1rio</b> para <b>peg\xE1-las</b>."
+      - personagem: 10
+        emocao: 2
+        fala: "Depois de pegar todas as m\xEDdias, clique no <b>X</b> para fechar
+          o arm\xE1rio."
+      - personagem: 10
+        emocao: 2
+        fala: "Todas as m\xEDdias selecionadas estar\xE3o no seu <b>invent\xE1rio</b>."
       respostas: []
   dialogosSecundarios: []
   interactOffset:
