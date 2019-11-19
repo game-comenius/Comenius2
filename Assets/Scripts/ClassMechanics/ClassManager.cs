@@ -179,6 +179,7 @@ public class ClassManager : MonoBehaviour
         {
             alunosComentaristas[i].aluno.gameObject.AddComponent<PolygonCollider2D>().enabled = false;
             NpcDialogo d = alunosComentaristas[i].aluno.gameObject.AddComponent<NpcDialogo>();
+            alunosComentaristas[i].aluno.gameObject.AddComponent<DynamicCursor>();
 
             d.questInfo.isQuest = true;
             d.questInfo.questIndex = alunosComentaristas[i].questIndex;

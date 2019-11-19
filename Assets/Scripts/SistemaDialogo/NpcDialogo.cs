@@ -8,7 +8,7 @@ public class NpcDialogo : QuestScript
 {
     public bool dialogoObrigatorio = false;
 
-    public float esperaDialogoObrigatorio = 2f;
+    public float esperaDialogoObrigatorio = 0f;
 
     public Dialogo dialogoPrincipal = new Dialogo();
 
