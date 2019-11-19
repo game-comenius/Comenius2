@@ -15,11 +15,14 @@ namespace GameComenius.Dialogo
         Antonia,
         Alice,
         Diretor,
-        MariaMontanari,
+        Montanari,
         Comenius,
         AlunoTipo,
         Aluno,
-        Esquisito
+        Esquisito,
+        Vladmir,
+        Paulino,
+        Celestino,
     }
 
     public enum Expressao
@@ -194,7 +197,7 @@ namespace GameComenius.Dialogo
                     nome = "Alice";
                     personagem.nome = "Alice";
                     break;
-                case Personagens.MariaMontanari:
+                case Personagens.Montanari:
                     nome = "MariaMontanari";
                     personagem.nome = "Maria Montanari";
                     break;

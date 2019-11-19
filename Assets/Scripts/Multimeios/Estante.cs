@@ -87,15 +87,6 @@ public class Estante : QuestScript {
         
     }
 
-    // Trocar por algo melhor para fechar a interface da estante
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape) && modoEstanteAbertaUI.activeInHierarchy == true) {
-            modoEstanteAbertaUI.SetActive(false);
-            GameManager.UINaoSendoUsada();
-        }
-    }
-
     protected virtual void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.magenta;
