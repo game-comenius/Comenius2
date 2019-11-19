@@ -185,6 +185,8 @@ public class ClassManager : MonoBehaviour
 
             d.dialogoObrigatorio = false;
 
+            d.interactOffset = new Vector3[] { new Vector3(-1.25f, -0.75f) };
+
             if ( i <= 1)
             {
                 for (int j = 0; j < falasGeneralistas.Length; j++)

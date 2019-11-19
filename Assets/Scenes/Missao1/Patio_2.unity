@@ -737,6 +737,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 674089059}
+        m_MethodName: UISendoUsada
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   dependenciasFeitas:
@@ -1478,10 +1489,15 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114014096467484188, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
         type: 2}
       propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
         type: 2}
@@ -1646,6 +1662,61 @@ Prefab:
       propertyPath: dialogoPrincipal.nodulos.Array.data[1].falas.Array.data[4].fala
       value: "E \xE9 isso, vamos para a aula!\n"
       objectReference: {fileID: 0}
+    - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 840233620}
+    - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: UISendoUsada
+      objectReference: {fileID: 0}
+    - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114014096467484188, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114014096467484188, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114014096467484188, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 840233620}
+    - target: {fileID: 114014096467484188, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UISendoUsada
+      objectReference: {fileID: 0}
+    - target: {fileID: 114014096467484188, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9357cdd918b582d4e8893cac0c9a7d11, type: 2}
   m_IsPrefabAsset: 0
@@ -1671,6 +1742,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 840233615}
   m_Script: {fileID: 11500000, guid: c34ea57c0f79eed429d1bbfa7283faf2, type: 3}
+--- !u!114 &840233620 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+    type: 2}
+  m_PrefabInternal: {fileID: 840233615}
+  m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
 --- !u!1 &1032292077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1783,6 +1860,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 238668853}
         m_MethodName: Fadein
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 840233620}
+        m_MethodName: UINaoSendoUsada
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2735,6 +2823,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 238668853}
         m_MethodName: Fadeout
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1418994389}
+        m_MethodName: UISendoUsada
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
