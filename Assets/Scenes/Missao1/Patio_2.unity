@@ -737,6 +737,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 674089059}
+        m_MethodName: UISendoUsada
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   dependenciasFeitas:
@@ -1478,10 +1489,15 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114014096467484188, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
         type: 2}
       propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
         type: 2}
@@ -1646,6 +1662,61 @@ Prefab:
       propertyPath: dialogoPrincipal.nodulos.Array.data[1].falas.Array.data[4].fala
       value: "E \xE9 isso, vamos para a aula!\n"
       objectReference: {fileID: 0}
+    - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 840233620}
+    - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: UISendoUsada
+      objectReference: {fileID: 0}
+    - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114014096467484188, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114014096467484188, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114014096467484188, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 840233620}
+    - target: {fileID: 114014096467484188, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UISendoUsada
+      objectReference: {fileID: 0}
+    - target: {fileID: 114014096467484188, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9357cdd918b582d4e8893cac0c9a7d11, type: 2}
   m_IsPrefabAsset: 0
@@ -1671,6 +1742,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 840233615}
   m_Script: {fileID: 11500000, guid: c34ea57c0f79eed429d1bbfa7283faf2, type: 3}
+--- !u!114 &840233620 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+    type: 2}
+  m_PrefabInternal: {fileID: 840233615}
+  m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
 --- !u!1 &1032292077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,7 +1783,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: -197}
+  m_AnchoredPosition: {x: -3, y: -244}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1032292079
@@ -1783,6 +1860,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 238668853}
         m_MethodName: Fadein
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 840233620}
+        m_MethodName: UINaoSendoUsada
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2585,7 +2673,7 @@ RectTransform:
   m_GameObject: {fileID: 1387699169}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 1.4511, y: 1.4511, z: 0}
   m_Children: []
   m_Father: {fileID: 2079303049}
   m_RootOrder: 0
@@ -2593,7 +2681,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 600, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1387699171
 MonoBehaviour:
@@ -2614,7 +2702,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 55e3510ed3ff5d64191a6c4bb0cd4b77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b1c1fa24de1d0dd46ade9c180b15b8a3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2735,6 +2823,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 238668853}
         m_MethodName: Fadeout
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1418994389}
+        m_MethodName: UISendoUsada
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -23,12 +23,6 @@ public class SlotProcedimento : MonoBehaviour {
 
     private Image procedimentoImage;
 
-    // Use this for initialization
-    void Awake ()
-    {
-        CreateImageChild();
-    }
-
     private void Start()
     {
         UpdateSprite();
@@ -50,6 +44,8 @@ public class SlotProcedimento : MonoBehaviour {
 
     private void UpdateSprite()
     {
+        if (!procedimentoImage) CreateImageChild();
+
         procedimentoImage.sprite = ProcedimentoSpriteDatabase.SpriteOf(procedimento);
         procedimentoImage.preserveAspect = true;
     }

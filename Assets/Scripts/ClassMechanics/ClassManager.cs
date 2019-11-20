@@ -67,6 +67,11 @@ public class ClassManager : MonoBehaviour
     private float nextProblemTime = 0;
 
     [SerializeField] private Dialogo[] falas = new Dialogo[3];
+    public Dialogo[] Falas
+    {
+        get { return falas; }
+        set { falas = value; }
+    }
 
     #endregion
 
@@ -77,6 +82,15 @@ public class ClassManager : MonoBehaviour
     [SerializeField] private AlunosComentaristas[] alunosComentaristas = new AlunosComentaristas[5];
 
     [SerializeField] private ComentarioProfessor professor = new ComentarioProfessor();
+    public Dialogo[] DialogosProfessorPosAula()
+    {
+        var quantidade = professor.falasGeneralistas.Length;
+        var dialogos = new Dialogo[quantidade];
+        for (int i = 0; i < quantidade; i++)
+            dialogos[i] = professor.falasGeneralistas[i].dialogos[0];
+        return dialogos;
+    }
+
 
     [Tooltip("O elemento 0 corresponde a Tier 1, e1 - t2, e2 - t3 e e3 - t4.")]
     [SerializeField] private DialogoGeneralista[] falasGeneralistas = new DialogoGeneralista[4];
@@ -179,11 +193,14 @@ public class ClassManager : MonoBehaviour
         {
             alunosComentaristas[i].aluno.gameObject.AddComponent<PolygonCollider2D>().enabled = false;
             NpcDialogo d = alunosComentaristas[i].aluno.gameObject.AddComponent<NpcDialogo>();
+            alunosComentaristas[i].aluno.gameObject.AddComponent<DynamicCursor>();
 
             d.questInfo.isQuest = true;
             d.questInfo.questIndex = alunosComentaristas[i].questIndex;
 
             d.dialogoObrigatorio = false;
+
+            d.interactOffset = new Vector3[] { new Vector3(-1.25f, -0.75f) };
 
             if ( i <= 1)
             {
@@ -284,7 +301,7 @@ public class ClassManager : MonoBehaviour
             nextProblemTime = NextProblem(0f); //Gera o tempo para o primeiro problema. Este pode ter tmin = 0 pois o previousProblemTime controlará para que não se gere problema antes do que se quer.
         }
 
-        SistemaDialogo.sistemaDialogo.ComecarDialogo(falas[0], null);
+        SistemaDialogo.sistemaDialogo.ComecarDialogo(Falas[0], null);
 
         while (classMoment < 3)
         {
@@ -331,7 +348,7 @@ public class ClassManager : MonoBehaviour
                         nextProblemTime = NextProblem(0f);
                     }
 
-                    SistemaDialogo.sistemaDialogo.ComecarDialogo(falas[classMoment], null);
+                    SistemaDialogo.sistemaDialogo.ComecarDialogo(Falas[classMoment], null);
 
                     TeacherScript.teacher.PauseWalk();
                 }

@@ -11,6 +11,8 @@ public class TeacherScript : AgenteAulaScript
         private set;
     }
 
+    
+
     [SerializeField] private Vector2 inicio = Vector2.zero;
 
     [SerializeField] private Vector2 vector = Vector2.zero;
@@ -24,14 +26,29 @@ public class TeacherScript : AgenteAulaScript
     [SerializeField] private float frameLonging = 0.3f;
 
     [SerializeField] private Sprite[] goRight = new Sprite[4];
+    public Sprite[] GoRight
+    {
+        get { return goRight; }
+        set { goRight = value; }
+    }
 
     [SerializeField] private Sprite[] goLeft = new Sprite[4];
+    public Sprite[] GoLeft
+    {
+        get { return goLeft; }
+        set { goLeft = value; }
+    }
 
     private bool goingRight = false;
 
     private Coroutine walk = null;
 
     [SerializeField] private Sprite[] sprites = new Sprite[4];
+    public Sprite[] Sprites
+    {
+        get { return sprites; }
+        set { sprites = value; }
+    }
 
     private SpriteRenderer sprite = null;
 
