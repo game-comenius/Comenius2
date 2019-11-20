@@ -23,12 +23,6 @@ public class SlotAgrupamento : MonoBehaviour {
 
     private Image agrupamentoImage;
 
-    // Use this for initialization
-    void Awake()
-    {
-        CreateImageChild();
-    }
-
     private void Start()
     {
         UpdateSprite();
@@ -50,6 +44,8 @@ public class SlotAgrupamento : MonoBehaviour {
 
     private void UpdateSprite()
     {
+        if (!agrupamentoImage) CreateImageChild();
+
         agrupamentoImage.sprite = AgrupamentoSpriteDatabase.SpriteOf(agrupamento);
         agrupamentoImage.preserveAspect = true;
     }

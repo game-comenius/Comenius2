@@ -51,9 +51,23 @@ public class SelectProfessorButton : MonoBehaviour, IPointerClickHandler
         if (startSelected)
             CurrentlySelectedButton = this;
 
-        professorImage = transform.GetChild(0).GetComponent<Image>();
+        CreateImageChild();
         professorImage.sprite = CharacterSpriteDatabase.SpriteSW(professor);
         professorImage.preserveAspect = true;
+    }
+
+    private void CreateImageChild()
+    {
+        var obj = new GameObject();
+        var obj_rect = obj.AddComponent<RectTransform>();
+        professorImage = obj.AddComponent<Image>();
+        obj.transform.SetParent(this.transform);
+        obj_rect.anchorMin = Vector2.zero;
+        obj_rect.anchorMax = Vector2.one;
+        obj_rect.offsetMin = new Vector2(15, 15);
+        obj_rect.offsetMax = -new Vector2(15, 15);
+        obj_rect.localScale = Vector3.one;
+        obj.SetActive(true);
     }
 
     public void OnPointerClick(PointerEventData eventData)

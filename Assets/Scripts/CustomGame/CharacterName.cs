@@ -1,6 +1,11 @@
 ﻿public enum CharacterName
 {
     Jean,
+    Vladmir,
+    Paulino,
+    Celestino,
     Montanari,
-    Esquisito
+    Antonia,
+    Alice,
+    Esquisito,
 }
