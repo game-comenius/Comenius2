@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class GridScript : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class GridScript : MonoBehaviour
 
     [HideInInspector] [SerializeField] private string save;
 
-    public bool[,] vacancy;
+    public uint[] newVacancy = new uint[5];
 
     private void Awake()
     {
@@ -33,7 +34,7 @@ public class GridScript : MonoBehaviour
             Debug.Log("Há dois GridScripts");
         }
 
-        Load();
+        //Load();
     }
 
     #region Grid and transformations
@@ -126,19 +127,42 @@ public class GridScript : MonoBehaviour
         return cell;
     }
 
-    public void Load()
-    {
-        if (File.Exists(Application.streamingAssetsPath + save))
-        {
-            BinaryFormatter bf = new BinaryFormatter();
+    //public void Load()
+    //{
+    //    if (File.Exists(Application.streamingAssetsPath + save))
+    //    {
+    //        BinaryFormatter bf = new BinaryFormatter();
 
-            FileStream file = File.Open(Application.streamingAssetsPath + save, FileMode.Open);
+    //        FileStream file = File.Open(Application.streamingAssetsPath + save, FileMode.Open);
 
-            vacancy = bf.Deserialize(file) as bool[,];
+    //        vacancy = bf.Deserialize(file) as bool[,];
 
-            file.Close();
-        }
-    }
+    //        file.Close();
+
+    //        newVacancy = new uint[vacancy.GetLength(0)];
+
+    //        if (vacancy.GetLength(1) <= 32)
+    //        {
+    //            for (int i = 0; i < vacancy.GetLength(0); i++)
+    //            {
+    //                for (int j = 0; j < vacancy.GetLength(1); j++)
+    //                {
+    //                    if (vacancy[i, j])
+    //                    {
+    //                        newVacancy[i] = (newVacancy[i] | (uint)(1 << j));
+    //                    }
+    //                }
+    //            }
+    //        }
+    //        else
+    //        {
+    //            Debug.Log("Grid grande demais");
+    //        }
+
+    //        //UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(UnityEditor.SceneManagement.EditorSceneManager.GetActiveScene());
+    //    }
+    //}
+
     #endregion
 
     #region Path Finding
@@ -159,7 +183,7 @@ public class GridScript : MonoBehaviour
 
             paths.Add(new HeuristicTile(destino, origem));
 
-            if (vacancy[destino.x, destino.y])
+            if ((newVacancy[destino.x] & (uint)(1 << destino.y)) == (uint)(1 << destino.y)) 
             {
                 return UnavailableEnd(origem, paths);
             }
@@ -197,7 +221,7 @@ public class GridScript : MonoBehaviour
 
     private List<Vector2Int> UnavailableEnd(Vector2Int origem, List<HeuristicTile> paths)
     {
-        bool[,] wasAnalysed = new bool[vacancy.GetLength(0), vacancy.GetLength(1)];
+        bool[,] wasAnalysed = new bool[gridDim.x, gridDim.y];
 
         wasAnalysed[paths[0].path[0].x, paths[0].path[0].y] = true;
 
@@ -239,7 +263,7 @@ public class GridScript : MonoBehaviour
 
                     i--;
                 }
-                else if (!vacancy[newPositions[i].x, newPositions[i].y])
+                else if ((newVacancy[newPositions[i].x] & (uint)(1 << newPositions[i].y)) != (uint)(1 << newPositions[i].y))
                 {
                     found = true;
 
@@ -256,7 +280,7 @@ public class GridScript : MonoBehaviour
             {
                 return null;
             }
-            else if (!vacancy[positions[i].x, positions[i].y])
+            else if ((newVacancy[positions[i].x] & (uint)(1 << positions[i].y)) != (uint)(1 << positions[i].y)) 
             {
                 paths.Add(new HeuristicTile(positions[i], origem));                
             }
@@ -461,7 +485,8 @@ public class GridScript : MonoBehaviour
                     break;
             }
 
-            if (!tile.path.Contains(newPosition) && VerifyTileIsInGrid(newPosition) && !vacancy[newPosition.x, newPosition.y])
+            if (!tile.path.Contains(newPosition) && VerifyTileIsInGrid(newPosition) &&
+                (newVacancy[newPosition.x] & (uint)(1 << newPosition.y)) != (uint)(1 << newPosition.y))
             {
                 HeuristicTile newTile = new HeuristicTile(tile, destino);
 
@@ -485,7 +510,7 @@ public class GridScript : MonoBehaviour
 
     private bool VerifyTileIsInGrid(Vector2Int newPosition)
     {
-        return (newPosition.x >= 0 && newPosition.x < GridScript.gridScript.vacancy.GetLength(0) && newPosition.y >= 0 && newPosition.y < GridScript.gridScript.vacancy.GetLength(1));
+        return (newPosition.x >= 0 && newPosition.x < gridScript.gridDim.x && newPosition.y >= 0 && newPosition.y < gridScript.gridDim.y);
     }
 
     #endregion 
@@ -536,7 +561,7 @@ public class GridScript : MonoBehaviour
             {
                 for (int i = 0; i < gridDim.x; i++)
                 {
-                    if (vacancy[i, j])
+                    if ((newVacancy[i] & (uint)(1 << j)) == (uint)(1 << j)) 
                     {
                         Gizmos.color = Color.red;
                     }
@@ -555,7 +580,7 @@ public class GridScript : MonoBehaviour
             {
                 for (int i = 0; i < gridDim.x; i++)
                 {
-                    if (vacancy[i, j])
+                    if ((newVacancy[i] & (uint)(1 << j)) == (uint)(1 << j))
                     {
                         Gizmos.DrawSphere(CellR(new Vector2Int(i, j))[0], 0.1f);
                     }
