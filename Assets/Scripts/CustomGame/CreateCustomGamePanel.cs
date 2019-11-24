@@ -6,11 +6,19 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
 
 public class CreateCustomGamePanel : MonoBehaviour {
 
-    [SerializeField]
-    private AvailableItemsPanel panelMidiasDisponiveis;
+    // struct útil para transferir as informações criadas para o disco
+    // e depois resgatá-las para a memória durante o load de um jogo criado
+    [Serializable()]
+    public struct MidiaPoderFeedback
+    {
+        public ItemName Midia;
+        public Poder Poder;
+        public string Feedback;
+    }
 
     private LinkedList<GameObject> paginas;
     private LinkedListNode<GameObject> nodoPaginaAtual;
@@ -101,8 +109,36 @@ public class CreateCustomGamePanel : MonoBehaviour {
         settings.Agrupamento2 = momento2.AgrupamentoSelecionado;
         settings.Agrupamento3 = momento3.AgrupamentoSelecionado;
 
-        settings.midiasDisponiveis = panelMidiasDisponiveis.MidiasSelecionadas();
+        settings.arrayMidiaPoderFeedbackPorMomento = MidiaPoderFeedback3Momentos();
 
         settings.SaveCustomGameSettingsToDisk();
+    }
+
+    private MidiaPoderFeedback[][] MidiaPoderFeedback3Momentos()
+    {
+        var mpfs = new MidiaPoderFeedback[3][];
+        mpfs[0] = MidiaPoderFeedbackMomento(0);
+        mpfs[1] = MidiaPoderFeedbackMomento(1);
+        mpfs[2] = MidiaPoderFeedbackMomento(2);
+        return mpfs;
+    }
+
+    private MidiaPoderFeedback[] MidiaPoderFeedbackMomento(int momento)
+    {
+        var editarPoderMidiasScrollViews = GetComponentsInChildren<EditarPoderMidiasScrollView>(true);
+
+        // Coletar feedbacks para o momento 1
+        var faixasMomento1 = editarPoderMidiasScrollViews[momento].FaixasEditarPoderMidia;
+        var quantidadeMidias = faixasMomento1.Count;
+        var mpfs = new MidiaPoderFeedback[quantidadeMidias];
+        for (int i = 0; i < quantidadeMidias; i++)
+        {
+            mpfs[i] = new MidiaPoderFeedback();
+            mpfs[i].Midia = faixasMomento1[i].Midia;
+            mpfs[i].Poder = faixasMomento1[i].poder;
+            mpfs[i].Feedback = faixasMomento1[i].Feedback();
+        }
+
+        return mpfs;
     }
 }

@@ -13,9 +13,11 @@ public class CustomGameSettings {
     public CharacterName Professor;
     public string introducaoAula;
     public string descricaoMomento1, descricaoMomento2, descricaoMomento3;
-    public ItemName[] midiasDisponiveis;
+    public CreateCustomGamePanel.MidiaPoderFeedback[][] arrayMidiaPoderFeedbackPorMomento;
     public Procedimento Procedimento1, Procedimento2, Procedimento3;
     public Agrupamento Agrupamento1, Agrupamento2, Agrupamento3;
+
+    private ItemName[] midiasDisponiveis;
 
     public static CustomGameSettings ReadCustomGameSettingsFromDisk()
     {
@@ -55,4 +57,18 @@ public class CustomGameSettings {
         #endif
     }
 
+    public ItemName[] MidiasDisponiveis()
+    {
+        if (midiasDisponiveis != null) return midiasDisponiveis;
+
+        var a = arrayMidiaPoderFeedbackPorMomento[0];
+        var quantidade = a.Length;
+        var disponiveis = new ItemName[quantidade];
+        for (int i = 0; i < quantidade; i++)
+        {
+            disponiveis[i] = new ItemName();
+            disponiveis[i] = a[i].Midia;
+        }
+        return midiasDisponiveis = disponiveis;
+    }
 }

@@ -30,7 +30,7 @@ public class CustomLurdinha : MonoBehaviour {
             {
                 foreach (var item in inventory.Items())
                     inventory.Remove(item.ItemName);
-                var customItems = settings.midiasDisponiveis;
+                var customItems = settings.MidiasDisponiveis();
                 foreach (var item in customItems)
                     inventory.Add(item);
                 updated = true;

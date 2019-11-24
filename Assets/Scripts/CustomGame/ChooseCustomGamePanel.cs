@@ -28,10 +28,21 @@ public class ChooseCustomGamePanel : MonoBehaviour {
             if (professorImage.sprite)
                 professorImage.color = new Color(1, 1, 1, 1);
 
-            // Debug.Log(currentSettings.FalaProfessorSalaProfessores);
-            foreach (var item in currentSettings.midiasDisponiveis)
+            var a = currentSettings.arrayMidiaPoderFeedbackPorMomento;
+            foreach (var arrayMPF in a)
             {
-                Debug.Log(item.ToString());
+                foreach (var mpf in arrayMPF)
+                {
+                    var s = mpf.Midia + " - poder: " + mpf.Poder + " - Feedback: ";
+                    //s += "length = " + mpf.Feedback.Length + "valor = ";
+                    //foreach (var c in s.ToCharArray())
+                    //{
+                    //    s += (int)c + " / ";
+                    //}
+                    s += mpf.Feedback;
+
+                    Debug.Log(s);
+                }
             }
         }
         catch (System.Exception)
