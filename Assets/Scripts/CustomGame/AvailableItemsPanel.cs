@@ -17,14 +17,15 @@ public class AvailableItemsPanel : MonoBehaviour {
         // Mídias que estarão disponíveis para o jogador selecionar
         midiasDisponiveis = new ItemName[]
         {
+            ItemName.QuadroNegro,
             ItemName.Caderno,
-            ItemName.Gravador,
+            ItemName.Jornais,
             ItemName.Livro,
             ItemName.Cartazes,
             ItemName.CameraPolaroid,
-            ItemName.QuadroNegro,
+            ItemName.Gravador,
             ItemName.ReprodutorAudio,
-            ItemName.TV
+            ItemName.TV,
         };
 
         // Popular o panel de mídias disponíveis com as mídias do jogo custom
