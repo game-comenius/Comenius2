@@ -6,6 +6,9 @@ using TMPro;
 public class MissionGuideManager : MonoBehaviour
 {
 
+    GameObject guiaOBJ;
+    GameObject countOBJ;
+
     private static MissionGuideManager _missionGuideManager;
 
     public static MissionGuideManager missionGuideManager
@@ -16,7 +19,6 @@ public class MissionGuideManager : MonoBehaviour
         }
     }
 
-    public string[] missions = new string[3];
 
     private TextMeshProUGUI missionTip;
 
@@ -25,30 +27,50 @@ public class MissionGuideManager : MonoBehaviour
         if (_missionGuideManager == null)
         {
             _missionGuideManager = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
 
-        DontDestroyOnLoad(gameObject);
     }
 
     // Use this for initialization
     void Start()
     {
-        missionTip = GameObject.Find("TextoMissao").GetComponent<TextMeshProUGUI>();
+        missionTip = GameObject.Find("Guia").GetComponent<TextMeshProUGUI>();
+        guiaOBJ = GameObject.Find("CanvasGuia");
+        countOBJ = GameObject.Find("CanvasContador");
     }
 
-    public void SetMissionGuide(int index)
+    public void SetMissionGuide(string mission)
     {
-        missionTip.SetText(missions[index]);
+        missionTip.SetText(mission);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ShowMissionGuide(bool action)
     {
+        if(action)
+        {
+            guiaOBJ.GetComponent<CanvasGroup>().alpha = 1;
+        }
+        else
+        {
+            guiaOBJ.GetComponent<CanvasGroup>().alpha = 0;
+        }
+    }
 
+    public void ShowMidiaCounter(bool action)
+    {
+        if (action)
+        {
+            countOBJ.GetComponent<CanvasGroup>().alpha = 1;
+        }
+        else
+        {
+            countOBJ.GetComponent<CanvasGroup>().alpha = 0;
+        }
     }
 
 }

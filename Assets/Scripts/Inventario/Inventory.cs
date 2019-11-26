@@ -1,9 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Inventory
 {
     private Dictionary<ItemName, Item> items;
+
+    private int midiaCounter = 0;
+    private TextMeshProUGUI uiMidiaCounter;
 
     public Inventory() {
         items = new Dictionary<ItemName, Item>();
@@ -14,6 +18,7 @@ public class Inventory
         items.Add(ItemName.Jornais, new Item(ItemName.Jornais));
         //items.Add(ItemName.Livro, new Item(ItemName.Livro));
         items.Add(ItemName.QuadroNegro, new Item(ItemName.QuadroNegro));
+        midiaCounter += 4;
     }
 
     public ICollection<Item> Items()
@@ -44,6 +49,10 @@ public class Inventory
             }
 
             items.Add(itemName, item);
+
+            midiaCounter++;
+            uiMidiaCounter = GameObject.Find("ContadorMidias").GetComponent<TextMeshProUGUI>();
+            uiMidiaCounter.SetText("Mídias Obtidas: " + midiaCounter + "/13");
 
             DisplayItems();
         }
