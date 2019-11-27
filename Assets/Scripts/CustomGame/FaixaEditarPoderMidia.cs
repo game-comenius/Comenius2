@@ -42,18 +42,19 @@ public class FaixaEditarPoderMidia : MonoBehaviour {
         switch (poder)
         {
             case Poder.Fraca:
-                f += "mais fraca!";
+                f += "fraca";
                 break;
             case Poder.Boa:
-                f += "boa!";
+                f += "boa";
                 break;
             case Poder.MuitoBoa:
-                f += "muito Boa!";
+                f += "muito boa";
                 break;
             case Poder.Melhor:
-                f += "excelente!";
+                f += "excelente";
                 break;
         }
+        f += " para este momento da aula!";
         placeholder.SetText(f);
     }
 

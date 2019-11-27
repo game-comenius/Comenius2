@@ -11,6 +11,8 @@ public class CustomGameSettings {
 
     // Dados da tela customizar que serão salvos no disco
     public CharacterName Professor;
+    public NivelDeEnsino nivelDeEnsino;
+    public AreaDeConhecimento areaDeConhecimento;
     public string introducaoAula;
     public string descricaoMomento1, descricaoMomento2, descricaoMomento3;
     public CreateCustomGamePanel.MidiaPoderFeedback[][] arrayMidiaPoderFeedbackPorMomento;

@@ -28,22 +28,30 @@ public class ChooseCustomGamePanel : MonoBehaviour {
             if (professorImage.sprite)
                 professorImage.color = new Color(1, 1, 1, 1);
 
-            var a = currentSettings.arrayMidiaPoderFeedbackPorMomento;
-            foreach (var arrayMPF in a)
-            {
-                foreach (var mpf in arrayMPF)
-                {
-                    var s = mpf.Midia + " - poder: " + mpf.Poder + " - Feedback: ";
-                    //s += "length = " + mpf.Feedback.Length + "valor = ";
-                    //foreach (var c in s.ToCharArray())
-                    //{
-                    //    s += (int)c + " / ";
-                    //}
-                    s += mpf.Feedback;
 
-                    Debug.Log(s);
-                }
-            }
+
+            // === DEBUG ===
+
+            var a = currentSettings.nivelDeEnsino;
+            var b = currentSettings.areaDeConhecimento;
+            Debug.Log("nível = " + a.nome + ", área = " + b.nome);
+            //var a = currentSettings.arrayMidiaPoderFeedbackPorMomento;
+            //foreach (var arrayMPF in a)
+            //{
+            //    foreach (var mpf in arrayMPF)
+            //    {
+            //        var s = mpf.Midia + " - poder: " + mpf.Poder + " - Feedback: ";
+            //        //s += "length = " + mpf.Feedback.Length + "valor = ";
+            //        //foreach (var c in s.ToCharArray())
+            //        //{
+            //        //    s += (int)c + " / ";
+            //        //}
+            //        s += mpf.Feedback;
+
+            //        Debug.Log(s);
+            //    }
+            //}
+            // ============
         }
         catch (System.Exception)
         {

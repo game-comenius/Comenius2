@@ -23,8 +23,11 @@ public class CreateCustomGamePanel : MonoBehaviour {
     private LinkedList<GameObject> paginas;
     private LinkedListNode<GameObject> nodoPaginaAtual;
 
+    private NivelDeEnsinoDropdown dropdownNivelDeEnsino;
+    private AreaDeConhecimentoDropdown dropdownAreaDeConhecimento;
+
     [SerializeField]
-    private GameObject ListaFalasProfessor;
+    private GameObject listaFalasProfessor;
     private TMP_InputField introducaoAula;
     private TMP_InputField descricaoMomento1;
     private TMP_InputField descricaoMomento2;
@@ -49,8 +52,12 @@ public class CreateCustomGamePanel : MonoBehaviour {
         // Ativar todas as páginas para coletar botões, campos, ...
         foreach (var pagina in paginas) pagina.SetActive(true);
 
+        // Coletar dropdowns do nível de ensino e a área de conhecimento
+        dropdownNivelDeEnsino = GetComponentInChildren<NivelDeEnsinoDropdown>();
+        dropdownAreaDeConhecimento = GetComponentInChildren<AreaDeConhecimentoDropdown>();
+
         // Coletar falas do professor na sala dos professores
-        var falas = ListaFalasProfessor.GetComponentsInChildren<TMP_InputField>();
+        var falas = listaFalasProfessor.GetComponentsInChildren<TMP_InputField>();
         introducaoAula = falas[0];
         descricaoMomento1 = falas[1];
         descricaoMomento2 = falas[2];
@@ -95,6 +102,9 @@ public class CreateCustomGamePanel : MonoBehaviour {
         // Criar objeto para escrever no disco
         CustomGameSettings settings = new CustomGameSettings();
         settings.Professor = SelectProfessorButton.CurrentlySelectedButton.Professor;
+
+        settings.nivelDeEnsino = dropdownNivelDeEnsino.NivelDeEnsinoSelecionado();
+        settings.areaDeConhecimento = dropdownAreaDeConhecimento.AreaDeConhecimentoSelecionada();
 
         settings.introducaoAula = introducaoAula.text;
         settings.descricaoMomento1 = descricaoMomento1.text;
