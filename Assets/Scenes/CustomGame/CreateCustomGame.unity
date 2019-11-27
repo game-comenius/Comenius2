@@ -5254,7 +5254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1b3d3ee045b4955a44a3569d4a786d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropdownAreaDeConhecimento: {fileID: 1701128916}
 --- !u!1 &599817183
 GameObject:
   m_ObjectHideFlags: 0
@@ -7789,9 +7788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c017c7cd6c44909960da3502e70fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DropdownNivelDeEnsino: {fileID: 0}
-  DropdownAreaDeConhecimento: {fileID: 0}
-  ListaFalasProfessor: {fileID: 1039017898}
+  listaFalasProfessor: {fileID: 1039017898}
 --- !u!114 &924336490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11451,7 +11448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -69.999695, y: 49.99994}
+  m_AnchoredPosition: {x: -69.99951, y: 49.99994}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1438890440
@@ -14050,6 +14047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1701128915}
   - component: {fileID: 1701128919}
+  - component: {fileID: 1701128918}
   - component: {fileID: 1701128917}
   - component: {fileID: 1701128916}
   m_Layer: 5
@@ -14156,6 +14154,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &1701128918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1701128914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4d1ef3de9ad47219a30b043d5b950d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &1701128919
 CanvasRenderer:
   m_ObjectHideFlags: 0

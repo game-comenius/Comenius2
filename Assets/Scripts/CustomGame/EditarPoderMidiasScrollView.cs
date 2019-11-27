@@ -30,4 +30,24 @@ public class EditarPoderMidiasScrollView : MonoBehaviour {
             faixa.transform.localScale = Vector3.one;
         }
 	}
+
+    private void OnEnable()
+    {
+        for (int i = 0; i < contentContainer.transform.childCount; i++)
+        {
+            Destroy(contentContainer.transform.GetChild(i).gameObject);
+        }
+        FaixasEditarPoderMidia = new List<FaixaEditarPoderMidia>();
+
+        var midiasSelecionadas = availableItemsPanel.MidiasSelecionadas();
+        foreach (var midia in midiasSelecionadas)
+        {
+            var faixa = Instantiate(prefabFaixaEditarPoderMidia);
+            faixa.SetMidia(midia);
+            FaixasEditarPoderMidia.Add(faixa);
+
+            faixa.transform.SetParent(contentContainer.transform);
+            faixa.transform.localScale = Vector3.one;
+        }
+    }
 }

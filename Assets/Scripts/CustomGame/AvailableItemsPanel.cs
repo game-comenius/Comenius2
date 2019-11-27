@@ -31,7 +31,7 @@ public class AvailableItemsPanel : MonoBehaviour {
         // Popular o panel de mídias disponíveis com as mídias do jogo custom
         foreach (var midia in midiasDisponiveis)
         {
-            var b = Instantiate<SelectItemButton>(botaoSelecionarMidia, this.transform);
+            var b = Instantiate(botaoSelecionarMidia, this.transform);
             b.Item = midia;
         }
     }
