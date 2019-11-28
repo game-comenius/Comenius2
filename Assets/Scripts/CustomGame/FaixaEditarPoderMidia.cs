@@ -10,7 +10,7 @@ public class FaixaEditarPoderMidia : MonoBehaviour {
     [HideInInspector]
     public ItemName Midia { get; private set; }
 
-    public Poder poder { get; private set; }
+    public Poder Poder { get; private set; }
 
     [SerializeField]
     private Image midiaImage;
@@ -36,10 +36,10 @@ public class FaixaEditarPoderMidia : MonoBehaviour {
 
     internal void RefreshFeedbackPlaceholder(Poder novoPoder)
     {
-        poder = novoPoder;
+        Poder = novoPoder;
         string f = Midia.ToString() + " é uma mídia ";
         //string f = "É uma mídia ";
-        switch (poder)
+        switch (Poder)
         {
             case Poder.Fraca:
                 f += "fraca";

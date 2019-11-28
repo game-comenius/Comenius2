@@ -1,13 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
 using UnityEngine;
+using UnityEngine.Networking;
 
 [System.Serializable]
 public class CustomGameSettings {
 
     private static CustomGameSettings currentSettings;
+
+    private ItemName[] midiasDisponiveis;
+
+    private static readonly string uploadURI = "http://gamecomenius.com/gamecomenius2/savecustom.php";
+    private static readonly string downloadURI = "http://gamecomenius.com/gamecomenius2/loadcustom.php";
 
     // Dados da tela customizar que serão salvos no disco
     public CharacterName Professor;
@@ -19,7 +26,6 @@ public class CustomGameSettings {
     public Procedimento Procedimento1, Procedimento2, Procedimento3;
     public Agrupamento Agrupamento1, Agrupamento2, Agrupamento3;
 
-    private ItemName[] midiasDisponiveis;
 
     public static CustomGameSettings ReadCustomGameSettingsFromDisk()
     {
@@ -31,32 +37,84 @@ public class CustomGameSettings {
         CustomGameSettings settings = null;
 
         // Ler do disco
-        // Para salvar no servidor web é preciso fazer outra coisa
-        // Estamos salvando apenas quando o jogo é executado através do editor
-        #if UNITY_EDITOR
-        // if (!File.Exists("data_file.dat")) return null;
-        using (FileStream fs = new FileStream("data-comenius.txt", FileMode.Open))
+
+        // Descomentar caso a versão online falhe por algum motivo
+        //// Esta região é executada apenas quando apertamos o play pelo editor
+        //#if UNITY_EDITOR
+        //// if (!File.Exists("data_file.dat")) return null;
+        //using (FileStream fs = new FileStream("data-comenius.txt", FileMode.Open))
+        //{
+        //    BinaryFormatter formatter = new BinaryFormatter();
+        //    settings = (CustomGameSettings)formatter.Deserialize(fs);
+        //}
+        //#endif
+
+        // A partir daqui fica o código que deve ser executado quando o jogo
+        // estiver no servidor online
+        var webRequest = UnityWebRequest.Get(downloadURI);
+        webRequest.SendWebRequest();
+
+        // Trocar isso por uma solução assíncrona
+        while (!webRequest.isDone) { }
+
+        if (webRequest.isNetworkError || webRequest.isHttpError)
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            settings = (CustomGameSettings)formatter.Deserialize(fs);
+            Debug.Log(webRequest.error);
         }
-        #endif
-         
+        else
+        {
+            Debug.Log("Object download complete!");
+
+            using (var stream = new MemoryStream())
+            {
+                var response = webRequest.downloadHandler.data;
+                stream.Write(response, 0, response.Length);
+                stream.Seek(0, SeekOrigin.Begin);
+
+                var formatter = new BinaryFormatter();
+                try
+                {
+                    var obj = formatter.Deserialize(stream);
+                    settings = (CustomGameSettings)obj;
+                }
+                catch (SerializationException e)
+                {
+                    Debug.Log("Deserialization Failed: " + e.Message);
+                }
+            }
+        }
+
         return currentSettings = settings;
     }
 
     public void SaveCustomGameSettingsToDisk()
     {
-        // Para salvar no servidor web é preciso fazer outra coisa
-        // Estamos salvando apenas quando o jogo é executado através do editor
-        #if UNITY_EDITOR
-        // Escrever no disco
-        using (FileStream fs = new FileStream("data-comenius.txt", FileMode.Create))
+        // Descomentar caso a versão online falhe por algum motivo
+        //// Esta região é executada apenas quando apertamos o play pelo editor
+        //#if UNITY_EDITOR
+        //// Escrever no disco
+        //using (FileStream fs = new FileStream("data-comenius.txt", FileMode.Create))
+        //{
+        //    BinaryFormatter formatter = new BinaryFormatter();
+        //    formatter.Serialize(fs, this);
+        //}
+        //#endif
+
+        // A partir daqui fica o código que deve ser executado quando o jogo
+        // estiver no servidor online
+        using (var stream = new MemoryStream())
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            formatter.Serialize(fs, this);
+            var formatter = new BinaryFormatter();
+            formatter.Serialize(stream, this);
+
+            List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
+            formData.Add(new MultipartFormDataSection("data", stream.ToArray()));
+
+            UnityWebRequest webRequest = UnityWebRequest.Post(uploadURI, formData);
+            webRequest.SendWebRequest();
+            // ^
+            // Verificar se o Post funcionou e impedir o save caso isso ocorra
         }
-        #endif
     }
 
     public ItemName[] MidiasDisponiveis()

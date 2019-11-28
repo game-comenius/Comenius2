@@ -18,7 +18,7 @@ public class EditarPoderMidiasScrollView : MonoBehaviour {
     public List<FaixaEditarPoderMidia> FaixasEditarPoderMidia { get; private set; }
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         FaixasEditarPoderMidia = new List<FaixaEditarPoderMidia>();
     }
 
@@ -32,13 +32,12 @@ public class EditarPoderMidiasScrollView : MonoBehaviour {
             // Apagar todas as mídias
             for (int i = 0; i < contentContainer.transform.childCount; i++)
                 Destroy(contentContainer.transform.GetChild(i).gameObject);
+            FaixasEditarPoderMidia.Clear();
 
-            // Verificar novamente quais mídias foram selecionadas
-            FaixasEditarPoderMidia = new List<FaixaEditarPoderMidia>();
             midias = midiasSelecionadas;
 
             // Popular com uma faixa para cada mídia selecionada
-            foreach (var midia in midiasSelecionadas)
+            foreach (var midia in midias)
             {
                 var faixa = Instantiate(prefabFaixaEditarPoderMidia);
                 faixa.SetMidia(midia);

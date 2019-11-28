@@ -37,6 +37,8 @@ public class CreateCustomGamePanel : MonoBehaviour {
     private MomentoUICriarCustom momento2;
     private MomentoUICriarCustom momento3;
 
+    private EditarPoderMidiasScrollView[] editarPoderMidiasScrollViews;
+
     private void Awake()
     {
         // Achar e catalogar todas as páginas do Panel, se o Panel tiver um
@@ -69,7 +71,8 @@ public class CreateCustomGamePanel : MonoBehaviour {
         momento2 = momentos[1];
         momento3 = momentos[2];
 
-        
+        editarPoderMidiasScrollViews = GetComponentsInChildren<EditarPoderMidiasScrollView>();
+
         // Desativar todas as páginas deste panel e ativar apenas a primeira
         foreach (var pagina in paginas) pagina.SetActive(false);
         nodoPaginaAtual = paginas.First;
@@ -135,18 +138,15 @@ public class CreateCustomGamePanel : MonoBehaviour {
 
     private MidiaPoderFeedback[] MidiaPoderFeedbackMomento(int momento)
     {
-        var editarPoderMidiasScrollViews = GetComponentsInChildren<EditarPoderMidiasScrollView>(true);
-
-        // Coletar feedbacks para o momento 1
-        var faixasMomento1 = editarPoderMidiasScrollViews[momento].FaixasEditarPoderMidia;
-        var quantidadeMidias = faixasMomento1.Count;
+        var faixasMomento = editarPoderMidiasScrollViews[momento].FaixasEditarPoderMidia;
+        var quantidadeMidias = faixasMomento.Count;
         var mpfs = new MidiaPoderFeedback[quantidadeMidias];
         for (int i = 0; i < quantidadeMidias; i++)
         {
             mpfs[i] = new MidiaPoderFeedback();
-            mpfs[i].Midia = faixasMomento1[i].Midia;
-            mpfs[i].Poder = faixasMomento1[i].poder;
-            mpfs[i].Feedback = faixasMomento1[i].Feedback();
+            mpfs[i].Midia = faixasMomento[i].Midia;
+            mpfs[i].Poder = faixasMomento[i].Poder;
+            mpfs[i].Feedback = faixasMomento[i].Feedback();
         }
 
         return mpfs;

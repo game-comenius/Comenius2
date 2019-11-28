@@ -31,10 +31,9 @@ public class ChooseCustomGamePanel : MonoBehaviour {
 
 
             // === DEBUG ===
-
-            var a = currentSettings.nivelDeEnsino;
-            var b = currentSettings.areaDeConhecimento;
-            Debug.Log("nível = " + a.nome + ", área = " + b.nome);
+            //var a = currentSettings.nivelDeEnsino;
+            //var b = currentSettings.areaDeConhecimento;
+            //Debug.Log("nível = " + a.nome + ", área = " + b.nome);
             //var a = currentSettings.arrayMidiaPoderFeedbackPorMomento;
             //foreach (var arrayMPF in a)
             //{
