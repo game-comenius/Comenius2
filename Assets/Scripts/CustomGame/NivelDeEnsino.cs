@@ -139,4 +139,9 @@ public sealed class NivelDeEnsino
         }
         return null;
     }
+
+    public override string ToString()
+    {
+        return nome;
+    }
 }

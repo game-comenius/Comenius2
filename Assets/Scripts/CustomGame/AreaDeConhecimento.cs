@@ -89,4 +89,9 @@ public sealed class AreaDeConhecimento
         }
         return null;
     }
+
+    public override string ToString()
+    {
+        return nome;
+    }
 }
