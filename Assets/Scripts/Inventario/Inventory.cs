@@ -6,7 +6,8 @@ public class Inventory
 {
     private Dictionary<ItemName, Item> items;
 
-    private int midiaCounter = 0;
+    public int Count { get { return items.Count; } }
+
     private TextMeshProUGUI uiMidiaCounter;
 
     public Inventory() {
@@ -16,14 +17,20 @@ public class Inventory
         items.Add(ItemName.Cartazes, new Item(ItemName.Cartazes));
         items.Add(ItemName.Caderno, new Item(ItemName.Caderno));
         items.Add(ItemName.Jornais, new Item(ItemName.Jornais));
-        //items.Add(ItemName.Livro, new Item(ItemName.Livro));
         items.Add(ItemName.QuadroNegro, new Item(ItemName.QuadroNegro));
-        midiaCounter += 4;
     }
 
     public ICollection<Item> Items()
     {
         return items.Values;
+    }
+
+    public void Clear()
+    {
+        items.Clear();
+
+        uiMidiaCounter = GameObject.Find("ContadorMidias").GetComponent<TextMeshProUGUI>();
+        uiMidiaCounter.SetText("Mídias Obtidas: " + Count + "/13");
     }
 
     public bool Contains(ItemName itemName)
@@ -50,9 +57,8 @@ public class Inventory
 
             items.Add(itemName, item);
 
-            midiaCounter++;
             uiMidiaCounter = GameObject.Find("ContadorMidias").GetComponent<TextMeshProUGUI>();
-            uiMidiaCounter.SetText("Mídias Obtidas: " + midiaCounter + "/13");
+            uiMidiaCounter.SetText("Mídias Obtidas: " + Count + "/13");
 
             DisplayItems();
         }
@@ -62,6 +68,9 @@ public class Inventory
     public void Remove(ItemName itemName)
     {
         items.Remove(itemName);
+
+        uiMidiaCounter = GameObject.Find("ContadorMidias").GetComponent<TextMeshProUGUI>();
+        uiMidiaCounter.SetText("Mídias Obtidas: " + Count + "/13");
     }
 
     private void DisplayItems()

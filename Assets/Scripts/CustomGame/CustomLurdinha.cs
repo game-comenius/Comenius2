@@ -28,8 +28,7 @@ public class CustomLurdinha : MonoBehaviour {
             var inventory = Player.Instance.Inventory;
             if (inventory != null)
             {
-                foreach (var item in inventory.Items())
-                    inventory.Remove(item.ItemName);
+                inventory.Clear();
                 var customItems = settings.MidiasDisponiveis();
                 foreach (var item in customItems)
                     inventory.Add(item);
