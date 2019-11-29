@@ -8,7 +8,7 @@ public class CustomLurdinha : MonoBehaviour {
 
 	// Use this for initialization
 	private IEnumerator Start () {
-        settings = CustomGameSettings.ReadCustomGameSettingsFromDisk();
+        settings = CustomGameSettings.LoadCustomGameSettings();
 
         yield return StartCoroutine(UpdateInventory());
 	}

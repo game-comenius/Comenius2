@@ -13,7 +13,7 @@ public class CustomPlanejamento : MonoBehaviour {
         AnularQuestsParaIniciarPlanejamento();
         ZerarMidiasPadraoDoProfessor();
 
-        var s = CustomGameSettings.ReadCustomGameSettingsFromDisk();
+        var s = CustomGameSettings.LoadCustomGameSettings();
         DefinirProcedimentos(s.Procedimento1, s.Procedimento2, s.Procedimento3);
         DefinirAgrupamentos(s.Agrupamento1, s.Agrupamento2, s.Agrupamento3);
     }

@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -11,10 +13,9 @@ public class CustomGameSettings {
 
     private static CustomGameSettings currentSettings;
 
-    private ItemName[] midiasDisponiveis;
-
     private static readonly string uploadURI = "http://gamecomenius.com/gamecomenius2/savecustom.php";
-    private static readonly string downloadURI = "http://gamecomenius.com/gamecomenius2/loadcustom.php";
+
+    private ItemName[] midiasDisponiveis;
 
     // Dados da tela customizar que serão salvos no disco
     public CharacterName Professor;
@@ -27,14 +28,11 @@ public class CustomGameSettings {
     public Agrupamento Agrupamento1, Agrupamento2, Agrupamento3;
 
 
-    public static CustomGameSettings ReadCustomGameSettingsFromDisk()
+    public static CustomGameSettings LoadCustomGameSettings()
     {
-        // Para economizar, existe uma variável que guarda a leitura do disco
-        // O jogo só lê uma vez o arquivo no disco
+        // Para economizar, existe uma variável que guarda a última leitura,
+        // desse jeito o jogo só lê 1 vez o arquivo no disco
         if (currentSettings != null) return currentSettings;
-
-        // Criar objeto para receber informações lidas do disco
-        CustomGameSettings settings = null;
 
         // Ler do disco
 
@@ -51,41 +49,11 @@ public class CustomGameSettings {
 
         // A partir daqui fica o código que deve ser executado quando o jogo
         // estiver no servidor online
-        var webRequest = UnityWebRequest.Get(downloadURI);
-        webRequest.SendWebRequest();
+        currentSettings =  ComeniusWebClient.RequestCustomGameSettings();
 
-        // Trocar isso por uma solução assíncrona
-        while (!webRequest.isDone) { }
-
-        if (webRequest.isNetworkError || webRequest.isHttpError)
-        {
-            Debug.Log(webRequest.error);
-        }
-        else
-        {
-            Debug.Log("Object download complete!");
-
-            using (var stream = new MemoryStream())
-            {
-                var response = webRequest.downloadHandler.data;
-                stream.Write(response, 0, response.Length);
-                stream.Seek(0, SeekOrigin.Begin);
-
-                var formatter = new BinaryFormatter();
-                try
-                {
-                    var obj = formatter.Deserialize(stream);
-                    settings = (CustomGameSettings)obj;
-                }
-                catch (SerializationException e)
-                {
-                    Debug.Log("Deserialization Failed: " + e.Message);
-                }
-            }
-        }
-
-        return currentSettings = settings;
+        return currentSettings;
     }
+
 
     public void SaveCustomGameSettingsToDisk()
     {

@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CustomProfessor : MonoBehaviour {
+public class CustomProfessor : MonoBehaviour
+{
 
     private GameObject professorGO;
 
@@ -36,8 +37,9 @@ public class CustomProfessor : MonoBehaviour {
         qs.enabled = false;
     }
 
-    void Start () {
-        var settings = CustomGameSettings.ReadCustomGameSettingsFromDisk();
+    void Start()
+    {
+        var settings = CustomGameSettings.LoadCustomGameSettings();
 
         professor = settings.Professor;
 

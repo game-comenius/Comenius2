@@ -17,7 +17,7 @@ public class ChooseCustomGamePanel : MonoBehaviour {
     void Start () {
         try
         {
-            currentSettings = CustomGameSettings.ReadCustomGameSettingsFromDisk();
+            currentSettings = CustomGameSettings.LoadCustomGameSettings();
 
             // Mostrar professor selecionado
             var teacher = currentSettings.Professor;
@@ -27,8 +27,6 @@ public class ChooseCustomGamePanel : MonoBehaviour {
             // Se o sprite existe, alpha se torna igual a 1 e ele é mostrado
             if (professorImage.sprite)
                 professorImage.color = new Color(1, 1, 1, 1);
-
-
 
             // === DEBUG ===
             //var a = currentSettings.nivelDeEnsino;

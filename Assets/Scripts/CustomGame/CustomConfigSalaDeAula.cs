@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CustomConfigSalaDeAula : MonoBehaviour {
+public class CustomConfigSalaDeAula : MonoBehaviour
+{
 
     void Awake()
     {
@@ -13,8 +14,9 @@ public class CustomConfigSalaDeAula : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
-        var settings = CustomGameSettings.ReadCustomGameSettingsFromDisk();
+    void Start()
+    {
+        var settings = CustomGameSettings.LoadCustomGameSettings();
 
         var professor = FindObjectOfType<TeacherScript>().gameObject;
         var classManager = FindObjectOfType<ClassManager>();
