@@ -53,9 +53,16 @@ public static class ComeniusWebClient {
         for (int i = 1; i <= tries; i++)
         {
             if (request.isDone)
+            {
+                Debug.Log("UnityWebRequest funcionou! Servidor respondeu!");
                 return true;
+            }
             else
+            {
+                Debug.Log("Thread.Sleep " + timeout + " a partir de agora...");
                 Thread.Sleep(timeout);
+                Debug.Log("Thread acordou!");
+            }
         }
 
         // Se o código chegou até aqui, a requisição web falhou

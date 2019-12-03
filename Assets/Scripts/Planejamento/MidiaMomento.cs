@@ -44,7 +44,7 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
     [SerializeField]
     private Text descricaoGameObject;
     [SerializeField]
-    private string minhaDescricao;
+    public string minhaDescricao;
 
 
     public void OnPointerClick(PointerEventData eventData)
