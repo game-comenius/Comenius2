@@ -190,8 +190,8 @@ namespace GameComenius.Dialogo
                     personagem.nome = "Madá";
                     break;
                 case Personagens.Antonia:
-                    nome = "Antonia";
-                    personagem.nome = "Antonia";
+                    nome = "Antônia";
+                    personagem.nome = "Antônia";
                     break;
                 case Personagens.Alice:
                     nome = "Alice";

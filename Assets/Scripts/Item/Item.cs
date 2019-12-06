@@ -42,7 +42,7 @@ public class Item
                 FullDescription = "Gravação do canto do pássaro no pátio da escola";
                 break;
             case ItemName.CameraPolaroid:
-                FriendlyName = "Camera Fotográfica Polaroid";
+                FriendlyName = "Câmera Fotográfica Polaroid";
                 Description = "Os alunos podem usar isso para tirar fotos durante a aula, só não sei se tem muito o que fotografar na sala de aula.";
                 FullDescription = "É um instrumento de captação de imagem estática para posterior impressão. Permite a captura de representações imagéticas do tempo histórico vivido. Seu uso pedagógico é de captar imagem e na elaboração de conteúdo aprendido. Como possui uma função bem específica sua linguagem se limita a uma linguagem visual de imagens, escolhidas pelos alunos ou professor pode ter um diferente enfoque, que permite uma variedade na linguagem visual.";
                 break;
