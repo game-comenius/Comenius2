@@ -8,10 +8,15 @@ public class CustomLurdinha : MonoBehaviour {
 
 	// Use this for initialization
 	private IEnumerator Start () {
-        settings = CustomGameSettings.LoadCustomGameSettings();
+        yield return StartCoroutine(CustomGameSettings.LoadAndUseSettings(SetSettings));
 
         yield return StartCoroutine(UpdateInventory());
 	}
+
+    private void SetSettings(CustomGameSettings newSettings)
+    {
+        settings = newSettings;
+    }
 
     // Estabelecer novamente quais são os itens no inventário da Lurdinha
     // Os items do jogo tradicional serão deletados e os items escolhidos

@@ -16,8 +16,11 @@ public class CustomConfigSalaDeAula : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        var settings = CustomGameSettings.LoadCustomGameSettings();
+        StartCoroutine(CustomGameSettings.LoadAndUseSettings(ConfigurarSalaDeAula));
+    }
 
+    private void ConfigurarSalaDeAula(CustomGameSettings settings)
+    {
         var professor = FindObjectOfType<TeacherScript>().gameObject;
         var classManager = FindObjectOfType<ClassManager>();
 

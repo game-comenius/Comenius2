@@ -39,8 +39,11 @@ public class CustomProfessor : MonoBehaviour
 
     void Start()
     {
-        var settings = CustomGameSettings.LoadCustomGameSettings();
+        StartCoroutine(CustomGameSettings.LoadAndUseSettings(ConfigurarProfessor));
+    }
 
+    private void ConfigurarProfessor(CustomGameSettings settings)
+    {
         professor = settings.Professor;
 
         introducaoAula = settings.introducaoAula;

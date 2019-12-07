@@ -219,8 +219,13 @@ public class SistemaDialogo : MonoBehaviour
 
         npcNome.text = faladorAtual.nome;
 
+        var balaoDeFala = painel.transform.GetChild(0).GetComponent<Image>();
         if (falaAtual.personagem == Personagens.Lurdinha)
         {
+            // Trocar a cor do balão de fala para verde, parecido com a
+            // cor verde do Whatsapp
+            balaoDeFala.color = new Color(0.7411765f, 0.945098f, 0.8196079f);
+
             personagemRosto[0].color = opacidade.Ligar();
             personagemRosto[0].sprite = faladorAtual.personagem;
             painel.transform.rotation = Quaternion.identity;
@@ -232,6 +237,9 @@ public class SistemaDialogo : MonoBehaviour
         }
         else
         {
+            // Trocar a cor do balão de fala para a original novamente
+            balaoDeFala.color = new Color(1, 1, 1);
+
             personagemRosto[1].color = opacidade.Ligar();
             personagemRosto[1].sprite = faladorAtual.personagem;
             painel.transform.rotation = Quaternion.Euler(0, 180, 0);

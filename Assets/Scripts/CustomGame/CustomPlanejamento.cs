@@ -13,7 +13,11 @@ public class CustomPlanejamento : MonoBehaviour {
         AnularQuestsParaIniciarPlanejamento();
         ZerarMidiasPadraoDoProfessor();
 
-        var s = CustomGameSettings.LoadCustomGameSettings();
+        StartCoroutine(CustomGameSettings.LoadAndUseSettings(ConfigurarPlanejamento));
+    }
+
+    private void ConfigurarPlanejamento(CustomGameSettings s)
+    {
         DefinirProcedimentos(s.Procedimento1, s.Procedimento2, s.Procedimento3);
         DefinirAgrupamentos(s.Agrupamento1, s.Agrupamento2, s.Agrupamento3);
     }
@@ -35,6 +39,8 @@ public class CustomPlanejamento : MonoBehaviour {
         {
             momento.initialItem = ItemName.SemNome;
             momento.AddItem(ItemName.SemNome);
+
+            momento.minhaDescricao = "";
         }
     }
 
