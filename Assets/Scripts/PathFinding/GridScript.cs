@@ -19,9 +19,7 @@ public class GridScript : MonoBehaviour
 
     [SerializeField] private float gridRotation;
 
-    [HideInInspector] [SerializeField] private string save;
-
-    public uint[] newVacancy = new uint[5];
+    [HideInInspector] public uint[] newVacancy = new uint[5];
 
     private void Awake()
     {
@@ -515,7 +513,7 @@ public class GridScript : MonoBehaviour
 
     #endregion 
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmos()//Selected()
     {
         Gizmos.color = gridColor;
 

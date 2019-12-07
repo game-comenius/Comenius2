@@ -210,6 +210,8 @@ public class PathFinder : MonoBehaviour
 
             while (newPosition != (Vector2)transform.position)
             {
+                transform.position = (Vector2)transform.position;
+
                 int frame = Mathf.FloorToInt(t / frameDuration);
 
                 if (frame > 3)
@@ -222,6 +224,8 @@ public class PathFinder : MonoBehaviour
                 spriteRenderer.sprite = sprites[frame];
 
                 transform.position = Vector3.Lerp(transform.position, newPosition, (velocity * Time.deltaTime) / (newPosition - (Vector2)transform.position).magnitude);
+
+                transform.position += new Vector3(0, 0, transform.position.y + footbaseOffset.y);
 
                 t += Time.deltaTime;
 

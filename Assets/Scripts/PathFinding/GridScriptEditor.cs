@@ -15,6 +15,8 @@ public class GridScriptEditor : Editor
 {
     static bool[,] vacancy;
 
+    static bool[,] vacancy2;
+
     Vector2Int gridDim;
 
     SerializedProperty gridDimSP;
@@ -45,6 +47,8 @@ public class GridScriptEditor : Editor
         {
             Debug.Log("Grid grande demais");
         }
+
+        vacancy2 = vacancy;
     }
 
     public override void OnInspectorGUI()
@@ -179,6 +183,13 @@ public class GridScriptEditor : Editor
             {
                 Debug.Log("Grid grande demais");
             }
+
+            if (vacancy2 != vacancy)
+            {
+                EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+            }
+
+            vacancy2 = vacancy;
 
             UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
         }
