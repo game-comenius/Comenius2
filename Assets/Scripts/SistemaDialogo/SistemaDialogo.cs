@@ -56,6 +56,12 @@ public class SistemaDialogo : MonoBehaviour
 
     private int dropdownIndex;
 
+    // Os balões de fala da Lurdinha tem uma cor diferente
+    // Esta aqui é um verde parecido com o verde do Whatsapp
+    // private static Color corDialogoLurdinha = new Color(0.7411765f, 0.945098f, 0.8196079f);
+    // Esta aqui é um azul
+    private static Color corDialogoLurdinha = new Color(0.8705882f, 0.9568627f, 0.9647059f);
+
     private string[] richText = new string[]
     {
         "<b>",
@@ -139,8 +145,6 @@ public class SistemaDialogo : MonoBehaviour
             {
                 personagemRosto[0].sprite = Falador.BuscarPolaroideNosAssets(_personagem, Expressao.Serio).personagem;
 
-                personagemRosto[0].transform.GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
-
                 i = dialogo.nodulos[nodulo].falas.Length;
             }
             else if (i + 1 == dialogo.nodulos[nodulo].falas.Length)
@@ -160,8 +164,6 @@ public class SistemaDialogo : MonoBehaviour
             if (_personagem != Personagens.Lurdinha)
             {
                 personagemRosto[1].sprite = Falador.BuscarPolaroideNosAssets(_personagem, Expressao.Serio).personagem;
-
-                personagemRosto[1].transform.GetChild(0).GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
 
                 i = dialogo.nodulos[nodulo].falas.Length;
             }
@@ -222,9 +224,8 @@ public class SistemaDialogo : MonoBehaviour
         var balaoDeFala = painel.transform.GetChild(0).GetComponent<Image>();
         if (falaAtual.personagem == Personagens.Lurdinha)
         {
-            // Trocar a cor do balão de fala para verde, parecido com a
-            // cor verde do Whatsapp
-            balaoDeFala.color = new Color(0.7411765f, 0.945098f, 0.8196079f);
+            // Trocar a cor do balão de fala para a cor que a Lurdinha usa
+            balaoDeFala.color = corDialogoLurdinha;
 
             personagemRosto[0].color = opacidade.Ligar();
             personagemRosto[0].sprite = faladorAtual.personagem;
