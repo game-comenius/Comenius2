@@ -39,6 +39,9 @@ public class CreateCustomGamePanel : MonoBehaviour {
 
     private EditarPoderMidiasScrollView[] editarPoderMidiasScrollViews;
 
+    [SerializeField]
+    private TMP_InputField tituloDaAula;
+
     private void Awake()
     {
         // Achar e catalogar todas as páginas do Panel, se o Panel tiver um
@@ -106,8 +109,8 @@ public class CreateCustomGamePanel : MonoBehaviour {
         CustomGameSettings settings = new CustomGameSettings();
         settings.Professor = SelectProfessorButton.CurrentlySelectedButton.Professor;
 
-        settings.nivelDeEnsino = dropdownNivelDeEnsino.NivelDeEnsinoSelecionado();
-        settings.areaDeConhecimento = dropdownAreaDeConhecimento.AreaDeConhecimentoSelecionada();
+        settings.nivelDeEnsino = dropdownNivelDeEnsino.NivelDeEnsinoSelecionado().valor;
+        settings.areaDeConhecimento = dropdownAreaDeConhecimento.AreaDeConhecimentoSelecionada().valor;
 
         settings.introducaoAula = introducaoAula.text;
         settings.descricaoMomento1 = descricaoMomento1.text;
@@ -123,6 +126,8 @@ public class CreateCustomGamePanel : MonoBehaviour {
         settings.Agrupamento3 = momento3.AgrupamentoSelecionado;
 
         settings.arrayMidiaPoderFeedbackPorMomento = MidiaPoderFeedback3Momentos();
+
+        settings.tituloDaAula = tituloDaAula.text;
 
         settings.SaveCustomGameSettingsToDisk();
     }

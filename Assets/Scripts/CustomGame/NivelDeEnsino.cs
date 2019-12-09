@@ -5,112 +5,134 @@ public sealed class NivelDeEnsino
 {
     public static readonly NivelDeEnsino EducacaoInfantil = new NivelDeEnsino
     (
+        0,
         "Educação Infantil",
-        new AreaDeConhecimento[]
+        new int[]
         {
-            AreaDeConhecimento.EuOutroNos,
-            AreaDeConhecimento.CorpoGestosMovimentos,
-            AreaDeConhecimento.TracosSonsCoresFormas,
-            AreaDeConhecimento.EscutaFalaPensamentoImaginacao,
-            AreaDeConhecimento.EspacosTemposQuantidadesRelacoesTransformacoes
+            AreaDeConhecimento.EuOutroNos.valor,
+            AreaDeConhecimento.CorpoGestosMovimentos.valor,
+            AreaDeConhecimento.TracosSonsCoresFormas.valor,
+            AreaDeConhecimento.EscutaFalaPensamentoImaginacao.valor,
+            AreaDeConhecimento.EspacosTemposQuantidadesRelacoesTransformacoes.valor
         }
     );
 
     public static readonly NivelDeEnsino FundamentalAnosIniciais = new NivelDeEnsino
     (
+        1,
         "Fundamental Anos Iniciais",
-        new AreaDeConhecimento[]
+        new int[]
         {
-            AreaDeConhecimento.LinguaPortuguesa,
-            AreaDeConhecimento.Artes,
-            AreaDeConhecimento.EducacaoFisica,
-            AreaDeConhecimento.Matematica,
-            AreaDeConhecimento.CienciasDaNatureza,
-            AreaDeConhecimento.Geografia,
-            AreaDeConhecimento.Historia,
-            AreaDeConhecimento.EnsinoReligioso
+            AreaDeConhecimento.LinguaPortuguesa.valor,
+            AreaDeConhecimento.Artes.valor,
+            AreaDeConhecimento.EducacaoFisica.valor,
+            AreaDeConhecimento.Matematica.valor,
+            AreaDeConhecimento.CienciasDaNatureza.valor,
+            AreaDeConhecimento.Geografia.valor,
+            AreaDeConhecimento.Historia.valor,
+            AreaDeConhecimento.EnsinoReligioso.valor
         }
     );
 
     public static readonly NivelDeEnsino FundamentalAnosFinais = new NivelDeEnsino
     (
+        2,
         "Fundamental Anos Finais",
-        new AreaDeConhecimento[]
+        new int[]
         {
-            AreaDeConhecimento.LinguaPortuguesa,
-            AreaDeConhecimento.Artes,
-            AreaDeConhecimento.EducacaoFisica,
-            AreaDeConhecimento.LinguaInglesa,
-            AreaDeConhecimento.Matematica,
-            AreaDeConhecimento.CienciasDaNatureza,
-            AreaDeConhecimento.Geografia,
-            AreaDeConhecimento.Historia,
-            AreaDeConhecimento.EnsinoReligioso
+            AreaDeConhecimento.LinguaPortuguesa.valor,
+            AreaDeConhecimento.Artes.valor,
+            AreaDeConhecimento.EducacaoFisica.valor,
+            AreaDeConhecimento.LinguaInglesa.valor,
+            AreaDeConhecimento.Matematica.valor,
+            AreaDeConhecimento.CienciasDaNatureza.valor,
+            AreaDeConhecimento.Geografia.valor,
+            AreaDeConhecimento.Historia.valor,
+            AreaDeConhecimento.EnsinoReligioso.valor
         }
     );
 
     public static readonly NivelDeEnsino EnsinoMedio = new NivelDeEnsino
     (
+        3,
         "Ensino Médio",
-        new AreaDeConhecimento[]
+        new int[]
         {
-            AreaDeConhecimento.LinguaPortuguesa,
-            AreaDeConhecimento.LinguagensSuasTecnologias,
-            AreaDeConhecimento.Matematica,
-            AreaDeConhecimento.CienciasDaNatureza,
-            AreaDeConhecimento.CienciasHumanas,
-            AreaDeConhecimento.CienciasSociaisAplicadas
+            AreaDeConhecimento.LinguaPortuguesa.valor,
+            AreaDeConhecimento.LinguagensSuasTecnologias.valor,
+            AreaDeConhecimento.Matematica.valor,
+            AreaDeConhecimento.CienciasDaNatureza.valor,
+            AreaDeConhecimento.CienciasHumanas.valor,
+            AreaDeConhecimento.CienciasSociaisAplicadas.valor
         }
     );
 
     public static readonly NivelDeEnsino EJA1 = new NivelDeEnsino
     (
+        4,
         "EJA 1.º Segmento",
-        new AreaDeConhecimento[]
+        new int[]
         {
-            AreaDeConhecimento.LinguaPortuguesa,
-            AreaDeConhecimento.Matematica,
-            AreaDeConhecimento.EstudosDaSociedadeDaNatureza
+            AreaDeConhecimento.LinguaPortuguesa.valor,
+            AreaDeConhecimento.Matematica.valor,
+            AreaDeConhecimento.EstudosDaSociedadeDaNatureza.valor
         }
     );
 
     public static readonly NivelDeEnsino EJA2 = new NivelDeEnsino
     (
+        5,
         "EJA 2.º Segmento",
-        new AreaDeConhecimento[]
+        new int[]
         {
-            AreaDeConhecimento.Artes,
-            AreaDeConhecimento.EducacaoFisica,
-            AreaDeConhecimento.Geografia,
-            AreaDeConhecimento.Historia,
-            AreaDeConhecimento.LinguaEstrangeira,
-            AreaDeConhecimento.LinguaPortuguesa,
-            AreaDeConhecimento.Matematica
+            AreaDeConhecimento.Artes.valor,
+            AreaDeConhecimento.EducacaoFisica.valor,
+            AreaDeConhecimento.Geografia.valor,
+            AreaDeConhecimento.Historia.valor,
+            AreaDeConhecimento.LinguaEstrangeira.valor,
+            AreaDeConhecimento.LinguaPortuguesa.valor,
+            AreaDeConhecimento.Matematica.valor
         }
     );
 
     public static readonly NivelDeEnsino EnsinoSuperior = new NivelDeEnsino
     (
+        6,
         "Ensino Superior",
-        new AreaDeConhecimento[]
+        new int[]
         {
-            AreaDeConhecimento.CienciasExatasDaTerra,
-            AreaDeConhecimento.CienciasBiologicas,
-            AreaDeConhecimento.Engenharias,
-            AreaDeConhecimento.CienciasDaSaude,
-            AreaDeConhecimento.CienciasAgrarias,
-            AreaDeConhecimento.CienciasSociaisAplicadas,
-            AreaDeConhecimento.CienciasHumanas,
-            AreaDeConhecimento.LinguagensSuasTecnologias,
-            AreaDeConhecimento.Artes
+            AreaDeConhecimento.CienciasExatasDaTerra.valor,
+            AreaDeConhecimento.CienciasBiologicas.valor,
+            AreaDeConhecimento.Engenharias.valor,
+            AreaDeConhecimento.CienciasDaSaude.valor,
+            AreaDeConhecimento.CienciasAgrarias.valor,
+            AreaDeConhecimento.CienciasSociaisAplicadas.valor,
+            AreaDeConhecimento.CienciasHumanas.valor,
+            AreaDeConhecimento.LinguagensSuasTecnologias.valor,
+            AreaDeConhecimento.Artes.valor
         }
     );
 
+    public readonly int valor;
     public readonly string nome;
-    public readonly AreaDeConhecimento[] areasDeConhecimento;
-
-    private NivelDeEnsino(string nome, AreaDeConhecimento[] areasDeConhecimento)
+    private readonly int[] areasDeConhecimento;
+    public AreaDeConhecimento[] AreasDeConhecimento
     {
+        get
+        {
+            var length = areasDeConhecimento.Length;
+            var returnValues = new AreaDeConhecimento[length];
+            for (int i = 0; i < length; i++)
+            {
+                returnValues[i] = AreaDeConhecimento.Get(areasDeConhecimento[i]);
+            }
+            return returnValues;
+        }
+    }
+
+    private NivelDeEnsino(int valor, string nome, int[] areasDeConhecimento)
+    {
+        this.valor = valor;
         this.nome = nome;
         this.areasDeConhecimento = areasDeConhecimento;
     }
@@ -128,6 +150,16 @@ public sealed class NivelDeEnsino
             EnsinoSuperior
         };
         return todosOsNiveisDeEnsino;
+    }
+
+    public static NivelDeEnsino Get(int valor)
+    {
+        foreach (var nivelDeEnsino in TodosOsNiveisDeEnsino())
+        {
+            if (valor == nivelDeEnsino.valor)
+                return nivelDeEnsino;
+        }
+        return null;
     }
 
     public static NivelDeEnsino Get(string nome)

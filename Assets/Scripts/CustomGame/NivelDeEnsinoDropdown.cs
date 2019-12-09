@@ -36,8 +36,8 @@ public class NivelDeEnsinoDropdown : MonoBehaviour {
     private void DefinirAreasDeConhecimento(int arg0)
     {
         var nivelDeEnsinoSelecionado = NivelDeEnsinoSelecionado();
-        var areas = nivelDeEnsinoSelecionado.areasDeConhecimento;
-        dropdownAreaDeConhecimento.DefinirItens(areas);
+        var areas = nivelDeEnsinoSelecionado.AreasDeConhecimento;
+        dropdownAreaDeConhecimento.DefinirItens(areas); 
     }
 
     public NivelDeEnsino NivelDeEnsinoSelecionado()
