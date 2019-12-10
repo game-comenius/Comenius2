@@ -63,9 +63,9 @@ public class CustomConfigSalaDeAula : MonoBehaviour
     private void ConfigurarFalasDoProfessorDuranteAula(ClassManager classManager, CustomGameSettings settings)
     {
         var paragrafos = new string[3];
-        paragrafos[0] = settings.descricaoMomento1;
-        paragrafos[1] = settings.descricaoMomento2;
-        paragrafos[2] = settings.descricaoMomento3;
+        paragrafos[0] = settings.DescricaoMomento1;
+        paragrafos[1] = settings.DescricaoMomento2;
+        paragrafos[2] = settings.DescricaoMomento3;
 
         // Adicionar falas ao diálogo do professor
         var falas = new GameComenius.Dialogo.Dialogo[paragrafos.Length];

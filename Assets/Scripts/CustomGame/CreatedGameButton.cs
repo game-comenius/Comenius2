@@ -8,6 +8,8 @@ public class CreatedGameButton : MonoBehaviour {
     [SerializeField]
     private TMP_Text tituloDaAula;
     [SerializeField]
+    private TMP_Text autor;
+    [SerializeField]
     private TMP_Text nivelDeEnsino;
     [SerializeField]
     private TMP_Text areaDeConhecimento;
@@ -18,14 +20,16 @@ public class CreatedGameButton : MonoBehaviour {
 
     public void Configure(CustomGameSettings settings)
     {
-        tituloDaAula.text = settings.tituloDaAula;
+        tituloDaAula.text = settings.TituloDaAula;
+
+        autor.text = "Autor(a): " + settings.Autor;
 
         var nivelDeEnsinoDesc = "Nível de Ensino: ";
-        nivelDeEnsinoDesc += NivelDeEnsino.Get(settings.nivelDeEnsino).nome;
+        nivelDeEnsinoDesc += NivelDeEnsino.Get(settings.NivelDeEnsino).nome;
         nivelDeEnsino.text = nivelDeEnsinoDesc;
 
         var areaDesc = "Área de Conhecimento: ";
-        areaDesc += AreaDeConhecimento.Get(settings.areaDeConhecimento).nome;
+        areaDesc += AreaDeConhecimento.Get(settings.AreaDeConhecimento).nome;
         areaDeConhecimento.text = areaDesc;
 
         professorImage.sprite = CharacterSpriteDatabase.SpriteSW(settings.Professor);

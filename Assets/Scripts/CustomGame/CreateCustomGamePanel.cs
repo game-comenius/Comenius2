@@ -41,6 +41,8 @@ public class CreateCustomGamePanel : MonoBehaviour {
 
     [SerializeField]
     private TMP_InputField tituloDaAula;
+    [SerializeField]
+    private TMP_InputField autorInputField;
 
     private void Awake()
     {
@@ -109,13 +111,13 @@ public class CreateCustomGamePanel : MonoBehaviour {
         CustomGameSettings settings = new CustomGameSettings();
         settings.Professor = SelectProfessorButton.CurrentlySelectedButton.Professor;
 
-        settings.nivelDeEnsino = dropdownNivelDeEnsino.NivelDeEnsinoSelecionado().valor;
-        settings.areaDeConhecimento = dropdownAreaDeConhecimento.AreaDeConhecimentoSelecionada().valor;
+        settings.NivelDeEnsino = dropdownNivelDeEnsino.NivelDeEnsinoSelecionado().valor;
+        settings.AreaDeConhecimento = dropdownAreaDeConhecimento.AreaDeConhecimentoSelecionada().valor;
 
-        settings.introducaoAula = introducaoAula.text;
-        settings.descricaoMomento1 = descricaoMomento1.text;
-        settings.descricaoMomento2 = descricaoMomento2.text;
-        settings.descricaoMomento3 = descricaoMomento3.text;
+        settings.IntroducaoAula = introducaoAula.text;
+        settings.DescricaoMomento1 = descricaoMomento1.text;
+        settings.DescricaoMomento2 = descricaoMomento2.text;
+        settings.DescricaoMomento3 = descricaoMomento3.text;
 
         settings.Procedimento1 = momento1.ProcedimentoSelecionado;
         settings.Procedimento2 = momento2.ProcedimentoSelecionado;
@@ -125,9 +127,10 @@ public class CreateCustomGamePanel : MonoBehaviour {
         settings.Agrupamento2 = momento2.AgrupamentoSelecionado;
         settings.Agrupamento3 = momento3.AgrupamentoSelecionado;
 
-        settings.arrayMidiaPoderFeedbackPorMomento = MidiaPoderFeedback3Momentos();
+        settings.ArrayMidiaPoderFeedbackPorMomento = MidiaPoderFeedback3Momentos();
 
-        settings.tituloDaAula = tituloDaAula.text;
+        settings.TituloDaAula = tituloDaAula.text;
+        settings.Autor = autorInputField.text;
 
         settings.SaveCustomGameSettingsToDisk();
     }

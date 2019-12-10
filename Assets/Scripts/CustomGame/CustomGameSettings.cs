@@ -22,14 +22,15 @@ public class CustomGameSettings {
     // Dados da tela customizar que serão salvos no disco
     public CharacterName Professor;
     public int localDaAula;
-    public int nivelDeEnsino;
-    public int areaDeConhecimento;
-    public string introducaoAula;
-    public string descricaoMomento1, descricaoMomento2, descricaoMomento3;
+    public int NivelDeEnsino;
+    public int AreaDeConhecimento;
+    public string IntroducaoAula;
+    public string DescricaoMomento1, DescricaoMomento2, DescricaoMomento3;
     public Procedimento Procedimento1, Procedimento2, Procedimento3;
     public Agrupamento Agrupamento1, Agrupamento2, Agrupamento3;
-    public CreateCustomGamePanel.MidiaPoderFeedback[][] arrayMidiaPoderFeedbackPorMomento;
-    public string tituloDaAula;
+    public CreateCustomGamePanel.MidiaPoderFeedback[][] ArrayMidiaPoderFeedbackPorMomento;
+    public string TituloDaAula;
+    public string Autor;
 
 
     // Deve ser usada sempre como uma Coroutine porque faz uma requisição web e
@@ -149,7 +150,7 @@ public class CustomGameSettings {
     {
         if (midiasDisponiveis != null) return midiasDisponiveis;
 
-        var a = arrayMidiaPoderFeedbackPorMomento[0];
+        var a = ArrayMidiaPoderFeedbackPorMomento[0];
         var quantidade = a.Length;
         var disponiveis = new ItemName[quantidade];
         for (int i = 0; i < quantidade; i++)

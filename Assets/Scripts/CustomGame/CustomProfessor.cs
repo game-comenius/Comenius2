@@ -46,10 +46,10 @@ public class CustomProfessor : MonoBehaviour
     {
         professor = settings.Professor;
 
-        introducaoAula = settings.introducaoAula;
-        descricaoMomento1 = settings.descricaoMomento1;
-        descricaoMomento2 = settings.descricaoMomento2;
-        descricaoMomento3 = settings.descricaoMomento3;
+        introducaoAula = settings.IntroducaoAula;
+        descricaoMomento1 = settings.DescricaoMomento1;
+        descricaoMomento2 = settings.DescricaoMomento2;
+        descricaoMomento3 = settings.DescricaoMomento3;
         DividirEInserirFalas();
 
         // Definir o meu sprite como o sprite do professor escolhido e na
