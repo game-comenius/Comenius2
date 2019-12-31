@@ -14,7 +14,7 @@ public class NpcDialogo : QuestScript
 
     public Dialogo[] dialogosSecundarios = new Dialogo[0];
 
-    public Vector3[] interactOffset = { new Vector3(0.85f, -1.08f) };  //= new Vector3[1];
+    [SerializeField] private Vector3[] interactOffset = { Vector3.zero };
 
     protected override void Start()
     {

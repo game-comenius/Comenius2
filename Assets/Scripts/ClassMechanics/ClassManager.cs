@@ -192,15 +192,13 @@ public class ClassManager : MonoBehaviour
         for (int i = 0; i < alunosComentaristas.Length; i++)
         {
             alunosComentaristas[i].aluno.gameObject.AddComponent<PolygonCollider2D>().enabled = false;
-            NpcDialogo d = alunosComentaristas[i].aluno.gameObject.AddComponent<NpcDialogo>();
+            NpcDialogo d = alunosComentaristas[i].aluno.gameObject.GetComponent<NpcDialogo>();
             alunosComentaristas[i].aluno.gameObject.AddComponent<DynamicCursor>();
 
             d.questInfo.isQuest = true;
             d.questInfo.questIndex = alunosComentaristas[i].questIndex;
 
             d.dialogoObrigatorio = false;
-
-            d.interactOffset = new Vector3[] { new Vector3(-1.25f, -0.75f) };
 
             if ( i <= 1)
             {
