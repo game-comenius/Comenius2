@@ -45,6 +45,7 @@ public class FolhaMapaGrande : MonoBehaviour {
         }
         else
         {
+            this.gameObject.SetActive(false);
             GetComponent<SceneLoader>().LoadNewScene(cena);
             return true;
         }

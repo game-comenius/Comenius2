@@ -14,7 +14,7 @@ public class ChooseCustomGamePanel : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        StartCoroutine(CustomGameSettings.LoadAndUseSettings(InitializePanel));
+        InitializePanel(CustomGameSettings.CurrentSettings);
     }
 
     private void InitializePanel(CustomGameSettings settings)

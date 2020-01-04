@@ -16,7 +16,7 @@ public class CustomConfigSalaDeAula : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        StartCoroutine(CustomGameSettings.LoadAndUseSettings(ConfigurarSalaDeAula));
+        ConfigurarSalaDeAula(CustomGameSettings.CurrentSettings);
     }
 
     private void ConfigurarSalaDeAula(CustomGameSettings settings)

@@ -8,7 +8,8 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using System;
 
-public class CreateCustomGamePanel : MonoBehaviour {
+public class CreateCustomGamePanel : MonoBehaviour
+{
 
     // struct útil para transferir as informações criadas para o disco
     // e depois resgatá-las para a memória durante o load de um jogo criado
@@ -110,6 +111,8 @@ public class CreateCustomGamePanel : MonoBehaviour {
         // Criar objeto para escrever no disco
         CustomGameSettings settings = new CustomGameSettings();
         settings.Professor = SelectProfessorButton.CurrentlySelectedButton.Professor;
+        // Alterar para a escolha do jogador
+        settings.Sala = SalaDeAula.Jean;
 
         settings.NivelDeEnsino = dropdownNivelDeEnsino.NivelDeEnsinoSelecionado().valor;
         settings.AreaDeConhecimento = dropdownAreaDeConhecimento.AreaDeConhecimentoSelecionada().valor;
@@ -132,7 +135,7 @@ public class CreateCustomGamePanel : MonoBehaviour {
         settings.TituloDaAula = tituloDaAula.text;
         settings.Autor = autorInputField.text;
 
-        settings.SaveCustomGameSettingsToDisk();
+        settings.SaveToDisk();
     }
 
     private MidiaPoderFeedback[][] MidiaPoderFeedback3Momentos()

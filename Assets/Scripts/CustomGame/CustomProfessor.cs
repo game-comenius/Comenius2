@@ -39,7 +39,7 @@ public class CustomProfessor : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(CustomGameSettings.LoadAndUseSettings(ConfigurarProfessor));
+        ConfigurarProfessor(CustomGameSettings.CurrentSettings);
     }
 
     private void ConfigurarProfessor(CustomGameSettings settings)

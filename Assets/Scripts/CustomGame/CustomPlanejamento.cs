@@ -13,7 +13,7 @@ public class CustomPlanejamento : MonoBehaviour {
         AnularQuestsParaIniciarPlanejamento();
         ZerarMidiasPadraoDoProfessor();
 
-        StartCoroutine(CustomGameSettings.LoadAndUseSettings(ConfigurarPlanejamento));
+        ConfigurarPlanejamento(CustomGameSettings.CurrentSettings);
     }
 
     private void ConfigurarPlanejamento(CustomGameSettings s)

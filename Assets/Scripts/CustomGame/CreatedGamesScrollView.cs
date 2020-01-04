@@ -11,7 +11,13 @@ public class CreatedGamesScrollView : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        StartCoroutine(CustomGameSettings.LoadAndUseSettings(AddCreatedGameButton));
+        StartCoroutine(CustomGameSettings.LoadAndUseAllSettings(AddCreatedGameButtons));
+    }
+
+    public void AddCreatedGameButtons(CustomGameSettings[] gameSettingsArray)
+    {
+        foreach (var gameSettings in gameSettingsArray)
+            AddCreatedGameButton(gameSettings);
     }
 
     public void AddCreatedGameButton(CustomGameSettings settings)
