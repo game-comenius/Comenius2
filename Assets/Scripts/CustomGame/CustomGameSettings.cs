@@ -62,6 +62,8 @@ public class CustomGameSettings {
         else
         {
             var response = request.downloadHandler.data;
+            // Se o servidor não tiver jogos para mostrar
+            if (response.Length == 0) yield break;
 
             string converted = Encoding.ASCII.GetString(response, 0, response.Length);
 
