@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using GameComenius.Dialogo;
+using System;
 
 [RequireComponent(typeof(DynamicCursor))]
 public class NpcDialogo : QuestScript
@@ -15,6 +16,15 @@ public class NpcDialogo : QuestScript
     public Dialogo[] dialogosSecundarios = new Dialogo[0];
 
     [SerializeField] private Vector3[] interactOffset = { Vector3.zero };
+
+
+    // Sistema para executar outras funções após o término do diálogo
+    // Por exemplo, o comenius aparece logo após o diálogo para falar algo
+    // para o jogador
+    // As funções que serão chamadas quando o diálogo terminar devem ser do
+    // tipo Action, ou seja, "retorno void e nenhum parâmetro, i.e., void ()"
+    public event Action OnEndDialogueEvent;
+
 
     protected override void Start()
     {
@@ -111,7 +121,7 @@ public class NpcDialogo : QuestScript
     {
         GameManager.UISendoUsada();
 
-        int i = Random.Range(0, dialogosSecundarios.Length);
+        int i = UnityEngine.Random.Range(0, dialogosSecundarios.Length);
 
         SistemaDialogo.sistemaDialogo.dialogo = dialogosSecundarios[i];
         SistemaDialogo.sistemaDialogo.ComecarDialogo(dialogosSecundarios[i].Clone(), this);
@@ -122,6 +132,11 @@ public class NpcDialogo : QuestScript
         QuestManager.SetQuestControl(questInfo.questIndex, true);
 
         ReavaliarTodasQuests();
+    }
+
+    public void OnEndDialogue()
+    {
+        if (OnEndDialogueEvent != null) OnEndDialogueEvent();
     }
 
     protected virtual void OnDrawGizmosSelected()

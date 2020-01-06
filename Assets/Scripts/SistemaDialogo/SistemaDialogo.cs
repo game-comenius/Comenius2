@@ -471,6 +471,7 @@ public class SistemaDialogo : MonoBehaviour
         if (npcDialogo != null)
         {
             npcDialogo.SetQuestControl();
+            npcDialogo.OnEndDialogue();
         }
         npcDialogo = null;
         personagemRosto[1].sprite = null;
