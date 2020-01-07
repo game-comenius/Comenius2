@@ -2270,7 +2270,54 @@ MonoBehaviour:
           isQuest: 0
           questIndex: {x: 0, y: 0}
           questDependencias: []
-    - falas: []
+    - falas:
+      - personagem: 0
+        emocao: 0
+        fala: 
+      - personagem: 6
+        emocao: 4
+        fala: Claro! Tem uma dica que eu tava pensando em te dar.
+      - personagem: 6
+        emocao: 2
+        fala: "Voc\xEA j\xE1 se deu conta que em cada momento da aula o professor
+          escolhe um tipo de <i>procedimento</i> diferente?"
+      - personagem: 0
+        emocao: 0
+        fala: "\xC9 verdade, para cada parte da aula existe um tipo de <i>procedimento</i>."
+      - personagem: 6
+        emocao: 4
+        fala: "Ent\xE3o, \xE9 muito importante voc\xEA se atentar a isso!"
+      - personagem: 6
+        emocao: 2
+        fala: "Para os procedimentos expositivos pode ser mais interessante usar m\xEDdias
+          que ajudem a expor os conte\xFAdos daquele momento, como os livros, o quadro
+          negro, transpar\xEAncias, ou v\xEDdeos."
+      - personagem: 6
+        emocao: 4
+        fala: "J\xE1 para os procedimentos de atividade, pode ser mais interessante
+          o uso de m\xEDdias que fa\xE7am os alunos colocar as m\xE3os na massa..."
+      - personagem: 6
+        emocao: 2
+        fala: "... como um cartaz em branco, jornais e revistas para colagem e pesquisa,
+          ou at\xE9 mesmo o caderno."
+      - personagem: 6
+        emocao: 0
+        fala: "\xC9 claro que isso tudo sempre vai variar conforme a perspectiva do
+          professor sobre o aprendizado, e tamb\xE9m sobre o conte\xFAdo que est\xE1
+          sendo trabalhado naquele momento de aula."
+      - personagem: 6
+        emocao: 2
+        fala: "Mas nunca deixe de reparar no tipo de procedimento antes de escolher
+          a m\xEDdia, ok?"
+      - personagem: 0
+        emocao: 4
+        fala: "Entendi! Muito obrigada pela sua ajuda, Ant\xF4nia!"
+      - personagem: 6
+        emocao: 2
+        fala: "Por nada, querida. Esse \xE9 o meu papel aqui na escola, viu?"
+      - personagem: 6
+        emocao: 4
+        fala: "At\xE9 mais!"
       respostas:
       - personagem: 0
         emocao: 0
@@ -2299,7 +2346,128 @@ MonoBehaviour:
           isQuest: 0
           questIndex: {x: 0, y: 0}
           questDependencias: []
-  dialogosSecundarios: []
+  dialogosSecundarios:
+  - nodulos:
+    - falas:
+      - personagem: 0
+        emocao: 0
+        fala: 
+      - personagem: 6
+        emocao: 2
+        fala: Lurdinha, bom te ver! Como foi a aula de ontem?
+      - personagem: 0
+        emocao: 4
+        fala: "Oi Ant\xF4nia, acho que aula foi bem!"
+      - personagem: 0
+        emocao: 2
+        fala: "Hoje estou ajudando o professor Vladmir com uma aula sobre revolu\xE7\xE3o
+          industrial."
+      - personagem: 6
+        emocao: 0
+        fala: "Interessante, ser\xE1 que posso te ajudar em alguma coisa?"
+      respostas:
+      - personagem: 0
+        emocao: 0
+        fala: "Ser\xE1 que voc\xEA pode me explicar um pouco mais sobre a escola?"
+        resumo: Sobre a escola
+        conexao: 1
+        questInfo:
+          isQuest: 0
+          questIndex: {x: 0, y: 0}
+          questDependencias: []
+      - personagem: 0
+        emocao: 0
+        fala: "Ser\xE1 que voc\xEA pode me explicar um pouco mais sobre a aula?"
+        resumo: Sobre a aula
+        conexao: 2
+        questInfo:
+          isQuest: 0
+          questIndex: {x: 0, y: 0}
+          questDependencias: []
+      - personagem: 0
+        emocao: 0
+        fala: "N\xE3o preciso de ajuda agora, muito obrigado."
+        resumo: "[Encerrar di\xE1logo]"
+        conexao: 0
+        questInfo:
+          isQuest: 0
+          questIndex: {x: 0, y: 0}
+          questDependencias: []
+    - falas:
+      - personagem: 0
+        emocao: 0
+        fala: 
+      - personagem: 6
+        emocao: 2
+        fala: "Claro! Voc\xEA viu que hoje de manh\xE3 o nosso laborat\xF3rio de tecnologias
+          foi aberto? L\xE1 voc\xEA vai poder modificar m\xEDdias."
+      - personagem: 0
+        emocao: 2
+        fala: Que interessante! Me conte mais.
+      - personagem: 6
+        emocao: 4
+        fala: "Claro querida. Por exemplo: se voc\xEA levar essas transpar\xEAncias
+          em branco que est\xE3o aqui em cima da mesa at\xE9 a Maria l\xE1 no laborat\xF3rio,
+          junto com alguma esp\xE9cie de conte\xFAdo que voc\xEA queira passar para
+          elas, ela vai poder modificar as transpar\xEAncias em branco e colocar o
+          conte\xFAdo nelas."
+      - personagem: 6
+        emocao: 2
+        fala: "Assim fica muito mais f\xE1cil de expor para os alunos imagens, tabelas,
+          gr\xE1ficos, linhas do tempo, ou outras coisas assim."
+      - personagem: 0
+        emocao: 4
+        fala: Entendi! Que bacana!
+      respostas: []
+    - falas:
+      - personagem: 0
+        emocao: 0
+        fala: 
+      - personagem: 6
+        emocao: 4
+        fala: Claro! Tem uma dica que eu tava pensando em te dar.
+      - personagem: 6
+        emocao: 2
+        fala: "Voc\xEA j\xE1 se deu conta que em cada momento da aula o professor
+          escolhe um tipo de <i>procedimento</i> diferente?"
+      - personagem: 0
+        emocao: 0
+        fala: "\xC9 verdade, para cada parte da aula existe um tipo de <i>procedimento</i>."
+      - personagem: 6
+        emocao: 4
+        fala: "Ent\xE3o, \xE9 muito importante voc\xEA se atentar a isso!"
+      - personagem: 6
+        emocao: 2
+        fala: "Para os procedimentos expositivos pode ser mais interessante usar m\xEDdias
+          que ajudem a expor os conte\xFAdos daquele momento, como os livros, o quadro
+          negro, transpar\xEAncias, ou v\xEDdeos."
+      - personagem: 6
+        emocao: 4
+        fala: "J\xE1 para os procedimentos de atividade, pode ser mais interessante
+          o uso de m\xEDdias que fa\xE7am os alunos colocar as m\xE3os na massa..."
+      - personagem: 6
+        emocao: 2
+        fala: "... como um cartaz em branco, jornais e revistas para colagem e pesquisa,
+          ou at\xE9 mesmo o caderno."
+      - personagem: 6
+        emocao: 0
+        fala: "\xC9 claro que isso tudo sempre vai variar conforme a perspectiva do
+          professor sobre o aprendizado, e tamb\xE9m sobre o conte\xFAdo que est\xE1
+          sendo trabalhado naquele momento de aula."
+      - personagem: 6
+        emocao: 2
+        fala: "Mas nunca deixe de reparar no tipo de procedimento antes de escolher
+          a m\xEDdia, ok?"
+      - personagem: 0
+        emocao: 4
+        fala: "Entendi! Muito obrigada pela sua ajuda, Ant\xF4nia!"
+      - personagem: 6
+        emocao: 2
+        fala: "Por nada, querida. Esse \xE9 o meu papel aqui na escola, viu?"
+      - personagem: 6
+        emocao: 4
+        fala: "At\xE9 mais!"
+      respostas: []
   interactOffset:
   - {x: 0.83, y: -1.19, z: 0}
 --- !u!212 &1264433671
