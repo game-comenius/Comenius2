@@ -10,8 +10,7 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
     [SerializeField]
     private NpcDialogo jean;
 
-    [SerializeField]
-    private TextMeshProUGUI texto;
+    private TextMeshProUGUI componenteTexto;
 
     [SerializeField]
     private JanelaMissoes janelaMissoes;
@@ -19,7 +18,7 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
     private readonly string[] falas =
     {
         "Muito bem Lurdinha! Agora que você falou com o professor Jean e já sabe sua missão, você pode consultá-la sempre que quiser aqui.",
-        "No momento você têm uma missão principal e pequenas tarefas que podem te ajudar na missão em questão. Clique nos tópicos para ver seus objetivos!",
+        "No momento você têm uma missão principal e pequenas tarefas que podem te ajudar na missão em questão. Clique no título da missão para ver seus objetivos específicos!",
         "Ótimo! Agora você pode ir até a sala multimeios onde te explicarei mais coisas. Te encontro lá!"
     };
 
@@ -35,19 +34,37 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
 
         backgroundFadeEffect = GetComponentInChildren<FadeEffect>();
 
+        componenteTexto = GetComponentInChildren<TextMeshProUGUI>();
+
         // Cadastrar função para ser invocada quando o diretor fechar o diálogo
         jean.OnEndDialogueEvent += Mostrar;
     }
 
     private void Mostrar()
     {
+        StartCoroutine(MostrarCoroutine());
+    }
+
+    private IEnumerator MostrarCoroutine()
+    {
         GameManager.UISendoUsada();
 
-        texto.text = falas[0];
-        canvas.enabled = true;
-
+        // Fade in do background escuro
         backgroundFadeEffect.MaxAlpha = 0.6f;
         StartCoroutine(backgroundFadeEffect.Fade());
+
+        canvas.enabled = true;
+
+        componenteTexto.text = falas[0];
+
+        // Posicionar o canvas da janela de missões sobre o este canvas
+        var mySortingOrder = GetComponentInChildren<Canvas>().sortingOrder;
+        janelaMissoes.GetComponentInChildren<Canvas>().sortingOrder = mySortingOrder + 1;
+
+        // Esperar o jogador abrir a janela de missões
+        yield return new WaitUntil(() => janelaMissoes.Aberta);
+
+        componenteTexto.text = falas[1];
 
         var coroutine = PermitirFecharApos(8);
         StartCoroutine(coroutine);

@@ -5,7 +5,7 @@ using UnityEngine;
 public class JanelaMissoes : MonoBehaviour {
 
 
-    private bool aberta;
+    public bool Aberta { get; set; }
     private RectTransform transformJanela;
     private Vector2 posicaoFechada;
     private Vector2 posicaoAberta;
@@ -19,8 +19,8 @@ public class JanelaMissoes : MonoBehaviour {
 
     public void Toggle()
     {
-        transformJanela.anchoredPosition = (aberta) ? posicaoFechada : posicaoAberta;
-        aberta = !aberta;
+        transformJanela.anchoredPosition = (Aberta) ? posicaoFechada : posicaoAberta;
+        Aberta = !Aberta;
     }
 	
 	// Update is called once per frame
