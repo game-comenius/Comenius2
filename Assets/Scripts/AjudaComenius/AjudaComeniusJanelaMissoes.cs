@@ -55,6 +55,8 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
 
         canvas.enabled = true;
 
+        TocarAudio();
+
         componenteTexto.text = falas[0];
 
         // Posicionar o canvas da janela de missões sobre o este canvas
@@ -89,4 +91,9 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
             StartCoroutine(Fechar());
     }
 
+    private void TocarAudio()
+    {
+        var source = GetComponent<AudioSource>();
+        source.Play();
+    }
 }

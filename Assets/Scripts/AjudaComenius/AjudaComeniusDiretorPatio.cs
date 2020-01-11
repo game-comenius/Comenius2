@@ -26,9 +26,12 @@ public class AjudaComeniusDiretorPatio : MonoBehaviour {
     private void Mostrar()
     {
         GameManager.UISendoUsada();
+
         canvas.enabled = true;
         backgroundFadeEffect.MaxAlpha = 0.6f;
         StartCoroutine(backgroundFadeEffect.Fade());
+
+        TocarAudio();
 
         var coroutine = PermitirFecharApos(8);
         StartCoroutine(coroutine);
@@ -51,5 +54,11 @@ public class AjudaComeniusDiretorPatio : MonoBehaviour {
     {
         if (permiteFechar && Input.anyKeyDown)
             StartCoroutine(Fechar());
+    }
+
+    private void TocarAudio()
+    {
+        var source = GetComponent<AudioSource>();
+        source.Play();
     }
 }
