@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AjudaComeniusJanelaMissoes : MonoBehaviour {
 
@@ -26,13 +27,16 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
 
     private Canvas canvas;
     private FadeEffect backgroundFadeEffect;
+    private FadeEffect focoBotaoDaJanela;
 
     // Use this for initialization
     private void Start()
     {
         canvas = GetComponentInChildren<Canvas>();
 
-        backgroundFadeEffect = GetComponentInChildren<FadeEffect>();
+        var fadeEffects = GetComponentsInChildren<FadeEffect>();
+        backgroundFadeEffect = fadeEffects[0];
+        focoBotaoDaJanela = fadeEffects[1];
 
         componenteTexto = GetComponentInChildren<TextMeshProUGUI>();
 
@@ -49,8 +53,11 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
     {
         GameManager.UISendoUsada();
 
+        // Alpha do background escuro para aumentar o foco do jogador
+        var alpha = 0.6f;
+
         // Fade in do background escuro
-        backgroundFadeEffect.MaxAlpha = 0.6f;
+        backgroundFadeEffect.MaxAlpha = alpha;
         StartCoroutine(backgroundFadeEffect.Fade());
 
         canvas.enabled = true;
@@ -59,12 +66,22 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
 
         componenteTexto.text = falas[0];
 
+        yield return new WaitForSeconds(1.5f);
+
         // Posicionar o canvas da janela de missões sobre o este canvas
         var mySortingOrder = GetComponentInChildren<Canvas>().sortingOrder;
         janelaMissoes.GetComponentInChildren<Canvas>().sortingOrder = mySortingOrder + 1;
 
+        janelaMissoes.Ativar();
+
+        // Focar no botão da janela de missões
+        focoBotaoDaJanela.MaxAlpha = alpha;
+        StartCoroutine(focoBotaoDaJanela.Fade());
+
         // Esperar o jogador abrir a janela de missões
         yield return new WaitUntil(() => janelaMissoes.Aberta);
+
+        StartCoroutine(focoBotaoDaJanela.Fade());
 
         componenteTexto.text = falas[1];
 

@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class JanelaMissoes : MonoBehaviour {
 
+    private static bool fezTutorial;
 
     public bool Aberta { get; set; }
     private RectTransform transformJanela;
@@ -15,6 +17,9 @@ public class JanelaMissoes : MonoBehaviour {
         transformJanela = transform.GetChild(0).GetChild(0).GetComponent<RectTransform>();
         posicaoFechada = transformJanela.anchoredPosition;
         posicaoAberta = new Vector2(32, 0);
+
+        if (fezTutorial)
+            GetComponentInChildren<Canvas>().enabled = true;
     }
 
     public void Toggle()
@@ -27,4 +32,10 @@ public class JanelaMissoes : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void Ativar()
+    {
+        fezTutorial = true;
+        var canvas = GetComponentInChildren<Canvas>().enabled = true;
+    }
 }
