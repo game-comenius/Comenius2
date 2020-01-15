@@ -113,52 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &106754655
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 106754656}
-  - component: {fileID: 106754657}
-  m_Layer: 0
-  m_Name: Grid
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &106754656
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 106754655}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.11, y: 3.18, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1903392614}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &106754657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 106754655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8056351885f5a76438866e79586deb59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gridColor: {r: 1, g: 0, b: 0, a: 1}
-  cellSize: {x: 0.5, y: 0.5}
-  cellAngle: 30
-  gridDim: {x: 27, y: 30}
-  gridRotation: 210
-  newVacancy: 0142b03e0000003c0000003800000630c001c63f0000c63f1008c63f1008063c113e063c1008063e1108063f1008863f0108c63f013ee63f0008f63f0108fe3f0000fc3f0000fe3fc000ff3fe0fbff3fe1fbff3fcbfbff3f87f3ff3f0ff8ff3f1ffcff3f3ffeff3f7fffff3f
 --- !u!1 &169208817
 GameObject:
   m_ObjectHideFlags: 0
@@ -6924,7 +6878,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 106754656}
+  - {fileID: 2141379855}
   - {fileID: 510568561}
   - {fileID: 781549735}
   - {fileID: 692971913}
@@ -7591,3 +7545,49 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4167545212279808, guid: 5b29e7b78647d4500abec5bb67ffab34,
     type: 2}
   m_PrefabInternal: {fileID: 2099584914}
+--- !u!1 &2141379854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2141379855}
+  - component: {fileID: 2141379856}
+  m_Layer: 0
+  m_Name: Grid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2141379855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2141379854}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.11, y: 3.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1903392614}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2141379856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2141379854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8056351885f5a76438866e79586deb59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellSize: {x: 0.5, y: 0.5}
+  cellAngle: 30
+  gridDim: {x: 27, y: 30}
+  gridRotation: 210
+  vacancy: 0142b03e0000003c0000003800000630c001c62f0000c62f0008c63f10080638113e063c0008063e1008063f1008863f0108c63f013ee63f0008f63f0108f63f0000fc3f0000fe3fc000ff3fe0fbff3fe1fbff3febfbff3f87f1ff3f0ff8ff3f1ffcff3f3ffeff3f7fffff3f
+  gridColor: {r: 1, g: 0, b: 0, a: 1}

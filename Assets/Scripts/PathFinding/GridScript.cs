@@ -13,11 +13,11 @@ public class GridScript : MonoBehaviour
 
     [SerializeField] private float cellAngle;
 
-    [SerializeField] private Vector2Int gridDim;
+    [SerializeField] private Vector2Int gridDim; //O nome desta var é usado no GridScriptEditor em gridDimSP = serializedObject.FindProperty("gridDim").
 
     [SerializeField] private float gridRotation;
 
-    [HideInInspector] public uint[] newVacancy = new uint[5];
+    [HideInInspector] [SerializeField] private uint[] vacancy = new uint[5]; //true = ocupado, false = livre. O nome desta var é usado no GridScriptEditor em vacancySP = serializedObject.FindProperty("vacancy").
 
     private void Awake()
     {
@@ -120,6 +120,11 @@ public class GridScript : MonoBehaviour
 
         return cell;
     }
+
+    public bool IsOccupied(Vector2Int position)
+    {
+        return (vacancy[position.x] & (uint)(1 << position.y)) == (uint)(1 << position.y);
+    }
     #endregion
 
     #region Path Finding
@@ -140,7 +145,7 @@ public class GridScript : MonoBehaviour
 
             paths.Add(new HeuristicTile(destino, origem));
 
-            if ((newVacancy[destino.x] & (uint)(1 << destino.y)) == (uint)(1 << destino.y)) 
+            if (IsOccupied(destino))  
             {
                 return UnavailableEnd(origem, paths);
             }
@@ -220,7 +225,7 @@ public class GridScript : MonoBehaviour
 
                     i--;
                 }
-                else if ((newVacancy[newPositions[i].x] & (uint)(1 << newPositions[i].y)) != (uint)(1 << newPositions[i].y))
+                else if (!IsOccupied(newPositions[i])) 
                 {
                     found = true;
 
@@ -237,7 +242,7 @@ public class GridScript : MonoBehaviour
             {
                 return null;
             }
-            else if ((newVacancy[positions[i].x] & (uint)(1 << positions[i].y)) != (uint)(1 << positions[i].y)) 
+            else if (!IsOccupied(positions[i])) 
             {
                 paths.Add(new HeuristicTile(positions[i], origem));                
             }
@@ -442,8 +447,7 @@ public class GridScript : MonoBehaviour
                     break;
             }
 
-            if (!tile.path.Contains(newPosition) && VerifyTileIsInGrid(newPosition) &&
-                (newVacancy[newPosition.x] & (uint)(1 << newPosition.y)) != (uint)(1 << newPosition.y))
+            if (!tile.path.Contains(newPosition) && VerifyTileIsInGrid(newPosition) && (!IsOccupied(newPosition))) 
             {
                 HeuristicTile newTile = new HeuristicTile(tile, destino);
 
@@ -522,7 +526,7 @@ public class GridScript : MonoBehaviour
             {
                 for (int i = 0; i < gridDim.x; i++)
                 {
-                    if ((newVacancy[i] & (uint)(1 << j)) == (uint)(1 << j)) 
+                    if (IsOccupied(new Vector2Int(i, j))) 
                     {
                         Gizmos.color = Color.red;
                     }
@@ -541,7 +545,7 @@ public class GridScript : MonoBehaviour
             {
                 for (int i = 0; i < gridDim.x; i++)
                 {
-                    if ((newVacancy[i] & (uint)(1 << j)) == (uint)(1 << j))
+                    if (IsOccupied(new Vector2Int(i, j)))
                     {
                         Gizmos.DrawSphere(CellR(new Vector2Int(i, j))[0], 0.1f);
                     }
