@@ -9,8 +9,6 @@ public class GridScript : MonoBehaviour
 {
     public static GridScript gridScript;
 
-    [SerializeField] private Color gridColor;
-
     [SerializeField] private Vector2 cellSize;
 
     [SerializeField] private float cellAngle;
@@ -31,12 +29,10 @@ public class GridScript : MonoBehaviour
         {
             Debug.Log("Há dois GridScripts");
         }
-
-        //Load();
     }
 
     #region Grid and transformations
-    public Vector2[] Cell(Vector2Int r_cell)
+    public Vector2[] Cell(Vector2Int r_cell) //Retorna as coordenadas distrocidas de: 0 - o centro da casa; 1,2,3,4 - os quatro cantos. A entrada são as coordenada da casa no grid. 
     {
         Vector2[] infos = new Vector2[5];
 
@@ -63,7 +59,7 @@ public class GridScript : MonoBehaviour
         return infos;
     }
 
-    public Vector2[] CellR(Vector2Int r_cell)
+    public Vector2[] CellR(Vector2Int r_cell) //Retorna as coordenadas ortogonais aos eixos do mundo real de: 0 - o centro da casa; 1,2,3,4 - os quatro cantos. A entrada são as coordenada da casa no grid.
     {
         Vector2[] infos = new Vector2[5];
 
@@ -90,7 +86,7 @@ public class GridScript : MonoBehaviour
         return infos;
     }
 
-    public Vector2 Regression(Vector2 position)
+    public Vector2 Regression(Vector2 position) //Retorna as coordenadas de um ponto no grid reta apartir das suas coordenadas no grid distorcido
     {
         Vector2 regression = Vector2.zero;
 
@@ -110,7 +106,7 @@ public class GridScript : MonoBehaviour
         return regression;
     }
 
-    public Vector2Int P2G(Vector2 point)
+    public Vector2Int P2G(Vector2 point) //Retora as coordenadas do grid de um ponto de coordenadas não distorcidas.
     {
         Vector2Int cell = Vector2Int.zero;
 
@@ -124,48 +120,11 @@ public class GridScript : MonoBehaviour
 
         return cell;
     }
-
-    //public void Load()
-    //{
-    //    if (File.Exists(Application.streamingAssetsPath + save))
-    //    {
-    //        BinaryFormatter bf = new BinaryFormatter();
-
-    //        FileStream file = File.Open(Application.streamingAssetsPath + save, FileMode.Open);
-
-    //        vacancy = bf.Deserialize(file) as bool[,];
-
-    //        file.Close();
-
-    //        newVacancy = new uint[vacancy.GetLength(0)];
-
-    //        if (vacancy.GetLength(1) <= 32)
-    //        {
-    //            for (int i = 0; i < vacancy.GetLength(0); i++)
-    //            {
-    //                for (int j = 0; j < vacancy.GetLength(1); j++)
-    //                {
-    //                    if (vacancy[i, j])
-    //                    {
-    //                        newVacancy[i] = (newVacancy[i] | (uint)(1 << j));
-    //                    }
-    //                }
-    //            }
-    //        }
-    //        else
-    //        {
-    //            Debug.Log("Grid grande demais");
-    //        }
-
-    //        //UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(UnityEditor.SceneManagement.EditorSceneManager.GetActiveScene());
-    //    }
-    //}
-
     #endregion
 
     #region Path Finding
 
-    //a nálise é feita de forma reversa, não da origam ao destino mas do destino à origem
+    //a nálise é feita de forma reversa, não da origem ao destino mas do destino à origem
     public List<Vector2Int> FindPath(Vector3 _origemWorldpoint, Vector3 _destinoWorldPoint)
     {
         Vector2Int origem = P2G(_origemWorldpoint);
@@ -511,7 +470,11 @@ public class GridScript : MonoBehaviour
         return (newPosition.x >= 0 && newPosition.x < gridScript.gridDim.x && newPosition.y >= 0 && newPosition.y < gridScript.gridDim.y);
     }
 
-    #endregion 
+    #endregion
+
+    #region Gizmos
+    #if UNITY_EDITOR
+    [SerializeField] private Color gridColor;
 
     private void OnDrawGizmos()//Selected()
     {
@@ -590,4 +553,6 @@ public class GridScript : MonoBehaviour
 
         }
     }
+    #endif
+    #endregion
 }
