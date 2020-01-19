@@ -8,7 +8,7 @@ public class PathFinder : MonoBehaviour
 
     [SerializeField] private Vector3 footbaseOffset = Vector3.zero;
 
-    private List<Vector2Int> path = null;
+    private List<Vector2Int> path = null; //O path é armazenado de trás para frente, ou seja, path[0] é o destino e path[path.Count - 1] é a casa em que a Lurdinha está ou para qual ela está indo.
 
     [Range(0.01f, 0.7f)] [SerializeField] private float frameDuration = 0.1f;
 
@@ -16,71 +16,62 @@ public class PathFinder : MonoBehaviour
 
     [SerializeField] private SpriteRenderer spriteRenderer = null;
 
-    [SerializeField] Sprite forward = null;
+    //Sprites para a Lurdinha parada.
+    [SerializeField] private Sprite forward = null;
 
-    [SerializeField] Sprite backward = null;
+    [SerializeField] private Sprite backward = null;
 
-    [SerializeField] Sprite left = null;
+    [SerializeField] private Sprite left = null;
 
-    [SerializeField] Sprite right = null;
+    [SerializeField] private Sprite right = null;
 
-    [SerializeField] Sprite[] walkForward = new Sprite[4];
+    //Sprites para a Lurdinha andando
+    [SerializeField] private Sprite[] walkForward = new Sprite[4];
 
-    [SerializeField] Sprite[] walkBackward = new Sprite[4];
+    [SerializeField] private Sprite[] walkBackward = new Sprite[4];
 
-    [SerializeField] Sprite[] walkLeft = new Sprite[4];
+    [SerializeField] private Sprite[] walkLeft = new Sprite[4];
 
-    [SerializeField] Sprite[] walkRight = new Sprite[4];
+    [SerializeField] private Sprite[] walkRight = new Sprite[4];
 
-    Coroutine coroutine = null;
+    private Coroutine walkCoroutine = null; 
 
     private Vector3[] lookTo = null;
 
     public delegate void GotToInteractable();
 
-    private static event GotToInteractable gotToInteractable;
+    private static event GotToInteractable gotToInteractable; //Ações que vai ocorrer quando a Lurdinha chegar ao destino.
+
+    private bool uiFoiUsada = false; //Server para guardar o estado da var GameManager.uiSendoUsada da frame anterior.
 
     public bool hasTarget = false;
-
-    private bool uiFoiUsada = false;
-
-    private void Awake()
-    {
-        _camera = FindObjectOfType<Camera>();
-    }
 
     private void Start()
     {
         StartCoroutine(WalkDecision());
     }
 
-    private void LateUpdate()
+    private void LateUpdate() //Só é recebida a ordem da movimentação no LateUpdate, para que um objeto interagível (ex.: porta, diálogo) possa mandar uma ordem no Update.
     {
-        if (!GameManager.uiSendoUsada && !uiFoiUsada && !hasTarget)
+        if (!GameManager.uiSendoUsada && !uiFoiUsada && !hasTarget) //É verificado se a UI está sendo usada para não ser ativado durante o uso da UI,se foi usada na última frame para não ser ativado ao se fechar a UI
         {
             if(Input.GetMouseButtonUp(0))
             {
-                if (coroutine == null)
+                if (walkCoroutine == null)
                 {
                     NullifyGotToInteractable();
 
-                    //.DateTime t = System.DateTime.UtcNow;
-
-                    if (_camera == null)
+                    if (_camera == null) //É verificada a camera porque sempre que se mudar de cena haverá uma nova câmera. Isso só preciso pois a Lurdinha vai para o DontDestroyOnLoad e as câmeras não.
                     {
                         _camera = Camera.main;
                     }
 
                     path = GridScript.gridScript.FindPath(transform.position + footbaseOffset, _camera.ScreenToWorldPoint(Input.mousePosition));
 
-                    if (path == null)
+                    if (path == null) //Caso não haja um path, quer dizer que o destino é onde a Lurdinha já está e ela apenas irá virar para a direção do clique.
                     {
                         Turn(_camera.ScreenToWorldPoint(Input.mousePosition));
                     }
-
-                    //System.TimeSpan s = System.DateTime.UtcNow - t;
-
-                    //Debug.Log(s.TotalMilliseconds + " ms");
                 }
                 else
                 {
@@ -92,11 +83,9 @@ public class PathFinder : MonoBehaviour
         }
 
         uiFoiUsada = GameManager.uiSendoUsada;
-
-        hasTarget = false;
     }
 
-    public void NullifyGotToInteractable()
+    public void NullifyGotToInteractable() 
     {
         gotToInteractable -= gotToInteractable;
     }
@@ -161,16 +150,17 @@ public class PathFinder : MonoBehaviour
         }
     }
 
+    //Esse método será usado quando a lurdinha já estiver andando e for escolhida um novo destino. Então ela andará até a próxima casa e fará o novo caminho.
     private IEnumerator WaitFor()
     {
-        if (path.Count > 1)
+        if (path.Count > 1) //path.Count deve ser maior que 1. Se não for, indica que a próxima casa á é a última.
         {
             path.RemoveRange(0, path.Count - 2);
         }
 
         Vector3 pointer = _camera.ScreenToWorldPoint(Input.mousePosition);
 
-        yield return new WaitUntil(() => coroutine == null);
+        yield return new WaitUntil(() => walkCoroutine == null);
 
         if (_camera == null)
         {
@@ -189,7 +179,7 @@ public class PathFinder : MonoBehaviour
     {
         yield return new WaitWhile(() => path == null);
 
-        coroutine = StartCoroutine(Walk());
+        walkCoroutine = StartCoroutine(Walk());
     }
 
     private IEnumerator Walk()
@@ -301,20 +291,8 @@ public class PathFinder : MonoBehaviour
 
         StartCoroutine(WalkDecision());
 
-        coroutine = null;
+        walkCoroutine = null;
     }
-
-    //public void WalkToInteractable(Vector3[] _destinoWorldPoint)
-    //{        
-    //    path = GridScript.gridScript.FindPathToInteractable(transform.position + footbaseOffset, _destinoWorldPoint);
-
-    //    if (path == null)
-    //    {
-    //        path = new List<Vector2Int>();
-    //    }
-
-    //    lookTo = _destinoWorldPoint;
-    //}
 
     public void WalkToInteractable(Vector3[] _destinoWorldPoint, GotToInteractable _event)
     {
@@ -330,7 +308,7 @@ public class PathFinder : MonoBehaviour
             path.RemoveRange(0, path.Count - 2);
         }
 
-        yield return new WaitUntil(() => coroutine == null);
+        yield return new WaitUntil(() => walkCoroutine == null);
 
         if (_camera == null)
         {
@@ -347,7 +325,7 @@ public class PathFinder : MonoBehaviour
         }
     }
 
-
+    //Desenha no grid reto e no distorcido o caminho a ser feito.
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.cyan;

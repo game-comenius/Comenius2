@@ -17,7 +17,7 @@ public class HeuristicTile
     {
         get
         {
-            return 10 * path.Count + 10 * directionChanges;
+            return path.Count + directionChanges;
         }
     }
 
@@ -25,7 +25,7 @@ public class HeuristicTile
     {
         get
         {
-            return 10 * path.Count + 5 * (directionChanges * directionChanges) + 15 * distToGoal;
+            return (path.Count + distToGoal + directionChanges * directionChanges);
         }
     }
 
@@ -53,6 +53,6 @@ public class HeuristicTile
 
     public void CalculateDistToGoal(Vector2Int pathGoal)
     {
-        distToGoal = Mathf.Abs(pathGoal.x - path[path.Count - 1].x) + Mathf.Abs(pathGoal.y - path[path.Count - 1].y);
+        distToGoal = ((pathGoal.x - path[path.Count - 1].x) * (pathGoal.x - path[path.Count - 1].x)) + ((pathGoal.y - path[path.Count - 1].y) * (pathGoal.y - path[path.Count - 1].y));
     }
 }

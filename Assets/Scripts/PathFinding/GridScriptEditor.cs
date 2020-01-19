@@ -13,11 +13,9 @@ using UnityEditor;
 [CustomEditor(typeof(GridScript))]
 public class GridScriptEditor : Editor
 {
-    static bool[,] vacancy;
+    static bool[,] vacancy; //Guarda os valores de GridScript.vacancy para ser manipulados mais facilmente usando EditorGUILayout.Toggle 
 
-    static bool[,] vacancy2;
-
-    Vector2Int gridDim;
+    SerializedProperty vacancySP;
 
     SerializedProperty gridDimSP;
 
@@ -27,11 +25,9 @@ public class GridScriptEditor : Editor
     {
         gridDimSP = serializedObject.FindProperty("gridDim");
 
-        gridDim = gridDimSP.vector2IntValue;
+        vacancySP = serializedObject.FindProperty("vacancy");
 
-        //(serializedObject.targetObject as GridScript).Load();
-
-        vacancy = new bool[gridDim.x, gridDim.y];
+        vacancy = new bool[gridDimSP.vector2IntValue.x, gridDimSP.vector2IntValue.y];
 
         if (vacancy.GetLength(1) <= 32)
         {
@@ -39,7 +35,7 @@ public class GridScriptEditor : Editor
             {
                 for (int j = 0; j < vacancy.GetLength(1); j++)
                 {
-                    vacancy[i, j] = ((target as GridScript).newVacancy[i] & (uint)(1 << j)) == (uint)(1 << j);
+                    vacancy[i, j] = (target as GridScript).IsOccupied(new Vector2Int(i, j));
                 }
             }
         }
@@ -47,8 +43,6 @@ public class GridScriptEditor : Editor
         {
             Debug.Log("Grid grande demais");
         }
-
-        vacancy2 = vacancy;
     }
 
     public override void OnInspectorGUI()
@@ -63,7 +57,8 @@ public class GridScriptEditor : Editor
 
         if (open)
         {
-            if (vacancy != null)
+            //Desenha o grid no Inspector.
+            if (vacancy != null && vacancy.GetLength(0) != 0 && vacancy.GetLength(1) != 0)
             {
                 EditorGUILayout.BeginHorizontal();
                 {
@@ -92,19 +87,30 @@ public class GridScriptEditor : Editor
 
                 GUILayout.Space(15);
             }
+            else
+            {
+                GUILayout.Space(10);
 
+                string text = "   A variável \"vacancy\" tem valor nulo.\n   Verifique se a variável \"gridDim\" ou \"Grid Dim\" tem\n   tanto \"X\" como \"Y\" maiores que zero e aperte o botão \"Reset\"";
+
+                GUILayout.Label(new GUIContent { text = text });
+
+                GUILayout.Space(5);
+            }
+
+            //Botões e funcionalidades no Inspector
             EditorGUILayout.BeginHorizontal();
             {
                 if (GUILayout.Button("Reset", GUILayout.Width(45)))
                 {
-                    vacancy = new bool[gridDim.x, gridDim.y];
+                    vacancy = new bool[gridDimSP.vector2IntValue.x, gridDimSP.vector2IntValue.y];
                 }
 
                 GUILayout.Label("", GUILayout.Width(15));
 
                 if (GUILayout.Button("-", GUILayout.Width(20)))
                 {
-                    gridDimSP.vector2IntValue = new Vector2Int(gridDim.x - 1, gridDim.y);
+                    gridDimSP.vector2IntValue = gridDimSP.vector2IntValue + Vector2Int.left;
                 }
 
                 GUIStyle style = GUI.skin.button;
@@ -115,153 +121,75 @@ public class GridScriptEditor : Editor
 
                 if (GUILayout.Button("+", GUILayout.Width(20)))
                 {
-                    gridDimSP.vector2IntValue = new Vector2Int(gridDim.x + 1, gridDim.y);
+                    gridDimSP.vector2IntValue = gridDimSP.vector2IntValue + Vector2Int.right;
                 }
 
                 GUILayout.Label("", GUILayout.Width(15));
 
                 if (GUILayout.Button("-", GUILayout.Width(20)))
                 {
-                    gridDimSP.vector2IntValue = new Vector2Int(gridDim.x, gridDim.y - 1);
+                    gridDimSP.vector2IntValue = gridDimSP.vector2IntValue + Vector2Int.down;
                 }
 
                 GUILayout.Label("Y", style, GUILayout.Width(20));
 
                 if (GUILayout.Button("+", GUILayout.Width(20)))
                 {
-                    gridDimSP.vector2IntValue = new Vector2Int(gridDim.x, gridDim.y + 1);
+                    gridDimSP.vector2IntValue = gridDimSP.vector2IntValue + Vector2Int.up;
                 }
 
                 GUILayout.Label("", GUILayout.Width(15));
-
-                //if (GUILayout.Button("Save", GUILayout.Width(45)))
-                //{
-                //    Save();
-                //}
-
-                //if (GUILayout.Button("Load", GUILayout.Width(45)))
-                //{
-                //    (serializedObject.targetObject as GridScript).Load();
-                //}
             }
             EditorGUILayout.EndHorizontal();
 
             GUILayout.Space(20);
 
-            if (gridDim != gridDimSP.vector2IntValue)
+            //Atualizações do grid
+            if (vacancy != null)
             {
-                vacancy = new bool[gridDimSP.vector2IntValue.x, gridDimSP.vector2IntValue.y];
-
-                for (int j = 0; j < Mathf.Min(gridDim.y, vacancy.GetLength(1)); j++)
+                if (new Vector2Int(vacancy.GetLength(0), vacancy.GetLength(1)) != gridDimSP.vector2IntValue)
                 {
-                    for (int i = 0; i < Mathf.Min(gridDim.x, vacancy.GetLength(0)); i++)
+                    Vector2Int oldSize = new Vector2Int(vacancy.GetLength(0), vacancy.GetLength(1));
+
+                    vacancy = new bool[gridDimSP.vector2IntValue.x, gridDimSP.vector2IntValue.y];
+
+                    for (int j = 0; j < Mathf.Min(oldSize.y, vacancy.GetLength(1)); j++)
                     {
-                        vacancy[i, j] = ((target as GridScript).newVacancy[i] & (uint)(1 << j)) == (uint)(1 << j);
-                    }
-                }
-
-                gridDim = gridDimSP.vector2IntValue;
-            }
-
-            (target as GridScript).newVacancy = new uint[vacancy.GetLength(0)];
-
-
-            if (vacancy.GetLength(1) <= 32)
-            {
-                for (int i = 0; i < vacancy.GetLength(0); i++)
-                {
-                    for (int j = 0; j < vacancy.GetLength(1); j++)
-                    {
-                        if (vacancy[i, j])
+                        for (int i = 0; i < Mathf.Min(oldSize.x, vacancy.GetLength(0)); i++)
                         {
-                            (target as GridScript).newVacancy[i] = ((target as GridScript).newVacancy[i] | (uint)(1 << j));
+                            vacancy[i, j] = (target as GridScript).IsOccupied(new Vector2Int(i, j));
                         }
                     }
                 }
-            }
-            else
-            {
-                Debug.Log("Grid grande demais");
-            }
 
-            if (vacancy2 != vacancy)
-            {
-                EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
-            }
+                vacancySP.ClearArray();
 
-            vacancy2 = vacancy;
+                vacancySP.arraySize = vacancy.GetLength(0);
+
+                if (vacancy.GetLength(1) <= 32)
+                {
+                    for (int i = 0; i < vacancy.GetLength(0); i++)
+                    {
+                        for (int j = 0; j < vacancy.GetLength(1); j++)
+                        {
+                            if (vacancy[i, j])
+                            {
+                                vacancySP.GetArrayElementAtIndex(i).intValue = (vacancySP.GetArrayElementAtIndex(i).intValue | (1 << j));
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    Debug.Log("Grid grande demais");
+                }
+            }
 
             UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
         }
 
-        if (serializedObject.FindProperty("save") != null)
-        {
-            EditorGUILayout.LabelField(serializedObject.FindProperty("save").stringValue);
-        }
-
         serializedObject.ApplyModifiedProperties();
     }
-
-    //private void Save()
-    //{
-    //    string path = (serializedObject.targetObject as GridScript).gameObject.scene.path;
-
-    //    path = path.Substring(0, path.LastIndexOf('.'));
-
-    //    string name = path.Substring(path.LastIndexOf('/') + 1);
-
-    //    path = path.Substring(0, path.LastIndexOf('/'));
-
-    //    string mission = path.Substring(path.LastIndexOf('/') + 1);
-
-    //    path = path.Substring(0, path.LastIndexOf('/'));
-
-    //    path = "/Grids/" + mission + "/" + name + ".txt";
-
-    //    BinaryFormatter bf = new BinaryFormatter();
-
-    //    FileStream file = File.Create(Application.streamingAssetsPath + path);
-
-    //    bf.Serialize(file, vacancy);
-
-    //    file.Close();
-
-    //    SerializedProperty sp = serializedObject.FindProperty("save");
-
-    //    sp.stringValue = path;
-
-    //    serializedObject.ApplyModifiedProperties();
-    //}
-
-    //private void Load()
-    //{
-    //    if (File.Exists(Application.streamingAssetsPath + serializedObject.FindProperty("save").stringValue))
-    //    {
-    //        BinaryFormatter bf = new BinaryFormatter();
-
-    //        FileStream file = File.Open(Application.streamingAssetsPath + serializedObject.FindProperty("save").stringValue, FileMode.Open);
-
-    //        vacancy = bf.Deserialize(file) as bool[,];
-
-    //        file.Close();
-    //    }
-    //}
-
-    //private static void Load(SerializedObject so)
-    //{
-    //    if (File.Exists(so.FindProperty("save").stringValue))
-    //    {
-    //        BinaryFormatter bf = new BinaryFormatter();
-
-    //        FileStream file = File.Open(so.FindProperty("save").stringValue, FileMode.Open);
-
-    //        vacancy = bf.Deserialize(file) as bool[,];
-
-    //        file.Close();
-
-    //        (so.targetObject as GridScript).vacancy = vacancy;
-    //    }
-    //}
 }
 
 #endif
