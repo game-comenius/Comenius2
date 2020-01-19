@@ -27,7 +27,7 @@ public class GridScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("Há dois GridScripts");
+            Destroy(this.gameObject);
         }
     }
 
@@ -106,7 +106,7 @@ public class GridScript : MonoBehaviour
         return regression;
     }
 
-    public Vector2Int P2G(Vector2 point) //Retora as coordenadas do grid de um ponto de coordenadas não distorcidas.
+    public Vector2Int P2G(Vector2 point) //Retorna as coordenadas do grid de um ponto de coordenadas não distorcidas.
     {
         Vector2Int cell = Vector2Int.zero;
 
@@ -121,15 +121,14 @@ public class GridScript : MonoBehaviour
         return cell;
     }
 
-    public bool IsOccupied(Vector2Int position)
+    public bool IsOccupied(Vector2Int position) //Retorna se uma determinada casa, de coordenadas "position", está ocupada (true) ou não (false).
     {
         return (vacancy[position.x] & (uint)(1 << position.y)) == (uint)(1 << position.y);
     }
     #endregion
 
     #region Path Finding
-
-    //a nálise é feita de forma reversa, não da origem ao destino mas do destino à origem
+    //a nálise é feita de forma reversa, não da origem ao destino mas do destino à origem.
     public List<Vector2Int> FindPath(Vector3 _origemWorldpoint, Vector3 _destinoWorldPoint)
     {
         Vector2Int origem = P2G(_origemWorldpoint);
@@ -156,7 +155,112 @@ public class GridScript : MonoBehaviour
         }
     }
 
-    public List<Vector2Int> FindPathToInteractable(Vector3 _origemWorldpoint, Vector3[] _destinoWorldPoint)
+    private List<Vector2Int> UnavailableEnd(Vector2Int origem, List<HeuristicTile> paths) //Quando o destino da Lurdinha é uma casa já ocupada.
+    {
+        bool[,] wasAnalysed = new bool[gridDim.x, gridDim.y]; //Ter persistencia de quais casas já foram analisadas.
+
+        wasAnalysed[paths[0].path[0].x, paths[0].path[0].y] = true; //paths[0].path[0] é a casa destino, já sabemos que elas é uma casa ocupada, então ela já foi analisada.
+
+        List<Vector2Int> positions = new List<Vector2Int>(); //Lista de casas que serão analisadas.
+
+        positions.Add(paths[0].path[0]);
+
+        paths.RemoveAt(0);
+
+        bool found = false;
+
+        while (!found)
+        {
+            List<Vector2Int> newPositions = new List<Vector2Int>(); //Guardar e trabalhos com as novas possível posições.
+
+            while (positions.Count > 0) //Gera as novas posições
+            {
+                newPositions.AddRange(NewPositionsUnavailableEnd(positions[0]));
+
+                positions.RemoveAt(0);
+            }
+
+            for (int i = 0; i < newPositions.Count - 1; i++) //Verifica se há posições duplicadas e as remove
+            {
+                for (int j = i + 1; j < newPositions.Count; j++)
+                {
+                    if (newPositions[i] == newPositions[j])
+                    {
+                        newPositions.RemoveAt(j);
+
+                        j--;
+                    }
+                }
+            }
+
+            for (int i = 0; i < newPositions.Count; i++)
+            {
+                if (wasAnalysed[newPositions[i].x, newPositions[i].y]) //Verifica se essa casa já foi analisada.
+                {
+                    newPositions.RemoveAt(i);
+
+                    i--;
+                }
+                else if (!IsOccupied(newPositions[i])) //Verifica se alguma das casas pode ser ocupada pela Lurdinha.
+                {
+                    found = true;
+
+                    i = newPositions.Count;
+                }
+            }
+
+            positions.AddRange(newPositions);
+        }
+
+        for (int i = 0; i < positions.Count; i++)
+        {
+            if (positions[i] == origem) //Verifica se alguma das casas é onde a Lurdinha está.
+            {
+                return null;
+            }
+            else if (!IsOccupied(positions[i])) //Adiciona as casas que Lurdinha pode ocupar à lista paths.
+            {
+                paths.Add(new HeuristicTile(positions[i], origem));                
+            }
+        }
+
+        return AvailableEnd(origem, paths); //Tendo os possíveis destinos, procura-se a melhor rota até a Lurdinha.
+    }
+
+    private List<Vector2Int> NewPositionsUnavailableEnd(Vector2Int origem) //Retorna uma lista de possíveis casas que pode-se ir apartir de origem.
+    {
+        List<Vector2Int> newList = new List<Vector2Int>();
+
+        for (int i = 0; i < 4; i++)
+        {
+            Vector2Int position = Vector2Int.zero;
+
+            switch (i)
+            {
+                case 0:
+                    position = origem + Vector2Int.up;
+                    break;
+                case 1:
+                    position = origem + Vector2Int.down;
+                    break;
+                case 2:
+                    position = origem + Vector2Int.left;
+                    break;
+                case 3:
+                    position = origem + Vector2Int.right;
+                    break;
+            }
+
+            if (VerifyTileIsInGrid(position))
+            {
+                newList.Add(position);
+            }
+        }
+
+        return newList;
+    }
+
+    public List<Vector2Int> FindPathToInteractable(Vector3 _origemWorldpoint, Vector3[] _destinoWorldPoint) //É chamado por uma objeto interagível.
     {
         Vector2Int origem = P2G(_origemWorldpoint);
 
@@ -181,135 +285,20 @@ public class GridScript : MonoBehaviour
         return AvailableEnd(origem, paths);
     }
 
-    private List<Vector2Int> UnavailableEnd(Vector2Int origem, List<HeuristicTile> paths)
-    {
-        bool[,] wasAnalysed = new bool[gridDim.x, gridDim.y];
-
-        wasAnalysed[paths[0].path[0].x, paths[0].path[0].y] = true;
-
-        List<Vector2Int> positions = new List<Vector2Int>();
-
-        positions.Add(paths[0].path[0]);
-
-        bool found = false;
-
-        while (!found)
-        {
-            List<Vector2Int> newPositions = new List<Vector2Int>();
-
-            while (positions.Count > 0)
-            {
-                newPositions.AddRange(NewPositionsUnavailableEnd(positions[0]));
-
-                positions.RemoveAt(0);
-            }
-
-            for (int i = 0; i < newPositions.Count - 1; i++) 
-            {
-                for (int j = i + 1; j < newPositions.Count; j++)
-                {
-                    if (newPositions[i] == newPositions[j])
-                    {
-                        newPositions.RemoveAt(j);
-
-                        j--;
-                    }
-                }
-            }
-
-            for (int i = 0; i < newPositions.Count; i++)
-            {
-                if (wasAnalysed[newPositions[i].x, newPositions[i].y])
-                {
-                    newPositions.RemoveAt(i);
-
-                    i--;
-                }
-                else if (!IsOccupied(newPositions[i])) 
-                {
-                    found = true;
-
-                    i = newPositions.Count;
-                }
-            }
-
-            positions.AddRange(newPositions);
-        }
-
-        for (int i = 0; i < positions.Count; i++)
-        {
-            if (positions[i] == origem)
-            {
-                return null;
-            }
-            else if (!IsOccupied(positions[i])) 
-            {
-                paths.Add(new HeuristicTile(positions[i], origem));                
-            }
-        }
-
-        return AvailableEnd(origem, paths);
-    }
-
-    private List<Vector2Int> NewPositionsUnavailableEnd(Vector2Int origem)
-    {
-        List<Vector2Int> newList = new List<Vector2Int>();
-
-        for (int i = 0; i < 4; i++)
-        {
-            Vector2Int position = Vector2Int.zero;
-
-            switch (i)
-            {
-                case 0:
-                    position = origem + Vector2Int.up;
-                    break;
-                case 1:
-                    position = origem + Vector2Int.down;
-                    break;
-                case 2:
-                    position = origem + Vector2Int.left;
-                    break;
-                case 3:
-                    position = origem + Vector2Int.right;
-                    break;
-                //case 4:
-                //    position = origem + Vector2Int.down + Vector2Int.left;
-                //    break;
-                //case 5:
-                //    position = origem + Vector2Int.down + Vector2Int.right;
-                //    break;
-                //case 6:
-                //    position = origem + Vector2Int.up + Vector2Int.left;
-                //    break;
-                //case 7:
-                //    position = origem + Vector2Int.up + Vector2Int.right;
-                //    break;
-            }
-
-            if (VerifyTileIsInGrid(position))
-            {
-                newList.Add(position);
-            }
-        }
-
-        return newList;
-    }
-
+    //Procura um caminho.
     private List<Vector2Int> AvailableEnd(Vector2Int origem, List<HeuristicTile> paths)
     {
-        int z = 0;
-
         while (true)
         {
             List<HeuristicTile> newList = new List<HeuristicTile>();
 
-            newList.AddRange(NewPositionsAvailableEnd(origem, paths[0]));
+            newList.AddRange(NewPositionsAvailableEnd(origem, paths[0])); //Gera novas casa para serem analisadas
 
-            paths.RemoveAt(0);            
+            paths.RemoveAt(0);  //Remove a casa que foi usada para gerar as novas.
 
             if (paths.Count == 0 && newList.Count != 0)
             {
+                //Verifica se já chegou.
                 if (newList[0].path[newList[0].path.Count - 1] == origem)
                 {
                     return newList[0].path;
@@ -324,7 +313,7 @@ public class GridScript : MonoBehaviour
             {
                 for (int j = 0; j < paths.Count; j++)
                 {
-                    if (paths[j].path[paths[j].path.Count - 1] == newList[i].path[newList[i].path.Count - 1])
+                    if (paths[j].path[paths[j].path.Count - 1] == newList[i].path[newList[i].path.Count - 1]) //Verifica se existe mais de uma caminhos para a mesma casa e remove a mais desvantajosa.
                     {
                         if (paths[j].partialTileValue < newList[i].partialTileValue)
                         {
@@ -343,12 +332,11 @@ public class GridScript : MonoBehaviour
                     }
                     else
                     {
-                        for (int k = 0; k < paths[j].path.Count - 1 && k < newList[i].path.Count; k++)
+                        for (int k = 0; k < paths[j].path.Count - 1 && k < newList[i].path.Count; k++) //Verifica se algum caminhos já passou por ali.
                         {
                             if (paths[j].path[k] == newList[i].path[newList[i].path.Count - 1])
                             {
-                                if (10 * k + 5 * (newList[i].directionChanges + 1) * (newList[i].directionChanges + 1) <
-                                    10 * newList[i].path.Count + 5 * (newList[i].directionChanges + 1) * (newList[i].directionChanges + 1))
+                                if (10 * k + 5 * (newList[i].directionChanges) * (newList[i].directionChanges) > 10 * newList[i].path.Count + 5 * (newList[i].directionChanges) * (newList[i].directionChanges))
                                 {
                                     newList.RemoveAt(i);
 
@@ -366,6 +354,7 @@ public class GridScript : MonoBehaviour
 
             for (int i = 0; i < newList.Count; i++)
             {
+                //Verifica se já chegou.
                 if (newList[i].path[newList[i].path.Count - 1] == origem)
                 {
                     return newList[i].path;
@@ -384,7 +373,7 @@ public class GridScript : MonoBehaviour
                     int a = 0;
                     int b = paths.Count - 1;
 
-                    while (a < b)
+                    while (a <= b)
                     {
                         if (a + 1 == b)
                         {
@@ -397,11 +386,11 @@ public class GridScript : MonoBehaviour
 
                         if (paths[j].totalTileValue > newList[i].totalTileValue)
                         {
-                            b = j;
+                            b = Mathf.Max(j, a + 1);
                         }
                         else if (paths[j].totalTileValue < newList[i].totalTileValue)
                         {
-                            a = j;
+                            a = Mathf.Min(j, b - 1);
                         }
                         else if (paths[j].totalTileValue == newList[i].totalTileValue)
                         {
@@ -412,12 +401,10 @@ public class GridScript : MonoBehaviour
                     }
                 }
             }
-
-            z++;
         }
     }
 
-    private List<HeuristicTile> NewPositionsAvailableEnd(Vector2Int destino, HeuristicTile tile)
+    private List<HeuristicTile> NewPositionsAvailableEnd(Vector2Int destino, HeuristicTile tile) //Retorna novas casas.
     {
         List<HeuristicTile> newTiles = new List<HeuristicTile>();
 
@@ -427,7 +414,7 @@ public class GridScript : MonoBehaviour
 
             Vector2Int newPosition = tile.path[tile.path.Count - 1];
 
-            switch (i)
+            switch (i) //Gera a nova casa.
             {
                 case 0:
                     newDir = Vector2Int.up;
@@ -447,11 +434,12 @@ public class GridScript : MonoBehaviour
                     break;
             }
 
-            if (!tile.path.Contains(newPosition) && VerifyTileIsInGrid(newPosition) && (!IsOccupied(newPosition))) 
+            //Vefirica-se se não já se passou alina, se faz parte do grid e se não está ocupada e consolida a nova casa.
+            if (!tile.path.Contains(newPosition) && VerifyTileIsInGrid(newPosition) && (!IsOccupied(newPosition)))  
             {
-                HeuristicTile newTile = new HeuristicTile(tile, destino);
+                HeuristicTile newTile = new HeuristicTile(tile, destino); 
 
-                newTile.path.Add(newPosition);
+                newTile.path.Add(newPosition); 
 
                 if (tile.direction != newDir)
                 {
@@ -469,22 +457,33 @@ public class GridScript : MonoBehaviour
         return newTiles;
     }
 
-    private bool VerifyTileIsInGrid(Vector2Int newPosition)
+    private bool VerifyTileIsInGrid(Vector2Int newPosition) //Verifica se uma casa faz parte do grid.
     {
         return (newPosition.x >= 0 && newPosition.x < gridScript.gridDim.x && newPosition.y >= 0 && newPosition.y < gridScript.gridDim.y);
     }
-
     #endregion
 
     #region Gizmos
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     [SerializeField] private Color gridColor;
 
-    private void OnDrawGizmos()//Selected()
+    [SerializeField] private bool debug;
+
+    [SerializeField] private Vector2Int cell;
+
+    private void OnDrawGizmos()
     {
+        if (debug)
+        {
+            Gizmos.color = Color.magenta;
+
+            Gizmos.DrawSphere(Cell(cell)[0], 0.2f);
+        }
+
         Gizmos.color = gridColor;
 
-        for (int i = 0; i <= gridDim.x; i++)
+        //Desenha o grid reto.
+        for (int i = 0; i <= gridDim.x; i++) 
         {
             Vector2 ipos = (Vector2)transform.position + (new Vector2(cellSize.x * i, 0));
 
@@ -502,6 +501,7 @@ public class GridScript : MonoBehaviour
             Gizmos.DrawLine(ipos, fpos);
         }
 
+        //Desenha o grid distorcido.
         for (int i = 0; i <= gridDim.x; i++)
         {
             Vector2 ipos = transform.position + Quaternion.Euler(0, 0, gridRotation) * (new Vector2(cellSize.x * i, 0));
@@ -520,6 +520,7 @@ public class GridScript : MonoBehaviour
             Gizmos.DrawLine(ipos, fpos);
         }
 
+        //Desenha a esferar centrais que indicam se a casa está sendo usada.
         try
         {
             for (int j = 0; j < gridDim.y; j++)
@@ -529,26 +530,15 @@ public class GridScript : MonoBehaviour
                     if (IsOccupied(new Vector2Int(i, j))) 
                     {
                         Gizmos.color = Color.red;
+
+                        Gizmos.DrawSphere(CellR(new Vector2Int(i, j))[0], 0.1f); //Desenha no grid reto.
                     }
                     else
                     {
                         Gizmos.color = Color.cyan;
                     }
 
-                    Gizmos.DrawSphere(Cell(new Vector2Int(i, j))[0], 0.06f);
-                }
-            }
-
-            Gizmos.color = Color.red;
-
-            for (int j = 0; j < gridDim.y; j++)
-            {
-                for (int i = 0; i < gridDim.x; i++)
-                {
-                    if (IsOccupied(new Vector2Int(i, j)))
-                    {
-                        Gizmos.DrawSphere(CellR(new Vector2Int(i, j))[0], 0.1f);
-                    }
+                    Gizmos.DrawSphere(Cell(new Vector2Int(i, j))[0], 0.06f); //Desenha no grid distorcido.
                 }
             }
         }

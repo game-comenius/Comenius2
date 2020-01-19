@@ -40,7 +40,7 @@ public class PathFinder : MonoBehaviour
 
     public delegate void GotToInteractable();
 
-    private static event GotToInteractable gotToInteractable;
+    private static event GotToInteractable gotToInteractable; //Ações que vai ocorrer quando a Lurdinha chegar ao destino.
 
     private bool uiFoiUsada = false; //Server para guardar o estado da var GameManager.uiSendoUsada da frame anterior.
 
@@ -51,7 +51,7 @@ public class PathFinder : MonoBehaviour
         StartCoroutine(WalkDecision());
     }
 
-    private void LateUpdate()
+    private void LateUpdate() //Só é recebida a ordem da movimentação no LateUpdate, para que um objeto interagível (ex.: porta, diálogo) possa mandar uma ordem no Update.
     {
         if (!GameManager.uiSendoUsada && !uiFoiUsada && !hasTarget) //É verificado se a UI está sendo usada para não ser ativado durante o uso da UI,se foi usada na última frame para não ser ativado ao se fechar a UI
         {
@@ -60,8 +60,6 @@ public class PathFinder : MonoBehaviour
                 if (walkCoroutine == null)
                 {
                     NullifyGotToInteractable();
-
-                    //DateTime t = System.DateTime.UtcNow;
 
                     if (_camera == null) //É verificada a camera porque sempre que se mudar de cena haverá uma nova câmera. Isso só preciso pois a Lurdinha vai para o DontDestroyOnLoad e as câmeras não.
                     {
@@ -74,10 +72,6 @@ public class PathFinder : MonoBehaviour
                     {
                         Turn(_camera.ScreenToWorldPoint(Input.mousePosition));
                     }
-
-                    //System.TimeSpan s = System.DateTime.UtcNow - t;
-
-                    //Debug.Log(s.TotalMilliseconds + " ms");
                 }
                 else
                 {
@@ -91,7 +85,7 @@ public class PathFinder : MonoBehaviour
         uiFoiUsada = GameManager.uiSendoUsada;
     }
 
-    public void NullifyGotToInteractable()
+    public void NullifyGotToInteractable() 
     {
         gotToInteractable -= gotToInteractable;
     }
@@ -157,7 +151,7 @@ public class PathFinder : MonoBehaviour
     }
 
     //Esse método será usado quando a lurdinha já estiver andando e for escolhida um novo destino. Então ela andará até a próxima casa e fará o novo caminho.
-    private IEnumerator WaitFor() 
+    private IEnumerator WaitFor()
     {
         if (path.Count > 1) //path.Count deve ser maior que 1. Se não for, indica que a próxima casa á é a última.
         {
@@ -300,18 +294,6 @@ public class PathFinder : MonoBehaviour
         walkCoroutine = null;
     }
 
-    //public void WalkToInteractable(Vector3[] _destinoWorldPoint)
-    //{        
-    //    path = GridScript.gridScript.FindPathToInteractable(transform.position + footbaseOffset, _destinoWorldPoint);
-
-    //    if (path == null)
-    //    {
-    //        path = new List<Vector2Int>();
-    //    }
-
-    //    lookTo = _destinoWorldPoint;
-    //}
-
     public void WalkToInteractable(Vector3[] _destinoWorldPoint, GotToInteractable _event)
     {
         lookTo = _destinoWorldPoint;
@@ -343,7 +325,7 @@ public class PathFinder : MonoBehaviour
         }
     }
 
-
+    //Desenha no grid reto e no distorcido o caminho a ser feito.
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.cyan;
