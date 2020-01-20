@@ -1,16 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class CorpoMissaoJanelaMissoes : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField]
+    private GameObject prefabOrdemMissao;
+
+    private int ordens;
+    private float alturaOrdem;
+
+    private void Awake()
+    {
+        // Coletar altura do prefab de uma ordem da missão, é necessário
+        // instanciar para coletar infelizmente
+        var ordem = Instantiate(prefabOrdemMissao);
+        var rectTransform = ordem.GetComponent<RectTransform>();
+        alturaOrdem = rectTransform.sizeDelta.y;
+        Destroy(ordem);
+    }
+
+    public void AdicionarOrdemMissao(string textoOrdem)
+    {
+        var ordem = Instantiate(prefabOrdemMissao);
+
+        // Tamanho cresce de acordo com o número de ordens desta missão
+        ordens++;
+        var r = GetComponent<RectTransform>();
+        r.sizeDelta = new Vector2(r.sizeDelta.x, (ordens * alturaOrdem));
+
+        var textObject = ordem.GetComponentInChildren<TextMeshProUGUI>();
+        textObject.text = textoOrdem;
+        ordem.transform.SetParent(this.transform);
+        ordem.transform.localScale = Vector3.one;
+    }
 }

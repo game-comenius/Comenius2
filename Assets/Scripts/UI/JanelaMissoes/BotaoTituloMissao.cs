@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class BotaoTituloMissao : MonoBehaviour, IPointerClickHandler {
 
     private bool aberto;
 
-    private string[] descricoesDaMissao { get; set; }
-
     private TextMeshProUGUI titulo;
 
+    private string[] ordensMissao;
+
     [SerializeField]
-    private CorpoMissaoJanelaMissoes corpoMissaoPrefab;
-    private CorpoMissaoJanelaMissoes corpoMissao;
+    private CorpoMissaoJanelaMissoes prefabCorpoMissao;
+    private CorpoMissaoJanelaMissoes corpoMissaoAtivo;
 
     
     private void Awake()
@@ -22,17 +23,17 @@ public class BotaoTituloMissao : MonoBehaviour, IPointerClickHandler {
         titulo = GetComponentInChildren<TextMeshProUGUI>();
     }
 
-    public void Configurar(string titulo, string[] descricoes)
+    public void Configurar(string tituloMissao, string[] ordensMissao)
     {
-        this.titulo.text = titulo;
+        this.titulo.text = tituloMissao;
 
         var quantidadeMaxDescricoes = 3;
-        if (descricoes.Length > quantidadeMaxDescricoes)
+        if (ordensMissao.Length > quantidadeMaxDescricoes)
         {
             Debug.Log("Erro: tentando adicionar missão com mais de 3 descrições!");
             return;
         }
-        this.descricoesDaMissao = descricoes;
+        this.ordensMissao = ordensMissao;
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -45,14 +46,18 @@ public class BotaoTituloMissao : MonoBehaviour, IPointerClickHandler {
         if (!aberto)
         {
             var siblingIndex = transform.GetSiblingIndex();
-            corpoMissao = Instantiate(corpoMissaoPrefab);
-            corpoMissao.transform.SetParent(this.transform.parent);
-            corpoMissao.transform.SetSiblingIndex(siblingIndex + 1);
-            corpoMissao.transform.localScale = Vector3.one;
+            corpoMissaoAtivo = Instantiate(prefabCorpoMissao);
+
+            foreach (var ordem in ordensMissao)
+                corpoMissaoAtivo.AdicionarOrdemMissao(ordem);
+
+            corpoMissaoAtivo.transform.SetParent(this.transform.parent);
+            corpoMissaoAtivo.transform.SetSiblingIndex(siblingIndex + 1);
+            corpoMissaoAtivo.transform.localScale = Vector3.one;
         }
         else
         {
-            Destroy(corpoMissao.gameObject);
+            Destroy(corpoMissaoAtivo.gameObject);
         }
 
         // Girar a seta vermelha

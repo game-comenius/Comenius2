@@ -12,11 +12,24 @@ public class JanelaMissoes : MonoBehaviour {
     private Vector2 posicaoFechada;
     private Vector2 posicaoAberta;
 
+    private CorpoJanelaMissoes corpoJanelaMissoes;
+
+    // Esse método deve ser chamado quando você quiser cadastrar uma missão
+    // nesta janela de missões, basta passar o título da missão e as
+    // ordens/passos/parágrafos da missão
+    public void AdicionarMissao(string tituloMissao, string[] ordensMissao)
+    {
+        corpoJanelaMissoes.AdicionarMissao(tituloMissao, ordensMissao);
+    }
+
 	// Use this for initialization
 	void Start () {
         transformJanela = transform.GetChild(0).GetChild(0).GetComponent<RectTransform>();
         posicaoFechada = transformJanela.anchoredPosition;
-        posicaoAberta = new Vector2(32, 0);
+        posicaoAberta = posicaoFechada;
+        posicaoAberta.x = 32;
+
+        corpoJanelaMissoes = GetComponentInChildren<CorpoJanelaMissoes>();
 
         if (fezTutorial)
             GetComponentInChildren<Canvas>().enabled = true;
@@ -27,11 +40,6 @@ public class JanelaMissoes : MonoBehaviour {
         transformJanela.anchoredPosition = (Aberta) ? posicaoFechada : posicaoAberta;
         Aberta = !Aberta;
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void Ativar()
     {
