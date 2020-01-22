@@ -51,7 +51,8 @@ public class PathFinder : MonoBehaviour
         StartCoroutine(WalkDecision());
     }
 
-    private void LateUpdate() //Só é recebida a ordem da movimentação no LateUpdate, para que um objeto interagível (ex.: porta, diálogo) possa mandar uma ordem no Update.
+    //Só é recebida a ordem da movimentação no LateUpdate, para que um objeto interagível (ex.: porta, diálogo) possa mandar uma ordem no Update.
+    private void LateUpdate()
     {
         if (!GameManager.uiSendoUsada && !uiFoiUsada && !hasTarget) //É verificado se a UI está sendo usada para não ser ativado durante o uso da UI,se foi usada na última frame para não ser ativado ao se fechar a UI
         {
@@ -84,12 +85,13 @@ public class PathFinder : MonoBehaviour
 
         uiFoiUsada = GameManager.uiSendoUsada;
     }
-
+    
     public void NullifyGotToInteractable() 
     {
         gotToInteractable -= gotToInteractable;
     }
 
+    //Lurdinha olha para uma direção
     private void Turn(Vector3 point)
     {
         Vector2Int position = GridScript.gridScript.P2G(point);
@@ -175,13 +177,15 @@ public class PathFinder : MonoBehaviour
         }
     }
 
+    //Espera ter um path para seguir.
     private IEnumerator WalkDecision()
     {
         yield return new WaitWhile(() => path == null);
 
         walkCoroutine = StartCoroutine(Walk());
     }
-
+    
+    //Animação de andar.
     private IEnumerator Walk()
     {
         float t = 0f;
@@ -294,6 +298,7 @@ public class PathFinder : MonoBehaviour
         walkCoroutine = null;
     }
 
+    //Começar a corotina WaitForInteractable
     public void WalkToInteractable(Vector3[] _destinoWorldPoint, GotToInteractable _event)
     {
         lookTo = _destinoWorldPoint;
@@ -301,6 +306,7 @@ public class PathFinder : MonoBehaviour
         StartCoroutine(WaitForInteractable(_destinoWorldPoint, _event));
     }
 
+    //Espera terminar de andar para interagir com o objeto.
     private IEnumerator WaitForInteractable(Vector3[] _destinoWorldPoint, GotToInteractable _event)
     {
         if (path != null && path.Count > 1)
