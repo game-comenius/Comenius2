@@ -323,6 +323,14 @@ public class PathFinder : MonoBehaviour
 
         path = GridScript.gridScript.FindPathToInteractable(transform.position + footbaseOffset, _destinoWorldPoint);
 
+        // Configurar as funções que serão executadas quando Lurdinha
+        // chegar ao seu destino
+        // Primeiro, o campo hasTarget = false para que os próximos comandos
+        // de movimento não sejam ignorados (Lurdinha NÃO se movimenta se
+        // ela tiver um alvo, ou seja, se hasTarget == true)
+        PathFinder.gotToInteractable += ( () => hasTarget = false );
+        // Então, a função relacionada ao seu objetivo será executada, ela foi
+        // passada como o parâmetro _event
         PathFinder.gotToInteractable += _event;
 
         if (path == null)
