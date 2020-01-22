@@ -44,7 +44,7 @@ public class PathFinder : MonoBehaviour
 
     private bool uiFoiUsada = false; //Server para guardar o estado da var GameManager.uiSendoUsada da frame anterior.
 
-    public bool hasTarget = false;
+    //public bool hasTarget = false;
 
     private void Start()
     {
@@ -54,7 +54,7 @@ public class PathFinder : MonoBehaviour
     //Só é recebida a ordem da movimentação no LateUpdate, para que um objeto interagível (ex.: porta, diálogo) possa mandar uma ordem no Update.
     private void LateUpdate()
     {
-        if (!GameManager.uiSendoUsada && !uiFoiUsada && !hasTarget) //É verificado se a UI está sendo usada para não ser ativado durante o uso da UI,se foi usada na última frame para não ser ativado ao se fechar a UI
+        if (!GameManager.uiSendoUsada && !uiFoiUsada)// && !hasTarget) //É verificado se a UI está sendo usada para não ser ativado durante o uso da UI,se foi usada na última frame para não ser ativado ao se fechar a UI
         {
             if(Input.GetMouseButtonUp(0))
             {
@@ -328,7 +328,7 @@ public class PathFinder : MonoBehaviour
         // Primeiro, o campo hasTarget = false para que os próximos comandos
         // de movimento não sejam ignorados (Lurdinha NÃO se movimenta se
         // ela tiver um alvo, ou seja, se hasTarget == true)
-        PathFinder.gotToInteractable += ( () => hasTarget = false );
+        //PathFinder.gotToInteractable += (() => hasTarget = false);
         // Então, a função relacionada ao seu objetivo será executada, ela foi
         // passada como o parâmetro _event
         PathFinder.gotToInteractable += _event;

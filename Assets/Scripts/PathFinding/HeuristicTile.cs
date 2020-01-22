@@ -25,7 +25,7 @@ public class HeuristicTile
     {
         get
         {
-            return (path.Count + distToGoal + directionChanges * directionChanges);
+            return (path.Count + distToGoal + (directionChanges + 1) * (directionChanges + 1));
         }
     }
 

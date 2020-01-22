@@ -27,6 +27,7 @@ public class MissionGuideManager : MonoBehaviour
         if (_missionGuideManager == null)
         {
             _missionGuideManager = this;
+            transform.parent = null;
             DontDestroyOnLoad(gameObject);
         }
         else

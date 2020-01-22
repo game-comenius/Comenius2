@@ -16,9 +16,9 @@ public class DoorTransition : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (!GameManager.uiSendoUsada && !Player.Instance.GetComponent<PathFinder>().hasTarget)
+        if (!GameManager.uiSendoUsada)// && !Player.Instance.GetComponent<PathFinder>().hasTarget)
         {
-            Player.Instance.GetComponent<PathFinder>().hasTarget = true;
+            //Player.Instance.GetComponent<PathFinder>().hasTarget = true;
 
             StartCoroutine(Test());
         }

@@ -44,6 +44,6 @@ public class JanelaMissoes : MonoBehaviour {
     public void Ativar()
     {
         fezTutorial = true;
-        var canvas = GetComponentInChildren<Canvas>().enabled = true;
+        /*var canvas =*/ GetComponentInChildren<Canvas>().enabled = true;
     }
 }

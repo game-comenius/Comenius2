@@ -49,9 +49,9 @@ public class Estante : QuestScript {
 
     private void OnMouseUpAsButton()
     {
-        if (!GameManager.uiSendoUsada && !Player.Instance.GetComponent<PathFinder>().hasTarget)
+        if (!GameManager.uiSendoUsada)// && !Player.Instance.GetComponent<PathFinder>().hasTarget)
         {
-            Player.Instance.GetComponent<PathFinder>().hasTarget = true;
+            //Player.Instance.GetComponent<PathFinder>().hasTarget = true;
 
             StartCoroutine(Test());
         }

@@ -43,9 +43,9 @@ public class GameManager : MonoBehaviour
             Debug.Log("Tem 2 GameManagers");
         }
 
-        uiSendoUsadaEvent += () => { _uiSendoUsada = true; };
+        uiSendoUsadaEvent += () => { _uiSendoUsada = true; Debug.Log("Evento: UI sendo usada."); };
 
-        uiNaoSendoUsadaEvent += () => { _uiSendoUsada = false; };
+        uiNaoSendoUsadaEvent += () => { _uiSendoUsada = false; Debug.Log("Evento: UI não sendo usada."); };
     }
 
     private void OnDestroy()

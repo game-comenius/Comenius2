@@ -23,7 +23,7 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         "Ótimo! Agora você pode ir até a sala multimeios onde te explicarei mais coisas. Te encontro lá!"
     };
 
-    private bool permiteFechar;
+    //private bool permiteFechar; Henrique: Justificativa de eu ter tirado no Update.
 
     private Canvas canvas;
     private FadeEffect backgroundFadeEffect;
@@ -99,14 +99,22 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
     private IEnumerator PermitirFecharApos(float segundos)
     {
         yield return new WaitForSeconds(segundos);
-        permiteFechar = true;
+        //permiteFechar = true;
+
+        //Para substituir o Update.
+        while (!Input.anyKeyDown)
+        {
+            yield return null;
+        }
+
+        StartCoroutine(Fechar());
     }
 
-    private void Update()
+    /*private void Update() //Quando o permitir ficava true, sempre que se fazia alguma coisa o GameManager.uiNaoSendoUsada era ativado.
     {
         if (permiteFechar && Input.anyKeyDown)
             StartCoroutine(Fechar());
-    }
+    }*/
 
     private void TocarAudio()
     {
