@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using GameComenius.Dialogo;
 using System;
 
@@ -15,7 +14,7 @@ public class NpcDialogo : QuestScript
 
     public Dialogo[] dialogosSecundarios = new Dialogo[0];
 
-    [SerializeField] private Vector3[] interactOffset = { Vector3.zero };
+    public Vector3[] interactOffset = { Vector3.zero };
 
 
     // Sistema para executar outras funções após o término do diálogo
@@ -52,7 +51,17 @@ public class NpcDialogo : QuestScript
         if (dialogoObrigatorio && Analise()) 
         {
             GameManager.UISendoUsada();
-            StartCoroutine(DialogoObrigatorio());
+
+            Vector3[] point = new Vector3[interactOffset.Length];
+
+            for (int i = 0; i < point.Length; i++)
+            {
+                point[i] = transform.position + interactOffset[i];
+            }
+
+            Player.Instance.GetComponent<PathFinder>().NullifyGotToInteractable();
+
+            Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point, ComecarDialogoObrigatorio);
         }
     }
 

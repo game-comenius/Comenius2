@@ -153,7 +153,7 @@ public class SistemaDialogo : MonoBehaviour
 
                 personagemRosto[0].color = new Color(0f, 0f, 0f, 0f);
 
-                personagemRosto[0].transform.GetChild(0).GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
+                //personagemRosto[0].transform.GetChild(0).GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
             }
         }
 

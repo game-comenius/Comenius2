@@ -37,22 +37,26 @@ public class GameManager : MonoBehaviour
         {
             _gameManager = this;
             DontDestroyOnLoad(this);
+
+            uiSendoUsadaEvent += () => { _uiSendoUsada = true; };
+
+            uiNaoSendoUsadaEvent += () => { _uiSendoUsada = false; };
         }
         else
         {
-            Debug.Log("Tem 2 GameManagers");
+            Destroy(gameObject);
         }
 
-        uiSendoUsadaEvent += () => { _uiSendoUsada = true; Debug.Log("Evento: UI sendo usada."); };
-
-        uiNaoSendoUsadaEvent += () => { _uiSendoUsada = false; Debug.Log("Evento: UI não sendo usada."); };
     }
 
     private void OnDestroy()
     {
-        uiSendoUsadaEvent -= () => { _uiSendoUsada = true; };
+        if (_gameManager == this)
+        {
+            uiSendoUsadaEvent -= () => { _uiSendoUsada = true; };
 
-        uiNaoSendoUsadaEvent -= () => { _uiSendoUsada = false; };
+            uiNaoSendoUsadaEvent -= () => { _uiSendoUsada = false; };
+        }
     }
 
     public static void UISendoUsada()

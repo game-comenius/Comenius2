@@ -31,6 +31,7 @@ public class ClassManager : MonoBehaviour
     #region MomentoAula
     [Header("Class Moment")]
 
+    //Var de debug.
     [SerializeField] Text timer;
 
     [Tooltip("Se refere a quanto tempo tem-se que esperar para a aula começar.")]
@@ -66,7 +67,9 @@ public class ClassManager : MonoBehaviour
 
     private float nextProblemTime = 0;
 
+    [Tooltip ("Falas que todo professor que iniciarão cada momento de aula.")]
     [SerializeField] private Dialogo[] falas = new Dialogo[3];
+
     public Dialogo[] Falas
     {
         get { return falas; }
@@ -82,6 +85,7 @@ public class ClassManager : MonoBehaviour
     [SerializeField] private AlunosComentaristas[] alunosComentaristas = new AlunosComentaristas[5];
 
     [SerializeField] private ComentarioProfessor professor = new ComentarioProfessor();
+
     public Dialogo[] DialogosProfessorPosAula()
     {
         var quantidade = professor.falasGeneralistas.Length;
@@ -91,7 +95,6 @@ public class ClassManager : MonoBehaviour
         return dialogos;
     }
 
-
     [Tooltip("O elemento 0 corresponde a Tier 1, e1 - t2, e2 - t3 e e3 - t4.")]
     [SerializeField] private DialogoGeneralista[] falasGeneralistas = new DialogoGeneralista[4];
 
@@ -99,7 +102,8 @@ public class ClassManager : MonoBehaviour
 
     #region Classes
 
-    [System.Serializable] public class FalaSobreMidias
+    [System.Serializable]
+    public class FalaSobreMidias
     {
         public ItemName item = ItemName.Caderno;
 
@@ -161,6 +165,7 @@ public class ClassManager : MonoBehaviour
 
     private void Start()
     {
+        //Inicializa a aula.
         _timeAcceleration = timeAcceleration;
 
         StartCoroutine(StartClass());
@@ -170,8 +175,9 @@ public class ClassManager : MonoBehaviour
             problemQuantity[i] = TraduzirPontoProblema((int)Player.Instance.points[i]);
         }
 
-        professor.aluno.gameObject.AddComponent<PolygonCollider2D>();
-        NpcDialogo b = professor.aluno.gameObject.AddComponent<NpcDialogo>();
+        //Configura o professor.
+        professor.aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+        NpcDialogo b = professor.aluno.gameObject.GetComponent<NpcDialogo>();
 
         b.questInfo.isQuest = true;
         b.questInfo.questIndex = professor.questIndex;
@@ -179,7 +185,12 @@ public class ClassManager : MonoBehaviour
         b.dialogoObrigatorio = true;
         b.esperaDialogoObrigatorio = 1f;
 
+        b.interactOffset = new Vector3[] { new Vector3(0.81f, -1.12f, 0) };
+
+        b.questFeita.AddListener(() => { Collider2D collider = GetComponent<Collider2D>(); if (collider != null) { collider.enabled = false; } });
+
         b.enabled = false;
+
 
         for (int j = 0; j < professor.falasGeneralistas.Length; j++)
         {
@@ -189,16 +200,18 @@ public class ClassManager : MonoBehaviour
             }
         }
 
+        //Configura os alunos.
         for (int i = 0; i < alunosComentaristas.Length; i++)
         {
-            alunosComentaristas[i].aluno.gameObject.AddComponent<PolygonCollider2D>().enabled = false;
+            alunosComentaristas[i].aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
             NpcDialogo d = alunosComentaristas[i].aluno.gameObject.GetComponent<NpcDialogo>();
-            alunosComentaristas[i].aluno.gameObject.AddComponent<DynamicCursor>();
 
             d.questInfo.isQuest = true;
             d.questInfo.questIndex = alunosComentaristas[i].questIndex;
 
             d.dialogoObrigatorio = false;
+
+            d.questFeita.AddListener(() => { Collider2D collider = GetComponent<Collider2D>(); if (collider != null) { collider.enabled = false; } });
 
             if ( i <= 1)
             {
@@ -218,6 +231,7 @@ public class ClassManager : MonoBehaviour
             d.enabled = false;
         }
 
+        //Configura o final da aula.
         EndClass += (() =>
         {
             professor.aluno.gameObject.GetComponent<NpcDialogo>().enabled = true;
@@ -227,31 +241,9 @@ public class ClassManager : MonoBehaviour
                 aluno.aluno.gameObject.GetComponent<NpcDialogo>().enabled = true;
                 aluno.aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
             }
+
+            professor.aluno.GetComponent<NpcDialogo>().Restart();
         });
-
-        //int m = 0;
-
-        //for(int i = 0; i < students.Count; i++)
-        //{
-        //    int n = Random.Range(0, alunos.Length - i);
-
-        //    for (int j = 0; j <= n; j++)
-        //    {
-        //        if ((m & (1 << j)) == (1 << j)) 
-        //        {
-        //            n++;
-        //            if (n == alunos.Length)
-        //            {
-        //                n = 0;
-        //                j = 0;
-        //            }
-        //        }
-        //    }
-
-        //    students[i].GetComponent<SpriteRenderer>().sprite = alunos[n];
-
-        //    m = (m | 1 << n);
-        //}
     }
 
     private void OnDestroy()
@@ -265,15 +257,20 @@ public class ClassManager : MonoBehaviour
                 aluno.aluno.gameObject.GetComponent<NpcDialogo>().enabled = true;
                 aluno.aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
             }
+
+            professor.aluno.GetComponent<NpcDialogo>().Restart();
         });
     }
 
+    //Método para que os estudantes possam ser adicionados na lista students
     static public void AddStudent(StudentScript student)
     {
         students.Add(student);
 
         studentIsProblem.Add(false);
     }
+
+
 
     private IEnumerator StartClass()
     {
@@ -316,7 +313,7 @@ public class ClassManager : MonoBehaviour
 
             momentTimer -= Time.deltaTime * _timeAcceleration;
 
-            //A primeira parte do cálculo do if se justifica porque o momentTimer e contagem regressiva e o nextProblemTime, não, assim eles são complementares.
+            //A primeira parte do cálculo do if se justifica porque o momentTimer é contagem regressiva e o nextProblemTime, não, assim eles são complementares.
             //Como no nextProblemTime já se leva em conta o tempo que tem que sobrar quando surgir o último problema, este pode ser subitraido da duração do momento.
             if (nextProblemTime + momentTimer < momentsTime[classMoment].x - momentsTime[classMoment].z && problemQuantity[classMoment] != 0) //verifica se está na hora do primeiro problema
             {
@@ -354,6 +351,10 @@ public class ClassManager : MonoBehaviour
 
             CloudsCountdown();
         }
+
+        ((TeacherScript)professor.aluno).FimDaAula();
+
+        yield return new WaitWhile(() => ((TeacherScript)professor.aluno).walkCoroutine != null);
 
         timer.text = "Aula terminada";
 
