@@ -125,6 +125,20 @@ public class GridScript : MonoBehaviour
     {
         return (vacancy[position.x] & (uint)(1 << position.y)) == (uint)(1 << position.y);
     }
+
+    public void ChangeGrid(Vector2Int position, bool occupy)
+    {
+        uint i = (uint)(1 << position.y);
+
+        if (occupy)
+        {
+            vacancy[position.x] = vacancy[position.x] & (~i);
+        }
+        else
+        {
+            vacancy[position.x] = vacancy[position.x] | i;
+        }
+    }
     #endregion
 
     #region Path Finding

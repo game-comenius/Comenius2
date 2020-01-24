@@ -77,6 +77,13 @@ public class TeacherScript : AgenteAulaScript
         inicio = GridScript.gridScript.Cell(GridScript.gridScript.P2G(inicio + offsetDaBase))[0] - offsetDaBase;
 
         vector = GridScript.gridScript.Cell(GridScript.gridScript.P2G(inicio + vector + offsetDaBase))[0] - inicio - offsetDaBase;
+
+        ClassManager.EndClass += EndClass;
+    }
+
+    private void OnDestroy()
+    {
+        ClassManager.EndClass -= EndClass;
     }
 
     protected override void Start()
@@ -215,6 +222,11 @@ public class TeacherScript : AgenteAulaScript
         sprite.sprite = sprites[0];
 
         walk = null;
+    }
+
+    private void EndClass()
+    {
+        GridScript.gridScript.ChangeGrid(GridScript.gridScript.P2G((Vector2)transform.position + offsetDaBase), false);
     }
 
     private void OnDrawGizmosSelected()

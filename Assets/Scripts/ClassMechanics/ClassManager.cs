@@ -203,7 +203,7 @@ public class ClassManager : MonoBehaviour
         //Configura os alunos.
         for (int i = 0; i < alunosComentaristas.Length; i++)
         {
-            alunosComentaristas[i].aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+            //alunosComentaristas[i].aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
             NpcDialogo d = alunosComentaristas[i].aluno.gameObject.GetComponent<NpcDialogo>();
 
             d.questInfo.isQuest = true;
@@ -211,7 +211,7 @@ public class ClassManager : MonoBehaviour
 
             d.dialogoObrigatorio = false;
 
-            d.questFeita.AddListener(() => { Collider2D collider = GetComponent<Collider2D>(); if (collider != null) { collider.enabled = false; } });
+            d.questFeita.AddListener(() => { Collider2D collider = d.GetComponent<Collider2D>(); if (collider != null) { collider.enabled = false; } });
 
             if ( i <= 1)
             {
@@ -228,7 +228,7 @@ public class ClassManager : MonoBehaviour
                 d.dialogoPrincipal = falasSobreMomentos[i - 2].EncontrarFalaCerta(Player.Instance.chosenMedia[i - 2]).Clone();
             }
 
-            d.enabled = false;
+            //d.enabled = false;
         }
 
         //Configura o final da aula.
