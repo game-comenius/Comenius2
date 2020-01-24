@@ -67,15 +67,15 @@ public class NpcDialogo : QuestScript
 
     public void OnMouseUp()
     {
-        if (!GameManager.uiSendoUsada)// && !Player.Instance.GetComponent<PathFinder>().hasTarget)
+        if (!GameManager.uiSendoUsada && !Player.Instance.GetComponent<PathFinder>().hasTarget)
         {
-            //Player.Instance.GetComponent<PathFinder>().hasTarget = true;
+            Player.Instance.GetComponent<PathFinder>().hasTarget = true;
 
-            StartCoroutine(Test());
+            StartCoroutine(Interact());
         }
     }
 
-    private IEnumerator Test()
+    private IEnumerator Interact()
     {
         yield return new WaitForEndOfFrame();
 
