@@ -66,7 +66,7 @@ public class DoorTransition : MonoBehaviour
             QuestManager.SetQuestControl(GetComponent<QuestScript>().questInfo.questIndex, true);
         }
 
-        Cursor.SetCursor(GameObject.FindObjectOfType<Cursor1>().cursorImage, GameObject.FindObjectOfType<Cursor1>().hotspot, GameObject.FindObjectOfType<Cursor1>().curmode);
+        //Cursor.SetCursor(GameObject.FindObjectOfType<CursorInfos>().cursorImage, GameObject.FindObjectOfType<CursorInfos>().hotspot, GameObject.FindObjectOfType<CursorInfos>().curmode);
 
         sceneLoad.allowSceneActivation = true;
 
