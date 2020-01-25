@@ -4,7 +4,7 @@ using UnityEngine;
 public class CursorInfos: MonoBehaviour
 {
     [Serializable]
-    public class CursorClass
+    private class CursorClass
     {
         public Texture2D texture;
         public Vector2 offset;
