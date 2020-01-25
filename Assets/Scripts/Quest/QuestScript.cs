@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class QuestScript : MonoBehaviour
+public class QuestScript : QuestMiscellanous
 {
     private static List<QuestScript> _questList = new List<QuestScript>();
 
@@ -162,25 +162,5 @@ public class QuestScript : MonoBehaviour
                 }
             }
         }
-    }
-
-    public void DestroirObjeto(Object obj)
-    {
-        if (obj is QuestScript)
-        {
-            questList.Remove(obj as QuestScript);
-        }
-
-        Destroy(obj);
-    }
-
-    public void UISendoUsada()
-    {
-        GameManager.UISendoUsada();
-    }
-
-    public void UINaoSendoUsada()
-    {
-        GameManager.UINaoSendoUsada();
     }
 }

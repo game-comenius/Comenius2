@@ -16,16 +16,16 @@ public class DynamicCursorForDoors : DynamicCursor
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    protected override void OnMouseEnter()
+    protected override void MouseIn()
     {
-        base.OnMouseEnter();
+        base.MouseIn();
 
         if (spriteRenderer) spriteRenderer.color = selectedColor;
     }
 
-    protected override void OnMouseExit()
+    protected override void MouseOut()
     {
-        base.OnMouseExit();
+        base.MouseOut();
 
         if (spriteRenderer) spriteRenderer.color = unselectedColor;
     }

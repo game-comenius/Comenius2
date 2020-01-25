@@ -5,9 +5,8 @@ using TMPro;
 
 public class MissionGuideManager : MonoBehaviour
 {
-
-    GameObject guiaOBJ;
-    GameObject countOBJ;
+    private GameObject guiaOBJ;
+    private GameObject countOBJ;
 
     private static MissionGuideManager _missionGuideManager;
 
@@ -18,7 +17,6 @@ public class MissionGuideManager : MonoBehaviour
             return _missionGuideManager;
         }
     }
-
 
     private TextMeshProUGUI missionTip;
 
@@ -47,6 +45,7 @@ public class MissionGuideManager : MonoBehaviour
 
     public void SetMissionGuide(string mission)
     {
+        Debug.Log("set");
         missionTip.SetText(mission);
     }
 
@@ -73,5 +72,4 @@ public class MissionGuideManager : MonoBehaviour
             countOBJ.GetComponent<CanvasGroup>().alpha = 0;
         }
     }
-
 }

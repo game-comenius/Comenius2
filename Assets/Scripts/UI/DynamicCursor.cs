@@ -13,18 +13,32 @@ public class DynamicCursor : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     }
 
     //Para o mundo do jogo.
-    protected virtual void OnMouseEnter()
+    private void OnMouseEnter()
     {
         if (!GameManager.uiSendoUsada)
         {
-            CursorInfos.SetCursorInterativo();
+            MouseIn();
         }
     }
 
-    protected virtual void OnMouseExit()
+    protected virtual void MouseIn()
+    {
+        CursorInfos.SetCursorInterativo();
+    }
+
+    private void OnMouseExit()
+    {
+        if (!GameManager.uiSendoUsada)
+        {
+            MouseOut();
+        }
+    }
+
+    protected virtual void MouseOut()
     {
         CursorInfos.SetCursorBase();
     }
+
 
     //Para UI.
     public virtual void OnPointerEnter(PointerEventData eventData)

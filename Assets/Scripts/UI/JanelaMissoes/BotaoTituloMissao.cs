@@ -14,7 +14,7 @@ public class BotaoTituloMissao : MonoBehaviour, IPointerClickHandler {
 
     private string[] ordensMissao;
 
-    private CorpoJanelaMissoes corpoJanelaMissoes;
+    //private CorpoJanelaMissoes corpoJanelaMissoes;
 
     [SerializeField]
     private CorpoMissaoJanelaMissoes prefabCorpoMissao;
@@ -24,7 +24,7 @@ public class BotaoTituloMissao : MonoBehaviour, IPointerClickHandler {
     private void Awake()
     {
         titulo = GetComponentInChildren<TextMeshProUGUI>();
-        corpoJanelaMissoes = GetComponentInParent<CorpoJanelaMissoes>();
+        //corpoJanelaMissoes = GetComponentInParent<CorpoJanelaMissoes>();
     }
 
     public void Configurar(string tituloMissao, string[] ordensMissao)
