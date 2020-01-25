@@ -5,56 +5,49 @@ using UnityEngine.EventSystems;
 
 public class DynamicCursor : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler 
 {
-    private Texture2D cursorImage;
-    private Texture2D select;
-    private CursorMode curmode;
-    private Vector2 hotspot;
-
     private bool pointerIn = false;
 
-    public void OnMouseEnter()
-    {        
-        Cursor.SetCursor(select, hotspot, curmode);
+    protected virtual void OnEnable()
+    {
+        GameManager.uiSendoUsadaEvent += OnMouseExit;
     }
 
-    public void OnMouseExit()
+    //Para o mundo do jogo.
+    protected virtual void OnMouseEnter()
     {
-        Cursor.SetCursor(cursorImage, hotspot, curmode);
+        if (!GameManager.uiSendoUsada)
+        {
+            CursorInfos.SetCursorInterativo();
+        }
     }
 
-    // Use this for initialization
-    void Start ()
+    protected virtual void OnMouseExit()
     {
-        cursorImage = GameObject.FindObjectOfType<Cursor1>().cursorImage;
-        select = GameObject.FindObjectOfType<Cursor1>().select;
-        curmode = GameObject.FindObjectOfType<Cursor1>().curmode;
-        hotspot = GameObject.FindObjectOfType<Cursor1>().hotspot;
+        CursorInfos.SetCursorBase();
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 
-    public void OnPointerEnter(PointerEventData eventData)
+    //Para UI.
+    public virtual void OnPointerEnter(PointerEventData eventData)
     {
         pointerIn = true;
 
-        Cursor.SetCursor(select, hotspot, curmode);
+        CursorInfos.SetCursorInterativo();
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public virtual void OnPointerExit(PointerEventData eventData)
     {
         pointerIn = false;
-        Cursor.SetCursor(cursorImage, hotspot, curmode);
+
+        CursorInfos.SetCursorBase();
     }
 
-    public void OnDisable()
+    protected virtual void OnDisable()
     {
+        GameManager.uiSendoUsadaEvent -= OnMouseExit;
+
         if (pointerIn)
         {
-            Cursor.SetCursor(GameObject.FindObjectOfType<Cursor1>().cursorImage, GameObject.FindObjectOfType<Cursor1>().hotspot, GameObject.FindObjectOfType<Cursor1>().curmode);
+            CursorInfos.SetCursorBase();
         }
     }
 }

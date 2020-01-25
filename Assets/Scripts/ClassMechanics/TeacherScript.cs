@@ -11,11 +11,11 @@ public class TeacherScript : AgenteAulaScript
         private set;
     }
 
-    
-
     [SerializeField] private Vector2 inicio = Vector2.zero;
 
     [SerializeField] private Vector2 vector = Vector2.zero;
+
+    [SerializeField] private Vector2 offsetDaBase = Vector2.zero;
 
     [SerializeField] private float magnitude = 0;
 
@@ -43,6 +43,14 @@ public class TeacherScript : AgenteAulaScript
 
     private Coroutine walk = null;
 
+    public Coroutine walkCoroutine
+    {
+        get
+        {
+            return walk;
+        }
+    }
+
     [SerializeField] private Sprite[] sprites = new Sprite[4];
     public Sprite[] Sprites
     {
@@ -58,37 +66,37 @@ public class TeacherScript : AgenteAulaScript
 
     [SerializeField] private Camera _camera;
 
-    //[SerializeField] private GameObject balao;
-
-    //private GameObject balaoIns;
-
-    //private TMP_Text text;
-
-    //[SerializeField] private float speechWait;
-
-    [SerializeField] private Vector2 offset;
-
-    //private Coroutine speech;
+    private bool aulaAcabou = false;
 
     protected void Awake()
     {
         teacher = this;
 
-        ClassManager.EndClass += PauseWalk;
+        //Para que o Jean ande nos quadadinhos certinho, mas sem usar pathfinding
+
+        inicio = GridScript.gridScript.Cell(GridScript.gridScript.P2G(inicio + offsetDaBase))[0] - offsetDaBase;
+
+        vector = GridScript.gridScript.Cell(GridScript.gridScript.P2G(inicio + vector + offsetDaBase))[0] - inicio - offsetDaBase;
+
+        ClassManager.EndClass += EndClass;
     }
 
     private void OnDestroy()
     {
-        ClassManager.EndClass -= PauseWalk;
+        ClassManager.EndClass -= EndClass;
     }
 
     protected override void Start()
     {
         base.Start();
 
+        magnitude = vector.magnitude;
+
         vector.Normalize();
 
         transform.position = inicio;
+
+        transform.position += new Vector3(0, 0, transform.position.y + offsetDaBase.y);
 
         sprite = GetComponent<SpriteRenderer>();
     }
@@ -97,38 +105,41 @@ public class TeacherScript : AgenteAulaScript
     {
         if (walk == null)
         {
-            //balaoIns = Instantiate(balao, _camera.WorldToScreenPoint((Vector2)transform.position + offset), balao.transform.rotation, canvas.transform);
-
-            //text = balaoIns.GetComponentInChildren<TMP_Text>();
-
             walk = StartCoroutine(Walk());
-
-            //speech = StartCoroutine(Speak());
         }
     }
 
     private void Gerar()
     {
-        float novaPos = Random.value;
+        float novaPos = posicao;
 
-        if (novaPos * magnitude > posicao)
+        while (novaPos == posicao)
         {
-            novaPos = 1 - ((1 - novaPos) * (1 - novaPos));
+            novaPos = Random.value;
 
-            sprite.sprite = sprites[2];
+            if (novaPos * magnitude > posicao)
+            {
+                novaPos = 1 - ((1 - novaPos) * (1 - novaPos));
 
-            goingRight = true;
+                sprite.sprite = sprites[2];
+
+                goingRight = true;
+            }
+            else
+            {
+                novaPos = novaPos * novaPos;
+
+                sprite.sprite = sprites[1];
+
+                goingRight = false;
+            }
+
+            posicao = novaPos * magnitude;
+
+            Vector2 pos = GridScript.gridScript.Cell(GridScript.gridScript.P2G(inicio + vector * posicao + offsetDaBase))[0] - inicio - offsetDaBase;
+
+            posicao = pos.magnitude;
         }
-        else
-        {
-            novaPos = novaPos * novaPos;
-
-            sprite.sprite = sprites[1];
-
-            goingRight = false;
-        }
-
-        posicao = novaPos * magnitude;
     }
 
     private IEnumerator Walk()
@@ -144,7 +155,7 @@ public class TeacherScript : AgenteAulaScript
             transform.position = Vector2.Lerp(transform.position, inicio + (vector * posicao), 
                 (velocity * Time.deltaTime) / ((inicio + (vector * posicao)) - (Vector2)transform.position).magnitude);
 
-            //balaoIns.transform.position = _camera.WorldToScreenPoint((Vector2)transform.position + offset);
+            transform.position += new Vector3(0, 0, transform.position.y + offsetDaBase.y);
 
             yield return null;
 
@@ -177,6 +188,15 @@ public class TeacherScript : AgenteAulaScript
 
             if ((Vector2)transform.position == inicio + vector * posicao) 
             {
+                if (aulaAcabou)
+                {
+                    sprite.sprite = sprites[0];
+
+                    walk = null;
+
+                    yield break;
+                }
+
                 sprite.sprite = sprites[0];
 
                 yield return new WaitForSeconds(Random.Range(stopTimeRange.x, stopTimeRange.y));
@@ -188,29 +208,10 @@ public class TeacherScript : AgenteAulaScript
         }
     }
 
-    //private IEnumerator Speak()
-    //{
-    //    text.text = "...";
-
-    //    while (true) 
-    //    {
-    //        yield return new WaitForSeconds(speechWait);
-
-    //        text.text = "";
-
-    //        yield return new WaitForSeconds(speechWait);
-
-    //        text.text = ".  ";
-
-    //        yield return new WaitForSeconds(speechWait);
-
-    //        text.text = ".. ";
-
-    //        yield return new WaitForSeconds(speechWait);
-
-    //        text.text = "...";
-    //    }
-    //}
+    public void FimDaAula()
+    {
+        aulaAcabou = true;
+    }
 
     public void PauseWalk()
     {
@@ -221,23 +222,24 @@ public class TeacherScript : AgenteAulaScript
         sprite.sprite = sprites[0];
 
         walk = null;
+    }
 
-        //StopCoroutine(speech);
-
-        //Destroy(balaoIns);
+    private void EndClass()
+    {
+        GridScript.gridScript.ChangeGrid(GridScript.gridScript.P2G((Vector2)transform.position + offsetDaBase), false);
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
 
-        Gizmos.DrawSphere(inicio, 0.1f);
-        Gizmos.DrawSphere(inicio + vector.normalized * magnitude, 0.1f);
+        Gizmos.DrawSphere(inicio + offsetDaBase, 0.1f);
+        Gizmos.DrawSphere(inicio + vector.normalized * magnitude + offsetDaBase, 0.1f);
 
-        Gizmos.DrawLine(inicio, inicio + vector.normalized * magnitude);
+        Gizmos.DrawLine(inicio + offsetDaBase, inicio + vector.normalized * magnitude + offsetDaBase);
 
         Gizmos.color = Color.blue;
 
-        Gizmos.DrawSphere((Vector2)transform.position + offset, 0.1f);
+        Gizmos.DrawSphere((Vector2)transform.position + offsetDaBase, 0.1f);
     }
 }

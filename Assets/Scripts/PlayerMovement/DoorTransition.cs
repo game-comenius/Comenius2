@@ -16,15 +16,15 @@ public class DoorTransition : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (!GameManager.uiSendoUsada)// && !Player.Instance.GetComponent<PathFinder>().hasTarget)
+        if (!GameManager.uiSendoUsada && !Player.Instance.GetComponent<PathFinder>().hasTarget)
         {
-            //Player.Instance.GetComponent<PathFinder>().hasTarget = true;
+            Player.Instance.GetComponent<PathFinder>().hasTarget = true;
 
-            StartCoroutine(Test());
+            StartCoroutine(MoveToInteract());
         }
     }
 
-    private IEnumerator Test()
+    private IEnumerator MoveToInteract()
     {
         yield return new WaitForEndOfFrame();
 
@@ -66,7 +66,7 @@ public class DoorTransition : MonoBehaviour
             QuestManager.SetQuestControl(GetComponent<QuestScript>().questInfo.questIndex, true);
         }
 
-        Cursor.SetCursor(GameObject.FindObjectOfType<Cursor1>().cursorImage, GameObject.FindObjectOfType<Cursor1>().hotspot, GameObject.FindObjectOfType<Cursor1>().curmode);
+        //Cursor.SetCursor(GameObject.FindObjectOfType<CursorInfos>().cursorImage, GameObject.FindObjectOfType<CursorInfos>().hotspot, GameObject.FindObjectOfType<CursorInfos>().curmode);
 
         sceneLoad.allowSceneActivation = true;
 

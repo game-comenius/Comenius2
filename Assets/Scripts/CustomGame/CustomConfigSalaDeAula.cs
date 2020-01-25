@@ -87,6 +87,7 @@ public class CustomConfigSalaDeAula : MonoBehaviour
     private void ConfigurarFalaDoProfessorPosAula(ClassManager classManager, CustomGameSettings settings)
     {
         var dialogos = classManager.DialogosProfessorPosAula();
+
         foreach (var dialogo in dialogos)
         {
             var p = Enum.Parse(typeof(GameComenius.Dialogo.Personagens), settings.Professor.ToString(), true);

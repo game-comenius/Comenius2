@@ -42,9 +42,9 @@ public class PathFinder : MonoBehaviour
 
     private static event GotToInteractable gotToInteractable; //Ações que vai ocorrer quando a Lurdinha chegar ao destino.
 
-    private bool uiFoiUsada = false; //Server para guardar o estado da var GameManager.uiSendoUsada da frame anterior.
+    private bool uiFoiUsada = false; //Serve para guardar o estado da var GameManager.uiSendoUsada da frame anterior.
 
-    //public bool hasTarget = false;
+    public bool hasTarget = false; //Serve para impedir que a Lurdinha, em uma mesma frame, tenha vários destinos. Assim sendo, deve ser resetado para false TODO FINAL DE LATEUPDATE.
 
     private void Start()
     {
@@ -54,7 +54,7 @@ public class PathFinder : MonoBehaviour
     //Só é recebida a ordem da movimentação no LateUpdate, para que um objeto interagível (ex.: porta, diálogo) possa mandar uma ordem no Update.
     private void LateUpdate()
     {
-        if (!GameManager.uiSendoUsada && !uiFoiUsada)// && !hasTarget) //É verificado se a UI está sendo usada para não ser ativado durante o uso da UI,se foi usada na última frame para não ser ativado ao se fechar a UI
+        if (!GameManager.uiSendoUsada && !uiFoiUsada && !hasTarget) //É verificado se a UI está sendo usada para não ser ativado durante o uso da UI,se foi usada na última frame para não ser ativado ao se fechar a UI
         {
             if(Input.GetMouseButtonUp(0))
             {
@@ -84,6 +84,8 @@ public class PathFinder : MonoBehaviour
         }
 
         uiFoiUsada = GameManager.uiSendoUsada;
+
+        hasTarget = false;
     }
     
     public void NullifyGotToInteractable() 
@@ -331,11 +333,35 @@ public class PathFinder : MonoBehaviour
         //PathFinder.gotToInteractable += (() => hasTarget = false);
         // Então, a função relacionada ao seu objetivo será executada, ela foi
         // passada como o parâmetro _event
+
         PathFinder.gotToInteractable += _event;
 
         if (path == null)
         {
-            Turn(_camera.ScreenToWorldPoint(Input.mousePosition));
+            if (gotToInteractable != null)
+            {
+                gotToInteractable();
+
+                gotToInteractable -= gotToInteractable;
+
+                Vector3 point = lookTo[0];
+
+                for (int i = 1; i < lookTo.Length; i++)
+                {
+                    if ((point - transform.position).magnitude > (lookTo[i] - transform.position).magnitude)
+                    {
+                        point = lookTo[i];
+                    }
+                }
+
+                Turn(point);
+
+                lookTo = null;
+            }
+            else
+            {
+                Turn(_camera.ScreenToWorldPoint(Input.mousePosition));
+            }
         }
     }
 

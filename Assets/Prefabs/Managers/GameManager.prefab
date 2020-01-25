@@ -63,8 +63,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aafdc2d1edb6f4c459afea9f5a951974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorImage: {fileID: 2800000, guid: 8651b0658b5feac4eb8509e65794ce73, type: 3}
-  offset: {x: 0, y: 0}
-  select: {fileID: 2800000, guid: be22414f7796662468c0879f84a9baa3, type: 3}
-  curmode: 0
-  hotspot: {x: 7, y: 0}
+  cursorBase:
+    texture: {fileID: 2800000, guid: 8651b0658b5feac4eb8509e65794ce73, type: 3}
+    offset: {x: 0, y: 0}
+    mode: 1
+  cursorInterativo:
+    texture: {fileID: 2800000, guid: be22414f7796662468c0879f84a9baa3, type: 3}
+    offset: {x: 7, y: 0}
+    mode: 1
