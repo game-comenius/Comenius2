@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,12 +16,15 @@ public class GameManager : MonoBehaviour
     }
 
     private static bool _uiSendoUsada = false;
-
+    
     public static bool uiSendoUsada
     {
         get
         {
-            return _uiSendoUsada;
+            var clickSobreUI = EventSystem.current.IsPointerOverGameObject();
+            // Ou a interface bloqueia o jogo completamente ou ela não bloqueia
+            // o jogo mas o último click do jogador foi sobre um objeto da UI
+            return _uiSendoUsada || clickSobreUI;
         }
     }
 
