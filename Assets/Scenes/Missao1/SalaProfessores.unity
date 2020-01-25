@@ -4556,7 +4556,7 @@ Prefab:
     - target: {fileID: 114643760213871238, guid: 47f69a8aad4a74c49b603b76cb768fb5,
         type: 2}
       propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114643760213871238, guid: 47f69a8aad4a74c49b603b76cb768fb5,
         type: 2}
@@ -4567,6 +4567,11 @@ Prefab:
         type: 2}
       propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114560106354944180, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4937365919288762, guid: 47f69a8aad4a74c49b603b76cb768fb5, type: 2}
       propertyPath: m_LocalPosition.x
@@ -4694,7 +4699,7 @@ Prefab:
     - target: {fileID: 114643760213871238, guid: 47f69a8aad4a74c49b603b76cb768fb5,
         type: 2}
       propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114643760213871238, guid: 47f69a8aad4a74c49b603b76cb768fb5,
         type: 2}
@@ -4709,7 +4714,7 @@ Prefab:
     - target: {fileID: 114643760213871238, guid: 47f69a8aad4a74c49b603b76cb768fb5,
         type: 2}
       propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetMissionGuide
+      value: ShowMissionGuide
       objectReference: {fileID: 0}
     - target: {fileID: 114643760213871238, guid: 47f69a8aad4a74c49b603b76cb768fb5,
         type: 2}
@@ -4724,7 +4729,7 @@ Prefab:
     - target: {fileID: 114643760213871238, guid: 47f69a8aad4a74c49b603b76cb768fb5,
         type: 2}
       propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: Explore a escola!
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114643760213871238, guid: 47f69a8aad4a74c49b603b76cb768fb5,
         type: 2}
@@ -4789,6 +4794,96 @@ Prefab:
     - target: {fileID: 114643760213871238, guid: 47f69a8aad4a74c49b603b76cb768fb5,
         type: 2}
       propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114560106354944180, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: questInfo.isQuest
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114560106354944180, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: questInfo.questIndex.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114560106354944180, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: questInfo.questDependencias.Array.data[0].x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114560106354944180, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: questInfo.questDependencias.Array.data[0].y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114560106354944180, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114560106354944180, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114560106354944180, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1583275498}
+    - target: {fileID: 114560106354944180, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowMissionGuide
+      objectReference: {fileID: 0}
+    - target: {fileID: 114560106354944180, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114560106354944180, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114560106354944180, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114560106354944180, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114560106354944180, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114560106354944180, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1583275498}
+    - target: {fileID: 114560106354944180, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetMissionGuide
+      objectReference: {fileID: 0}
+    - target: {fileID: 114560106354944180, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114560106354944180, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: Explore a escola!
+      objectReference: {fileID: 0}
+    - target: {fileID: 114643760213871238, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: questFeita.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5274,7 +5369,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: Patio_2
   interactOffset:
-  - {x: 0, y: 0, z: 0}
+  - {x: -0.44, y: -0.79, z: 0}
+  - {x: -0.8, y: -1.07, z: 0}
 --- !u!82 &1778002465
 AudioSource:
   m_ObjectHideFlags: 0
