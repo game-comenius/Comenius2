@@ -66,13 +66,12 @@ public class DoorTransition : MonoBehaviour
             QuestManager.SetQuestControl(GetComponent<QuestScript>().questInfo.questIndex, true);
         }
 
-        //Cursor.SetCursor(GameObject.FindObjectOfType<CursorInfos>().cursorImage, GameObject.FindObjectOfType<CursorInfos>().hotspot, GameObject.FindObjectOfType<CursorInfos>().curmode);
-
         sceneLoad.allowSceneActivation = true;
 
         GameManager.UINaoSendoUsada();
     }
 
+#if UNITY_EDITOR
     protected virtual void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.magenta;
@@ -82,4 +81,5 @@ public class DoorTransition : MonoBehaviour
             Gizmos.DrawSphere(transform.position + interactOffset[i], 0.07f);
         }
     }
+#endif
 }
