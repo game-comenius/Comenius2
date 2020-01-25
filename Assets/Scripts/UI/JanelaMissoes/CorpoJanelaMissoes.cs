@@ -25,4 +25,9 @@ public class CorpoJanelaMissoes : MonoBehaviour {
 
         botoesMissao.Add(botao);
     }
+
+    public bool TodosOsBotoesForamAbertos()
+    {
+        return botoesMissao.TrueForAll((b) => b.abertoPeloMenosUmaVez);
+    }
 }

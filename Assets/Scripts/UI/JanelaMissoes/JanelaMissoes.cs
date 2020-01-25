@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class JanelaMissoes : MonoBehaviour {
 
+    // Campos relacionados à ajuda do comenius, ou seja, tutoriais
     private static bool fezTutorial;
 
     public bool Aberta { get; set; }
@@ -31,8 +32,7 @@ public class JanelaMissoes : MonoBehaviour {
 
         corpoJanelaMissoes = GetComponentInChildren<CorpoJanelaMissoes>();
 
-        if (fezTutorial)
-            GetComponentInChildren<Canvas>().enabled = true;
+        if (fezTutorial) Ativar();
     }
 
     public void Toggle()
@@ -44,6 +44,11 @@ public class JanelaMissoes : MonoBehaviour {
     public void Ativar()
     {
         fezTutorial = true;
-        /*var canvas =*/ GetComponentInChildren<Canvas>().enabled = true;
+        GetComponentInChildren<Canvas>().enabled = true;
+    }
+
+    public bool CompletamenteExplorada()
+    {
+        return corpoJanelaMissoes.TodosOsBotoesForamAbertos();
     }
 }

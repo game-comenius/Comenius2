@@ -18,12 +18,10 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
 
     private readonly string[] falas =
     {
-        "Muito bem Lurdinha! Agora que você falou com o professor Jean e já sabe sua missão, você pode consultá-la sempre que quiser aqui.",
-        "No momento você têm uma missão principal e pequenas tarefas que podem te ajudar na missão em questão. Clique no título da missão para ver seus objetivos específicos!",
-        "Ótimo! Agora você pode ir até a sala multimeios onde te explicarei mais coisas. Te encontro lá!"
+        "Muito bem Lurdinha! Agora que você falou com o professor Jean e já sabe sua missão, você pode consultá-la sempre que quiser neste botão.",
+        "No momento você têm uma missão principal e pequenas tarefas que podem te ajudar na missão em questão. Aperte no botão azul com o título de uma missão para ver seus objetivos específicos!",
+        "Ótimo! Agora você pode ir até a sala multimeios onde te explicarei mais coisas.\nTe encontro lá!"
     };
-
-    //private bool permiteFechar; Henrique: Justificativa de eu ter tirado no Update.
 
     private Canvas canvas;
     private FadeEffect backgroundFadeEffect;
@@ -35,13 +33,25 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         canvas = GetComponentInChildren<Canvas>();
 
         var fadeEffects = GetComponentsInChildren<FadeEffect>();
-        backgroundFadeEffect = fadeEffects[0];
-        focoBotaoDaJanela = fadeEffects[1];
+        focoBotaoDaJanela = fadeEffects[0];
+        backgroundFadeEffect = fadeEffects[1];
 
         componenteTexto = GetComponentInChildren<TextMeshProUGUI>();
 
         // Cadastrar função para ser invocada quando o diretor fechar o diálogo
+        jean.OnEndDialogueEvent += AdicionarMissoesNaJanelaMissoes;
         jean.OnEndDialogueEvent += Mostrar;
+    }
+
+    private void AdicionarMissoesNaJanelaMissoes()
+    {
+        var tituloMissao1 = "Coletar mídias";
+        string[] ordensMissao1 = { "Colete no mínimo 3 mídias" };
+        janelaMissoes.AdicionarMissao(tituloMissao1, ordensMissao1);
+
+        var tituloMissao2 = "Fazer planejamento";
+        string[] ordensMissao2 = { "Pegue a prancheta sobre a mesa" };
+        janelaMissoes.AdicionarMissao(tituloMissao2, ordensMissao2);
     }
 
     private void Mostrar()
@@ -54,7 +64,7 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         GameManager.UISendoUsada();
 
         // Alpha do background escuro para aumentar o foco do jogador
-        var alpha = 0.6f;
+        var alpha = 0.8f;
 
         // Fade in do background escuro
         backgroundFadeEffect.MaxAlpha = alpha;
@@ -66,7 +76,7 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
 
         componenteTexto.text = falas[0];
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2);
 
         // Posicionar o canvas da janela de missões sobre o este canvas
         var mySortingOrder = GetComponentInChildren<Canvas>().sortingOrder;
@@ -75,17 +85,22 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         janelaMissoes.Ativar();
 
         // Focar no botão da janela de missões
-        focoBotaoDaJanela.MaxAlpha = alpha;
-        StartCoroutine(focoBotaoDaJanela.Fade());
+        backgroundFadeEffect.GetComponent<Image>().enabled = false;
+        //focoBotaoDaJanela.MaxAlpha = alpha;
+        focoBotaoDaJanela.GetComponent<Image>().color = new Color(0, 0, 0, alpha);
+
 
         // Esperar o jogador abrir a janela de missões
         yield return new WaitUntil(() => janelaMissoes.Aberta);
-
-        StartCoroutine(focoBotaoDaJanela.Fade());
-
+        focoBotaoDaJanela.GetComponent<Image>().enabled = false;
+        backgroundFadeEffect.GetComponent<Image>().enabled = true;
         componenteTexto.text = falas[1];
 
-        var coroutine = PermitirFecharApos(8);
+        // Esperar o jogador ler todas as missões que estão na janela
+        yield return new WaitUntil(() => janelaMissoes.CompletamenteExplorada());
+        componenteTexto.text = falas[2];
+
+        var coroutine = PermitirFecharApos(4);
         StartCoroutine(coroutine);
     }
 
@@ -99,22 +114,9 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
     private IEnumerator PermitirFecharApos(float segundos)
     {
         yield return new WaitForSeconds(segundos);
-        //permiteFechar = true;
-
-        //Para substituir o Update.
-        while (!Input.anyKeyDown)
-        {
-            yield return null;
-        }
-
+        yield return new WaitUntil(() => Input.anyKeyDown);
         StartCoroutine(Fechar());
     }
-
-    /*private void Update() //Quando o permitir ficava true, sempre que se fazia alguma coisa o GameManager.uiNaoSendoUsada era ativado.
-    {
-        if (permiteFechar && Input.anyKeyDown)
-            StartCoroutine(Fechar());
-    }*/
 
     private void TocarAudio()
     {

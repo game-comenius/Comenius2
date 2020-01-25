@@ -63,6 +63,8 @@ public class FadeEffect : MonoBehaviour
                     spriteRenderer.color = color;
                     yield return null;
                 }
+                color.a = 0;
+                spriteRenderer.color = color;
             }
             else
             {
@@ -72,6 +74,8 @@ public class FadeEffect : MonoBehaviour
                     spriteRenderer.color = color;
                     yield return null;
                 }
+                color.a = MaxAlpha;
+                spriteRenderer.color = color;
             }
         }
         else if (image != null)
@@ -88,6 +92,8 @@ public class FadeEffect : MonoBehaviour
                     image.color = color;
                     yield return null;
                 }
+                color.a = 0;
+                image.color = color;
             }
             else
             {
@@ -97,6 +103,8 @@ public class FadeEffect : MonoBehaviour
                     image.color = color;
                     yield return null;
                 }
+                color.a = MaxAlpha;
+                image.color = color;
             }
         }
     }
