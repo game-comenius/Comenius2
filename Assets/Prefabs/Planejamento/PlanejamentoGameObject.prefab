@@ -708,7 +708,7 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1666863831940584}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1033,7 +1033,8 @@ MonoBehaviour:
   planejamentoUi: {fileID: 1345890680031594}
   confirmarPlan: {fileID: 114528932038516872}
   distFromPlayer: 2.2
-  drawDistFromPlayer: 0
+  interactOffset:
+  - {x: 0, y: 0, z: 0}
 --- !u!114 &114162240104428786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1425,6 +1426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a8624c56ff550f4da2e35b132942c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxAlpha: 0
 --- !u!114 &114428192237156404
 MonoBehaviour:
   m_ObjectHideFlags: 1

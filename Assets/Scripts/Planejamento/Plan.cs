@@ -13,98 +13,68 @@ public class Plan : MonoBehaviour
 
     private Vector2 mousePosition;
 
-    [Header("Gizmos")]
-
-    [SerializeField] bool drawDistFromPlayer;
+    [SerializeField] private Vector3[] interactOffset = new Vector3[1];
 
     private void Start()
     {
         confirmarPlan.onClick.AddListener(() => GameManager.UINaoSendoUsada());
-
-        //StartCoroutine(VerifyClick());
     }
 
+    //private void OnMouseUp()
+    //{
+    //    if (!GameManager.uiSendoUsada)
+    //    {
+    //        planejamentoUi.SetActive(true);
+    //        GameObject.Find("LocalFade").GetComponent<FadeEffect>().Fadeout();
+    //        GameManager.UISendoUsada();
+    //    }
+    //}
 
     private void OnMouseUp()
     {
+        if (!GameManager.uiSendoUsada && !Player.Instance.GetComponent<PathFinder>().hasTarget)
+        {
+            Player.Instance.GetComponent<PathFinder>().hasTarget = true;
+
+            StartCoroutine(MoveToInteract());
+        }
+    }
+
+    private IEnumerator MoveToInteract()
+    {
+        yield return new WaitForEndOfFrame();
+
         if (!GameManager.uiSendoUsada)
         {
-            planejamentoUi.SetActive(true);
-            GameObject.Find("LocalFade").GetComponent<FadeEffect>().Fadeout();
-            GameManager.UISendoUsada();
-        }
-    }
+            Vector3[] point = new Vector3[interactOffset.Length];
 
-    private IEnumerator VerifyClick()
-    {
-        while(true)
-        {
-            if (Input.GetMouseButtonUp(0))
+            for (int i = 0; i < point.Length; i++)
             {
-                mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-                //verificar se o mouse esta sobre o sprite e, se tiver, comecar corrotina
-
-                if ((Mathf.Abs(transform.position.x - mousePosition.x) < GetComponent<SpriteRenderer>().sprite.bounds.extents.x) && (Mathf.Abs(transform.position.y - mousePosition.y) < GetComponent<SpriteRenderer>().sprite.bounds.extents.y))
-                {
-                    StartCoroutine(VerifyDistance());
-
-                    yield break;
-                }
+                point[i] = transform.position + interactOffset[i];
             }
 
-            yield return null;
+            Player.Instance.GetComponent<PathFinder>().NullifyGotToInteractable();
+
+            Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point, Interact);
         }
     }
 
-    private IEnumerator VerifyDistance()
+    private void Interact()
     {
-        while(true)
-        {
-            if (Input.GetMouseButtonUp(0))
-            {
-                mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-                //verificar se o mouse esta fora do sprite e, se tiver, voltar para corrotine VerifyClick()
-
-                if ((Mathf.Abs(transform.position.x - mousePosition.x) > GetComponent<SpriteRenderer>().sprite.bounds.extents.x) || (Mathf.Abs(transform.position.y - mousePosition.y) > GetComponent<SpriteRenderer>().sprite.bounds.extents.y))
-                {
-                    StartCoroutine(VerifyClick());
-
-                    yield break;
-                }
-            }
-
-            if ((Player.Instance.transform.position - transform.position).magnitude < distFromPlayer)
-            {
-                planejamentoUi.SetActive(true);
-
-                StartCoroutine(VerifyPlanUI());
-
-                yield break;
-            }
-
-            yield return null;
-        }
+        planejamentoUi.SetActive(true);
+        GameObject.Find("LocalFade").GetComponent<FadeEffect>().Fadeout();
+        GameManager.UISendoUsada();
     }
 
-    private IEnumerator VerifyPlanUI()
+#if UNITY_EDITOR
+    protected virtual void OnDrawGizmosSelected()
     {
-        while (planejamentoUi.activeSelf) 
+        Gizmos.color = Color.magenta;
+
+        for (int i = 0; i < interactOffset.Length; i++)
         {
-            yield return null;
-        }
-
-        StartCoroutine(VerifyClick());
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (drawDistFromPlayer)
-        {
-            Gizmos.color = Color.red;
-
-            Gizmos.DrawWireSphere(transform.position, distFromPlayer);
+            Gizmos.DrawSphere(transform.position + interactOffset[i], 0.07f);
         }
     }
+#endif
 }

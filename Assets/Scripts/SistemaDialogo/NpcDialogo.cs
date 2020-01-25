@@ -24,7 +24,6 @@ public class NpcDialogo : QuestScript
     // tipo Action, ou seja, "retorno void e nenhum parâmetro, i.e., void ()"
     public event Action OnEndDialogueEvent;
 
-
     protected override void Start()
     {
         base.Start();
