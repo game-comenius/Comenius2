@@ -1937,12 +1937,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8056351885f5a76438866e79586deb59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridColor: {r: 1, g: 0, b: 0, a: 1}
   cellSize: {x: 0.5, y: 0.5}
   cellAngle: 30
   gridDim: {x: 14, y: 17}
   gridRotation: 210
-  newVacancy: 87f300008f0300003f0000004e00000004000000010001000100010001000100010001000100010031060000210600000000000000000000
+  vacancy: cff700009f0700001f00000047000000060000000000010001000100010001000100010001000100710e0000610e0000000c000000000000
+  gridColor: {r: 1, g: 0, b: 0, a: 1}
+  debug: 0
+  cell: {x: 0, y: 0}
 --- !u!4 &559305959
 Transform:
   m_ObjectHideFlags: 0
@@ -3113,7 +3115,7 @@ SpriteRenderer:
   m_Size: {x: 3.48, y: 3.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1820277625
@@ -3555,17 +3557,22 @@ Prefab:
     - target: {fileID: 224912068482267886, guid: 2d61794c7b05543b383592a46c69019b,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000041551702
+      value: 0.000011974715
       objectReference: {fileID: 0}
     - target: {fileID: 224105809437167266, guid: 2d61794c7b05543b383592a46c69019b,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.00000011920929
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114761236134733316, guid: 2d61794c7b05543b383592a46c69019b,
         type: 2}
       propertyPath: m_Size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224010104017046054, guid: 2d61794c7b05543b383592a46c69019b,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d61794c7b05543b383592a46c69019b, type: 2}

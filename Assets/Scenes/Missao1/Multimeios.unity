@@ -314,7 +314,7 @@ MonoBehaviour:
       - personagem: 1
         emocao: 2
         fala: "Tem um macete legal para aprender a teoria por tr\xE1s disso. \xC9
-          o CSA: com, sobre e atrav\xE9s."
+          o CSA: <i>com, sobre e atrav\xE9s.</i>"
       - personagem: 1
         emocao: 2
         fala: "S\xE3o dessas formas que \xE9 poss\xEDvel aprender com as m\xEDdias."
@@ -3714,12 +3714,17 @@ Prefab:
     - target: {fileID: 224912068482267886, guid: 2d61794c7b05543b383592a46c69019b,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000041551702
+      value: -0.0000010589122
       objectReference: {fileID: 0}
     - target: {fileID: 224105809437167266, guid: 2d61794c7b05543b383592a46c69019b,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.00000011920929
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224010104017046054, guid: 2d61794c7b05543b383592a46c69019b,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d61794c7b05543b383592a46c69019b, type: 2}
@@ -4101,13 +4106,16 @@ MonoBehaviour:
           de primeira!"
       - personagem: 0
         emocao: 4
-        fala: "Obrigada Drica! Esse gravador parece ser j\xF3ia!"
+        fala: "Obrigada, Drica! Esse gravador parece ser j\xF3ia!"
       - personagem: 1
         emocao: 2
         fala: "Isso mesmo, professora Lurdinha! Volte aqui e me pergunte alguma outra
           coisa se voc\xEA precisar saber mais sobre as m\xEDdias, j\xE1 que a minha
           fun\xE7\xE3o \xE9 te ajudar com isso. Ah, e n\xE3o se esque\xE7a de me emprestar
           as canetas coloridas depois, viu?"
+      - personagem: 0
+        emocao: 2
+        fala: "Claro! At\xE9 depois, Drica!"
       respostas: []
   dialogosSecundarios: []
   interactOffset:

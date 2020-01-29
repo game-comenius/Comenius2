@@ -566,7 +566,7 @@ Transform:
   m_GameObject: {fileID: 212845683}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.55, z: 1}
   m_Children: []
   m_Father: {fileID: 1842648754}
   m_RootOrder: 12
@@ -606,12 +606,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fbea087995b9a4f409ece63707e9e992, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ea9a3fa25fce4a4408fdb9d4c0315a2f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 19.2, y: 10.81}
+  m_Size: {x: 12.78, y: 7.18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4184,12 +4184,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8056351885f5a76438866e79586deb59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridColor: {r: 1, g: 0, b: 0, a: 1}
   cellSize: {x: 0.5, y: 0.5}
   cellAngle: 30
   gridDim: {x: 14, y: 17}
   gridRotation: 210
-  newVacancy: 08010000807b00009ffb01001ff8010000780000002000007e0000007e78000000f80000ff790000ff7900000020000000000000ff030000
+  vacancy: e0310000c0fb0000dffb00001ff80000003000007e6100007e1000000070000000f80000fff90000ff31000000000000ff010000ff030000
+  gridColor: {r: 1, g: 0, b: 0, a: 1}
+  debug: 0
+  cell: {x: 0, y: 0}
 --- !u!4 &1309676160
 Transform:
   m_ObjectHideFlags: 0
