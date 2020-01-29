@@ -338,7 +338,7 @@ public class SistemaDialogo : MonoBehaviour
 
     private void Analise()
     {
-        if (proximaFala >= dialogo.nodulos[nodulo].falas.Length)
+        if (proximaFala > dialogo.nodulos[nodulo].falas.Length)
         {
             botao.onClick.RemoveAllListeners();
 
