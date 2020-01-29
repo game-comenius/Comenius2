@@ -6,9 +6,9 @@ public class CursorInfos: MonoBehaviour
     [Serializable]
     private class CursorClass
     {
-        public Texture2D texture;
-        public Vector2 offset;
-        public CursorMode mode;
+        public Texture2D texture = null;
+        public Vector2 offset = Vector2.zero;
+        public CursorMode mode = CursorMode.Auto;
     }
 
     private static CursorInfos instance;

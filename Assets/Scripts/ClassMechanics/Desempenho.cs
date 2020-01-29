@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Desempenho : MonoBehaviour
 {
+    public static Desempenho instance;
+
     [Tooltip ("Acima de [excluindo]")]
     [SerializeField] private double bomDesempenho;
     [Tooltip("Abaixo de [incluindo]")]
@@ -14,6 +16,18 @@ public class Desempenho : MonoBehaviour
     [SerializeField] private Sprite[] spritesMaus = new Sprite[1];
 
     private void Awake()
+    {
+#if UNITY_EDITOR
+        if (instance != null)
+        {
+            Debug.Log("Mais de uma instancia.");
+        }
+#endif 
+
+        instance = this;
+    }
+
+    public void TrocarSala()
     {
         double points = Player.Instance.totalMissionPoints;
 

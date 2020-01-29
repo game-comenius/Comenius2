@@ -6,9 +6,11 @@ using UnityEngine.UI;
 // Classe FadeEffect como componente oferece fade in e out suave para imagens
 public class FadeEffect : MonoBehaviour
 {
+    public static FadeEffect instance;
+
     // Por exemplo, fade in vai levar o alpha da imagem do 0 até MaxAlpha
     [HideInInspector]
-    public float MaxAlpha;
+    private float _maxAlpha;
 
     // Esta classe pode ser usada tanto como componente para GameObjects 2D
     // quanto para GameObjects de UI
@@ -18,7 +20,15 @@ public class FadeEffect : MonoBehaviour
     // Use this for initialization
     private void Awake()
     {
-        if (gameObject.tag == "fadeMenu") DontDestroyOnLoad(gameObject);
+        //if (gameObject.tag == "fadeMenu") DontDestroyOnLoad(gameObject);
+#if UNITY_EDITOR
+        if (instance != null)
+        {
+            Debug.Log("Mais de uma instancia.");
+        }
+#endif 
+
+        instance = this;
     }
 
     void Start () {
@@ -30,24 +40,24 @@ public class FadeEffect : MonoBehaviour
         if (spriteRenderer != null)
         {
             var color = spriteRenderer.color;
-            MaxAlpha = color.a;
+            _maxAlpha = color.a;
             color.a = 0;
             spriteRenderer.color = color;
         }
         else if (image != null)
         {
             var color = image.color;
-            MaxAlpha = color.a;
+            _maxAlpha = color.a;
             color.a = 0;
             image.color = color;
         }
 
         // Se a imagem ja é completamente transparente, usar um valor padrão
         // para o MaxAlpha do efeito de fade
-        MaxAlpha = (MaxAlpha > 0) ? MaxAlpha : 0.7f;
+        _maxAlpha = (_maxAlpha > 0) ? _maxAlpha : 0.7f;
 	}
 	
-    public IEnumerator Fade()
+    public IEnumerator Fade(float maxAlpha)
     {
         if (spriteRenderer != null)
         {
@@ -68,13 +78,13 @@ public class FadeEffect : MonoBehaviour
             }
             else
             {
-                for (float i = color.a; i <= MaxAlpha; i += Time.deltaTime)
+                for (float i = color.a; i <= maxAlpha; i += Time.deltaTime)
                 {
                     color.a = i;
                     spriteRenderer.color = color;
                     yield return null;
                 }
-                color.a = MaxAlpha;
+                color.a = maxAlpha;
                 spriteRenderer.color = color;
             }
         }
@@ -97,23 +107,31 @@ public class FadeEffect : MonoBehaviour
             }
             else
             {
-                for (float i = color.a; i <= MaxAlpha; i += Time.deltaTime)
+                for (float i = color.a; i <= maxAlpha; i += Time.deltaTime)
                 {
                     color.a = i;
                     image.color = color;
                     yield return null;
                 }
-                color.a = MaxAlpha;
+                color.a = maxAlpha;
                 image.color = color;
             }
         }
     }
 
     public void Fadeout() {
-        StartCoroutine(Fade());
+        StartCoroutine(Fade(_maxAlpha));
+    }
+
+    public void Fadeout(float maxAlpha) {
+        StartCoroutine(Fade(maxAlpha));
     }
 
     public void Fadein() {
-        StartCoroutine(Fade());
+        StartCoroutine(Fade(_maxAlpha));
+    }
+
+    public void Fadein(float maxAlpha) {
+        StartCoroutine(Fade(maxAlpha));
     }
 }

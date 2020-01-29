@@ -67,8 +67,8 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         var alpha = 0.8f;
 
         // Fade in do background escuro
-        backgroundFadeEffect.MaxAlpha = alpha;
-        StartCoroutine(backgroundFadeEffect.Fade());
+        //backgroundFadeEffect.MaxAlpha = alpha;
+        StartCoroutine(backgroundFadeEffect.Fade(alpha));
 
         canvas.enabled = true;
 
@@ -106,7 +106,7 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
 
     private IEnumerator Fechar()
     {
-        yield return StartCoroutine(backgroundFadeEffect.Fade());
+        yield return StartCoroutine(backgroundFadeEffect.Fade(0.8f));
         canvas.enabled = false;
         GameManager.UINaoSendoUsada();
     }

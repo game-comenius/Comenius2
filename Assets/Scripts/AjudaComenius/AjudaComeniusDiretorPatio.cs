@@ -11,13 +11,13 @@ public class AjudaComeniusDiretorPatio : MonoBehaviour {
     private bool permiteFechar;
 
     private Canvas canvas;
-    private FadeEffect backgroundFadeEffect;
+    //private FadeEffect backgroundFadeEffect;
 
     // Use this for initialization
     private void Start () {
         canvas = GetComponentInChildren<Canvas>();
 
-        backgroundFadeEffect = GetComponentInChildren<FadeEffect>();
+        //backgroundFadeEffect = GetComponentInChildren<FadeEffect>();
         
         // Cadastrar função para ser invocada quando o diretor fechar o diálogo
         diretor.OnEndDialogueEvent += Mostrar;
@@ -28,8 +28,8 @@ public class AjudaComeniusDiretorPatio : MonoBehaviour {
         GameManager.UISendoUsada();
 
         canvas.enabled = true;
-        backgroundFadeEffect.MaxAlpha = 0.6f;
-        StartCoroutine(backgroundFadeEffect.Fade());
+        //backgroundFadeEffect.MaxAlpha = 0.6f;
+        StartCoroutine(FadeEffect.instance.Fade(0.6f));
 
         TocarAudio();
 
@@ -39,7 +39,7 @@ public class AjudaComeniusDiretorPatio : MonoBehaviour {
 
     private IEnumerator Fechar()
     {
-        yield return StartCoroutine(backgroundFadeEffect.Fade());
+        yield return StartCoroutine(FadeEffect.instance.Fade(0.6f));
         canvas.enabled = false;
         GameManager.UINaoSendoUsada();
     }

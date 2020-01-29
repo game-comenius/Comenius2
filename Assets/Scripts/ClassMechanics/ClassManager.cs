@@ -175,7 +175,21 @@ public class ClassManager : MonoBehaviour
             problemQuantity[i] = TraduzirPontoProblema((int)Player.Instance.points[i]);
         }
 
-        //Configura o professor.
+        TeacherSetUp();
+
+        AlunosComentaristasSetUp();
+
+        //Configura o final da aula.
+        EndClass += EndClassFunction;
+    }
+
+    private void OnDestroy()
+    {
+        EndClass -= EndClassFunction;
+    }
+
+    private void TeacherSetUp()
+    {
         professor.aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
         NpcDialogo b = professor.aluno.gameObject.GetComponent<NpcDialogo>();
 
@@ -199,8 +213,10 @@ public class ClassManager : MonoBehaviour
                 b.dialogoPrincipal = professor.falasGeneralistas[j].dialogos[0].Clone();
             }
         }
+    }
 
-        //Configura os alunos.
+    private void AlunosComentaristasSetUp()
+    {
         for (int i = 0; i < alunosComentaristas.Length; i++)
         {
             //alunosComentaristas[i].aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
@@ -213,7 +229,7 @@ public class ClassManager : MonoBehaviour
 
             d.questFeita.AddListener(() => { Collider2D collider = d.GetComponent<Collider2D>(); if (collider != null) { collider.enabled = false; } });
 
-            if ( i <= 1)
+            if (i <= 1)
             {
                 for (int j = 0; j < falasGeneralistas.Length; j++)
                 {
@@ -230,36 +246,19 @@ public class ClassManager : MonoBehaviour
 
             //d.enabled = false;
         }
-
-        //Configura o final da aula.
-        EndClass += (() =>
-        {
-            professor.aluno.gameObject.GetComponent<NpcDialogo>().enabled = true;
-
-            foreach (AlunosComentaristas aluno in alunosComentaristas)
-            {
-                aluno.aluno.gameObject.GetComponent<NpcDialogo>().enabled = true;
-                aluno.aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
-            }
-
-            professor.aluno.GetComponent<NpcDialogo>().Restart();
-        });
     }
 
-    private void OnDestroy()
+    private void EndClassFunction()
     {
-        EndClass -= (() =>
+        professor.aluno.gameObject.GetComponent<NpcDialogo>().enabled = true;
+
+        foreach (AlunosComentaristas aluno in alunosComentaristas)
         {
-            professor.aluno.gameObject.GetComponent<NpcDialogo>().enabled = true;
+            aluno.aluno.gameObject.GetComponent<NpcDialogo>().enabled = true;
+            aluno.aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+        }
 
-            foreach (AlunosComentaristas aluno in alunosComentaristas)
-            {
-                aluno.aluno.gameObject.GetComponent<NpcDialogo>().enabled = true;
-                aluno.aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
-            }
-
-            professor.aluno.GetComponent<NpcDialogo>().Restart();
-        });
+        professor.aluno.GetComponent<NpcDialogo>().Restart();
     }
 
     //Método para que os estudantes possam ser adicionados na lista students
@@ -269,8 +268,6 @@ public class ClassManager : MonoBehaviour
 
         studentIsProblem.Add(false);
     }
-
-
 
     private IEnumerator StartClass()
     {
@@ -357,6 +354,12 @@ public class ClassManager : MonoBehaviour
         yield return new WaitWhile(() => ((TeacherScript)professor.aluno).walkCoroutine != null);
 
         timer.text = "Aula terminada";
+
+        yield return StartCoroutine(FadeEffect.instance.Fade(1f));
+
+        Desempenho.instance.TrocarSala();
+
+        yield return StartCoroutine(FadeEffect.instance.Fade(1f));
 
         GameManager.UINaoSendoUsada();
 
