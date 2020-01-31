@@ -255,17 +255,9 @@ MonoBehaviour:
   dialogoObrigatorio: 0
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
-    nodulos:
-    - falas:
-      - personagem: 0
-        emocao: 2
-        fala: 
-      - personagem: 12
-        emocao: 0
-        fala: "Quadro negro todo dia \xE0s vezes cansa\u2026 Adoro as aulas em que
-          a gente pode ver um v\xEDdeo na TV!"
-      respostas: []
-  dialogosSecundarios: []
+    nodulos: []
+  dialogosSecundarios:
+  - nodulos: []
   interactOffset:
   - {x: -0.67, y: -0.84, z: 0}
 --- !u!212 &110497760
@@ -1352,133 +1344,7 @@ MonoBehaviour:
   dialogoObrigatorio: 0
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
-    nodulos:
-    - falas:
-      - personagem: 0
-        emocao: 0
-        fala: 
-      - personagem: 1
-        emocao: 4
-        fala: Oi professora Lurdinha, bem vinda para mais um dia de trabalho!
-      - personagem: 1
-        emocao: 2
-        fala: "Hoje temos mais uma novidade quentinha na sala de m\xEDdias! Chegou
-          um retroprojetor de \xFAltima gera\xE7\xE3o, voc\xEA j\xE1 viu?"
-      - personagem: 0
-        emocao: 2
-        fala: "Que bacana! Quero muito experimentar ele em sala de aula, acho que
-          os alunos v\xE3o gostar muito!"
-      - personagem: 1
-        emocao: 2
-        fala: "Agora s\xF3 precisamos dar um jeito de achar e preparar as <b>transpar\xEAncias</b>."
-      - personagem: 1
-        emocao: 0
-        fala: "Onde ser\xE1 que a escola escondeu? Acho que procurar na <i>Coordena\xE7\xE3o
-          Pedag\xF3gica</i> pode ser um bom come\xE7o!"
-      - personagem: 0
-        emocao: 4
-        fala: "\xD3tima dica, como sempre, Drica!"
-      - personagem: 1
-        emocao: 4
-        fala: "Ent\xE3o professora, n\xE3o esque\xE7a que estou aqui pra te ajudar!
-          Voc\xEA est\xE1 com alguma d\xFAvida sobre as m\xEDdias?"
-      respostas:
-      - personagem: 0
-        emocao: 0
-        fala: "Drica, eu andei pensando sobre as m\xEDdias. \xC9 estranho que uma
-          TV pode ser uma m\xEDdia, mas um cartaz tamb\xE9m pode ser. Porque ser\xE1
-          que acontece isso?"
-        resumo: "O que s\xE3o m\xEDdias?"
-        conexao: 1
-        questInfo:
-          isQuest: 0
-          questIndex: {x: 0, y: 0}
-          questDependencias: []
-      - personagem: 0
-        emocao: 0
-        fala: "Voc\xEA tem alguma ideia de onde achar m\xEDdias pela escola?"
-        resumo: "Onde achar m\xEDdias?"
-        conexao: 2
-        questInfo:
-          isQuest: 0
-          questIndex: {x: 0, y: 0}
-          questDependencias: []
-      - personagem: 0
-        emocao: 4
-        fala: "N\xE3o tenho d\xFAvidas agora! Obrigada pela ajuda, Drica!"
-        resumo: "[Encerrar di\xE1logo]"
-        conexao: 0
-        questInfo:
-          isQuest: 0
-          questIndex: {x: 0, y: 0}
-          questDependencias: []
-    - falas:
-      - personagem: 0
-        emocao: 0
-        fala: 
-      - personagem: 1
-        emocao: 0
-        fala: "Ah, professora, estou estudando sobre isso\u2026"
-      - personagem: 1
-        emocao: 2
-        fala: "As m\xEDdias s\xE3o mais que simples ferramentas, elas podem ser tamb\xE9m
-          linguagens, linguagens que se articulam entre as tecnologias, a informa\xE7\xE3o
-          e a comunica\xE7\xE3o."
-      - personagem: 0
-        emocao: 0
-        fala: "Acho que estou entendendo. Ent\xE3o uma m\xEDdia traz com ela outras
-          coisas, n\xE3o \xE9?"
-      - personagem: 1
-        emocao: 2
-        fala: "Sim, porque pensa, uma TV vai trazer uma linguagem diferente de um
-          cartaz. Por afinal, <i>o meio \xE9 a mensagem</i> e se o meio muda, a mensagem
-          muda tamb\xE9m."
-      - personagem: 1
-        emocao: 4
-        fala: " Por que por exemplo, uma hist\xF3ria que \xE9 contada em um filme
-          \xE9 bem diferente de uma que for contada em um livro."
-      - personagem: 1
-        emocao: 2
-        fala: "Porque no filme voc\xEA v\xEA as pessoas, voc\xEA pode ouvir m\xFAsicas
-          e sentir as coisas atrav\xE9s delas, mas no livro voc\xEA consegue entrar
-          mais na mente dos personagens, se o narrador deixar, sabe?"
-      - personagem: 0
-        emocao: 2
-        fala: "Entendi, est\xE1 tudo mais claro agora!"
-      - personagem: 0
-        emocao: 4
-        fala: " Obrigada Drica! At\xE9 mais."
-      respostas: []
-    - falas:
-      - personagem: 0
-        emocao: 0
-        fala: 
-      - personagem: 1
-        emocao: 4
-        fala: "Boa pergunta! Eu acho que tem uma coisa que pode ser \xFAtil para voc\xEA
-          melhorar uma de suas m\xEDdias."
-      - personagem: 1
-        emocao: 2
-        fala: "Tenho um belo kit de canetas coloridas que uso para desenhar, acho
-          que elas podem ser perfeitas para voc\xEA melhorar o <b>cartaz</b>."
-      - personagem: 0
-        emocao: 4
-        fala: "Ah, que \xF3timo! Voc\xEA poderia me emprestar elas ent\xE3o?"
-      - personagem: 1
-        emocao: 0
-        fala: "Claro, mas tem s\xF3 um probleminha\u2026"
-      - personagem: 1
-        emocao: 2
-        fala: "Eu acabei emprestando para uma coleguinha minha umas semanas atr\xE1s
-          e ela ainda n\xE3o me devolveu."
-      - personagem: 1
-        emocao: 4
-        fala: "Se voc\xEA encontrar uma menina loira com maria chiquinha, pe\xE7a
-          para ela devolver para voc\xEA porque eu estou te emprestando."
-      - personagem: 0
-        emocao: 4
-        fala: "Que \xF3timo, vou ver se encontro ela ent\xE3o!"
-      respostas: []
+    nodulos: []
   dialogosSecundarios:
   - nodulos:
     - falas:
@@ -1491,14 +1357,14 @@ MonoBehaviour:
       - personagem: 1
         emocao: 2
         fala: "Hoje temos mais uma novidade quentinha na sala de m\xEDdias! Chegou
-          um retroprojetor de \xFAltima gera\xE7\xE3o, voc\xEA j\xE1 viu?"
+          um <b>retroprojetor</b> de \xFAltima gera\xE7\xE3o, voc\xEA j\xE1 viu?"
       - personagem: 0
         emocao: 2
         fala: "Que bacana! Quero muito experimentar ele em sala de aula, acho que
           os alunos v\xE3o gostar muito!"
       - personagem: 1
         emocao: 2
-        fala: "Agora s\xF3 precisamos dar um jeito de achar e preparar as <b>transpar\xEAncias</b>."
+        fala: "Agora s\xF3 precisamos dar um jeito de achar e preparar as <b>transpar\xEAncias.</b>"
       - personagem: 1
         emocao: 0
         fala: "Onde ser\xE1 que a escola escondeu? Acho que procurar na <i>Coordena\xE7\xE3o
@@ -1508,15 +1374,17 @@ MonoBehaviour:
         fala: "\xD3tima dica, como sempre, Drica!"
       - personagem: 1
         emocao: 4
-        fala: "Ent\xE3o professora, n\xE3o esque\xE7a que estou aqui pra te ajudar!
-          Voc\xEA est\xE1 com alguma d\xFAvida sobre as m\xEDdias?"
+        fala: "Ent\xE3o professora, n\xE3o esque\xE7a que estou aqui pra te ajudar!"
+      - personagem: 1
+        emocao: 2
+        fala: "Voc\xEA est\xE1 com alguma d\xFAvida sobre as m\xEDdias?"
       respostas:
       - personagem: 0
         emocao: 0
         fala: "Drica, eu andei pensando sobre as m\xEDdias. \xC9 estranho que uma
           TV pode ser uma m\xEDdia, mas um cartaz tamb\xE9m pode ser. Porque ser\xE1
           que acontece isso?"
-        resumo: "O que s\xE3o m\xEDdias?"
+        resumo: "O que \xE9 uma m\xEDdia?"
         conexao: 1
         questInfo:
           isQuest: 0
@@ -1534,8 +1402,8 @@ MonoBehaviour:
       - personagem: 0
         emocao: 0
         fala: "N\xE3o tenho d\xFAvidas agora! Obrigada pela ajuda, Drica!"
-        resumo: "[Encerrar di\xE1logo]"
-        conexao: 0
+        resumo: Sair
+        conexao: 3
         questInfo:
           isQuest: 0
           questIndex: {x: 0, y: 0}
@@ -1559,12 +1427,12 @@ MonoBehaviour:
       - personagem: 1
         emocao: 2
         fala: "Sim, porque pensa, uma TV vai trazer uma linguagem diferente de um
-          cartaz. Por afinal, <i>o meio \xE9 a mensagem</i> e se o meio muda, a mensagem
+          cartaz. Por afinal, o meio \xE9 a mensagem  e se o meio muda, a mensagem
           muda tamb\xE9m."
       - personagem: 1
         emocao: 4
-        fala: " Por que por exemplo, uma hist\xF3ria que \xE9 contada em um filme
-          \xE9 bem diferente de uma que for contada em um livro."
+        fala: "Por que por exemplo, uma hist\xF3ria que \xE9 contada em um filme \xE9
+          bem diferente de uma que for contada em um livro."
       - personagem: 1
         emocao: 2
         fala: "Porque no filme voc\xEA v\xEA as pessoas, voc\xEA pode ouvir m\xFAsicas
@@ -1572,10 +1440,7 @@ MonoBehaviour:
           mais na mente dos personagens, se o narrador deixar, sabe?"
       - personagem: 0
         emocao: 2
-        fala: "Entendi, est\xE1 tudo mais claro agora!"
-      - personagem: 0
-        emocao: 4
-        fala: " Obrigada Drica! At\xE9 mais."
+        fala: "Entendi, est\xE1 tudo mais claro agora! Obrigada Drica! At\xE9 mais."
       respostas: []
     - falas:
       - personagem: 0
@@ -1588,24 +1453,34 @@ MonoBehaviour:
       - personagem: 1
         emocao: 2
         fala: "Tenho um belo kit de canetas coloridas que uso para desenhar, acho
-          que elas podem ser perfeitas para voc\xEA melhorar o <b>cartaz</b>."
+          que elas podem ser perfeitas para voc\xEA melhorar o cartaz."
       - personagem: 0
-        emocao: 4
+        emocao: 2
         fala: "Ah, que \xF3timo! Voc\xEA poderia me emprestar elas ent\xE3o?"
       - personagem: 1
-        emocao: 0
+        emocao: 4
         fala: "Claro, mas tem s\xF3 um probleminha\u2026"
       - personagem: 1
-        emocao: 2
+        emocao: 0
         fala: "Eu acabei emprestando para uma coleguinha minha umas semanas atr\xE1s
-          e ela ainda n\xE3o me devolveu."
+          e ela ainda n\xE3o me devolveu. Se voc\xEA encontrar uma <i>menina loira
+          com maria chiquinha</i>, pe\xE7a para ela devolver para voc\xEA porque eu
+          estou te emprestando."
+      - personagem: 0
+        emocao: 2
+        fala: "Que \xF3timo, vou ver se encontro ela ent\xE3o!"
+      respostas: []
+    - falas:
+      - personagem: 0
+        emocao: 0
+        fala: 
       - personagem: 1
         emocao: 4
-        fala: "Se voc\xEA encontrar uma menina loira com maria chiquinha, pe\xE7a
-          para ela devolver para voc\xEA porque eu estou te emprestando."
+        fala: Muito bem, professora! Qualquer coisa volte aqui que conversamos mais,
+          ok?
       - personagem: 0
         emocao: 4
-        fala: "Que \xF3timo, vou ver se encontro ela ent\xE3o!"
+        fala: "Beleza! At\xE9 mais!"
       respostas: []
   interactOffset:
   - {x: 0.76, y: -0.96, z: 0}
@@ -1736,7 +1611,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a8624c56ff550f4da2e35b132942c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxAlpha: 0
 --- !u!212 &350068862
 SpriteRenderer:
   m_ObjectHideFlags: 0
