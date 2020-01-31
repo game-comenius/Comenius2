@@ -172,7 +172,7 @@ public class ClassManager : MonoBehaviour
 
         for (int i = 0; i < problemQuantity.Length; i++) 
         {
-            problemQuantity[i] = TraduzirPontoProblema((int)Player.Instance.points[i]);
+            problemQuantity[i] = TraduzirPontoProblema((int)Player.Instance.MissionHistory[Player.Instance.missionID].points[i]);
         }
 
         TeacherSetUp();
@@ -208,7 +208,8 @@ public class ClassManager : MonoBehaviour
 
         for (int j = 0; j < professor.falasGeneralistas.Length; j++)
         {
-            if (Player.Instance.totalMissionPoints >= falasGeneralistas[j].rangeNota.x && Player.Instance.totalMissionPoints <= falasGeneralistas[j].rangeNota.y)
+            if (Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints >= falasGeneralistas[j].rangeNota.x 
+                && Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints <= falasGeneralistas[j].rangeNota.y)
             {
                 b.dialogoPrincipal = professor.falasGeneralistas[j].dialogos[0].Clone();
             }
@@ -233,7 +234,8 @@ public class ClassManager : MonoBehaviour
             {
                 for (int j = 0; j < falasGeneralistas.Length; j++)
                 {
-                    if (Player.Instance.totalMissionPoints >= falasGeneralistas[j].rangeNota.x && Player.Instance.totalMissionPoints <= falasGeneralistas[j].rangeNota.y)
+                    if (Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints >= falasGeneralistas[j].rangeNota.x 
+                        && Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints <= falasGeneralistas[j].rangeNota.y)
                     {
                         d.dialogoPrincipal = falasGeneralistas[j].dialogos[i].Clone();
                     }
@@ -241,7 +243,7 @@ public class ClassManager : MonoBehaviour
             }
             else
             {
-                d.dialogoPrincipal = falasSobreMomentos[i - 2].EncontrarFalaCerta(Player.Instance.chosenMedia[i - 2]).Clone();
+                d.dialogoPrincipal = falasSobreMomentos[i - 2].EncontrarFalaCerta(Player.Instance.MissionHistory[Player.Instance.missionID].chosenMedia[i - 2]).Clone();
             }
 
             //d.enabled = false;

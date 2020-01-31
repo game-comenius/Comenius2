@@ -15,6 +15,9 @@ public class Desempenho : MonoBehaviour
     [SerializeField] private Sprite[] spritesBons = new Sprite[1];
     [SerializeField] private Sprite[] spritesMaus = new Sprite[1];
 
+    [SerializeField]
+    private int missionID;
+
     private void Awake()
     {
 #if UNITY_EDITOR
@@ -29,7 +32,7 @@ public class Desempenho : MonoBehaviour
 
     public void TrocarSala()
     {
-        double points = Player.Instance.totalMissionPoints;
+        double points = Player.Instance.MissionHistory[missionID].totalMissionPoints;
 
         if (points > bomDesempenho)
         {
@@ -37,7 +40,7 @@ public class Desempenho : MonoBehaviour
             {
                 if (spritesBons[i] == null)
                 {
-                    Destroy(objetos[i]);
+                    Destroy(objetos[i].gameObject);
                 }
                 else
                 {
@@ -51,7 +54,7 @@ public class Desempenho : MonoBehaviour
             {
                 if (spritesMaus[i] == null)
                 {
-                    Destroy(objetos[i]);
+                    Destroy(objetos[i].gameObject);
                 }
                 else
                 {

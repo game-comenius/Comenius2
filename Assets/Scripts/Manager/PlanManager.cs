@@ -51,9 +51,11 @@ public class PlanManager : MonoBehaviour {
 
         Debug.Log("pontuação da missão: " + totalMissionPoints);
 
-        Player.Instance.chosenMedia = chosenMedia;
-        Player.Instance.points = points;
-        Player.Instance.totalMissionPoints = totalMissionPoints;
+        //Player.Instance.chosenMedia = chosenMedia;
+        //Player.Instance.points = points;
+        //Player.Instance.totalMissionPoints = totalMissionPoints;
+
+        Player.Instance.MissionHistory[Player.Instance.missionID] = new ChosenMediaPoints(chosenMedia, points, totalMissionPoints);
     }
 
     public double getTotalMissionPoints() {
