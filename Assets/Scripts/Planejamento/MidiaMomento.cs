@@ -20,17 +20,24 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
     public int fotografiaPoints = 0;
     public int tvPoints = 0;
     public int vhsPoints = 0;
+    public int vhsEditadoPoints = 0;
     public int cartazComPenasPoints = 0;
     public int livroPoints = 0;
     public int livroilustradoPoints = 0;
     public int quadroNegroPoints = 0;
     public int quadroNegroStencilPoints = 0;
     public int cartazesPoints = 0;
+    public int cartasComCanetasPoints= 0;
     public int mapaPoints = 0;
     public int cadernoPoints = 0;        
-    public int jornaisPoints = 0;        
+    public int jornaisPoints = 0;
     public int jornaiserevistasPoints = 0;
-
+    public int retrorojetorSLidesMapaPoints = 0;
+    public int retroprojetorSlidesLinhadoTempoPoints = 0;
+    public int retroprojetorSlidesCicloDoTrabalhoPoints = 0;
+    public int diarioPoints = 0;
+  
+    
 
     // Campos relacionados a UI para destacar o momento selecionado
     private static Image activeItemBorder;
@@ -95,6 +102,12 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
             case ItemName.Caderno: return cadernoPoints;
             case ItemName.Jornais: return jornaisPoints;
             case ItemName.JornaisEResvistas: return jornaiserevistasPoints;
+            case ItemName.RetroprojetorSlideMapa: return retrorojetorSLidesMapaPoints;
+            case ItemName.RetroprojetorSlideLinhaTempo: return retroprojetorSlidesLinhadoTempoPoints;
+            case ItemName.RetroprojetorSlideCicloTrabalho: return retroprojetorSlidesCicloDoTrabalhoPoints;
+            case ItemName.CartazComCanetas: return cartasComCanetasPoints;
+            case ItemName.VhsEditado: return vhsEditadoPoints;
+            case ItemName.Diario: return diarioPoints;
             default: return 0;
         }
     }

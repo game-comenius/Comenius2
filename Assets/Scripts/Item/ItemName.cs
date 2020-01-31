@@ -19,5 +19,11 @@ public enum ItemName
     JornaisEResvistas,
     Cd,
     GravacaoPassaro,
-    CameraPolaroid
+    CameraPolaroid,
+    RetroprojetorSlideMapa,
+    RetroprojetorSlideLinhaTempo,
+    RetroprojetorSlideCicloTrabalho,
+    CartazComCanetas,
+    VhsEditado,
+    Diario
 }

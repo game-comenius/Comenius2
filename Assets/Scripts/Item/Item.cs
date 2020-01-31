@@ -121,6 +121,36 @@ public class Item
                 UpgradeFrom[0] = ItemName.Jornais;
                 UpgradeFrom[1] = ItemName.Jornais;
                 break;
+            case ItemName.RetroprojetorSlideMapa:
+                FriendlyName = "Retroprojetor c/ Slide e  Mapa ";
+                Description = "Sem descrição";
+                FullDescription = "Sem texto";
+                break;
+            case ItemName.RetroprojetorSlideLinhaTempo:
+                FriendlyName = "Retroprojetor c/ Slide com Linha do Tempo";
+                Description = "Sem descrição";
+                FullDescription = "Sem texto";
+                break;
+            case ItemName.RetroprojetorSlideCicloTrabalho:
+                FriendlyName = "Retroprojetor c/ Slide com Ciclo do trabalho";
+                Description = "Sem descrição";
+                FullDescription = "Sem texto";
+                break;
+            case ItemName.CartazComCanetas:
+                FriendlyName = "Cartas com caneta colorida";
+                Description = "Sem descrição";
+                FullDescription = "Sem texto";
+                break;
+            case ItemName.VhsEditado:
+                FriendlyName = "VHS Editado";
+                Description = "Sem descrição";
+                FullDescription = "Sem texto";
+                break;
+            case ItemName.Diario:
+                FriendlyName = "Diário";
+                Description = "Sem descrição";
+                FullDescription = "Sem texto";
+                break;
             case ItemName.SemNome:
                 FriendlyName = "Sem nome";
                 Description = "Sem descrição";
