@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class JanelaMissoes : MonoBehaviour {
 
-    // Campos relacionados à ajuda do comenius, ou seja, tutoriais
-    private static bool fezTutorial;
+    // Define se a janela deve ser renderizada ou não
+    private static bool ativada;
 
     public bool Aberta { get; set; }
     private RectTransform transformJanela;
@@ -25,6 +25,10 @@ public class JanelaMissoes : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        // Esta janela de missões estará presente em todas as cenas seguintes
+        // Não é necessário adicionar o GameObject/Prefab em outras cenas
+        DontDestroyOnLoad(this.gameObject);
+
         transformJanela = transform.GetChild(0).GetChild(0).GetComponent<RectTransform>();
         posicaoFechada = transformJanela.anchoredPosition;
         posicaoAberta = posicaoFechada;
@@ -32,7 +36,11 @@ public class JanelaMissoes : MonoBehaviour {
 
         corpoJanelaMissoes = GetComponentInChildren<CorpoJanelaMissoes>();
 
-        if (fezTutorial) Ativar();
+        if (ativada)
+            Ativar();
+        else
+            Desativar();
+
     }
 
     public void Toggle()
@@ -43,8 +51,14 @@ public class JanelaMissoes : MonoBehaviour {
 
     public void Ativar()
     {
-        fezTutorial = true;
+        ativada = true;
         GetComponentInChildren<Canvas>().enabled = true;
+    }
+
+    public void Desativar()
+    {
+        ativada = false;
+        GetComponentInChildren<Canvas>().enabled = false;
     }
 
     public bool CompletamenteExplorada()

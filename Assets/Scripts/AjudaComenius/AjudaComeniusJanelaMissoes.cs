@@ -25,33 +25,31 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
 
     private Canvas canvas;
     private FadeEffect backgroundFadeEffect;
-    private FadeEffect focoBotaoDaJanela;
+    private Image focoBotaoDaJanela;
 
     // Use this for initialization
     private void Start()
     {
         canvas = GetComponentInChildren<Canvas>();
 
-        var fadeEffects = GetComponentsInChildren<FadeEffect>();
-        focoBotaoDaJanela = fadeEffects[0];
-        backgroundFadeEffect = fadeEffects[1];
+        var fadeEffect = GetComponentInChildren<FadeEffect>();
+        backgroundFadeEffect = fadeEffect;
+
+        focoBotaoDaJanela = canvas.transform.GetChild(0).GetComponent<Image>();
+        focoBotaoDaJanela.color = Color.clear;
 
         componenteTexto = GetComponentInChildren<TextMeshProUGUI>();
 
         // Cadastrar função para ser invocada quando o diretor fechar o diálogo
-        jean.OnEndDialogueEvent += AdicionarMissoesNaJanelaMissoes;
+        jean.OnEndDialogueEvent += AdicionarMissaoNaJanelaMissoes;
         jean.OnEndDialogueEvent += Mostrar;
     }
 
-    private void AdicionarMissoesNaJanelaMissoes()
+    private void AdicionarMissaoNaJanelaMissoes()
     {
-        var tituloMissao1 = "Coletar mídias";
-        string[] ordensMissao1 = { "Colete no mínimo 3 mídias" };
-        janelaMissoes.AdicionarMissao(tituloMissao1, ordensMissao1);
-
-        var tituloMissao2 = "Fazer planejamento";
-        string[] ordensMissao2 = { "Pegue a prancheta sobre a mesa" };
-        janelaMissoes.AdicionarMissao(tituloMissao2, ordensMissao2);
+        var tituloMissao = "Coletar mídias";
+        string[] ordensMissao = { "Colete pelo menos 3 mídias" };
+        janelaMissoes.AdicionarMissao(tituloMissao, ordensMissao);
     }
 
     private void Mostrar()
@@ -67,7 +65,6 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         var alpha = 0.8f;
 
         // Fade in do background escuro
-        //backgroundFadeEffect.MaxAlpha = alpha;
         StartCoroutine(backgroundFadeEffect.Fade(alpha));
 
         canvas.enabled = true;
@@ -86,13 +83,12 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
 
         // Focar no botão da janela de missões
         backgroundFadeEffect.GetComponent<Image>().enabled = false;
-        //focoBotaoDaJanela.MaxAlpha = alpha;
-        focoBotaoDaJanela.GetComponent<Image>().color = new Color(0, 0, 0, alpha);
+        focoBotaoDaJanela.color = new Color(0, 0, 0, alpha);
 
 
         // Esperar o jogador abrir a janela de missões
         yield return new WaitUntil(() => janelaMissoes.Aberta);
-        focoBotaoDaJanela.GetComponent<Image>().enabled = false;
+        focoBotaoDaJanela.enabled = false;
         backgroundFadeEffect.GetComponent<Image>().enabled = true;
         componenteTexto.text = falas[1];
 

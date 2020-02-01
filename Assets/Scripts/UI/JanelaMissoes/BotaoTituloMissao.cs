@@ -8,13 +8,12 @@ using UnityEngine.UI;
 public class BotaoTituloMissao : MonoBehaviour, IPointerClickHandler {
 
     private bool aberto;
+    [HideInInspector]
     public bool abertoPeloMenosUmaVez;
 
     private TextMeshProUGUI titulo;
 
     private string[] ordensMissao;
-
-    //private CorpoJanelaMissoes corpoJanelaMissoes;
 
     [SerializeField]
     private CorpoMissaoJanelaMissoes prefabCorpoMissao;
@@ -24,7 +23,6 @@ public class BotaoTituloMissao : MonoBehaviour, IPointerClickHandler {
     private void Awake()
     {
         titulo = GetComponentInChildren<TextMeshProUGUI>();
-        //corpoJanelaMissoes = GetComponentInParent<CorpoJanelaMissoes>();
     }
 
     public void Configurar(string tituloMissao, string[] ordensMissao)
