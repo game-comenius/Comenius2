@@ -30,9 +30,6 @@ public class DoorTransitionEditor : UnityEditor.Editor
         for (int i = 0; i < sceneCount; i++)
         {
             scenesName[i] = System.IO.Path.GetFileNameWithoutExtension(SceneUtility.GetScenePathByBuildIndex(i));
-
-            Debug.Log(System.IO.Path.GetFullPath(SceneUtility.GetScenePathByBuildIndex(i)));
-            Debug.Log(SceneUtility.GetScenePathByBuildIndex(i));
         }
 
         scenesName[sceneCount] = "-------------";
