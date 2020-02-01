@@ -53,7 +53,10 @@ public class AjudaComeniusDiretorPatio : MonoBehaviour {
     private void Update()
     {
         if (permiteFechar && Input.anyKeyDown)
+        {
             StartCoroutine(Fechar());
+            permiteFechar = false;
+        }
     }
 
     private void TocarAudio()
