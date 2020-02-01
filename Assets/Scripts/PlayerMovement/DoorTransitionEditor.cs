@@ -17,19 +17,13 @@ public class DoorTransitionEditor : UnityEditor.Editor
 
     private int indexBk;
 
-    public override void OnInspectorGUI()
+    private void OnEnable()
     {
-        DrawDefaultInspector();
-
-        DoorTransition myScript = (DoorTransition)target;
-
         sceneCount = SceneManager.sceneCountInBuildSettings;
 
         index = sceneCount;
 
         indexBk = sceneCount;
-
-        scenesName = new string[0];
 
         scenesName = new string[sceneCount + 1];
 
@@ -37,6 +31,26 @@ public class DoorTransitionEditor : UnityEditor.Editor
         {
             scenesName[i] = System.IO.Path.GetFileNameWithoutExtension(SceneUtility.GetScenePathByBuildIndex(i));
 
+            Debug.Log(System.IO.Path.GetFullPath(SceneUtility.GetScenePathByBuildIndex(i)));
+            Debug.Log(SceneUtility.GetScenePathByBuildIndex(i));
+        }
+
+        scenesName[sceneCount] = "-------------";
+    }
+
+    public override void OnInspectorGUI()
+    {
+        DrawDefaultInspector();
+
+        DoorTransition myScript = (DoorTransition)target;
+
+        if (SceneManager.sceneCountInBuildSettings + 1 != scenesName.Length)
+        {
+            OnEnable();
+        }
+
+        for (int i = 0; i < sceneCount; i++)
+        {
             if (scenesName[i] == myScript.sceneName)
             {
                 index = i;
@@ -44,8 +58,6 @@ public class DoorTransitionEditor : UnityEditor.Editor
                 indexBk = i;
             }
         }
-
-        scenesName[sceneCount] = "-------------";
 
         index = EditorGUILayout.Popup("Nome Da Cena", index, scenesName);
 
