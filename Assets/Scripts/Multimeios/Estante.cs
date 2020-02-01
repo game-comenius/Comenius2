@@ -80,7 +80,7 @@ public class Estante : QuestScript {
 
     private void Interact()
     {
-        GameObject.Find("LocalFade").GetComponent<FadeEffect>().Fadeout();
+        GameObject.Find("Fade").GetComponent<FadeEffect>().Fadeout();
         modoEstanteAbertaUI.SetActive(true);
         estanteUI.DisplayItems();
         GameManager.UISendoUsada();

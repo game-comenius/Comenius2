@@ -13,7 +13,7 @@ public class MediaAnimation : MonoBehaviour {
 
     public void endFanfare()
     {
-        GameObject.Find("LocalFade").GetComponent<FadeEffect>().Fadein();
+        GameObject.Find("Fade").GetComponent<FadeEffect>().Fadein();
         GameObject.Find("MediaAnimationCanvas").SetActive(false);
     }
 
