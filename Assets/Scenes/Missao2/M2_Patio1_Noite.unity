@@ -338,209 +338,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &107591184
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1838146933834438, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 107591188}
-  - component: {fileID: 107591187}
-  - component: {fileID: 107591186}
-  - component: {fileID: 107591185}
-  m_Layer: 0
-  m_Name: Montanari
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &107591185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 107591184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 1
-    questIndex: {x: 2, y: 6}
-    questDependencias: []
-  questFeita:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 107591185}
-        m_MethodName: DestroirObjeto
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1634304413}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 107591187}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dialogoObrigatorio: 0
-  esperaDialogoObrigatorio: 2
-  dialogoPrincipal:
-    nodulos:
-    - falas:
-      - personagem: 0
-        emocao: 2
-        fala: 
-      - personagem: 8
-        emocao: 1
-        fala: "Boa v\xE9spera, auxiliar Maria de Lourdes. Percebi que desde que o\r
-          professor Jean pediu a sua ajuda para a aula dele a escola esteve bem\r
-          movimentada. N\xE3o sei dizer se de um jeito bom ou ruim\u2026\r\n"
-      - personagem: 8
-        emocao: 2
-        fala: "De qualquer forma,\r gostaria de te apresentar a respons\xE1vel pelo
-          Laborat\xF3rio: Maria Montanari.\r\n"
-      - personagem: 8
-        emocao: 2
-        fala: "Ela \xE9 extremamente competente e muito inteligente. Voc\xEA poderia
-          aprender muito com ela, auxiliar Maria de Lourdes."
-      - personagem: 9
-        emocao: 2
-        fala: "Obrigada pela apresenta\xE7\xE3o, Diretor."
-      - personagem: 9
-        emocao: 2
-        fala: "Sempre que precisar de ajuda ou se quiser que eu te ensine sobre algum
-          assunto, basta me procurar no Laborat\xF3rio, xar\xE1."
-      - personagem: 9
-        emocao: 0
-        fala: "Concordo com o Diretor, voc\xEA com certeza pode aprender muito comigo.
-          Eu fui intitulada como a melhor aluna em quase todas os cursos que fiz.
-          Gosto de estar sempre aprendendo."
-      - personagem: 0
-        emocao: 2
-        fala: "Nossa, voc\xEA deve ser extremamente inteligente ent\xE3o. N\xE3o vejo
-          a hora de aprender com voc\xEA. Muito obrigada pelo convite."
-      - personagem: 8
-        emocao: 2
-        fala: "Bom, n\xF3s j\xE1 vamos indo, auxiliar Maria de Lourdes. J\xE1 est\xE1
-          tarde. Bom mort\xF3rio"
-      respostas: []
-  dialogosSecundarios: []
-  interactOffset:
-  - {x: 1.28, y: -0.71, z: 0}
---- !u!61 &107591186
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 61499242745621090, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 107591184}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.05}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8951049, y: 2.013986}
-    newSize: {x: 6.02, y: 14.44}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2.6}
-  m_EdgeRadius: 0
---- !u!212 &107591187
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 212297905960005212, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 107591184}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d909720ea90841644903333c5544b22d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 6.02, y: 14.44}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &107591188
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4378633177701612, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 107591184}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.58, y: 1.02, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &254240953
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,6 +636,7 @@ GameObject:
   - component: {fileID: 369008289}
   - component: {fileID: 369008288}
   - component: {fileID: 369008287}
+  - component: {fileID: 369008291}
   - component: {fileID: 369008286}
   m_Layer: 0
   m_Name: Comenius
@@ -859,134 +657,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questInfo:
-    isQuest: 1
-    questIndex: {x: 2, y: 7}
-    questDependencias:
-    - {x: 2, y: 6}
+    isQuest: 0
+    questIndex: {x: 0, y: 0}
+    questDependencias: []
   questFeita:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 369008287}
-        m_MethodName: IrParaCena
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   dependenciasFeitas:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 369008285}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 369008286}
-        m_MethodName: Restart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 868449447}
-        m_MethodName: set_sprite
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: 797bdc626a53ec244a5c4144b137db2b,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   dependenciasNaoFeitas:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 369008285}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 1
-  esperaDialogoObrigatorio: 1
+  esperaDialogoObrigatorio: 2
   dialogoPrincipal:
     nodulos:
     - falas:
       - personagem: 0
-        emocao: 2
+        emocao: 0
         fala: 
       - personagem: 10
         emocao: 0
-        fala: "Lurdinha... Eu sou o Comenius, e gostaria de falar com voc\xEA antes
-          de voc\xEA ir descansar para a sua casa."
+        fala: "Lurdinha, estou aqui de novo\u2026 Sei que est\xE1 cansada, afinal,
+          voc\xEA trabalhou demais hoje."
       - personagem: 10
         emocao: 0
-        fala: "Voc\xEA teve uma aventura e tanto hoje, n\xE3o \xE9 mesmo? Vasculhou
-          a escola toda em busca das m\xEDdias e ajudou o Professor Jean na aula dele."
+        fala: "Mas acho que voc\xEA aguenta mais uma conversa, n\xE3o \xE9 mesmo?"
       - personagem: 10
         emocao: 0
-        fala: "Voc\xEA fez tanta coisa hoje... E voc\xEA gostou da sua miss\xE3o,
-          Lurdinha?"
+        fala: "Hoje voc\xEA foi muito esperta em pedir a ajuda da Maria Montanari
+          para te ajudar com as m\xEDdias. Ela realmente \xE9 uma cientista maluca
+          das m\xEDdias\u2026 \r"
+      - personagem: 10
+        emocao: 0
+        fala: "Voc\xEA aprendeu bastante hoje tamb\xE9m com a teoria do professor
+          Vladimir e acho que o pr\xF3ximo professor que voc\xEA vai ajudar voc\xEA
+          vai ter um desafio a mais! "
       - personagem: 0
-        emocao: 2
-        fala: "Eu adorei, Comenius! N\xE3o vejo a hora de ajudar os outros professores!"
+        emocao: 0
+        fala: Eu vou? Que desafio que vai ser esse, Comenius?
       - personagem: 10
         emocao: 0
-        fala: "Que bom, professora, que bom.... Eu sei que um professor vai precisar
-          da sua ajuda logo logo. O nome dele \xE9 Vladimir e ele tem umas ideias
-          diferentes das do Jean sobre aprendizagem."
+        fala: "N\xE3o, sua tolinha, isso voc\xEA s\xF3 vai descobrir no futuro\u2026
+          Eu n\xE3o quero estragar a surpresa..."
       - personagem: 10
         emocao: 0
-        fala: "Ent\xE3o, quanto mais voc\xEA souber sobre como o professor pensa e
-          como ele entende a aprendizagem, melhor vai ser a aula que voc\xEA vai planejar
-          para ajudar ele."
-      - personagem: 0
-        emocao: 4
-        fala: "Ent\xE3o, quanto mais voc\xEA souber sobre como o professor pensa e
-          como ele entende a aprendizagem, melhor vai ser a aula que voc\xEA vai planejar
-          para ajudar ele."
-      - personagem: 10
-        emocao: 0
-        fala: "Isso... Um \xF3timo jeito de aprender isso \xE9 conversando com todas
-          as funcion\xE1rias da escola que voc\xEA j\xE1 interagiu."
-      - personagem: 10
-        emocao: 0
-        fala: "Mas acho que voc\xEA est\xE1 precisando descansar agora. Isso voc\xEA
-          deve se preocupar mais no futuro."
-      - personagem: 10
-        emocao: 0
-        fala: Descanse... E tenha uma boa noite, professora!
+        fala: "Mas \xE9 melhor voc\xEA ir, antes que eu te conte que desafio que ser\xE1
+          esse\u2026 At\xE9 mais Lurdinha e bom descanso!"
       respostas: []
   dialogosSecundarios: []
   interactOffset:
-  - {x: 0, y: 0, z: 0}
+  - {x: 0.65, y: -0.9, z: 0}
 --- !u!114 &369008287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1086,6 +814,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &369008291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 369008285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &369898114
 GameObject:
   m_ObjectHideFlags: 0
@@ -2171,7 +1910,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4151625970373360, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1000791995703708, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
       propertyPath: m_Name
@@ -2211,11 +1950,6 @@ Prefab:
     - {fileID: 58580363816616498, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
   m_IsPrefabAsset: 0
---- !u!212 &868449447 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 212835090484309842, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
-    type: 2}
-  m_PrefabInternal: {fileID: 868449446}
 --- !u!1 &900245489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2769,7 +2503,7 @@ Transform:
   - {fileID: 1455487437}
   - {fileID: 1831791245}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1187682753
 GameObject:
@@ -3303,209 +3037,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1634304413
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1838146933834438, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1634304417}
-  - component: {fileID: 1634304416}
-  - component: {fileID: 1634304415}
-  - component: {fileID: 1634304414}
-  m_Layer: 0
-  m_Name: Diretor(NPC)
-  m_TagString: Diretor
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1634304414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1634304413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 1
-    questIndex: {x: 2, y: 6}
-    questDependencias: []
-  questFeita:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1634304414}
-        m_MethodName: DestroirObjeto
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1634304413}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 107591187}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dialogoObrigatorio: 1
-  esperaDialogoObrigatorio: 1
-  dialogoPrincipal:
-    nodulos:
-    - falas:
-      - personagem: 0
-        emocao: 2
-        fala: 
-      - personagem: 8
-        emocao: 1
-        fala: "Boa v\xE9spera, auxiliar Maria de Lourdes. Percebi que desde que o\r
-          professor Jean pediu a sua ajuda para a aula dele a escola esteve bem\r
-          movimentada. N\xE3o sei dizer se de um jeito bom ou ruim\u2026\r\n"
-      - personagem: 8
-        emocao: 2
-        fala: "De qualquer forma,\r gostaria de te apresentar a respons\xE1vel pelo
-          Laborat\xF3rio: Maria Montanari.\r\n"
-      - personagem: 8
-        emocao: 2
-        fala: "Ela \xE9 extremamente competente e muito inteligente. Voc\xEA poderia
-          aprender muito com ela, auxiliar Maria de Lourdes."
-      - personagem: 9
-        emocao: 2
-        fala: "Obrigada pela apresenta\xE7\xE3o, Diretor."
-      - personagem: 9
-        emocao: 2
-        fala: "Sempre que precisar de ajuda ou se quiser que eu te ensine sobre algum
-          assunto, basta me procurar no Laborat\xF3rio, xar\xE1."
-      - personagem: 9
-        emocao: 0
-        fala: "Concordo com o Diretor, voc\xEA com certeza pode aprender muito comigo.
-          Eu fui intitulada como a melhor aluna em quase todas os cursos que fiz.
-          Gosto de estar sempre aprendendo."
-      - personagem: 0
-        emocao: 2
-        fala: "Nossa, voc\xEA deve ser extremamente inteligente ent\xE3o. N\xE3o vejo
-          a hora de aprender com voc\xEA. Muito obrigada pelo convite."
-      - personagem: 8
-        emocao: 2
-        fala: "Bom, n\xF3s j\xE1 vamos indo, auxiliar Maria de Lourdes. J\xE1 est\xE1
-          tarde. Bom mort\xF3rio"
-      respostas: []
-  dialogosSecundarios: []
-  interactOffset:
-  - {x: 0.38, y: -1.39, z: 0}
---- !u!61 &1634304415
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 61499242745621090, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1634304413}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.05}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.83916086, y: 2.013986}
-    newSize: {x: 6.02, y: 14.44}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2.6}
-  m_EdgeRadius: 0
---- !u!212 &1634304416
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 212297905960005212, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1634304413}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8e0f04eba29a11d4fbc67cacd465f9c6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 6.02, y: 14.44}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1634304417
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4378633177701612, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1634304413}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.65, y: 1.66, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1640920988
 GameObject:
   m_ObjectHideFlags: 0
@@ -4171,7 +3702,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4345587644339648, guid: d11b1c849be53453587e960dd2049b74, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d11b1c849be53453587e960dd2049b74, type: 2}
