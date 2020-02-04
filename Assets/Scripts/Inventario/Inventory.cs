@@ -6,8 +6,6 @@ public class Inventory
 {
     private Dictionary<ItemName, Item> items;
 
-    public int Count { get { return items.Count; } }
-
     private TextMeshProUGUI uiMidiaCounter;
 
     public Inventory() {
@@ -24,6 +22,8 @@ public class Inventory
     {
         return items.Values;
     }
+
+    public int Count { get { return items.Count; } }
 
     public void Clear()
     {
