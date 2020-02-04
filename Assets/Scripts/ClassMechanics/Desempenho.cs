@@ -32,6 +32,8 @@ public class Desempenho : MonoBehaviour
 
     public void TrocarSala()
     {
+        Debug.Log("Executed");
+
         double points = Player.Instance.MissionHistory[missionID].totalMissionPoints;
 
         if (points > bomDesempenho)
