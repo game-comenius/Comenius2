@@ -113,6 +113,78 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &3239579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3239580}
+  - component: {fileID: 3239582}
+  - component: {fileID: 3239581}
+  m_Layer: 5
+  m_Name: Momento2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3239580
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 3239579}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1901429779}
+  - {fileID: 172439479}
+  - {fileID: 1375904373}
+  m_Father: {fileID: 1589426240}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 300, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3239581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 3239579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &3239582
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 3239579}
+  m_CullTransparentMesh: 0
 --- !u!1 &40970517
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +274,37 @@ Transform:
   - {fileID: 1136735311}
   m_Father: {fileID: 1825016585}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &72530615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 72530616}
+  m_Layer: 0
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &72530616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 72530615}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 393.43936, y: 36.126553, z: 10.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 197710705}
+  - {fileID: 1915888777}
+  - {fileID: 2096804155}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &88938222
 GameObject:
@@ -575,45 +678,48 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.33916083, y: -0.7622377}
-      - {x: 0.33916083, y: -0.7062937}
-      - {x: 0.23426573, y: -0.55944055}
-      - {x: 0.25524476, y: -0.46153846}
-      - {x: 0.27622378, y: -0.23776224}
-      - {x: 0.26223776, y: -0.027972028}
-      - {x: 0.25524476, y: 0.16083916}
-      - {x: 0.22727272, y: 0.27972028}
-      - {x: 0.26923075, y: 0.4195804}
-      - {x: 0.2972028, y: 0.55244756}
-      - {x: 0.2972028, y: 0.74125874}
-      - {x: 0.28321677, y: 0.8111888}
-      - {x: 0.108391605, y: 0.9300699}
-      - {x: 0.05244755, y: 0.9370629}
-      - {x: -0.09440559, y: 0.9370629}
-      - {x: -0.13636364, y: 0.91608393}
-      - {x: -0.2062937, y: 0.86713284}
-      - {x: -0.25524476, y: 0.7832168}
-      - {x: -0.36013985, y: 0.6923077}
-      - {x: -0.36713287, y: 0.6433566}
-      - {x: -0.36713287, y: 0.5034965}
-      - {x: -0.3251748, y: 0.33566433}
-      - {x: -0.31118882, y: 0.3216783}
-      - {x: -0.21328671, y: 0.23776224}
-      - {x: -0.26223776, y: 0.12587413}
-      - {x: -0.28321677, y: -0.04895105}
-      - {x: -0.28321677, y: -0.18181819}
-      - {x: -0.27622378, y: -0.21678321}
-      - {x: -0.26923075, y: -0.24475524}
-      - {x: -0.26223776, y: -0.35664335}
-      - {x: -0.24125874, y: -0.5314685}
-      - {x: -0.23426573, y: -0.6923077}
-      - {x: -0.22727272, y: -0.7902098}
-      - {x: -0.16433567, y: -0.8321678}
-      - {x: -0.045454547, y: -0.8881119}
-      - {x: 0.115384616, y: -0.8881119}
-      - {x: 0.15734266, y: -0.79720277}
-      - {x: 0.23426573, y: -0.8111888}
-      - {x: 0.3041958, y: -0.8041958}
+    - - {x: 0.385, y: -1.24}
+      - {x: 0.48499998, y: -1.1899999}
+      - {x: 0.48499998, y: -1.0799999}
+      - {x: 0.275, y: -0.72999996}
+      - {x: 0.275, y: -0.5}
+      - {x: 0.305, y: -0.48}
+      - {x: 0.33499998, y: -0.35}
+      - {x: 0.315, y: -0.089999996}
+      - {x: 0.345, y: 0.38}
+      - {x: 0.295, y: 0.5}
+      - {x: 0.405, y: 0.71999997}
+      - {x: 0.375, y: 1}
+      - {x: 0.405, y: 1.15}
+      - {x: 0.39499998, y: 1.24}
+      - {x: 0.285, y: 1.35}
+      - {x: 0.175, y: 1.4}
+      - {x: -0.125, y: 1.4}
+      - {x: -0.235, y: 1.37}
+      - {x: -0.42499998, y: 1.31}
+      - {x: -0.49499997, y: 1.17}
+      - {x: -0.505, y: 1}
+      - {x: -0.45499998, y: 0.74}
+      - {x: -0.385, y: 0.64}
+      - {x: -0.235, y: 0.53999996}
+      - {x: -0.325, y: 0.5}
+      - {x: -0.42499998, y: 0.42}
+      - {x: -0.465, y: 0.26999998}
+      - {x: -0.515, y: 0.02}
+      - {x: -0.525, y: -0.04}
+      - {x: -0.525, y: -0.25}
+      - {x: -0.49499997, y: -0.35}
+      - {x: -0.48499998, y: -0.53}
+      - {x: -0.42499998, y: -0.61}
+      - {x: -0.36499998, y: -0.59999996}
+      - {x: -0.42499998, y: -1.25}
+      - {x: -0.39499998, y: -1.27}
+      - {x: -0.295, y: -1.3199999}
+      - {x: -0.055, y: -1.38}
+      - {x: 0.085, y: -1.38}
+      - {x: 0.185, y: -1.3199999}
+      - {x: 0.175, y: -1.24}
+      - {x: 0.275, y: -1.25}
 --- !u!114 &164915349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,12 +821,81 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 164915346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.4, y: -0.1, z: -0.51}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -4.83, y: -0.16, z: -0.51}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &172439478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 172439479}
+  - component: {fileID: 172439481}
+  - component: {fileID: 172439480}
+  m_Layer: 5
+  m_Name: Agrupamento2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &172439479
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 172439478}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3239580}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 19.4}
+  m_SizeDelta: {x: 30, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &172439480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 172439478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.9256191, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &172439481
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 172439478}
+  m_CullTransparentMesh: 0
 --- !u!1 &172724076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,6 +1212,238 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!1 &197710704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 197710705}
+  - component: {fileID: 197710708}
+  - component: {fileID: 197710707}
+  - component: {fileID: 197710706}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &197710705
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 197710704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 72530616}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &197710706
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 197710704}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7ad5f76544594d04b8ecc3b7e9ed5247, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &197710707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 197710704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6fb8c3b29c18584296c1625ef5ebd6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &197710708
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 197710704}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: cc845b2b199c4ca418d7a12afd08a3a9, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.15
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &241879907
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,7 +2374,7 @@ RectTransform:
   - {fileID: 88938223}
   - {fileID: 710162653}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3237,6 +3644,78 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &575177128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 575177129}
+  - component: {fileID: 575177131}
+  - component: {fileID: 575177130}
+  m_Layer: 5
+  m_Name: Momento1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &575177129
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 575177128}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 688289702}
+  - {fileID: 1957562423}
+  - {fileID: 1197960684}
+  m_Father: {fileID: 1589426240}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000015259, y: 109.2}
+  m_SizeDelta: {x: 300, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &575177130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 575177128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &575177131
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 575177128}
+  m_CullTransparentMesh: 0
 --- !u!1 &586411393
 GameObject:
   m_ObjectHideFlags: 0
@@ -3605,6 +4084,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &612045782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 612045783}
+  - component: {fileID: 612045785}
+  - component: {fileID: 612045784}
+  m_Layer: 5
+  m_Name: Procedimento3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &612045783
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 612045782}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 781967827}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -25}
+  m_SizeDelta: {x: 30, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &612045784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 612045782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.18523192, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &612045785
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 612045782}
+  m_CullTransparentMesh: 0
 --- !u!1 &624959029
 GameObject:
   m_ObjectHideFlags: 0
@@ -3680,6 +4228,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &643143585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 643143586}
+  m_Layer: 5
+  m_Name: Planejamento
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &643143586
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 643143585}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1081482183}
+  - {fileID: 1589426240}
+  m_Father: {fileID: 2114344676}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &667220250
 GameObject:
   m_ObjectHideFlags: 0
@@ -3786,6 +4369,192 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &688289701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 688289702}
+  - component: {fileID: 688289705}
+  - component: {fileID: 688289704}
+  - component: {fileID: 688289703}
+  m_Layer: 5
+  m_Name: Midia
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &688289702
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 688289701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 575177129}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -101, y: 0}
+  m_SizeDelta: {x: 80, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &688289703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 688289701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11fca1a2d5586041b9b97e58461f192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialItem: 0
+  reprodutoraudioPoints: 0
+  cdPoints: 0
+  gravadorPoints: 0
+  gravacaoPoints: 0
+  cameraPolaroidPoints: 0
+  fotografiaPoints: 0
+  tvPoints: 0
+  vhsPoints: 0
+  vhsEditadoPoints: 0
+  cartazComPenasPoints: 0
+  livroPoints: 0
+  livroilustradoPoints: 0
+  quadroNegroPoints: 0
+  quadroNegroStencilPoints: 0
+  cartazesPoints: 0
+  cartasComCanetasPoints: 0
+  mapaPoints: 0
+  cadernoPoints: 0
+  jornaisPoints: 0
+  jornaiserevistasPoints: 0
+  retrorojetorSLidesMapaPoints: 0
+  retroprojetorSlidesLinhadoTempoPoints: 0
+  retroprojetorSlidesCicloDoTrabalhoPoints: 0
+  diarioPoints: 0
+  myItemBorder: {fileID: 0}
+  selectedItemBorder: {fileID: 0}
+  neutralItemBorder: {fileID: 0}
+  descricaoGameObject: {fileID: 0}
+  minhaDescricao: 
+--- !u!114 &688289704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 688289701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &688289705
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 688289701}
+  m_CullTransparentMesh: 0
+--- !u!1 &704641099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 704641100}
+  - component: {fileID: 704641102}
+  - component: {fileID: 704641101}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &704641100
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 704641099}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2114344676}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 170}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &704641101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 704641099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Text
+--- !u!222 &704641102
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 704641099}
+  m_CullTransparentMesh: 0
 --- !u!1 &706493682
 GameObject:
   m_ObjectHideFlags: 0
@@ -4291,6 +5060,78 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &781967826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 781967827}
+  - component: {fileID: 781967829}
+  - component: {fileID: 781967828}
+  m_Layer: 5
+  m_Name: Momento3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &781967827
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 781967826}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2020631352}
+  - {fileID: 873300481}
+  - {fileID: 612045783}
+  m_Father: {fileID: 1589426240}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -111.5}
+  m_SizeDelta: {x: 300, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &781967828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 781967826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &781967829
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 781967826}
+  m_CullTransparentMesh: 0
 --- !u!1 &793629970
 GameObject:
   m_ObjectHideFlags: 0
@@ -4798,6 +5639,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &873300480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 873300481}
+  - component: {fileID: 873300483}
+  - component: {fileID: 873300482}
+  m_Layer: 5
+  m_Name: Agrupamento3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &873300481
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 873300480}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 781967827}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 19.4}
+  m_SizeDelta: {x: 30, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &873300482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 873300480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.9256191, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &873300483
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 873300480}
+  m_CullTransparentMesh: 0
 --- !u!1 &873976372
 GameObject:
   m_ObjectHideFlags: 0
@@ -5488,6 +6398,35 @@ Transform:
   m_Father: {fileID: 1705037196}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1081482182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1081482183}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1081482183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1081482182}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1524102247}
+  m_Father: {fileID: 643143586}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1093354029
 GameObject:
   m_ObjectHideFlags: 0
@@ -5554,7 +6493,7 @@ MonoBehaviour:
         emocao: 0
         fala: "Alunos, eu quero explicar hoje sobre a revolu\xE7\xE3o industrial.
           Vamos come\xE7ar falando sobre as caracter\xEDsticas gerais dela, o que
-          acham?"
+          acham? "
       respostas: []
   - nodulos:
     - falas:
@@ -5566,11 +6505,11 @@ MonoBehaviour:
       respostas: []
   - nodulos:
     - falas:
-      - personagem: 0
+      - personagem: 14
         emocao: 0
         fala: "Agora eu quero que voc\xEA me falem e vamos discutir a ideia de como
           era o trabalho naquela \xE9poca, como ele \xE9 agora e como ele deveria
-          ser. Vamos falar disso ent\xE3o?"
+          ser. Vamos falar disso ent\xE3o? \r\n"
       respostas: []
   alunosComentaristas:
   - aluno: {fileID: 546803889}
@@ -5723,7 +6662,7 @@ MonoBehaviour:
         respostas: []
   falasSobreMomentos:
   - falaSobreMidias:
-    - item: 0
+    - item: 23
       dialogo:
         nodulos:
         - falas:
@@ -5732,7 +6671,133 @@ MonoBehaviour:
             fala: 
           - personagem: 11
             emocao: 0
+            fala: "Eita! Que legal foi ver aquele v\xEDdeo, falou tudo sobre a revolu\xE7\xE3o
+              industrial e ainda pulou todas as partes chatas. Quero mais v\xEDdeos
+              como esse nas outras aulas. \r\n"
+          respostas: []
+    - item: 19
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
             fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "Com aquele <b>mapa</b>  todo colorido e projetado na parede, explicando
+              direitinho a revolu\xE7\xE3o industrial, ficou muito mais f\xE1cil de
+              aprender."
+          respostas: []
+    - item: 20
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "Com aquela <b>linha do tempo</b>  toda colorida e projetada na
+              parede, explicando direitinho a revolu\xE7\xE3o industrial, ficou muito
+              mais f\xE1cil de aprender"
+          respostas: []
+    - item: 16
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: Que entrevista mais interessante! Gostei
+          respostas: []
+    - item: 7
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "O V\xEDdeo era bem bacana professora, acho que deu pra aprender
+              legal sobre a revolu\xE7\xE3o industrial."
+          respostas: []
+    - item: 11
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "As imagens daquele livro eram bem coloridas e informativas! Eu
+              gostei de aprender sobre a revolu\xE7\xE3o industrial com elas."
+          respostas: []
+    - item: 1
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "O <b>livro did\xE1tico</b> da escola \xE9 bem informativo, mas
+              \xE0s vezes fica um pouco cansativo ficar lendo tanta coisa nele."
+          respostas: []
+    - item: 10
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "Gostei da explica\xE7\xE3o no <b>quadro negro</b>,  mas teve horas
+              que ficou meio chato ficar vendo o professor anotar coisas nele\u2026 "
+          respostas: []
+    - item: 9
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "Era uma <b>foto</b> bem interessante, mas parecia que foi muito
+              pouco para ajudar a explicar sobre todo conte\xFAdo de revolu\xE7\xE3o
+              industrial."
+          respostas: []
+    - item: 24
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "Era um <b>di\xE1rio</b> de uma crian\xE7a que trabalhou naquela
+              \xE9poca bem interessante, mas parecia que foi pouco para explicar  todo
+              conte\xFAdo de revolu\xE7\xE3o industrial."
+          respostas: []
+    - item: 21
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "Era uma <b>transpar\xEAncia</b> legal esse do <b>ciclo do trabalho
+              infantil</b>, mas parecia que foi muito pouco para ajudar a explicar
+              sobre todo conte\xFAdo de revolu\xE7\xE3o industrial."
           respostas: []
     - item: 0
       dialogo:
@@ -5743,198 +6808,285 @@ MonoBehaviour:
             fala: 
           - personagem: 11
             emocao: 0
-            fala: 
-          respostas: []
-    - item: 0
-      dialogo:
-        nodulos:
-        - falas:
-          - personagem: 0
-            emocao: 0
-            fala: 
-          - personagem: 11
-            emocao: 0
-            fala: 
-          respostas: []
-    - item: 0
-      dialogo:
-        nodulos:
-        - falas:
-          - personagem: 0
-            emocao: 0
-            fala: 
-          - personagem: 11
-            emocao: 0
-            fala: 
-          respostas: []
-    - item: 0
-      dialogo:
-        nodulos:
-        - falas:
-          - personagem: 0
-            emocao: 0
-            fala: 
-          - personagem: 11
-            emocao: 0
-            fala: 
-          respostas: []
-    - item: 0
-      dialogo:
-        nodulos:
-        - falas:
-          - personagem: 0
-            emocao: 0
-            fala: 
-          - personagem: 11
-            emocao: 0
-            fala: 
-          respostas: []
-    - item: 0
-      dialogo:
-        nodulos:
-        - falas:
-          - personagem: 0
-            emocao: 0
-            fala: 
-          - personagem: 11
-            emocao: 0
-            fala: 
-          respostas: []
-    - item: 0
-      dialogo:
-        nodulos:
-        - falas:
-          - personagem: 0
-            emocao: 0
-            fala: 
-          - personagem: 11
-            emocao: 0
-            fala: 
-          respostas: []
-    - item: 0
-      dialogo:
-        nodulos:
-        - falas:
-          - personagem: 0
-            emocao: 0
-            fala: 
-          - personagem: 11
-            emocao: 0
-            fala: 
-          respostas: []
-    - item: 0
-      dialogo:
-        nodulos:
-        - falas:
-          - personagem: 0
-            emocao: 0
-            fala: 
-          - personagem: 11
-            emocao: 0
-            fala: 
-          respostas: []
-    - item: 0
-      dialogo:
-        nodulos:
-        - falas:
-          - personagem: 0
-            emocao: 0
-            fala: 
-          - personagem: 11
-            emocao: 0
-            fala: 
-          respostas: []
-    - item: 0
-      dialogo:
-        nodulos:
-        - falas:
-          - personagem: 0
-            emocao: 0
-            fala: 
-          - personagem: 11
-            emocao: 0
-            fala: 
+            fala: "O primeiro momento da aula foi confuso\u2026 n\xE3o gostei."
           respostas: []
   - falaSobreMidias:
+    - item: 9
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "Ver aquela <b>foto</b> de um menino da minha idade naquelas condi\xE7\xF5es
+              me fez sentir na pele o que ele deve ter passado, professora. Isso ajudou
+              muito na hora da discuss\xE3o, parecia que tava todo mundo interessado
+              no assunto.\r"
+          respostas: []
+    - item: 24
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "Ter aquele <b>di\xE1rio</b> sobre aquele menino que trabalhou na
+              revolu\xE7\xE3o industrial foi excelente pra entender o conte\xFAdo
+              e poder discutir sobre esse assunto. \r"
+          respostas: []
+    - item: 21
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 0
+            emocao: 0
+            fala: "Ter aquela <b>transpar\xEAncia</b> sobre o <b>ciclo do trabalho
+              infantil</b> foi muito bom pra entender o conte\xFAdo e poder discutir
+              melhor sobre esse assunto."
+          respostas: []
+    - item: 5
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "Poder gravar toda essa discuss\xE3o que a gente fez foi muito \xFAtil
+              na hora da atividade."
+          respostas: []
+    - item: 16
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "A entrevista que foi passada no <b>Reprodutor de \xC1udio</b> era
+              legal, ajudou a dar temas na hora da discuss\xE3o."
+          respostas: []
+    - item: 1
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "Ler e discutir \xE9 uma coisa que ajuda muito mais a entender o
+              conte\xFAdo! Eu consegui visualizar melhor como era o trabalho infantil
+              com a discuss\xE3o. "
+          respostas: []
+    - item: 11
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "As imagens do <b>Livro Ilustrado</b> ajudavam a gente a entender
+              o contexto da revolu\xE7\xE3o industrial. Foi bacana."
+          respostas: []
+    - item: 19
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "Usar o <b>mapa</b> projetado para discutir foi bem interessante.
+              Nunca imaginei que fosse poss\xEDvel fazer uma discuss\xE3o a partir
+              de um mapa! \r"
+          respostas: []
+    - item: 20
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "Usar a <b>linha do tempo</b> projetada para discutir foi bem interessante.
+              Nunca imaginei que fosse poss\xEDvel fazer uma discuss\xE3o a partir
+              de uma linha do tempo! "
+          respostas: []
+    - item: 23
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "Discutir o que acontecia no v\xEDdeo foi legal, professora. Parece
+              que ele ser mais curtinho ajudou bastante."
+          respostas: []
+    - item: 10
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "A parte em que a gente tinha que discutir enquanto o professor
+              anotava no quadro negro foi legalzinha, mas parece que podia ter sido
+              melhor...\r"
+          respostas: []
     - item: 4
       dialogo:
-        nodulos: []
-    - item: 4
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "Usar o caderno no meio do debate de aula foi um pouco confuso,
+              eu n\xE3o sabia se anotava ou se prestava aten\xE7\xE3o no que os colegas
+              estavam falando."
+          respostas: []
+    - item: 22
       dialogo:
-        nodulos: []
-    - item: 4
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "Adoro escrever com as canetas coloridas, mas fazer isso no meio
+              da discuss\xE3o ficou um tantinho estranho, profe."
+          respostas: []
+    - item: 0
       dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "O segundo momento da aula foi chato\u2026 Aquela discuss\xE3o,
+              com aquela m\xEDdia, n\xE3o fazia sentido. \r"
+          respostas: []
   - falaSobreMidias:
+    - item: 22
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "Depois de ter ouvido falar bastante sobre o que foi a revolu\xE7\xE3o
+              industrial, ter discutido sobre como era o trabalho infantil, ficou
+              muito f\xE1cil de interagir com meus colegas e  pintar aquele cartaz!!
+              Valeu profe!"
+          respostas: []
+    - item: 15
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: Gostei bastante de recortar aqueles <b>jornais e revistas</b> para
+              a atividade.
+          respostas: []
+    - item: 8
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: Gostei de recortar aqueles <b>jornais</b> para a atividade.
+          respostas: []
+    - item: 3
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: Nossa, professora! Quando eu tava interagindo com meus colegas e
+              fazendo o <b>cartaz</b> sobre o trabalho infantil foi legal.
+          respostas: []
+    - item: 5
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "Usar o gravador foi legal, mas eu n\xE3o acho que foi muito pr\xE1tico,
+              sabe?"
+          respostas: []
+    - item: 10
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "Professora, gostei de como voc\xEA usou o <b>quadro negro</b>,
+              mas acho que seria mais legal se fosse uma m\xEDdia que desse pra interagir
+              melhor meus colegas."
+          respostas: []
     - item: 4
       dialogo:
-        nodulos: []
-    - item: 4
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "Escrever o texto sobre o trabalho infantil e a minha vida no meu
+              <b>caderno</b> foi legal, mas prefiro quando as atividades s\xE3o mais
+              interativas."
+          respostas: []
+    - item: 0
       dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
-    - item: 4
-      dialogo:
-        nodulos: []
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 11
+            emocao: 0
+            fala: "N\xE3o fez muito sentido usar aquela m\xEDdia para uma atividade\u2026"
+          respostas: []
 --- !u!1 &1095500987
 GameObject:
   m_ObjectHideFlags: 0
@@ -6942,6 +8094,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1197960683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1197960684}
+  - component: {fileID: 1197960686}
+  - component: {fileID: 1197960685}
+  m_Layer: 5
+  m_Name: Procedimento
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1197960684
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1197960683}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 575177129}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -25}
+  m_SizeDelta: {x: 30, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1197960685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1197960683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.18523192, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1197960686
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1197960683}
+  m_CullTransparentMesh: 0
 --- !u!1 &1209641832
 GameObject:
   m_ObjectHideFlags: 0
@@ -7593,6 +8814,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1375904372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1375904373}
+  - component: {fileID: 1375904375}
+  - component: {fileID: 1375904374}
+  m_Layer: 5
+  m_Name: Procedimento2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1375904373
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1375904372}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3239580}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -25}
+  m_SizeDelta: {x: 30, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1375904374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1375904372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.18523192, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1375904375
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1375904372}
+  m_CullTransparentMesh: 0
 --- !u!1 &1385914563
 GameObject:
   m_ObjectHideFlags: 0
@@ -8131,6 +9421,40 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1519217769}
   m_CullTransparentMesh: 0
+--- !u!1 &1524102246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1524102247}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1524102247
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 224827984381085382, guid: 05d75529e6c4343bd96e84e170c42feb,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1524102246}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1081482183}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1530353458
 GameObject:
   m_ObjectHideFlags: 0
@@ -8607,6 +9931,78 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1589426239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1589426240}
+  - component: {fileID: 1589426242}
+  - component: {fileID: 1589426241}
+  m_Layer: 5
+  m_Name: PlannerSheet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1589426240
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1589426239}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 575177129}
+  - {fileID: 3239580}
+  - {fileID: 781967827}
+  m_Father: {fileID: 643143586}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 213.76, y: 5.13}
+  m_SizeDelta: {x: 305.52, y: 341.74}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1589426241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1589426239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1589426242
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1589426239}
+  m_CullTransparentMesh: 0
 --- !u!1 &1624394533
 GameObject:
   m_ObjectHideFlags: 0
@@ -9952,6 +11348,75 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1898974025}
   m_CullTransparentMesh: 0
+--- !u!1 &1901429778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1901429779}
+  - component: {fileID: 1901429781}
+  - component: {fileID: 1901429780}
+  m_Layer: 5
+  m_Name: Midia2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1901429779
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1901429778}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3239580}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -101, y: 0}
+  m_SizeDelta: {x: 80, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1901429780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1901429778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1901429781
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1901429778}
+  m_CullTransparentMesh: 0
 --- !u!1 &1903744239
 GameObject:
   m_ObjectHideFlags: 0
@@ -9983,6 +11448,53 @@ Transform:
   m_Father: {fileID: 1110174233}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1915888776
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 72530616}
+    m_Modifications:
+    - target: {fileID: 4167545212279808, guid: 5b29e7b78647d4500abec5bb67ffab34, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167545212279808, guid: 5b29e7b78647d4500abec5bb67ffab34, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167545212279808, guid: 5b29e7b78647d4500abec5bb67ffab34, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167545212279808, guid: 5b29e7b78647d4500abec5bb67ffab34, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167545212279808, guid: 5b29e7b78647d4500abec5bb67ffab34, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167545212279808, guid: 5b29e7b78647d4500abec5bb67ffab34, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167545212279808, guid: 5b29e7b78647d4500abec5bb67ffab34, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167545212279808, guid: 5b29e7b78647d4500abec5bb67ffab34, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b29e7b78647d4500abec5bb67ffab34, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &1915888777 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4167545212279808, guid: 5b29e7b78647d4500abec5bb67ffab34,
+    type: 2}
+  m_PrefabInternal: {fileID: 1915888776}
 --- !u!1 &1923582038
 GameObject:
   m_ObjectHideFlags: 0
@@ -10167,11 +11679,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4151625970373360, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.64
+      value: 3.97
       objectReference: {fileID: 0}
     - target: {fileID: 4151625970373360, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.3
+      value: 0.71
       objectReference: {fileID: 0}
     - target: {fileID: 4151625970373360, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
       propertyPath: m_LocalPosition.z
@@ -10205,7 +11717,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 9830991e1037ec44d8c2e0d5188ecbf6,
+      objectReference: {fileID: 21300000, guid: 42e403ffed470a34f9fd817a928ea045,
         type: 3}
     - target: {fileID: 114123597930835050, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
         type: 2}
@@ -10250,6 +11762,75 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1957562422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1957562423}
+  - component: {fileID: 1957562425}
+  - component: {fileID: 1957562424}
+  m_Layer: 5
+  m_Name: Agrupamento
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1957562423
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1957562422}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 575177129}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 19.4}
+  m_SizeDelta: {x: 30, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1957562424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1957562422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.9256191, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1957562425
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1957562422}
+  m_CullTransparentMesh: 0
 --- !u!1 &1977062593
 GameObject:
   m_ObjectHideFlags: 0
@@ -10380,6 +11961,75 @@ Transform:
   m_Father: {fileID: 1266766466}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2020631351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2020631352}
+  - component: {fileID: 2020631354}
+  - component: {fileID: 2020631353}
+  m_Layer: 5
+  m_Name: Midia3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2020631352
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2020631351}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 781967827}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -101, y: 0}
+  m_SizeDelta: {x: 80, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2020631353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2020631351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &2020631354
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2020631351}
+  m_CullTransparentMesh: 0
 --- !u!1 &2077170116
 GameObject:
   m_ObjectHideFlags: 0
@@ -10740,6 +12390,959 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2096804154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2096804155}
+  - component: {fileID: 2096804156}
+  m_Layer: 0
+  m_Name: ClassManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2096804155
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2096804154}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -393.43936, y: -36.126553, z: -10.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 72530616}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2096804156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2096804154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6dd5c6ca35148440a3f98d3f84ebd29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloud: {fileID: 1802226254211612, guid: 4876726aaa56b3a49b77d5bc68a0929e, type: 2}
+  canvas: {fileID: 0}
+  mainCamera: {fileID: 0}
+  timer: {fileID: 0}
+  classWait: 3
+  momentsTime:
+  - {x: 900, y: 60, z: 20}
+  - {x: 900, y: 20, z: 20}
+  - {x: 900, y: 20, z: 60}
+  traducaoPontoProblema:
+  - {x: 10, y: 2}
+  - {x: 8, y: 5}
+  - {x: 7, y: 7}
+  - {x: 0, y: 9}
+  problemQuantity: 000000000000000000000000
+  timeAcceleration: 60
+  problemTimeAcceleration: 2
+  problemDuration: 60
+  waitBetweenProblems: 60
+  falas:
+  - nodulos:
+    - falas:
+      - personagem: 2
+        emocao: 2
+        fala: "Meus alunos, eu quero explicar para voc\xEAs hoje sobre os p\xE1ssaros.
+          Vamos come\xE7ar falando sobre as caracter\xEDsticas gerais deles?"
+      respostas: []
+  - nodulos:
+    - falas:
+      - personagem: 2
+        emocao: 2
+        fala: "Agora que voc\xEAs j\xE1 sabem sobre as caracter\xEDsticas gerais dos
+          p\xE1ssaros, quero que fa\xE7am uma atividade!"
+      respostas: []
+  - nodulos:
+    - falas:
+      - personagem: 2
+        emocao: 2
+        fala: "Eu quero falar nessa \xFAltima parte da aula sobre os p\xE1ssaros da
+          nossa regi\xE3o. Ent\xE3o\u2026"
+      respostas: []
+  alunosComentaristas:
+  - aluno: {fileID: 0}
+    questIndex: {x: 1, y: 4}
+  - aluno: {fileID: 0}
+    questIndex: {x: 1, y: 5}
+  - aluno: {fileID: 0}
+    questIndex: {x: 1, y: 6}
+  - aluno: {fileID: 0}
+    questIndex: {x: 1, y: 7}
+  - aluno: {fileID: 0}
+    questIndex: {x: 2, y: 0}
+  professor:
+    aluno: {fileID: 0}
+    questIndex: {x: 1, y: 3}
+    falasGeneralistas:
+    - rangeNota: {x: 26, y: 30}
+      dialogos:
+      - nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 2
+            fala: 
+          - personagem: 2
+            emocao: 4
+            fala: "A aula foi fant\xE1stica, consegui ver o interesse nos olhos dos
+              alunos, Lurdinha! Muito obrigado pela sua ajuda!"
+          respostas: []
+    - rangeNota: {x: 21, y: 25}
+      dialogos:
+      - nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 2
+            fala: 
+          - personagem: 2
+            emocao: 2
+            fala: Excelente trabalho, minha filha, acho que a aula foi muito bem!
+              Muito obrigado!
+          respostas: []
+    - rangeNota: {x: 14, y: 20}
+      dialogos:
+      - nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 2
+            fala: 
+          - personagem: 2
+            emocao: 2
+            fala: "Apesar de algumas distra\xE7\xF5es essa foi uma boa aula. Obrigado
+              pela ajuda, Lurdinha."
+          respostas: []
+    - rangeNota: {x: 0, y: 10}
+      dialogos:
+      - nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 2
+            emocao: 0
+            fala: "Ahn\u2026 Acho que aula poderia ter ido melhor, minha filha\u2026
+              De qualquer forma obrigado pelo seu trabalho. "
+          respostas: []
+  falasGeneralistas:
+  - rangeNota: {x: 26, y: 30}
+    dialogos:
+    - nodulos:
+      - falas:
+        - personagem: 0
+          emocao: 2
+          fala: 
+        - personagem: 12
+          emocao: 0
+          fala: "Nossa! Que aula incr\xEDvel! N\xE3o vejo a hora de contar para os
+            meus pais tudo o que aprendi."
+        respostas: []
+    - nodulos:
+      - falas:
+        - personagem: 0
+          emocao: 2
+          fala: 
+        - personagem: 12
+          emocao: 0
+          fala: "Essa foi a melhor aula do ano! Na pr\xF3xima ser\xE1 que vamos aprender
+            mais sobre os p\xE1ssaros?"
+        respostas: []
+  - rangeNota: {x: 21, y: 25}
+    dialogos:
+    - nodulos:
+      - falas:
+        - personagem: 0
+          emocao: 2
+          fala: 
+        - personagem: 12
+          emocao: 0
+          fala: "Gostei da aula! Agora j\xE1 sei mais sobre os p\xE1ssaros..."
+        respostas: []
+    - nodulos:
+      - falas:
+        - personagem: 0
+          emocao: 2
+          fala: 
+        - personagem: 12
+          emocao: 0
+          fala: "Foi divertida a aula! N\xE3o achei que ia gostar muito, mas acabei
+            me surpreendendo."
+        respostas: []
+  - rangeNota: {x: 14, y: 20}
+    dialogos:
+    - nodulos:
+      - falas:
+        - personagem: 0
+          emocao: 2
+          fala: 
+        - personagem: 12
+          emocao: 0
+          fala: Foi legal a aula hoje. Mas algumas coisas ficaram confusas para mim.
+        respostas: []
+    - nodulos:
+      - falas:
+        - personagem: 0
+          emocao: 2
+          fala: 
+        - personagem: 12
+          emocao: 0
+          fala: A aula foi boa, mas fiquei com sono em alguns momentos...
+        respostas: []
+  - rangeNota: {x: 0, y: 10}
+    dialogos:
+    - nodulos:
+      - falas:
+        - personagem: 0
+          emocao: 2
+          fala: 
+        - personagem: 12
+          emocao: 0
+          fala: "N\xE3o gostei da aula, fiquei confuso o tempo todo."
+        respostas: []
+    - nodulos:
+      - falas:
+        - personagem: 0
+          emocao: 2
+          fala: 
+        - personagem: 12
+          emocao: 0
+          fala: "Que aula chata, at\xE9 dormi em alguns momentos."
+        respostas: []
+  falasSobreMomentos:
+  - falaSobreMidias:
+    - item: 2
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Caramba, que videozinho massa! Consegui entender bem melhor o conte\xFAdo
+              com as imagens e o som que foi mostrado!"
+          respostas: []
+    - item: 14
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Adorei o que foi explicado no quadro negro, inclusive aquele desenho
+              maneiro! Anotei tudinho para mostrar para minha m\xE3e."
+          respostas: []
+    - item: 11
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Que bacana o livro ilustrado que a gente usou! Quanta gravura linda,
+              consegui entender muito bem como s\xE3o os p\xE1ssaros."
+          respostas: []
+    - item: 1
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Achei legal o que deu para aprender lendo no livro did\xE1tico.
+              Ele at\xE9 que \xE9 bem completinho."
+          respostas: []
+    - item: 3
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: Vou poder lembrar todos os dias do que eu aprendi na aula hoje com
+              esse cartaz pendurado na parede. Que massa!
+          respostas: []
+    - item: 12
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Essas penas daquela cole\xE7\xE3o s\xE3o t\xE3o coloridas... Ver
+              todas colocada juntinhas assim dessa forma deixou mais f\xE1cil de imaginar
+              os diferentes tipos de p\xE1ssaros."
+          respostas: []
+    - item: 15
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "As mat\xE9rias e as fotos de p\xE1ssaros nos jornais e revistas
+              que o professor trouxe contaram muito sobre a vida deles. Adoro esse
+              tipo de texto!"
+          respostas: []
+    - item: 10
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: Acompanhar as coisas que o professor escreveu no quadro negro me
+              ajudou a entender melhor a aula quando eu fiquei desconcentrado.
+          respostas: []
+    - item: 16
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Os cantos daquele CD s\xE3o t\xE3o lindos! At\xE9 que deu pra ver
+              a diferen\xE7a entre o som dos diferentes tipos de p\xE1ssaros."
+          respostas: []
+    - item: 17
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Achei bem legal escutar o som do passarinho da grava\xE7\xE3o.
+              Mas isso n\xE3o me ajudou a entender a diferen\xE7a entre os tipos de
+              p\xE1ssaros."
+          respostas: []
+    - item: 4
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Estou gostando de aprender sobre os p\xE1ssaros. Mas s\xF3 escrevendo
+              no caderno n\xE3o deu para entender muito bem."
+          respostas: []
+    - item: 9
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "A foto \xE9 bem bonita! Mas isso n\xE3o me ajudou a entender a
+              diferen\xE7a entre os tipos de p\xE1ssaros"
+          respostas: []
+    - item: 14
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Adoro mapas, eles s\xE3o t\xE3o grandes e bonitos. Mas me pareceu
+              meio inadequado para esse momento da aula."
+          respostas: []
+    - item: 8
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "At\xE9 que naquele jornal tinha mat\xE9rias e imagens interessantes,
+              mas parece que estava faltando alguma coisa."
+          respostas: []
+    - item: 15
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "At\xE9 que naquelas revistas tinha mat\xE9rias e imagens interessantes,
+              mas parece que estava faltando alguma coisa."
+          respostas: []
+    - item: 0
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "O primeiro momento da aula foi confuso\u2026 n\xE3o gostei."
+          respostas: []
+    - item: 0
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "O primeiro momento da aula foi confuso\u2026 n\xE3o gostei."
+          respostas: []
+    - item: 0
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "O primeiro momento da aula foi confuso\u2026 n\xE3o gostei."
+          respostas: []
+    - item: 0
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "O primeiro momento da aula foi confuso\u2026 n\xE3o gostei."
+          respostas: []
+    - item: 5
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "O primeiro momento da aula foi confuso\u2026 n\xE3o gostei."
+          respostas: []
+  - falaSobreMidias:
+    - item: 3
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Fazer cartazes \xE9 t\xE3o divertido. Parece que eu aprendo melhor
+              assim."
+          respostas: []
+    - item: 4
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Essa atividade me inspirou para deixar o meu caderno super colorido
+              e bonit\xE3o. \xD3tima ideia!"
+          respostas: []
+    - item: 1
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Adorei a atividade, na pesquisa que fiz no livro did\xE1tico eu
+              fiquei ainda mais curioso sobre os p\xE1ssaros."
+          respostas: []
+    - item: 11
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Adorei a atividade, na pesquisa que fiz no livro ilustrado eu fiquei
+              ainda mais curioso sobre os p\xE1ssaros."
+          respostas: []
+    - item: 5
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Gostei das coisas que gravei na aula. \xC9 divertido aprender assim."
+          respostas: []
+    - item: 15
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: Tinha muita imagem legal para recortar nos jornais e revistas.
+          respostas: []
+    - item: 10
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Eu fico meio nervoso de apresentar algo l\xE1 na frente, mas usar
+              a superf\xEDcie do quadro negro para aprender \xE9 bem divertido."
+          respostas: []
+    - item: 13
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Com o est\xEAncil fica muito mais f\xE1cil de desenhar um passarinho.
+              Assim vai ser dif\xEDcil de esquecer como eles s\xE3o."
+          respostas: []
+    - item: 7
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "A atividade de registrar as coisas enquanto passava o v\xEDdeo
+              foi legal, mas n\xE3o deu pra prestar muita aten\xE7\xE3o nas imagens
+              assim."
+          respostas: []
+    - item: 16
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "A atividade de registrar as coisas enquanto tocava o CD foi legal,
+              mas n\xE3o deu pra prestar muita aten\xE7\xE3o nos sons assim."
+          respostas: []
+    - item: 14
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Mexer com mapa \xE9 sempre legal, mas se eu pudesse ter uma ilustra\xE7\xE3o
+              de um passarinho aqui seria mais legal ainda."
+          respostas: []
+    - item: 12
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "As penas da cole\xE7\xE3o eram bonitas, mas eu n\xE3o consegui
+              muito tempo com elas para fazer a atividade..."
+          respostas: []
+    - item: 8
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Recortar coisas de jornais \xE9 sempre bacana, mas faltou material
+              e no final eram poucas imagens."
+          respostas: []
+    - item: 15
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Recortar coisas de revistas \xE9 sempre bacana, mas faltou material
+              e no final eram poucas imagens."
+          respostas: []
+    - item: 18
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "O segundo momento da aula foi chato\u2026 Aquela atividade n\xE3o
+              fazia sentido."
+          respostas: []
+    - item: 1
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "O segundo momento da aula foi chato\u2026 Aquela atividade n\xE3o
+              fazia sentido."
+          respostas: []
+    - item: 0
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "O segundo momento da aula foi chato\u2026 Aquela atividade n\xE3o
+              fazia sentido."
+          respostas: []
+    - item: 0
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "O segundo momento da aula foi chato\u2026 Aquela atividade n\xE3o
+              fazia sentido."
+          respostas: []
+    - item: 0
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "O segundo momento da aula foi chato\u2026 Aquela atividade n\xE3o
+              fazia sentido."
+          respostas: []
+    - item: 0
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "O segundo momento da aula foi chato\u2026 Aquela atividade n\xE3o
+              fazia sentido."
+          respostas: []
+    - item: 0
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "O segundo momento da aula foi chato\u2026 Aquela atividade n\xE3o
+              fazia sentido."
+          respostas: []
+    - item: 6
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "O segundo momento da aula foi chato\u2026 Aquela atividade n\xE3o
+              fazia sentido."
+          respostas: []
+  - falaSobreMidias:
+    - item: 14
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "N\xE3o sabia que tinham tantos p\xE1ssaros regionais e que ficavam
+              onde ficam. Entendi tudo melhor com o mapa."
+          respostas: []
+    - item: 11
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Aquele livro ilustrado era muito completo! Deu para ver as diferen\xE7as
+              entre os p\xE1ssaros de cada regi\xE3o certinho."
+          respostas: []
+    - item: 1
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "A explica\xE7\xE3o do nosso livro did\xE1tico \xE9 bem completa,
+              deu pra entender sobre quais s\xE3o os p\xE1ssaros naturais da nossa
+              regi\xE3o."
+          respostas: []
+    - item: 9
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Aquela foto do passarinho era super maneira, eu sempre vejo ele
+              voando aqui pelo p\xE1tio!"
+          respostas: []
+    - item: 17
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "S\xE9rio que aquela grava\xE7\xE3o era de um p\xE1ssaro aqui da
+              escola mesmo? Quem diria que a gente pode aprender com as coisas que
+              tem no p\xE1tio. Uau!"
+          respostas: []
+    - item: 10
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Vendo a tabela que o professor fez no quadro negro ficou mais f\xE1cil
+              de entender a mat\xE9ria da aula. "
+          respostas: []
+    - item: 3
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "Vendo a tabela que o professor fez para a gente no cartaz ficou
+              mais f\xE1cil de entender a mat\xE9ria da aula."
+          respostas: []
+    - item: 12
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "A cole\xE7\xE3o de penas era bacana, mas tinha muitos p\xE1ssaros
+              que n\xE3o eram dessa regi\xE3o, o que acabou deixando essa parte da
+              aula confusa."
+          respostas: []
+    - item: 2
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "O v\xEDdeo era bem bacana, mas tinha muitos p\xE1ssaros que n\xE3o
+              eram dessa regi\xE3o, o que acabou deixando essa parte da aula confusa."
+          respostas: []
+    - item: 16
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "O CD era bem bacana, mas tinha muitos p\xE1ssaros que n\xE3o eram
+              dessa regi\xE3o, o que acabou deixando essa parte da aula confusa."
+          respostas: []
+    - item: 15
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "As mat\xE9rias nos jornais e revistas eram bacanas, mas tinha muitos
+              p\xE1ssaros que n\xE3o eram dessa regi\xE3o, o que acabou deixando essa
+              parte da aula confusa."
+          respostas: []
+    - item: 5
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "A terceira parte da aula foi estranha, n\xE3o sei como aquilo me
+              ajuda a entender sobre os p\xE1ssaros da minha regi\xE3o..."
+          respostas: []
+    - item: 0
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "A terceira parte da aula foi estranha, n\xE3o sei como aquilo me
+              ajuda a entender sobre os p\xE1ssaros da minha regi\xE3o..."
+          respostas: []
+    - item: 0
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "A terceira parte da aula foi estranha, n\xE3o sei como aquilo me
+              ajuda a entender sobre os p\xE1ssaros da minha regi\xE3o..."
+          respostas: []
+    - item: 0
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "A terceira parte da aula foi estranha, n\xE3o sei como aquilo me
+              ajuda a entender sobre os p\xE1ssaros da minha regi\xE3o..."
+          respostas: []
+    - item: 0
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "A terceira parte da aula foi estranha, n\xE3o sei como aquilo me
+              ajuda a entender sobre os p\xE1ssaros da minha regi\xE3o..."
+          respostas: []
+    - item: 0
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "A terceira parte da aula foi estranha, n\xE3o sei como aquilo me
+              ajuda a entender sobre os p\xE1ssaros da minha regi\xE3o..."
+          respostas: []
+    - item: 0
+      dialogo:
+        nodulos:
+        - falas:
+          - personagem: 0
+            emocao: 0
+            fala: 
+          - personagem: 12
+            emocao: 0
+            fala: "A terceira parte da aula foi estranha, n\xE3o sei como aquilo me
+              ajuda a entender sobre os p\xE1ssaros da minha regi\xE3o..."
+          respostas: []
 --- !u!1 &2102324080
 GameObject:
   m_ObjectHideFlags: 0
@@ -10815,3 +13418,98 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2114344672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2114344676}
+  - component: {fileID: 2114344675}
+  - component: {fileID: 2114344674}
+  - component: {fileID: 2114344673}
+  m_Layer: 5
+  m_Name: Canvas(Interface)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2114344673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2114344672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &2114344674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2114344672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &2114344675
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2114344672}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &2114344676
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2114344672}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 643143586}
+  - {fileID: 704641100}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
