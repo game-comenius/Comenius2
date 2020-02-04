@@ -50,7 +50,7 @@ public class TrocaDoDia : MonoBehaviour {
     {
         janelaTrocaDoDia.Esconder();
         yield return new WaitForSeconds(0.5f);
-        backgroundTranslucido.enabled = false;
-        // GetComponent<SceneLoader>().LoadNewScene("M1_SalaDosProfessores");
+        GetComponent<SceneLoader>().LoadNewScene("M1_FimMissao");
+        //backgroundTranslucido.enabled = false;
     }
 }
