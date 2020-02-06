@@ -23,6 +23,8 @@ public class DynamicCursor : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     protected virtual void MouseIn()
     {
+        pointerIn = true;
+
         CursorInfos.SetCursorInterativo();
     }
 
@@ -36,6 +38,8 @@ public class DynamicCursor : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     protected virtual void MouseOut()
     {
+        pointerIn = false;
+
         CursorInfos.SetCursorBase();
     }
 

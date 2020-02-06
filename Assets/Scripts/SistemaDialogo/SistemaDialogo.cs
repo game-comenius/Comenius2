@@ -91,6 +91,7 @@ public class SistemaDialogo : MonoBehaviour
     {
         if (Input.GetKeyDown (KeyCode.Escape))
         {
+            ResetarBotao();
             AcabarConversa();
         }
     }
