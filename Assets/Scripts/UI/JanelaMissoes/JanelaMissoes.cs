@@ -9,11 +9,9 @@ public class JanelaMissoes : MonoBehaviour {
     private static bool ativada;
 
     public bool Aberta { get; set; }
-    private RectTransform transformJanela;
-    private Vector2 posicaoFechada;
-    private Vector2 posicaoAberta;
 
     private CorpoJanelaMissoes corpoJanelaMissoes;
+
 
     // Esse método deve ser chamado quando você quiser cadastrar uma missão
     // nesta janela de missões, basta passar o título da missão e as
@@ -23,16 +21,12 @@ public class JanelaMissoes : MonoBehaviour {
         corpoJanelaMissoes.AdicionarMissao(tituloMissao, ordensMissao);
     }
 
+
 	// Use this for initialization
 	void Start () {
         // Esta janela de missões estará presente em todas as cenas seguintes
         // Não é necessário adicionar o GameObject/Prefab em outras cenas
         DontDestroyOnLoad(this.gameObject);
-
-        transformJanela = transform.GetChild(0).GetChild(0).GetComponent<RectTransform>();
-        posicaoFechada = transformJanela.anchoredPosition;
-        posicaoAberta = posicaoFechada;
-        posicaoAberta.x = 32;
 
         corpoJanelaMissoes = GetComponentInChildren<CorpoJanelaMissoes>();
 
@@ -45,8 +39,8 @@ public class JanelaMissoes : MonoBehaviour {
 
     public void Toggle()
     {
-        transformJanela.anchoredPosition = (Aberta) ? posicaoFechada : posicaoAberta;
         Aberta = !Aberta;
+        GetComponent<Animator>().SetBool("Aberta", Aberta);
     }
 
     public void Ativar()

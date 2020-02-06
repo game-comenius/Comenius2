@@ -11,14 +11,6 @@ public class AjudaComeniusMidias : MonoBehaviour {
     [SerializeField]
     private NpcDialogo drica;
 
-    private TextMeshProUGUI componenteTexto;
-
-    private readonly string[] falas =
-    {
-        "Muito bem Lurdinha! Agora que você falou com o professor Jean e já sabe sua missão, você pode consultá-la sempre que quiser neste botão.",
-        "No momento você têm uma missão principal e pequenas tarefas que podem te ajudar na missão em questão. Aperte no botão azul com o título de uma missão para ver seus objetivos específicos!",
-        "Ótimo! Agora você pode ir até a sala multimeios onde te explicarei mais coisas.\nTe encontro lá!"
-    };
 
     private Canvas canvas;
     private FadeEffect backgroundFadeEffect;
@@ -34,8 +26,6 @@ public class AjudaComeniusMidias : MonoBehaviour {
 
         focoBotaoDaJanela = canvas.transform.GetChild(0).GetComponent<Image>();
         focoBotaoDaJanela.color = Color.clear;
-
-        componenteTexto = GetComponentInChildren<TextMeshProUGUI>();
 
         // Cadastrar função para ser invocada quando o diretor fechar o diálogo
         drica.OnEndDialogueEvent += Mostrar;
