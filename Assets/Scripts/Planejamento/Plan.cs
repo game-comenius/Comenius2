@@ -25,7 +25,7 @@ public class Plan : MonoBehaviour
     //    if (!GameManager.uiSendoUsada)
     //    {
     //        planejamentoUi.SetActive(true);
-    //        GameObject.Find("LocalFade").GetComponent<FadeEffect>().Fadeout();
+    //        GameObject.Find("Fade").GetComponent<FadeEffect>().Fadeout();
     //        GameManager.UISendoUsada();
     //    }
     //}
@@ -62,7 +62,7 @@ public class Plan : MonoBehaviour
     private void Interact()
     {
         planejamentoUi.SetActive(true);
-        GameObject.Find("LocalFade").GetComponent<FadeEffect>().Fadeout();
+        GameObject.Find("Fade").GetComponent<FadeEffect>().Fadeout();
         GameManager.UISendoUsada();
     }
 

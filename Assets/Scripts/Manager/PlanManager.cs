@@ -56,6 +56,8 @@ public class PlanManager : MonoBehaviour {
         //Player.Instance.totalMissionPoints = totalMissionPoints;
 
         Player.Instance.MissionHistory[Player.Instance.missionID] = new ChosenMediaPoints(chosenMedia, points, totalMissionPoints);
+
+        //GameManager.UINaoSendoUsada();
     }
 
     public double getTotalMissionPoints() {
