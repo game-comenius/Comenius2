@@ -3,32 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Plan : MonoBehaviour
+public class PranchetaPlanejamento : MonoBehaviour
 {
-    [SerializeField] GameObject planejamentoUi;
-
-    [SerializeField] private Button confirmarPlan;
-
-    [SerializeField] [Range(0, 10)] float distFromPlayer;
-
-    private Vector2 mousePosition;
 
     [SerializeField] private Vector3[] interactOffset = new Vector3[1];
 
-    private void Start()
-    {
-        confirmarPlan.onClick.AddListener(() => GameManager.UINaoSendoUsada());
-    }
-
-    //private void OnMouseUp()
-    //{
-    //    if (!GameManager.uiSendoUsada)
-    //    {
-    //        planejamentoUi.SetActive(true);
-    //        GameObject.Find("Fade").GetComponent<FadeEffect>().Fadeout();
-    //        GameManager.UISendoUsada();
-    //    }
-    //}
 
     private void OnMouseUp()
     {
@@ -61,9 +40,7 @@ public class Plan : MonoBehaviour
 
     private void Interact()
     {
-        planejamentoUi.SetActive(true);
-        GameObject.Find("Fade").GetComponent<FadeEffect>().Fadeout();
-        GameManager.UISendoUsada();
+        GetComponentInParent<Planejamento>().AbrirPlanejamento();
     }
 
 #if UNITY_EDITOR
