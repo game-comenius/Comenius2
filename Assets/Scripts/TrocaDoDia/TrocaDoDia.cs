@@ -50,7 +50,9 @@ public class TrocaDoDia : MonoBehaviour {
     {
         janelaTrocaDoDia.Esconder();
         yield return new WaitForSeconds(0.5f);
-        GetComponent<SceneLoader>().LoadNewScene("M1_FimMissao");
+        GetComponent<PreparadorDaProximaMissao>().LimparMissaoAtual();
+        GetComponent<SceneLoader>().LoadNewScene("M2_Patio1_inicio");
+        //GetComponent<SceneLoader>().LoadNewScene("M1_FimMissao");
         //backgroundTranslucido.enabled = false;
     }
 }

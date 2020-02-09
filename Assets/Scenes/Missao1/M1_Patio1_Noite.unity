@@ -2838,11 +2838,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!212 &890612542 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 212835090484309842, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
-    type: 2}
-  m_PrefabInternal: {fileID: 747957554}
 --- !u!1 &980637731
 GameObject:
   m_ObjectHideFlags: 0
@@ -4140,27 +4135,14 @@ GameObject:
   - component: {fileID: 1465918036}
   - component: {fileID: 1465918035}
   - component: {fileID: 1465918034}
-  - component: {fileID: 1465918033}
   - component: {fileID: 1465918037}
   m_Layer: 0
-  m_Name: "Comenius (esse objeto trava o jogo, n\xE3o sei o por que)"
+  m_Name: Comenius
   m_TagString: Diretor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1465918033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1465918032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c34ea57c0f79eed429d1bbfa7283faf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneIndex: 10
+  m_IsActive: 1
 --- !u!61 &1465918034
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4174,7 +4156,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.0032194257}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4185,7 +4167,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.86013985, y: 2.013986}
+  m_Size: {x: 0.86013985, y: 2.4027033}
   m_EdgeRadius: 0
 --- !u!212 &1465918035
 SpriteRenderer:
@@ -4266,18 +4248,7 @@ MonoBehaviour:
     - {x: 2, y: 6}
   questFeita:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1465918033}
-        m_MethodName: IrParaCena
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   dependenciasFeitas:
@@ -4300,18 +4271,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 890612542}
-        m_MethodName: set_sprite
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: 797bdc626a53ec244a5c4144b137db2b,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4387,7 +4346,7 @@ MonoBehaviour:
       respostas: []
   dialogosSecundarios: []
   interactOffset:
-  - {x: 0, y: 0, z: 0}
+  - {x: 0.6, y: -0.9, z: 0}
 --- !u!1 &1520029426
 GameObject:
   m_ObjectHideFlags: 0
@@ -4751,6 +4710,7 @@ GameObject:
   - component: {fileID: 1681338726}
   - component: {fileID: 1681338725}
   - component: {fileID: 1681338727}
+  - component: {fileID: 1681338728}
   m_Layer: 0
   m_Name: TrocaDoDia
   m_TagString: Untagged
@@ -4770,7 +4730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 061e94f419a4f48beb73718716414d20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogoQueAtivaEstaTroca: {fileID: 683037571}
+  dialogoQueAtivaEstaTroca: {fileID: 1465918037}
 --- !u!4 &1681338726
 Transform:
   m_ObjectHideFlags: 0
@@ -4795,6 +4755,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f3fa3d47eac844e7aad126cc43f1aa96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1681338728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1681338724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd9d7928caa24e4e87e9a359509654f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1681420766
