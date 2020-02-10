@@ -9,7 +9,7 @@ public class MesaDoAluno : LocalParaColocarItem
         if (itemNesteLocal == null)
         {
             itemNesteLocal = new GameObject("MidiaSobreEstaMesa");
-            itemNesteLocal.AddComponent<SpriteRenderer>().sortingOrder = 5;
+            itemNesteLocal.AddComponent<SpriteRenderer>();//.sortingOrder = 5; //Comentei para não ficar na frente da Lurdinha quando ela estiver andando
             itemNesteLocal.transform.SetParent(this.transform);
         }
 
@@ -29,6 +29,6 @@ public class MesaDoAluno : LocalParaColocarItem
                 break;
         }
 
-        sr.transform.localPosition = posicaoDoItem;
+        sr.transform.localPosition = (Vector3)posicaoDoItem + new Vector3(0f, 0f, -0.1f);//o vetor3 é para ficar na frente da mesa
     }
 }

@@ -342,19 +342,19 @@ public class ClassManager : MonoBehaviour
             {
                 classMoment += 1;
 
-                if (midiaNaSalaDeAula)
-                {
-                    // Esconder a mídia do último momento desta aula
-                    midiaNaSalaDeAula.EsconderMidiaAtual();
-                    // Apresentar a mídia escolhida pelo jogador para este momento
-                    var jogador = Player.Instance;
-                    var historicoMissao = jogador.MissionHistory[jogador.missionID];
-                    var midia = historicoMissao.chosenMedia[classMoment];
-                    midiaNaSalaDeAula.ApresentarMidia(midia);
-                }
-
                 if (classMoment < 3) //a seguir são resetadas as variáveis para se gerar um tempo de problema para o novo momento de aula
                 {
+                    if (midiaNaSalaDeAula)
+                    {
+                        // Esconder a mídia do último momento desta aula
+                        midiaNaSalaDeAula.EsconderMidiaAtual();
+                        // Apresentar a mídia escolhida pelo jogador para este momento
+                        var jogador = Player.Instance;
+                        var historicoMissao = jogador.MissionHistory[jogador.missionID];
+                        var midia = historicoMissao.chosenMedia[classMoment];
+                        midiaNaSalaDeAula.ApresentarMidia(midia);
+                    }
+
                     momentTimer = momentsTime[classMoment].x;
 
                     previousProblemTime = momentsTime[classMoment].y;
