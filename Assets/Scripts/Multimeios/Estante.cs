@@ -2,6 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class Estante : QuestScript {
 
@@ -97,3 +100,32 @@ public class Estante : QuestScript {
         }
     }
 }
+
+#region Editor
+#if UNITY_EDITOR
+
+[CustomEditor(typeof(Estante))]
+public class EstanteEditor : Editor
+{
+    SerializedProperty interactOffset = null;
+
+    private void OnEnable()
+    {
+        interactOffset = serializedObject.FindProperty("interactOffset");
+    }
+
+    void OnSceneGUI()
+    {
+        Vector3 position = (target as DoorTransition).transform.position;
+
+        for (int i = 0; i < interactOffset.arraySize; i++)
+        {
+            interactOffset.GetArrayElementAtIndex(i).vector3Value = Handles.PositionHandle(interactOffset.GetArrayElementAtIndex(i).vector3Value + position, Quaternion.identity) - position;
+        }
+
+        serializedObject.ApplyModifiedProperties();
+    }
+}
+
+#endif
+#endregion

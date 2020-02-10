@@ -2,6 +2,10 @@
 using UnityEngine;
 using GameComenius.Dialogo;
 using System;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 
 [RequireComponent(typeof(DynamicCursor))]
 public class NpcDialogo : QuestScript
@@ -157,3 +161,30 @@ public class NpcDialogo : QuestScript
         }
     }
 }
+
+#region Editor
+#if UNITY_EDITOR
+
+[CustomEditor(typeof(NpcDialogo))]
+public class NcpDialogoEditor : Editor
+{
+    private NpcDialogo instance = null;
+
+    private void OnEnable()
+    {
+        instance = target as NpcDialogo;
+    }
+
+    void OnSceneGUI()
+    {
+        Vector3 position = instance.transform.position;
+
+        for (int i = 0; i < instance.interactOffset.Length; i++)
+        {
+            instance.interactOffset[i] = Handles.PositionHandle(instance.interactOffset[i] + position, Quaternion.identity) - position;
+        }
+    }
+}
+
+#endif
+#endregion

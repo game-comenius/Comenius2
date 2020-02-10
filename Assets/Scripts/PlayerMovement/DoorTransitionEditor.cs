@@ -17,8 +17,12 @@ public class DoorTransitionEditor : UnityEditor.Editor
 
     private int indexBk;
 
+    SerializedProperty interactOffset = null;
+
     private void OnEnable()
     {
+        interactOffset = serializedObject.FindProperty("interactOffset");
+
         sceneCount = SceneManager.sceneCountInBuildSettings;
 
         index = sceneCount;
@@ -74,6 +78,18 @@ public class DoorTransitionEditor : UnityEditor.Editor
                 UnityEditor.SceneManagement.EditorSceneManager.OpenScene(SceneUtility.GetScenePathByBuildIndex(index), UnityEditor.SceneManagement.OpenSceneMode.Single);
             }
         }
+    }
+
+    void OnSceneGUI()
+    {
+        Vector3 position = (target as DoorTransition).transform.position;
+
+        for (int i = 0; i < interactOffset.arraySize; i++)
+        {
+            interactOffset.GetArrayElementAtIndex(i).vector3Value = Handles.PositionHandle(interactOffset.GetArrayElementAtIndex(i).vector3Value + position, Quaternion.identity) - position;
+        }
+
+        serializedObject.ApplyModifiedProperties();
     }
 }
 
