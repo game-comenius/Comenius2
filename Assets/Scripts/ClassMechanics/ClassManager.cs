@@ -295,12 +295,23 @@ public class ClassManager : MonoBehaviour
             nextProblemTime = NextProblem(0f); //Gera o tempo para o primeiro problema. Este pode ter tmin = 0 pois o previousProblemTime controlará para que não se gere problema antes do que se quer.
         }
 
+        var midiaNaSalaDeAula = FindObjectOfType<MidiaNaSalaDeAula>();
+        if (midiaNaSalaDeAula)
+        {
+            // Apresentar a mídia escolhida pelo jogador para este momento
+            var jogador = Player.Instance;
+            var historicoMissao = jogador.MissionHistory[jogador.missionID];
+            var midia = historicoMissao.chosenMedia[classMoment];
+            midiaNaSalaDeAula.ApresentarMidia(midia);
+        }
+
         SistemaDialogo.sistemaDialogo.ComecarDialogo(Falas[0], null);
 
         while (classMoment < 3)
         {
             timer.text = "M" + (classMoment + 1) + " - " + Mathf.FloorToInt(momentTimer / 60).ToString("00") + ":" + Mathf.FloorToInt(momentTimer % 60).ToString("00");
 
+            // Esperar o professor falar com os alunos
             yield return new WaitUntil(() => !SistemaDialogo.sistemaDialogo.transform.GetChild(0).gameObject.activeSelf);
 
             if (!GameManager.uiSendoUsada) 
@@ -330,6 +341,17 @@ public class ClassManager : MonoBehaviour
             else if (momentTimer < 0)
             {
                 classMoment += 1;
+
+                if (midiaNaSalaDeAula)
+                {
+                    // Esconder a mídia do último momento desta aula
+                    midiaNaSalaDeAula.EsconderMidiaAtual();
+                    // Apresentar a mídia escolhida pelo jogador para este momento
+                    var jogador = Player.Instance;
+                    var historicoMissao = jogador.MissionHistory[jogador.missionID];
+                    var midia = historicoMissao.chosenMedia[classMoment];
+                    midiaNaSalaDeAula.ApresentarMidia(midia);
+                }
 
                 if (classMoment < 3) //a seguir são resetadas as variáveis para se gerar um tempo de problema para o novo momento de aula
                 {
