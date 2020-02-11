@@ -165,24 +165,47 @@ public class NpcDialogo : QuestScript
 #region Editor
 #if UNITY_EDITOR
 
+//[CustomEditor(typeof(NpcDialogo))]
+//public class NcpDialogoEditor : Editor
+//{
+//    private NpcDialogo instance = null;
+
+//    private void OnEnable()
+//    {
+//        instance = target as NpcDialogo;
+//    }
+
+//    void OnSceneGUI()
+//    {
+//        Vector3 position = instance.transform.position;
+
+//        for (int i = 0; i < instance.interactOffset.Length; i++)
+//        {
+//            instance.interactOffset[i] = Handles.PositionHandle(instance.interactOffset[i] + position, Quaternion.identity) - position;
+//        }
+//    }
+//}
+
 [CustomEditor(typeof(NpcDialogo))]
 public class NcpDialogoEditor : Editor
 {
-    private NpcDialogo instance = null;
+    SerializedProperty interactOffset = null;
 
     private void OnEnable()
     {
-        instance = target as NpcDialogo;
+        interactOffset = serializedObject.FindProperty("interactOffset");
     }
 
     void OnSceneGUI()
     {
-        Vector3 position = instance.transform.position;
+        Vector3 position = (target as NpcDialogo).transform.position;
 
-        for (int i = 0; i < instance.interactOffset.Length; i++)
+        for (int i = 0; i < interactOffset.arraySize; i++)
         {
-            instance.interactOffset[i] = Handles.PositionHandle(instance.interactOffset[i] + position, Quaternion.identity) - position;
+            interactOffset.GetArrayElementAtIndex(i).vector3Value = Handles.PositionHandle(interactOffset.GetArrayElementAtIndex(i).vector3Value + position, Quaternion.identity) - position;
         }
+
+        serializedObject.ApplyModifiedProperties();
     }
 }
 

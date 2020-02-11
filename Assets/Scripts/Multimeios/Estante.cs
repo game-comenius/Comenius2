@@ -116,7 +116,7 @@ public class EstanteEditor : Editor
 
     void OnSceneGUI()
     {
-        Vector3 position = (target as DoorTransition).transform.position;
+        Vector3 position = (target as Estante).transform.position;
 
         for (int i = 0; i < interactOffset.arraySize; i++)
         {
