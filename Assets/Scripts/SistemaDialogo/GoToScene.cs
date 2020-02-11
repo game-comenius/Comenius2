@@ -9,8 +9,6 @@ public class GoToScene : MonoBehaviour
 
     public void IrParaCena()
     {
-        Debug.Log(1);
-
         SceneManager.LoadScene(sceneIndex);
     }
 }
