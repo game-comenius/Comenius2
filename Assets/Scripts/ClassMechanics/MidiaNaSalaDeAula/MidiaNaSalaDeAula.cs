@@ -5,11 +5,14 @@ using UnityEngine;
 public class MidiaNaSalaDeAula : MonoBehaviour {
 
     private LocalParaColocarItem mesaDoProfessor;
+    private QuadroNegro quadroNegro;
     private LocalParaColocarItem[] mesasDosAlunos;
+    
 
 	// Use this for initialization
 	void Start () {
         mesaDoProfessor = FindObjectOfType<MesaDoProfessor>();
+        quadroNegro = FindObjectOfType<QuadroNegro>();
         mesasDosAlunos = FindObjectsOfType<MesaDoAluno>();
 	}
 
@@ -18,6 +21,9 @@ public class MidiaNaSalaDeAula : MonoBehaviour {
         switch (midia)
         {
             case ItemName.QuadroNegro:
+                break;
+            case ItemName.Cartazes:
+                if (quadroNegro) quadroNegro.ColocarItem(midia);
                 break;
             case ItemName.TV:
             case ItemName.ReprodutorAudio:
@@ -33,5 +39,7 @@ public class MidiaNaSalaDeAula : MonoBehaviour {
     public void EsconderMidiaAtual()
     {
         if (mesaDoProfessor) mesaDoProfessor.RemoverItem();
+        foreach (var mesaDoAluno in mesasDosAlunos)
+            mesaDoAluno.RemoverItem();
     }
 }

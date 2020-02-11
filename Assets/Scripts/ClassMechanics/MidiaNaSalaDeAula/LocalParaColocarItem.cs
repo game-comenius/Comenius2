@@ -5,10 +5,9 @@ using UnityEngine;
 public abstract class LocalParaColocarItem : MonoBehaviour {
 
     [SerializeField]
-    protected Vector2 posicaoDoItem;
+    protected Vector2 posicaoDoItem = Vector2.zero;
 
     protected GameObject itemNesteLocal;
-
 
     public abstract void ColocarItem(ItemName midia);
 
