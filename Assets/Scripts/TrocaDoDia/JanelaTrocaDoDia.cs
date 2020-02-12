@@ -16,6 +16,9 @@ public class JanelaTrocaDoDia : MonoBehaviour {
     private GameObject[] slotsMidia;
 
     [SerializeField]
+    private Sprite spriteEstrelaVazia;
+
+    [SerializeField]
     private TextMeshProUGUI textoMidiasColetadas;
 
     private CanvasGroup canvasGroup;
@@ -87,13 +90,12 @@ public class JanelaTrocaDoDia : MonoBehaviour {
         var estrelas = filaDeEstrelas.GetComponentsInChildren<Image>();
 
         var i = estrelas.Length - 1;
-        var corTransparente = new Color(1, 1, 1, 0.5f);
         // Pontuações possíveis: 10, 8, 7 e 0
         if (pontos < 10)
-            estrelas[i--].color = corTransparente;
+            estrelas[i--].sprite = spriteEstrelaVazia;
         if (pontos < 8)
-            estrelas[i--].color = corTransparente;
+            estrelas[i--].sprite = spriteEstrelaVazia;
         if (pontos < 7)
-            estrelas[i].color = corTransparente;
+            estrelas[i].sprite = spriteEstrelaVazia;
     }
 }

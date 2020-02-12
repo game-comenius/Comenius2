@@ -10,14 +10,16 @@ public class CustomEstrelaDoPoder : MonoBehaviour, IPointerClickHandler
 
     private Poder poder;
 
-    private static Color selectedColor = new Color(1, 1, 1);
-    private static Color unselectedColor = new Color(1, 1, 1, 0.3f);
+    [SerializeField]
+    private Sprite spriteEstrelaVazia;
+    [SerializeField]
+    private Sprite spriteEstrelaCheia;
 
     private Image image;
     private CustomEstrelaDoPoder[] estrelas;
     private CustomEstrelaDoPoder[] estrelasAntesDeMim;
 
-    public FaixaEditarPoderMidia MinhaFaixa;
+    private FaixaEditarPoderMidia MinhaFaixa;
 
     // Use this for initialization
     void Start () {
@@ -49,7 +51,7 @@ public class CustomEstrelaDoPoder : MonoBehaviour, IPointerClickHandler
     public void Select(bool value)
     {
         Selected = value;
-        image.color = Selected ? selectedColor : unselectedColor;
+        image.sprite = Selected ? spriteEstrelaCheia : spriteEstrelaVazia;
     }
 
     public void OnPointerClick(PointerEventData eventData)
