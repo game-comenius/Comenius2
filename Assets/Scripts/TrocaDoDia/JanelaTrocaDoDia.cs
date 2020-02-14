@@ -72,8 +72,14 @@ public class JanelaTrocaDoDia : MonoBehaviour {
             DefinirPontosNoSlot(pontos, slot);
         }
 
-        // Configurar texto com o número de mídias coletadas
-        textoMidiasColetadas.text = "MÍDIAS COLETADAS = " + lurdinha.Inventory.Count + "/13";
+        // Configurar texto com o número de mídias no inventário
+        var disponiveis = GameManager.MidiasDisponiveisNaMissao1();
+        var inventario = lurdinha.Inventory;
+        var coletadas = 0;
+        foreach (var midia in disponiveis)
+            if (inventario.Contains(midia)) coletadas++;
+        textoMidiasColetadas.text = "MÍDIAS NO INVENTÁRIO = ";
+        textoMidiasColetadas.text += coletadas + "/" + disponiveis.Length;
     }
 
     private void DefinirMidiaNoSlot(ItemName midia, GameObject slot)
