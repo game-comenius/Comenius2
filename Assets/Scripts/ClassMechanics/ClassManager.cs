@@ -193,15 +193,15 @@ public class ClassManager : MonoBehaviour
         professor.aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
         NpcDialogo b = professor.aluno.gameObject.GetComponent<NpcDialogo>();
 
-        b.questInfo.isQuest = true;
-        b.questInfo.questIndex = professor.questIndex;
+        //b.questInfo.isQuest = true;
+        //b.questInfo.questIndex = professor.questIndex;
 
-        b.dialogoObrigatorio = true;
-        b.esperaDialogoObrigatorio = 1f;
+        //b.dialogoObrigatorio = true;
+        //b.esperaDialogoObrigatorio = 1f;
 
-        b.interactOffset = new Vector3[] { new Vector3(0.81f, -1.12f, 0) };
+        //b.interactOffset = new Vector3[] { new Vector3(0.81f, -1.12f, 0) };
 
-        b.questFeita.AddListener(() => { Collider2D collider = GetComponent<Collider2D>(); if (collider != null) { collider.enabled = false; } });
+        //b.questFeita.AddListener(() => { Collider2D collider = GetComponent<Collider2D>(); if (collider != null) { collider.enabled = false; } });
 
         b.enabled = false;
 
@@ -221,30 +221,29 @@ public class ClassManager : MonoBehaviour
         for (int i = 0; i < alunosComentaristas.Length; i++)
         {
             //alunosComentaristas[i].aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
-            NpcDialogo d = alunosComentaristas[i].aluno.gameObject.GetComponent<NpcDialogo>();
+            QuestHoster d = alunosComentaristas[i].aluno.gameObject.GetComponent<QuestHoster>();
+                        
+            //d.index = alunosComentaristas[i].questIndex;
 
-            d.questInfo.isQuest = true;
-            d.questInfo.questIndex = alunosComentaristas[i].questIndex;
+            //d.dialogoObrigatorio = false;
 
-            d.dialogoObrigatorio = false;
+            //d.questFeita.AddListener(() => { Collider2D collider = d.GetComponent<Collider2D>(); if (collider != null) { collider.enabled = false; } });
 
-            d.questFeita.AddListener(() => { Collider2D collider = d.GetComponent<Collider2D>(); if (collider != null) { collider.enabled = false; } });
-
-            if (i <= 1)
-            {
-                for (int j = 0; j < falasGeneralistas.Length; j++)
-                {
-                    if (Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints >= falasGeneralistas[j].rangeNota.x 
-                        && Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints <= falasGeneralistas[j].rangeNota.y)
-                    {
-                        d.dialogoPrincipal = falasGeneralistas[j].dialogos[i].Clone();
-                    }
-                }
-            }
-            else
-            {
-                d.dialogoPrincipal = falasSobreMomentos[i - 2].EncontrarFalaCerta(Player.Instance.MissionHistory[Player.Instance.missionID].chosenMedia[i - 2]).Clone();
-            }
+            //if (i <= 1)
+            //{
+            //    for (int j = 0; j < falasGeneralistas.Length; j++)
+            //    {
+            //        if (Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints >= falasGeneralistas[j].rangeNota.x 
+            //            && Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints <= falasGeneralistas[j].rangeNota.y)
+            //        {
+            //            d.dialogoPrincipal = falasGeneralistas[j].dialogos[i].Clone();
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    d.dialogoPrincipal = falasSobreMomentos[i - 2].EncontrarFalaCerta(Player.Instance.MissionHistory[Player.Instance.missionID].chosenMedia[i - 2]).Clone();
+            //}
 
             //d.enabled = false;
         }

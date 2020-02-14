@@ -6,7 +6,10 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-public class Estante : QuestScript {
+[RequireComponent(typeof(QuestHoster))]
+public class Estante : MonoBehaviour
+{
+    private QuestHoster quest;
 
     [SerializeField]
     private GameObject modoEstanteAbertaUI;
@@ -17,9 +20,9 @@ public class Estante : QuestScript {
 
     [SerializeField] private Vector3[] interactOffset = new Vector3[1];
 
-    protected override void Awake()
+    private void Awake()
     {
-        base.Awake();
+        quest = GetComponent<QuestHoster>();
 
         Items = new List<ItemName>
         {
@@ -33,9 +36,8 @@ public class Estante : QuestScript {
         };
     }
 
-    protected override void Start()
+    private void Start()
     {
-        base.Start();
         estanteUI = modoEstanteAbertaUI.GetComponentInChildren<EstanteUI>();
         modoEstanteAbertaUI.SetActive(false);
 
@@ -78,7 +80,7 @@ public class Estante : QuestScript {
             Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point, Interact);
         }
 
-        CompletarQuest();
+        ManagerQuest.QuestTakeStep(quest.index);
     }
 
     private void Interact()

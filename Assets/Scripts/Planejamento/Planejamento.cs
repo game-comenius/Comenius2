@@ -40,7 +40,7 @@ public class Planejamento : MonoBehaviour {
     public void ConfirmarPlanejamento()
     {
         GetComponentInChildren<PlanManager>().ConfirmPlan();
-        GetComponent<QuestScript>().CompletarQuest();
+        ManagerQuest.QuestTakeStep(GetComponent<QuestHoster>().index);
         CancelarPlanejamento();
     }
 }

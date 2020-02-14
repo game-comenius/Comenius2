@@ -61,9 +61,9 @@ public class DoorTransition : MonoBehaviour
 
         yield return new WaitForSeconds(timerMax);
 
-        if (GetComponent<QuestScript>()) 
+        if (GetComponent<QuestHoster>()) 
         {
-            QuestManager.SetQuestControl(GetComponent<QuestScript>().questInfo.questIndex, true);
+            ManagerQuest.VerifyQuestIsComplete(GetComponent<QuestHoster>().index);
         }
 
         sceneLoad.allowSceneActivation = true;
