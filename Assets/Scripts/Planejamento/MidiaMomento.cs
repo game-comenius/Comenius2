@@ -53,6 +53,8 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
     [SerializeField]
     public string minhaDescricao;
 
+    private Image image;
+
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -119,21 +121,13 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
     // Use this for initialization
     void Start () {
         item = initialItem;
+
+        image = GetComponent<Image>();
+        image.preserveAspect = true;
         UpdateSprite();
 	}
 
     private void UpdateSprite() {
-        var image = GetComponent<Image>();
-        if (item == ItemName.SemNome)
-        {
-            image.sprite = null;
-            image.color = new Color(1, 1, 1, 0);
-
-        }
-        else
-        {
-            image.sprite = ItemSpriteDatabase.GetSpriteOf(item);
-            image.color = new Color(1, 1, 1, 1);
-        }
+        image.sprite = ItemSpriteDatabase.GetSpriteOf(item);
     }
 }

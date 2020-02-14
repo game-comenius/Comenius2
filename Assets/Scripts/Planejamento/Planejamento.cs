@@ -19,6 +19,15 @@ public class Planejamento : MonoBehaviour {
         canvas.enabled = true;
         backgroundPreto.Fadein();
         GameManager.UISendoUsada();
+
+        // Fazer com que o jogador consiga arrastar os items do inventário
+        // durante e para o planejamento
+        var items = GetComponentsInChildren<ItemInUserInterface>();
+        foreach (var item in items)
+        {
+            if (!item.GetComponent<DragDrop>())
+                item.gameObject.AddComponent<DragDrop>();
+        }
     }
 
     public void CancelarPlanejamento()

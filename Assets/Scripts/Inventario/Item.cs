@@ -40,6 +40,8 @@ public class Item
                 FriendlyName = "Gravação do Pássaro";
                 Description = "Gravação do canto do pássaro no pátio da escola";
                 FullDescription = "Gravação do canto do pássaro no pátio da escola";
+                UpgradeFrom[0] = ItemName.Gravador;
+                UpgradeFrom[1] = ItemName.Gravador;
                 break;
             case ItemName.CameraPolaroid:
                 FriendlyName = "Câmera Fotográfica Polaroid";

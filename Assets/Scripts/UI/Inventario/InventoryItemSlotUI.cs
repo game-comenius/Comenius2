@@ -5,7 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
-public class InventoryItemSlotUI : MonoBehaviour, IPointerClickHandler {
+public class InventoryItemSlotUI : MonoBehaviour, IPointerDownHandler
+{
 
     private static Image activeItemBorder;
 
@@ -23,8 +24,7 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerClickHandler {
 
     public GameObject DescriptionSlot { get; set; }
 
-    [SerializeField]
-    private Image imageComponent;
+    private ItemInUserInterface itemInUserInterface;
 
 
     private LinkedList<Item> myItems;
@@ -34,6 +34,8 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerClickHandler {
     private void Awake()
     {
         myItems = new LinkedList<Item>();
+
+        itemInUserInterface = GetComponentInChildren<ItemInUserInterface>();
     }
 
 
@@ -48,9 +50,7 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerClickHandler {
     private void DisplayInfo()
     {
         var item = myCurrentItem.Value;
-
-        // Colocar o sprite do item no slot.
-        imageComponent.sprite = item.Sprite;
+        itemInUserInterface.ItemName = item.ItemName;
 
         // Colocar o nome do item no slot.
         var slotText = GetComponentInChildren<Text>();
@@ -80,19 +80,19 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerClickHandler {
     {
         myCurrentItem = myCurrentItem.Previous ?? myItems.Last;
         DisplayInfo();
-        HandleClick();
+        HandlePointerDown();
     }
 
     public void DisplayNextItem()
     {
         myCurrentItem = myCurrentItem.Next ?? myItems.First;
         DisplayInfo();
-        HandleClick();
+        HandlePointerDown();
     }
 
     
 
-    private void HandleClick()
+    private void HandlePointerDown()
     {
         // Desabilitar o último destaque de slot de item
         if (activeItemBorder) activeItemBorder.sprite = neutralItemBorder;
@@ -104,18 +104,10 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerClickHandler {
         var item = myCurrentItem.Value;
         // Colocar a descrição na caixa de descrição
         DescriptionSlot.GetComponent<Text>().text = item.Description;
-
-        // Caso esta folha de inventário esteja sendo usada em um planejamento
-        GameObject selectedMoment = null;
-        var planManager = FindObjectOfType<PlanManager>();
-        if (planManager)
-            selectedMoment = planManager.getSelectedMoment();
-        if (selectedMoment)
-            selectedMoment.GetComponent<MidiaMomento>().AddItem(item.ItemName);
     }
 
-    public virtual void OnPointerClick(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
-        HandleClick();
+        HandlePointerDown();
     }
 }
