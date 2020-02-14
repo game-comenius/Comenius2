@@ -789,7 +789,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &152805210
 GameObject:
@@ -828,7 +828,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1.2623291, y: 0}
+  m_SizeDelta: {x: 0, y: -505.5144}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &152805212
 MonoBehaviour:
@@ -2819,7 +2819,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2058317995}
+      - m_Target: {fileID: 0}
         m_MethodName: Fadeout
         m_Mode: 1
         m_Arguments:
@@ -3255,13 +3255,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8056351885f5a76438866e79586deb59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridColor: {r: 1, g: 0, b: 0, a: 1}
   cellSize: {x: 0.5, y: 0.5}
   cellAngle: 30
   gridDim: {x: 17, y: 14}
   gridRotation: 210
-  save: /Grids/Missao1/SalaProfessores.txt
-  newVacancy: ff070000010000001d0000001d0000001d3000000330000007300000c7300000f1310000f1330000f9070000f0070000e0310000c0310000013000007930000079300000
+  vacancy: 0000000000000000000000000000000000000000
+  gridColor: {r: 1, g: 0, b: 0, a: 1}
+  debug: 0
+  cell: {x: 0, y: 0}
 --- !u!4 &695087420
 Transform:
   m_ObjectHideFlags: 0
@@ -3349,7 +3350,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Nome
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04c2a49bfb866b2459514d02a1753e72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 75e41a00fc29a489dad78935be536d51, type: 2}
   m_sharedMaterial: {fileID: 21744828738309646, guid: 04c2a49bfb866b2459514d02a1753e72,
     type: 2}
   m_fontSharedMaterials: []
@@ -3424,13 +3425,13 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
   m_inputSource: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -3541,7 +3542,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &844163537
 GameObject:
@@ -3732,7 +3733,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Texto
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04c2a49bfb866b2459514d02a1753e72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 75e41a00fc29a489dad78935be536d51, type: 2}
   m_sharedMaterial: {fileID: 21744828738309646, guid: 04c2a49bfb866b2459514d02a1753e72,
     type: 2}
   m_fontSharedMaterials: []
@@ -3807,13 +3808,13 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
   m_inputSource: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -3903,7 +3904,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Option A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04c2a49bfb866b2459514d02a1753e72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 75e41a00fc29a489dad78935be536d51, type: 2}
   m_sharedMaterial: {fileID: 21744828738309646, guid: 04c2a49bfb866b2459514d02a1753e72,
     type: 2}
   m_fontSharedMaterials: []
@@ -3984,7 +3985,7 @@ MonoBehaviour:
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 1
   m_inputSource: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -4082,7 +4083,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: '>>'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04c2a49bfb866b2459514d02a1753e72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 75e41a00fc29a489dad78935be536d51, type: 2}
   m_sharedMaterial: {fileID: 21744828738309646, guid: 04c2a49bfb866b2459514d02a1753e72,
     type: 2}
   m_fontSharedMaterials: []
@@ -4157,13 +4158,13 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
   m_inputSource: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -5489,7 +5490,7 @@ Transform:
   m_LocalScale: {x: 150, y: 130, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1196817774
 Prefab:
@@ -5979,7 +5980,7 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04c2a49bfb866b2459514d02a1753e72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 75e41a00fc29a489dad78935be536d51, type: 2}
   m_sharedMaterial: {fileID: 21744828738309646, guid: 04c2a49bfb866b2459514d02a1753e72,
     type: 2}
   m_fontSharedMaterials: []
@@ -6054,13 +6055,13 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
   m_inputSource: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -6308,7 +6309,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1405438427
 GameObject:
@@ -6532,7 +6533,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1423131416
 GameObject:
@@ -7513,7 +7514,7 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 04c2a49bfb866b2459514d02a1753e72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 75e41a00fc29a489dad78935be536d51, type: 2}
   m_sharedMaterial: {fileID: 21744828738309646, guid: 04c2a49bfb866b2459514d02a1753e72,
     type: 2}
   m_fontSharedMaterials: []
@@ -7588,13 +7589,13 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
   m_inputSource: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -7678,7 +7679,7 @@ Transform:
   - {fileID: 1001092228}
   - {fileID: 436968605}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1889579707
 GameObject:
@@ -8100,12 +8101,6 @@ RectTransform:
   m_AnchoredPosition: {x: -791, y: 5.6539917}
   m_SizeDelta: {x: 111.7, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2058317995 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114418196855771388, guid: 75d5ec2be4a964849b427b3904ca8864,
-    type: 2}
-  m_PrefabInternal: {fileID: 1196817774}
-  m_Script: {fileID: 11500000, guid: 0a8624c56ff550f4da2e35b132942c0e, type: 3}
 --- !u!1 &2060058699
 GameObject:
   m_ObjectHideFlags: 0
@@ -8132,7 +8127,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2086426045
 GameObject:
