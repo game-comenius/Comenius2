@@ -9,9 +9,7 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
     // A ajuda do comenius vai aparecer logo depois do diálogo com o Jean
     // por isso precisamos de uma referência ao Jean neste caso
     [SerializeField]
-    private NpcDialogo jean;
-
-    private TextMeshProUGUI componenteTexto;
+    private NpcDialogo dialogoDoJean;
 
     [SerializeField]
     private JanelaMissoes janelaMissoes;
@@ -25,24 +23,40 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
 
     private Canvas canvas;
     private FadeEffect backgroundFadeEffect;
+    private CanvasGroup conteudo;
+    private TextMeshProUGUI componenteTexto;
     private Image focoBotaoDaJanela;
+    private GameObject botaoEntendi;
+    private GameObject botaoPularTutorial;
 
     // Use this for initialization
     private void Start()
     {
         canvas = GetComponentInChildren<Canvas>();
+        canvas.enabled = false;
 
         var fadeEffect = GetComponentInChildren<FadeEffect>();
         backgroundFadeEffect = fadeEffect;
 
+        conteudo = canvas.GetComponentInChildren<CanvasGroup>();
+        conteudo.alpha = 0;
+
+        componenteTexto = conteudo.GetComponentInChildren<TextMeshProUGUI>();
+
         focoBotaoDaJanela = canvas.transform.GetChild(0).GetComponent<Image>();
         focoBotaoDaJanela.color = Color.clear;
 
-        componenteTexto = GetComponentInChildren<TextMeshProUGUI>();
+        var botoes = conteudo.GetComponentsInChildren<Button>();
+        // Botão Entendi só vai aparecer no final deste tutorial
+        botaoEntendi = botoes[0].gameObject;
+        botaoEntendi.SetActive(false);
+
+        // Botão para pular tutorial aparecerá no início e desaparecerá no fim
+        botaoPularTutorial = botoes[1].gameObject;
 
         // Cadastrar função para ser invocada quando o diretor fechar o diálogo
-        jean.OnEndDialogueEvent += AdicionarMissaoNaJanelaMissoes;
-        jean.OnEndDialogueEvent += Mostrar;
+        dialogoDoJean.OnEndDialogueEvent += AdicionarMissaoNaJanelaMissoes;
+        dialogoDoJean.OnEndDialogueEvent += Mostrar;
     }
 
     private void AdicionarMissaoNaJanelaMissoes()
@@ -61,20 +75,18 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
     {
         GameManager.UISendoUsada();
 
-        // Alpha do background escuro para aumentar o foco do jogador
-        var alpha = 0.8f;
-
-        // Fade in do background escuro
-        StartCoroutine(backgroundFadeEffect.Fade(alpha));
-
         canvas.enabled = true;
 
+        var alpha = 0.8f;
+        // Fade in do background escuro
+        yield return StartCoroutine(backgroundFadeEffect.Fade(alpha));
+
+        yield return new WaitForSeconds(0.4f);
+        conteudo.alpha = 1;
+        componenteTexto.text = falas[0];
         TocarAudio();
 
-        componenteTexto.text = falas[0];
-
-        yield return new WaitForSeconds(2);
-
+        yield return new WaitForSeconds(1.2f);
         // Posicionar o canvas da janela de missões sobre o este canvas
         var mySortingOrder = GetComponentInChildren<Canvas>().sortingOrder;
         janelaMissoes.GetComponentInChildren<Canvas>().sortingOrder = mySortingOrder + 1;
@@ -84,7 +96,6 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         // Focar no botão da janela de missões
         backgroundFadeEffect.GetComponent<Image>().enabled = false;
         focoBotaoDaJanela.color = new Color(0, 0, 0, alpha);
-
 
         // Esperar o jogador abrir a janela de missões
         yield return new WaitUntil(() => janelaMissoes.Aberta);
@@ -96,13 +107,20 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         yield return new WaitUntil(() => janelaMissoes.CompletamenteExplorada());
         componenteTexto.text = falas[2];
 
-        var coroutine = PermitirFecharApos(4);
-        StartCoroutine(coroutine);
+        StartCoroutine(PermitirFecharApos(1.5f));
     }
 
-    private IEnumerator Fechar()
+    public void Fechar()
     {
-        yield return StartCoroutine(backgroundFadeEffect.Fade(0.8f));
+        janelaMissoes.Fechar();
+        StartCoroutine(FecharCoroutine());
+    }
+
+    private IEnumerator FecharCoroutine()
+    {
+        conteudo.alpha = 0;
+        yield return new WaitForSeconds(0.4f);
+        yield return StartCoroutine(backgroundFadeEffect.Fade(0));
         canvas.enabled = false;
         GameManager.UINaoSendoUsada();
     }
@@ -110,8 +128,14 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
     private IEnumerator PermitirFecharApos(float segundos)
     {
         yield return new WaitForSeconds(segundos);
-        yield return new WaitUntil(() => Input.anyKeyDown);
-        StartCoroutine(Fechar());
+        botaoPularTutorial.SetActive(false);
+        botaoEntendi.gameObject.SetActive(true);
+    }
+
+    public void PularTutorial()
+    {
+        StopAllCoroutines();
+        Fechar();
     }
 
     private void TocarAudio()

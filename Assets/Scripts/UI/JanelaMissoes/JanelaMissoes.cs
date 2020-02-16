@@ -43,6 +43,20 @@ public class JanelaMissoes : MonoBehaviour {
         GetComponent<Animator>().SetBool("Aberta", Aberta);
     }
 
+    public bool Abrir()
+    {
+        if (Aberta) return false;
+        Toggle();
+        return true;
+    }
+
+    public bool Fechar()
+    {
+        if (!Aberta) return false;
+        Toggle();
+        return true;
+    }
+
     public void Ativar()
     {
         ativada = true;
