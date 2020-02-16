@@ -49,13 +49,25 @@ public class QuestClass
         _questType = questType;
         _dependencies = dependencies;
     }
+
     public bool QuestAvailable() //As dependencias estão feitas?
-    {
+    {       
+
         foreach (int dependency in dependencies)
         {
-            if (!ManagerQuest.VerifyQuestIsComplete(dependency))
+            if (dependency > 0)
             {
-                return false;
+                if (!ManagerQuest.VerifyQuestIsComplete(dependency))
+                {
+                    return false;
+                }
+            }
+            else if (dependency < 0)
+            {
+                if (ManagerQuest.VerifyQuestIsComplete(-dependency))
+                {
+                    return false;
+                }
             }
         }
 
@@ -75,11 +87,34 @@ public class QuestClass
             {
                 hosters[i].Complete();
             }
+
+            ManagerQuest.UpdateAvailability(index);
         }
     }
 
     public bool IsComplete()
     {
         return (QuestAvailable() && _questType.IsComplete());
+    }
+
+    public void MakeAvailable()
+    {
+        for (int i = 0; i < hosters.Count; i++)
+        {
+            hosters[i].MakeAvailable();
+        }
+    }
+
+    public bool IsDependentOf(int index)
+    {
+        foreach (int dependency in dependencies)
+        {
+            if (dependency == index || dependency == -index)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

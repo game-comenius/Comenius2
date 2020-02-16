@@ -44,7 +44,7 @@ public class ManagerQuest : MonoBehaviour
         {
             return false;
         }
-        else if (index > 0)
+        else if (index > 0 && index <= 10000)
         {
             foreach(QuestClass quest in mainQuests)
             {
@@ -54,11 +54,11 @@ public class ManagerQuest : MonoBehaviour
                 }
             }
         }
-        else if (index < 0)
+        else if (index > 10000)
         {
             foreach (QuestClass quest in sideQuests)
             {
-                if (quest.index == -index)
+                if (quest.index == index)
                 {
                     return quest.IsComplete();
                 }
@@ -76,7 +76,7 @@ public class ManagerQuest : MonoBehaviour
         {
             return true;
         }
-        else if (index > 0)
+        else if (index > 0 && index <= 10000)
         {
             foreach(QuestClass quest in mainQuests)
             {
@@ -86,11 +86,11 @@ public class ManagerQuest : MonoBehaviour
                 }
             }
         }
-        else if (index < 0)
+        else if (index > 10000)
         {
             foreach (QuestClass quest in sideQuests)
             {
-                if (quest.index == -index)
+                if (quest.index == index)
                 {
                     return quest.QuestAvailable();
                 }
@@ -102,9 +102,35 @@ public class ManagerQuest : MonoBehaviour
         return false;
     }
 
+    public static string GetQuestDescription(int index)
+    {
+        if (index > 0 && index <= 10000)
+        {
+            foreach(QuestClass quest in mainQuests)
+            {
+                if (quest.index == index)
+                {
+                    return quest.description;
+                }
+            }
+        }
+        else if (index > 10000)
+        {
+            foreach (QuestClass quest in sideQuests)
+            {
+                if (quest.index == index)
+                {
+                    return quest.description;
+                }
+            }
+        }
+
+        return "";
+    }
+
     public static void QuestTakeStep(int index)
     {
-        if (index > 0)
+        if (index > 0 && index <= 10000)
         {
             foreach (QuestClass quest in mainQuests)
             {
@@ -114,13 +140,51 @@ public class ManagerQuest : MonoBehaviour
                 }
             }
         }
-        else if (index < 0)
+        else if (index > 10000)
         {
             foreach (QuestClass quest in sideQuests)
             {
-                if (quest.index == -index)
+                if (quest.index == index)
                 {
                     quest.TakeStep();
+                }
+            }
+        }
+
+        //if (VerifyQuestIsComplete(index))
+        //{
+        //    for (int i = 0; i < mainQuests.Length; i++)
+        //    {
+        //        if (mainQuests[i].QuestAvailable())
+        //        {
+        //            for (int j = 0; j < mainQuests[i].hosters.Count; j++)
+        //            {
+        //                mainQuests[i].hosters[j].MakeAvailable();
+        //            }
+        //        }
+        //    }
+        //}
+    }
+
+    public static void UpdateAvailability(int index)
+    {
+        for (int i = 0; i < mainQuests.Length; i++)
+        {
+            if (mainQuests[i].IsDependentOf(index) || mainQuests[i].IsDependentOf(-index))
+            {
+                if (mainQuests[i].QuestAvailable())
+                {
+                    mainQuests[i].MakeAvailable();
+                }
+            }
+        }
+        for (int i = 0; i < sideQuests.Length; i++)
+        {
+            if (sideQuests[i].IsDependentOf(index) || sideQuests[i].IsDependentOf(-index))
+            {
+                if (sideQuests[i].QuestAvailable())
+                {
+                    sideQuests[i].MakeAvailable();
                 }
             }
         }
@@ -128,23 +192,25 @@ public class ManagerQuest : MonoBehaviour
 
     public static void AddHosterToQuest(int index, QuestHoster hoster)
     {
-        if (index > 0)
+        if (index > 0 && index <= 10000)
         {
             foreach (QuestClass quest in mainQuests)
             {
                 if (quest.index == index)
                 {
                     quest.hosters.Add(hoster);
+                    return;
                 }
             }
         }
-        else if (index < 0)
+        else if (index > 10000)
         {
             foreach (QuestClass quest in sideQuests)
             {
-                if (quest.index == -index)
+                if (quest.index == index)
                 {
                     quest.hosters.Add(hoster);
+                    return;
                 }
             }
         }
@@ -152,28 +218,29 @@ public class ManagerQuest : MonoBehaviour
 
     public static void RemoveHosterToQuest(int index, QuestHoster hoster)
     {
-        if (index > 0)
+        if (index > 0 && index <= 10000)
         {
             foreach (QuestClass quest in mainQuests)
             {
                 if (quest.index == index)
                 {
                     quest.hosters.Remove(hoster);
+                    return;
                 }
             }
         }
-        else if (index < 0)
+        else if (index > 10000)
         {
             foreach (QuestClass quest in sideQuests)
             {
-                if (quest.index == -index)
+                if (quest.index == index)
                 {
                     quest.hosters.Remove(hoster);
+                    return;
                 }
             }
         }
     }
-
 }
 
 #region Editor

@@ -44,7 +44,7 @@ public class NpcDialogo : MonoBehaviour
     {
         if (ManagerQuest.VerifyQuestIsAvailable(quest.index))
         {
-            if (dialogoObrigatorio && ManagerQuest.VerifyQuestIsComplete(quest.index)) 
+            if (dialogoObrigatorio && !ManagerQuest.VerifyQuestIsComplete(quest.index)) 
             {
                 GameManager.UISendoUsada();
 
