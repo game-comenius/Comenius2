@@ -38,13 +38,34 @@ public class Mission1
         new QuestClass (11500, "Falar Diretor no Pátio depois da aula.", new DoQuest(), new int[]{ }),
         new QuestClass (11600, "Falar Comenius no Pátio depois da aula.", new DoQuest(), new int[]{ 11500 }),
 
+
+
         new QuestClass (100000, "Pegar Mapa no armário da sala dos professores.", new DoQuest(), new int[]{ }),
+        new QuestClass (100001, "Controle: Pegar Mapa no armário da sala dos professores.", new DoQuest(), new int[]{ 100000 }),
+
         new QuestClass (100100, "Pegar Coleção de Penas com o 111 no Pátio.", new DoQuest(), new int[]{ }),
-        new QuestClass (100200, "Pegar VHS com a Alice na Biblioteca.", new DoQuest(), new int[]{ }),
+        new QuestClass (100101, "Controle: Pegar Coleção de Penas com o 111 no Pátio.", new DoQuest(), new int[]{ 100100 }),
+
+        new QuestClass (100200, "Pegar VHS com a Alice na Biblioteca.", new DoQuest(), new int[]{  }),
+        new QuestClass (100201, "Controle: Pegar VHS com a Alice na Biblioteca.", new DoQuest(), new int[]{ 100200 }),
+
         new QuestClass (100300, "Pegar Livro Ilustrado na Estante1 na Biblioteca.", new DoQuest(), new int[]{ }),
+        new QuestClass (100301, "Controle: Pegar Livro Ilustrado na Estante1 na Biblioteca.", new DoQuest(), new int[]{ 100300 }),
+
         new QuestClass (100400, "Pegar CD na Estante3 na Biblioteca.", new DoQuest(), new int[]{ }),
+        new QuestClass (100401, "Controle: Pegar CD na Estante3 na Biblioteca.", new DoQuest(), new int[]{ 100400 }),
+
         new QuestClass (100500, "Pegar Câmera na Coordenação.", new DoQuest(), new int[]{ }),
+        new QuestClass (100501, "Controle: Pegar Câmera na Coordenação.", new DoQuest(), new int[]{ 100500 }),
+
         new QuestClass (100600, "Pegar Gravador com a Drica na Multimeios.", new DoQuest(), new int[]{ }),
+        new QuestClass (100601, "Controle: Pegar Gravador com a Drica na Multimeios.", new DoQuest(), new int[]{ 100600 }),
+
+        new QuestClass (100700, "Pegar Aparelho de Som na Multimeios.", new DoQuest(), new int[]{ }),
+        new QuestClass (100701, "Controle: Pegar Aparelho de Som na Multimeios.", new DoQuest(), new int[]{ 100700 }),
+
+
+
 
         new QuestClass (200000, "Interagir com a Estante na Multimeios.", new DoQuest(), new int[]{ }),
         new QuestClass (200001, "Terminar dialogo com a Estante na Multimeios.", new DoQuest(), new int[]{ })

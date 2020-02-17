@@ -62,13 +62,18 @@ public class QuestGuest : QuestMiscellanous
     public void MakeAvailable()
     {
         questAvailable.Invoke();
-        questNotAvailable.RemoveAllListeners();
+        questAvailable.RemoveAllListeners();
     }
 
     public void MakeNotAvailable()
     {
         questNotAvailable.Invoke();
         questNotAvailable.RemoveAllListeners();
+    }
+
+    public void TakeStep()
+    {
+        ManagerQuest.QuestTakeStep(_index);
     }
 }
 

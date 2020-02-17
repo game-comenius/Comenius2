@@ -172,7 +172,7 @@ public class ManagerQuest : MonoBehaviour
         {
             if (mainQuests[i].IsDependentOf(index) || mainQuests[i].IsDependentOf(-index))
             {
-                if (mainQuests[i].QuestAvailable())
+                if (mainQuests[i].QuestAvailable() && !mainQuests[i].IsComplete())
                 {
                     mainQuests[i].MakeAvailable();
                 }
@@ -182,7 +182,7 @@ public class ManagerQuest : MonoBehaviour
         {
             if (sideQuests[i].IsDependentOf(index) || sideQuests[i].IsDependentOf(-index))
             {
-                if (sideQuests[i].QuestAvailable())
+                if (sideQuests[i].QuestAvailable() && !sideQuests[i].IsComplete())
                 {
                     sideQuests[i].MakeAvailable();
                 }
@@ -256,8 +256,8 @@ public class NewQuestManagerEditor : Editor
 
     private void OnEnable()
     {
-        toggles = new bool[ManagerQuest.mainQuests.Length, 2];
-        dependencies = new bool[ManagerQuest.mainQuests.Length, 2];
+        toggles = new bool[Mathf.Max(ManagerQuest.mainQuests.Length, ManagerQuest.sideQuests.Length), 2];
+        dependencies = new bool[Mathf.Max(ManagerQuest.mainQuests.Length, ManagerQuest.sideQuests.Length), 2];
     }
 
     public override void OnInspectorGUI()
