@@ -51,8 +51,7 @@ public class QuestClass
     }
 
     public bool QuestAvailable() //As dependencias estão feitas?
-    {       
-
+    {
         foreach (int dependency in dependencies)
         {
             if (dependency > 0)
