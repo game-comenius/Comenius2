@@ -4464,10 +4464,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1010178263}
   - component: {fileID: 1010178268}
-  - component: {fileID: 1010178267}
   - component: {fileID: 1010178266}
   - component: {fileID: 1010178265}
   - component: {fileID: 1010178264}
+  - component: {fileID: 1010178267}
   m_Layer: 0
   m_Name: IniciaPlanejamento
   m_TagString: Untagged
@@ -4496,7 +4496,7 @@ PolygonCollider2D:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1010178262}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -4589,15 +4589,41 @@ SpriteRenderer:
 --- !u!114 &1010178267
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114048178599378102, guid: 75d5ec2be4a964849b427b3904ca8864,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1010178262}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _index: 8
+  questComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1010178264}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1010178268
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2401,6 +2401,7 @@ GameObject:
   - component: {fileID: 835155582}
   - component: {fileID: 835155586}
   - component: {fileID: 835155583}
+  - component: {fileID: 835155587}
   m_Layer: 0
   m_Name: MeioAmbiente(NPC)
   m_TagString: Diretor
@@ -2419,37 +2420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 1
-    questIndex: {x: 0, y: 2}
-    questDependencias:
-    - {x: 0, y: 1}
-  questFeita:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 835155582}
-        m_MethodName: DestroirObjeto
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 835155583}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 0
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
@@ -2478,37 +2448,25 @@ MonoBehaviour:
         fala: "Estudo das escolas e rela\xE7\xF5es humanas.\r\n"
         resumo: "Rela\xE7\xF5es humanas. "
         conexao: 1
-        questInfo:
-          isQuest: 0
-          questIndex: {x: 0, y: 0}
-          questDependencias: []
+        questIndex: 0
       - personagem: 0
         emocao: 0
         fala: "Estudo das c\xE9lulas.\r\n"
         resumo: "C\xE9lulas. "
         conexao: 1
-        questInfo:
-          isQuest: 0
-          questIndex: {x: 0, y: 0}
-          questDependencias: []
+        questIndex: 0
       - personagem: 0
         emocao: 0
         fala: "Estudo dos herb\xEDvoros.\r\n"
         resumo: "Herb\xEDvoros. "
         conexao: 1
-        questInfo:
-          isQuest: 0
-          questIndex: {x: 0, y: 0}
-          questDependencias: []
+        questIndex: 0
       - personagem: 0
         emocao: 0
         fala: "Estudo do habitat dos seres vivos.\r\n"
         resumo: Habitats.
         conexao: 2
-        questInfo:
-          isQuest: 0
-          questIndex: {x: 0, y: 0}
-          questDependencias: []
+        questIndex: 0
     - falas:
       - personagem: 0
         emocao: 2
@@ -2685,6 +2643,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &835155587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 835155581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 10500
+  questComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 835155583}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &840233615
 Prefab:
   m_ObjectHideFlags: 0
@@ -2762,7 +2758,7 @@ Prefab:
     - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
         type: 2}
       propertyPath: interactOffset.Array.data[0].x
-      value: 0.79
+      value: 0.78999996
       objectReference: {fileID: 0}
     - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
         type: 2}
@@ -3045,8 +3041,20 @@ Prefab:
       propertyPath: dependenciasFeitas.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_StringArgument
       value: Ajude durante a aula!
       objectReference: {fileID: 0}
+    - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114637153929178620, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[0].respostas.Array.data[0].questIndex
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 61390069522588894, guid: 9357cdd918b582d4e8893cac0c9a7d11, type: 2}
+    - {fileID: 114014096467484188, guid: 9357cdd918b582d4e8893cac0c9a7d11, type: 2}
+    - {fileID: 114196485421521510, guid: 9357cdd918b582d4e8893cac0c9a7d11, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 9357cdd918b582d4e8893cac0c9a7d11, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &840233616 stripped
@@ -3065,12 +3073,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &840233618 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114196485421521510, guid: 9357cdd918b582d4e8893cac0c9a7d11,
-    type: 2}
-  m_PrefabInternal: {fileID: 840233615}
-  m_Script: {fileID: 11500000, guid: c34ea57c0f79eed429d1bbfa7283faf2, type: 3}
 --- !u!60 &840233619
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3140,6 +3142,38 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 840233615}
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
+--- !u!4 &840233621 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4161947005651818, guid: 9357cdd918b582d4e8893cac0c9a7d11,
+    type: 2}
+  m_PrefabInternal: {fileID: 840233615}
+--- !u!114 &840233622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 840233616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 0
+  questComplete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &994203925
 GameObject:
   m_ObjectHideFlags: 0
@@ -3153,6 +3187,7 @@ GameObject:
   - component: {fileID: 994203928}
   - component: {fileID: 994203927}
   - component: {fileID: 994203931}
+  - component: {fileID: 994203932}
   m_Layer: 0
   m_Name: Passaro
   m_TagString: Untagged
@@ -3274,25 +3309,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 0
-    questIndex: {x: 0, y: 0}
-    questDependencias: []
-  questFeita:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 0
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
@@ -3304,7 +3320,7 @@ MonoBehaviour:
       respostas: []
   dialogosSecundarios: []
   interactOffset:
-  - {x: -0.69, y: -0.19, z: 0}
+  - {x: -0.68999994, y: -0.19, z: 0}
 --- !u!114 &994203930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3327,6 +3343,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &994203932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 994203925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 0
+  questComplete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1032292077
 GameObject:
   m_ObjectHideFlags: 0
@@ -3426,7 +3469,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 840233618}
+      - m_Target: {fileID: 0}
         m_MethodName: IrParaCena
         m_Mode: 1
         m_Arguments:
@@ -3684,6 +3727,7 @@ GameObject:
   - component: {fileID: 1097884176}
   - component: {fileID: 1097884180}
   - component: {fileID: 1097884177}
+  - component: {fileID: 1097884181}
   m_Layer: 0
   m_Name: "Mad\xE1(NPC)"
   m_TagString: Diretor
@@ -3702,69 +3746,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 1
-    questIndex: {x: 0, y: 3}
-    questDependencias: []
-  questFeita:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1097884176}
-        m_MethodName: DestroirObjeto
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1097884176}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1097884176}
-        m_MethodName: SetMissionGuide
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: Monte um plano na sala dos professores!
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1097884176}
-        m_MethodName: ShowMissionGuide
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1097884176}
-        m_MethodName: DestroirObjeto
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1097884180}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 1
   esperaDialogoObrigatorio: 1
   dialogoPrincipal:
@@ -3977,6 +3958,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1097884181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097884175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 8
+  questComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1097884177}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1199406726
 GameObject:
   m_ObjectHideFlags: 0
@@ -4801,6 +4820,7 @@ GameObject:
   - component: {fileID: 1507012953}
   - component: {fileID: 1507012955}
   - component: {fileID: 1507012957}
+  - component: {fileID: 1507012958}
   m_Layer: 0
   m_Name: 031
   m_TagString: Untagged
@@ -4878,48 +4898,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 0
-    questIndex: {x: 2, y: 3}
-    questDependencias:
-    - {x: 0, y: 1}
-  questFeita:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1507012956}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1507012956}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 0
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
@@ -5015,6 +4993,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1507012958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1507012952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 10800
+  questComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1507012956}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1515075895
 GameObject:
   m_ObjectHideFlags: 0
@@ -5502,8 +5518,8 @@ GameObject:
   - component: {fileID: 1719060934}
   - component: {fileID: 1719060937}
   - component: {fileID: 1719060933}
-  - component: {fileID: 1719060938}
   - component: {fileID: 1719060939}
+  - component: {fileID: 1719060938}
   m_Layer: 0
   m_Name: 111
   m_TagString: Untagged
@@ -5522,48 +5538,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 1
-    questIndex: {x: 2, y: 1}
-    questDependencias:
-    - {x: 0, y: 1}
-  questFeita:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1719060936}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1719060936}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 0
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
@@ -5617,7 +5591,7 @@ MonoBehaviour:
       respostas: []
   dialogosSecundarios: []
   interactOffset:
-  - {x: -0.75, y: -0.96, z: 0}
+  - {x: -0.75, y: -0.96000004, z: 0}
 --- !u!212 &1719060934
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5754,113 +5728,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1719060932}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 471d7830f5edfe04598f66fa78a9a6d5, type: 3}
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 1
-    questIndex: {x: 4, y: 6}
-    questDependencias:
-    - {x: 2, y: 1}
-  questFeita:
+  _index: 10700
+  questComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1719060936}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1719060937}
-        m_MethodName: addItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 169208817}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1199406726}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1067226635}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1653755899}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 238668853}
-        m_MethodName: Fadein
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1719060938}
-        m_MethodName: CompletarQuest
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1719060938}
-        m_MethodName: UISendoUsada
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
+  questNotAvailable:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -5888,6 +5781,7 @@ GameObject:
   - component: {fileID: 1770987020}
   - component: {fileID: 1770987022}
   - component: {fileID: 1770987024}
+  - component: {fileID: 1770987025}
   m_Layer: 0
   m_Name: 021
   m_TagString: Untagged
@@ -5965,48 +5859,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 0
-    questIndex: {x: 2, y: 2}
-    questDependencias:
-    - {x: 0, y: 1}
-  questFeita:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1770987023}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1770987023}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 0
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
@@ -6025,7 +5877,7 @@ MonoBehaviour:
       respostas: []
   dialogosSecundarios: []
   interactOffset:
-  - {x: 0.59, y: -1.17, z: 0}
+  - {x: 0.5899999, y: -1.17, z: 0}
 --- !u!60 &1770987023
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6108,6 +5960,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1770987025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1770987019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 10600
+  questComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1770987023}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1803822503
 GameObject:
   m_ObjectHideFlags: 0
@@ -6183,6 +6073,136 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1805776080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1805776081}
+  - component: {fileID: 1805776082}
+  - component: {fileID: 1805776084}
+  - component: {fileID: 1805776083}
+  m_Layer: 0
+  m_Name: Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1805776081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1805776080}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 840233621}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1805776082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1805776080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 6
+  questComplete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 840233616}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 840233616}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1805776083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1805776080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34ea57c0f79eed429d1bbfa7283faf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneIndex: 5
+--- !u!114 &1805776084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1805776080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 9
+  questComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1805776083}
+        m_MethodName: IrParaCena
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1825059479
 GameObject:
   m_ObjectHideFlags: 0

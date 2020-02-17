@@ -63,7 +63,7 @@ public class DoorTransition : MonoBehaviour
 
         if (GetComponent<QuestHoster>()) 
         {
-            ManagerQuest.VerifyQuestIsComplete(GetComponent<QuestHoster>().index);
+            ManagerQuest.QuestTakeStep(GetComponent<QuestHoster>().index);
         }
 
         sceneLoad.allowSceneActivation = true;
