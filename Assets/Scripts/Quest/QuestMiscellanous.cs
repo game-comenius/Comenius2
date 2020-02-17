@@ -4,16 +4,6 @@ using UnityEngine;
 
 public class QuestMiscellanous : MonoBehaviour
 {
-    //public void DestroirObjeto(Object obj)
-    //{
-    //    if (obj is QuestScript)
-    //    {
-    //        QuestScript.questList.Remove(obj as QuestScript);
-    //    }
-
-    //    Destroy(obj);
-    //}
-
     public void UISendoUsada()
     {
         GameManager.UISendoUsada();

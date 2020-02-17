@@ -221,7 +221,7 @@ public class ClassManager : MonoBehaviour
         for (int i = 0; i < alunosComentaristas.Length; i++)
         {
             //alunosComentaristas[i].aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
-            QuestHoster d = alunosComentaristas[i].aluno.gameObject.GetComponent<QuestHoster>();
+            QuestGuest d = alunosComentaristas[i].aluno.gameObject.GetComponent<QuestGuest>();
                         
             //d.index = alunosComentaristas[i].questIndex;
 

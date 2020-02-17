@@ -6,10 +6,10 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-[RequireComponent(typeof(QuestHoster))]
+[RequireComponent(typeof(QuestGuest))]
 public class Estante : MonoBehaviour
 {
-    private QuestHoster quest;
+    private QuestGuest quest;
 
     [SerializeField]
     private GameObject modoEstanteAbertaUI;
@@ -22,7 +22,7 @@ public class Estante : MonoBehaviour
 
     private void Awake()
     {
-        quest = GetComponent<QuestHoster>();
+        quest = GetComponent<QuestGuest>();
 
         Items = new List<ItemName>
         {

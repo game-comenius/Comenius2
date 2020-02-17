@@ -6,11 +6,11 @@ using System;
 using UnityEditor;
 #endif
 
-[RequireComponent(typeof(QuestHoster))]
+[RequireComponent(typeof(QuestGuest))]
 [RequireComponent(typeof(DynamicCursor))]
 public class NpcDialogo : MonoBehaviour
 {
-    private QuestHoster quest;
+    private QuestGuest quest;
 
     public bool dialogoObrigatorio = false;
 
@@ -22,7 +22,6 @@ public class NpcDialogo : MonoBehaviour
 
     public Vector3[] interactOffset = { Vector3.zero };
 
-
     // Sistema para executar outras funções após o término do diálogo
     // Por exemplo, o comenius aparece logo após o diálogo para falar algo
     // para o jogador
@@ -32,7 +31,7 @@ public class NpcDialogo : MonoBehaviour
 
     private void Awake()
     {
-        quest = GetComponent<QuestHoster>();
+        quest = GetComponent<QuestGuest>();
     }
 
     private void Start()

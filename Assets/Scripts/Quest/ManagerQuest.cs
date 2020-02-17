@@ -190,7 +190,7 @@ public class ManagerQuest : MonoBehaviour
         }
     }
 
-    public static void AddHosterToQuest(int index, QuestHoster hoster)
+    public static void AddHosterToQuest(int index, QuestGuest hoster)
     {
         if (index > 0 && index <= 10000)
         {
@@ -198,7 +198,7 @@ public class ManagerQuest : MonoBehaviour
             {
                 if (quest.index == index)
                 {
-                    quest.hosters.Add(hoster);
+                    quest.guests.Add(hoster);
                     return;
                 }
             }
@@ -209,14 +209,14 @@ public class ManagerQuest : MonoBehaviour
             {
                 if (quest.index == index)
                 {
-                    quest.hosters.Add(hoster);
+                    quest.guests.Add(hoster);
                     return;
                 }
             }
         }
     }
 
-    public static void RemoveHosterToQuest(int index, QuestHoster hoster)
+    public static void RemoveHosterToQuest(int index, QuestGuest hoster)
     {
         if (index > 0 && index <= 10000)
         {
@@ -224,7 +224,7 @@ public class ManagerQuest : MonoBehaviour
             {
                 if (quest.index == index)
                 {
-                    quest.hosters.Remove(hoster);
+                    quest.guests.Remove(hoster);
                     return;
                 }
             }
@@ -235,7 +235,7 @@ public class ManagerQuest : MonoBehaviour
             {
                 if (quest.index == index)
                 {
-                    quest.hosters.Remove(hoster);
+                    quest.guests.Remove(hoster);
                     return;
                 }
             }
@@ -347,10 +347,6 @@ public class NewQuestManagerEditor : Editor
             DrawCounterQuest(quest as CounterQuest);
         }
         else if (quest is DoQuest)
-        {
-            //Do nothing
-        }
-        else if (quest is DependentQuest)
         {
             //Do nothing
         }

@@ -40,7 +40,7 @@ public class QuestClass
         }
     }
 
-    public List<QuestHoster> hosters = new List<QuestHoster>();
+    public List<QuestGuest> guests = new List<QuestGuest>();
 
     public QuestClass(int index, string description, IQuest questType, int[] dependencies)
     {
@@ -82,9 +82,9 @@ public class QuestClass
 
         if (IsComplete())
         {
-            for (int i = 0; i < hosters.Count; i++)
+            for (int i = 0; i < guests.Count; i++)
             {
-                hosters[i].Complete();
+                guests[i].Complete();
             }
 
             ManagerQuest.UpdateAvailability(index);
@@ -98,9 +98,9 @@ public class QuestClass
 
     public void MakeAvailable()
     {
-        for (int i = 0; i < hosters.Count; i++)
+        for (int i = 0; i < guests.Count; i++)
         {
-            hosters[i].MakeAvailable();
+            guests[i].MakeAvailable();
         }
     }
 

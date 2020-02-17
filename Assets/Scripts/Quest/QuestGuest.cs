@@ -7,7 +7,7 @@ using UnityEditor;
 #endif
 
 [Serializable]
-public class QuestHoster : MonoBehaviour
+public class QuestGuest : QuestMiscellanous
 {
     [Tooltip ("Usar valores negativos para SideQuests.")]
     [SerializeField] private int _index;
@@ -74,7 +74,7 @@ public class QuestHoster : MonoBehaviour
 
 #region Editor
 #if UNITY_EDITOR
-[CustomEditor(typeof(QuestHoster))]
+[CustomEditor(typeof(QuestGuest))]
 public class QuestHosterEditor : Editor
 {
     public override void OnInspectorGUI()
