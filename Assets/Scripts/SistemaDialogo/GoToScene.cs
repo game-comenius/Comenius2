@@ -9,15 +9,6 @@ public class GoToScene : MonoBehaviour
 
     public void IrParaCena()
     {
-        //SceneManager.LoadScene(sceneIndex);
-
-        StartCoroutine(IrParaCenaIEnum());
-    }
-
-    private IEnumerator IrParaCenaIEnum()
-    {
-        yield return new WaitWhile(() => GameManager.uiSendoUsada);
-
         SceneManager.LoadScene(sceneIndex);
     }
 }
