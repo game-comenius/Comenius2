@@ -892,7 +892,6 @@ GameObject:
   m_Component:
   - component: {fileID: 683037575}
   - component: {fileID: 683037574}
-  - component: {fileID: 683037573}
   - component: {fileID: 683037571}
   - component: {fileID: 683037572}
   - component: {fileID: 683037576}
@@ -971,32 +970,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &683037573
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 61499242745621090, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 683037570}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.05}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.83916086, y: 2.013986}
-    newSize: {x: 6.02, y: 14.44}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2.6}
-  m_EdgeRadius: 0
 --- !u!212 &683037574
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1073,8 +1046,8 @@ MonoBehaviour:
   questComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 683037572}
-        m_MethodName: set_enabled
+      - m_Target: {fileID: 1283823071}
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1082,7 +1055,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null

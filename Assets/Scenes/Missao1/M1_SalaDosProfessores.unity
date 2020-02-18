@@ -381,25 +381,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 1
-    questIndex: {x: 4, y: 5}
-    questDependencias: []
-  questFeita:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 0
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
@@ -578,7 +559,7 @@ Prefab:
     - target: {fileID: 224982015454463608, guid: 75d5ec2be4a964849b427b3904ca8864,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000076516524
+      value: -0.000019906329
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75d5ec2be4a964849b427b3904ca8864, type: 2}
@@ -2098,25 +2079,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 0
-    questIndex: {x: 0, y: 0}
-    questDependencias: []
-  questFeita:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 0
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
@@ -3884,25 +3846,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 0
-    questIndex: {x: 0, y: 0}
-    questDependencias: []
-  questFeita:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 0
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
@@ -4221,25 +4164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 0
-    questIndex: {x: 0, y: 0}
-    questDependencias: []
-  questFeita:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 0
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
@@ -5129,6 +5053,33 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1583275495}
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
+--- !u!114 &1583275499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1583275496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 4
+  questComplete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1617139606
 GameObject:
   m_ObjectHideFlags: 0
@@ -6329,25 +6280,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 0
-    questIndex: {x: 0, y: 0}
-    questDependencias: []
-  questFeita:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 0
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:

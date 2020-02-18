@@ -186,41 +186,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 6591182}
   m_CullTransparentMesh: 0
---- !u!1 &18165488
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 18165489}
-  m_Layer: 5
-  m_Name: Canvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &18165489
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 18165488}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 222204534}
-  - {fileID: 561471485}
-  m_Father: {fileID: 245683176}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &118483742
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,81 +755,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 205112730}
   m_CullTransparentMesh: 0
---- !u!1 &222204533
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 222204534}
-  - component: {fileID: 222204536}
-  - component: {fileID: 222204535}
-  m_Layer: 5
-  m_Name: Quest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &222204534
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 222204533}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 18165489}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -533, y: -48}
-  m_SizeDelta: {x: -1050, y: -100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &222204535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 222204533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: QuestLog - F2
---- !u!222 &222204536
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 222204533}
-  m_CullTransparentMesh: 0
 --- !u!1 &228051676
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,129 +789,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &245683172
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 245683176}
-  - component: {fileID: 245683175}
-  - component: {fileID: 245683174}
-  - component: {fileID: 245683173}
-  - component: {fileID: 245683177}
-  - component: {fileID: 245683178}
-  m_Layer: 5
-  m_Name: CanvasDesenvolvedores
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &245683173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 245683172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &245683174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 245683172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
---- !u!223 &245683175
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 245683172}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: -10
-  m_TargetDisplay: 0
---- !u!224 &245683176
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 245683172}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 18165489}
-  m_Father: {fileID: 569314497}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1.3033447, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &245683177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 245683172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 407eeb73c5bae6b4aabb562438d6bfc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 18165488}
-  questLog: {fileID: 222204535}
-  uiSendoUsada: {fileID: 561471486}
---- !u!114 &245683178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 245683172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1254083943, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AspectMode: 3
-  m_AspectRatio: 1.7777778
 --- !u!1 &354124651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1306,74 +1073,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 460598567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a06ba6eee2ce9c341a72bb6af198545a, type: 3}
+  m_Script: {fileID: 11500000, guid: 4883f39d1dfd0774aaff612d46e503d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quests:
-  - descriptions:
-    - "Primeiro di\xE1logo do jogo, com o diretor."
-    - Ir para a Sala dos Professores.
-    - Falar com aluno MeioAmbiente.
-    - "Falar com Mad\xE1."
-    - Fala com Jean na Sala dos Professores.
-    - Fala com Alica na Biblioteca.
-    - Fala com Aluno Leitura na Biblioteca.
-    - Falar com Drica na Sala Multimeios
-  - descriptions:
-    - Terminar planejamento.
-    - Sair da Sala dos Professores depois de ter terminado o Planejamento
-    - "Falar com Antonia na coordena\xE7\xE3o"
-    - "Falar com Jean no p\xF3s aula"
-    - Falar com alunos
-    - Falar com alunos
-    - Falar com alunos
-    - Falar com alunos
-  - descriptions:
-    - Falar com alunos
-    - Falar com aluno 111 no Patio
-    - Falar com aluno 021 no Patio
-    - Falar com aluno 031 no Patio
-    - Falar na Biblioteca com o aluno 101
-    - Falar na Multimeios com o aluno 061
-    - Falar no Patio Noite com o Diretor
-    - falar com Comenius no Patio Noite
-  - descriptions:
-    - Responder sim ao Jean.
-    - Falar o dialogo opcional 1 do Jean
-    - Falar o dialogo opcional 2 do Jean
-    - Falar o dialogo opcional 3 do Jean
-    - Falar o dialogo opcional 4 do Jean
-    - Dialogo secundario Drica
-    - "Ter item necess\xE1rios para ativar dialogo com Drica"
-    - "Pegar reprodutor de \xE1udio na biblioteca"
-  - descriptions:
-    - "Notar o p\xE1ssaro no p\xE1tio"
-    - "Gravar o p\xE1ssaro"
-    - "Pegar a c\xE2mera na coordena\xE7\xE3o pedag\xF3gica"
-    - Pegar livro ilustrado na biblioteca
-    - Pegar CD na biblioteca
-    - Pegar mapa na sala dos professores
-    - "Verificador para o menino 111 do Patio1 em rela\xE7\xE3o a quest 2 1"
-    - "Verificador para o ArmarioMapa da SalaProfessores em rela\xE7\xE3o a quest
-      4 5"
-  - descriptions:
-    - "Verificador para o Drica da Multimeios em rela\xE7\xE3o a quest 0 7"
-    - "Verificador para o Estante1 da Biblioteca em rela\xE7\xE3o a quest 4 3"
-    - "Verificador para a Estante2 da Biblioteca em relac\xE3o a quest 4 4"
-    - "Verificador para a Alice da Biblioteca em relac\xE3o a quest 0 5"
-    - "Verificador para a Reprodutor da Biblioteca em relac\xE3o a quest 3 7"
-    - "Verificador para a Camera F da Coord em relac\xE3o a quest 4 2"
-    - "Arm\xE1rio no tutorial"
-    - "Abrir o arm\xE1rio para o tutorial"
-  - descriptions:
-    - "Falar com o comenius no in\xEDcio do jogo"
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
 --- !u!4 &460598569
 Transform:
   m_ObjectHideFlags: 0
@@ -1500,81 +1202,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224396142028091552, guid: f4a608322322743f9b986dda890feba2,
     type: 2}
   m_PrefabInternal: {fileID: 813511906}
---- !u!1 &561471484
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 561471485}
-  - component: {fileID: 561471487}
-  - component: {fileID: 561471486}
-  m_Layer: 5
-  m_Name: UI Sendo Usada
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &561471485
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 561471484}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 18165489}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -150, y: -65}
-  m_SizeDelta: {x: 200, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &561471486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 561471484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 2
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: UI Sendo Usada
---- !u!222 &561471487
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 561471484}
-  m_CullTransparentMesh: 0
 --- !u!224 &569314497
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1587,7 +1214,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1922869120}
-  - {fileID: 245683176}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2102,7 +1728,7 @@ Prefab:
     - target: {fileID: 224798408200560314, guid: f4a608322322743f9b986dda890feba2,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000013716186
+      value: 0.000016124699
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4a608322322743f9b986dda890feba2, type: 2}
@@ -4552,5 +4178,5 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -505.5144}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
