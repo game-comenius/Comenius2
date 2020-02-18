@@ -7,15 +7,18 @@ public class SetButtonInteractivity : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.uiNaoSendoUsadaEvent += () => { button.interactable = true; };
+        GameManager.uiNaoSendoUsadaEvent += MakeButtonInteractable;
 
-        GameManager.uiSendoUsadaEvent += () => { button.interactable = false; };
+        GameManager.uiSendoUsadaEvent += MakeButtonNotInteractable;
 	}
 
     private void OnDisable()
     {
-        GameManager.uiNaoSendoUsadaEvent -= () => { button.interactable = true; };
+        GameManager.uiNaoSendoUsadaEvent -= MakeButtonInteractable;
 
-        GameManager.uiSendoUsadaEvent -= () => { button.interactable = false; };
+        GameManager.uiSendoUsadaEvent -= MakeButtonNotInteractable;
     }
+
+    private void MakeButtonInteractable() { button.interactable = true; }
+    private void MakeButtonNotInteractable() { button.interactable = false; }
 }

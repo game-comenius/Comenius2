@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Fichario : MonoBehaviour {
 
@@ -13,22 +11,49 @@ public class Fichario : MonoBehaviour {
 
     private static GameObject folhaSelecionada;
 
-    // Use this for initialization
-    void Start () {
-        // gameObject.SetActive(false);
+    private CanvasGroup canvasGroup;
 
-        if (!folhaSelecionada) folhaSelecionada = folhaInventario;
+    private bool aberto;
+    public bool Aberto
+    {
+        get { return aberto; }
+
+        private set
+        {
+            aberto = value;
+            if (aberto) GameManager.UISendoUsada();
+            else GameManager.UINaoSendoUsada();
+        }
+    }
+
+    void Start () {
+        canvasGroup = GetComponent<CanvasGroup>();
+
+        // O fichário começa com a página do inventário
         SelecionarInventario();
 
-	}
-
-    private void OnEnable()
-    {
-        if (!GameManager.uiSendoUsada) GameManager.UISendoUsada();
+        // Esconder o fichário
+        DefinirVisibilidadeGeral(false);
     }
-    private void OnDisable()
+
+    private void DefinirVisibilidadeGeral(bool visivel)
     {
-        if (GameManager.uiSendoUsada) GameManager.UINaoSendoUsada();
+        canvasGroup.alpha = visivel ? 1 : 0;
+        canvasGroup.blocksRaycasts = visivel;
+    }
+
+    public void Fechar()
+    {
+        if (!Aberto) return;
+        DefinirVisibilidadeGeral(false);
+        Aberto = false;
+    }
+
+    public void Abrir()
+    {
+        if (Aberto) return;
+        DefinirVisibilidadeGeral(true);
+        Aberto = true;
     }
 
     public void SelecionarDiario()

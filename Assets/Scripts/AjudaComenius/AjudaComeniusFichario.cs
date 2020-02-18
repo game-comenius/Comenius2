@@ -8,6 +8,11 @@ using UnityEngine.UI;
 // Essa ajuda é chamada ativamente através do public void Mostrar()
 public class AjudaComeniusFichario : MonoBehaviour
 {
+    [SerializeField]
+    private Button BotaoQueAtivaEstaAjuda;
+
+    private BotaoAbrirFichario botaoFichario;
+
     private Canvas canvas;
     private FadeEffect backgroundFadeEffect;
 
@@ -21,9 +26,12 @@ public class AjudaComeniusFichario : MonoBehaviour
     private GameObject botaoEntendi2;
     private Transform botaoPularT;
 
+
     // Use this for initialization
     private void Start()
     {
+        botaoFichario = FindObjectOfType<BotaoAbrirFichario>();
+
         canvas = GetComponentInChildren<Canvas>();
         canvas.enabled = false;
 
@@ -52,10 +60,12 @@ public class AjudaComeniusFichario : MonoBehaviour
 
         // Botão para pular tutorial aparecerá no início e desaparecerá no fim
         botaoPularT = conteudo.transform.GetChild(conteudo.transform.childCount - 1);
+
+        BotaoQueAtivaEstaAjuda.onClick.AddListener(Mostrar);
     }
 
-    // Esse é o método que deve ser chamado para que essa ajuda apareça
-    public void Mostrar()
+    // Este método será chamado quando o BotaoQueAtivaEstaAjuda for apertado
+    private void Mostrar()
     {
         StartCoroutine(MostrarCoroutine());
     }
@@ -99,7 +109,9 @@ public class AjudaComeniusFichario : MonoBehaviour
         baloes2.blocksRaycasts = true;
 
         yield return new WaitForSeconds(1.2f);
-        // Focar no botão da janela de missões
+        // Mostrar o botão para abrir o fichário
+        botaoFichario.Ativo = true;
+        // Focar no botão para abrir o fichário
         backgroundFadeEffect.GetComponent<Image>().enabled = false;
         focoBotaoDaJanela.color = new Color(0, 0, 0, alpha);
 
@@ -122,6 +134,9 @@ public class AjudaComeniusFichario : MonoBehaviour
         yield return StartCoroutine(backgroundFadeEffect.Fade(0));
         canvas.enabled = false;
         GameManager.UINaoSendoUsada();
+
+        // Esta ajuda será vista apenas 1 vez
+        BotaoQueAtivaEstaAjuda.onClick.RemoveListener(Mostrar);
     }
 
     private IEnumerator PermitirFecharApos(float segundos)
@@ -131,9 +146,13 @@ public class AjudaComeniusFichario : MonoBehaviour
         botaoEntendi2.gameObject.SetActive(true);
     }
 
-    public void PularTutorial()
+    public void PularAjuda()
     {
+        // Pausar ajuda
         StopAllCoroutines();
+        // Fazer o efeito que esta ajuda faria no jogo
+        botaoFichario.Ativo = true;
+        // Fechar ajuda normalmente
         Fechar();
     }
 
