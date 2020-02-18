@@ -27,6 +27,7 @@ public class Mission1
         new QuestClass (10100, "Fale com o Jean. (1)", new DoQuest(), new int[]{ 4, -7 }),
         new QuestClass (10200, "Fale com o Jean. (2)", new DoQuest(), new int[]{ 10100, -7 }),
         new QuestClass (10300, "Fale com o Jean. (3)", new DoQuest(), new int[]{ 10200, -7 }),
+        new QuestClass (10400, "Fale com o Jean. (4)", new DontQuest(), new int[]{ 10300, -7 }),
         new QuestClass (10500, "Falar com o Menino Ambiente no Pátio.", new DoQuest(), new int[]{ }),
         new QuestClass (10600, "Falar com o 021 no Pátio.", new DoQuest(), new int[]{ }),
         new QuestClass (10800, "Falar com o 031 no Pátio.", new DoQuest(), new int[]{ }),
