@@ -65,7 +65,8 @@ public class Mission1
         new QuestClass (100700, "Pegar Aparelho de Som na Multimeios.", new DoQuest(), new int[]{ }),
         new QuestClass (100701, "Controle: Pegar Aparelho de Som na Multimeios.", new DoQuest(), new int[]{ 100700 }),
 
-
+        new QuestClass (100800, "Pegar Mapa na Sala de Aula.", new DoQuest(), new int[]{ }),
+        new QuestClass (100801, "Controle: Pegar Mapa na Sala de Aula.", new DoQuest(), new int[]{ 100800 }),
 
 
         new QuestClass (200000, "Interagir com a Estante na Multimeios.", new DoQuest(), new int[]{ }),
