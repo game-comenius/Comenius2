@@ -27,7 +27,7 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
     private TextMeshProUGUI componenteTexto;
     private Image focoBotaoDaJanela;
     private GameObject botaoEntendi;
-    private GameObject botaoPularTutorial;
+    private GameObject botaoPularAjuda;
 
     // Use this for initialization
     private void Start()
@@ -52,7 +52,7 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         botaoEntendi.SetActive(false);
 
         // Botão para pular tutorial aparecerá no início e desaparecerá no fim
-        botaoPularTutorial = botoes[1].gameObject;
+        botaoPularAjuda = botoes[1].gameObject;
 
         // Cadastrar função para ser invocada quando o diretor fechar o diálogo
         dialogoDoJean.OnEndDialogueEvent += AdicionarMissaoNaJanelaMissoes;
@@ -106,35 +106,35 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         // Esperar o jogador ler todas as missões que estão na janela
         yield return new WaitUntil(() => janelaMissoes.CompletamenteExplorada());
         componenteTexto.text = falas[2];
-
-        StartCoroutine(PermitirFecharApos(1.5f));
+        botaoEntendi.SetActive(true);
+        botaoPularAjuda.SetActive(false);
     }
 
     public void Fechar()
     {
-        janelaMissoes.Fechar();
         StartCoroutine(FecharCoroutine());
     }
 
     private IEnumerator FecharCoroutine()
     {
+        janelaMissoes.Fechar();
+
         conteudo.alpha = 0;
         yield return new WaitForSeconds(0.4f);
         yield return StartCoroutine(backgroundFadeEffect.Fade(0));
         canvas.enabled = false;
         GameManager.UINaoSendoUsada();
+
+        // Esta ajuda será vista apenas 1 vez
+        dialogoDoJean.OnEndDialogueEvent -= AdicionarMissaoNaJanelaMissoes;
+        dialogoDoJean.OnEndDialogueEvent -= Mostrar;
     }
 
-    private IEnumerator PermitirFecharApos(float segundos)
-    {
-        yield return new WaitForSeconds(segundos);
-        botaoPularTutorial.SetActive(false);
-        botaoEntendi.gameObject.SetActive(true);
-    }
-
-    public void PularTutorial()
+    public void PularAjuda()
     {
         StopAllCoroutines();
+        // Fazer o que esta ajuda faria no jogo
+        janelaMissoes.Ativar();
         Fechar();
     }
 

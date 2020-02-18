@@ -7,6 +7,18 @@ using UnityEngine.SceneManagement;
 
 public class BotaoAbrirFichario : MonoBehaviour, IPointerClickHandler {
 
+    private bool visivel;
+    public bool Visivel
+    {
+        get { return visivel; }
+
+        set
+        {
+            visivel = value;
+            image.enabled = visivel;
+        }
+    }
+
     private bool ativo;
     public bool Ativo
     {
@@ -15,7 +27,7 @@ public class BotaoAbrirFichario : MonoBehaviour, IPointerClickHandler {
         set
         {
             ativo = value;
-            DefinirVisibilidade(ativo);
+            image.color = ativo ? Color.white : corDesativado;
         }
     }
 
@@ -23,13 +35,13 @@ public class BotaoAbrirFichario : MonoBehaviour, IPointerClickHandler {
 
     // UI
     private Image image;
-    private Button button;
+    [SerializeField]
+    private Color corDesativado;
 
-    void Start () {
+    void Start() {
         fichario = FindObjectOfType<Fichario>();
 
         image = GetComponent<Image>();
-        button = GetComponent<Button>();
 
         // Essa linha está aqui para facilitar o desenvolvimento do jogo.
         // Se o jogador começa o jogo desde o início, o botão para abrir o
@@ -37,16 +49,16 @@ public class BotaoAbrirFichario : MonoBehaviour, IPointerClickHandler {
         // multimeios.
         // Porém, durante o desenvolvimento, ou seja, executar a partir de
         // qualquer cena, é interessante que este botão apareça.
-        if (SceneManager.GetActiveScene().name == "M1_Intro") Ativo = false;
+        if (SceneManager.GetActiveScene().name == "StartScene") Visivel = false;
+
+        // Botão fica desativado quando alguma coisa está acontecendo na UI
+        // como por exemplo quando o fichário está aberto
+        GameManager.uiSendoUsadaEvent += () => { Ativo = false; };
+        GameManager.uiNaoSendoUsadaEvent += () => { Ativo = true; };
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (button.interactable) fichario.Abrir();
-    }
-
-    private void DefinirVisibilidade(bool visivel)
-    {
-        image.enabled = visivel;
+        if (Ativo) fichario.Abrir();
     }
 }

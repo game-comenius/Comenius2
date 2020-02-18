@@ -67,6 +67,9 @@ public class AjudaComeniusDiretorPatio : MonoBehaviour {
         yield return StartCoroutine(backgroundFadeEffect.Fade(0f));
         canvas.enabled = false;
         GameManager.UINaoSendoUsada();
+
+        // Esta ajuda será vista apenas 1 vez
+        dialogoDoDiretor.OnEndDialogueEvent -= Mostrar;
     }
 
     private void TocarAudio()

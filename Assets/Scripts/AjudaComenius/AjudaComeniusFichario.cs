@@ -18,12 +18,13 @@ public class AjudaComeniusFichario : MonoBehaviour
 
     private CanvasGroup conteudo;
 
-    private CanvasGroup baloes1;
+    private CanvasGroup balaoDireita;
     private GameObject botaoEntendi1;
 
-    private CanvasGroup baloes2;
+    private CanvasGroup baloesEsquerda;
+
     private Image focoBotaoDaJanela;
-    private GameObject botaoEntendi2;
+
     private Transform botaoPularT;
 
 
@@ -41,22 +42,18 @@ public class AjudaComeniusFichario : MonoBehaviour
         var canvasGroups = canvas.GetComponentsInChildren<CanvasGroup>();
         conteudo = canvasGroups[0];
         conteudo.alpha = 0;
+        
+        balaoDireita = canvasGroups[1];
+        balaoDireita.alpha = 0;
 
-        baloes1 = canvasGroups[1];
-        baloes1.alpha = 0;
+        botaoEntendi1 = balaoDireita.GetComponentInChildren<Button>().gameObject;
 
-        botaoEntendi1 = baloes1.GetComponentInChildren<Button>().gameObject;
-        botaoEntendi1.SetActive(false);
-
-        baloes2 = canvasGroups[2];
-        baloes2.alpha = 0;
-        baloes2.blocksRaycasts = false;
+        baloesEsquerda = canvasGroups[2];
+        baloesEsquerda.alpha = 0;
+        baloesEsquerda.blocksRaycasts = false;
 
         focoBotaoDaJanela = canvas.transform.GetChild(0).GetComponent<Image>();
         focoBotaoDaJanela.color = Color.clear;
-
-        botaoEntendi2 = baloes2.GetComponentInChildren<Button>().gameObject;
-        botaoEntendi2.SetActive(false);
 
         // Botão para pular tutorial aparecerá no início e desaparecerá no fim
         botaoPularT = conteudo.transform.GetChild(conteudo.transform.childCount - 1);
@@ -87,12 +84,7 @@ public class AjudaComeniusFichario : MonoBehaviour
 
         // Apresentar o primeiro conjunto de balões
         yield return new WaitForSeconds(0.6f);
-        baloes1.alpha = 1;
-
-        var tempoParaMostrarBotaoEntendi = 1.5f;
-
-        yield return new WaitForSeconds(tempoParaMostrarBotaoEntendi);
-        botaoEntendi1.gameObject.SetActive(true);
+        balaoDireita.alpha = 1;
 
         // Espera o jogador apertar no botão entendi e confirmar deseja passar
         var entendiPrimeiraParte = false;
@@ -102,20 +94,31 @@ public class AjudaComeniusFichario : MonoBehaviour
         );
         yield return new WaitUntil( () => entendiPrimeiraParte );
 
-        // Apresentar o segundo conjunto de balões
         yield return new WaitForSeconds(0.4f);
         botaoEntendi1.SetActive(false);
-        baloes2.alpha = 1;
-        baloes2.blocksRaycasts = true;
+
+        // Apresentar o segundo conjunto de balões
+
+        // O último balão vai aparecer alguns segundos depois, desativado agora
+        var ultimoBalao = baloesEsquerda.transform.GetChild(1).gameObject;
+        ultimoBalao.SetActive(false);
+
+        baloesEsquerda.alpha = 1;
+        baloesEsquerda.blocksRaycasts = true;
 
         yield return new WaitForSeconds(1.2f);
         // Mostrar o botão para abrir o fichário
-        botaoFichario.Ativo = true;
+        botaoFichario.Visivel = true;
+        // Destacar o botão artificialmente
+        botaoFichario.GetComponent<Image>().color = Color.white;
         // Focar no botão para abrir o fichário
         backgroundFadeEffect.GetComponent<Image>().enabled = false;
         focoBotaoDaJanela.color = new Color(0, 0, 0, alpha);
 
-        StartCoroutine(PermitirFecharApos(tempoParaMostrarBotaoEntendi));
+        // Apresentar o último balão
+        yield return new WaitForSeconds(1.5f);
+        ultimoBalao.SetActive(true);
+        botaoPularT.gameObject.SetActive(false);
     }
 
     public void Fechar()
@@ -125,8 +128,8 @@ public class AjudaComeniusFichario : MonoBehaviour
 
     private IEnumerator FecharCoroutine()
     {
-        baloes1.alpha = 0;
-        baloes2.alpha = 0;
+        balaoDireita.alpha = 0;
+        baloesEsquerda.alpha = 0;
         conteudo.alpha = 0;
         yield return new WaitForSeconds(0.4f);
         focoBotaoDaJanela.enabled = false;
@@ -139,19 +142,12 @@ public class AjudaComeniusFichario : MonoBehaviour
         BotaoQueAtivaEstaAjuda.onClick.RemoveListener(Mostrar);
     }
 
-    private IEnumerator PermitirFecharApos(float segundos)
-    {
-        yield return new WaitForSeconds(segundos);
-        botaoPularT.gameObject.SetActive(false);
-        botaoEntendi2.gameObject.SetActive(true);
-    }
-
     public void PularAjuda()
     {
         // Pausar ajuda
         StopAllCoroutines();
         // Fazer o efeito que esta ajuda faria no jogo
-        botaoFichario.Ativo = true;
+        botaoFichario.Visivel = true;
         // Fechar ajuda normalmente
         Fechar();
     }
