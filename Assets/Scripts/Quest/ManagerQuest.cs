@@ -13,11 +13,28 @@ public class ManagerQuest : MonoBehaviour
     {
         get
         {
-            //switch (mission)
-            //{
-            //    case 1:
-            return Mission1._mainQuests;
-            //}
+            try
+            {
+                switch (Player.Instance.missionID)
+                {
+                    default:
+                        return Mission1._mainQuests;
+                    case 1:
+                        return Mission2._mainQuests;
+                }
+            }
+            catch(System.NullReferenceException)
+            {
+                int missionID = FindObjectOfType<Player>().missionID;
+
+                switch (missionID)
+                {
+                    default:
+                        return Mission1._mainQuests;
+                    case 1:
+                        return Mission2._mainQuests;
+                }
+            }
         }
     }
 
@@ -25,11 +42,28 @@ public class ManagerQuest : MonoBehaviour
     {
         get
         {
-            //switch (mission)
-            //{
-            //    case 1:
-            return Mission1._sideQuests;
-            //}
+            try
+            {
+                switch (Player.Instance.missionID)
+                {
+                    default:
+                        return Mission1._sideQuests;
+                    case 1:
+                        return Mission2._sideQuests;
+                }
+            }
+            catch (System.NullReferenceException)
+            {
+                int missionID = FindObjectOfType<Player>().missionID;
+
+                switch (missionID)
+                {
+                    default:
+                        return Mission1._sideQuests;
+                    case 1:
+                        return Mission2._sideQuests;
+                }
+            }
         }
     }
 

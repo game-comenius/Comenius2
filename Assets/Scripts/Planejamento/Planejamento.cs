@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(QuestGuest))]
 public class Planejamento : MonoBehaviour {
 
     private Canvas canvas;
     private FadeEffect backgroundPreto;
 
-	// Use this for initialization
+	//Use this for initialization
 	void Start () {
         canvas = GetComponentInChildren<Canvas>();
         backgroundPreto = GetComponentInChildren<FadeEffect>();

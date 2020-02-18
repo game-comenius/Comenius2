@@ -25,7 +25,6 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private int _missionID;
-
     public int missionID { get { return _missionID; } }
 
     public Inventory Inventory { get; private set; }
