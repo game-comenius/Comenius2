@@ -153,6 +153,11 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
                 break;
+            case ItemName.Retroprojetor:
+                FriendlyName = "Retroprojetor sem um slide";
+                Description = "Sem descrição";
+                FullDescription = "Sem texto";
+                break;
             case ItemName.SemNome:
                 FriendlyName = "Sem nome";
                 Description = "Sem descrição";

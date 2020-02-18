@@ -25,5 +25,6 @@ public enum ItemName
     RetroprojetorSlideCicloTrabalho,
     CartazComCanetas,
     VhsEditado,
-    Diario
+    Diario,
+    Retroprojetor
 }
