@@ -1004,9 +1004,9 @@ GameObject:
   m_Component:
   - component: {fileID: 569400676}
   - component: {fileID: 569400675}
-  - component: {fileID: 569400674}
   - component: {fileID: 569400673}
   - component: {fileID: 569400672}
+  - component: {fileID: 569400677}
   m_Layer: 0
   m_Name: Diretor(NPC)
   m_TagString: Untagged
@@ -1036,80 +1036,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 1
-    questIndex: {x: 7, y: 0}
-    questDependencias: []
-  questFeita:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 569400673}
-        m_MethodName: DestroirObjeto
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 569400673}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 569400673}
-        m_MethodName: DestroirObjeto
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 569400672}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 128176367}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2120862132}
-        m_MethodName: SetMissionGuide
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: "V\xE1 para a sala dos professores!"
-          m_BoolArgument: 1
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 1
   esperaDialogoObrigatorio: 0
   dialogoPrincipal:
@@ -1146,33 +1072,7 @@ MonoBehaviour:
       respostas: []
   dialogosSecundarios: []
   interactOffset:
-  - {x: 0.39, y: -0.92, z: 0}
---- !u!61 &569400674
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 61499242745621090, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 569400671}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.05}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.83916086, y: 2.013986}
-    newSize: {x: 6.02, y: 14.44}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2.6}
-  m_EdgeRadius: 0
+  - {x: 0.38999987, y: -0.92, z: 0}
 --- !u!212 &569400675
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1234,6 +1134,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &569400677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 569400671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 1
+  questComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 128176367}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &678936930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1960,25 +1898,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 0
-    questIndex: {x: 0, y: 0}
-    questDependencias: []
-  questFeita:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 0
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
@@ -2539,92 +2458,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1627413378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a06ba6eee2ce9c341a72bb6af198545a, type: 3}
+  m_Script: {fileID: 11500000, guid: 4883f39d1dfd0774aaff612d46e503d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quests:
-  - descriptions:
-    - "Primeiro di\xE1logo do jogo, com o diretor."
-    - Ir para a Sala dos Professores.
-    - Falar com aluno MeioAmbiente.
-    - "Falar com Mad\xE1."
-    - Fala com Jean na Sala dos Professores.
-    - Fala com Alica na Biblioteca.
-    - Fala com Aluno Leitura na Biblioteca.
-    - Falar com Drica na Sala Multimeios
-  - descriptions:
-    - Terminar planejamento.
-    - Sair da Sala dos Professores depois de ter terminado o Planejamento
-    - "Falar com Antonia na coordena\xE7\xE3o"
-    - "Falar com Jean no p\xF3s aula"
-    - Falar com alunos
-    - Falar com alunos
-    - Falar com alunos
-    - Falar com alunos
-  - descriptions:
-    - Falar com alunos
-    - Falar com aluno 111 no Patio
-    - Falar com aluno 021 no Patio
-    - Falar com aluno 031 no Patio
-    - Falar na Biblioteca com o aluno 101
-    - Falar na Multimeios com o aluno 061
-    - Falar no Patio Noite com o Diretor
-    - falar com Comenius no Patio Noite
-  - descriptions:
-    - Responder sim ao Jean.
-    - Falar o dialogo opcional 1 do Jean
-    - Falar o dialogo opcional 2 do Jean
-    - Falar o dialogo opcional 3 do Jean
-    - Falar o dialogo opcional 4 do Jean
-    - Dialogo secundario Drica
-    - "Ter item necess\xE1rios para ativar dialogo com Drica"
-    - "Pegar reprodutor de \xE1udio na biblioteca"
-  - descriptions:
-    - "Notar o p\xE1ssaro no p\xE1tio"
-    - "Gravar o p\xE1ssaro"
-    - "Pegar a c\xE2mera na coordena\xE7\xE3o pedag\xF3gica"
-    - Pegar livro ilustrado na biblioteca
-    - Pegar CD na biblioteca
-    - Pegar mapa na sala dos professores
-    - "Verificador para o menino 111 do Patio1 em rela\xE7\xE3o a quest 2 1"
-    - "Verificador para o ArmarioMapa da SalaProfessores em rela\xE7\xE3o a quest
-      4 5"
-  - descriptions:
-    - "Verificador para o Drica da Multimeios em rela\xE7\xE3o a quest 0 7"
-    - "Verificador para o Estante1 da Biblioteca em rela\xE7\xE3o a quest 4 3"
-    - "Verificador para a Estante2 da Biblioteca em relac\xE3o a quest 4 4"
-    - "Verificador para a Alice da Biblioteca em relac\xE3o a quest 0 5"
-    - "Verificador para a Reprodutor da Biblioteca em relac\xE3o a quest 3 7"
-    - "Verificador para a Camera F da Coord em relac\xE3o a quest 4 2"
-    - "Arm\xE1rio no tutorial"
-    - "Abrir o arm\xE1rio para o tutorial"
-  - descriptions:
-    - "Falar com o comenius no in\xEDcio do jogo"
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-  - descriptions:
-    - "Falar com o diretor no in\xEDcio da miss\xE3o 2"
-    - "Di\xE1logo inicial Vladmir\t"
-    - "Di\xE1logo opcional Vladmir"
-    - "Di\xE1logo opcional Vladmir"
-    - "Di\xE1logo opcional Vladmir"
-    - 
-    - 
-    - 
-  - descriptions:
-    - Falar com a drica sobre as canetas coloridas M2
-    - "Pegar as canetas com a aluna ornit\xF3loga M2"
-    - Falar com a aluna cadeirante M2
-    - Falar com o aluno Meio Ambiente M2
-    - "Falar com o Vladmir ap\xF3s a aula"
-    - "Falar com alunos ap\xF3s a aula"
-    - 
-    - 
 --- !u!4 &1627413380
 Transform:
   m_ObjectHideFlags: 0
@@ -2649,9 +2485,9 @@ GameObject:
   - component: {fileID: 1656021359}
   - component: {fileID: 1656021364}
   - component: {fileID: 1656021363}
+  - component: {fileID: 1656021360}
   - component: {fileID: 1656021362}
   - component: {fileID: 1656021361}
-  - component: {fileID: 1656021360}
   m_Layer: 0
   m_Name: Porta Sala Professores
   m_TagString: Door1
@@ -2687,88 +2523,28 @@ MonoBehaviour:
 --- !u!114 &1656021361
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114791209763683450, guid: f28f5740c6f2ea44fa1c158ddc304373,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1656021358}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 471d7830f5edfe04598f66fa78a9a6d5, type: 3}
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 1
-    questIndex: {x: 0, y: 1}
-    questDependencias:
-    - {x: 7, y: 0}
-  questFeita:
+  _index: 2
+  questComplete:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
+  questAvailable:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1656021363}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
+  questNotAvailable:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1656021363}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1656021362
@@ -2785,8 +2561,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: M2_SalaProfessores
   interactOffset:
-  - {x: -0.2, y: -1.51, z: 0}
-  - {x: -0.66, y: -1.79, z: 0}
+  - {x: -0.20000005, y: -1.51, z: 0}
+  - {x: -0.6600001, y: -1.79, z: 0}
 --- !u!60 &1656021363
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3396,25 +3172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 0
-    questIndex: {x: 0, y: 0}
-    questDependencias: []
-  questFeita:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   dialogoObrigatorio: 0
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
@@ -3505,6 +3262,16 @@ Prefab:
         type: 2}
       propertyPath: m_MaskInteraction
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114123597930835050, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114123597930835050, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
+        type: 2}
+      propertyPath: _missionID
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}

@@ -25,8 +25,7 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private int _missionID;
-
-    public int missionID { get { return _missionID; } }
+    public int missionID { get { return _missionID; } set { _missionID = value; } }
 
     public Inventory Inventory { get; private set; }
 
@@ -72,6 +71,8 @@ public class Player : MonoBehaviour
                 Instance.GetComponent<SpriteRenderer>().sprite = GetComponent<SpriteRenderer>().sprite;
 
                 Instance.sceneName = gameObject.scene.name;
+
+                Instance.missionID = _missionID;
             }
 
             Destroy(this.gameObject);

@@ -7,14 +7,14 @@ public class CustomPlanejamento : MonoBehaviour {
 
     private GameObject planejamento;
 
-    void Start () {
-        planejamento = GameObject.Find("PlanejamentoGameObject");
+    //void Start () {
+    //    planejamento = GameObject.Find("PlanejamentoGameObject");
 
-        AnularQuestsParaIniciarPlanejamento();
-        ZerarMidiasPadraoDoProfessor();
+    //    AnularQuestsParaIniciarPlanejamento();
+    //    ZerarMidiasPadraoDoProfessor();
 
-        ConfigurarPlanejamento(CustomGameSettings.CurrentSettings);
-    }
+    //    ConfigurarPlanejamento(CustomGameSettings.CurrentSettings);
+    //}
 
     private void ConfigurarPlanejamento(CustomGameSettings s)
     {
@@ -22,15 +22,15 @@ public class CustomPlanejamento : MonoBehaviour {
         DefinirAgrupamentos(s.Agrupamento1, s.Agrupamento2, s.Agrupamento3);
     }
 
-    private void AnularQuestsParaIniciarPlanejamento()
-    {
-        var objetoQueIniciaPlanejamento = GameObject.Find("IniciaPlanejamento");
-        var quest = objetoQueIniciaPlanejamento.GetComponent<QuestScript>();
-        var c = objetoQueIniciaPlanejamento.GetComponent<PolygonCollider2D>();
-        quest.dependenciasNaoFeitas.AddListener(() => c.enabled = true);
-        quest.enabled = false;
-        c.enabled = true;
-    }
+    //private void AnularQuestsParaIniciarPlanejamento()
+    //{
+    //    var objetoQueIniciaPlanejamento = GameObject.Find("IniciaPlanejamento");
+    //    var quest = objetoQueIniciaPlanejamento.GetComponent<QuestScript>();
+    //    var c = objetoQueIniciaPlanejamento.GetComponent<PolygonCollider2D>();
+    //    quest.dependenciasNaoFeitas.AddListener(() => c.enabled = true);
+    //    quest.enabled = false;
+    //    c.enabled = true;
+    //}
 
     private void ZerarMidiasPadraoDoProfessor()
     {

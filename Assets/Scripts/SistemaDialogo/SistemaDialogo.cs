@@ -111,13 +111,10 @@ public class SistemaDialogo : MonoBehaviour
             {
                 for (int j = 0; j < dialogo.nodulos[i].respostas.Count; j++)
                 {
-                    for (int k = 0; k < dialogo.nodulos[i].respostas[j].questInfo.questDependencias.Length; k++)
+                    if (!ManagerQuest.VerifyQuestIsAvailable(dialogo.nodulos[i].respostas[j].questIndex)) 
                     {
-                        if (!QuestManager.GetQuestControl(dialogo.nodulos[i].respostas[j].questInfo.questDependencias[k]))
-                        {
-                            dialogo.nodulos[i].respostas.RemoveAt(j);
-                            j--;
-                        }
+                        dialogo.nodulos[i].respostas.RemoveAt(j);
+                        j--;
                     }
                 }
             }
@@ -381,26 +378,7 @@ public class SistemaDialogo : MonoBehaviour
 
         for (int i = 0; i < dialogo.nodulos[nodulo].respostas.Count; i++)
         {
-            if (dialogo.nodulos[nodulo].respostas[i].questInfo.questDependencias.Length > 0)
-            {
-                bool depenciasFeitas = true;
-
-                for (int j = 0; j < dialogo.nodulos[nodulo].respostas[i].questInfo.questDependencias.Length; j++)
-                {
-                    if (!QuestManager.GetQuestControl(dialogo.nodulos[nodulo].respostas[i].questInfo.questDependencias[j]))
-                    {
-                        depenciasFeitas = false;
-
-                        j = dialogo.nodulos[nodulo].respostas[i].questInfo.questDependencias.Length;
-                    }
-                }
-
-                if (depenciasFeitas)
-                {
-                    opcoes.Add(dialogo.nodulos[nodulo].respostas[i].resumo);
-                }
-            }
-            else
+            if (ManagerQuest.VerifyQuestIsAvailable(dialogo.nodulos[nodulo].respostas[i].questIndex))
             {
                 opcoes.Add(dialogo.nodulos[nodulo].respostas[i].resumo);
             }
@@ -438,9 +416,9 @@ public class SistemaDialogo : MonoBehaviour
         falaAtual.emocao = dialogo.nodulos[nodulo].respostas[dropdownIndex].emocao;
         falaAtual.fala = dialogo.nodulos[nodulo].respostas[dropdownIndex].fala;
 
-        if (dialogo.nodulos[nodulo].respostas[dropdownIndex].questInfo.isQuest)
+        if (dialogo.nodulos[nodulo].respostas[dropdownIndex].questIndex != 0)
         {
-            QuestManager.SetQuestControl(dialogo.nodulos[nodulo].respostas[dropdownIndex].questInfo.questIndex, true);
+            ManagerQuest.QuestTakeStep(dialogo.nodulos[nodulo].respostas[dropdownIndex].questIndex);
         }
 
         faladorAtual = Falador.BuscarPolaroideNosAssets(falaAtual.personagem, falaAtual.emocao);

@@ -71,12 +71,7 @@ namespace GameComenius.Dialogo
         public string resumo = "";
         public int conexao = 0;
 
-        public QuestStruct questInfo = new QuestStruct
-        {
-            isQuest = false,
-            questIndex = Vector2Int.zero,
-            questDependencias = new Vector2Int[0]
-        };
+        public int questIndex;
     }
     
     [Serializable]
@@ -130,12 +125,7 @@ namespace GameComenius.Dialogo
                         resumo = nodulos[i].respostas[j].resumo,
                         fala = nodulos[i].respostas[j].fala,
                         conexao = nodulos[i].respostas [j].conexao,
-                        questInfo = new QuestStruct
-                        {
-                            isQuest = nodulos[i].respostas[j].questInfo.isQuest,
-                            questIndex = nodulos[i].respostas[j].questInfo.questIndex,
-                            questDependencias = nodulos[i].respostas[j].questInfo.questDependencias
-                        }
+                        questIndex = nodulos[i].respostas[j].questIndex
                     };
                 }
             }

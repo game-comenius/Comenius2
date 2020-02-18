@@ -6,10 +6,12 @@ using System;
 using UnityEditor;
 #endif
 
-
+[RequireComponent(typeof(QuestGuest))]
 [RequireComponent(typeof(DynamicCursor))]
-public class NpcDialogo : QuestScript
+public class NpcDialogo : MonoBehaviour
 {
+    private QuestGuest quest;
+
     public bool dialogoObrigatorio = false;
 
     public float esperaDialogoObrigatorio = 0f;
@@ -20,7 +22,6 @@ public class NpcDialogo : QuestScript
 
     public Vector3[] interactOffset = { Vector3.zero };
 
-
     // Sistema para executar outras funções após o término do diálogo
     // Por exemplo, o comenius aparece logo após o diálogo para falar algo
     // para o jogador
@@ -28,43 +29,35 @@ public class NpcDialogo : QuestScript
     // tipo Action, ou seja, "retorno void e nenhum parâmetro, i.e., void ()"
     public event Action OnEndDialogueEvent;
 
-    protected override void Start()
+    private void Awake()
     {
-        base.Start();
+        quest = GetComponent<QuestGuest>();
+    }
 
-        if (dialogoObrigatorio && Analise())  
-        {
-            GameManager.UISendoUsada();
-
-            Vector3[] point = new Vector3[interactOffset.Length];
-
-            for (int i = 0; i < point.Length; i++)
-            {
-                point[i] = transform.position + interactOffset[i];
-            }
-
-            Player.Instance.GetComponent<PathFinder>().NullifyGotToInteractable();
-
-            Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point, ComecarDialogoObrigatorio);
-        }
+    private void Start()
+    {
+        Restart();
     }
 
     public void Restart() 
     {
-        if (dialogoObrigatorio && Analise()) 
+        if (ManagerQuest.VerifyQuestIsAvailable(quest.index))
         {
-            GameManager.UISendoUsada();
-
-            Vector3[] point = new Vector3[interactOffset.Length];
-
-            for (int i = 0; i < point.Length; i++)
+            if (dialogoObrigatorio && !ManagerQuest.VerifyQuestIsComplete(quest.index)) 
             {
-                point[i] = transform.position + interactOffset[i];
+                GameManager.UISendoUsada();
+
+                Vector3[] point = new Vector3[interactOffset.Length];
+
+                for (int i = 0; i < point.Length; i++)
+                {
+                    point[i] = transform.position + interactOffset[i];
+                }
+
+                Player.Instance.GetComponent<PathFinder>().NullifyGotToInteractable();
+
+                Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point, ComecarDialogoObrigatorio);
             }
-
-            Player.Instance.GetComponent<PathFinder>().NullifyGotToInteractable();
-
-            Player.Instance.GetComponent<PathFinder>().WalkToInteractable(point, ComecarDialogoObrigatorio);
         }
     }
 
@@ -82,7 +75,7 @@ public class NpcDialogo : QuestScript
     {
         yield return new WaitForEndOfFrame();
 
-        if (!QuestManager.GetQuestControl(questInfo.questIndex) || !questInfo.isQuest)
+        if (!ManagerQuest.VerifyQuestIsComplete(quest.index) || quest.index == 0) //quest.index = 0 indica que não é quest
         {
             Vector3[] point = new Vector3[interactOffset.Length];
 
@@ -141,9 +134,7 @@ public class NpcDialogo : QuestScript
 
     public void SetQuestControl()
     {
-        QuestManager.SetQuestControl(questInfo.questIndex, true);
-
-        ReavaliarTodasQuests();
+        ManagerQuest.QuestTakeStep(quest.index);
     }
 
     public void OnEndDialogue()
