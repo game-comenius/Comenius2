@@ -23,9 +23,9 @@ public class QuestGuest : QuestMiscellanous
         }
     }
 
-    [SerializeField] private UnityEvent questComplete;
-    [SerializeField] private UnityEvent questAvailable;
-    [SerializeField] private UnityEvent questNotAvailable;
+    public UnityEvent questComplete;
+    public UnityEvent questAvailable;
+    public UnityEvent questNotAvailable;
 
 	private void Awake()
     {

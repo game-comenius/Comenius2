@@ -82,7 +82,7 @@ public class ClassManager : MonoBehaviour
     [Header("Post-Class Moment")]
 
     [Tooltip("Os dois primeiros são os generalistas. O resto, em ordem, correspondem a cada momento de aula.")]
-    [SerializeField] private AlunosComentaristas[] alunosComentaristas = new AlunosComentaristas[5];
+    [SerializeField] private StudentScript[] alunosComentaristas = new StudentScript[5];
 
     [SerializeField] private ComentarioProfessor professor = new ComentarioProfessor();
 
@@ -128,16 +128,11 @@ public class ClassManager : MonoBehaviour
         }
     }
 
-    [System.Serializable] private class ComentarioProfessor : AlunosComentaristas
+    [System.Serializable] private class ComentarioProfessor
     {
-        [SerializeField] public DialogoGeneralista[] falasGeneralistas = new DialogoGeneralista[4];
-    }
+        public TeacherScript professor;
 
-    [System.Serializable] private class AlunosComentaristas
-    {
-        public AgenteAulaScript aluno = null;
-
-        public Vector2Int questIndex = Vector2Int.zero;
+        public DialogoGeneralista[] falasGeneralistas = new DialogoGeneralista[4];
     }
 
     [System.Serializable] private class DialogoGeneralista
@@ -190,28 +185,18 @@ public class ClassManager : MonoBehaviour
 
     private void TeacherSetUp()
     {
-        professor.aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
-        NpcDialogo b = professor.aluno.gameObject.GetComponent<NpcDialogo>();
+        professor.professor.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+        NpcDialogo dialogo = professor.professor.gameObject.GetComponent<NpcDialogo>();
 
-        //b.questInfo.isQuest = true;
-        //b.questInfo.questIndex = professor.questIndex;
-
-        //b.dialogoObrigatorio = true;
-        //b.esperaDialogoObrigatorio = 1f;
-
-        //b.interactOffset = new Vector3[] { new Vector3(0.81f, -1.12f, 0) };
-
-        //b.questFeita.AddListener(() => { Collider2D collider = GetComponent<Collider2D>(); if (collider != null) { collider.enabled = false; } });
-
-        b.enabled = false;
-
+        dialogo.dialogoObrigatorio = true;
+        dialogo.enabled = false;
 
         for (int j = 0; j < professor.falasGeneralistas.Length; j++)
         {
             if (Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints >= falasGeneralistas[j].rangeNota.x 
                 && Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints <= falasGeneralistas[j].rangeNota.y)
             {
-                b.dialogoPrincipal = professor.falasGeneralistas[j].dialogos[0].Clone();
+                dialogo.dialogoPrincipal = professor.falasGeneralistas[j].dialogos[0].Clone();
             }
         }
     }
@@ -220,46 +205,36 @@ public class ClassManager : MonoBehaviour
     {
         for (int i = 0; i < alunosComentaristas.Length; i++)
         {
-            //alunosComentaristas[i].aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
-            QuestGuest d = alunosComentaristas[i].aluno.gameObject.GetComponent<QuestGuest>();
-                        
-            //d.index = alunosComentaristas[i].questIndex;
+            NpcDialogo dialogo = alunosComentaristas[i].GetComponent<NpcDialogo>();
 
-            //d.dialogoObrigatorio = false;
-
-            //d.questFeita.AddListener(() => { Collider2D collider = d.GetComponent<Collider2D>(); if (collider != null) { collider.enabled = false; } });
-
-            //if (i <= 1)
-            //{
-            //    for (int j = 0; j < falasGeneralistas.Length; j++)
-            //    {
-            //        if (Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints >= falasGeneralistas[j].rangeNota.x 
-            //            && Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints <= falasGeneralistas[j].rangeNota.y)
-            //        {
-            //            d.dialogoPrincipal = falasGeneralistas[j].dialogos[i].Clone();
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    d.dialogoPrincipal = falasSobreMomentos[i - 2].EncontrarFalaCerta(Player.Instance.MissionHistory[Player.Instance.missionID].chosenMedia[i - 2]).Clone();
-            //}
-
-            //d.enabled = false;
+            if (i <= 1)
+            {
+                for (int j = 0; j < falasGeneralistas.Length; j++)
+                {
+                    if (Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints >= falasGeneralistas[j].rangeNota.x
+                        && Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints <= falasGeneralistas[j].rangeNota.y)
+                    {
+                        dialogo.dialogoPrincipal = falasGeneralistas[j].dialogos[i].Clone();
+                    }
+                }
+            }
+            else
+            {
+                dialogo.dialogoPrincipal = falasSobreMomentos[i - 2].EncontrarFalaCerta(Player.Instance.MissionHistory[Player.Instance.missionID].chosenMedia[i - 2]).Clone();
+            }
         }
     }
 
     private void EndClassFunction()
     {
-        professor.aluno.gameObject.GetComponent<NpcDialogo>().enabled = true;
+        professor.professor.gameObject.GetComponent<NpcDialogo>().enabled = true;
 
-        foreach (AlunosComentaristas aluno in alunosComentaristas)
+        foreach (StudentScript aluno in alunosComentaristas)
         {
-            aluno.aluno.gameObject.GetComponent<NpcDialogo>().enabled = true;
-            aluno.aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+            aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
         }
 
-        professor.aluno.GetComponent<NpcDialogo>().Restart();
+        professor.professor.GetComponent<NpcDialogo>().Restart();
     }
 
     //Método para que os estudantes possam ser adicionados na lista students
@@ -372,9 +347,9 @@ public class ClassManager : MonoBehaviour
             CloudsCountdown();
         }
 
-        ((TeacherScript)professor.aluno).FimDaAula();
+        professor.professor.FimDaAula();
 
-        yield return new WaitWhile(() => ((TeacherScript)professor.aluno).walkCoroutine != null);
+        yield return new WaitWhile(() => (professor.professor.walkCoroutine != null));
 
         timer.text = "Aula terminada";
 
