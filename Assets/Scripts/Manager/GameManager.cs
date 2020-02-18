@@ -1,10 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
+    public static ItemName[] MidiasDisponiveisNaMissao1()
+    {
+        ItemName[] array =
+        {
+            ItemName.Caderno,
+            ItemName.QuadroNegro,
+            ItemName.Livro,
+            ItemName.LivroIlustrado,
+            ItemName.Jornais,
+            ItemName.JornaisEResvistas,
+            ItemName.Cartazes,
+            ItemName.CartazComColecaoDePenas,
+            ItemName.Gravador,
+            ItemName.GravacaoPassaro,
+            ItemName.CameraPolaroid,
+            ItemName.Fotografia,
+            ItemName.TV,
+            ItemName.ReprodutorAudio,
+            ItemName.Cd,
+        };
+        // Elimina do array itens inseridos mais de uma vez sem querer
+        return array.Distinct().ToArray();
+    }
+
+
     private static GameManager _gameManager;
 
     public static GameManager gameManager

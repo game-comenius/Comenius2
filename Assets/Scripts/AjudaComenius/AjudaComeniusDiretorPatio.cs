@@ -6,57 +6,67 @@ using UnityEngine.UI;
 public class AjudaComeniusDiretorPatio : MonoBehaviour {
 
     [SerializeField]
-    private NpcDialogo diretor;
+    private NpcDialogo dialogoDoDiretor;
 
-    private bool permiteFechar;
+    private Image imageBotaoFechar;
 
     private Canvas canvas;
-    //private FadeEffect backgroundFadeEffect;
+    private FadeEffect backgroundFadeEffect;
+    private CanvasGroup conteudoDaAjuda;
 
     // Use this for initialization
     private void Start () {
         canvas = GetComponentInChildren<Canvas>();
+        canvas.enabled = false;
 
-        //backgroundFadeEffect = GetComponentInChildren<FadeEffect>();
-        
+        imageBotaoFechar = GetComponentInChildren<Button>().GetComponent<Image>();
+        imageBotaoFechar.enabled = false;
+
+        backgroundFadeEffect = GetComponentInChildren<FadeEffect>();
+        conteudoDaAjuda = GetComponentInChildren<CanvasGroup>();
+        conteudoDaAjuda.alpha = 0;
+
         // Cadastrar função para ser invocada quando o diretor fechar o diálogo
-        diretor.OnEndDialogueEvent += Mostrar;
+        dialogoDoDiretor.OnEndDialogueEvent += Mostrar;
 	}
 
     private void Mostrar()
     {
+        StartCoroutine(MostrarCoroutine());
+    }
+
+    private IEnumerator MostrarCoroutine()
+    {
         GameManager.UISendoUsada();
 
         canvas.enabled = true;
-        //backgroundFadeEffect.MaxAlpha = 0.6f;
-        StartCoroutine(FadeEffect.instance.Fade(0.6f));
-
+        yield return StartCoroutine(backgroundFadeEffect.Fade(0.6f));
+        yield return new WaitForSeconds(0.4f);
+        conteudoDaAjuda.alpha = 1;
         TocarAudio();
 
-        var coroutine = PermitirFecharApos(8);
-        StartCoroutine(coroutine);
-    }
-
-    private IEnumerator Fechar()
-    {
-        yield return StartCoroutine(FadeEffect.instance.Fade(0.6f));
-        canvas.enabled = false;
-        GameManager.UINaoSendoUsada();
+        StartCoroutine(PermitirFecharApos(2.5f));
     }
 
     private IEnumerator PermitirFecharApos(float segundos)
     {
         yield return new WaitForSeconds(segundos);
-        permiteFechar = true;
+        imageBotaoFechar.enabled = true;
     }
 
-    private void Update()
+    // Método para ser chamado por um botão na interface
+    public void Fechar()
     {
-        if (permiteFechar && Input.anyKeyDown)
-        {
-            StartCoroutine(Fechar());
-            permiteFechar = false;
-        }
+        StartCoroutine(FecharCoroutine());
+    }
+
+    private IEnumerator FecharCoroutine()
+    {
+        conteudoDaAjuda.alpha = 0;
+        yield return new WaitForSeconds(0.4f);
+        yield return StartCoroutine(backgroundFadeEffect.Fade(0f));
+        canvas.enabled = false;
+        GameManager.UINaoSendoUsada();
     }
 
     private void TocarAudio()
