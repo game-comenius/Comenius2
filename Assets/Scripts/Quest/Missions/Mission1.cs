@@ -15,7 +15,7 @@ public class Mission1
         new QuestClass (3, "Vá para a Sala dos Professores", new DoQuest(), new int[]{ 2 }),
         new QuestClass (4, "Fale com o Jean.", new DoQuest(), new int[]{ }),
         new QuestClass (5, "Fale com a Madá no Pátio.", new DoQuest(), new int[]{ }),
-        new QuestClass (6, "Faça o plano de aula na Sala dos Professores.", new DoQuest(), new int[]{ }),
+        new QuestClass (6, "Faça o plano de aula na Sala dos Professores.", new DoQuest(), new int[]{ 5 }),
         new QuestClass (7, "Ir para o Pátio com o plano pronto.", new DoQuest(), new int[]{ 6 }),
         new QuestClass (8, "Falar com a Madá no Pátio.", new DoQuest(), new int[]{ }),
         new QuestClass (9, "Ir para a sala de aula.", new DoQuest(), new int[]{ }),
@@ -38,7 +38,7 @@ public class Mission1
         new QuestClass (11300, "Falar com a Drica (1) na Multimeios.", new DoQuest(), new int[]{ 100600 }),
         new QuestClass (11400, "Falar com a 061 na Multimeios.", new DoQuest(), new int[]{ }),
         new QuestClass (11500, "Falar Diretor no Pátio depois da aula.", new DoQuest(), new int[]{ }),
-        new QuestClass (11600, "Falar Comenius no Pátio depois da aula.. (1)", new DoQuest(), new int[]{ 11500 }),
+        new QuestClass (11600, "Falar Comenius no Pátio depois da aula. (1)", new DoQuest(), new int[]{ 11500 }),
 
 
 
