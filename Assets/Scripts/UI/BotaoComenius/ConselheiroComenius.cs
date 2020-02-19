@@ -4,11 +4,25 @@ using UnityEngine;
 
 public class ConselheiroComenius : MonoBehaviour
 {
+    private bool visivel;
+    public bool Visivel
+    {
+        get { return visivel; }
+
+        set
+        {
+            visivel = value;
+            canvas.enabled = visivel;
+        }
+    }
+
     [HideInInspector]
 	public JanelaMissoes janelaMissoes;
 
     private Animator animator;
     private static readonly string janelaMissoesAbertaAnimatorParameter = "JanelaMissoesAberta";
+
+    private Canvas canvas;
 
     void Start()
 	{
@@ -17,9 +31,13 @@ public class ConselheiroComenius : MonoBehaviour
 		DontDestroyOnLoad(this.gameObject);
 
 		janelaMissoes = GetComponentInChildren<JanelaMissoes>();
-        janelaMissoes.Ativa = true;
 
         animator = GetComponent<Animator>();
+
+        canvas = GetComponentInChildren<Canvas>();
+
+        // Começa invisível, aparece no tutorial da sala dos professores
+        Visivel = false;
 	}
 
     // Provisório, depois poderemos escolher entre apresentar a janela de

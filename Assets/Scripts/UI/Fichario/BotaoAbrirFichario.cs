@@ -43,13 +43,16 @@ public class BotaoAbrirFichario : MonoBehaviour, IPointerClickHandler {
 
         image = GetComponent<Image>();
 
+        Visivel = false;
         // Essa linha está aqui para facilitar o desenvolvimento do jogo.
         // Se o jogador começa o jogo desde o início, o botão para abrir o
         // fichário estará escondido até a dica para abrir o fichário na sala
         // multimeios.
         // Porém, durante o desenvolvimento, ou seja, executar a partir de
         // qualquer cena, é interessante que este botão apareça.
-        if (SceneManager.GetActiveScene().name == "StartScene") Visivel = false;
+        #if UNITY_EDITOR
+            Visivel = true;
+        #endif
 
         // Botão fica desativado quando alguma coisa está acontecendo na UI
         // como por exemplo quando o fichário está aberto

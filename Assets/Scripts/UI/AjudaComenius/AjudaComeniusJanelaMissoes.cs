@@ -11,7 +11,6 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
     [SerializeField]
     private NpcDialogo dialogoDoJean;
 
-    [SerializeField]
     private ConselheiroComenius conselheiroComenius;
     private JanelaMissoes janelaMissoes;
 
@@ -55,11 +54,15 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         // Botão para pular tutorial aparecerá no início e desaparecerá no fim
         botaoPularAjuda = botoes[1].gameObject;
 
-        janelaMissoes = conselheiroComenius.janelaMissoes;
+        conselheiroComenius = FindObjectOfType<ConselheiroComenius>();
 
-        // Cadastrar função para ser invocada quando o diretor fechar o diálogo
-        dialogoDoJean.OnEndDialogueEvent += AdicionarMissaoNaJanelaMissoes;
-        dialogoDoJean.OnEndDialogueEvent += Mostrar;
+        if (conselheiroComenius)
+        {
+            janelaMissoes = conselheiroComenius.janelaMissoes;
+            // Cadastrar função para ser invocada quando o diretor fechar o diálogo
+            dialogoDoJean.OnEndDialogueEvent += AdicionarMissaoNaJanelaMissoes;
+            dialogoDoJean.OnEndDialogueEvent += Mostrar;
+        }
     }
 
     private void AdicionarMissaoNaJanelaMissoes()
@@ -94,6 +97,7 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         var mySortingOrder = GetComponentInChildren<Canvas>().sortingOrder;
         conselheiroComenius.GetComponentInChildren<Canvas>().sortingOrder = mySortingOrder + 1;
 
+        conselheiroComenius.Visivel = true;
         janelaMissoes.Ativa = true;
 
         // Focar no botão da janela de missões
