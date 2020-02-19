@@ -173,7 +173,7 @@ public class ManagerQuest : MonoBehaviour
             {
                 if (quest.index == index)
                 {
-                    return quest.description;
+                    return quest.GetQuestExibition();
                 }
             }
         }
@@ -183,7 +183,7 @@ public class ManagerQuest : MonoBehaviour
             {
                 if (quest.index == index)
                 {
-                    return quest.description;
+                    return quest.GetQuestExibition();
                 }
             }
         }
@@ -215,20 +215,6 @@ public class ManagerQuest : MonoBehaviour
         }
 
         SetupQuestLog();
-
-        //if (VerifyQuestIsComplete(index))
-        //{
-        //    for (int i = 0; i < mainQuests.Length; i++)
-        //    {
-        //        if (mainQuests[i].QuestAvailable())
-        //        {
-        //            for (int j = 0; j < mainQuests[i].hosters.Count; j++)
-        //            {
-        //                mainQuests[i].hosters[j].MakeAvailable();
-        //            }
-        //        }
-        //    }
-        //}
     }
 
     public static void SetupQuestLog()

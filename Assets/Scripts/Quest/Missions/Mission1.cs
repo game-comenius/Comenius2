@@ -11,7 +11,8 @@ public class Mission1
     public readonly static QuestGroup[] _questGroups =
     {
         new QuestGroup("Converse com o pessoal", new int[] { 2, 3, 5 }),
-        new QuestGroup("Vá para a aula", new int[] { 6, 9 })
+        new QuestGroup("Vá para a aula", new int[] { 6, 9 }),
+        new QuestGroup("Pegue mídias", new int[] { 300000 })
     };
 
 
@@ -70,14 +71,21 @@ public class Mission1
         new QuestClass (100600, "Pegar Gravador com a Drica na Multimeios.", new DoQuest(), new int[]{ }),
         new QuestClass (100601, "Controle: Pegar Gravador com a Drica na Multimeios.", new DoQuest(), new int[]{ 100600 }),
 
-        new QuestClass (100700, "Pegar Aparelho de Som na Multimeios.", new DoQuest(), new int[]{ }),
-        new QuestClass (100701, "Controle: Pegar Aparelho de Som na Multimeios.", new DoQuest(), new int[]{ 100700 }),
+        new QuestClass (100700, "Pegar Aparelho de Som na Biblioteca.", new DoQuest(), new int[]{ }),
+        new QuestClass (100701, "Controle: Pegar Aparelho de Som na Biblioteca.", new DoQuest(), new int[]{ 100700 }),
 
         new QuestClass (100800, "Pegar Mapa na Sala de Aula.", new DoQuest(), new int[]{ }),
         new QuestClass (100801, "Controle: Pegar Mapa na Sala de Aula.", new DoQuest(), new int[]{ 100800 }),
 
+        new QuestClass (100900, "Gravar pássaro.", new DoQuest(), new int[]{ 100600 }),
+        new QuestClass (100901, "Controle: Gravar pássaro.", new DoQuest(), new int[]{ 100900 }),
+
+
 
         new QuestClass (200000, "Interagir com a Estante na Multimeios.", new DoQuest(), new int[]{ }),
-        new QuestClass (200001, "Terminar dialogo com a Estante na Multimeios.", new DoQuest(), new int[]{ })
+        new QuestClass (200001, "Terminar dialogo com a Estante na Multimeios.", new DoQuest(), new int[]{ }),
+
+        new QuestClass (300000, "Encontre 3 mídias", new CounterQuest(0, 3), new int[]{ }, "Progresso:"),
+        new QuestClass (300001, "Encontre mídias", new CounterQuest(0, int.MaxValue), new int[]{ })
     };
 }

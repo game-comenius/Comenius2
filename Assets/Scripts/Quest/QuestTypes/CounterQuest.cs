@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine;
 
 [System.Serializable]
 public class CounterQuest : IQuest
@@ -19,6 +18,11 @@ public class CounterQuest : IQuest
         return _counter + "/" + _goal;        
     }
 
+    public string GetQuestExibition(string questExibition)
+    {
+        return questExibition + " " + ProgressFraction();
+    }
+
     public bool IsComplete()
     {
         if (_counter < _goal)
@@ -33,6 +37,6 @@ public class CounterQuest : IQuest
 
     public void TakeStep()
     {
-        _counter++;
+        _counter = Mathf.Min(_counter + 1, _goal);
     }
 }

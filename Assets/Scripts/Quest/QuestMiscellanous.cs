@@ -24,10 +24,13 @@ public class QuestMiscellanous : MonoBehaviour
         MissionGuideManager.missionGuideManager.ShowMissionGuide(action);
     }
 
-
     public void ShowMidiaCounter(bool action)
     {
         MissionGuideManager.missionGuideManager.ShowMidiaCounter(action);
     }
 
+    public void TakeStep(int index)
+    {
+        ManagerQuest.QuestTakeStep(index);
+    }
 }

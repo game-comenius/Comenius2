@@ -17,7 +17,12 @@ public class JanelaMissoes : MonoBehaviour
     // ordens/passos/parágrafos da missão
     public void AdicionarMissao(QuestGroup quest)
     {
-        corpoJanelaMissoes.AdicionarMissao(quest);
+        BotaoTituloMissao botao = corpoJanelaMissoes.AdicionarMissao(quest);
+
+        if (botao != null)
+        {
+            listOfQuests.Add(botao.gameObject);
+        }
     }
 
     public void Clear()

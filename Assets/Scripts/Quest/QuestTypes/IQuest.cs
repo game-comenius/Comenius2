@@ -5,4 +5,5 @@ public interface IQuest
 {
     void TakeStep();
     bool IsComplete();
+    string GetQuestExibition(string questExibition);
 }

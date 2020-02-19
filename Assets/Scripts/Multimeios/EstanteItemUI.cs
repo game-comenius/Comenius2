@@ -10,6 +10,9 @@ public class EstanteItemUI : MonoBehaviour, IPointerClickHandler {
 
     public Estante Estante { get; set; }
 
+    [SerializeField]
+    private int[] questsIndex = new int[0];
+
     private ItemName item;
     public ItemName Item
     {
@@ -36,6 +39,11 @@ public class EstanteItemUI : MonoBehaviour, IPointerClickHandler {
         var clickedItem = Item;
         Estante.Remove(clickedItem);
         Player.Instance.Inventory.Add(clickedItem);
+
+        foreach (int index in questsIndex)
+        {
+            ManagerQuest.QuestTakeStep(index);
+        }
 
         //if (QuestScript.questList.Count != 0)
         //{

@@ -6,6 +6,11 @@ public class DoQuest : IQuest
 {
     private bool completed = false;
 
+    public string GetQuestExibition(string questExibition)
+    {
+        return questExibition;
+    }
+
     public bool IsComplete()
     {
         return completed;

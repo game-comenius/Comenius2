@@ -39,7 +39,6 @@ public class BotaoTituloMissao : MonoBehaviour, IPointerClickHandler {
 
         List<int> descriptions = new List<int>();
 
-
         for (int i = 0; i < quest.indexes.Length; i++) 
         {
             if (ManagerQuest.VerifyQuestIsAvailable(quest.indexes[i]))

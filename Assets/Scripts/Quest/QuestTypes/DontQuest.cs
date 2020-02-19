@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class DontQuest : IQuest
 {
+    public string GetQuestExibition(string questExibition)
+    {
+        return questExibition;
+    }
+
     public bool IsComplete()
     {
         return false;

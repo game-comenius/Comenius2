@@ -42,12 +42,24 @@ public class QuestClass
 
     public List<QuestGuest> guests = new List<QuestGuest>();
 
+    private string _questExibition;
+
     public QuestClass(int index, string description, IQuest questType, int[] dependencies)
     {
         _index = index;
         _description = description;
         _questType = questType;
         _dependencies = dependencies;
+        _questExibition = description;
+    }
+
+    public QuestClass(int index, string description, IQuest questType, int[] dependencies, string questExibition)
+    {
+        _index = index;
+        _description = description;
+        _questType = questType;
+        _dependencies = dependencies;
+        _questExibition = questExibition;
     }
 
     public bool QuestAvailable() //As dependencias estão feitas?
@@ -71,6 +83,11 @@ public class QuestClass
         }
 
         return true;
+    }
+
+    public string GetQuestExibition()
+    {
+        return _questType.GetQuestExibition(_questExibition);
     }
 
     public void TakeStep()
