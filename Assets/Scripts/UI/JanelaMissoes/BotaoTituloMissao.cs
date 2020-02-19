@@ -13,7 +13,7 @@ public class BotaoTituloMissao : MonoBehaviour, IPointerClickHandler {
 
     private TextMeshProUGUI titulo;
 
-    private string[] ordensMissao;
+    private int[] ordensMissao;
 
     [SerializeField]
     private CorpoMissaoJanelaMissoes prefabCorpoMissao;
@@ -25,17 +25,36 @@ public class BotaoTituloMissao : MonoBehaviour, IPointerClickHandler {
         titulo = GetComponentInChildren<TextMeshProUGUI>();
     }
 
-    public void Configurar(string tituloMissao, string[] ordensMissao)
+    public bool Configurar(QuestGroup quest)
     {
-        this.titulo.text = tituloMissao;
+        this.titulo.text = quest.name;
 
         var quantidadeMaxDescricoes = 3;
-        if (ordensMissao.Length > quantidadeMaxDescricoes)
+
+        if (quest.indexes.Length > quantidadeMaxDescricoes)
         {
             Debug.Log("Erro: tentando adicionar missão com mais de 3 descrições!");
-            return;
+            return false;
         }
-        this.ordensMissao = ordensMissao;
+
+        List<int> descriptions = new List<int>();
+
+
+        for (int i = 0; i < quest.indexes.Length; i++) 
+        {
+            if (ManagerQuest.VerifyQuestIsAvailable(quest.indexes[i]))
+            {
+                descriptions.Add(quest.indexes[i]);
+            }
+        }
+
+        if (descriptions.Count!= 0)
+        {
+            ordensMissao = descriptions.ToArray();
+            return true;
+        }
+
+        return false;
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -69,5 +88,13 @@ public class BotaoTituloMissao : MonoBehaviour, IPointerClickHandler {
         setaVermelha.GetComponent<RectTransform>().Rotate(Vector3.forward, 180);
 
         aberto = !aberto;
+    }
+
+    private void OnDestroy()
+    {
+        if (corpoMissaoAtivo != null)
+        {
+            Destroy(corpoMissaoAtivo.gameObject);
+        }
     }
 }

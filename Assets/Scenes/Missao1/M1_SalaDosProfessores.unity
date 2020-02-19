@@ -512,11 +512,43 @@ Prefab:
     - target: {fileID: 224982015454463608, guid: 75d5ec2be4a964849b427b3904ca8864,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000035058376
+      value: -0.000017804918
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75d5ec2be4a964849b427b3904ca8864, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &300545166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1446821741245768, guid: 75d5ec2be4a964849b427b3904ca8864,
+    type: 2}
+  m_PrefabInternal: {fileID: 300545165}
+--- !u!114 &300545167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 300545166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 6
+  questComplete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &303996874
 Prefab:
   m_ObjectHideFlags: 0
@@ -1149,6 +1181,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &350709096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 350709094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 10100
+  questComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 350709094}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 350709094}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 350709094}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &394168225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1933,6 +2025,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &573211071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 573211069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 10200
+  questComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 573211069}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 573211069}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 573211069}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &612317276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1944,6 +2096,7 @@ GameObject:
   - component: {fileID: 612317278}
   - component: {fileID: 612317280}
   - component: {fileID: 612317279}
+  - component: {fileID: 612317281}
   m_Layer: 0
   m_Name: Poltrona esquerda
   m_TagString: Untagged
@@ -2044,6 +2197,33 @@ MonoBehaviour:
   dialogosSecundarios: []
   interactOffset:
   - {x: 0.33, y: -0.68, z: 0}
+--- !u!114 &612317281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 612317276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 0
+  questComplete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &693313199
 Prefab:
   m_ObjectHideFlags: 0
@@ -2470,7 +2650,6 @@ GameObject:
   - component: {fileID: 785879890}
   - component: {fileID: 785879889}
   - component: {fileID: 785879888}
-  - component: {fileID: 785879887}
   - component: {fileID: 785879892}
   m_Layer: 0
   m_Name: Porta Patio
@@ -2479,49 +2658,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &785879887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114016146608057848, guid: 6030410728be9e440841ee0c8a026693,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 785879886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 471d7830f5edfe04598f66fa78a9a6d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 0
-    questIndex: {x: 0, y: 0}
-    questDependencias:
-    - {x: 1, y: 0}
-  questFeita:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 785879886}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!60 &785879888
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2574,8 +2710,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: M1_Patio1_Dia
   interactOffset:
-  - {x: -0.44, y: -0.79, z: 0}
-  - {x: -0.8, y: -1.07, z: 0}
+  - {x: -0.44000006, y: -0.79, z: 0}
+  - {x: -0.8000002, y: -1.0700002, z: 0}
 --- !u!82 &785879890
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3288,6 +3424,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &881898366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 881898364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 10400
+  questComplete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 881898364}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 881898364}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &915394124
 GameObject:
   m_ObjectHideFlags: 0
@@ -3722,6 +3907,7 @@ GameObject:
   - component: {fileID: 1453116123}
   - component: {fileID: 1453116122}
   - component: {fileID: 1453116121}
+  - component: {fileID: 1453116124}
   m_Layer: 0
   m_Name: poltrona direita (1)
   m_TagString: Untagged
@@ -3858,6 +4044,33 @@ PolygonCollider2D:
       - {x: 1.3682519, y: -0.7688042}
       - {x: 1.956915, y: -0.42258143}
       - {x: 1.9225069, y: 0.7851976}
+--- !u!114 &1453116124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1453116118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 0
+  questComplete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1490869238
 GameObject:
   m_ObjectHideFlags: 0
@@ -4040,6 +4253,7 @@ GameObject:
   - component: {fileID: 1524850120}
   - component: {fileID: 1524850119}
   - component: {fileID: 1524850118}
+  - component: {fileID: 1524850121}
   m_Layer: 0
   m_Name: Armarinho
   m_TagString: Untagged
@@ -4184,6 +4398,33 @@ PolygonCollider2D:
       - {x: 0.35999998, y: -0.82}
       - {x: 0.48, y: -0.75}
       - {x: 0.69, y: -0.63}
+--- !u!114 &1524850121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1524850115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 0
+  questComplete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &1548398808
 Prefab:
   m_ObjectHideFlags: 0
@@ -4588,6 +4829,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1548398811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1548398809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 10300
+  questComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1548398809}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1548398809}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1548398809}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &1583275495
 Prefab:
   m_ObjectHideFlags: 0
@@ -4981,6 +5282,15 @@ Prefab:
         ent\xE3o a minha escolha vai ser manter o <i>agrupamento individual</i> em
         todos os momentos.\r\n"
       objectReference: {fileID: 0}
+    - target: {fileID: 114643760213871238, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: esperaDialogoObrigatorio
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266891186796208, guid: 47f69a8aad4a74c49b603b76cb768fb5, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47f69a8aad4a74c49b603b76cb768fb5, type: 2}
   m_IsPrefabAsset: 0
@@ -5020,17 +5330,50 @@ MonoBehaviour:
   _index: 4
   questComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1583275496}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   questAvailable:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1583275496}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   questNotAvailable:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1583275496}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1617139606
@@ -5319,8 +5662,8 @@ GameObject:
   - component: {fileID: 1778002465}
   - component: {fileID: 1778002464}
   - component: {fileID: 1778002463}
-  - component: {fileID: 1778002462}
   - component: {fileID: 1778002467}
+  - component: {fileID: 1778002462}
   m_Layer: 0
   m_Name: Porta Patio (1)
   m_TagString: Door1
@@ -5331,28 +5674,45 @@ GameObject:
 --- !u!114 &1778002462
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114016146608057848, guid: 6030410728be9e440841ee0c8a026693,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1778002461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 471d7830f5edfe04598f66fa78a9a6d5, type: 3}
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questInfo:
-    isQuest: 1
-    questIndex: {x: 1, y: 1}
-    questDependencias:
-    - {x: 1, y: 0}
-  questFeita:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  dependenciasFeitas:
+  _index: 6
+  questComplete:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 785879886}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 785879886}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1778002461}
         m_MethodName: SetActive
         m_Mode: 6
@@ -5366,9 +5726,20 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  dependenciasNaoFeitas:
+  questNotAvailable:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 785879886}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1778002461}
         m_MethodName: SetActive
         m_Mode: 6
@@ -5434,8 +5805,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: M1_Patio1_Dia
   interactOffset:
-  - {x: -0.44, y: -0.79, z: 0}
-  - {x: -0.8, y: -1.07, z: 0}
+  - {x: -0.44000006, y: -0.79, z: 0}
+  - {x: -0.8000002, y: -1.0700002, z: 0}
 --- !u!82 &1778002465
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6145,6 +6516,7 @@ GameObject:
   - component: {fileID: 2082207868}
   - component: {fileID: 2082207867}
   - component: {fileID: 2082207866}
+  - component: {fileID: 2082207869}
   m_Layer: 0
   m_Name: Estante
   m_TagString: Untagged
@@ -6293,6 +6665,33 @@ PolygonCollider2D:
       - {x: 0.12, y: -1.4449999}
       - {x: 0.35, y: -1.505}
       - {x: 0.47, y: -1.4549999}
+--- !u!114 &2082207869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2082207863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 0
+  questComplete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &2099584914
 Prefab:
   m_ObjectHideFlags: 0

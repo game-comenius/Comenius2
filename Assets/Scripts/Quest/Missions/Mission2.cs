@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Mission2 : MonoBehaviour
 {
+    public readonly static QuestGroup[] _questGroups =
+{
+        new QuestGroup("Converse com o pessoal", new int[] { 2, 3, 5 }),
+        new QuestGroup("Vá para a aula", new int[] { 6, 8 })
+    };
+
     public readonly static QuestClass[] _mainQuests =
     {
         new QuestClass (1, "Fale como o Diretor no começo do segundo dia.", new DoQuest(), new int[]{ }),

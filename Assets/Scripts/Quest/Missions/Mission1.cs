@@ -8,17 +8,24 @@ public class Mission1
     //Side quests deve ter Indexes superiores a 10.000
     //Colocar dependência com valor negativo indica que você não a quer feita.
 
+    public readonly static QuestGroup[] _questGroups =
+    {
+        new QuestGroup("Converse com o pessoal", new int[] { 2, 3, 5 }),
+        new QuestGroup("Vá para a aula", new int[] { 6, 9 })
+    };
+
+
     public readonly static QuestClass[] _mainQuests =
     {
         new QuestClass (1, "Fale como o Comenios no começo do jogo.", new DoQuest(), new int[]{ }),
         new QuestClass (2, "Fale com o Diretor no Pátio.", new DoQuest(), new int[]{ }),
         new QuestClass (3, "Vá para a Sala dos Professores", new DoQuest(), new int[]{ 2 }),
         new QuestClass (4, "Fale com o Jean.", new DoQuest(), new int[]{ }),
-        new QuestClass (5, "Fale com a Madá no Pátio.", new DoQuest(), new int[]{ }),
+        new QuestClass (5, "Fale com a Madá no Pátio.", new DoQuest(), new int[]{ 3 }),
         new QuestClass (6, "Faça o plano de aula na Sala dos Professores.", new DoQuest(), new int[]{ 5 }),
         new QuestClass (7, "Ir para o Pátio com o plano pronto.", new DoQuest(), new int[]{ 6 }),
         new QuestClass (8, "Falar com a Madá no Pátio.", new DoQuest(), new int[]{ }),
-        new QuestClass (9, "Ir para a sala de aula.", new DoQuest(), new int[]{ }),
+        new QuestClass (9, "Ir para a sala de aula.", new DoQuest(), new int[]{ 6 }),
         new QuestClass (10, "Falar com o Jean depois a aula", new DoQuest(), new int[]{ })
     };
 

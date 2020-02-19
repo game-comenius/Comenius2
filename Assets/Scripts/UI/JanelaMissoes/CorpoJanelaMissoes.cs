@@ -15,15 +15,22 @@ public class CorpoJanelaMissoes : MonoBehaviour {
         botoesMissao = new List<BotaoTituloMissao>();
     }
 
-    public void AdicionarMissao(string tituloMissao, string[] ordensMissao)
+    public BotaoTituloMissao AdicionarMissao(QuestGroup quest)
     {
-        var botao = Instantiate(prefabBotaoMissao);
+        BotaoTituloMissao botao = Instantiate(prefabBotaoMissao);
         botao.transform.SetParent(this.transform);
         botao.transform.localScale = Vector3.one;
 
-        botao.Configurar(tituloMissao, ordensMissao);
+        if (botao.Configurar(quest))
+        {
+            botoesMissao.Add(botao);
 
-        botoesMissao.Add(botao);
+            return botao;
+        }
+
+        Destroy(botao.gameObject);
+
+        return null;
     }
 
     public bool TodosOsBotoesForamAbertos()

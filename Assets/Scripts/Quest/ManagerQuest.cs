@@ -9,6 +9,35 @@ public class ManagerQuest : MonoBehaviour
 {
     private static int mission;
 
+    public static QuestGroup[] questGroups
+    {
+        get
+        {
+            try
+            {
+                switch (Player.Instance.missionID)
+                {
+                    default:
+                        return Mission1._questGroups;
+                    case 1:
+                        return Mission2._questGroups;
+                }
+            }
+            catch (System.NullReferenceException)
+            {
+                int missionID = FindObjectOfType<Player>().missionID;
+
+                switch (missionID)
+                {
+                    default:
+                        return Mission1._questGroups;
+                    case 1:
+                        return Mission2._questGroups;
+                }
+            }
+        }
+    }
+
     public static QuestClass[] mainQuests
     {
         get
@@ -185,6 +214,8 @@ public class ManagerQuest : MonoBehaviour
             }
         }
 
+        SetupQuestLog();
+
         //if (VerifyQuestIsComplete(index))
         //{
         //    for (int i = 0; i < mainQuests.Length; i++)
@@ -198,6 +229,26 @@ public class ManagerQuest : MonoBehaviour
         //        }
         //    }
         //}
+    }
+
+    public static void SetupQuestLog()
+    {    
+        JanelaMissoes janelaMissoes = FindObjectOfType<JanelaMissoes>();
+
+        if (janelaMissoes != null)
+        {
+            janelaMissoes.Clear();
+
+            //foreach (QuestGroup group in questGroups)
+            //{
+            //    janelaMissoes.AdicionarMissao(group);
+            //}
+
+            for (int i = 0; i < questGroups.Length; i++)
+            {
+                janelaMissoes.AdicionarMissao(questGroups[i]);
+            }
+        }
     }
 
     public static void UpdateAvailability(int index)
