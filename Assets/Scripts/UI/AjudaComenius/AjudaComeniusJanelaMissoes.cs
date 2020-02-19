@@ -11,7 +11,7 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
     [SerializeField]
     private NpcDialogo dialogoDoJean;
 
-    [SerializeField]
+    private ConselheiroComenius conselheiroComenius;
     private JanelaMissoes janelaMissoes;
 
     private readonly string[] falas =
@@ -54,9 +54,15 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         // Botão para pular tutorial aparecerá no início e desaparecerá no fim
         botaoPularAjuda = botoes[1].gameObject;
 
-        // Cadastrar função para ser invocada quando o diretor fechar o diálogo
-        dialogoDoJean.OnEndDialogueEvent += AdicionarMissaoNaJanelaMissoes;
-        dialogoDoJean.OnEndDialogueEvent += Mostrar;
+        conselheiroComenius = FindObjectOfType<ConselheiroComenius>();
+
+        if (conselheiroComenius)
+        {
+            janelaMissoes = conselheiroComenius.janelaMissoes;
+            // Cadastrar função para ser invocada quando o diretor fechar o diálogo
+            dialogoDoJean.OnEndDialogueEvent += AdicionarMissaoNaJanelaMissoes;
+            dialogoDoJean.OnEndDialogueEvent += Mostrar;
+        }
     }
 
     private void AdicionarMissaoNaJanelaMissoes()
@@ -89,9 +95,10 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         yield return new WaitForSeconds(1.2f);
         // Posicionar o canvas da janela de missões sobre o este canvas
         var mySortingOrder = GetComponentInChildren<Canvas>().sortingOrder;
-        janelaMissoes.GetComponentInChildren<Canvas>().sortingOrder = mySortingOrder + 1;
+        conselheiroComenius.GetComponentInChildren<Canvas>().sortingOrder = mySortingOrder + 1;
 
-        janelaMissoes.Ativar();
+        conselheiroComenius.Visivel = true;
+        janelaMissoes.Ativa = true;
 
         // Focar no botão da janela de missões
         backgroundFadeEffect.GetComponent<Image>().enabled = false;
@@ -117,7 +124,7 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
 
     private IEnumerator FecharCoroutine()
     {
-        janelaMissoes.Fechar();
+        conselheiroComenius.FecharJanelaMissoes();
 
         conteudo.alpha = 0;
         yield return new WaitForSeconds(0.4f);
@@ -134,7 +141,7 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
     {
         StopAllCoroutines();
         // Fazer o que esta ajuda faria no jogo
-        janelaMissoes.Ativar();
+        janelaMissoes.Ativa = true;
         Fechar();
     }
 
