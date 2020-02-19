@@ -60,17 +60,17 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         {
             janelaMissoes = conselheiroComenius.janelaMissoes;
             // Cadastrar função para ser invocada quando o diretor fechar o diálogo
-            dialogoDoJean.OnEndDialogueEvent += AdicionarMissaoNaJanelaMissoes;
+            dialogoDoJean.OnEndDialogueEvent += ManagerQuest.SetupQuestLog;
             dialogoDoJean.OnEndDialogueEvent += Mostrar;
         }
     }
 
-    private void AdicionarMissaoNaJanelaMissoes()
-    {
-        var tituloMissao = "Coletar mídias";
-        string[] ordensMissao = { "Colete pelo menos 3 mídias" };
-        janelaMissoes.AdicionarMissao(tituloMissao, ordensMissao);
-    }
+    //private void AdicionarMissaoNaJanelaMissoes()
+    //{
+    //    var tituloMissao = "Coletar mídias";
+    //    string[] ordensMissao = { "Colete pelo menos 3 mídias" };
+    //    janelaMissoes.AdicionarMissao(tituloMissao, ordensMissao);
+    //}
 
     private void Mostrar()
     {
@@ -133,7 +133,7 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         GameManager.UINaoSendoUsada();
 
         // Esta ajuda será vista apenas 1 vez
-        dialogoDoJean.OnEndDialogueEvent -= AdicionarMissaoNaJanelaMissoes;
+        dialogoDoJean.OnEndDialogueEvent -= ManagerQuest.SetupQuestLog;
         dialogoDoJean.OnEndDialogueEvent -= Mostrar;
     }
 

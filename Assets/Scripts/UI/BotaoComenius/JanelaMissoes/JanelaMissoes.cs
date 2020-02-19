@@ -10,15 +10,25 @@ public class JanelaMissoes : MonoBehaviour
 
     private CorpoJanelaMissoes corpoJanelaMissoes;
 
+    private List<GameObject> listOfQuests = new List<GameObject>();
 
     // Esse método deve ser chamado quando você quiser cadastrar uma missão
     // nesta janela de missões, basta passar o título da missão e as
     // ordens/passos/parágrafos da missão
-    public void AdicionarMissao(string tituloMissao, string[] ordensMissao)
+    public void AdicionarMissao(QuestGroup quest)
     {
-        corpoJanelaMissoes.AdicionarMissao(tituloMissao, ordensMissao);
+        corpoJanelaMissoes.AdicionarMissao(quest);
     }
 
+    public void Clear()
+    {
+        foreach(GameObject go in listOfQuests)
+        {
+            Destroy(go);
+        }
+
+        listOfQuests.Clear();
+    }
 
     // Use this for initialization
     void Start()
