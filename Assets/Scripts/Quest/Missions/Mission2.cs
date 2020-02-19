@@ -32,7 +32,8 @@ public class Mission2 : MonoBehaviour
         new QuestClass (11100, "Falar com a Drica na Multimeios.", new DoQuest(), new int[]{ }),
         new QuestClass (11200, "Falar com a Montanari na Sala de Informática.", new DoQuest(), new int[]{ }),
         new QuestClass (11300, "Falar com a Antônia na Coordenação.", new DoQuest(), new int[]{ }),
-        new QuestClass (11400, "Falar com o Garota da Literatura na Biblioteca.", new DoQuest(), new int[]{ }),
+        new QuestClass (11400, "Falar com o Literatura na Biblioteca.", new DoQuest(), new int[]{ }),
+        new QuestClass (11401, "Controle: Pegar o Diário com o Literatura na Biblioteca.", new DoQuest(), new int[]{ 11400 }),
         new QuestClass (11500, "Falar com o 101 na Biblioteca.", new DoQuest(), new int[]{ }),
         new QuestClass (11600, "Falar com a Alice na Biblioteca.", new DoQuest(), new int[]{ }),
 
