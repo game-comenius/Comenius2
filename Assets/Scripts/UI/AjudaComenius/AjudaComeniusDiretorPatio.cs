@@ -13,6 +13,7 @@ public class AjudaComeniusDiretorPatio : MonoBehaviour {
     private Canvas canvas;
     private FadeEffect backgroundFadeEffect;
     private CanvasGroup conteudoDaAjuda;
+    private Animator animator;
 
     // Use this for initialization
     private void Start () {
@@ -25,6 +26,8 @@ public class AjudaComeniusDiretorPatio : MonoBehaviour {
         backgroundFadeEffect = GetComponentInChildren<FadeEffect>();
         conteudoDaAjuda = GetComponentInChildren<CanvasGroup>();
         conteudoDaAjuda.alpha = 0;
+
+        animator = gameObject.GetComponent<Animator>();
 
         // Cadastrar função para ser invocada quando o diretor fechar o diálogo
         dialogoDoDiretor.OnEndDialogueEvent += Mostrar;
@@ -44,6 +47,8 @@ public class AjudaComeniusDiretorPatio : MonoBehaviour {
         yield return new WaitForSeconds(0.4f);
         conteudoDaAjuda.alpha = 1;
         TocarAudio();
+
+        animator.Play("Flutuar");
 
         StartCoroutine(PermitirFecharApos(2.5f));
     }
