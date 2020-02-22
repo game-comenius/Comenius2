@@ -92,6 +92,8 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         componenteTexto.text = falas[0];
         TocarAudio();
 
+        GetComponent<Animator>().Play("Flutuar");
+
         yield return new WaitForSeconds(1.2f);
         // Posicionar o canvas da janela de missões sobre o este canvas
         var mySortingOrder = GetComponentInChildren<Canvas>().sortingOrder;
