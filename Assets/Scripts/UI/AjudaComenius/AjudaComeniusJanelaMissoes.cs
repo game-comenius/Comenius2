@@ -11,7 +11,6 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
     [SerializeField]
     private NpcDialogo dialogoDoJean;
 
-    private ConselheiroComenius conselheiroComenius;
     private JanelaMissoes janelaMissoes;
 
     private readonly string[] falas =
@@ -58,23 +57,11 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
 
         animator = GetComponent<Animator>();
 
-        conselheiroComenius = FindObjectOfType<ConselheiroComenius>();
-
-        if (conselheiroComenius)
-        {
-            janelaMissoes = conselheiroComenius.janelaMissoes;
-            // Cadastrar função para ser invocada quando o diretor fechar o diálogo
-            dialogoDoJean.OnEndDialogueEvent += ManagerQuest.SetupQuestLog;
-            dialogoDoJean.OnEndDialogueEvent += Mostrar;
-        }
+        janelaMissoes = ConselheiroComenius.JanelaMissoes;
+        // Cadastrar função para ser invocada quando o diretor fechar o diálogo
+        dialogoDoJean.OnEndDialogueEvent += ManagerQuest.SetupQuestLog;
+        dialogoDoJean.OnEndDialogueEvent += Mostrar;
     }
-
-    //private void AdicionarMissaoNaJanelaMissoes()
-    //{
-    //    var tituloMissao = "Coletar mídias";
-    //    string[] ordensMissao = { "Colete pelo menos 3 mídias" };
-    //    janelaMissoes.AdicionarMissao(tituloMissao, ordensMissao);
-    //}
 
     private void Mostrar()
     {
@@ -101,9 +88,9 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         yield return new WaitForSeconds(1.2f);
         // Posicionar o canvas da janela de missões sobre o este canvas
         var mySortingOrder = GetComponentInChildren<Canvas>().sortingOrder;
-        conselheiroComenius.GetComponentInChildren<Canvas>().sortingOrder = mySortingOrder + 1;
+        ConselheiroComenius.Canvas.sortingOrder = mySortingOrder + 1;
 
-        conselheiroComenius.Visivel = true;
+        ConselheiroComenius.Visivel = true;
         janelaMissoes.Ativa = true;
 
         animator.Play("Focar");
@@ -132,7 +119,7 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
 
     private IEnumerator FecharCoroutine()
     {
-        conselheiroComenius.FecharJanelaMissoes();
+        ConselheiroComenius.FecharJanelaMissoes();
 
         conteudo.alpha = 0;
         yield return new WaitForSeconds(0.4f);
