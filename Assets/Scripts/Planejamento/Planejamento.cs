@@ -8,15 +8,22 @@ public class Planejamento : MonoBehaviour {
     private Canvas canvas;
     private FadeEffect backgroundPreto;
 
+    public bool Disponivel { get; set; }
+
 	//Use this for initialization
 	void Start () {
         canvas = GetComponentInChildren<Canvas>();
         backgroundPreto = GetComponentInChildren<FadeEffect>();
         canvas.enabled = false;
+
+        // O valor inicial deve ser false, esta linha está aqui temporariamente
+        Disponivel = true;
 	}
 
     public void AbrirPlanejamento()
     {
+        if (!Disponivel) return;
+
         canvas.enabled = true;
         backgroundPreto.Fadein();
         GameManager.UISendoUsada();
