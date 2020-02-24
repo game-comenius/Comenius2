@@ -44,7 +44,25 @@ public class Mission2 : MonoBehaviour
         new QuestClass (11600, "Falar com a Alice na Biblioteca.", new DoQuest(), new int[]{ }),
 
         new QuestClass (12000, "Pegar o retroprojetor na sala multimeios.", new DoQuest(), new int[]{ }),
-        new QuestClass (12001, "Controle: Pegar o retroprojetor na sala multimeios.", new DoQuest(), new int[]{ 12000 })
+        new QuestClass (12001, "Controle: Pegar o retroprojetor na sala multimeios.", new DoQuest(), new int[]{ 12000 }),
 
+        //depois de falar com a montanari, o jogador pode interagir com as páginas espalhadas pelo mapa,
+        //pegar uma página é o requisito para fazer o slide com o conteúdo na montanari
+        //ao fazer cada slide, aumenta o contador até ter feito todos, nesse ponto troca o diálogo da montanari
+        //explicando que acabaram os slides em branco ou algo assim
+
+        new QuestClass (12100, "Pegar página do livro com mapa", new DoQuest(), new int[]{ 11200 }),
+        new QuestClass (12101, "Fazer slide com mapa", new DoQuest(), new int[]{ 12100 }),
+        new QuestClass (12102, "Controle: Fazer slide com mapa", new DoQuest(), new int[]{ 12101 }),
+
+        new QuestClass (12200, "Pegar página do livro com linha do tempo", new DoQuest(), new int[]{ 11200 }),
+        new QuestClass (12201, "Fazer slide com linha do tempo", new DoQuest(), new int[]{ 12200 }),
+        new QuestClass (12202, "Controle: Fazer slide com linha do tempo", new DoQuest(), new int[]{ 12201 }),
+
+        new QuestClass (12300, "Pegar página do livro com ciclo do trabalho", new DoQuest(), new int[]{ 11200 }),
+        new QuestClass (12301, "Fazer slide com ciclo do trabalho", new DoQuest(), new int[]{ 12300 }),
+        new QuestClass (12302, "Controle: Fazer slide com ciclo do trabalho", new DoQuest(), new int[]{ 12301 }),
+
+        new QuestClass (13000, "Fazer todos os slides", new CounterQuest(0, 3), new int[]{  })
     };
 }
