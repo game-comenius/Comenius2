@@ -15,31 +15,11 @@ public class InventorySheetUI : MonoBehaviour {
 
     private Inventory inventory;
 
-    public void Start ()
+    private IEnumerator Start ()
     {
-        // StartCoroutine(FindPlayer());
-
-        inventory = Player.Instance.Inventory;
-
-        if (inventory.Items().Count > 0)
-            DisplayItems(inventory.Items());
-    }
-
-    //private IEnumerator FindPlayer()
-    //{
-    //    yield return new WaitWhile(() => Player.Instance == null);
-
-    //    inventory = Player.Instance.Inventory;
-
-    //    if (inventory.Items().Count > 0)
-    //        DisplayItems(inventory.Items());
-    //}
-
-    private void OnEnable()
-    {
-        if (Player.Instance == null) return;
-
-        inventory = Player.Instance.Inventory;
+        yield return new WaitUntil(() => Player.Instance);
+        var player = Player.Instance;
+        inventory = player.Inventory;
 
         if (inventory.Items().Count > 0)
             DisplayItems(inventory.Items());
