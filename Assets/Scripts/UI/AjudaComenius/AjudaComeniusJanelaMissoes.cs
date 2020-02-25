@@ -28,8 +28,6 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
     private GameObject botaoEntendi;
     private GameObject botaoPularAjuda;
 
-    private Animator animator;
-
     // Use this for initialization
     private void Start()
     {
@@ -54,8 +52,6 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
 
         // Botão para pular tutorial aparecerá no início e desaparecerá no fim
         botaoPularAjuda = botoes[1].gameObject;
-
-        animator = GetComponent<Animator>();
 
         janelaMissoes = ConselheiroComenius.JanelaMissoes;
         // Cadastrar função para ser invocada quando o diretor fechar o diálogo
@@ -83,7 +79,8 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         componenteTexto.text = falas[0];
         TocarAudio();
 
-        animator.Play("Flutuar");
+        // Pegar o animator do ImageComeniusFantasma
+        conteudo.GetComponentInChildren<Animator>().Play("Flutuar");
 
         yield return new WaitForSeconds(1.2f);
         // Posicionar o canvas da janela de missões sobre o este canvas
@@ -93,7 +90,8 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
         ConselheiroComenius.Visivel = true;
         janelaMissoes.Ativa = true;
 
-        animator.Play("Focar");
+        // Pegar o animator do BackgroundTranslucidoComBuraco
+        canvas.GetComponentInChildren<Animator>().Play("Focar");
 
         // Focar no botão da janela de missões
         backgroundFadeEffect.GetComponent<Image>().enabled = false;

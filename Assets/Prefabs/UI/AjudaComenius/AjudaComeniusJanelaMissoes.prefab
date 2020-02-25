@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 224770997726088932}
   - component: {fileID: 222683003828187184}
   - component: {fileID: 114804884646058648}
+  - component: {fileID: 95147853989507944}
   m_Layer: 5
   m_Name: BackgroundTranslucidoComBuraco
   m_TagString: Untagged
@@ -144,6 +145,7 @@ GameObject:
   - component: {fileID: 224031910021345198}
   - component: {fileID: 222371806177423662}
   - component: {fileID: 114256307739972604}
+  - component: {fileID: 95302514985519014}
   m_Layer: 5
   m_Name: ImageComeniusFantasma
   m_TagString: Untagged
@@ -197,7 +199,6 @@ GameObject:
   - component: {fileID: 4800909319275116}
   - component: {fileID: 114997621796292326}
   - component: {fileID: 82810611523897712}
-  - component: {fileID: 95112641021709326}
   m_Layer: 5
   m_Name: AjudaComeniusJanelaMissoes
   m_TagString: Untagged
@@ -314,13 +315,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &95112641021709326
+--- !u!95 &95147853989507944
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1932003581196024}
+  m_GameObject: {fileID: 1150605840478390}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 43f212c855c932f42a81e46a228f4566, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95302514985519014
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1460503638038064}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 43f212c855c932f42a81e46a228f4566, type: 2}
@@ -621,11 +640,11 @@ MonoBehaviour:
     lineCount: 5
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
