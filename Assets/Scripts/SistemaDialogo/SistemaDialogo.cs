@@ -37,6 +37,8 @@ public class SistemaDialogo : MonoBehaviour
     private bool escrevendo = false;
 
     private Coroutine corrotina;
+
+    private List<int> questsIndex = new List<int>();
     #endregion
 
     #endregion
@@ -120,6 +122,8 @@ public class SistemaDialogo : MonoBehaviour
             }
 
             npcDialogo = _npcDialogoQA;
+
+            questsIndex.Add(npcDialogo.questIndex);
 
             InicializarDialogo();
         }
@@ -418,7 +422,7 @@ public class SistemaDialogo : MonoBehaviour
 
         if (dialogo.nodulos[nodulo].respostas[dropdownIndex].questIndex != 0)
         {
-            ManagerQuest.QuestTakeStep(dialogo.nodulos[nodulo].respostas[dropdownIndex].questIndex);
+            questsIndex.Add(dialogo.nodulos[nodulo].respostas[dropdownIndex].questIndex);
         }
 
         faladorAtual = Falador.BuscarPolaroideNosAssets(falaAtual.personagem, falaAtual.emocao);
@@ -449,7 +453,6 @@ public class SistemaDialogo : MonoBehaviour
 
         if (npcDialogo != null)
         {
-            npcDialogo.SetQuestControl();
             npcDialogo.OnEndDialogue();
         }
         npcDialogo = null;
@@ -460,6 +463,13 @@ public class SistemaDialogo : MonoBehaviour
         proximaFala = 0;
 
         sistemaDialogoUI.SetActive(false);
+
+        foreach (int questIndex in questsIndex)
+        {
+            ManagerQuest.QuestTakeStep(questIndex);
+        }
+
+        questsIndex.Clear();
     }
     #endregion
 
