@@ -21,12 +21,6 @@ public class FadeEffect : MonoBehaviour
     private void Awake()
     {
         //if (gameObject.tag == "fadeMenu") DontDestroyOnLoad(gameObject);
-#if UNITY_EDITOR
-        if (instance != null)
-        {
-            Debug.Log("Mais de uma instancia.");
-        }
-#endif 
 
         instance = this;
     }
