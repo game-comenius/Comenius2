@@ -15,9 +15,6 @@ public class Planejamento : MonoBehaviour {
         canvas = GetComponentInChildren<Canvas>();
         backgroundPreto = GetComponentInChildren<FadeEffect>();
         canvas.enabled = false;
-
-        // O valor inicial deve ser false, esta linha está aqui temporariamente
-        Disponivel = true;
 	}
 
     public void AbrirPlanejamento()
