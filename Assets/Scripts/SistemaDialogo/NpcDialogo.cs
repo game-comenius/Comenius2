@@ -2,6 +2,7 @@
 using UnityEngine;
 using GameComenius.Dialogo;
 using System;
+using System.Collections.Generic;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -10,7 +11,14 @@ using UnityEditor;
 [RequireComponent(typeof(DynamicCursor))]
 public class NpcDialogo : MonoBehaviour
 {
-    private QuestGuest quest;
+    private int _questIndex;
+    public int questIndex
+    {
+        get
+        {
+            return _questIndex;
+        }
+    }
 
     public bool dialogoObrigatorio = false;
 
@@ -31,7 +39,7 @@ public class NpcDialogo : MonoBehaviour
 
     private void Awake()
     {
-        quest = GetComponent<QuestGuest>();
+        _questIndex = GetComponent<QuestGuest>().index;
     }
 
     private void Start()
@@ -41,9 +49,9 @@ public class NpcDialogo : MonoBehaviour
 
     public void Restart() 
     {
-        if (ManagerQuest.VerifyQuestIsAvailable(quest.index))
+        if (ManagerQuest.VerifyQuestIsAvailable(_questIndex))
         {
-            if (dialogoObrigatorio && !ManagerQuest.VerifyQuestIsComplete(quest.index)) 
+            if (dialogoObrigatorio && !ManagerQuest.VerifyQuestIsComplete(_questIndex)) 
             {
                 GameManager.UISendoUsada();
 
@@ -75,7 +83,7 @@ public class NpcDialogo : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
 
-        if (!ManagerQuest.VerifyQuestIsComplete(quest.index) || quest.index == 0) //quest.index = 0 indica que não é quest
+        if (!ManagerQuest.VerifyQuestIsComplete(_questIndex) || _questIndex == 0) //quest.index = 0 indica que não é quest
         {
             Vector3[] point = new Vector3[interactOffset.Length];
 
@@ -130,11 +138,6 @@ public class NpcDialogo : MonoBehaviour
 
         SistemaDialogo.sistemaDialogo.dialogo = dialogosSecundarios[i];
         SistemaDialogo.sistemaDialogo.ComecarDialogo(dialogosSecundarios[i].Clone(), this);
-    }
-
-    public void SetQuestControl()
-    {
-        ManagerQuest.QuestTakeStep(quest.index);
     }
 
     public void OnEndDialogue()
