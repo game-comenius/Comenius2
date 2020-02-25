@@ -82,6 +82,9 @@ public class AjudaComeniusFichario : MonoBehaviour
         conteudo.alpha = 1;
         TocarAudio();
 
+        // Pegar o animator do ImageComeniusFantasma
+        conteudo.GetComponentInChildren<Animator>().Play("Flutuar");
+
         // Apresentar o primeiro conjunto de balões
         yield return new WaitForSeconds(0.6f);
         balaoDireita.alpha = 1;
