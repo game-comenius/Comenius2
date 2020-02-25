@@ -27,7 +27,8 @@ public class AjudaComeniusDiretorPatio : MonoBehaviour {
         conteudoDaAjuda = GetComponentInChildren<CanvasGroup>();
         conteudoDaAjuda.alpha = 0;
 
-        animator = gameObject.GetComponent<Animator>();
+        // Pegar o animator do ImageComeniusFantasma
+        animator = conteudoDaAjuda.GetComponentInChildren<Animator>();
 
         // Cadastrar função para ser invocada quando o diretor fechar o diálogo
         dialogoDoDiretor.OnEndDialogueEvent += Mostrar;
