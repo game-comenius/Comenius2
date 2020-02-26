@@ -123,7 +123,7 @@ public class SistemaDialogo : MonoBehaviour
 
             npcDialogo = _npcDialogoQA;
 
-            questsIndex.Add(npcDialogo.questIndex);
+            if (npcDialogo) questsIndex.Add(npcDialogo.questIndex);
 
             InicializarDialogo();
         }
