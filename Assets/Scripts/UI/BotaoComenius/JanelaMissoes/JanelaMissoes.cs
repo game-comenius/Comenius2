@@ -39,6 +39,11 @@ public class JanelaMissoes : MonoBehaviour
     void Start()
     {
         corpoJanelaMissoes = GetComponentInChildren<CorpoJanelaMissoes>();
+
+        // Para facilitar o desenvolvimento, a janela de missões sempre ativa
+        #if UNITY_EDITOR
+        Ativa = true;
+        #endif
     }
 
     public bool CompletamenteExplorada()
