@@ -5,28 +5,23 @@ using UnityEngine;
 public class Mission2 : MonoBehaviour
 {
     public readonly static QuestGroup[] _questGroups =
-{
-        new QuestGroup("Converse com o pessoal", new int[] { 2, 3, 5 }),
-        new QuestGroup("Vá para a aula", new int[] { 6, 8 })
+    {
     };
 
     public readonly static QuestClass[] _mainQuests =
     {
         new QuestClass (1, "Fale como o Diretor no começo do segundo dia.", new DoQuest(), new int[]{ }),
         new QuestClass (2, "Vá para a Sala dos Professores", new DoQuest(), new int[]{ }),
-        new QuestClass (3, "Fale com o Vladmir.", new DoQuest(), new int[]{ -5 }),
-        new QuestClass (4, "Faça o plano de aula na Sala dos Professores.", new DoQuest(), new int[]{ }),
-        new QuestClass (5, "Ir para o Pátio com o plano pronto.", new DoQuest(), new int[]{ 4 }),
-        new QuestClass (6, "Ir para a sala de aula.", new DoQuest(), new int[]{ }),
-        new QuestClass (7, "Falar com o Jean depois a aula", new DoQuest(), new int[]{ }),
-        new QuestClass (8, "Falar com o Comenius depois a aula", new DoQuest(), new int[]{ })
+        new QuestClass (3, "Fale com o Vladmir.", new DoQuest(), new int[]{ }),
+        new QuestClass (4, "Faça o plano de aula na Sala dos Professores.", new DoQuest(), new int[]{ 3 }),
+        new QuestClass (5, "Ir para a sala de aula.", new DoQuest(), new int[]{ 4 }),
     };
 
     public readonly static QuestClass[] _sideQuests =
     {
-        new QuestClass (10100, "Fale com o Vladmir. (1)", new DoQuest(), new int[]{ 3, -5 }),
-        new QuestClass (10200, "Fale com o Vladmir. (2)", new DoQuest(), new int[]{ 10100, -5 }),
-        new QuestClass (10300, "Fale com o Vladmir. (3)", new DoQuest(), new int[]{ 10200, -5 }),
+        new QuestClass (10100, "Fale com o Vladmir. (1)", new DoQuest(), new int[]{ 3 }),
+        new QuestClass (10200, "Fale com o Vladmir. (2)", new DoQuest(), new int[]{ 10100 }),
+        new QuestClass (10300, "Fale com o Vladmir. (3)", new DoQuest(), new int[]{ 10200 }),
         new QuestClass (10400, "Falar com o 111 no Pátio.", new DoQuest(), new int[]{ }),
         new QuestClass (10401, "Controle: Pegar fotografia com o garoto estranho.", new DoQuest(), new int[]{ 10400 }),
         new QuestClass (10500, "Falar com o 021 no Pátio.", new DoQuest(), new int[]{ }),
