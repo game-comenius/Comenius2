@@ -160,8 +160,3 @@ public class Item
         }
     }
 }
-
-[Serializable] public class Item2
-{
-    public ItemName ItemName;
-}
