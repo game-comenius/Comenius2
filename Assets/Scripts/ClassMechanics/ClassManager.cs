@@ -356,7 +356,7 @@ public class ClassManager : MonoBehaviour
         yield return StartCoroutine(FadeEffect.instance.Fade(1f));
 
         // Retirar todas as mídias da sala de aula
-        midiaNaSalaDeAula.EsconderMidiaAtual();
+        if (midiaNaSalaDeAula) midiaNaSalaDeAula.EsconderMidiaAtual();
 
         // Alterar a sala de acordo com a pontuação do jogador
         Desempenho.instance.TrocarSala();

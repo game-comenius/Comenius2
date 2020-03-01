@@ -72,12 +72,6 @@ public class TeacherScript : AgenteAulaScript
     {
         teacher = this;
 
-        //Para que o Jean ande nos quadadinhos certinho, mas sem usar pathfinding
-
-        inicio = GridScript.gridScript.Cell(GridScript.gridScript.P2G(inicio + offsetDaBase))[0] - offsetDaBase;
-
-        vector = GridScript.gridScript.Cell(GridScript.gridScript.P2G(inicio + vector + offsetDaBase))[0] - inicio - offsetDaBase;
-
         ClassManager.EndClass += EndClass;
     }
 
@@ -89,6 +83,10 @@ public class TeacherScript : AgenteAulaScript
     protected override void Start()
     {
         base.Start();
+
+        // Para que o professor ande nos quadradinhos certos, sem usar path finder
+        inicio = GridScript.gridScript.Cell(GridScript.gridScript.P2G(inicio + offsetDaBase))[0] - offsetDaBase;
+        vector = GridScript.gridScript.Cell(GridScript.gridScript.P2G(inicio + vector + offsetDaBase))[0] - inicio - offsetDaBase;
 
         magnitude = vector.magnitude;
 
