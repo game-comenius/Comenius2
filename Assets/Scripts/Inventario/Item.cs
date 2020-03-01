@@ -15,6 +15,7 @@ public class Item
 
     public struct DescriptionsInOneMission
     {
+        public string StandardDescription;
         public string FirstMomentDescription;
         public string SecondMomentDescription;
         public string ThirdMomentDescription;
@@ -228,5 +229,7 @@ public class Item
                 FullDescription = "Sem texto";
                 break;
         }
+        // Temporário até o Lucas enviar o link para as descrições gerais
+        DescriptionsInMission1.StandardDescription = DescriptionsInMission1.SecondMomentDescription;
     }
 }
