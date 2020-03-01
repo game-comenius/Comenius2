@@ -10,9 +10,7 @@ public class CollectItem : MonoBehaviour {
     public void addItem() {
         if (!done) {
             Player.Instance.Inventory.Add(target);
-            Debug.Log("coletou midia " + target);
             done = true;
         }
-    }
-	
+    }	
 }

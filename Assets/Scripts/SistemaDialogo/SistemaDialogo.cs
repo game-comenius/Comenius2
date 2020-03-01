@@ -37,8 +37,6 @@ public class SistemaDialogo : MonoBehaviour
     private bool escrevendo = false;
 
     private Coroutine corrotina;
-
-    private List<int> questsIndex = new List<int>();
     #endregion
 
     #endregion
@@ -57,6 +55,8 @@ public class SistemaDialogo : MonoBehaviour
     private int nodulo = 0;
 
     private int dropdownIndex;
+
+    private List<int> questsIndex = new List<int>();
 
     // Os balões de fala da Lurdinha tem uma cor diferente
     // Esta aqui é um verde parecido com o verde do Whatsapp

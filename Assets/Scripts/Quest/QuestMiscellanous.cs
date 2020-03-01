@@ -29,6 +29,11 @@ public class QuestMiscellanous : MonoBehaviour
         MissionGuideManager.missionGuideManager.ShowMidiaCounter(action);
     }
 
+    public void DestroyObj(Object obj)
+    {
+        Destroy(obj);
+    }
+
     public void TakeStep(int index)
     {
         ManagerQuest.QuestTakeStep(index);

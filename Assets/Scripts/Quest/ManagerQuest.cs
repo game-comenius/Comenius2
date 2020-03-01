@@ -160,7 +160,7 @@ public class ManagerQuest : MonoBehaviour
             }
         }
 
-        Debug.Log("Quest " + index + "not found.");
+        Debug.Log("Quest " + index + " not found.");
 
         return false;
     }

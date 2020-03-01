@@ -23,7 +23,7 @@ public class GridScript : MonoBehaviour
     {
         if (gridScript == null)
         {
-            gridScript = this;            
+            gridScript = this;
         }
         else
         {

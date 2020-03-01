@@ -80,6 +80,8 @@ public class Mission1
         new QuestClass (100900, "Gravar pássaro.", new DoQuest(), new int[]{ 100600 }),
         new QuestClass (100901, "Controle: Gravar pássaro.", new DoQuest(), new int[]{ 100900 }),
 
+        new QuestClass (101000, "Fotografar pássaro.", new DoQuest(), new int[]{ 100500 }),
+
 
 
         new QuestClass (200000, "Interagir com a Estante na Multimeios.", new DoQuest(), new int[]{ }),
