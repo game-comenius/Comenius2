@@ -2,7 +2,7 @@
 public enum ItemName
 {
     SemNome,
-    Livro,
+    LivroDidatico,
     TV,
     Cartazes,
     Caderno,

@@ -20,7 +20,7 @@ public class AvailableItemsPanel : MonoBehaviour {
             ItemName.QuadroNegro,
             ItemName.Caderno,
             ItemName.Jornais,
-            ItemName.Livro,
+            ItemName.LivroDidatico,
             ItemName.Cartazes,
             ItemName.CameraPolaroid,
             ItemName.Gravador,

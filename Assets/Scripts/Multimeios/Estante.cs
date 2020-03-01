@@ -31,7 +31,7 @@ public class Estante : MonoBehaviour
             //ItemName.Gravador,
             //ItemName.CameraPolaroid,
             ItemName.TV,
-            ItemName.Livro,
+            ItemName.LivroDidatico,
             ItemName.JornaisEResvistas
         };
     }

@@ -100,7 +100,7 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler
             case ItemName.TV: return tvPoints;
             case ItemName.VHS: return vhsPoints;
             case ItemName.CartazComColecaoDePenas: return cartazComPenasPoints;
-            case ItemName.Livro: return livroPoints;
+            case ItemName.LivroDidatico: return livroPoints;
             case ItemName.LivroIlustrado: return livroilustradoPoints;
             case ItemName.QuadroNegro: return quadroNegroPoints;
             case ItemName.QuadroNegroComEstencil: return quadroNegroStencilPoints;

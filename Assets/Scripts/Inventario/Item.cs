@@ -116,7 +116,7 @@ public class Item
                 DescriptionsInMission1.SecondMomentDescription = "O cartaz com as penas é interessante, pois ilustra de forma real os pássaros, mas seria a melhor escolha em uma atividade individual, sendo que só há um cartaz?";
                 DescriptionsInMission1.ThirdMomentDescription = "Talvez o cartaz com penas possa ser melhor utilizado para a apresentação das características gerais dos pássaros, pois fala pouco sobre regionalidades.";
                 break;
-            case ItemName.Livro:
+            case ItemName.LivroDidatico:
                 FriendlyName = "Livro Didático";
                 Description = "Para fazer atividades, aprender e revisar o conteúdo. Um clássico!";
                 FullDescription = "É um livro de cunho pedagógico composto de conteúdo do currículo escolar. Pode ser usado para pesquisa e resolução de exercícios. A linguagem presente no livro didático é visual e principalmente textual, trazendo o conteúdo de forma intercalada entre textos e imagens.";
@@ -131,7 +131,7 @@ public class Item
                 DescriptionsInMission1.FirstMomentDescription = "O professor apresenta as características gerais dos pássaros no livro ilustrado, mostrando as figuras aos alunos. Essa exposição é mais rica do que só usar palavras.";
                 DescriptionsInMission1.SecondMomentDescription = "O livro ilustrado possui além de texto, varias imagens sobre os conteúdos trabalhados em aula. É bastante rico, tanto para exposição, quanto para as atividades de sistematização.";
                 DescriptionsInMission1.ThirdMomentDescription = "Para além das palavras e ilustrações, é possível encontrar no livro, escritos sobre onde encontrar tais espécies, que fazem parte do momento da aula.";
-                UpgradeFrom.Add(ItemName.Livro);
+                UpgradeFrom.Add(ItemName.LivroDidatico);
                 break;
             case ItemName.QuadroNegro:
                 FriendlyName = "Quadro Negro";
