@@ -10,7 +10,7 @@ public enum ItemName
     ReprodutorAudio,
     VHS,
     Jornais,
-    Fotografia,
+    FotografiaPassaro,
     QuadroNegro,
     LivroIlustrado,
     CartazComColecaoDePenas,

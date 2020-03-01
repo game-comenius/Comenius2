@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
             ItemName.Gravador,
             ItemName.GravacaoPassaro,
             ItemName.CameraPolaroid,
-            ItemName.Fotografia,
+            ItemName.FotografiaPassaro,
             ItemName.TV,
             ItemName.ReprodutorAudio,
             ItemName.Cd,

@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
-    
+public class MidiaMomento : MonoBehaviour, IPointerClickHandler
+{
+
     public ItemName initialItem;
     private ItemName item; //item no slot
                            //private double points = 0;
@@ -27,17 +28,17 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
     public int quadroNegroPoints = 0;
     public int quadroNegroStencilPoints = 0;
     public int cartazesPoints = 0;
-    public int cartasComCanetasPoints= 0;
+    public int cartasComCanetasPoints = 0;
     public int mapaPoints = 0;
-    public int cadernoPoints = 0;        
+    public int cadernoPoints = 0;
     public int jornaisPoints = 0;
     public int jornaiserevistasPoints = 0;
     public int retrorojetorSLidesMapaPoints = 0;
     public int retroprojetorSlidesLinhadoTempoPoints = 0;
     public int retroprojetorSlidesCicloDoTrabalhoPoints = 0;
     public int diarioPoints = 0;
-  
-    
+
+
 
     // Campos relacionados a UI para destacar o momento selecionado
     private static Image activeItemBorder;
@@ -73,25 +74,29 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
     }
 
     //chame essa função para mudar o item no momento
-    public void AddItem(ItemName newItem) {
+    public void AddItem(ItemName newItem)
+    {
         item = newItem;
         UpdateSprite();
     }
 
-    public void ResetItem() {
+    public void ResetItem()
+    {
         item = initialItem;
         UpdateSprite();
     }
 
-    public double Points() {
+    public double Points()
+    {
         //pega pontuação no contexto do momento
-        switch (item) {
+        switch (item)
+        {
             case ItemName.ReprodutorAudio: return reprodutoraudioPoints;
             case ItemName.Cd: return cdPoints;
             case ItemName.Gravador: return gravadorPoints;
             case ItemName.GravacaoPassaro: return gravacaoPoints;
             case ItemName.CameraPolaroid: return cameraPolaroidPoints;
-            case ItemName.Fotografia: return fotografiaPoints;
+            case ItemName.FotografiaPassaro: return fotografiaPoints;
             case ItemName.TV: return tvPoints;
             case ItemName.VHS: return vhsPoints;
             case ItemName.CartazComColecaoDePenas: return cartazComPenasPoints;
@@ -114,20 +119,23 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler {
         }
     }
 
-    public ItemName getItem() {
+    public ItemName getItem()
+    {
         return item;
     }
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         item = initialItem;
 
         image = GetComponent<Image>();
         image.preserveAspect = true;
         UpdateSprite();
-	}
+    }
 
-    private void UpdateSprite() {
+    private void UpdateSprite()
+    {
         image.sprite = ItemSpriteDatabase.GetSpriteOf(item);
     }
 }
