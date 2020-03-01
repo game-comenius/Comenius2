@@ -52,6 +52,7 @@ public class BotaoAbrirFichario : MonoBehaviour, IPointerClickHandler {
         // qualquer cena, é interessante que este botão apareça.
         #if UNITY_EDITOR
             Visivel = true;
+            Ativo = true;
         #endif
 
         // Botão fica desativado quando alguma coisa está acontecendo na UI

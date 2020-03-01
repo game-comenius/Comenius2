@@ -141,6 +141,8 @@ public class AjudaComeniusFichario : MonoBehaviour
         canvas.enabled = false;
         GameManager.UINaoSendoUsada();
 
+        botaoFichario.Ativo = true;
+
         // Esta ajuda será vista apenas 1 vez
         BotaoQueAtivaEstaAjuda.onClick.RemoveListener(Mostrar);
     }
