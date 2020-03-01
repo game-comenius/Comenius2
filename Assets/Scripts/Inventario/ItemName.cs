@@ -14,7 +14,7 @@ public enum ItemName
     QuadroNegro,
     LivroIlustrado,
     CartazComColecaoDePenas,
-    QuadroNegroComEstencil,
+    TVComVHS,
     Mapa,
     JornaisEResvistas,
     Cd,

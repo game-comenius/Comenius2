@@ -141,7 +141,7 @@ public class Item
                 DescriptionsInMission1.SecondMomentDescription = "Os alunos podem usar o quadro negro como um recurso adicional ao apresentar suas falas durante atividade.";
                 DescriptionsInMission1.ThirdMomentDescription = "Com o quadro negro o professor pode elaborar tabelas e esquemas para a sistematização do conteúdo da aula.";
                 break;
-            case ItemName.QuadroNegroComEstencil:
+            case ItemName.TVComVHS:
                 FriendlyName = "Quadro Negro com Estêncil";
                 Description = "Um quadro negro, com estêncil";
                 FullDescription = "Um quadro negro, com estêncil";

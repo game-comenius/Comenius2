@@ -13,20 +13,20 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler
 
     //se você tiver uma ideia melhor pra fazer isso, por favor melhore isso.
     //está feito assim porque cada momento tem pontuações diferentes pra cada mídia, por isso todos são públicos para serem editados no unity.
-    public int reprodutoraudioPoints = 0;
+    public int reprodutorAudioPoints = 0;
     public int cdPoints = 0;
     public int gravadorPoints = 0;
-    public int gravacaoPoints = 0;
+    public int gravacaoPassaroPoints = 0;
     public int cameraPolaroidPoints = 0;
-    public int fotografiaPoints = 0;
+    public int fotografiaPassaroPoints = 0;
     public int tvPoints = 0;
     public int vhsPoints = 0;
     public int vhsEditadoPoints = 0;
     public int cartazComPenasPoints = 0;
-    public int livroPoints = 0;
+    public int livroDidaticoPoints = 0;
     public int livroilustradoPoints = 0;
     public int quadroNegroPoints = 0;
-    public int quadroNegroStencilPoints = 0;
+    public int tvComVhsPoints = 0;
     public int cartazesPoints = 0;
     public int cartasComCanetasPoints = 0;
     public int mapaPoints = 0;
@@ -91,19 +91,19 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler
         //pega pontuação no contexto do momento
         switch (item)
         {
-            case ItemName.ReprodutorAudio: return reprodutoraudioPoints;
+            case ItemName.ReprodutorAudio: return reprodutorAudioPoints;
             case ItemName.Cd: return cdPoints;
             case ItemName.Gravador: return gravadorPoints;
-            case ItemName.GravacaoPassaro: return gravacaoPoints;
+            case ItemName.GravacaoPassaro: return gravacaoPassaroPoints;
             case ItemName.CameraPolaroid: return cameraPolaroidPoints;
-            case ItemName.FotografiaPassaro: return fotografiaPoints;
+            case ItemName.FotografiaPassaro: return fotografiaPassaroPoints;
             case ItemName.TV: return tvPoints;
             case ItemName.VHS: return vhsPoints;
             case ItemName.CartazComColecaoDePenas: return cartazComPenasPoints;
-            case ItemName.LivroDidatico: return livroPoints;
+            case ItemName.LivroDidatico: return livroDidaticoPoints;
             case ItemName.LivroIlustrado: return livroilustradoPoints;
             case ItemName.QuadroNegro: return quadroNegroPoints;
-            case ItemName.QuadroNegroComEstencil: return quadroNegroStencilPoints;
+            case ItemName.TVComVHS: return tvComVhsPoints;
             case ItemName.Cartazes: return cartazesPoints;
             case ItemName.Mapa: return mapaPoints;
             case ItemName.Caderno: return cadernoPoints;
