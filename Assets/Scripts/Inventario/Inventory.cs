@@ -89,7 +89,7 @@ public class Inventory
         var returnString = "";
         foreach (var item in items)
         {
-            returnString += string.Format("[{0}, {1}], ", item.Value.FriendlyName, item.Value.Description);
+            returnString += string.Format("[{0}], ", item.Value.FriendlyName);
         }
         return returnString.TrimEnd(' ', ',');
     }

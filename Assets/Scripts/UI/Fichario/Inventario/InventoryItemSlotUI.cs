@@ -103,7 +103,7 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerDownHandler
 
         var item = myCurrentItem.Value;
         // Colocar a descrição na caixa de descrição
-        DescriptionSlot.GetComponent<Text>().text = item.Description;
+        DescriptionSlot.GetComponent<Text>().text = item.DescriptionsInMission1.ThirdMomentDescription;
     }
 
     public void OnPointerDown(PointerEventData eventData)
