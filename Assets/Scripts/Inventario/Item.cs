@@ -10,15 +10,16 @@ public class Item
     public Sprite Sprite { get; private set; }
     public string Description { get; private set; }
     public string FullDescription { get; private set; }
-    public ItemName[] UpgradeFrom = new ItemName[2];
+    public List<ItemName> UpgradeFrom;
 
     // Se esta mídia é uma mídia após um upgrade ou não é
-    public bool IsUpgrade() { return this.UpgradeFrom[0] != 0; }
+    public bool IsAnUpgrade() { return UpgradeFrom.Count > 0; }
 
     public Item(ItemName itemName)
     {
         ItemName = itemName;
         Sprite = ItemSpriteDatabase.GetSpriteOf(ItemName);
+        UpgradeFrom = new List<ItemName>();
         switch (itemName)
         {
             case ItemName.ReprodutorAudio:
@@ -40,8 +41,7 @@ public class Item
                 FriendlyName = "Gravação do Pássaro";
                 Description = "Gravação do canto do pássaro no pátio da escola";
                 FullDescription = "Gravação do canto do pássaro no pátio da escola";
-                UpgradeFrom[0] = ItemName.Gravador;
-                UpgradeFrom[1] = ItemName.Gravador;
+                UpgradeFrom.Add(ItemName.Gravador);
                 break;
             case ItemName.CameraPolaroid:
                 FriendlyName = "Câmera Fotográfica Polaroid";
@@ -62,8 +62,7 @@ public class Item
                 FriendlyName = "Fita VHS";
                 Description = "Pássaros, nossos amigos penosos.";
                 FullDescription = "É uma fitas em  formato VHS (Vídeo Home System) contendo um documentário curta metragem. Seu uso pedagógico é relacionado a apresentação de conteúdos pelo meio visual, contato com outras culturas sociais e linguísticas. Utiliza de uma linguagem audiovisual, que tende a ser mais interessante para os alunos.";
-                UpgradeFrom[0] = ItemName.TV;
-                UpgradeFrom[1] = ItemName.TV;
+                UpgradeFrom.Add(ItemName.TV);
                 break;
             case ItemName.CartazComColecaoDePenas:
                 FriendlyName = "Cartaz com Coleção de Penas";
@@ -79,8 +78,7 @@ public class Item
                 FriendlyName = "Livro Ilustrado";
                 Description = "Uaaaaau, quantas figuras lindas! Os alunos vão adorar!";
                 FullDescription = "É um livro belamente ilustrado com desenhos, gravuras e fotos coloridas concatenadas a textos explicativos. Usa uma linguagem visual, que exprime certos conteúdos mais facilmente.";
-                UpgradeFrom[0] = ItemName.Livro;
-                UpgradeFrom[1] = ItemName.Livro;
+                UpgradeFrom.Add(ItemName.Livro);
                 break;
             case ItemName.QuadroNegro:
                 FriendlyName = "Quadro Negro";
@@ -91,8 +89,6 @@ public class Item
                 FriendlyName = "Quadro Negro com Estêncil";
                 Description = "Um quadro negro, com estêncil";
                 FullDescription = "Um quadro negro, com estêncil";
-                UpgradeFrom[0] = ItemName.QuadroNegro;
-                UpgradeFrom[1] = ItemName.QuadroNegro;
                 break;
             case ItemName.Cartazes:
                 FriendlyName = "Cartazes";
@@ -103,8 +99,7 @@ public class Item
                 FriendlyName = "Mapa";
                 Description = "Um cartaz de um mapa";
                 FullDescription = "Um cartaz de um mapa";
-                UpgradeFrom[0] = ItemName.Cartazes;
-                UpgradeFrom[1] = ItemName.Cartazes;
+                UpgradeFrom.Add(ItemName.Cartazes);
                 break;
             case ItemName.Caderno:
                 FriendlyName = "Caderno";
@@ -120,8 +115,7 @@ public class Item
                 FriendlyName = "Jornais e Revistas";
                 Description = "Uma coleção de jornais e revistas";
                 FullDescription = "Uma coleção de jornais e revistas";
-                UpgradeFrom[0] = ItemName.Jornais;
-                UpgradeFrom[1] = ItemName.Jornais;
+                UpgradeFrom.Add(ItemName.Jornais);
                 break;
             case ItemName.RetroprojetorSlideMapa:
                 FriendlyName = "Retroprojetor c/ Slide e  Mapa ";

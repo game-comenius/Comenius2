@@ -46,7 +46,7 @@ public class Inventory
 
             // Se é um upgrade mas o jogador não possui o item base para
             // realizar o upgrade, aborta esta adição de item ao inventário
-            if (item.IsUpgrade())
+            if (item.IsAnUpgrade())
             {
                 var validUpgrade = false;
                 foreach (var baseItem in item.UpgradeFrom)

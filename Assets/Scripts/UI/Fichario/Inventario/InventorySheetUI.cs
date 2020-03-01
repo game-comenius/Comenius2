@@ -48,7 +48,7 @@ public class InventorySheetUI : MonoBehaviour {
 
             // Se a mídia é uma mídia com upgrade, achar o slot das mídias
             // base e adicionar este upgrade a eles
-            if (item.IsUpgrade())
+            if (item.IsAnUpgrade())
             {
                 foreach (var baseItem in item.UpgradeFrom)
                 {
