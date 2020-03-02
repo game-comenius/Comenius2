@@ -1,32 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class MidiaMomento : MonoBehaviour, IPointerClickHandler
+public class MidiaMomento : MonoBehaviour
 {
-
+    // Item inicial do slot
     public ItemName initialItem;
-    private ItemName item; //item no slot
-                           //private double points = 0;
+    // Item que está atualmente no slot
+    private ItemName item; 
 
     //se você tiver uma ideia melhor pra fazer isso, por favor melhore isso.
     //está feito assim porque cada momento tem pontuações diferentes pra cada mídia, por isso todos são públicos para serem editados no unity.
-    public int reprodutoraudioPoints = 0;
+    public int reprodutorAudioPoints = 0;
     public int cdPoints = 0;
     public int gravadorPoints = 0;
-    public int gravacaoPoints = 0;
+    public int gravacaoPassaroPoints = 0;
     public int cameraPolaroidPoints = 0;
-    public int fotografiaPoints = 0;
+    public int fotografiaPassaroPoints = 0;
     public int tvPoints = 0;
     public int vhsPoints = 0;
     public int vhsEditadoPoints = 0;
     public int cartazComPenasPoints = 0;
-    public int livroPoints = 0;
+    public int livroDidaticoPoints = 0;
     public int livroilustradoPoints = 0;
     public int quadroNegroPoints = 0;
-    public int quadroNegroStencilPoints = 0;
+    public int tvComVhsPoints = 0;
     public int cartazesPoints = 0;
     public int cartasComCanetasPoints = 0;
     public int mapaPoints = 0;
@@ -38,40 +35,7 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler
     public int retroprojetorSlidesCicloDoTrabalhoPoints = 0;
     public int diarioPoints = 0;
 
-
-
-    // Campos relacionados a UI para destacar o momento selecionado
-    private static Image activeItemBorder;
-    [SerializeField]
-    private Image myItemBorder;
-    [SerializeField]
-    private Sprite selectedItemBorder;
-    [SerializeField]
-    private Sprite neutralItemBorder;
-
-    [SerializeField]
-    private Text descricaoGameObject;
-    [SerializeField]
-    public string minhaDescricao;
-
     private Image image;
-
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        GameObject.Find("PlanManager").GetComponent<PlanManager>().setSelectedMoment(gameObject);
-
-        // Destaque visual do momento selecionado
-        // Desabilitar o último destaque de slot de item
-        if (activeItemBorder) activeItemBorder.sprite = neutralItemBorder;
-        // Habilitar o destaque para este item
-        myItemBorder.sprite = selectedItemBorder;
-        // A borda ativa/selecionada agora é a borda deste item
-        activeItemBorder = myItemBorder;
-
-        // Apresenta a descrição deste momento na folha do planejamento
-        descricaoGameObject.text = minhaDescricao;
-    }
 
     //chame essa função para mudar o item no momento
     public void AddItem(ItemName newItem)
@@ -91,19 +55,19 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler
         //pega pontuação no contexto do momento
         switch (item)
         {
-            case ItemName.ReprodutorAudio: return reprodutoraudioPoints;
+            case ItemName.ReprodutorAudio: return reprodutorAudioPoints;
             case ItemName.Cd: return cdPoints;
             case ItemName.Gravador: return gravadorPoints;
-            case ItemName.GravacaoPassaro: return gravacaoPoints;
+            case ItemName.GravacaoPassaro: return gravacaoPassaroPoints;
             case ItemName.CameraPolaroid: return cameraPolaroidPoints;
-            case ItemName.FotografiaPassaro: return fotografiaPoints;
+            case ItemName.FotografiaPassaro: return fotografiaPassaroPoints;
             case ItemName.TV: return tvPoints;
             case ItemName.VHS: return vhsPoints;
             case ItemName.CartazComColecaoDePenas: return cartazComPenasPoints;
-            case ItemName.Livro: return livroPoints;
+            case ItemName.LivroDidatico: return livroDidaticoPoints;
             case ItemName.LivroIlustrado: return livroilustradoPoints;
             case ItemName.QuadroNegro: return quadroNegroPoints;
-            case ItemName.QuadroNegroComEstencil: return quadroNegroStencilPoints;
+            case ItemName.TVComVHS: return tvComVhsPoints;
             case ItemName.Cartazes: return cartazesPoints;
             case ItemName.Mapa: return mapaPoints;
             case ItemName.Caderno: return cadernoPoints;

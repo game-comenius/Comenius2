@@ -8,35 +8,6 @@ public class PlanManager : MonoBehaviour {
     private double[] points = new double[3];
     private double totalMissionPoints = 0;
 
-    //contém a referência ao momento que está selecionado para receber uma mídia
-    private GameObject selectedMoment = null;
-
-    public GameObject getSelectedMoment()
-    {
-        if (selectedMoment != null)
-            return selectedMoment;
-        else {
-            Debug.Log("nenhum momento selecionado");
-            return null;
-        }
-    }
-
-    //MidiaMomento usa essa função para dizer que momento vai ser alterado
-    public void setSelectedMoment(GameObject newMoment) {
-        selectedMoment = newMoment;
-    }
-
-    //inventário usa isso para deselecionar o momento alterado depois de fazer as mudanças
-    public void unselectMoment() {
-        selectedMoment = null;
-    }
-
-    public void ResetPlan() {
-        GameObject.Find("Midia1").GetComponent<MidiaMomento>().ResetItem();
-        GameObject.Find("Midia2").GetComponent<MidiaMomento>().ResetItem();
-        GameObject.Find("Midia3").GetComponent<MidiaMomento>().ResetItem();
-    }
-
     public void ConfirmPlan()
     {
         chosenMedia[0] = GameObject.Find("Midia1").GetComponent<MidiaMomento>().getItem();
@@ -89,14 +60,4 @@ public class PlanManager : MonoBehaviour {
         else
             return chosenMedia[1];
     }
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

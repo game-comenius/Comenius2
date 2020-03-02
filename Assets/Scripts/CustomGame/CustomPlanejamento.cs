@@ -39,8 +39,6 @@ public class CustomPlanejamento : MonoBehaviour {
         {
             momento.initialItem = ItemName.SemNome;
             momento.AddItem(ItemName.SemNome);
-
-            momento.minhaDescricao = "";
         }
     }
 

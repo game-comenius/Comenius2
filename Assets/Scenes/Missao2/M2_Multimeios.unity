@@ -196,11 +196,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 110497762}
-  - component: {fileID: 110497761}
   - component: {fileID: 110497760}
   - component: {fileID: 110497759}
   - component: {fileID: 110497758}
   - component: {fileID: 110497763}
+  - component: {fileID: 110497761}
   m_Layer: 0
   m_Name: 061
   m_TagString: Untagged
@@ -275,7 +275,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7815c1d9ee93d68438583ae9a7a4c32d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.704, y: 1.144}
@@ -351,7 +351,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 110497757}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.24, y: -1.88, z: -2.65}
+  m_LocalPosition: {x: -0.029, y: -2.018, z: -2.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -372,7 +372,7 @@ MonoBehaviour:
   questComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 110497761}
+      - m_Target: {fileID: 0}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -1031,10 +1031,10 @@ GameObject:
   m_Component:
   - component: {fileID: 329734284}
   - component: {fileID: 329734283}
-  - component: {fileID: 329734282}
   - component: {fileID: 329734280}
   - component: {fileID: 329734278}
   - component: {fileID: 329734279}
+  - component: {fileID: 329734281}
   m_Layer: 0
   m_Name: Drica(NPC)
   m_TagString: QuestGiver
@@ -1068,7 +1068,7 @@ MonoBehaviour:
   questComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 329734282}
+      - m_Target: {fileID: 0}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -1236,11 +1236,10 @@ MonoBehaviour:
       respostas: []
   interactOffset:
   - {x: 0.76, y: -0.96, z: 0}
---- !u!61 &329734282
-BoxCollider2D:
+--- !u!60 &329734281
+PolygonCollider2D:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 61207428146409614, guid: eb606aeaeb5e46943bcda34299bae69c,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 329734277}
   m_Enabled: 1
@@ -1259,9 +1258,49 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.67832166, y: 1.5734266}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.17832167, y: -0.52797204}
+      - {x: 0.15034965, y: -0.33916083}
+      - {x: 0.17132866, y: -0.33216783}
+      - {x: 0.26223776, y: -0.26223776}
+      - {x: 0.26223776, y: -0.19930069}
+      - {x: 0.25524476, y: -0.115384616}
+      - {x: 0.24125874, y: 0.017482517}
+      - {x: 0.1923077, y: 0.14335664}
+      - {x: 0.1013986, y: 0.23426573}
+      - {x: 0.17832167, y: 0.2902098}
+      - {x: 0.21328671, y: 0.3181818}
+      - {x: 0.24825175, y: 0.47202796}
+      - {x: 0.1923077, y: 0.63986015}
+      - {x: 0.12937063, y: 0.7027972}
+      - {x: 0.024475524, y: 0.7027972}
+      - {x: -0.038461536, y: 0.6958042}
+      - {x: -0.21328671, y: 0.66783214}
+      - {x: -0.31118882, y: 0.58391607}
+      - {x: -0.3181818, y: 0.555944}
+      - {x: -0.3181818, y: 0.48601398}
+      - {x: -0.2972028, y: 0.45104894}
+      - {x: -0.23426573, y: 0.3881119}
+      - {x: -0.24125874, y: 0.35314685}
+      - {x: -0.21328671, y: 0.24825175}
+      - {x: -0.19930069, y: 0.17832167}
+      - {x: -0.24825175, y: 0.045454547}
+      - {x: -0.23426573, y: -0.01048951}
+      - {x: -0.1923077, y: -0.038461536}
+      - {x: -0.19930069, y: -0.14335664}
+      - {x: -0.2062937, y: -0.24125874}
+      - {x: -0.17832167, y: -0.2902098}
+      - {x: -0.19930069, y: -0.48601398}
+      - {x: -0.26923075, y: -0.5629371}
+      - {x: -0.26223776, y: -0.6118881}
+      - {x: -0.24125874, y: -0.65384614}
+      - {x: -0.14335664, y: -0.66083914}
+      - {x: -0.073426574, y: -0.7237762}
+      - {x: 0.017482517, y: -0.7237762}
+      - {x: 0.05244755, y: -0.7167832}
+      - {x: 0.15734266, y: -0.65384614}
+      - {x: 0.17132866, y: -0.6328671}
 --- !u!212 &329734283
 SpriteRenderer:
   m_ObjectHideFlags: 0

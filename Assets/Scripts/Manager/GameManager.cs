@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
         {
             ItemName.Caderno,
             ItemName.QuadroNegro,
-            ItemName.Livro,
+            ItemName.LivroDidatico,
             ItemName.LivroIlustrado,
             ItemName.Jornais,
             ItemName.JornaisEResvistas,

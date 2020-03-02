@@ -906,11 +906,11 @@ GameObject:
   m_Component:
   - component: {fileID: 369008290}
   - component: {fileID: 369008289}
-  - component: {fileID: 369008288}
   - component: {fileID: 369008287}
   - component: {fileID: 369008291}
   - component: {fileID: 369008286}
   - component: {fileID: 369008292}
+  - component: {fileID: 369008288}
   m_Layer: 0
   m_Name: Comenius
   m_TagString: Diretor
@@ -981,11 +981,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 10
---- !u!61 &369008288
-BoxCollider2D:
+--- !u!60 &369008288
+PolygonCollider2D:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 61390069522588894, guid: 9357cdd918b582d4e8893cac0c9a7d11,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 369008285}
   m_Enabled: 1
@@ -1004,9 +1003,45 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.86013985, y: 2.013986}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.41, y: -0.55}
+      - {x: 0.38, y: -0.22999999}
+      - {x: 0.41, y: -0.19999999}
+      - {x: 0.41, y: -0.16}
+      - {x: 0.39, y: 0}
+      - {x: 0.35999998, y: 0.31}
+      - {x: 0.41, y: 0.41}
+      - {x: 0.41, y: 0.57}
+      - {x: 0.39999998, y: 0.64}
+      - {x: 0.31, y: 0.72999996}
+      - {x: 0.31, y: 0.91999996}
+      - {x: 0.28, y: 1.0699999}
+      - {x: 0.24, y: 1.13}
+      - {x: 0.12, y: 1.18}
+      - {x: -0.12, y: 1.18}
+      - {x: -0.29999998, y: 1.09}
+      - {x: -0.39999998, y: 0.96999997}
+      - {x: -0.39999998, y: 0.93}
+      - {x: -0.42999998, y: 0.71}
+      - {x: -0.52, y: 0.61}
+      - {x: -0.53999996, y: 0.53999996}
+      - {x: -0.53999996, y: 0.41}
+      - {x: -0.39999998, y: 0.28}
+      - {x: -0.29, y: 0.19}
+      - {x: -0.22999999, y: 0.21}
+      - {x: -0.25, y: -0.07}
+      - {x: -0.24, y: -0.42999998}
+      - {x: -0.099999994, y: -0.69}
+      - {x: -0.07, y: -0.90999997}
+      - {x: -0.31, y: -0.96}
+      - {x: -0.38, y: -0.96999997}
+      - {x: -0.29, y: -1.15}
+      - {x: -0.19999999, y: -1.18}
+      - {x: 0.08, y: -1.18}
+      - {x: 0.22, y: -1.12}
+      - {x: 0.37, y: -0.95}
+      - {x: 0.41, y: -0.85999995}
 --- !u!212 &369008289
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1094,7 +1129,7 @@ MonoBehaviour:
   questComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 369008288}
+      - m_Target: {fileID: 0}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
