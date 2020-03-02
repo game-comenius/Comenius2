@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System;
+using TMPro;
 
 public class InventoryItemSlotUI : MonoBehaviour, IPointerDownHandler
 {
@@ -103,7 +103,10 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerDownHandler
 
         var item = myCurrentItem.Value;
         // Colocar a descrição na caixa de descrição
-        DescriptionSlot.GetComponent<Text>().text = item.DescriptionsInMission1.StandardDescription;
+        // O tab no início da descrição é para "escapar" do clip
+        // do canto da folha do inventário
+        var tmpComponent = DescriptionSlot.GetComponent<TextMeshProUGUI>();
+        tmpComponent.text = item.DescriptionsInMission1.StandardDescription;
     }
 
     public void OnPointerDown(PointerEventData eventData)
