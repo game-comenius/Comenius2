@@ -7,7 +7,6 @@ using TMPro;
 
 public class InventoryItemSlotUI : MonoBehaviour, IPointerDownHandler
 {
-
     private static Image activeItemBorder;
 
     [SerializeField]
@@ -22,20 +21,25 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerDownHandler
     [SerializeField]
     private GameObject nextItemButton;
 
-    public GameObject DescriptionSlot { get; set; }
-
+    // GameObject that can render an item on the UI
     private ItemInUserInterface itemInUserInterface;
 
+    //Parent
+    private InventorySheetUI inventorySheet;
 
+
+    // Data
     private LinkedList<Item> myItems;
     private LinkedListNode<Item> myCurrentItem;
-
+    
 
     private void Awake()
     {
         myItems = new LinkedList<Item>();
 
         itemInUserInterface = GetComponentInChildren<ItemInUserInterface>();
+
+        inventorySheet = GetComponentInParent<InventorySheetUI>();
     }
 
 
@@ -101,12 +105,11 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerDownHandler
         // A borda ativa/selecionada agora é a borda deste item
         activeItemBorder = myItemBorder;
 
-        var item = myCurrentItem.Value;
+        var myItem = myCurrentItem.Value;
         // Colocar a descrição na caixa de descrição
         // O tab no início da descrição é para "escapar" do clip
         // do canto da folha do inventário
-        var tmpComponent = DescriptionSlot.GetComponent<TextMeshProUGUI>();
-        tmpComponent.text = item.DescriptionsInMission1.StandardDescription;
+        inventorySheet.ShowDescription(myItem);
     }
 
     public void OnPointerDown(PointerEventData eventData)

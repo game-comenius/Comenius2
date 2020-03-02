@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class MidiaMomento : MonoBehaviour, IPointerClickHandler
+public class MidiaMomento : MonoBehaviour
 {
-
+    // Item inicial do slot
     public ItemName initialItem;
-    private ItemName item; //item no slot
-                           //private double points = 0;
+    // Item que está atualmente no slot
+    private ItemName item; 
 
     //se você tiver uma ideia melhor pra fazer isso, por favor melhore isso.
     //está feito assim porque cada momento tem pontuações diferentes pra cada mídia, por isso todos são públicos para serem editados no unity.
@@ -36,32 +35,7 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler
     public int retroprojetorSlidesCicloDoTrabalhoPoints = 0;
     public int diarioPoints = 0;
 
-
-
-    // Campos relacionados a UI para destacar o momento selecionado
-    private static Image activeItemBorder;
-    [SerializeField]
-    private Image myItemBorder;
-    [SerializeField]
-    private Sprite selectedItemBorder;
-    [SerializeField]
-    private Sprite neutralItemBorder;
-
     private Image image;
-
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        GameObject.Find("PlanManager").GetComponent<PlanManager>().setSelectedMoment(gameObject);
-
-        // Destaque visual do momento selecionado
-        // Desabilitar o último destaque de slot de item
-        if (activeItemBorder) activeItemBorder.sprite = neutralItemBorder;
-        // Habilitar o destaque para este item
-        myItemBorder.sprite = selectedItemBorder;
-        // A borda ativa/selecionada agora é a borda deste item
-        activeItemBorder = myItemBorder;
-    }
 
     //chame essa função para mudar o item no momento
     public void AddItem(ItemName newItem)
