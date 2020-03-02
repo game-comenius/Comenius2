@@ -15,7 +15,12 @@ public class Planejamento : MonoBehaviour {
         canvas = GetComponentInChildren<Canvas>();
         backgroundPreto = GetComponentInChildren<FadeEffect>();
         canvas.enabled = false;
-	}
+
+        // Para ajudar no desenvolvimento, o planejamento sempre ta disponível
+        #if UNITY_EDITOR
+        this.Disponivel = true;
+        #endif
+    }
 
     public void AbrirPlanejamento()
     {

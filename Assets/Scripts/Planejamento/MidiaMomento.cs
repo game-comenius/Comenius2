@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -49,11 +47,6 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler
     [SerializeField]
     private Sprite neutralItemBorder;
 
-    [SerializeField]
-    private Text descricaoGameObject;
-    [SerializeField]
-    public string minhaDescricao;
-
     private Image image;
 
 
@@ -68,9 +61,6 @@ public class MidiaMomento : MonoBehaviour, IPointerClickHandler
         myItemBorder.sprite = selectedItemBorder;
         // A borda ativa/selecionada agora é a borda deste item
         activeItemBorder = myItemBorder;
-
-        // Apresenta a descrição deste momento na folha do planejamento
-        descricaoGameObject.text = minhaDescricao;
     }
 
     //chame essa função para mudar o item no momento
