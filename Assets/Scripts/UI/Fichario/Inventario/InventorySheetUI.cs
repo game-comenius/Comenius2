@@ -15,7 +15,7 @@ public class InventorySheetUI : MonoBehaviour {
 
     private Inventory inventory;
 
-    private IEnumerator Start ()
+    protected virtual IEnumerator Start ()
     {
         yield return new WaitUntil(() => Player.Instance);
         var player = Player.Instance;
