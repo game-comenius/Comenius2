@@ -68,8 +68,6 @@ public class Planejamento : MonoBehaviour {
 
         planejamentoUI.DesbloquearMomento3();
         planejamentoUI.AlterarDescricaoMomento(descricaoMomento3);
-
-        Debug.Log("Completou o coroutine do planejamento!");
     }
 
     public void RecomecarPlanejamento()

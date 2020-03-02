@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class InventorySheetUI : MonoBehaviour {
 
@@ -10,10 +11,13 @@ public class InventorySheetUI : MonoBehaviour {
     private GameObject itemSlotList;
     [SerializeField]
     private GameObject itemSlotPrefab;
+    [SerializeField]
+    private TextMeshProUGUI descriptionBox;
 
     private List<GameObject> gameObjectSlots = new List<GameObject>();
 
     private Inventory inventory;
+
 
     protected virtual IEnumerator Start ()
     {
@@ -34,6 +38,11 @@ public class InventorySheetUI : MonoBehaviour {
                 return itemSlot;
         }
         return null;
+    }
+
+    public void ShowDescription(Item item)
+    {
+        descriptionBox.text = item.DescriptionsInMission1.StandardDescription;
     }
 
     public void DisplayItems(ICollection<Item> items)
@@ -76,8 +85,6 @@ public class InventorySheetUI : MonoBehaviour {
 
             // Colocar informações do item no slot.
             var itemSlot = slot.GetComponent<InventoryItemSlotUI>();
-            itemSlot.DescriptionSlot = transform.GetChild(0).gameObject;
-
             itemSlot.AddBaseItem(item);
         }
     }
