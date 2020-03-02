@@ -1923,7 +1923,28 @@ Prefab:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.88
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 61816541737890664, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: m_UsedByComposite
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61816541737890664, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: m_AutoTiling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61816541737890664, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61816541737890664, guid: 47f69a8aad4a74c49b603b76cb768fb5,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 61816541737890664, guid: 47f69a8aad4a74c49b603b76cb768fb5, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 47f69a8aad4a74c49b603b76cb768fb5, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &750382381 stripped
@@ -2002,6 +2023,72 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!60 &750382384
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 750382381}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.19, y: 2.88}
+    newSize: {x: 6.02, y: 14.44}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.385, y: -1.24}
+      - {x: 0.48499998, y: -1.1899999}
+      - {x: 0.48499998, y: -1.0799999}
+      - {x: 0.275, y: -0.72999996}
+      - {x: 0.275, y: -0.5}
+      - {x: 0.305, y: -0.48}
+      - {x: 0.33499998, y: -0.35}
+      - {x: 0.315, y: -0.089999996}
+      - {x: 0.345, y: 0.38}
+      - {x: 0.295, y: 0.5}
+      - {x: 0.405, y: 0.71999997}
+      - {x: 0.375, y: 1}
+      - {x: 0.405, y: 1.15}
+      - {x: 0.39499998, y: 1.24}
+      - {x: 0.285, y: 1.35}
+      - {x: 0.175, y: 1.4}
+      - {x: -0.125, y: 1.4}
+      - {x: -0.235, y: 1.37}
+      - {x: -0.42499998, y: 1.31}
+      - {x: -0.49499997, y: 1.17}
+      - {x: -0.505, y: 1}
+      - {x: -0.45499998, y: 0.74}
+      - {x: -0.385, y: 0.64}
+      - {x: -0.235, y: 0.53999996}
+      - {x: -0.325, y: 0.5}
+      - {x: -0.42499998, y: 0.42}
+      - {x: -0.465, y: 0.26999998}
+      - {x: -0.515, y: 0.02}
+      - {x: -0.525, y: -0.04}
+      - {x: -0.525, y: -0.25}
+      - {x: -0.49499997, y: -0.35}
+      - {x: -0.48499998, y: -0.53}
+      - {x: -0.42499998, y: -0.61}
+      - {x: -0.36499998, y: -0.59999996}
+      - {x: -0.42499998, y: -1.25}
+      - {x: -0.39499998, y: -1.27}
+      - {x: -0.295, y: -1.3199999}
+      - {x: -0.055, y: -1.38}
+      - {x: 0.085, y: -1.38}
+      - {x: 0.185, y: -1.3199999}
+      - {x: 0.175, y: -1.24}
+      - {x: 0.275, y: -1.25}
 --- !u!1001 &963016732
 Prefab:
   m_ObjectHideFlags: 0
@@ -2410,7 +2497,8 @@ Prefab:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.88
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 61816541737890664, guid: 47f69a8aad4a74c49b603b76cb768fb5, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 47f69a8aad4a74c49b603b76cb768fb5, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &963016733 stripped
@@ -2522,6 +2610,72 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!60 &963016736
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 963016733}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.19, y: 2.88}
+    newSize: {x: 6.02, y: 14.44}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.385, y: -1.24}
+      - {x: 0.48499998, y: -1.1899999}
+      - {x: 0.48499998, y: -1.0799999}
+      - {x: 0.275, y: -0.72999996}
+      - {x: 0.275, y: -0.5}
+      - {x: 0.305, y: -0.48}
+      - {x: 0.33499998, y: -0.35}
+      - {x: 0.315, y: -0.089999996}
+      - {x: 0.345, y: 0.38}
+      - {x: 0.295, y: 0.5}
+      - {x: 0.405, y: 0.71999997}
+      - {x: 0.375, y: 1}
+      - {x: 0.405, y: 1.15}
+      - {x: 0.39499998, y: 1.24}
+      - {x: 0.285, y: 1.35}
+      - {x: 0.175, y: 1.4}
+      - {x: -0.125, y: 1.4}
+      - {x: -0.235, y: 1.37}
+      - {x: -0.42499998, y: 1.31}
+      - {x: -0.49499997, y: 1.17}
+      - {x: -0.505, y: 1}
+      - {x: -0.45499998, y: 0.74}
+      - {x: -0.385, y: 0.64}
+      - {x: -0.235, y: 0.53999996}
+      - {x: -0.325, y: 0.5}
+      - {x: -0.42499998, y: 0.42}
+      - {x: -0.465, y: 0.26999998}
+      - {x: -0.515, y: 0.02}
+      - {x: -0.525, y: -0.04}
+      - {x: -0.525, y: -0.25}
+      - {x: -0.49499997, y: -0.35}
+      - {x: -0.48499998, y: -0.53}
+      - {x: -0.42499998, y: -0.61}
+      - {x: -0.36499998, y: -0.59999996}
+      - {x: -0.42499998, y: -1.25}
+      - {x: -0.39499998, y: -1.27}
+      - {x: -0.295, y: -1.3199999}
+      - {x: -0.055, y: -1.38}
+      - {x: 0.085, y: -1.38}
+      - {x: 0.185, y: -1.3199999}
+      - {x: 0.175, y: -1.24}
+      - {x: 0.275, y: -1.25}
 --- !u!1 &1078479044
 GameObject:
   m_ObjectHideFlags: 0
@@ -3353,7 +3507,7 @@ Prefab:
     - target: {fileID: 224205653026084594, guid: 1cd248e9a89c14dd19e401416c538be0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000023327577
+      value: -0.000019308074
       objectReference: {fileID: 0}
     - target: {fileID: 114227520223563780, guid: 1cd248e9a89c14dd19e401416c538be0,
         type: 2}
@@ -4191,7 +4345,8 @@ Prefab:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.88
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 61816541737890664, guid: 47f69a8aad4a74c49b603b76cb768fb5, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 47f69a8aad4a74c49b603b76cb768fb5, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1410475540 stripped
@@ -4237,6 +4392,72 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!60 &1410475543
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1410475540}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.19, y: 2.88}
+    newSize: {x: 6.02, y: 14.44}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.385, y: -1.24}
+      - {x: 0.48499998, y: -1.1899999}
+      - {x: 0.48499998, y: -1.0799999}
+      - {x: 0.275, y: -0.72999996}
+      - {x: 0.275, y: -0.5}
+      - {x: 0.305, y: -0.48}
+      - {x: 0.33499998, y: -0.35}
+      - {x: 0.315, y: -0.089999996}
+      - {x: 0.345, y: 0.38}
+      - {x: 0.295, y: 0.5}
+      - {x: 0.405, y: 0.71999997}
+      - {x: 0.375, y: 1}
+      - {x: 0.405, y: 1.15}
+      - {x: 0.39499998, y: 1.24}
+      - {x: 0.285, y: 1.35}
+      - {x: 0.175, y: 1.4}
+      - {x: -0.125, y: 1.4}
+      - {x: -0.235, y: 1.37}
+      - {x: -0.42499998, y: 1.31}
+      - {x: -0.49499997, y: 1.17}
+      - {x: -0.505, y: 1}
+      - {x: -0.45499998, y: 0.74}
+      - {x: -0.385, y: 0.64}
+      - {x: -0.235, y: 0.53999996}
+      - {x: -0.325, y: 0.5}
+      - {x: -0.42499998, y: 0.42}
+      - {x: -0.465, y: 0.26999998}
+      - {x: -0.515, y: 0.02}
+      - {x: -0.525, y: -0.04}
+      - {x: -0.525, y: -0.25}
+      - {x: -0.49499997, y: -0.35}
+      - {x: -0.48499998, y: -0.53}
+      - {x: -0.42499998, y: -0.61}
+      - {x: -0.36499998, y: -0.59999996}
+      - {x: -0.42499998, y: -1.25}
+      - {x: -0.39499998, y: -1.27}
+      - {x: -0.295, y: -1.3199999}
+      - {x: -0.055, y: -1.38}
+      - {x: 0.085, y: -1.38}
+      - {x: 0.185, y: -1.3199999}
+      - {x: 0.175, y: -1.24}
+      - {x: 0.275, y: -1.25}
 --- !u!1 &1426183837
 GameObject:
   m_ObjectHideFlags: 0
@@ -5302,7 +5523,8 @@ Prefab:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.88
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 61816541737890664, guid: 47f69a8aad4a74c49b603b76cb768fb5, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 47f69a8aad4a74c49b603b76cb768fb5, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1786653418 stripped
@@ -5381,6 +5603,72 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!60 &1786653421
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1786653418}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.19, y: 2.88}
+    newSize: {x: 6.02, y: 14.44}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.385, y: -1.24}
+      - {x: 0.48499998, y: -1.1899999}
+      - {x: 0.48499998, y: -1.0799999}
+      - {x: 0.275, y: -0.72999996}
+      - {x: 0.275, y: -0.5}
+      - {x: 0.305, y: -0.48}
+      - {x: 0.33499998, y: -0.35}
+      - {x: 0.315, y: -0.089999996}
+      - {x: 0.345, y: 0.38}
+      - {x: 0.295, y: 0.5}
+      - {x: 0.405, y: 0.71999997}
+      - {x: 0.375, y: 1}
+      - {x: 0.405, y: 1.15}
+      - {x: 0.39499998, y: 1.24}
+      - {x: 0.285, y: 1.35}
+      - {x: 0.175, y: 1.4}
+      - {x: -0.125, y: 1.4}
+      - {x: -0.235, y: 1.37}
+      - {x: -0.42499998, y: 1.31}
+      - {x: -0.49499997, y: 1.17}
+      - {x: -0.505, y: 1}
+      - {x: -0.45499998, y: 0.74}
+      - {x: -0.385, y: 0.64}
+      - {x: -0.235, y: 0.53999996}
+      - {x: -0.325, y: 0.5}
+      - {x: -0.42499998, y: 0.42}
+      - {x: -0.465, y: 0.26999998}
+      - {x: -0.515, y: 0.02}
+      - {x: -0.525, y: -0.04}
+      - {x: -0.525, y: -0.25}
+      - {x: -0.49499997, y: -0.35}
+      - {x: -0.48499998, y: -0.53}
+      - {x: -0.42499998, y: -0.61}
+      - {x: -0.36499998, y: -0.59999996}
+      - {x: -0.42499998, y: -1.25}
+      - {x: -0.39499998, y: -1.27}
+      - {x: -0.295, y: -1.3199999}
+      - {x: -0.055, y: -1.38}
+      - {x: 0.085, y: -1.38}
+      - {x: 0.185, y: -1.3199999}
+      - {x: 0.175, y: -1.24}
+      - {x: 0.275, y: -1.25}
 --- !u!1001 &1849836289
 Prefab:
   m_ObjectHideFlags: 0
@@ -6402,7 +6690,8 @@ Prefab:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.88
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 61816541737890664, guid: 47f69a8aad4a74c49b603b76cb768fb5, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 47f69a8aad4a74c49b603b76cb768fb5, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &2094867182 stripped
@@ -6481,6 +6770,72 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!60 &2094867185
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2094867182}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.19, y: 2.88}
+    newSize: {x: 6.02, y: 14.44}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.385, y: -1.24}
+      - {x: 0.48499998, y: -1.1899999}
+      - {x: 0.48499998, y: -1.0799999}
+      - {x: 0.275, y: -0.72999996}
+      - {x: 0.275, y: -0.5}
+      - {x: 0.305, y: -0.48}
+      - {x: 0.33499998, y: -0.35}
+      - {x: 0.315, y: -0.089999996}
+      - {x: 0.345, y: 0.38}
+      - {x: 0.295, y: 0.5}
+      - {x: 0.405, y: 0.71999997}
+      - {x: 0.375, y: 1}
+      - {x: 0.405, y: 1.15}
+      - {x: 0.39499998, y: 1.24}
+      - {x: 0.285, y: 1.35}
+      - {x: 0.175, y: 1.4}
+      - {x: -0.125, y: 1.4}
+      - {x: -0.235, y: 1.37}
+      - {x: -0.42499998, y: 1.31}
+      - {x: -0.49499997, y: 1.17}
+      - {x: -0.505, y: 1}
+      - {x: -0.45499998, y: 0.74}
+      - {x: -0.385, y: 0.64}
+      - {x: -0.235, y: 0.53999996}
+      - {x: -0.325, y: 0.5}
+      - {x: -0.42499998, y: 0.42}
+      - {x: -0.465, y: 0.26999998}
+      - {x: -0.515, y: 0.02}
+      - {x: -0.525, y: -0.04}
+      - {x: -0.525, y: -0.25}
+      - {x: -0.49499997, y: -0.35}
+      - {x: -0.48499998, y: -0.53}
+      - {x: -0.42499998, y: -0.61}
+      - {x: -0.36499998, y: -0.59999996}
+      - {x: -0.42499998, y: -1.25}
+      - {x: -0.39499998, y: -1.27}
+      - {x: -0.295, y: -1.3199999}
+      - {x: -0.055, y: -1.38}
+      - {x: 0.085, y: -1.38}
+      - {x: 0.185, y: -1.3199999}
+      - {x: 0.175, y: -1.24}
+      - {x: 0.275, y: -1.25}
 --- !u!1 &2138313399
 GameObject:
   m_ObjectHideFlags: 0
