@@ -34,8 +34,6 @@ public class Planejamento : MonoBehaviour {
         canvas = GetComponentInChildren<Canvas>();
         backgroundPreto = GetComponentInChildren<FadeEffect>();
         canvas.enabled = false;
-
-        Disponivel = true;
     }
 
     public void AbrirPlanejamento()
