@@ -3064,7 +3064,7 @@ Prefab:
     - target: {fileID: 224798408200560314, guid: f4a608322322743f9b986dda890feba2,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000018839617
+      value: -0.0000749127
       objectReference: {fileID: 0}
     - target: {fileID: 224396142028091552, guid: f4a608322322743f9b986dda890feba2,
         type: 2}
@@ -5654,7 +5654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42c5cfa54777a24a98c01468b90715b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: M2_Patio1_Dia
+  sceneName: "M3_Patio1_Crian\xE7as"
   interactOffset:
   - {x: -0.44000006, y: -0.79, z: 0}
   - {x: -0.8000002, y: -1.0700002, z: 0}
@@ -9075,6 +9075,7 @@ GameObject:
   - component: {fileID: 2022146798}
   - component: {fileID: 2022146797}
   - component: {fileID: 2022146796}
+  - component: {fileID: 2022146802}
   m_Layer: 0
   m_Name: Porta Patio
   m_TagString: Door1
@@ -9143,7 +9144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42c5cfa54777a24a98c01468b90715b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: M2_Patio1_Dia
+  sceneName: M3_Patio1_Chamado
   interactOffset:
   - {x: -0.44000006, y: -0.79, z: 0}
   - {x: -0.8000002, y: -1.0700002, z: 0}
@@ -9303,6 +9304,33 @@ Transform:
   m_Father: {fileID: 1043335626}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2022146802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2022146795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 0
+  questComplete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &2051561684
 GameObject:
   m_ObjectHideFlags: 0
