@@ -27,9 +27,16 @@ public class Passaro : MonoBehaviour
 {
     [SerializeField] private GameObject[] passaros = new GameObject[3];
 
+    private Collider2D collider2D;
+
+    private void Awake()
+    {
+        collider2D = GetComponent<Collider2D>();
+    }
+
     private void Update()
     {
-        if (!gameObject.activeSelf) 
+        if (!collider2D.enabled) 
         {
             int i = 0;
 
@@ -43,7 +50,7 @@ public class Passaro : MonoBehaviour
 
             if (i == passaros.Length)
             {
-                gameObject.SetActive(true);
+                collider2D.enabled = true;
             }
         }
     }
