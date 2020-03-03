@@ -72,7 +72,7 @@ public class MidiaMomento : MonoBehaviour
             case ItemName.Mapa: return mapaPoints;
             case ItemName.Caderno: return cadernoPoints;
             case ItemName.Jornais: return jornaisPoints;
-            case ItemName.JornaisEResvistas: return jornaiserevistasPoints;
+            case ItemName.JornaisERevistas: return jornaiserevistasPoints;
             case ItemName.RetroprojetorSlideMapa: return retrorojetorSLidesMapaPoints;
             case ItemName.RetroprojetorSlideLinhaTempo: return retroprojetorSlidesLinhadoTempoPoints;
             case ItemName.RetroprojetorSlideCicloTrabalho: return retroprojetorSlidesCicloDoTrabalhoPoints;

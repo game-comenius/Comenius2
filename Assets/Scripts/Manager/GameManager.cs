@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
             ItemName.LivroDidatico,
             ItemName.LivroIlustrado,
             ItemName.Jornais,
-            ItemName.JornaisEResvistas,
+            ItemName.JornaisERevistas,
             ItemName.Cartazes,
             ItemName.CartazComColecaoDePenas,
             ItemName.Gravador,

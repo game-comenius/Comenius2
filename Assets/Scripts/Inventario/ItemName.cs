@@ -16,7 +16,7 @@ public enum ItemName
     CartazComColecaoDePenas,
     TVComVHS,
     Mapa,
-    JornaisEResvistas,
+    JornaisERevistas,
     Cd,
     GravacaoPassaro,
     CameraPolaroid,

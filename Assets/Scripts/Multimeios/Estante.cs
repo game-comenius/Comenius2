@@ -32,7 +32,7 @@ public class Estante : MonoBehaviour
             //ItemName.CameraPolaroid,
             ItemName.TV,
             ItemName.LivroDidatico,
-            ItemName.JornaisEResvistas
+            ItemName.JornaisERevistas
         };
     }
 
