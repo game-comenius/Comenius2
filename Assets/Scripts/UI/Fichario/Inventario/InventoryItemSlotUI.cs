@@ -7,7 +7,7 @@ using TMPro;
 
 public class InventoryItemSlotUI : MonoBehaviour, IPointerDownHandler
 {
-    private static Image activeItemBorder;
+    public static InventoryItemSlotUI SelectedItemSlot;
 
     [SerializeField]
     private Image myItemBorder;
@@ -25,7 +25,7 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerDownHandler
     private ItemInUserInterface itemInUserInterface;
 
     //Parent
-    private InventorySheetUI inventorySheet;
+    private InventorySheetUI inventoryUI;
 
 
     // Data
@@ -39,7 +39,7 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerDownHandler
 
         itemInUserInterface = GetComponentInChildren<ItemInUserInterface>();
 
-        inventorySheet = GetComponentInParent<InventorySheetUI>();
+        inventoryUI = GetComponentInParent<InventorySheetUI>();
     }
 
 
@@ -94,22 +94,29 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerDownHandler
         HandlePointerDown();
     }
 
+    public void Unselect()
+    {
+        if (SelectedItemSlot != this) return;
+
+        SelectedItemSlot.myItemBorder.sprite = neutralItemBorder;
+    }
     
 
     private void HandlePointerDown()
     {
         // Desabilitar o último destaque de slot de item
-        if (activeItemBorder) activeItemBorder.sprite = neutralItemBorder;
+        if (SelectedItemSlot)
+            SelectedItemSlot.myItemBorder.sprite = neutralItemBorder;
         // Habilitar o destaque para este item
         myItemBorder.sprite = selectedItemBorder;
-        // A borda ativa/selecionada agora é a borda deste item
-        activeItemBorder = myItemBorder;
+        // O slot com a borda ativa/selecionada agora é este item
+        SelectedItemSlot = this;
 
         var myItem = myCurrentItem.Value;
         // Colocar a descrição na caixa de descrição
         // O tab no início da descrição é para "escapar" do clip
         // do canto da folha do inventário
-        inventorySheet.ShowDescription(myItem);
+        inventoryUI.ShowDescription(myItem);
     }
 
     public void OnPointerDown(PointerEventData eventData)

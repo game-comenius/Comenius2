@@ -12,7 +12,7 @@ public class InventorySheetUI : MonoBehaviour {
     [SerializeField]
     private GameObject itemSlotPrefab;
     [SerializeField]
-    private TextMeshProUGUI descriptionBox;
+    protected TextMeshProUGUI descriptionBox;
 
     private List<GameObject> gameObjectSlots = new List<GameObject>();
 
@@ -40,7 +40,21 @@ public class InventorySheetUI : MonoBehaviour {
         return null;
     }
 
-    public void ShowDescription(Item item)
+    public void UnselectAllItems()
+    {
+        var selectedItemSlot = InventoryItemSlotUI.SelectedItemSlot;
+        if (!selectedItemSlot) return;
+
+        selectedItemSlot.Unselect();
+        EmptyDescription();
+    }
+
+    public void EmptyDescription()
+    {
+        descriptionBox.text = "";
+    }
+
+    public virtual void ShowDescription(Item item)
     {
         descriptionBox.text = item.DescriptionsInMission1.StandardDescription;
     }

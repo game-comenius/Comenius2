@@ -34,6 +34,8 @@ public class Planejamento : MonoBehaviour {
         canvas = GetComponentInChildren<Canvas>();
         backgroundPreto = GetComponentInChildren<FadeEffect>();
         canvas.enabled = false;
+
+        Disponivel = true;
     }
 
     public void AbrirPlanejamento()
@@ -52,6 +54,7 @@ public class Planejamento : MonoBehaviour {
         Momento1Confirmado = false;
         Momento2Confirmado = false;
 
+        inventario.UnselectAllItems();
         planejamentoUI.DesbloquearMomento1();
         planejamentoUI.AlterarDescricaoMomento(descricaoMomento1);
         planejamentoUI.DefinirCallbackConfirmacaoMomento1(() => Momento1Confirmado = true);
@@ -59,6 +62,7 @@ public class Planejamento : MonoBehaviour {
         // Esperar o jogador confirmar o momento 1
         yield return new WaitUntil(() => Momento1Confirmado);
 
+        inventario.UnselectAllItems();
         planejamentoUI.DesbloquearMomento2();
         planejamentoUI.AlterarDescricaoMomento(descricaoMomento2);
         planejamentoUI.DefinirCallbackConfirmacaoMomento2(() => Momento2Confirmado = true);
@@ -66,6 +70,7 @@ public class Planejamento : MonoBehaviour {
         // Esperar o jogador confirmar o momento 2
         yield return new WaitUntil(() => Momento2Confirmado);
 
+        inventario.UnselectAllItems();
         planejamentoUI.DesbloquearMomento3();
         planejamentoUI.AlterarDescricaoMomento(descricaoMomento3);
     }
