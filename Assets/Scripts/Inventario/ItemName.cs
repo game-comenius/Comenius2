@@ -26,5 +26,6 @@ public enum ItemName
     CartazComCanetas,
     VhsEditado,
     Diario,
-    Retroprojetor
+    Retroprojetor,
+    ReprodutorAudioComCD
 }

@@ -142,9 +142,13 @@ public class Item
                 DescriptionsInMission1.ThirdMomentDescription = "Com o quadro negro o professor pode elaborar tabelas e esquemas para a sistematização do conteúdo da aula.";
                 break;
             case ItemName.TVComVHS:
-                FriendlyName = "Quadro Negro com Estêncil";
+                FriendlyName = "TV com VHS";
                 Description = "Um quadro negro, com estêncil";
                 FullDescription = "Um quadro negro, com estêncil";
+                DescriptionsInMission1.FirstMomentDescription = "A exposição de informações é bastante completa nesta mídia. Apresenta imagens, sons, oralidade e leitura.";
+                DescriptionsInMission1.SecondMomentDescription = "Passar um vídeo enquanto os alunos fazem um atividade pode ser um pouco confuso...";
+                DescriptionsInMission1.ThirdMomentDescription = "A exposição de informações é bastante completa nesta mídia. Apresenta imagens, sons, oralidade e leitura.  Mas como o vídeo não especifica a regionalidade dos pássaros, pode confundir um pouco os alunos.";
+                UpgradeFrom.Add(ItemName.TV);
                 break;
             case ItemName.Cartazes:
                 FriendlyName = "Cartazes";
@@ -223,7 +227,16 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
                 break;
-            case ItemName.SemNome:
+            case ItemName.ReprodutorAudioComCD:
+                FriendlyName = "Reprodutor de Áudio + CD sobre Pássaros";
+                Description = "Uma coleção de jornais e revistas";
+                FullDescription = "Uma coleção de jornais e revistas";
+                DescriptionsInMission1.FirstMomentDescription = "O CD com o som do canto dos pássaros, mesmo que não apresente imagens, pode ser uma boa ferramenta para complementar a explicação do professor.";
+                DescriptionsInMission1.SecondMomentDescription = "A reprodução por CD durante a realização da atividade pode proporcionar uma imersão dos alunos na temática dos pássaros, mas não facilita o registro da informação.";
+                DescriptionsInMission1.ThirdMomentDescription = "A reprodução do CD poderia contribuir para outro momento da aula, visto que não fala sobre regionalidades. Lembrando que é uma mídia somente sonora, sem conteúdo visual.";
+                UpgradeFrom.Add(ItemName.ReprodutorAudio);
+                break;
+            default:
                 FriendlyName = "Sem nome";
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
