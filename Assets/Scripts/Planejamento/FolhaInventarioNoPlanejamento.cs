@@ -25,7 +25,7 @@ public class FolhaInventarioNoPlanejamento : InventorySheetUI
     // Substitui o método ShowDescription do pai InventorySheetUI
     public override void ShowDescription(Item item)
     {
-        Item.DescriptionsInOneMission descriptions;
+        ItemDescriptionsInOneMission descriptions;
         switch (Player.Instance.missionID)
         {
             
