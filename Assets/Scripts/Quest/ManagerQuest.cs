@@ -21,6 +21,8 @@ public class ManagerQuest : MonoBehaviour
                         return Mission1._questGroups;
                     case 1:
                         return Mission2._questGroups;
+                    case 2:
+                        return Mission3._questGroups;
                 }
             }
             catch (System.NullReferenceException)
@@ -33,6 +35,8 @@ public class ManagerQuest : MonoBehaviour
                         return Mission1._questGroups;
                     case 1:
                         return Mission2._questGroups;
+                    case 2:
+                        return Mission3._questGroups;
                 }
             }
         }
@@ -50,6 +54,8 @@ public class ManagerQuest : MonoBehaviour
                         return Mission1._mainQuests;
                     case 1:
                         return Mission2._mainQuests;
+                    case 2:
+                        return Mission3._mainQuests;
                 }
             }
             catch(System.NullReferenceException)
@@ -62,6 +68,8 @@ public class ManagerQuest : MonoBehaviour
                         return Mission1._mainQuests;
                     case 1:
                         return Mission2._mainQuests;
+                    case 2:
+                        return Mission3._mainQuests;
                 }
             }
         }
@@ -334,6 +342,28 @@ public class NewQuestManagerEditor : Editor
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
+
+        int missaoID = 0;
+
+        try
+        {
+            missaoID = Player.Instance.missionID + 1;
+        }
+        catch (System.NullReferenceException)
+        {
+            missaoID = FindObjectOfType<Player>().missionID + 1;
+        }
+
+
+        GUIContent content = new GUIContent { text = "Missão " + missaoID };
+
+        GUIStyle style = new GUIStyle();
+
+        style.fontStyle = FontStyle.Bold;
+
+        EditorGUILayout.LabelField(content, style);
+
+        style = new GUIStyle();
 
         mainQuest = EditorGUILayout.Foldout(mainQuest, new GUIContent { text = "Main Quests" });
         if (mainQuest)
