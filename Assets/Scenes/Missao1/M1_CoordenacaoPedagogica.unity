@@ -2083,11 +2083,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4151625970373360, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.47
+      value: 4.78
       objectReference: {fileID: 0}
     - target: {fileID: 4151625970373360, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.42
+      value: -0.58
       objectReference: {fileID: 0}
     - target: {fileID: 4151625970373360, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2121,7 +2121,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 42e403ffed470a34f9fd817a928ea045,
+      objectReference: {fileID: 21300000, guid: 27f800c7430411a4cb7e43c2e5dc1ba0,
         type: 3}
     - target: {fileID: 114123597930835050, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
         type: 2}
@@ -2466,7 +2466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogoObrigatorio: 0
+  dialogoObrigatorio: 1
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
     nodulos:
@@ -2498,17 +2498,17 @@ MonoBehaviour:
           juntar algumas delas, pode ter novas m\xEDdias, que eu chamo de <i>combina\xE7\xF5es.</i> "
       - personagem: 6
         emocao: 0
-        fala: "Por exemplo, se voc\xEA tiver um <i>quadro negro</i> pode juntar com
-          um <i>est\xEAncil</i> e formar um <i>quadro negro com est\xEAncil</i>. Assim,
-          voc\xEA vai passar a ter tr\xEAs m\xEDdias e n\xE3o apenas duas."
-      - personagem: 6
-        emocao: 0
+        fala: "Por exemplo, se voc\xEA tiver um <i>reprodutor de \xE1udio</i> pode
+          juntar com um <i>CD</i> e formar um <i>reprodutor de \xE1udio com CD</i>.
+          Assim, voc\xEA vai passar a ter tr\xEAs m\xEDdias e n\xE3o apenas duas."
+      - personagem: 0
+        emocao: 2
         fala: "Que \xF3tima ideia, Ant\xF4nia! Irei fazer isso mesmo. Agora preciso
           achar a m\xEDdia dessa sala, mas muito obrigada mesmo."
       respostas: []
   dialogosSecundarios: []
   interactOffset:
-  - {x: 0.70000005, y: -1.15, z: 0}
+  - {x: 0.6999998, y: -1.15, z: 0}
 --- !u!60 &1704199095
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2635,7 +2635,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1704199093}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.58, y: -0.13, z: -0.88}
+  m_LocalPosition: {x: 0.49, y: 2.34, z: -0.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2907,12 +2907,11 @@ MonoBehaviour:
         fala: 
       - personagem: 6
         emocao: 2
-        fala: Lugar errado Lurdinha, tente denovo.
+        fala: Lugar errado Lurdinha, tente de novo.
       respostas: []
   dialogosSecundarios: []
   interactOffset:
-  - {x: -0.43000007, y: -1.39, z: 0}
-  - {x: -0.78999996, y: -1.17, z: 0}
+  - {x: -0.2577119, y: -1.4625427, z: 0}
 --- !u!60 &1873379842
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2937,65 +2936,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.88, y: -2.2}
-      - {x: 1.9, y: -2.1599998}
-      - {x: 1.9, y: -0.22999999}
-      - {x: 1.89, y: -0.21}
-      - {x: 1.8399999, y: -0.17999999}
-      - {x: 1.7199999, y: -0.11}
-      - {x: 0.94, y: 0.34}
-      - {x: 0.74, y: 0.45}
-      - {x: 0.22, y: 0.75}
-      - {x: -0.07, y: 0.91999996}
-      - {x: -0.72999996, y: 1.3}
-      - {x: -0.98999995, y: 1.4499999}
-      - {x: -1.18, y: 1.56}
-      - {x: -1.9599999, y: 2.02}
-      - {x: -2.04, y: 2.05}
-      - {x: -2.08, y: 2.05}
-      - {x: -2.3899999, y: 1.86}
-      - {x: -2.44, y: 1.8199999}
-      - {x: -2.44, y: -0.11}
-      - {x: -2.3999999, y: -0.16}
-      - {x: -2.3, y: -0.19}
-      - {x: -2.24, y: -0.13}
-      - {x: -2.24, y: -0.06}
-      - {x: -2.1599998, y: -0.12}
-      - {x: -1.9499999, y: -0.22999999}
-      - {x: -1.56, y: -0.45999998}
-      - {x: -1.5699999, y: -0.63}
-      - {x: -1.37, y: -0.76}
-      - {x: -1.25, y: -0.7}
-      - {x: -1.26, y: -0.62}
-      - {x: -1.1899999, y: -0.66999996}
-      - {x: -0.81, y: -0.89}
-      - {x: -0.66999996, y: -0.96999997}
-      - {x: -0.59, y: -1.01}
-      - {x: -0.59999996, y: -1.1899999}
-      - {x: -0.39, y: -1.3299999}
-      - {x: -0.31, y: -1.3}
-      - {x: -0.28, y: -1.25}
-      - {x: -0.28, y: -1.1899999}
-      - {x: -0.17, y: -1.26}
-      - {x: 0.14, y: -1.4399999}
-      - {x: 0.35, y: -1.56}
-      - {x: 0.39, y: -1.5799999}
-      - {x: 0.38, y: -1.76}
-      - {x: 0.48999998, y: -1.8299999}
-      - {x: 0.59999996, y: -1.87}
-      - {x: 0.63, y: -1.88}
-      - {x: 0.71, y: -1.8299999}
-      - {x: 0.7, y: -1.75}
-      - {x: 0.81, y: -1.8199999}
-      - {x: 1.26, y: -2.08}
-      - {x: 1.38, y: -2.1399999}
-      - {x: 1.38, y: -2.32}
-      - {x: 1.4499999, y: -2.3799999}
-      - {x: 1.52, y: -2.3799999}
-      - {x: 1.56, y: -2.37}
-      - {x: 1.5799999, y: -2.33}
-      - {x: 1.67, y: -2.1299999}
-      - {x: 1.79, y: -2.22}
+    - - {x: -0.44881225, y: 0.689533}
+      - {x: -0.45370436, y: -1.0551416}
+      - {x: 0.51706576, y: -1.6124595}
+      - {x: 0.52598786, y: 0.11345172}
+      - {x: 0.8749707, y: 0.34596753}
+      - {x: -0.09769821, y: 0.9016299}
 --- !u!4 &1873379843
 Transform:
   m_ObjectHideFlags: 0
