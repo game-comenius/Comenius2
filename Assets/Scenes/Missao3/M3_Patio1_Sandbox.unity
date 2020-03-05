@@ -2628,28 +2628,68 @@ MonoBehaviour:
     nodulos:
     - falas:
       - personagem: 0
+        emocao: 0
+        fala: ' '
+      - personagem: 4
         emocao: 2
-        fala: "Oi querido! Eu gostaria de fazer uma perguntinha sobre sua experi\xEAncia
-          em sala de aula, tudo bem pra voc\xEA?"
+        fala: "Ih Professora, tenho mais uma d\xFAvida, voc\xEA pode me ajudar?!"
+      - personagem: 4
+        emocao: 2
+        fala: "As tarefas de ci\xEAncias que o professor passa s\xE3o sempre muito
+          dif\xEDceis, mas como a  ecologia \xE9 um assunto muito importante n\xE3o
+          quero fazer nada errado! "
+      - personagem: 4
+        emocao: 4
+        fala: "Dessa vez ele t\xE1 perguntando sobre os gases de efeito estufa. N\xF3s
+          precisamos responder quais desses fatores N\xC3O \xE9 um emissor desse tipo
+          de g\xE1s. Voc\xEA sabe?"
+      respostas:
+      - personagem: 0
+        emocao: 0
+        fala: "Acho que a resposta \xE9 a Queima de combust\xEDveis f\xF3sseis. "
+        resumo: "Queima de combust\xEDveis f\xF3sseis. "
+        conexao: 0
+        questIndex: 0
+      - personagem: 0
+        emocao: 0
+        fala: "Acho que a resposta \xE9 a Ind\xFAstria pecu\xE1ria."
+        resumo: "Ind\xFAstria pecu\xE1ria."
+        conexao: 0
+        questIndex: 0
+      - personagem: 0
+        emocao: 0
+        fala: "Acho que a resposta \xE9 a Queimadas."
+        resumo: Queimadas.
+        conexao: 0
+        questIndex: 0
+      - personagem: 0
+        emocao: 0
+        fala: "Acho que a resposta \xE9 a Pesquisa Cient\xEDfica."
+        resumo: "Pesquisa cient\xEDfica"
+        conexao: 1
+        questIndex: 0
+    - falas:
+      - personagem: 0
+        emocao: 0
+        fala: ' '
+      - personagem: 4
+        emocao: 2
+        fala: "Tem certeza, professora? N\xE3o sei se \xE9 bem isso\u2026 Obrigado
+          de qualquer forma."
+      respostas: []
+    - falas:
+      - personagem: 0
+        emocao: 2
+        fala: ' '
       - personagem: 12
         emocao: 0
-        fala: Oi professora. Claro!
-      - personagem: 0
-        emocao: 4
-        fala: "Como voc\xEA acha que poderia ser a aula para que ficasse mais legal
-          para voc\xEA?"
-      - personagem: 12
-        emocao: 0
-        fala: "Adoro ver document\xE1rios, principalmente sobre o reino animal e sobre
-          a natureza em geral. Uma aula dessas seria maravilhosa!"
-      - personagem: 0
-        emocao: 4
-        fala: "Est\xE1 bem! Obrigada pela ajuda!"
+        fala: Nossa, era bem essa que eu tava pensando! Muito obrigado pela ajuda,
+          professora!
       respostas: []
   dialogosSecundarios: []
   interactOffset:
-  - {x: -0.45155835, y: -0.38628376, z: 0}
-  - {x: -0.45155835, y: -0.38628376, z: 0}
+  - {x: -0.7206495, y: -0.2596525, z: 0}
+  - {x: -0.73647857, y: -0.2596526, z: 0}
 --- !u!212 &789947536
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2772,7 +2812,7 @@ Prefab:
     - target: {fileID: 114123597930835050, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
         type: 2}
       propertyPath: sceneName
-      value: M2_Patio1_Noite
+      value: M3_SalaProfessores
       objectReference: {fileID: 0}
     - target: {fileID: 212835090484309842, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
         type: 2}
@@ -2785,6 +2825,11 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 797bdc626a53ec244a5c4144b137db2b,
         type: 3}
+    - target: {fileID: 114123597930835050, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
+        type: 2}
+      propertyPath: _missionID
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
   m_IsPrefabAsset: 0

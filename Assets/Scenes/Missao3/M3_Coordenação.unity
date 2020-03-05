@@ -912,9 +912,10 @@ GameObject:
   - component: {fileID: 775218272}
   - component: {fileID: 775218271}
   - component: {fileID: 775218270}
-  - component: {fileID: 775218269}
   - component: {fileID: 775218268}
   - component: {fileID: 775218267}
+  - component: {fileID: 775218273}
+  - component: {fileID: 775218269}
   m_Layer: 0
   m_Name: Antonia(NPC)
   m_TagString: Diretor
@@ -937,9 +938,9 @@ MonoBehaviour:
   questComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 775218269}
-        m_MethodName: set_enabled
-        m_Mode: 6
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1056,119 +1057,36 @@ MonoBehaviour:
   dialogoObrigatorio: 0
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
-    nodulos: []
-  dialogosSecundarios:
-  - nodulos:
+    nodulos:
     - falas:
       - personagem: 0
         emocao: 0
         fala: 
       - personagem: 6
         emocao: 2
-        fala: Lurdinha, bom te ver! Como foi a aula de ontem?
+        fala: "Lurdinha, gostei de ver seu entusiasmo pegando as opini\xF5es dos alunos!"
       - personagem: 0
         emocao: 2
-        fala: "Oi Ant\xF4nia, acho que aula foi bem! Hoje estou ajudando o professor
-          Vladmir com uma aula sobre revolu\xE7\xE3o industrial."
-      - personagem: 0
-        emocao: 0
-        fala: "Interessante, ser\xE1 que posso te ajudar em alguma coisa? "
-      respostas:
-      - personagem: 0
-        emocao: 0
-        fala: "Ser\xE1 que voc\xEA pode me explicar um pouco mais sobre a escola?"
-        resumo: Sobre a escola.
-        conexao: 1
-        questIndex: 0
-      - personagem: 0
-        emocao: 0
-        fala: "Ser\xE1 que voc\xEA pode me explicar um pouco mais sobre a aula?"
-        resumo: 'Sobre a aula. '
-        conexao: 2
-        questIndex: 0
-      - personagem: 0
-        emocao: 0
-        fala: "Agora estou sem d\xFAvidas, muito obrigado pela aten\xE7\xE3o, Ant\xF4nia!"
-        resumo: "N\xE3o preciso de ajuda agora, muito obrigado. "
-        conexao: 3
-        questIndex: 0
-    - falas:
-      - personagem: 0
-        emocao: 0
-        fala: 
+        fala: "Que bom que voc\xEA gostou, Ant\xF4nia! \xC9 muito importante ouvir
+          os alunos. Eu acho que o professor Paulino vai gostar muito do resultado!"
       - personagem: 6
         emocao: 2
-        fala: "Claro! Voc\xEA viu que hoje de manh\xE3 o nosso laborat\xF3rio de tecnologias
-          foi aberto? L\xE1 voc\xEA vai poder modificar m\xEDdias."
-      - personagem: 0
-        emocao: 2
-        fala: Que interessante! Me conte mais.
+        fala: "Interessante, aproveitando que voc\xEA est\xE1 aqui deixa eu te dar
+          mais uma coisinha que voc\xEA pode usar na prepara\xE7\xE3o da aula. \r"
       - personagem: 6
         emocao: 0
-        fala: "Claro querida. Por exemplo: se voc\xEA levar essas <b>transpar\xEAncias
-          em branco</b> que est\xE3o aqui em cima da mesa at\xE9 a Maria l\xE1 no
-          laborat\xF3rio,"
-      - personagem: 6
-        emocao: 2
-        fala: "junto com alguma esp\xE9cie de conte\xFAdo que voc\xEA queira passar
-          para elas, ela vai poder modificar as <b>transpar\xEAncias em branco</b>
-          e colocar o conte\xFAdo nelas."
-      - personagem: 6
-        emocao: 4
-        fala: "Assim fica muito mais f\xE1cil de expor para os alunos imagens, tabelas,
-          gr\xE1ficos, linhas do tempo, ou outras coisas assim."
+        fala: "Esse ma\xE7o de folhas sulfite pode ser usado para que os alunos fa\xE7am
+          alguma atividade escrita, normalmente usamos nas provas. "
       - personagem: 0
         emocao: 4
-        fala: Entendi! Que bacana!
+        fala: Obrigada!
+      - personagem: 6
+        emocao: 2
+        fala: "N\xE3o sei se era bem isso o que os alunos responderam na sua pesquisa,
+          mas ter mais op\xE7\xF5es nunca \xE9 uma coisa ruim, n\xE3o \xE9? At\xE9
+          mais!\r\n"
       respostas: []
-    - falas:
-      - personagem: 0
-        emocao: 0
-        fala: 
-      - personagem: 6
-        emocao: 2
-        fala: Claro! Tem uma dica que eu tava pensando em te dar.
-      - personagem: 6
-        emocao: 0
-        fala: "Voc\xEA j\xE1 se deu conta que em cada momento da aula o professor
-          escolhe um tipo de <i>procedimento</i> diferente?\r\n"
-      - personagem: 0
-        emocao: 0
-        fala: "\xC9 verdade, para cada parte da aula existe um tipo de <i>procedimento.</i>"
-      - personagem: 6
-        emocao: 0
-        fala: "Ent\xE3o, \xE9 muito importante voc\xEA se atentar a isso! Para os
-          <i>procedimentos expositivos</i> pode ser mais interessante usar m\xEDdias
-          que ajudem a expor os conte\xFAdos daquele momento, como os livros, o quadro
-          negro, transpar\xEAncias, ou v\xEDdeos."
-      - personagem: 6
-        emocao: 2
-        fala: "J\xE1 para os <i>procedimentos de atividade</i>, pode ser mais interessante
-          o uso de m\xEDdias que fa\xE7am os alunos colocar as m\xE3os na massa, como
-          um cartaz em branco, jornais e revistas para colagem e pesquisa, ou at\xE9
-          mesmo o caderno."
-      - personagem: 6
-        emocao: 0
-        fala: "\xC9 claro que isso tudo sempre vai variar conforme a perspectiva do
-          professor sobre o aprendizado, e tamb\xE9m sobre o conte\xFAdo que est\xE1
-          sendo trabalhado naquele momento de aula, mas nunca deixe de reparar no
-          tipo de <i>procedimento</i> antes de escolher a m\xEDdia, ok?"
-      - personagem: 0
-        emocao: 2
-        fala: "Entendi! Muito obrigada pela sua ajuda, Ant\xF4nia!"
-      - personagem: 6
-        emocao: 2
-        fala: "Por nada, querida. Esse \xE9 o meu papel aqui na escola, viu? At\xE9
-          mais!"
-      respostas: []
-    - falas:
-      - personagem: 0
-        emocao: 0
-        fala: 
-      - personagem: 6
-        emocao: 4
-        fala: Disponha!
-      respostas: []
+  dialogosSecundarios: []
   interactOffset:
   - {x: 0.8299999, y: -1.19, z: 0}
 --- !u!212 &775218271
@@ -1232,6 +1150,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &775218273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 775218266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722b3663c27596a44be0c38f4b167b1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: 1
 --- !u!1 &778313379
 GameObject:
   m_ObjectHideFlags: 0
@@ -2067,6 +1997,11 @@ Prefab:
         type: 2}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114123597930835050, guid: 82139aaa99d936a4ea4dcc2454a3fbb6,
+        type: 2}
+      propertyPath: _missionID
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
