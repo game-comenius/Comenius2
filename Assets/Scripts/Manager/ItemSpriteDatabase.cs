@@ -6,26 +6,13 @@ using UnityEngine;
 
 public class ItemSpriteDatabase : MonoBehaviour {
 
-    //   [Serializable]
-    //   public struct ItemNameAndItsSprite
-    //   {
-    //       public ItemName ItemName;
-    //       public Sprite Sprite;
-    //   }
+    private Dictionary<ItemName, Sprite> dictionary;
 
-    //   // O banco de dados vai ter uma coleção de structs
-    //public List<ItemNameAndItsSprite> itemNameSpriteList;
-
-    public Dictionary<ItemName, Sprite> dictionary;
-
-    public ItemName MyItemName;
-    public Sprite MySprite;
-    public ItemName MyItemName2;
-    public Sprite MySprite2;
-
+    // 2 campos que auxiliam a classe ItemSpriteDatabaseEditor, custom editor
+    // desta classe, a adicionar as duplas (ItemName, Sprite) ao dicionário,
+    // portanto... Por favor, não excluir estes 2, eles são necessários
     public Sprite[] spriteArray;
     public ItemName[] itemNameArray;
-
 
     private static ItemSpriteDatabase Instance;
 
@@ -43,48 +30,27 @@ public class ItemSpriteDatabase : MonoBehaviour {
             Destroy(gameObject);
         }
 
+        // Pegar os sprites vinculados aos ItemName's pelo Inspector de
+        // ItemSpriteDatabase e adicionar eles no dicionário desta classe
         dictionary = new Dictionary<ItemName, Sprite>();
         for (var i = 0; i < itemNameArray.Length; i++)
         {
-            Debug.Log("Adicionando " + itemNameArray[i] + " - " + spriteArray[i]);
-            try
-            {
-                dictionary.Add(itemNameArray[i], spriteArray[i]);
-            }
-            catch (Exception ex)
-            {
-                Debug.Log(ex.Message);
-            }
+            try { dictionary.Add(itemNameArray[i], spriteArray[i]); }
+            catch (Exception ex) { /* Aceitar a Exception */ }
         }
-        foreach (var e in dictionary)
-            Debug.Log(e.Key + " - " + e.Value);
-    }
-
-    private void Start()
-    {
     }
 
 
     public static Sprite GetSpriteOf(ItemName itemName)
     {
-        //var list = Instance.itemNameSpriteList;
-        //var element = list.Find(x => x.ItemName == itemName);
-        //return element.Sprite;
         Sprite sprite;
         var success = Instance.dictionary.TryGetValue(itemName, out sprite);
-        return (success) ? sprite : null;
-    }
+        if (!success)
+        {
+            Debug.LogError("Não existe sprite vinculado ao ItemName " + itemName.ToString());
+            return null;
+        }
 
-    public static ItemName GetItemNameOf(Sprite sprite)
-	{
-        //var list = Instance.itemNameSpriteList;
-        //var element = list.Find(x => x.Sprite == sprite);
-        //return element.ItemName;
-        return ItemName.TVComVHS;
-	}
-
-    public void Add(ItemName itemName, Sprite sprite)
-    {
-        //itemNameSpriteList.Add(new ItemNameAndItsSprite(itemName, sprite));
+        return sprite;
     }
 }
