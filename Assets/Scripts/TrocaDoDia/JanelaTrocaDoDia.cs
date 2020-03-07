@@ -73,7 +73,7 @@ public class JanelaTrocaDoDia : MonoBehaviour {
         }
 
         // Configurar texto com o número de mídias no inventário
-        var disponiveis = GameManager.MidiasDisponiveisNaMissao1();
+        var disponiveis = GameManager.MidiasDisponiveisNaMissao1;
         var inventario = lurdinha.Inventory;
         var coletadas = 0;
         foreach (var midia in disponiveis)

@@ -25,7 +25,7 @@ public class AvailableItemsPanel : MonoBehaviour {
             ItemName.CameraPolaroid,
             ItemName.Gravador,
             ItemName.ReprodutorAudio,
-            ItemName.TV,
+            ItemName.TVComVHS,
         };
 
         // Popular o panel de mídias disponíveis com as mídias do jogo custom

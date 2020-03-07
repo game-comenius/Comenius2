@@ -20,7 +20,7 @@ public class MesaDoProfessor : LocalParaColocarItem {
 
         switch (midia)
         {
-            case ItemName.TV:
+            case ItemName.TVComVHS:
             case ItemName.ReprodutorAudio:
                 sr.transform.localScale = Vector3.one * .5f;
                 sr.flipX = true;

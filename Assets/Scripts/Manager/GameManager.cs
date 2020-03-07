@@ -4,28 +4,77 @@ using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
-    public static ItemName[] MidiasDisponiveisNaMissao1()
+    public static ItemName[] MidiasDisponiveisEmTodasAsMissoes = 
     {
-        ItemName[] array =
+        ItemName.ReprodutorAudio,
+        ItemName.Gravador,
+        ItemName.CameraPolaroid,
+        ItemName.TVComVHS,
+        ItemName.LivroDidatico,
+        ItemName.LivroIlustrado,
+        ItemName.QuadroNegro,
+        ItemName.Caderno,
+        ItemName.Cartazes,
+        ItemName.Jornais,
+        ItemName.JornaisERevistas,
+    };
+
+    public static ItemName[] MidiasExclusivasDaMissao1 =
+    {
+        ItemName.GravacaoPassaro,
+        ItemName.FotografiaPassaro,
+        ItemName.CartazComColecaoDePenas,
+        ItemName.TVComVHSDePassaros,
+        ItemName.Cd,
+        ItemName.Mapa,
+    };
+
+    public static ItemName[] MidiasDisponiveisNaMissao1
+    {
+        get
         {
-            ItemName.Caderno,
-            ItemName.QuadroNegro,
-            ItemName.LivroDidatico,
-            ItemName.LivroIlustrado,
-            ItemName.Jornais,
-            ItemName.JornaisERevistas,
-            ItemName.Cartazes,
-            ItemName.CartazComColecaoDePenas,
-            ItemName.Gravador,
-            ItemName.GravacaoPassaro,
-            ItemName.CameraPolaroid,
-            ItemName.FotografiaPassaro,
-            ItemName.TV,
-            ItemName.ReprodutorAudio,
-            ItemName.Cd,
-        };
-        // Elimina do array itens inseridos mais de uma vez sem querer
-        return array.Distinct().ToArray();
+            return MidiasDisponiveisEmTodasAsMissoes.Union(MidiasExclusivasDaMissao1).ToArray();
+        }
+    }
+
+    public static ItemName[] MidiasExclusivasDaMissao2 = 
+    {
+        ItemName.Diario,
+        ItemName.Retroprojetor,
+        ItemName.RetroprojetorSlideCicloTrabalho,
+        ItemName.RetroprojetorSlideLinhaTempo,
+        ItemName.RetroprojetorSlideMapa,
+        ItemName.CartazComCanetas,
+    };
+
+    public static ItemName[] MidiasDisponiveisNaMissao2
+    {
+        get
+        {
+            return MidiasDisponiveisEmTodasAsMissoes.Union(MidiasExclusivasDaMissao2).ToArray();
+        }
+    }
+
+    public static ItemName[] MidiasExclusivasDaMissao3 = 
+    {
+        
+    };
+
+    public static ItemName[] MidiasDisponiveisNaMissao3
+    {
+        get
+        {
+            return MidiasDisponiveisEmTodasAsMissoes.Union(MidiasExclusivasDaMissao3).ToArray();
+        }
+    }
+
+    public static ItemName[] MidiasDoJogo
+    {
+        get
+        {
+            var u = MidiasDisponiveisNaMissao1.Union(MidiasDisponiveisNaMissao2);
+            return u.Union(MidiasDisponiveisNaMissao3).ToArray();
+        }
     }
 
 

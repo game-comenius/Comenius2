@@ -61,13 +61,13 @@ public class MidiaMomento : MonoBehaviour
             case ItemName.GravacaoPassaro: return gravacaoPassaroPoints;
             case ItemName.CameraPolaroid: return cameraPolaroidPoints;
             case ItemName.FotografiaPassaro: return fotografiaPassaroPoints;
-            case ItemName.TV: return tvPoints;
+            case ItemName.TVComVHS: return tvPoints;
             case ItemName.VHS: return vhsPoints;
             case ItemName.CartazComColecaoDePenas: return cartazComPenasPoints;
             case ItemName.LivroDidatico: return livroDidaticoPoints;
             case ItemName.LivroIlustrado: return livroilustradoPoints;
             case ItemName.QuadroNegro: return quadroNegroPoints;
-            case ItemName.TVComVHS: return tvComVhsPoints;
+            case ItemName.TVComVHSDePassaros: return tvComVhsPoints;
             case ItemName.Cartazes: return cartazesPoints;
             case ItemName.Mapa: return mapaPoints;
             case ItemName.Caderno: return cadernoPoints;

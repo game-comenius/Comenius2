@@ -3,7 +3,7 @@ public enum ItemName
 {
     SemNome,
     LivroDidatico,
-    TV,
+    TVComVHS,
     Cartazes,
     Caderno,
     Gravador,
@@ -14,7 +14,7 @@ public enum ItemName
     QuadroNegro,
     LivroIlustrado,
     CartazComColecaoDePenas,
-    TVComVHS,
+    TVComVHSDePassaros,
     Mapa,
     JornaisERevistas,
     Cd,

@@ -89,7 +89,7 @@ public class Item
                 DescriptionsInMission1.SecondMomentDescription = "Somente uma foto pode ser pouco para a realização de uma atividade pelo aluno.";
                 DescriptionsInMission1.ThirdMomentDescription = "A fotografia apresenta mais detalhes que uma figura do pássaro, como onde está localizado. Pode ser utilizada para complementar a explicação do professor.";
                 break;
-            case ItemName.TV:
+            case ItemName.TVComVHS:
                 FriendlyName = "TV com reprodutor de VHS";
                 Description = "Sem uma fita VHS vai ser difícil achar algo de interessante passando na TV";
                 FullDescription = "É um aparelho de exibição de canais sintonizados por satélite e imagens conectados a um reprodutor VHS. Seu uso pedagógico pode ser através de programas que estejam passando ao vivo ou naquele momento, tende a motivar o aprendizado por conta do conteúdo audiovisual. Assim como o reprodutor VHS possui uma linguagem visual, podendo trabalhar em conjunto com ele, ou utilizando canais de televisão.";
@@ -106,7 +106,7 @@ public class Item
                 DescriptionsInMission1.FirstMomentDescription = "Sem uma forma de reproduzi-la essa mídia não vai ser muito útil.";
                 DescriptionsInMission1.SecondMomentDescription = "Sem uma forma de reproduzi-la essa mídia não vai ser muito útil.";
                 DescriptionsInMission1.ThirdMomentDescription = "Sem uma forma de reproduzi-la essa mídia não vai ser muito útil.";
-                UpgradeFrom.Add(ItemName.TV);
+                UpgradeFrom.Add(ItemName.TVComVHS);
                 break;
             case ItemName.CartazComColecaoDePenas:
                 FriendlyName = "Cartaz com Coleção de Penas";
@@ -144,7 +144,7 @@ public class Item
                 DescriptionsInMission1.SecondMomentDescription = "Os alunos podem usar o quadro negro como um recurso adicional ao apresentar suas falas durante atividade.";
                 DescriptionsInMission1.ThirdMomentDescription = "Com o quadro negro o professor pode elaborar tabelas e esquemas para a sistematização do conteúdo da aula.";
                 break;
-            case ItemName.TVComVHS:
+            case ItemName.TVComVHSDePassaros:
                 FriendlyName = "TV com VHS";
                 Description = "Um quadro negro, com estêncil";
                 FullDescription = "Um quadro negro, com estêncil";
@@ -152,7 +152,7 @@ public class Item
                 DescriptionsInMission1.FirstMomentDescription = "A exposição de informações é bastante completa nesta mídia. Apresenta imagens, sons, oralidade e leitura.";
                 DescriptionsInMission1.SecondMomentDescription = "Passar um vídeo enquanto os alunos fazem um atividade pode ser um pouco confuso...";
                 DescriptionsInMission1.ThirdMomentDescription = "A exposição de informações é bastante completa nesta mídia. Apresenta imagens, sons, oralidade e leitura.  Mas como o vídeo não especifica a regionalidade dos pássaros, pode confundir um pouco os alunos.";
-                UpgradeFrom.Add(ItemName.TV);
+                UpgradeFrom.Add(ItemName.TVComVHS);
                 break;
             case ItemName.Cartazes:
                 FriendlyName = "Cartazes";
