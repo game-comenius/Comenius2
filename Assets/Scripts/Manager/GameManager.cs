@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
         ItemName.RetroprojetorSlideLinhaTempo,
         ItemName.RetroprojetorSlideMapa,
         ItemName.CartazComCanetas,
+        ItemName.FotografiaRevolucaoIndustrial,
     };
 
     public static ItemName[] MidiasDisponiveisNaMissao2

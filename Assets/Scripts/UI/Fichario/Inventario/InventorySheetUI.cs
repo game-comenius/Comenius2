@@ -56,7 +56,21 @@ public class InventorySheetUI : MonoBehaviour {
 
     public virtual void ShowDescription(Item item)
     {
-        descriptionBox.text = item.DescriptionsInMission1.StandardDescription;
+        var currentMissionID = Player.Instance.missionID;
+        ItemDescriptionsInOneMission descriptions;
+        switch (currentMissionID)
+        {
+            default:
+                descriptions = item.DescriptionsInMission1;
+                break;
+            case 1:
+                descriptions = item.DescriptionsInMission2;
+                break;
+            case 2:
+                descriptions = item.DescriptionsInMission3;
+                break;
+        }
+        descriptionBox.text = descriptions.StandardDescription;
     }
 
     public void DisplayItems(ICollection<Item> items)

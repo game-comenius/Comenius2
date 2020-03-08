@@ -253,6 +253,15 @@ public class Item
                 DescriptionsInMission2.StandardDescription = "Essas mídias combinadas possibilitam a reprodução do áudio com uma entrevista de um especialista sobre a revolução industrial.";
                 UpgradeFrom.Add(ItemName.ReprodutorAudio);
                 break;
+            case ItemName.FotografiaRevolucaoIndustrial:
+                FriendlyName = "Fotografia da Revolução Industrial";
+                Description = "";
+                FullDescription = "";
+                DescriptionsInMission2.StandardDescription = "Processo e arte de registrar e reproduzir, através de reações químicas e em superfícies preparadas para o efeito, as imagens que se tiram no fundo de uma câmara escura.";
+                DescriptionsInMission2.FirstMomentDescription = "Fotografias são importantes para a ambientação do aluno dentro daquela perspectiva, durante a explicação do professor, mas podem não ser suficiente nesse caso.";
+                DescriptionsInMission2.SecondMomentDescription = "A fotografia de uma criança em situação de trabalho infantil na Revolução Industrial pode ilustrar muitas das condições apresentadas pelo professor e ajudar a sensibilizar os alunos para a discussão.";
+                DescriptionsInMission2.ThirdMomentDescription = "A fotografia, por ser apenas uma, não seria muito útil em uma atividade.";
+                break;
             default:
                 FriendlyName = "Sem nome";
                 Description = "Sem descrição";

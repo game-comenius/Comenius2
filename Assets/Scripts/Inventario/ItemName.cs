@@ -27,5 +27,6 @@ public enum ItemName
     VhsEditado,
     Diario,
     Retroprojetor,
-    ReprodutorAudioComCD
+    ReprodutorAudioComCD,
+    FotografiaRevolucaoIndustrial,
 }
