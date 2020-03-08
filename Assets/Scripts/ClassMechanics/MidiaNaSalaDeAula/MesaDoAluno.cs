@@ -21,11 +21,8 @@ public class MesaDoAluno : LocalParaColocarItem
         {
             case ItemName.Jornais:
             case ItemName.JornaisERevistas:
-            case ItemName.Caderno:
-                sr.transform.localScale = Vector3.one * .20f;
-                break;
             case ItemName.LivroDidatico:
-                sr.transform.localScale = Vector3.one * .70f;
+                sr.transform.localScale = Vector3.one * .20f;
                 break;
             default:
                 sr.transform.localScale = Vector3.one * .25f;

@@ -580,7 +580,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 199455211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.17, y: 1.13, z: 0}
+  m_LocalPosition: {x: 5.17, y: 1.13, z: 1}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4439,6 +4439,48 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!1001 &1563999776
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4167545212279808, guid: 5b29e7b78647d4500abec5bb67ffab34, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167545212279808, guid: 5b29e7b78647d4500abec5bb67ffab34, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167545212279808, guid: 5b29e7b78647d4500abec5bb67ffab34, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167545212279808, guid: 5b29e7b78647d4500abec5bb67ffab34, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167545212279808, guid: 5b29e7b78647d4500abec5bb67ffab34, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167545212279808, guid: 5b29e7b78647d4500abec5bb67ffab34, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167545212279808, guid: 5b29e7b78647d4500abec5bb67ffab34, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167545212279808, guid: 5b29e7b78647d4500abec5bb67ffab34, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5b29e7b78647d4500abec5bb67ffab34, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1567622727
 GameObject:
   m_ObjectHideFlags: 0
@@ -5298,7 +5340,7 @@ MonoBehaviour:
   cellAngle: 30
   gridDim: {x: 29, y: 28}
   gridRotation: 210
-  vacancy: 2164e00f0000c00f0000800f00f81f0ff0f81f0e60c0010c60c0010860c001086002000cf0e00e0e00e00e0f00e08e0ff8f3ff0ff9f3ff0f0101f00f0000f80f0000fc0f0000fe0fe0e7ff0ff8ffff0f00c0ff0f00e0ff0f00f0ff0f00f8ff0f71fcff0f73feff0f77ffff0fffffff0fffffff0f
+  vacancy: 2166e00f0000c00f0000800f00f81f0ff0f81f0e60e0010c60e00108e0c30108e003000cf0f00f0e00f00f0f00e08f0ff8f3ff0ff9f3ff0f8101f00f0001f80f0000fc0f0000fe0fe0e7ff0ff8ffff0f00c0ff0f00e0ff0f00f0ff0f00f8ff0f71fcff0f73feff0f77ffff0fffffff0fffffff0f
   gridColor: {r: 1, g: 0, b: 0, a: 1}
   debug: 0
   cell: {x: 0, y: 0}
