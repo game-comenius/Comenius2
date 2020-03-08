@@ -14,6 +14,9 @@ public class Estante : MonoBehaviour
     [SerializeField]
     private GameObject modoEstanteAbertaUI;
 
+    [SerializeField]
+    private ItemName[] itensIniciais;
+
 	private EstanteUI estanteUI;
 
     public List<ItemName> Items { get; private set; }
@@ -24,16 +27,7 @@ public class Estante : MonoBehaviour
     {
         quest = GetComponent<QuestGuest>();
 
-        Items = new List<ItemName>
-        {
-            // Itens que aparecem por padrão dentro da estante
-            //ItemName.ReprodutorAudio,
-            //ItemName.Gravador,
-            //ItemName.CameraPolaroid,
-            ItemName.TVComVHS,
-            ItemName.LivroDidatico,
-            ItemName.JornaisERevistas
-        };
+        Items = new List<ItemName>(itensIniciais);
     }
 
     private void Start()
