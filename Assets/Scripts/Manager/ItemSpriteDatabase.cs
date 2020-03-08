@@ -36,7 +36,7 @@ public class ItemSpriteDatabase : MonoBehaviour {
         for (var i = 0; i < itemNameArray.Length; i++)
         {
             try { dictionary.Add(itemNameArray[i], spriteArray[i]); }
-            catch (Exception ex) { /* Aceitar a Exception */ }
+            catch (Exception) { /* Aceitar a Exception */ }
         }
     }
 
