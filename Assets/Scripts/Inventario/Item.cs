@@ -236,6 +236,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
                 DescriptionsInMission2.StandardDescription = "Diário escrito à mão por uma criança que viveu no período da revolução industrial, contendo registros de suas vivências e seu trabalho na fábrica.";
+                DescriptionsInMission2.FirstMomentDescription = "O diário possui muitas informações sobre o dia a dia de uma criança naquele período, de uma perspectiva pouco geral dos fatos, o que pode ajudar um pouco na exposição do professor.";
+                DescriptionsInMission2.SecondMomentDescription = "O diário tem informações pessoais e bem específicas sobre a condição do trabalho de uma criança durante esse período histórico, ótimo para utilizar em uma discussão.";
+                DescriptionsInMission2.ThirdMomentDescription = "O diário possui muitas informações sobre o dia a dia de uma criança naquele período, mas para esse momento não deve ser muito interessante.";
                 break;
             case ItemName.Retroprojetor:
                 FriendlyName = "Retroprojetor sem um slide";
@@ -255,8 +258,8 @@ public class Item
                 break;
             case ItemName.FotografiaRevolucaoIndustrial:
                 FriendlyName = "Fotografia da Revolução Industrial";
-                Description = "";
-                FullDescription = "";
+                Description = "Sem descrição";
+                FullDescription = "Sem texto";
                 DescriptionsInMission2.StandardDescription = "Processo e arte de registrar e reproduzir, através de reações químicas e em superfícies preparadas para o efeito, as imagens que se tiram no fundo de uma câmara escura.";
                 DescriptionsInMission2.FirstMomentDescription = "Fotografias são importantes para a ambientação do aluno dentro daquela perspectiva, durante a explicação do professor, mas podem não ser suficiente nesse caso.";
                 DescriptionsInMission2.SecondMomentDescription = "A fotografia de uma criança em situação de trabalho infantil na Revolução Industrial pode ilustrar muitas das condições apresentadas pelo professor e ajudar a sensibilizar os alunos para a discussão.";
