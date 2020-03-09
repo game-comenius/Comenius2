@@ -438,11 +438,22 @@ public class ClassManager : MonoBehaviour
             }
         }
 
-        Vector3 pos = mainCamera.WorldToScreenPoint(students[n].transform.position + students[n].cloudOffset);
+        var worldPos = students[n].transform.position + students[n].cloudOffset;
 
-        GameObject go = Instantiate(cloud, pos, Quaternion.identity, canvas.transform);
+        var canvasScaler = canvas.GetComponent<CanvasScaler>();
+        var xScale = canvasScaler.referenceResolution.x / Screen.width;
+        var yScale = canvasScaler.referenceResolution.y / Screen.height;
+        var scale = new Vector2(xScale, yScale);
 
-        clouds.Add(go.GetComponent<ProblemCloudScript>());
+        var cloudPos = mainCamera.WorldToScreenPoint(worldPos) * scale;
+
+        var cloudGameObject = Instantiate(cloud, canvas.transform);
+
+        var cloudRectTransform = cloudGameObject.GetComponent<RectTransform>();
+        cloudRectTransform.anchoredPosition = cloudPos;
+
+
+        clouds.Add(cloudGameObject.GetComponent<ProblemCloudScript>());
 
         clouds[clouds.Count - 1].problemDuration = problemDuration;
 

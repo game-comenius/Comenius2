@@ -22,24 +22,12 @@ public class ProblemCloudScript : MonoBehaviour
 
     [SerializeField] private float scalingDuration = 0.5f;
 
-    private Vector3 originalScale;
-
-    private Vector3 anchor;
-
     [HideInInspector] public float problemDuration;
 
     [HideInInspector] public int studentIndex;
 
     private void Awake()
     {
-        originalScale = transform.localScale;
-
-        anchor = transform.position;
-
-        transform.localScale = scaleDelta.x * originalScale;
-
-        transform.position = anchor + new Vector3(transform.localScale.x * GetComponent<RectTransform>().rect.width / 2, 
-                                                    transform.localScale.y * GetComponent<RectTransform>().rect.height / 2, 0);
         InitializeProblem();
 
         ClassManager.EndClass += WrongSolution;
@@ -86,12 +74,9 @@ public class ProblemCloudScript : MonoBehaviour
         {
             yield return null;
 
+            // Mexer nos atributos deste objeto aqui para criar uma animação
+
             t += Time.deltaTime;
-
-            transform.localScale = Vector3.Lerp(scaleDelta.x * originalScale, scaleDelta.y * originalScale, t / scalingDuration);
-
-            transform.position = anchor + new Vector3(transform.localScale.x * GetComponent<RectTransform>().rect.width / 2,
-                                            transform.localScale.y * GetComponent<RectTransform>().rect.height / 2, 0);
         }
 
         foreach (Button button in solutionButtons)
