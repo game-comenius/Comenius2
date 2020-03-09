@@ -1185,6 +1185,7 @@ GameObject:
   - component: {fileID: 401922060}
   - component: {fileID: 401922059}
   - component: {fileID: 401922058}
+  - component: {fileID: 401922061}
   m_Layer: 0
   m_Name: Passaro Foto (1)
   m_TagString: Untagged
@@ -1332,6 +1333,18 @@ PolygonCollider2D:
       - {x: 0.36499998, y: -0.42499998}
       - {x: 0.36499998, y: -0.295}
       - {x: 0.21499999, y: -0.114999995}
+--- !u!114 &401922061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 401922056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722b3663c27596a44be0c38f4b167b1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: 9
 --- !u!114 &401922062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1351,6 +1364,19 @@ MonoBehaviour:
       - personagem: 0
         emocao: 2
         fala: "Olha s\xF3, uma Arara Azul! Que linda."
+      - personagem: 0
+        emocao: 4
+        fala: "Com essa <b>c\xE2mera</b>, posso tirar uma foto para usar na aula do
+          Jean!"
+      - personagem: 0
+        emocao: 0
+        fala: "Ok, fique paradinha a\xED e..."
+      - personagem: 0
+        emocao: 0
+        fala: '...'
+      - personagem: 0
+        emocao: 2
+        fala: "<i>Isso!</i> A foto ficou \xF3tima!"
       respostas: []
   dialogosSecundarios: []
   interactOffset:
@@ -3695,7 +3721,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ca5f61986ab9f4efd945f90a975fe268, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc34171e4b3a24e89bd1a28b53d81f33, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4079,6 +4105,7 @@ GameObject:
   - component: {fileID: 1150409868}
   - component: {fileID: 1150409867}
   - component: {fileID: 1150409866}
+  - component: {fileID: 1150409869}
   m_Layer: 0
   m_Name: Passaro Gravacao
   m_TagString: Untagged
@@ -4226,6 +4253,18 @@ PolygonCollider2D:
       - {x: 0.36499998, y: -0.42499998}
       - {x: 0.36499998, y: -0.295}
       - {x: 0.21499999, y: -0.114999995}
+--- !u!114 &1150409869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1150409864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722b3663c27596a44be0c38f4b167b1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: 17
 --- !u!114 &1150409870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4245,6 +4284,19 @@ MonoBehaviour:
       - personagem: 0
         emocao: 2
         fala: "Olha s\xF3, uma Arara Azul! Que linda."
+      - personagem: 0
+        emocao: 4
+        fala: Com esse <b>gravador</b>, posso gravar seu canto para usar na aula do
+          Jean!
+      - personagem: 0
+        emocao: 0
+        fala: "Ok! A Arara est\xE1 cantando super animada! Vou come\xE7ar a gravar!"
+      - personagem: 0
+        emocao: 0
+        fala: '...'
+      - personagem: 0
+        emocao: 2
+        fala: "<i>Isso!</i> A grava\xE7\xE3o ficou \xF3tima!"
       respostas: []
   dialogosSecundarios: []
   interactOffset:
@@ -4478,6 +4530,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1202607937}
         m_MethodName: UISendoUsada
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1150409869}
+        m_MethodName: addItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5370,6 +5433,7 @@ GameObject:
   - component: {fileID: 1507489070}
   - component: {fileID: 1507489069}
   - component: {fileID: 1507489068}
+  - component: {fileID: 1507489071}
   m_Layer: 0
   m_Name: Passaro Foto (2)
   m_TagString: Untagged
@@ -5517,6 +5581,18 @@ PolygonCollider2D:
       - {x: 0.36499998, y: -0.42499998}
       - {x: 0.36499998, y: -0.295}
       - {x: 0.21499999, y: -0.114999995}
+--- !u!114 &1507489071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1507489066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722b3663c27596a44be0c38f4b167b1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: 9
 --- !u!114 &1507489072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5536,6 +5612,19 @@ MonoBehaviour:
       - personagem: 0
         emocao: 2
         fala: "Olha s\xF3, uma Arara Azul! Que linda."
+      - personagem: 0
+        emocao: 4
+        fala: "Com essa <b>c\xE2mera</b>, posso tirar uma foto para usar na aula do
+          Jean!"
+      - personagem: 0
+        emocao: 0
+        fala: "Ok, fique paradinha a\xED e..."
+      - personagem: 0
+        emocao: 0
+        fala: '...'
+      - personagem: 0
+        emocao: 2
+        fala: "<i>Isso!</i> A foto ficou \xF3tima!"
       respostas: []
   dialogosSecundarios: []
   interactOffset:
@@ -5877,7 +5966,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ca5f61986ab9f4efd945f90a975fe268, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 316626f470ec842968fafba1c3110f7f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6509,6 +6598,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1720370200}
         m_MethodName: UISendoUsada
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1507489071}
+        m_MethodName: addItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7848,6 +7948,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2139841128}
         m_MethodName: UISendoUsada
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 401922061}
+        m_MethodName: addItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

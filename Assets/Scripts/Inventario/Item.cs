@@ -88,6 +88,7 @@ public class Item
                 DescriptionsInMission1.FirstMomentDescription = "O professor pode utilizar essa fotografia de pássaro para ilustrar suas características. Complementando a fala e texto do conteúdo que ele quer trabalhar.";
                 DescriptionsInMission1.SecondMomentDescription = "Somente uma foto pode ser pouco para a realização de uma atividade pelo aluno.";
                 DescriptionsInMission1.ThirdMomentDescription = "A fotografia apresenta mais detalhes que uma figura do pássaro, como onde está localizado. Pode ser utilizada para complementar a explicação do professor.";
+                UpgradeFrom.Add(ItemName.CameraPolaroid);
                 break;
             case ItemName.TVComVHS:
                 FriendlyName = "TV com reprodutor de VHS";
