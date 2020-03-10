@@ -22,6 +22,7 @@ public class Mission2 : MonoBehaviour
         new QuestClass (10200, "Fale com o Vladmir. (2)", new DoQuest(), new int[]{ 10100 }),
         new QuestClass (10300, "Fale com o Vladmir. (3)", new DoQuest(), new int[]{ 10200 }),
         new QuestClass (10400, "Falar com o garoto esquisito no pátio sobre a fotografia.", new DoQuest(), new int[]{ }),
+        new QuestClass (10401, "Controle: Pegar fotografia", new DoQuest(), new int[]{ 10400 }),
         new QuestClass (10500, "Falar com o 021 no Pátio.", new DoQuest(), new int[]{ }),
         new QuestClass (10600, "Falar com o 031 no Pátio.", new DoQuest(), new int[]{ }),
         new QuestClass (10700, "Falar com o Garoto Ambiente no Pátio 2.", new DoQuest(), new int[]{ }),
