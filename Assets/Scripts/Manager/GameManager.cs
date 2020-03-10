@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         ItemName.GravacaoPassaro,
         ItemName.FotografiaPassaro,
         ItemName.CartazComColecaoDePenas,
-        ItemName.TVComVHSDePassaros,
+        ItemName.TVComVHSPassaros,
         ItemName.Cd,
         ItemName.Mapa,
     };
@@ -46,6 +46,9 @@ public class GameManager : MonoBehaviour
         ItemName.RetroprojetorSlideMapa,
         ItemName.CartazComCanetas,
         ItemName.FotografiaRevolucaoIndustrial,
+        ItemName.ReprodutorAudioComCDRevolucaoIndustrial,
+        ItemName.TVComVHSRevolucaoIndustrial,
+        ItemName.TVComVHSRevolucaoIndustrialEditado,
     };
 
     public static ItemName[] MidiasDisponiveisNaMissao2
