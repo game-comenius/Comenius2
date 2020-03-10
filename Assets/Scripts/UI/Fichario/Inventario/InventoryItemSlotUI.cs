@@ -20,6 +20,8 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerDownHandler
     private GameObject previousItemButton;
     [SerializeField]
     private GameObject nextItemButton;
+    [SerializeField]
+    private TextMeshProUGUI ItemNameTextBox;
 
     // GameObject that can render an item on the UI
     private ItemInUserInterface itemInUserInterface;
@@ -57,8 +59,7 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerDownHandler
         itemInUserInterface.ItemName = item.ItemName;
 
         // Colocar o nome do item no slot.
-        var slotText = GetComponentInChildren<Text>();
-        slotText.text = item.FriendlyName;
+        ItemNameTextBox.text = item.FriendlyName;
     }
 
     public void AddBaseItem(Item item)
