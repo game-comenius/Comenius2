@@ -71,8 +71,8 @@ public class Mission1
         new QuestClass (100600, "Pegar Gravador com a Drica na Multimeios.", new DoQuest(), new int[]{ }),
         new QuestClass (100601, "Controle: Pegar Gravador com a Drica na Multimeios.", new DoQuest(), new int[]{ 100600 }),
 
-        new QuestClass (100700, "Pegar Aparelho de Som na Biblioteca.", new DoQuest(), new int[]{ }),
-        new QuestClass (100701, "Controle: Pegar Aparelho de Som na Biblioteca.", new DoQuest(), new int[]{ 100700 }),
+        new QuestClass (100700, "Pegar Aparelho de Som na Sala Multimeios.", new DoQuest(), new int[]{ }),
+        new QuestClass (100701, "Controle: Pegar Aparelho de Som na Sala Multimeios.", new DoQuest(), new int[]{ 100700 }),
 
         new QuestClass (100800, "Pegar Mapa na Sala de Aula.", new DoQuest(), new int[]{ }),
         new QuestClass (100801, "Controle: Pegar Mapa na Sala de Aula.", new DoQuest(), new int[]{ 100800 }),
@@ -85,6 +85,9 @@ public class Mission1
 
         new QuestClass (101010, "Fotografar pássaro.", new DoQuest(), new int[]{ 100500, 100900 }),
         new QuestClass (101011, "Controle: Fotografar pássaro.", new DoQuest(), new int[]{ 101010 }),
+
+        new QuestClass (101100, "Pegar TV na multimeios", new DoQuest(), new int[]{ }),
+        new QuestClass (101101, "Controle: Pegar TV na multimeios", new DoQuest(), new int[]{ 101100 }),
 
 
 
