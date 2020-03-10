@@ -94,6 +94,8 @@ public class Planejamento : MonoBehaviour {
 
     public void ConfirmarPlanejamento()
     {
+        if (!Momento2Confirmado) return;
+        // Só continua se o jogador confirmou o momento 2
         GetComponentInChildren<PlanManager>().ConfirmPlan();
         ManagerQuest.QuestTakeStep(GetComponent<QuestGuest>().index);
         CancelarPlanejamento();

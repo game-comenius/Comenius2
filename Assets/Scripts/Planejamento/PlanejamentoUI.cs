@@ -18,6 +18,13 @@ public class PlanejamentoUI : MonoBehaviour {
     private Image bloqueioMomento3;
     [SerializeField]
     private Button botaoConfirmarMomento;
+    [SerializeField]
+    private Button botaoConfirmarPlanejamento;
+
+    private void Start()
+    {
+        botaoConfirmarPlanejamento.image.enabled = false;
+    }
 
     public void BloquearTodosOsMomentos()
     {
@@ -68,6 +75,7 @@ public class PlanejamentoUI : MonoBehaviour {
         bloqueioMomento3.enabled = false;
 
         botaoConfirmarMomento.image.enabled = false;
+        botaoConfirmarPlanejamento.image.enabled = true;
     }
 
     public void AlterarDescricaoMomento(string novaDescricao)
