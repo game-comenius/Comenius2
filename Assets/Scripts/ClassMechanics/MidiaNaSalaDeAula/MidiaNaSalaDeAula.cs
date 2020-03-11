@@ -22,6 +22,7 @@ public class MidiaNaSalaDeAula : MonoBehaviour {
             case ItemName.QuadroNegro:
                 break;
             case ItemName.Cartazes:
+            case ItemName.CartazComColecaoDePenas:
                 if (quadroNegro) quadroNegro.ColocarItem(midia);
                 break;
             case ItemName.TVComVHS:

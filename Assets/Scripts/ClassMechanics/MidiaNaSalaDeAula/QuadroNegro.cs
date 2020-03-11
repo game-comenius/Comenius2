@@ -9,7 +9,7 @@ public class QuadroNegro : LocalParaColocarItem {
         if (itemNesteLocal == null)
         {
             itemNesteLocal = new GameObject("MidiaNoQuadro");
-            itemNesteLocal.AddComponent<SpriteRenderer>().sortingOrder = 5;
+            itemNesteLocal.AddComponent<SpriteRenderer>();
             itemNesteLocal.transform.SetParent(this.transform);
         }
 
@@ -20,12 +20,19 @@ public class QuadroNegro : LocalParaColocarItem {
         switch (midia)
         {
             case ItemName.Cartazes:
-                sr.transform.localScale = Vector3.one * .7f;
+                sr.transform.localScale = Vector3.one * .8f;
+                break;
+            case ItemName.CartazComColecaoDePenas:
+                sr.transform.localScale = Vector3.one * .8f;
+                sr.flipX = true;
                 break;
             default:
                 Debug.Log("Não é possível colocar esta mídia sobre o quadro");
                 break;
         }
-        itemNesteLocal.transform.localPosition = posicaoDoItem;
+
+        // Profundidade do item será a mesma que a do quadro negro
+        var profundidade = this.transform.localPosition.z;
+        itemNesteLocal.transform.localPosition = new Vector3(posicaoDoItem.x, posicaoDoItem.y, profundidade);
     }
 }

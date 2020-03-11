@@ -2,7 +2,6 @@
 using UnityEngine;
 using GameComenius.Dialogo;
 using System;
-using System.Collections.Generic;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -76,6 +75,18 @@ public class NpcDialogo : MonoBehaviour
             Player.Instance.GetComponent<PathFinder>().hasTarget = true;
 
             StartCoroutine(Interact());
+        }
+    }
+
+    public bool WantsToTalk
+    {
+        get
+        {
+            if (GetComponent<Collider2D>().enabled == false)
+                return false;
+            if (!ManagerQuest.VerifyQuestIsComplete(_questIndex) || _questIndex == 0 || dialogosSecundarios.Length > 0)
+                return true;
+            return false;
         }
     }
 

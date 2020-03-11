@@ -19,6 +19,9 @@ public class MesaDoAluno : LocalParaColocarItem
 
         switch (midia)
         {
+            case ItemName.Caderno:
+                sr.transform.localScale = Vector3.one * .17f;
+                break;
             case ItemName.Jornais:
             case ItemName.JornaisERevistas:
             case ItemName.LivroDidatico:
