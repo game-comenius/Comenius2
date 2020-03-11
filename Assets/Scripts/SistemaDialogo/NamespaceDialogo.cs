@@ -196,7 +196,7 @@ namespace GameComenius.Dialogo
                     personagem.nome = "Comenius";
                     break;
                 case Personagens.AlunoTipo:
-                    nome = "AlunoTipo";
+                    nome = "Aluno";
                     personagem.nome = "Aluno";
                     break;
                 case Personagens.Aluno:

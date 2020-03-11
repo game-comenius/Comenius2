@@ -208,6 +208,7 @@ public class TeacherScript : AgenteAulaScript
 
     public void FimDaAula()
     {
+        PauseWalk();
         aulaAcabou = true;
     }
 

@@ -67,6 +67,8 @@ public class ClassManager : MonoBehaviour
 
     private float nextProblemTime = 0;
 
+    private Coroutine startClassCoroutine;
+
     [Tooltip ("Falas que todo professor que iniciarão cada momento de aula.")]
     [SerializeField] private Dialogo[] falas = new Dialogo[3];
 
@@ -163,7 +165,7 @@ public class ClassManager : MonoBehaviour
         //Inicializa a aula.
         _timeAcceleration = timeAcceleration;
 
-        StartCoroutine(StartClass());
+        startClassCoroutine = StartCoroutine(StartClass());
 
         for (int i = 0; i < problemQuantity.Length; i++) 
         {
@@ -177,6 +179,34 @@ public class ClassManager : MonoBehaviour
         //Configura o final da aula.
         EndClass += EndClassFunction;
     }
+
+    // Para ajudar o desenvolvimento, se estivermos no editor, basta apertar
+    // Esc para pular a parte do minigame durante a aula
+    #if UNITY_EDITOR
+    private void Update()
+    {
+        if (startClassCoroutine != null && Input.GetKeyDown(KeyCode.Escape))
+        {
+            StopCoroutine(startClassCoroutine);
+
+            professor.professor.FimDaAula();
+
+            // Retirar todas as mídias da sala de aula
+            var midiaNaSalaDeAula = FindObjectOfType<MidiaNaSalaDeAula>();
+            if (midiaNaSalaDeAula) midiaNaSalaDeAula.EsconderMidiaAtual();
+
+            // Alterar a sala de acordo com a pontuação do jogador
+            Desempenho.instance.TrocarSala();
+
+            GameManager.UINaoSendoUsada();
+
+            if (EndClass != null)
+            {
+                EndClass();
+            }
+        }
+    }
+    #endif
 
     private void OnDestroy()
     {
