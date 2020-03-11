@@ -19,6 +19,7 @@ public class SistemaDialogo : MonoBehaviour
     [SerializeField] private TMP_Text npcNome;
 
     [SerializeField] private Button botao;
+    [SerializeField] private Button botaoRetornar;
 
     [SerializeField] private TMP_Dropdown dropdown;
 
@@ -84,6 +85,9 @@ public class SistemaDialogo : MonoBehaviour
 
     private void Start()
     {
+        botaoRetornar.onClick.AddListener(() => RetornarParaFalaAnterior());
+        botaoRetornar.gameObject.SetActive(false);
+
         botao.onClick.AddListener(() => { ComecarProximaFala(); });
     }
 
@@ -232,10 +236,6 @@ public class SistemaDialogo : MonoBehaviour
             personagemRosto[0].color = opacidade.Ligar();
             personagemRosto[0].sprite = faladorAtual.personagem;
             painel.transform.rotation = Quaternion.identity;
-            //npcNome.gameObject.transform.localPosition = new Vector2
-            //{ x = -Mathf.Abs(npcNome.gameObject.transform.localPosition.x), y = npcNome.gameObject.transform.localPosition.y };
-            //textoDialogo.gameObject.transform.localPosition = new Vector2
-            //{ x = -Mathf.Abs(textoDialogo.gameObject.transform.localPosition.x), y = textoDialogo.gameObject.transform.localPosition.y };
 
         }
         else
@@ -246,11 +246,15 @@ public class SistemaDialogo : MonoBehaviour
             personagemRosto[1].color = opacidade.Ligar();
             personagemRosto[1].sprite = faladorAtual.personagem;
             painel.transform.rotation = Quaternion.Euler(0, 180, 0);
-            //npcNome.gameObject.transform.localPosition = new Vector2
-            //{ x = Mathf.Abs(npcNome.gameObject.transform.localPosition.x), y = npcNome.gameObject.transform.localPosition.y };
-            //textoDialogo.gameObject.transform.localPosition = new Vector2
-            //{ x = Mathf.Abs(textoDialogo.gameObject.transform.localPosition.x), y = textoDialogo.gameObject.transform.localPosition.y };
         }
+
+
+        // Apresentar o botão de retornar para a fala anterior
+        var indiceFalaAtual = proximaFala;
+        if (indiceFalaAtual > 0 && dialogo.nodulos[nodulo].falas[indiceFalaAtual - 1].fala != "")
+            botaoRetornar.gameObject.SetActive(true);
+        else
+            botaoRetornar.gameObject.SetActive(false);
 
         if (falaAtual.fala == "")
         {
@@ -266,6 +270,7 @@ public class SistemaDialogo : MonoBehaviour
         }
     }
 
+    // Só é chamado através do OnClick() do botão de próxima fala
     public void ComecarProximaFala()
     {
         if (escrevendo)
@@ -274,6 +279,22 @@ public class SistemaDialogo : MonoBehaviour
         }
         else
         {
+            ProximaFala();
+        }
+    }
+
+    public void RetornarParaFalaAnterior()
+    {
+        if (escrevendo)
+        {
+            TerminarEscrita();
+        }
+        else
+        {
+            // Resetar botão de avançar se estiver na função "terminar diálogo"
+            ResetarBotao();
+            // Retornar para a fala anterior e executar ela
+            proximaFala -= 2;
             ProximaFala();
         }
     }
