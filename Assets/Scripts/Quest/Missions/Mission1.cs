@@ -27,7 +27,8 @@ public class Mission1
         new QuestClass (7, "Ir para o Pátio com o plano pronto.", new DoQuest(), new int[]{ 6 }),
         new QuestClass (8, "Falar com a Madá no Pátio.", new DoQuest(), new int[]{ }),
         new QuestClass (9, "Ir para a sala de aula.", new DoQuest(), new int[]{ 6 }),
-        new QuestClass (10, "Falar com o Jean depois a aula", new DoQuest(), new int[]{ })
+        new QuestClass (10, "Falar com o Jean depois a aula", new DoQuest(), new int[]{ }),
+        new QuestClass (11, "Ir para o encerramento do dia", new DoQuest(), new int[]{ 10 })
     };
 
     public readonly static QuestClass[] _sideQuests =

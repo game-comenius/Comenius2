@@ -14,7 +14,9 @@ public class Mission2 : MonoBehaviour
         new QuestClass (3, "Fale com o Vladmir.", new DoQuest(), new int[]{ }),
         new QuestClass (4, "Faça o plano de aula na Sala dos Professores.", new DoQuest(), new int[]{ 3 }),
         new QuestClass (5, "Ir para a sala de aula.", new DoQuest(), new int[]{ 4 }),
-        new QuestClass (51, "Controle: Ir para a sala de aula", new DoQuest(), new int[]{ })
+        new QuestClass (51, "Controle: Ir para a sala de aula", new DoQuest(), new int[]{ }),
+        new QuestClass (6, "Falar com o Vladmir depois da aula", new DoQuest(), new int[]{ }),
+        new QuestClass (7, "Ir para o encerramento do dia", new DoQuest(), new int[]{ 6 })
     };
 
     public readonly static QuestClass[] _sideQuests =

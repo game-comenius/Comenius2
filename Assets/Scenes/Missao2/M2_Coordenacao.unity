@@ -1652,12 +1652,28 @@ MonoBehaviour:
         emocao: 2
         fala: "Oi Ant\xF4nia, acho que aula foi bem! Hoje estou ajudando o professor
           Vladmir com uma aula sobre revolu\xE7\xE3o industrial."
-      - personagem: 0
+      - personagem: 6
         emocao: 0
         fala: "Interessante, ser\xE1 que posso te ajudar em alguma coisa? "
-      respostas: []
-  dialogosSecundarios:
-  - nodulos:
+      respostas:
+      - personagem: 0
+        emocao: 0
+        fala: "Ser\xE1 que voc\xEA pode me explicar um pouco mais sobre a escola?"
+        resumo: Sobre a escola
+        conexao: 1
+        questIndex: 0
+      - personagem: 0
+        emocao: 0
+        fala: "Ser\xE1 que voc\xEA pode me explicar um pouco mais sobre a aula?"
+        resumo: Sobre a aula
+        conexao: 2
+        questIndex: 0
+      - personagem: 0
+        emocao: 2
+        fala: "Agora estou sem d\xFAvidas, muito obrigado pela aten\xE7\xE3o, Ant\xF4nia!"
+        resumo: Nada
+        conexao: 3
+        questIndex: 0
     - falas:
       - personagem: 0
         emocao: 0
@@ -1686,25 +1702,7 @@ MonoBehaviour:
       - personagem: 0
         emocao: 4
         fala: Entendi! Que bacana!
-      respostas:
-      - personagem: 0
-        emocao: 0
-        fala: "Ser\xE1 que voc\xEA pode me explicar um pouco mais sobre a escola?"
-        resumo: Sobre a escola.
-        conexao: 1
-        questIndex: 0
-      - personagem: 0
-        emocao: 0
-        fala: "Ser\xE1 que voc\xEA pode me explicar um pouco mais sobre a aula?"
-        resumo: 'Sobre a aula. '
-        conexao: 2
-        questIndex: 0
-      - personagem: 0
-        emocao: 0
-        fala: "Agora estou sem d\xFAvidas, muito obrigado pela aten\xE7\xE3o, Ant\xF4nia!"
-        resumo: "N\xE3o preciso de ajuda agora, muito obrigado. "
-        conexao: 3
-        questIndex: 0
+      respostas: []
     - falas:
       - personagem: 0
         emocao: 0
@@ -1715,7 +1713,7 @@ MonoBehaviour:
       - personagem: 6
         emocao: 0
         fala: "Voc\xEA j\xE1 se deu conta que em cada momento da aula o professor
-          escolhe um tipo de <i>procedimento</i> diferente?\r"
+          escolhe um tipo de <i>procedimento</i> diferente?\r\n"
       - personagem: 0
         emocao: 0
         fala: "\xC9 verdade, para cada parte da aula existe um tipo de <i>procedimento.</i>"
@@ -1753,6 +1751,7 @@ MonoBehaviour:
         emocao: 4
         fala: Disponha!
       respostas: []
+  dialogosSecundarios: []
   interactOffset:
   - {x: 0.6585472, y: -1.1185615, z: 0}
 --- !u!212 &1264433671
