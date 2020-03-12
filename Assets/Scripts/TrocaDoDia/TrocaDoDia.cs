@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,6 +8,8 @@ public class TrocaDoDia : MonoBehaviour {
 
     [SerializeField]
     private NpcDialogo dialogoQueAtivaEstaTroca;
+    [SerializeField][Tooltip("Primeira cena do dia seguinte")]
+    private string primeiraCenaDiaSeguinte;
 
     Canvas canvas;
 
@@ -50,9 +53,9 @@ public class TrocaDoDia : MonoBehaviour {
     {
         janelaTrocaDoDia.Esconder();
         yield return new WaitForSeconds(0.5f);
+
         GetComponent<PreparadorDaProximaMissao>().LimparMissaoAtual();
-        GetComponent<SceneLoader>().LoadNewScene("M2_Patio1_inicio");
-        //GetComponent<SceneLoader>().LoadNewScene("M1_FimMissao");
-        //backgroundTranslucido.enabled = false;
+
+        GetComponent<SceneLoader>().LoadNewScene(primeiraCenaDiaSeguinte);
     }
 }
