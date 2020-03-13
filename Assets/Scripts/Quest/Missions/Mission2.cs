@@ -65,6 +65,9 @@ public class Mission2 : MonoBehaviour
         new QuestClass (12301, "Fazer slide com ciclo do trabalho", new DoQuest(), new int[]{ 12300 }),
         new QuestClass (12302, "Controle: Fazer slide com ciclo do trabalho", new DoQuest(), new int[]{ 12301 }),
 
-        new QuestClass (13000, "Fazer todos os slides", new CounterQuest(0, 3), new int[]{  })
+        new QuestClass (12401, "Fazer VHS editado", new DoQuest(), new int[]{ 11700 }),
+        new QuestClass (12402, "Controle: Fazer VHS editado", new DoQuest(), new int[]{ 12401 }),
+
+        new QuestClass (13000, "Fazer todas as mídias editadas", new CounterQuest(0, 4), new int[]{  })
     };
 }
