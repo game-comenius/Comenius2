@@ -90,7 +90,7 @@ public class NpcDialogo : MonoBehaviour
         }
     }
 
-    private IEnumerator Interact()
+    public IEnumerator Interact()
     {
         yield return new WaitForEndOfFrame();
 
