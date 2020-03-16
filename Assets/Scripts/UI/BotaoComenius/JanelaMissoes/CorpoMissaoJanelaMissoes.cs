@@ -22,7 +22,7 @@ public class CorpoMissaoJanelaMissoes : MonoBehaviour {
         Destroy(ordem);
     }
 
-    public void AdicionarOrdemMissao(int index)
+    public void AdicionarOrdemMissao(string textoDaOrdem)
     {
         var ordem = Instantiate(prefabOrdemMissao);
 
@@ -32,13 +32,8 @@ public class CorpoMissaoJanelaMissoes : MonoBehaviour {
         r.sizeDelta = new Vector2(r.sizeDelta.x, (ordens * alturaOrdem));
 
         var textObject = ordem.GetComponentInChildren<TextMeshProUGUI>();
-        textObject.text = ManagerQuest.GetQuestDescription(index);
+        textObject.text = textoDaOrdem;
         ordem.transform.SetParent(this.transform);
         ordem.transform.localScale = Vector3.one;
-
-        if (ManagerQuest.VerifyQuestIsComplete(index))
-        {
-            textObject.color = Color.blue;
-        }
     }
 }

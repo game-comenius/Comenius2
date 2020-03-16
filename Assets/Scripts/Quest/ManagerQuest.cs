@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Linq;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -73,6 +75,14 @@ public class ManagerQuest : MonoBehaviour
                 }
             }
         }
+    }
+
+    public static string GetQuestDescription(int questIndex)
+    {
+        var quests = mainQuests.Union(sideQuests);
+        var quest = quests.Where((q) => q.index == questIndex).First();
+        if (quest == null) return "";
+        return quest.description;
     }
 
     public static QuestClass[] sideQuests
@@ -173,32 +183,6 @@ public class ManagerQuest : MonoBehaviour
         return false;
     }
 
-    public static string GetQuestDescription(int index)
-    {
-        if (index > 0 && index <= 10000)
-        {
-            foreach(QuestClass quest in mainQuests)
-            {
-                if (quest.index == index)
-                {
-                    return quest.GetQuestExibition();
-                }
-            }
-        }
-        else if (index > 10000)
-        {
-            foreach (QuestClass quest in sideQuests)
-            {
-                if (quest.index == index)
-                {
-                    return quest.GetQuestExibition();
-                }
-            }
-        }
-
-        return "";
-    }
-
     public static void QuestTakeStep(int index)
     {
         if (index > 0 && index <= 10000)
@@ -227,22 +211,22 @@ public class ManagerQuest : MonoBehaviour
 
     public static void SetupQuestLog()
     {    
-        JanelaMissoes janelaMissoes = FindObjectOfType<JanelaMissoes>();
+        //JanelaMissoes janelaMissoes = FindObjectOfType<JanelaMissoes>();
 
-        if (janelaMissoes != null)
-        {
-            janelaMissoes.Clear();
+        //if (janelaMissoes != null)
+        //{
+        //    janelaMissoes.Clear();
 
-            //foreach (QuestGroup group in questGroups)
-            //{
-            //    janelaMissoes.AdicionarMissao(group);
-            //}
+        //    //foreach (QuestGroup group in questGroups)
+        //    //{
+        //    //    janelaMissoes.AdicionarMissao(group);
+        //    //}
 
-            for (int i = 0; i < questGroups.Length; i++)
-            {
-                janelaMissoes.AdicionarMissao(questGroups[i]);
-            }
-        }
+        //    for (int i = 0; i < questGroups.Length; i++)
+        //    {
+        //        janelaMissoes.AdicionarMissao(questGroups[i]);
+        //    }
+        //}
     }
 
     public static void UpdateAvailability(int index)

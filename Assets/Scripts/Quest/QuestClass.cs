@@ -40,9 +40,11 @@ public class QuestClass
         }
     }
 
+    private string[] _passosDaQuest;
+    public string[] passosDaQuest { get { return _passosDaQuest; } }
+
     public List<QuestGuest> guests = new List<QuestGuest>();
 
-    private string _questExibition;
 
     public QuestClass(int index, string description, IQuest questType, int[] dependencies)
     {
@@ -50,17 +52,18 @@ public class QuestClass
         _description = description;
         _questType = questType;
         _dependencies = dependencies;
-        _questExibition = description;
+        _passosDaQuest = new string[0];
     }
 
-    public QuestClass(int index, string description, IQuest questType, int[] dependencies, string questExibition)
+    public QuestClass(int index, string description, IQuest questType, int[] dependencies, params string[] passosDaQuest)
     {
         _index = index;
         _description = description;
         _questType = questType;
         _dependencies = dependencies;
-        _questExibition = questExibition;
+        _passosDaQuest = passosDaQuest;
     }
+
 
     public bool QuestAvailable() //As dependencias estão feitas?
     {
@@ -83,11 +86,6 @@ public class QuestClass
         }
 
         return true;
-    }
-
-    public string GetQuestExibition()
-    {
-        return _questType.GetQuestExibition(_questExibition);
     }
 
     public void TakeStep()

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class BotaoTituloMissao : MonoBehaviour, IPointerClickHandler {
 
     private TextMeshProUGUI titulo;
 
-    private int[] ordensMissao;
+    private string[] passosDaMissao;
 
     [SerializeField]
     private CorpoMissaoJanelaMissoes prefabCorpoMissao;
@@ -25,41 +26,24 @@ public class BotaoTituloMissao : MonoBehaviour, IPointerClickHandler {
         titulo = GetComponentInChildren<TextMeshProUGUI>();
     }
 
-    public bool Configurar(QuestGroup quest)
+    // Keyword params permite passar um número variável de passos da missão
+    // Por exemplo, pode chamar this.Configurar("a", "b", "c", "d") ou
+    // this.Configurar("a", "b", "c") ou this.Configurar("a", "b")
+    public void Configurar(QuestClass quest)
     {
-        this.titulo.text = quest.name;
+        this.titulo.text = quest.description;
 
-        var quantidadeMaxDescricoes = 3;
+        var quantidadeMaxPassos = 3;
+        if (quest.passosDaQuest.Length > quantidadeMaxPassos)
+            Debug.LogWarning("Tentando adicionar missão com mais de 3 descrições");
 
-        if (quest.indexes.Length > quantidadeMaxDescricoes)
-        {
-            Debug.Log("Erro: tentando adicionar missão com mais de 3 descrições!");
-            return false;
-        }
-
-        List<int> descriptions = new List<int>();
-
-        for (int i = 0; i < quest.indexes.Length; i++) 
-        {
-            if (ManagerQuest.VerifyQuestIsAvailable(quest.indexes[i]))
-            {
-                descriptions.Add(quest.indexes[i]);
-            }
-        }
-
-        if (descriptions.Count!= 0)
-        {
-            ordensMissao = descriptions.ToArray();
-            return true;
-        }
-
-        return false;
+        var quantidadeDePassos = Math.Min(quest.passosDaQuest.Length, 3);
+        passosDaMissao = new string[quantidadeDePassos];
+        for (var i = 0; i < quantidadeDePassos; i++)
+            passosDaMissao[i] = quest.passosDaQuest[i];
     }
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        Toggle();
-    }
+    public void OnPointerClick(PointerEventData eventData) { Toggle(); }
 
     public void Toggle()
     {
@@ -68,8 +52,8 @@ public class BotaoTituloMissao : MonoBehaviour, IPointerClickHandler {
             var siblingIndex = transform.GetSiblingIndex();
             corpoMissaoAtivo = Instantiate(prefabCorpoMissao);
 
-            foreach (var ordem in ordensMissao)
-                corpoMissaoAtivo.AdicionarOrdemMissao(ordem);
+            foreach (var passo in passosDaMissao)
+                corpoMissaoAtivo.AdicionarOrdemMissao(passo);
 
             corpoMissaoAtivo.transform.SetParent(this.transform.parent);
             corpoMissaoAtivo.transform.SetSiblingIndex(siblingIndex + 1);
@@ -82,13 +66,15 @@ public class BotaoTituloMissao : MonoBehaviour, IPointerClickHandler {
             Destroy(corpoMissaoAtivo.gameObject);
         }
 
-        // Girar a seta vermelha
+        // Girar a seta que abre este botão
         var setaVermelha = transform.GetChild(transform.childCount - 1);
         setaVermelha.GetComponent<RectTransform>().Rotate(Vector3.forward, 180);
 
         aberto = !aberto;
     }
 
+    // Quando este botão é destruído, ele leva junto o corpo da missão com seus
+    // passos da missão
     private void OnDestroy()
     {
         if (corpoMissaoAtivo != null)

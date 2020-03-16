@@ -20,7 +20,7 @@ public class Mission1
     {
         new QuestClass (1, "Fale como o Comenios no começo do jogo.", new DoQuest(), new int[]{ }),
         new QuestClass (2, "Fale com o Diretor no Pátio.", new DoQuest(), new int[]{ }),
-        new QuestClass (3, "Vá para a Sala dos Professores", new DoQuest(), new int[]{ 2 }),
+        new QuestClass (3, "Vá para a Sala dos Professores", new DoQuest(), new int[]{ 2 }, "A sala dos professores é ao lado da Biblioteca"),
         new QuestClass (4, "Fale com o Jean.", new DoQuest(), new int[]{ }),
         new QuestClass (5, "Fale com a Madá no Pátio.", new DoQuest(), new int[]{ 3 }),
         new QuestClass (6, "Faça o plano de aula na Sala dos Professores.", new DoQuest(), new int[]{ 5 }),
