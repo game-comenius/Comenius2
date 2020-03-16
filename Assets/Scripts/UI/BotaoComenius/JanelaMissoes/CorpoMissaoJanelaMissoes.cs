@@ -31,6 +31,10 @@ public class CorpoMissaoJanelaMissoes : MonoBehaviour {
         var r = GetComponent<RectTransform>();
         r.sizeDelta = new Vector2(r.sizeDelta.x, (ordens * alturaOrdem));
 
+        var icone = ordem.transform.GetChild(0);
+        var minWidth = icone.GetComponent<Image>().sprite.bounds.size.x * 100;
+        icone.GetComponent<LayoutElement>().minWidth = minWidth;
+
         var textObject = ordem.GetComponentInChildren<TextMeshProUGUI>();
         textObject.text = textoDaOrdem;
         ordem.transform.SetParent(this.transform);

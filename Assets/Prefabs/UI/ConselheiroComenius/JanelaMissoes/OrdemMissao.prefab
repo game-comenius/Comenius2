@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 224449414926452742}
   - component: {fileID: 222138113594778804}
   - component: {fileID: 114468134422069654}
+  - component: {fileID: 114200576965469092}
   m_Layer: 5
   m_Name: BulletPoint
   m_TagString: Untagged
@@ -81,10 +82,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Wwwwwwwwwwwwwwwwwww
+  m_text: Wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1fbcd9ffba25e4de1b738bfff20648bf, type: 2}
-  m_sharedMaterial: {fileID: 21931857621128088, guid: 1fbcd9ffba25e4de1b738bfff20648bf,
+  m_fontAsset: {fileID: 11400000, guid: 75e41a00fc29a489dad78935be536d51, type: 2}
+  m_sharedMaterial: {fileID: 21856183054213622, guid: 75e41a00fc29a489dad78935be536d51,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -109,12 +110,12 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 26
-  m_fontSizeBase: 30
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
-  m_enableAutoSizing: 1
-  m_fontSizeMin: 26
-  m_fontSizeMax: 30
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 30
+  m_fontSizeMax: 40
   m_fontStyle: 0
   m_textAlignment: 513
   m_isAlignmentEnumConverted: 1
@@ -130,7 +131,7 @@ MonoBehaviour:
   m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
-  m_isTextTruncated: 1
+  m_isTextTruncated: 0
   m_enableKerning: 1
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
@@ -150,12 +151,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 114061766235587940}
-    characterCount: 17
+    characterCount: 41
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -176,6 +177,25 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114200576965469092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1157867643055184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!114 &114361152155874290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -189,7 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding:
     m_Left: 15
-    m_Right: 40
+    m_Right: 0
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
@@ -254,7 +274,7 @@ RectTransform:
   m_GameObject: {fileID: 1076702879730800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.99999, y: 0.99999, z: 0.99999}
   m_Children:
   - {fileID: 224449414926452742}
   - {fileID: 224410133437593936}
@@ -281,8 +301,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50.696167, y: -35}
-  m_SizeDelta: {x: 394.30383, y: 70}
+  m_AnchoredPosition: {x: 42.494926, y: -35}
+  m_SizeDelta: {x: 442.50504, y: 70}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!224 &224449414926452742
 RectTransform:
@@ -300,5 +320,5 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 15, y: -35}
-  m_SizeDelta: {x: 25.696169, y: 33}
+  m_SizeDelta: {x: 17.494928, y: 33}
   m_Pivot: {x: 0, y: 0.5}
