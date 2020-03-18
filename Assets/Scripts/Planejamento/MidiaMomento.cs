@@ -100,6 +100,14 @@ public class MidiaMomento : MonoBehaviour
 
     private void UpdateSprite()
     {
-        image.sprite = ItemSpriteDatabase.GetSpriteOf(item);
+        if (item == ItemName.SemNome)
+        {
+            image.enabled = false;
+        }
+        else
+        {
+            image.sprite = ItemSpriteDatabase.GetSpriteOf(item);
+            image.enabled = true;
+        }
     }
 }

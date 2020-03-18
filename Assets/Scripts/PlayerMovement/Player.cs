@@ -37,30 +37,12 @@ public class Player : MonoBehaviour
     {
         if (Instance == null)
         {
-            Instance = this;
-
             sceneName = gameObject.scene.name;
 
+            Inventory = new Inventory();
+
+            Instance = this;
             DontDestroyOnLoad(gameObject);
-
-            //try
-            //{
-                Inventory = new Inventory();
-            //}
-            //catch
-            //{
-            //    Debug.Log("Chatch");
-
-
-            //    GameManager i = FindObjectOfType<GameManager>();
-
-            //    Debug.Log(i);
-
-            //    //Inventory = new Inventory();
-            //}
-            //chosenMedia = new ItemName[3];
-            //points = new double[3];
-            //totalMissionPoints = 0;
         }
         else
         {

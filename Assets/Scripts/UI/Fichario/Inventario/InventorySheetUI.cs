@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,31 +15,23 @@ public class InventorySheetUI : MonoBehaviour {
     [SerializeField]
     protected TextMeshProUGUI descriptionBox;
 
-    private List<GameObject> gameObjectSlots = new List<GameObject>();
-
     private Inventory inventory;
 
+    private List<InventoryItemSlotUI> listOfSlots;
+
+    private void Awake()
+    {
+        listOfSlots = new List<InventoryItemSlotUI>();
+    }
 
     protected virtual IEnumerator Start ()
     {
         yield return new WaitUntil(() => Player.Instance);
         var player = Player.Instance;
         inventory = player.Inventory;
-
-        if (inventory.Items().Count > 0)
-            DisplayItems(inventory.Items());
+        DisplayItems(inventory.Items());
     }
-
-    private InventoryItemSlotUI FindItemSlot(ItemName itemName)
-    {
-        foreach (var gameObjectSlot in gameObjectSlots)
-        {
-            var itemSlot = gameObjectSlot.GetComponent<InventoryItemSlotUI>();
-            if (itemSlot.Contains(itemName))
-                return itemSlot;
-        }
-        return null;
-    }
+    
 
     public void UnselectAllItems()
     {
@@ -73,47 +66,40 @@ public class InventorySheetUI : MonoBehaviour {
         descriptionBox.text = descriptions.StandardDescription;
     }
 
+    private InventoryItemSlotUI FindItemSlot(ItemName itemName)
+    {
+        var slot = listOfSlots.Where((s) => s.Contains(itemName));
+        return slot.FirstOrDefault();
+    }
+
     public void DisplayItems(ICollection<Item> items)
     {
-        var itemsEnumerator = items.GetEnumerator();
-        var availableSlots = gameObjectSlots.Count;
-        int i = 0;
+        // Apagar os itens atuais
+        foreach (var slot in listOfSlots) Destroy(slot.gameObject);
+        listOfSlots.Clear();
 
-        while (itemsEnumerator.MoveNext())
+        // Mostrar os itens novamente
+        // Primeiro, mostrar os itens base
+        var baseItems = items.Where((i) => !i.IsAnUpgrade());
+        foreach (var item in baseItems)
         {
-            var item = itemsEnumerator.Current;
-
-            // Se a mídia é uma mídia com upgrade, achar o slot das mídias
-            // base e adicionar este upgrade a eles
-            if (item.IsAnUpgrade())
-            {
-                foreach (var baseItem in item.UpgradeFrom)
-                {
-                    var baseItemSlot = FindItemSlot(baseItem);
-
-                    if (baseItemSlot) baseItemSlot.AddUpgrade(item);
-                }
-                // Passe para o próximo item do while
-                continue;
-            }
-
-            GameObject slot;
-
-            // Se houver um slot vivo, usar ele. Se não houver, criar um.
-            if (i < availableSlots)
-            {
-                slot = gameObjectSlots[i];
-                i++;
-            }
-            else
-            {
-                slot = Instantiate(itemSlotPrefab, itemSlotList.transform);
-                gameObjectSlots.Add(slot);
-            }
-
+            // Criar um slot para comportar o item
+            GameObject slot = Instantiate(itemSlotPrefab, itemSlotList.transform);
             // Colocar informações do item no slot.
             var itemSlot = slot.GetComponent<InventoryItemSlotUI>();
             itemSlot.AddBaseItem(item);
+            listOfSlots.Add(itemSlot);
+        }
+
+        // Segundo, mostrar os itens que são upgrades de itens base
+        var upgrades = items.Where((i) => i.IsAnUpgrade());
+        foreach (var upgrade in upgrades)
+        {
+            foreach (var baseItem in upgrade.UpgradeFrom)
+            {
+                var baseItemSlot = FindItemSlot(baseItem);
+                if (baseItemSlot) baseItemSlot.AddUpgrade(upgrade);
+            }
         }
     }
 }

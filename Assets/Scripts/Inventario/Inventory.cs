@@ -32,6 +32,8 @@ public class Inventory
 
         uiMidiaCounter = GameObject.Find("ContadorMidias").GetComponent<TextMeshProUGUI>();
         uiMidiaCounter.SetText("Mídias Obtidas: " + Count + "/13");
+
+        DisplayItems();
     }
 
     public bool Contains(ItemName itemName)
@@ -78,9 +80,7 @@ public class Inventory
     {
         var inventoryUIArray = Object.FindObjectsOfType<InventorySheetUI>();
         foreach (var inventoryUI in inventoryUIArray)
-        {
             inventoryUI.DisplayItems(Items());
-        }
     }
 
 
