@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class CustomProfessor : MonoBehaviour
 {
-
-    private GameObject professorGO;
-
     private enum Direction { NW, NE, SE, SW }
     [SerializeField]
     private Direction facingDirection;
@@ -24,25 +21,8 @@ public class CustomProfessor : MonoBehaviour
     private Sprite spriteSE;
     private Sprite spriteSW;
 
-    // Use this for initialization
-    //private void Awake()
-    //{
-    //    // Zerar os campos que estão relacionados às quests do jogo principal
-    //    professorGO = GameObject.Find("JeanSalaProfessores");
-    //    var npc = professorGO.GetComponent<NpcDialogo>();
-    //    npc.questFeita.AddListener(() => professorGO.SetActive(true));
-    //    npc.dialogoObrigatorio = false;
-    //    var qs = professorGO.GetComponent<QuestScript>();
-    //    // qs.dependenciasFeitas.AddListener(() => professorGO.SetActive(true));
-    //    qs.enabled = false;
-    //}
 
-    void Start()
-    {
-        ConfigurarProfessor(CustomGameSettings.CurrentSettings);
-    }
-
-    private void ConfigurarProfessor(CustomGameSettings settings)
+    public void ConfigurarProfessor(GameObject professorGO, CustomGameSettings settings)
     {
         professor = settings.Professor;
 
@@ -50,7 +30,7 @@ public class CustomProfessor : MonoBehaviour
         descricaoMomento1 = settings.DescricaoMomento1;
         descricaoMomento2 = settings.DescricaoMomento2;
         descricaoMomento3 = settings.DescricaoMomento3;
-        DividirEInserirFalas();
+        DividirEInserirFalas(professorGO);
 
         // Definir o meu sprite como o sprite do professor escolhido e na
         // direção correta definida no Unity inspector
@@ -77,7 +57,7 @@ public class CustomProfessor : MonoBehaviour
         }
     }
 
-    private void DividirEInserirFalas()
+    private void DividirEInserirFalas(GameObject professorGO)
     {
         var paragrafos = new string[4];
         paragrafos[0] = introducaoAula;
@@ -87,6 +67,12 @@ public class CustomProfessor : MonoBehaviour
 
         // Adicionar falas ao diálogo do professor
         var npc = professorGO.GetComponent<NpcDialogo>();
+        var originalInteractOffset = npc.interactOffset;
+        Destroy(npc);
+        Destroy(professorGO.GetComponent<QuestGuest>());
+        professorGO.AddComponent<QuestGuest>();
+        npc = professorGO.AddComponent<NpcDialogo>();
+        npc.interactOffset = originalInteractOffset;
         npc.dialogoPrincipal = new GameComenius.Dialogo.Dialogo();
         npc.dialogoPrincipal.nodulos = new GameComenius.Dialogo.DialogoNodulo[1];
         npc.dialogoPrincipal.nodulos[0] = new GameComenius.Dialogo.DialogoNodulo();

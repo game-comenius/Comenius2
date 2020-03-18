@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class CustomLurdinha : MonoBehaviour {
 
-    CustomGameSettings settings;
-
-	// Use this for initialization
-	private IEnumerator Start () {
-        this.settings = CustomGameSettings.CurrentSettings;
-
-        yield return StartCoroutine(UpdateInventory());
+	private void Start () {
+        StartCoroutine(UpdateInventory());
 	}
 
     // Estabelecer novamente quais são os itens no inventário da Lurdinha
@@ -18,24 +13,18 @@ public class CustomLurdinha : MonoBehaviour {
     // pelo jogador no momento de criar o custom serão adicionados
     private IEnumerator UpdateInventory()
     {
-        // Esperar um tempo para que o script Player inicialize o inventário
-        var seconds = 0.05f;
-        yield return new WaitForSeconds(seconds);
+        yield return new WaitUntil(() => Player.Instance != null);
+        var player = Player.Instance;
 
-        var updated = false;
-        try
+        var settings = CustomGameSettings.CurrentSettings;
+
+        var inventory = player.Inventory;
+        if (inventory != null)
         {
-            var inventory = Player.Instance.Inventory;
-            if (inventory != null)
-            {
-                inventory.Clear();
-                var customItems = settings.MidiasDisponiveis();
-                foreach (var item in customItems)
-                    inventory.Add(item);
-                updated = true;
-            }
+            player.Inventory.Clear();
+            var customItems = settings.MidiasDisponiveis();
+            foreach (var item in customItems)
+                player.Inventory.Add(item);
         }
-        catch (System.Exception) {}
-        if (!updated) StartCoroutine(UpdateInventory());
     }
 }

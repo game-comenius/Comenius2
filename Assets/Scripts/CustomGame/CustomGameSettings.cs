@@ -13,7 +13,29 @@ public class CustomGameSettings {
 
     // Esta variável estática guarda as configurações do jogo atual,
     // ela é atribuída quando o jogador seleciona um custom game para jogar
-    public static CustomGameSettings CurrentSettings { get; set; }
+    public static CustomGameSettings CurrentSettings
+    {
+        get
+        {
+            #if UNITY_EDITOR
+            var cgs = new CustomGameSettings();
+            cgs.Professor = CharacterName.Montanari;
+            cgs.Sala = SalaDeAula.Jean;
+            cgs.IntroducaoAula = "Introdução do custom";
+            cgs.DescricaoMomento1 = "Descrição do momento 1";
+            cgs.DescricaoMomento2 = "Descrição do momento 2";
+            cgs.DescricaoMomento3 = "Descrição do momento 3";
+            cgs.ArrayMidiaPoderFeedbackPorMomento = new CreateCustomGamePanel.MidiaPoderFeedback[3][];
+            cgs.ArrayMidiaPoderFeedbackPorMomento[0] = new CreateCustomGamePanel.MidiaPoderFeedback[2];
+            cgs.ArrayMidiaPoderFeedbackPorMomento[0][0] = new CreateCustomGamePanel.MidiaPoderFeedback();
+            cgs.ArrayMidiaPoderFeedbackPorMomento[0][0].Midia = ItemName.Caderno;
+            cgs.ArrayMidiaPoderFeedbackPorMomento[0][1].Midia = ItemName.CameraPolaroid;
+            return cgs;
+            #endif
+            return CurrentSettings;
+        }
+        set { CurrentSettings = value; }
+    }
 
     private static readonly string uploadURI = "http://gamecomenius.com/gamecomenius2/custom/savecustom.php";
     private static readonly string downloadURI = "http://gamecomenius.com/gamecomenius2/custom/loadcustom.php";

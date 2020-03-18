@@ -18,14 +18,34 @@ public class CharacterSpriteDatabase : MonoBehaviour {
     [SerializeField]
     private List<CharacterNameAndItsSprites> characterNameAndItsSprites;
 
+    private static readonly object simpleLock = new object();
+    private static CharacterSpriteDatabase instance;
+    public static CharacterSpriteDatabase Instance
+    {
+        get
+        {
+            lock (simpleLock)
+            {
+                if (instance == null)
+                {
+                    // Search for existing instance
+                    instance = FindObjectOfType<CharacterSpriteDatabase>();
 
-    public static CharacterSpriteDatabase Instance { get; private set; }
+                    if (instance == null)
+                        Debug.Log("Não há " + typeof(CharacterSpriteDatabase) + " nesta cena!");
+                    else
+                        DontDestroyOnLoad(instance.gameObject);
+                }
+                return instance;
+            }
+        }
+    }
 
     private void Awake()
     {
-        if (Instance == null)
+        if (instance == null)
         {
-            Instance = this;
+            instance = this;
             transform.parent = null;
             DontDestroyOnLoad(gameObject);
         }

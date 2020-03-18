@@ -5,32 +5,32 @@ using UnityEngine;
 
 public class CustomPlanejamento : MonoBehaviour {
 
-    private GameObject planejamento;
+    private Planejamento planejamento;
 
-    //void Start () {
-    //    planejamento = GameObject.Find("PlanejamentoGameObject");
 
-    //    AnularQuestsParaIniciarPlanejamento();
-    //    ZerarMidiasPadraoDoProfessor();
+    void Start()
+    {
+        planejamento = FindObjectOfType<Planejamento>();
+        planejamento.Disponivel = true;
 
-    //    ConfigurarPlanejamento(CustomGameSettings.CurrentSettings);
-    //}
+        ZerarMidiasPadraoDoProfessor();
+
+        ConfigurarPlanejamento(CustomGameSettings.CurrentSettings);
+    }
 
     private void ConfigurarPlanejamento(CustomGameSettings s)
     {
+        DefinirDescricaoDosMomentos();
         DefinirProcedimentos(s.Procedimento1, s.Procedimento2, s.Procedimento3);
         DefinirAgrupamentos(s.Agrupamento1, s.Agrupamento2, s.Agrupamento3);
     }
 
-    //private void AnularQuestsParaIniciarPlanejamento()
-    //{
-    //    var objetoQueIniciaPlanejamento = GameObject.Find("IniciaPlanejamento");
-    //    var quest = objetoQueIniciaPlanejamento.GetComponent<QuestScript>();
-    //    var c = objetoQueIniciaPlanejamento.GetComponent<PolygonCollider2D>();
-    //    quest.dependenciasNaoFeitas.AddListener(() => c.enabled = true);
-    //    quest.enabled = false;
-    //    c.enabled = true;
-    //}
+    private void DefinirDescricaoDosMomentos()
+    {
+        planejamento.descricaoMomento1 = "Escolha uma das mídias para o momento 1";
+        planejamento.descricaoMomento2 = "Escolha uma das mídias para o momento 2";
+        planejamento.descricaoMomento3 = "Escolha uma das mídias para o momento 3";
+    }
 
     private void ZerarMidiasPadraoDoProfessor()
     {
