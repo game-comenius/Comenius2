@@ -55,20 +55,29 @@ public class QuestGuest : QuestMiscellanous
 
     public void Complete()
     {
-        questComplete.Invoke();
-        questComplete.RemoveAllListeners();
+        if (questComplete != null)
+        {
+            questComplete.Invoke();
+            questComplete.RemoveAllListeners();
+        }
     }
 
     public void MakeAvailable()
     {
-        questAvailable.Invoke();
-        questAvailable.RemoveAllListeners();
+        if (questAvailable != null)
+        {
+            questAvailable.Invoke();
+            questAvailable.RemoveAllListeners();
+        }
     }
 
     public void MakeNotAvailable()
     {
-        questNotAvailable.Invoke();
-        questNotAvailable.RemoveAllListeners();
+        if (questNotAvailable != null)
+        {
+            questNotAvailable.Invoke();
+            questNotAvailable.RemoveAllListeners();
+        }
     }
 
     public void TakeStep()

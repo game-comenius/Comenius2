@@ -79,10 +79,14 @@ public class ManagerQuest : MonoBehaviour
 
     public static string GetQuestDescription(int questIndex)
     {
+        // Procurar quest com esse questIndex
         var quests = mainQuests.Union(sideQuests);
-        var quest = quests.Where((q) => q.index == questIndex).First();
-        if (quest == null) return "";
-        return quest.description;
+        var quest = quests.Where((q) => q.index == questIndex);
+
+        // Se não existe nenhuma quest com esse questIndex, retorna string vazia
+        if (!quest.Any()) return "";
+        // Se existe, retorna a primeira quest encontrada com esse questIndex
+        return quest.First().description;
     }
 
     public static QuestClass[] sideQuests
