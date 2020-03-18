@@ -11,7 +11,10 @@ public class FolhaInventarioNoPlanejamento : InventorySheetUI
         yield return base.Start();
 
         planejamento = GetComponentInParent<Planejamento>();
+    }
 
+    public void PermitirDragAndDrop()
+    {
         // Fazer com que o jogador consiga arrastar os items do inventário
         // durante e para o planejamento
         var items = GetComponentsInChildren<ItemInUserInterface>();

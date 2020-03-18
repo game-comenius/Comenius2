@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(QuestGuest))]
 public class Planejamento : MonoBehaviour {
 
     public bool Disponivel { get; set; }
@@ -12,11 +11,11 @@ public class Planejamento : MonoBehaviour {
     // Momento 3 é confirmado quando o jogador confirma o planejamento
 
     [SerializeField] [TextArea]
-    private string descricaoMomento1;
+    public string descricaoMomento1;
     [SerializeField] [TextArea]
-    private string descricaoMomento2;
+    public string descricaoMomento2;
     [SerializeField] [TextArea]
-    private string descricaoMomento3;
+    public string descricaoMomento3;
 
     private Canvas canvas;
     private FadeEffect backgroundPreto;
@@ -43,6 +42,8 @@ public class Planejamento : MonoBehaviour {
         canvas.enabled = true;
         backgroundPreto.Fadein();
         GameManager.UISendoUsada();
+
+        inventario.PermitirDragAndDrop();
 
         coroutineExecutarPlanejamento = StartCoroutine(ExecutarPlanejamento());
     }
@@ -71,6 +72,9 @@ public class Planejamento : MonoBehaviour {
         inventario.UnselectAllItems();
         planejamentoUI.DesbloquearMomento3();
         planejamentoUI.AlterarDescricaoMomento(descricaoMomento3);
+        // A confirmação do momento 3 do planejamento acontecerá quando o
+        // método ConfirmarPlanejamento for chamado, ele só faz alguma coisa
+        // quando Momento2Confirmado == true
     }
 
     public void RecomecarPlanejamento()
@@ -97,7 +101,10 @@ public class Planejamento : MonoBehaviour {
         if (!Momento2Confirmado) return;
         // Só continua se o jogador confirmou o momento 2
         GetComponentInChildren<PlanManager>().ConfirmPlan();
-        ManagerQuest.QuestTakeStep(GetComponent<QuestGuest>().index);
+
+        var questGuest = GetComponent<QuestGuest>();
+        if (questGuest) ManagerQuest.QuestTakeStep(questGuest.index);
+
         CancelarPlanejamento();
     }
 }
