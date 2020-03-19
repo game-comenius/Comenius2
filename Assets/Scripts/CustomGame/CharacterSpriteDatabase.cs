@@ -9,6 +9,8 @@ public class CharacterSpriteDatabase : MonoBehaviour {
     {
         public CharacterName Character;
 
+        public Sprite Foto;
+
         public Sprite SpriteNW;
         public Sprite SpriteNE;
         public Sprite SpriteSE;
@@ -53,6 +55,13 @@ public class CharacterSpriteDatabase : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+    }
+
+    public static Sprite Foto(CharacterName character)
+    {
+        var list = Instance.characterNameAndItsSprites;
+        var element = list.Find(x => x.Character == character);
+        return element.Foto;
     }
 
     public static Sprite SpriteNW(CharacterName character)

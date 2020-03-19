@@ -21,11 +21,19 @@ public class CreateCustomGamePanel : MonoBehaviour
         public string Feedback;
     }
 
-    private LinkedList<GameObject> paginas;
-    private LinkedListNode<GameObject> nodoPaginaAtual;
 
     private NivelDeEnsinoDropdown dropdownNivelDeEnsino;
     private AreaDeConhecimentoDropdown dropdownAreaDeConhecimento;
+
+    // LinkedList não é serializable para o inspector, então popular um array
+    // no inspector e no Start, jogar o array populado na LinkedList
+    [SerializeField]
+    private GameObject[] paginas;
+    private LinkedList<GameObject> listaDePaginas;
+    private LinkedListNode<GameObject> nodoPaginaAtual;
+
+    [SerializeField] private Button botaoVoltarPagina;
+    [SerializeField] private Button botaoAvancarPagina;
 
     [SerializeField]
     private GameObject listaFalasProfessor;
@@ -47,70 +55,76 @@ public class CreateCustomGamePanel : MonoBehaviour
 
     private void Awake()
     {
-        // Achar e catalogar todas as páginas do Panel, se o Panel tiver um
-        // filho, este filho deve ser uma página para criar um jogo custom
-        paginas = new LinkedList<GameObject>();
-        var numeroDePaginas = this.transform.childCount;
-        for (int i = 0; i < numeroDePaginas; i++)
-        {
-            var pagina = this.transform.GetChild(i).gameObject;
-            paginas.AddLast(pagina);
-        }
+        // Pegar a lista de páginas pelas páginas definidas pelo inspector
+        listaDePaginas = new LinkedList<GameObject>(paginas);
 
-        // Ativar todas as páginas para coletar botões, campos, ...
-        foreach (var pagina in paginas) pagina.SetActive(true);
+        //// Ativar todas as páginas para coletar botões, campos, ...
+        //foreach (var pagina in listaDePaginas) pagina.SetActive(true);
 
-        // Coletar dropdowns do nível de ensino e a área de conhecimento
-        dropdownNivelDeEnsino = GetComponentInChildren<NivelDeEnsinoDropdown>();
-        dropdownAreaDeConhecimento = GetComponentInChildren<AreaDeConhecimentoDropdown>();
+        //// Coletar dropdowns do nível de ensino e a área de conhecimento
+        //dropdownNivelDeEnsino = GetComponentInChildren<NivelDeEnsinoDropdown>();
+        //dropdownAreaDeConhecimento = GetComponentInChildren<AreaDeConhecimentoDropdown>();
 
-        // Coletar falas do professor na sala dos professores
-        var falas = listaFalasProfessor.GetComponentsInChildren<TMP_InputField>();
-        introducaoAula = falas[0];
-        descricaoMomento1 = falas[1];
-        descricaoMomento2 = falas[2];
-        descricaoMomento3 = falas[3];
+        //// Coletar falas do professor na sala dos professores
+        //var falas = listaFalasProfessor.GetComponentsInChildren<TMP_InputField>();
+        //introducaoAula = falas[0];
+        //descricaoMomento1 = falas[1];
+        //descricaoMomento2 = falas[2];
+        //descricaoMomento3 = falas[3];
 
-        // Coletar os momentos que contém as configurações de proc. e agrup.
-        var momentos = this.GetComponentsInChildren<MomentoUICriarCustom>();
-        momento1 = momentos[0];
-        momento2 = momentos[1];
-        momento3 = momentos[2];
+        //// Coletar os momentos que contém as configurações de proc. e agrup.
+        //var momentos = this.GetComponentsInChildren<MomentoUICriarCustom>();
+        //momento1 = momentos[0];
+        //momento2 = momentos[1];
+        //momento3 = momentos[2];
 
-        editarPoderMidiasScrollViews = GetComponentsInChildren<EditarPoderMidiasScrollView>();
+        //editarPoderMidiasScrollViews = GetComponentsInChildren<EditarPoderMidiasScrollView>();
 
         // Desativar todas as páginas deste panel e ativar apenas a primeira
-        foreach (var pagina in paginas) pagina.SetActive(false);
-        nodoPaginaAtual = paginas.First;
-        nodoPaginaAtual.Value.SetActive(true);
+        foreach (var pagina in listaDePaginas) pagina.SetActive(false);
+        IrParaPagina(listaDePaginas.First);
     }
 
+    public void IrParaPagina(LinkedListNode<GameObject> nodoDaPaginaAlvo)
+    {
+        // Desativar página que será trocada pela página alvo
+        if (nodoPaginaAtual != null) nodoPaginaAtual.Value.SetActive(false);
 
+        // Ativar página alvo
+        nodoPaginaAtual = nodoDaPaginaAlvo;
+        nodoPaginaAtual.Value.SetActive(true);
+
+        // Se a página alvo é a primeira página, desabilitar botão voltar
+        bool primeiraPagina = (nodoPaginaAtual == listaDePaginas.First);
+        if (primeiraPagina)
+            botaoVoltarPagina.gameObject.SetActive(false);
+        else
+            botaoVoltarPagina.gameObject.SetActive(true);
+
+        // Se a página alvo é a última página, desabilitar botão avançar
+        bool ultimaPagina = (nodoPaginaAtual == listaDePaginas.Last);
+        if (ultimaPagina)
+            botaoAvancarPagina.gameObject.SetActive(false);
+        else
+            botaoAvancarPagina.gameObject.SetActive(true);
+    }
 
     // Métodos vinculados a botões
     public void IrParaProximaPagina()
     {
-        var paginaAnterior = nodoPaginaAtual.Value;
-        paginaAnterior.SetActive(false);
-
-        nodoPaginaAtual = nodoPaginaAtual.Next;
-        nodoPaginaAtual.Value.SetActive(true);
+        if (nodoPaginaAtual.Next != null) IrParaPagina(nodoPaginaAtual.Next);
     }
 
     public void IrParaPaginaAnterior()
     {
-        var paginaSeguinte = nodoPaginaAtual.Value;
-        paginaSeguinte.SetActive(false);
-
-        nodoPaginaAtual = nodoPaginaAtual.Previous;
-        nodoPaginaAtual.Value.SetActive(true);
+        if (nodoPaginaAtual.Previous != null) IrParaPagina(nodoPaginaAtual.Previous);
     }
 
     public void PressSubmitButton()
     {
         // Criar objeto para escrever no disco
         CustomGameSettings settings = new CustomGameSettings();
-        settings.Professor = SelectProfessorButton.CurrentlySelectedButton.Professor;
+        settings.Professor = GetComponentInChildren<PaginaEscolherProfessor>().ProfessorSelecionado;
         // Alterar para a escolha do jogador
         settings.Sala = SalaDeAula.Jean;
 
