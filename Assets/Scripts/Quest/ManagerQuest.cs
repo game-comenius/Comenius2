@@ -21,9 +21,9 @@ public class ManagerQuest : MonoBehaviour
                 {
                     default:
                         return Mission1._questGroups;
-                    case 1:
-                        return Mission2._questGroups;
                     case 2:
+                        return Mission2._questGroups;
+                    case 3:
                         return Mission3._questGroups;
                 }
             }
@@ -35,9 +35,9 @@ public class ManagerQuest : MonoBehaviour
                 {
                     default:
                         return Mission1._questGroups;
-                    case 1:
-                        return Mission2._questGroups;
                     case 2:
+                        return Mission2._questGroups;
+                    case 3:
                         return Mission3._questGroups;
                 }
             }
@@ -54,9 +54,9 @@ public class ManagerQuest : MonoBehaviour
                 {
                     default:
                         return Mission1._mainQuests;
-                    case 1:
-                        return Mission2._mainQuests;
                     case 2:
+                        return Mission2._mainQuests;
+                    case 3:
                         return Mission3._mainQuests;
                 }
             }
@@ -68,9 +68,9 @@ public class ManagerQuest : MonoBehaviour
                 {
                     default:
                         return Mission1._mainQuests;
-                    case 1:
-                        return Mission2._mainQuests;
                     case 2:
+                        return Mission2._mainQuests;
+                    case 3:
                         return Mission3._mainQuests;
                 }
             }
@@ -99,7 +99,7 @@ public class ManagerQuest : MonoBehaviour
                 {
                     default:
                         return Mission1._sideQuests;
-                    case 1:
+                    case 2:
                         return Mission2._sideQuests;
                     case 3:
                         return Mission3._sideQuests;
@@ -113,9 +113,9 @@ public class ManagerQuest : MonoBehaviour
                 {
                     default:
                         return Mission1._sideQuests;
-                    case 1:
-                        return Mission2._sideQuests;
                     case 2:
+                        return Mission2._sideQuests;
+                    case 3:
                         return Mission3._sideQuests;
                 }
             }

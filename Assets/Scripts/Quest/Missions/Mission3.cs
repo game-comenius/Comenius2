@@ -15,7 +15,7 @@ public class Mission3 : MonoBehaviour
         new QuestClass (2, "Fale com o Paulino na sala dos professores", new DoQuest(), new int[]{ }),
         new QuestClass (3, "Fale com estudantes nos pátio", new CounterQuest(0, 5), new int[]{ }),
         new QuestClass (4, "Fale com o Paulino sobre as opniões dos alunos", new DoQuest(), new int[]{ }),
-        new QuestClass (5, "Faça um planejamento na sala dos professores", new DoQuest(), new int[]{ }),
+        new QuestClass (5, "Faça um planejamento na sala dos professores", new DoQuest(), new int[]{ 4 }),
         new QuestClass (6, "Vá para a aula", new DoQuest(), new int[]{ }),
         new QuestClass (7, "Vá para o pátio", new DoQuest(), new int[]{ })
     };
