@@ -101,6 +101,8 @@ public class ManagerQuest : MonoBehaviour
                         return Mission1._sideQuests;
                     case 1:
                         return Mission2._sideQuests;
+                    case 3:
+                        return Mission3._sideQuests;
                 }
             }
             catch (System.NullReferenceException)
@@ -113,6 +115,8 @@ public class ManagerQuest : MonoBehaviour
                         return Mission1._sideQuests;
                     case 1:
                         return Mission2._sideQuests;
+                    case 2:
+                        return Mission3._sideQuests;
                 }
             }
         }
