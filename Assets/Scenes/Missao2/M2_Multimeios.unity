@@ -1038,6 +1038,7 @@ GameObject:
   - component: {fileID: 329734278}
   - component: {fileID: 329734279}
   - component: {fileID: 329734281}
+  - component: {fileID: 329734282}
   m_Layer: 0
   m_Name: Drica(NPC)
   m_TagString: QuestGiver
@@ -1309,6 +1310,22 @@ PolygonCollider2D:
       - {x: 0.05244755, y: -0.7167832}
       - {x: 0.15734266, y: -0.65384614}
       - {x: 0.17132866, y: -0.6328671}
+--- !u!114 &329734282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 329734277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0072b59adab0240298adc1789f58dda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objetivo: 0
+  IndiceDaMissaoAlvo: 10800
+  IndiceDaRespostaAlvo: 1
+  Momento: 2
+  Dialogo: {fileID: 329734280}
 --- !u!212 &329734283
 SpriteRenderer:
   m_ObjectHideFlags: 0

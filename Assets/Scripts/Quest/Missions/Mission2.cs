@@ -33,7 +33,7 @@ public class Mission2 : MonoBehaviour
 
         new QuestClass (11100, "Falar com a Drica na Multimeios", new DoQuest(), new int[]{ }),
         new QuestClass (11110, "Falar com a Drica sobre as canetas", new DoQuest(), new int[]{ }),
-        new QuestClass (10800, "Falar com a Menina Ornitóloga no Pátio 2", new DoQuest(), new int[]{ 11110 }),
+        new QuestClass (10800, "Encontrar aluna com canetas coloridas", new DoQuest(), new int[]{ 11110 }),
         new QuestClass (10801, "Controle: pegar canetar no Pátio 2", new DoQuest(), new int[]{ 10800 }),
 
         new QuestClass (11200, "Falar com a Montanari na Sala de Informática", new DoQuest(), new int[]{ }),

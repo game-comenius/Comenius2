@@ -4048,6 +4048,11 @@ GameObject:
   - component: {fileID: 1865553294}
   - component: {fileID: 1865553299}
   - component: {fileID: 1865553296}
+  - component: {fileID: 1865553300}
+  - component: {fileID: 1865553304}
+  - component: {fileID: 1865553303}
+  - component: {fileID: 1865553302}
+  - component: {fileID: 1865553301}
   m_Layer: 0
   m_Name: Montanari
   m_TagString: Untagged
@@ -4161,25 +4166,29 @@ MonoBehaviour:
         questIndex: 0
       - personagem: 0
         emocao: 2
-        fala: "Sim, d\xE1 uma olhada aqui!"
+        fala: "Sim, d\xE1 uma olhada nessa p\xE1gina com um mapa sobre o assunto da
+          aula de hoje!"
         resumo: "P\xE1gina com mapa"
         conexao: 2
         questIndex: 12101
       - personagem: 0
         emocao: 2
-        fala: "Sim, d\xE1 uma olhada aqui!"
+        fala: "Sim, d\xE1 uma olhada nessa p\xE1gina com uma linha do tempo sobre
+          o assunto da aula de hoje!"
         resumo: "P\xE1gina com linha do tempo"
         conexao: 2
         questIndex: 12201
       - personagem: 0
         emocao: 2
-        fala: "Sim, d\xE1 uma olhada aqui!"
+        fala: "Sim, d\xE1 uma olhada nessa p\xE1gina com um ciclo do trabalho sobre
+          o assunto da aula de hoje!"
         resumo: "P\xE1gina com ciclo do trabalho"
         conexao: 2
         questIndex: 12301
       - personagem: 0
         emocao: 2
-        fala: "Sim, d\xE1 uma olhada aqui!"
+        fala: "Sim, d\xE1 uma olhada nessa fita VHS! \xC9 um document\xE1rio sobre
+          o assunto da aula de hoje!"
         resumo: Fita VHS
         conexao: 2
         questIndex: 12401
@@ -4396,6 +4405,86 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1865553300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1865553293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0072b59adab0240298adc1789f58dda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objetivo: 1
+  IndiceDaMissaoAlvo: 11200
+  IndiceDaRespostaAlvo: 0
+  Momento: 1
+  Dialogo: {fileID: 1865553295}
+--- !u!114 &1865553301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1865553293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0072b59adab0240298adc1789f58dda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objetivo: 1
+  IndiceDaMissaoAlvo: 12301
+  IndiceDaRespostaAlvo: 3
+  Momento: 2
+  Dialogo: {fileID: 1865553295}
+--- !u!114 &1865553302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1865553293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0072b59adab0240298adc1789f58dda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objetivo: 1
+  IndiceDaMissaoAlvo: 12201
+  IndiceDaRespostaAlvo: 2
+  Momento: 2
+  Dialogo: {fileID: 1865553295}
+--- !u!114 &1865553303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1865553293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0072b59adab0240298adc1789f58dda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objetivo: 1
+  IndiceDaMissaoAlvo: 12102
+  IndiceDaRespostaAlvo: 1
+  Momento: 2
+  Dialogo: {fileID: 1865553295}
+--- !u!114 &1865553304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1865553293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0072b59adab0240298adc1789f58dda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objetivo: 1
+  IndiceDaMissaoAlvo: 12401
+  IndiceDaRespostaAlvo: 4
+  Momento: 2
+  Dialogo: {fileID: 1865553295}
 --- !u!1 &1878083997
 GameObject:
   m_ObjectHideFlags: 0
