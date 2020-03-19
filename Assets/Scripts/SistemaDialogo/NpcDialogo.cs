@@ -33,8 +33,13 @@ public class NpcDialogo : MonoBehaviour
     // Por exemplo, o comenius aparece logo após o diálogo para falar algo
     // para o jogador
     // As funções que serão chamadas quando o diálogo terminar devem ser do
-    // tipo Action, ou seja, "retorno void e nenhum parâmetro, i.e., void ()"
+    // tipo Action, ou seja, "retorno void e nenhum parâmetro, ou seja, void ()"
     public event Action OnEndDialogueEvent;
+    // As funções que serão chamadas quando o jogador escolher uma resposta
+    // devem ser do tipo Action<int>, ou seja, "retorno void e 1 parâmetro do
+    // tipo int, ou seja, void (int)" onde o int é o índice da resposta, por
+    // exemplo... Índice 0 é a primeira resposta, o índice 1 é a segunda e etc.
+    public event Action<int> QuandoEscolherRespostaEvent;
 
     private void Awake()
     {
@@ -154,6 +159,12 @@ public class NpcDialogo : MonoBehaviour
     public void OnEndDialogue()
     {
         if (OnEndDialogueEvent != null) OnEndDialogueEvent();
+    }
+
+    // Método que invoca as funções dentro do evento QuandoEscolherRespostaEvent
+    public void QuandoEscolherResposta(int resposta)
+    {
+        if (QuandoEscolherRespostaEvent != null) QuandoEscolherRespostaEvent(resposta);
     }
 
     protected virtual void OnDrawGizmosSelected()

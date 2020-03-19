@@ -422,6 +422,8 @@ public class SistemaDialogo : MonoBehaviour
         //}
     }
 
+    // Este método é chamado pelo OnValueChanged do Dropdown que é filho do
+    // objeto Dialogue em ManagerScene
     public void RespostaEscolhida(int escolha)
     {
         if (escolha == dropdown.options.Count - 1)
@@ -437,6 +439,11 @@ public class SistemaDialogo : MonoBehaviour
 
     private void ConfirmarEscolha()
     {
+        // Se precisar fazer algo de acordo com a resposta escolhida pelo
+        // jogador, invocar as funções cadastradas no evento
+        // QuandoEscolherRespostaEvent se ele possuir funções dentro dele
+        if (npcDialogo != null) npcDialogo.QuandoEscolherResposta(dropdownIndex);
+
         falaAtual.personagem = dialogo.nodulos[nodulo].respostas[dropdownIndex].personagem;
         falaAtual.emocao = dialogo.nodulos[nodulo].respostas[dropdownIndex].emocao;
         falaAtual.fala = dialogo.nodulos[nodulo].respostas[dropdownIndex].fala;
@@ -472,10 +479,7 @@ public class SistemaDialogo : MonoBehaviour
     {
         GameManager.UINaoSendoUsada();
 
-        if (npcDialogo != null)
-        {
-            npcDialogo.OnEndDialogue();
-        }
+        if (npcDialogo != null) npcDialogo.OnEndDialogue();
         npcDialogo = null;
         personagemRosto[1].sprite = null;
         escrevendo = false;

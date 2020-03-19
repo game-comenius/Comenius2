@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using System.Linq;
+using GameComenius.Dialogo;
 
 [CustomEditor(typeof(AdministradorDaJanelaDeMissoes))]
 public class AdministradorDaJanelaDeMissoesEditor : Editor
@@ -54,30 +55,77 @@ public class AdministradorDaJanelaDeMissoesEditor : Editor
             questsIndexes[i] = quests[i].index;
             questsDescriptions[i] = quests[i].index + ": " + quests[i].description;
         }
-        script.IndiceDaMissao = EditorGUILayout.IntPopup(script.IndiceDaMissao, questsDescriptions, questsIndexes);
+        script.IndiceDaMissaoAlvo = EditorGUILayout.IntPopup(script.IndiceDaMissaoAlvo, questsDescriptions, questsIndexes);
         EditorGUILayout.Space();
 
 
         EditorGUILayout.LabelField("== Quando ==");
         EditorGUILayout.BeginHorizontal();
-        if (EditorGUILayout.Toggle(script.Momento == AdministradorDaJanelaDeMissoes.MomentoDaAcao.InicioDaCena, "Radio"))
+        if (EditorGUILayout.Toggle(script.Momento == AdministradorDaJanelaDeMissoes.MomentoDaAcao.InicioDaCena, "Radio", GUILayout.Width(20)))
             script.Momento = AdministradorDaJanelaDeMissoes.MomentoDaAcao.InicioDaCena;
         EditorGUILayout.LabelField("Início desta cena");
+        EditorGUILayout.EndHorizontal();
 
-        // Para deixar os botões mais juntinhos, um espaço negativo entre eles
-        GUILayout.Space(-70);
-
-        if (EditorGUILayout.Toggle(script.Momento == AdministradorDaJanelaDeMissoes.MomentoDaAcao.AposDialogo, "Radio"))
+        EditorGUILayout.BeginHorizontal();
+        if (EditorGUILayout.Toggle(script.Momento == AdministradorDaJanelaDeMissoes.MomentoDaAcao.AposDialogo, "Radio", GUILayout.Width(20)))
             script.Momento = AdministradorDaJanelaDeMissoes.MomentoDaAcao.AposDialogo;
         EditorGUILayout.LabelField("Após diálogo");
         EditorGUILayout.EndHorizontal();
 
-        // Pedir um NpcDialogo se o momento de adicionar/remover é ou antes ou
-        // após um diálogo daquela cena
-        if (script.Momento == AdministradorDaJanelaDeMissoes.MomentoDaAcao.AposDialogo)
+        EditorGUILayout.BeginHorizontal();
+        if (EditorGUILayout.Toggle(script.Momento == AdministradorDaJanelaDeMissoes.MomentoDaAcao.AposResposta, "Radio", GUILayout.Width(20)))
+            script.Momento = AdministradorDaJanelaDeMissoes.MomentoDaAcao.AposResposta;
+        EditorGUILayout.LabelField("Após resposta");
+        EditorGUILayout.EndHorizontal();
+
+        // Pedir um NpcDialogo se o momento de adicionar/remover é após um
+        // diálogo daquela cena ou após uma resposta de desse diálogo
+        if (script.Momento == AdministradorDaJanelaDeMissoes.MomentoDaAcao.AposDialogo ||
+            script.Momento == AdministradorDaJanelaDeMissoes.MomentoDaAcao.AposResposta)
         {
             EditorGUILayout.Space();
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.LabelField("Diálogo", GUILayout.Width(50));
             script.Dialogo = (NpcDialogo)EditorGUILayout.ObjectField(script.Dialogo, typeof(NpcDialogo), true);
+            EditorGUILayout.EndHorizontal();
+        }
+
+        // Se o momento para adicionar/remover for após uma resposta, pedir uma
+        if (script.Dialogo && script.Momento == AdministradorDaJanelaDeMissoes.MomentoDaAcao.AposResposta)
+        {
+            EditorGUILayout.BeginHorizontal();
+
+            var dialogos = new List<Dialogo>();
+            dialogos.Add(script.Dialogo.dialogoPrincipal);
+            foreach (var dialogo in script.Dialogo.dialogosSecundarios)
+                dialogos.Add(dialogo);
+
+            string[] respostas = null;
+            foreach (var dialogo in dialogos)
+            {
+                foreach (var nodulo in dialogo.nodulos)
+                {
+                    if (nodulo.respostas.Count > 0)
+                    {
+                        // Pegar as respostas e sair desse grande comando for
+                        respostas = nodulo.respostas.Select((resposta) => resposta.fala).ToArray();
+                        break;
+                    }
+                }
+            }
+            if (respostas != null)
+            {
+                EditorGUILayout.BeginHorizontal();
+                EditorGUILayout.LabelField("Resposta Alvo", GUILayout.Width(80));
+                script.IndiceDaRespostaAlvo = EditorGUILayout.Popup(script.IndiceDaRespostaAlvo, respostas);
+                EditorGUILayout.EndHorizontal();
+            }
+            else
+            {
+                EditorGUILayout.LabelField("Não há perguntas neste diálogo");
+            }
+
+            EditorGUILayout.EndHorizontal();
         }
 
         EditorGUILayout.Space();
