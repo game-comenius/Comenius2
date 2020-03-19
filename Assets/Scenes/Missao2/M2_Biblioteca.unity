@@ -4809,6 +4809,7 @@ GameObject:
   - component: {fileID: 2095263227}
   - component: {fileID: 2095263230}
   - component: {fileID: 2095263231}
+  - component: {fileID: 2095263228}
   m_Layer: 0
   m_Name: Estante 2
   m_TagString: Untagged
@@ -4843,6 +4844,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2095263228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2095263225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0072b59adab0240298adc1789f58dda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objetivo: 0
+  IndiceDaMissao: 12401
+  Momento: 1
+  Dialogo: {fileID: 2095263231}
 --- !u!60 &2095263229
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4888,10 +4904,18 @@ MonoBehaviour:
   _index: 11700
   questComplete:
     m_PersistentCalls:
-      m_Calls: [{m_Target: {fileID: 2095263229}, m_MethodName: set_enabled, m_Mode: 6,
-          m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: 'UnityEngine.Object,
-              UnityEngine', m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: '',
-            m_BoolArgument: 0}, m_CallState: 2}]
+      m_Calls:
+      - m_Target: {fileID: 2095263229}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   questAvailable:
