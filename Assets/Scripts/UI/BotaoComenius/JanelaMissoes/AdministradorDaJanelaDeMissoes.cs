@@ -23,7 +23,13 @@ public class AdministradorDaJanelaDeMissoes : MonoBehaviour {
     {
         // Pegar a quest com o índice = IndiceDaMissao
         var questArray = ManagerQuest.mainQuests.Union(ManagerQuest.sideQuests);
-        var quest = questArray.Where((q) => q.index == IndiceDaMissaoAlvo).First();
+        var buscaQuest = questArray.Where((q) => q.index == IndiceDaMissaoAlvo);
+        var quest = buscaQuest.FirstOrDefault();
+        if (quest == null)
+        {
+            Debug.LogWarning("Quest não definida, defina uma quest para adicionar à janela de missões");
+            return;
+        }
 
         switch (Objetivo)
         {
