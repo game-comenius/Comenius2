@@ -7,11 +7,12 @@ using UnityEngine;
 public class AdministradorDaJanelaDeMissoes : MonoBehaviour {
 
     public enum ObjetivoDaAcao { Adicionar, Remover }
-    public enum MomentoDaAcao { InicioDaCena, AposDialogo }
+    public enum MomentoDaAcao { InicioDaCena, AposDialogo, AposResposta }
 
     public ObjetivoDaAcao Objetivo;
 
-    public int IndiceDaMissao;
+    public int IndiceDaMissaoAlvo;
+    public int IndiceDaRespostaAlvo;
 
     public MomentoDaAcao Momento;
 
@@ -22,7 +23,7 @@ public class AdministradorDaJanelaDeMissoes : MonoBehaviour {
     {
         // Pegar a quest com o índice = IndiceDaMissao
         var questArray = ManagerQuest.mainQuests.Union(ManagerQuest.sideQuests);
-        var quest = questArray.Where((q) => q.index == IndiceDaMissao).First();
+        var quest = questArray.Where((q) => q.index == IndiceDaMissaoAlvo).First();
 
         switch (Objetivo)
         {
@@ -57,6 +58,23 @@ public class AdministradorDaJanelaDeMissoes : MonoBehaviour {
                 };
                 Dialogo.OnEndDialogueEvent += funcaoAdicionarMissao;
                 break;
+            case MomentoDaAcao.AposResposta:
+                if (!Dialogo)
+                {
+                    Debug.LogError("Diálogo == null. Impossível adicionar uma missão após um diálogo sem especificar o mesmo.");
+                    break;
+                }
+                Action<int> funcaoAdicionarMissaoAposResposta = null;
+                funcaoAdicionarMissaoAposResposta = (respostaDoJogador) =>
+                {
+                    if (respostaDoJogador == IndiceDaRespostaAlvo)
+                    {
+                        ConselheiroComenius.JanelaMissoes.AdicionarMissao(quest);
+                        Dialogo.QuandoEscolherRespostaEvent -= funcaoAdicionarMissaoAposResposta;
+                    }
+                };
+                Dialogo.QuandoEscolherRespostaEvent += funcaoAdicionarMissaoAposResposta;
+                break;
         }
     }
 
@@ -81,6 +99,23 @@ public class AdministradorDaJanelaDeMissoes : MonoBehaviour {
                     Dialogo.OnEndDialogueEvent -= funcaoRemoverMissao;
                 };
                 Dialogo.OnEndDialogueEvent += funcaoRemoverMissao;
+                break;
+            case MomentoDaAcao.AposResposta:
+                if (!Dialogo)
+                {
+                    Debug.LogError("Diálogo == null. Impossível remover uma missão após um diálogo sem especificar o mesmo.");
+                    break;
+                }
+                Action<int> funcaoRemoverMissaoAposResposta = null;
+                funcaoRemoverMissaoAposResposta = (respostaDoJogador) =>
+                {
+                    if (respostaDoJogador == IndiceDaRespostaAlvo)
+                    {
+                        ConselheiroComenius.JanelaMissoes.RemoverMissao(quest);
+                        Dialogo.QuandoEscolherRespostaEvent -= funcaoRemoverMissaoAposResposta;
+                    }
+                };
+                Dialogo.QuandoEscolherRespostaEvent += funcaoRemoverMissaoAposResposta;
                 break;
         }
     }
