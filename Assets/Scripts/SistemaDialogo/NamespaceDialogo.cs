@@ -211,6 +211,10 @@ namespace GameComenius.Dialogo
                     nome = "Vladmir";
                     personagem.nome = "Vladmir";
                     break;
+                case Personagens.Paulino:
+                    nome = "Paulino";
+                    personagem.nome = "Paulino";
+                    break;
             }
 
             path = path + nome + "/";
