@@ -32,4 +32,12 @@ public enum ItemName
     TVComVHSRevolucaoIndustrial,
     TVComVHSRevolucaoIndustrialEditado,
     ReprodutorAudioComCDRevolucaoIndustrial,
+    FolhaSulfite,
+    VHSregionalismo,
+    VHSregionalismoEditado,
+    Enciclopedia,
+    Adedonha,
+    Forca,
+    PalavrasCruzadas,
+    CDsotaques
 }
