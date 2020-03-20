@@ -1337,6 +1337,95 @@ Transform:
   m_Father: {fileID: 373286151}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &774063586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 774063587}
+  - component: {fileID: 774063588}
+  m_Layer: 0
+  m_Name: Controle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &774063587
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 774063586}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 855067974}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &774063588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 774063586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 32601
+  questComplete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 535384487}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 459666168}
+        m_MethodName: Fadein
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 774063588}
+        m_MethodName: UISendoUsada
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &818445687
 Prefab:
   m_ObjectHideFlags: 0
@@ -1571,21 +1660,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _index: 11100
+  _index: 32600
   questComplete:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   questAvailable:
@@ -1623,47 +1701,54 @@ MonoBehaviour:
   dialogoObrigatorio: 0
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
-    nodulos: []
+    nodulos:
+    - falas:
+      - personagem: 1
+        emocao: 0
+        fala: Oi professora Lurdinha, bem vinda novamente! Como foram os resultados
+          das entrevistas com os alunos?
+      - personagem: 0
+        emocao: 0
+        fala: "Muito revelador, Drica. A maioria dos alunos gosta de jogos, legal
+          n\xE9?"
+      - personagem: 0
+        emocao: 0
+        fala: "Agora estou procurando por novas m\xEDdias e tamb\xE9m estou precisando
+          de ajuda para uma outra coisa\u2026"
+      - personagem: 1
+        emocao: 0
+        fala: "Que outra coisa que \xE9 essa?"
+      - personagem: 0
+        emocao: 0
+        fala: "Ideias para jogos legais de usar na aula do Paulino, voc\xEA teria
+          alguma?"
+      - personagem: 1
+        emocao: 0
+        fala: "Nossa professora, voc\xEA perguntou para a pessoa certa!! Tem um jogo
+          muito legal que eu adoro que se chama Stop."
+      - personagem: 1
+        emocao: 0
+        fala: "A gente sorteia uma letra e a\xED cada pessoa precisa achar uma palavra
+          naquela letra de acordo com uma s\xE9rie de categorias."
+      - personagem: 0
+        emocao: 0
+        fala: "Nossa, que \xF3tima ideia! Na minha \xE9poca esse jogo se chamava Adedonha."
+      - personagem: 0
+        emocao: 0
+        fala: "As categorias podem at\xE9 mesmo ser tipos de regionalismo! Adorei.
+          Obrigada pela ajuda Drica!"
+      respostas: []
   dialogosSecundarios:
   - nodulos:
     - falas:
-      - personagem: 0
-        emocao: 0
-        fala: 
-      - personagem: 1
-        emocao: 4
-        fala: Oi professora Lurdinha, bem vinda para mais um dia de trabalho!
-      - personagem: 1
-        emocao: 2
-        fala: "Hoje temos mais uma novidade quentinha na sala de m\xEDdias! Chegou
-          um <b>retroprojetor</b> de \xFAltima gera\xE7\xE3o, voc\xEA j\xE1 viu?"
-      - personagem: 0
-        emocao: 2
-        fala: "Que bacana! Quero muito experimentar ele em sala de aula, acho que
-          os alunos v\xE3o gostar muito!"
-      - personagem: 1
-        emocao: 2
-        fala: "Agora s\xF3 precisamos dar um jeito de achar e preparar as <b>transpar\xEAncias.</b>"
       - personagem: 1
         emocao: 0
-        fala: "Onde ser\xE1 que a escola escondeu? Acho que procurar na <i>Coordena\xE7\xE3o
-          Pedag\xF3gica</i> pode ser um bom come\xE7o!"
-      - personagem: 0
-        emocao: 4
-        fala: "\xD3tima dica, como sempre, Drica!"
-      - personagem: 1
-        emocao: 4
-        fala: "Ent\xE3o professora, n\xE3o esque\xE7a que estou aqui pra te ajudar!"
-      - personagem: 1
-        emocao: 2
-        fala: "Voc\xEA est\xE1 com alguma d\xFAvida sobre as m\xEDdias?"
+        fala: "Quer ajuda para mais alguma coisa? Est\xE1 com alguma d\xFAvida?"
       respostas:
       - personagem: 0
         emocao: 0
-        fala: "Drica, eu andei pensando sobre as m\xEDdias. \xC9 estranho que uma
-          TV pode ser uma m\xEDdia, mas um cartaz tamb\xE9m pode ser. Porque ser\xE1
-          que acontece isso?"
-        resumo: "O que \xE9 uma m\xEDdia?"
+        fala: "Drica, qualquer pessoa pode usar uma m\xEDdia?"
+        resumo: "M\xEDdias"
         conexao: 1
         questIndex: 0
       - personagem: 0
@@ -1679,77 +1764,51 @@ MonoBehaviour:
         conexao: 3
         questIndex: 0
     - falas:
-      - personagem: 0
-        emocao: 0
-        fala: 
       - personagem: 1
         emocao: 0
-        fala: "Ah, professora, estou estudando sobre isso\u2026"
+        fala: "Boa pergunta! Ent\xE3o, usar uma m\xEDdia exige algumas habilidades,
+          experi\xEAncia at\xE9 e tamb\xE9m motiva\xE7\xE3o para usar."
       - personagem: 1
-        emocao: 2
-        fala: "As m\xEDdias s\xE3o mais que simples ferramentas, elas podem ser tamb\xE9m
-          linguagens, linguagens que se articulam entre as tecnologias, a informa\xE7\xE3o
-          e a comunica\xE7\xE3o."
+        emocao: 0
+        fala: "Se uma pessoa n\xE3o tiver tudo isso, acho que ela n\xE3o conseguiria
+          usar m\xEDdias na aula."
+      - personagem: 1
+        emocao: 0
+        fala: "Por isso voc\xEA est\xE1 aqui! Para auxiliar nesse letramento dos professores
+          para usarem as m\xEDdias."
       - personagem: 0
         emocao: 0
-        fala: "Acho que estou entendendo. Ent\xE3o uma m\xEDdia traz com ela outras
-          coisas, n\xE3o \xE9?"
+        fala: "Que interessante! E esse letramento seria essas coisas que voc\xEA
+          disse, n\xE3o \xE9? De que voc\xEA precisa ter as habilidades, experi\xEAncia
+          e motiva\xE7\xE3o para usar as m\xEDdias. "
       - personagem: 1
-        emocao: 2
-        fala: "Sim, porque pensa, uma TV vai trazer uma linguagem diferente de um
-          cartaz. Por afinal, o meio \xE9 a mensagem  e se o meio muda, a mensagem
-          muda tamb\xE9m."
-      - personagem: 1
-        emocao: 4
-        fala: "Por que por exemplo, uma hist\xF3ria que \xE9 contada em um filme \xE9
-          bem diferente de uma que for contada em um livro."
-      - personagem: 1
-        emocao: 2
-        fala: "Porque no filme voc\xEA v\xEA as pessoas, voc\xEA pode ouvir m\xFAsicas
-          e sentir as coisas atrav\xE9s delas, mas no livro voc\xEA consegue entrar
-          mais na mente dos personagens, se o narrador deixar, sabe?"
+        emocao: 0
+        fala: "Isso mesmo! Ent\xE3o, quem n\xE3o tiver esse letramento, n\xE3o vai
+          conseguir usar as m\xEDdias.\r"
       - personagem: 0
-        emocao: 2
-        fala: "Entendi, est\xE1 tudo mais claro agora! Obrigada Drica! At\xE9 mais."
+        emocao: 0
+        fala: "Est\xE1 certo, obrigada por tirar essa minha d\xFAvida Drica!"
       respostas: []
     - falas:
-      - personagem: 0
-        emocao: 0
-        fala: 
-      - personagem: 1
-        emocao: 4
-        fala: "Boa pergunta! Eu acho que tem uma coisa que pode ser \xFAtil para voc\xEA
-          melhorar uma de suas m\xEDdias."
-      - personagem: 1
-        emocao: 2
-        fala: "Tenho um belo kit de canetas coloridas que uso para desenhar, acho
-          que elas podem ser perfeitas para voc\xEA melhorar o cartaz."
-      - personagem: 0
-        emocao: 2
-        fala: "Ah, que \xF3timo! Voc\xEA poderia me emprestar elas ent\xE3o?"
-      - personagem: 1
-        emocao: 4
-        fala: "Claro, mas tem s\xF3 um probleminha\u2026"
       - personagem: 1
         emocao: 0
-        fala: "Eu acabei emprestando para uma coleguinha minha umas semanas atr\xE1s
-          e ela ainda n\xE3o me devolveu. Se voc\xEA encontrar uma <i>menina loira
-          com maria chiquinha</i>, pe\xE7a para ela devolver para voc\xEA porque eu
-          estou te emprestando."
+        fala: "Boa pergunta! Eu acho que tem uma enciclop\xE9dia bem completinha que
+          acabou de chegar na Biblioteca."
+      - personagem: 1
+        emocao: 0
+        fala: "E eu tamb\xE9m vi que a Ant\xF4nia disse que chegou um reestoque l\xE1
+          na Coordena\xE7\xE3o Pedag\xF3gica, mas eu n\xE3o sei o que \xE9."
       - personagem: 0
-        emocao: 2
-        fala: "Que \xF3timo, vou ver se encontro ela ent\xE3o!"
+        emocao: 0
+        fala: "Que \xF3timo, obrigada pelas dicas!"
       respostas: []
     - falas:
-      - personagem: 0
-        emocao: 0
-        fala: 
       - personagem: 1
-        emocao: 4
+        emocao: 0
         fala: Muito bem, professora! Qualquer coisa volte aqui que conversamos mais,
           ok?
       - personagem: 0
-        emocao: 4
+        emocao: 0
         fala: "Beleza! At\xE9 mais!"
       respostas: []
   interactOffset:
@@ -1811,7 +1870,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.13, y: 0.94, z: 0.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 774063587}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3307,7 +3367,7 @@ GameObject:
   - component: {fileID: 1741048952}
   - component: {fileID: 1741048951}
   m_Layer: 0
-  m_Name: Retroprojetor
+  m_Name: Receita Adedonha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3362,7 +3422,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e06d47177ba96c14b8c081ea6d1f2223, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f8a98c8683094f845aa5eebeaf51f002, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

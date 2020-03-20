@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _index: 11401
+  _index: 32701
   questComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -447,9 +447,20 @@ MonoBehaviour:
   questAvailable:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 315525022}
-        m_MethodName: addItem
-        m_Mode: 1
+      - m_Target: {fileID: 1852628298}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 56350432}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -458,7 +469,29 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1852628298}
+      - m_Target: {fileID: 724275697}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1924409660}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1647203279}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -478,7 +511,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 190172238}
         m_MethodName: UISendoUsada
@@ -489,18 +522,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 190172238}
-        m_MethodName: TakeStep
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -764,7 +786,6 @@ GameObject:
   - component: {fileID: 315525027}
   - component: {fileID: 315525026}
   - component: {fileID: 315525025}
-  - component: {fileID: 315525022}
   - component: {fileID: 315525024}
   m_Layer: 0
   m_Name: Leitura(NPC)
@@ -773,18 +794,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &315525022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 315525021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 722b3663c27596a44be0c38f4b167b1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: 1
 --- !u!4 &315525023
 Transform:
   m_ObjectHideFlags: 0
@@ -871,21 +880,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _index: 11400
+  _index: 32700
   questComplete:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   questAvailable:
@@ -989,7 +987,13 @@ MonoBehaviour:
         emocao: 0
         fala: "Realmente professora! A F\xEDsica \xE9 uma ci\xEAncia muito maravilhosa
           e o Hawking era um g\xEAnio. Pena que ele morreu\u2026"
-      respostas: []
+      respostas:
+      - personagem: 0
+        emocao: 0
+        fala: 
+        resumo: 
+        conexao: 4
+        questIndex: 0
     - falas:
       - personagem: 0
         emocao: 0
@@ -999,7 +1003,13 @@ MonoBehaviour:
         fala: "Boa escolha professora! A Filosofia \xE9 um assunto que eu adoro. \xC9
           uma pena que muitas pessoas n\xE3o valorizam o pensar e o filosofar. Acho
           que isso \xE9 uma maldade enorme!"
-      respostas: []
+      respostas:
+      - personagem: 0
+        emocao: 0
+        fala: 
+        resumo: 
+        conexao: 4
+        questIndex: 0
     - falas:
       - personagem: 0
         emocao: 0
@@ -1013,6 +1023,46 @@ MonoBehaviour:
         fala: "E acho que quanto mais as pessoas a nossa volta dizem que n\xE3o vamos
           conseguir entender, mais dif\xEDcil de fato vai ficar para a gente entender
           as coisas. "
+      respostas:
+      - personagem: 0
+        emocao: 0
+        fala: 
+        resumo: 
+        conexao: 4
+        questIndex: 0
+    - falas:
+      - personagem: 0
+        emocao: 0
+        fala: "Caramba rapazinho! Voc\xEA \xE9 muito inteligente! Ainda mais para
+          a sua idade. E voc\xEA tem quantos anos? Dez?"
+      - personagem: 3
+        emocao: 0
+        fala: "Eu tenho nove. E obrigado. As pessoa subestimam as crian\xE7as. Acham
+          que a gente n\xE3o pode ser inteligente ou coisas assim simplesmente por
+          conta da nossa idade. E isso \xE9 uma bobagem!"
+      - personagem: 3
+        emocao: 0
+        fala: "Voc\xEAs mais velhos poderiam aprender muito mais conosco se n\xE3o
+          se achassem t\xE3o mais inteligentes e importante que n\xF3s!"
+      - personagem: 0
+        emocao: 0
+        fala: "Concordo totalmente! J\xE1 que estamos falando disso, eu gostaria de
+          te perguntar algo. "
+      - personagem: 0
+        emocao: 0
+        fala: "Eu estou procurando por ideias de jogos de portugu\xEAs que eu possa
+          criar para uma aula. Voc\xEA teria alguma ideia legal?"
+      - personagem: 3
+        emocao: 0
+        fala: "Acho que seria legal um jogo de palavras cruzadas. Somente quem conhece
+          bastante coisas \xE9 que vai se dar bem nesse jogo."
+      - personagem: 3
+        emocao: 0
+        fala: "E essa \xE9 uma \xF3tima forma de voc\xEA aprender com os seus alunos!"
+      - personagem: 0
+        emocao: 0
+        fala: "\xD3tima ideia! Acho que d\xE1 pr\xF3xima vez eu \xE9 quem vou pedir
+          a sua ajuda! At\xE9 mais garotinho inteligente!"
       respostas: []
   dialogosSecundarios: []
   interactOffset:
@@ -1181,6 +1231,17 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1924409660}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1647203279}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -1560,6 +1621,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1647203279}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -2085,7 +2157,7 @@ RectTransform:
   m_Children:
   - {fileID: 1059110335}
   m_Father: {fileID: 1852628302}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2176,6 +2248,28 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1924409661}
+        m_MethodName: exitAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 937170478}
+        m_MethodName: Fadeout
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1647203281}
         m_MethodName: exitAnimation
         m_Mode: 1
         m_Arguments:
@@ -3781,6 +3875,107 @@ SpriteMask:
   m_BackSortingOrder: 0
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1647203279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1647203280}
+  - component: {fileID: 1647203284}
+  - component: {fileID: 1647203283}
+  - component: {fileID: 1647203282}
+  - component: {fileID: 1647203281}
+  m_Layer: 0
+  m_Name: Receita Palavras Cruzadas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1647203280
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1647203279}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1852628302}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1647203281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1647203279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 649f1c1fce7bd7c4ab7099694765b2dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1647203282}
+--- !u!95 &1647203282
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1647203279}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 569d5f0dfa555af46a5dccce22e50a71, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1647203283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1647203279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: d0b8c0d3644ea354da4394dfff2cffa2, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1647203284
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1647203279}
+  m_CullTransparentMesh: 0
 --- !u!1 &1660056238
 GameObject:
   m_ObjectHideFlags: 0
@@ -3866,7 +4061,7 @@ Prefab:
     - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
         type: 2}
       propertyPath: dialogoPrincipal.nodulos.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
         type: 2}
@@ -3890,8 +4085,28 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
         type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[4].falas.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
       propertyPath: dialogoPrincipal.nodulos.Array.data[0].respostas.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[3].respostas.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[2].respostas.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[1].respostas.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4323690141640222, guid: a1cf818579acdde4f96b99ea030f29d7, type: 2}
       propertyPath: m_LocalPosition.x
@@ -4545,6 +4760,94 @@ Prefab:
         conseguir entender, mais dif\xEDcil de fato vai ficar para a gente entender
         as coisas. "
       objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[4].falas.Array.data[1].personagem
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[4].falas.Array.data[1].fala
+      value: "Eu tenho nove. E obrigado. As pessoa subestimam as crian\xE7as. Acham
+        que a gente n\xE3o pode ser inteligente ou coisas assim simplesmente por conta
+        da nossa idade. E isso \xE9 uma bobagem!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[4].falas.Array.data[2].fala
+      value: "Voc\xEAs mais velhos poderiam aprender muito mais conosco se n\xE3o
+        se achassem t\xE3o mais inteligentes e importante que n\xF3s!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[4].falas.Array.data[0].fala
+      value: "Caramba rapazinho! Voc\xEA \xE9 muito inteligente! Ainda mais para a
+        sua idade. E voc\xEA tem quantos anos? Dez?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[3].respostas.Array.data[0].conexao
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[2].respostas.Array.data[0].conexao
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[1].respostas.Array.data[0].conexao
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[4].falas.Array.data[2].personagem
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[4].falas.Array.data[3].fala
+      value: "Concordo totalmente! J\xE1 que estamos falando disso, eu gostaria de
+        te perguntar algo. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[4].falas.Array.data[3].personagem
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[4].falas.Array.data[4].fala
+      value: "Eu estou procurando por ideias de jogos de portugu\xEAs que eu possa
+        criar para uma aula. Voc\xEA teria alguma ideia legal?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[4].falas.Array.data[5].fala
+      value: "Acho que seria legal um jogo de palavras cruzadas. Somente quem conhece
+        bastante coisas \xE9 que vai se dar bem nesse jogo."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[4].falas.Array.data[5].personagem
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[4].falas.Array.data[6].fala
+      value: "E essa \xE9 uma \xF3tima forma de voc\xEA aprender com os seus alunos!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[4].falas.Array.data[6].personagem
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogoPrincipal.nodulos.Array.data[4].falas.Array.data[7].fala
+      value: "\xD3tima ideia! Acho que d\xE1 pr\xF3xima vez eu \xE9 quem vou pedir
+        a sua ajuda! At\xE9 mais garotinho inteligente!"
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: a1cf818579acdde4f96b99ea030f29d7, type: 2}
@@ -5139,6 +5442,7 @@ RectTransform:
   - {fileID: 56350437}
   - {fileID: 724275702}
   - {fileID: 1924409665}
+  - {fileID: 1647203280}
   - {fileID: 880011088}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -5352,6 +5656,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1924409660}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1647203279}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:

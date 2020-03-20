@@ -58,14 +58,32 @@ public class Mission3 : MonoBehaviour
         new QuestClass (32200, "Pegar VHS de regionalismos na biblioteca", new DoQuest(), new int[]{ }),
         new QuestClass (32201, "Controle: Pegar VHS de regionalismos", new DoQuest(), new int[]{ 32200 }),
 
-        new QuestClass (32300, "Pegar jogo da forca com o Vladmir", new DoQuest(), new int[]{ }),
+        new QuestClass (32300, "Pegar receita de jogo da forca com o Vladmir", new DoQuest(), new int[]{ }),
         new QuestClass (32301, "Controle: Pegar jogo da forca com o Vladmir", new DoQuest(), new int[]{ 32300 }),
 
         new QuestClass (32400, "Pegar enciclopedia na biblioteca", new DoQuest(), new int[]{ }),
         new QuestClass (32401, "Controle: Pegar enciclopedia na biblioteca", new DoQuest(), new int[]{ }),
 
         new QuestClass (32500, "Pegar papel sulfite na coordenação", new DoQuest(), new int[]{ }),
-        new QuestClass (32501, "Controle: Pegar papel sulfite na coordenação", new DoQuest(), new int[]{ 32500 })
+        new QuestClass (32501, "Controle: Pegar papel sulfite na coordenação", new DoQuest(), new int[]{ 32500 }),
+
+        new QuestClass (32600, "Pegar receita de adedonha com a Drica", new DoQuest(), new int[]{ }),
+        new QuestClass (32601, "Controle: Pegar receita de adedonha com a Drica", new DoQuest(), new int[]{ 32600 }),
+
+        new QuestClass (32700, "Pegar receita de palavras cruzadas com Leitura", new DoQuest(), new int[]{ }),
+        new QuestClass (32701, "Controle: Pegar receita de palavras cruzadas com Leitura", new DoQuest(), new int[]{ 32700 }),
+
+        new QuestClass (33100, "Fazer VHS editado", new DoQuest(), new int[]{ 32200 }),
+        new QuestClass (33101, "Controle: Fazer VHS editado", new DoQuest(), new int[]{ 33100 }),
+
+        new QuestClass (33200, "Fazer jogo Adenonha", new DoQuest(), new int[]{ 32600 }),
+        new QuestClass (33201, "Controle: Fazer jogo Adenonha", new DoQuest(), new int[]{ 33200 }),
+
+        new QuestClass (33300, "Fazer jogo Palavras Cruzadas", new DoQuest(), new int[]{ 32700 }),
+        new QuestClass (33301, "Controle: Fazer jogo Palavras Cruzadas", new DoQuest(), new int[]{ 33300 }),
+
+        new QuestClass (33400, "Fazer jogo Forca", new DoQuest(), new int[]{ 32300 }),
+        new QuestClass (33401, "Controle: Fazer jogo Forca", new DoQuest(), new int[]{ 33400 })
 
     };
 }
