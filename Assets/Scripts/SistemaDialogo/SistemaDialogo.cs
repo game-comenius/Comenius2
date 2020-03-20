@@ -76,6 +76,8 @@ public class SistemaDialogo : MonoBehaviour
         "<u>",
         "</u>"
     };
+
+    public object sound { get; private set; }
     #endregion
 
     private void Awake()
@@ -332,6 +334,7 @@ public class SistemaDialogo : MonoBehaviour
                 {
                     if (i == text)
                     {
+                        
                         tempo += ((float)i.Length) / velocidade;
 
                         break;
