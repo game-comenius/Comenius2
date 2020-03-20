@@ -50,7 +50,16 @@ public class Mission3 : MonoBehaviour
         new QuestClass (30901, "Controle: Falar com Ornitóloga no sandbox 1", new DoQuest(), new int[]{ 30900 }),
 
         new QuestClass (31100, "Falar com o Garoto Estranho no sandbox 2", new DoQuest(), new int[]{ }),
-        new QuestClass (31200, "Falar com Meio Ambiente no sandbox 2", new DoQuest(), new int[]{ })
+        new QuestClass (31200, "Falar com Meio Ambiente no sandbox 2", new DoQuest(), new int[]{ }),
+
+        new QuestClass (32100, "Pegar CD de regionalismos na biblioteca", new DoQuest(), new int[]{ }),
+        new QuestClass (32101, "Controle: Pegar CD de regionalismos na biblioteca", new DoQuest(), new int[]{ 32100 }),
+
+        new QuestClass (32200, "Pegar VHS de regionalismos na biblioteca", new DoQuest(), new int[]{ }),
+        new QuestClass (32201, "Controle: Pegar VHS de regionalismos", new DoQuest(), new int[]{ 32200 }),
+
+        new QuestClass (32300, "Pegar jogo da forca com o Vladmir", new DoQuest(), new int[]{ }),
+        new QuestClass (32301, "Controle: Pegar jogo da forca com o Vladmir", new DoQuest(), new int[]{ 32300 })
 
     };
 }

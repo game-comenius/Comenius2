@@ -68,7 +68,6 @@ public class Item
                 DescriptionsInMission2.FirstMomentDescription = DescriptionsInMission1.FirstMomentDescription;
                 DescriptionsInMission2.SecondMomentDescription = DescriptionsInMission2.FirstMomentDescription;
                 DescriptionsInMission2.ThirdMomentDescription = DescriptionsInMission2.FirstMomentDescription;
-                UpgradeFrom.Add(ItemName.ReprodutorAudio);
                 break;
             case ItemName.Gravador:
                 FriendlyName = "Gravador";
@@ -384,7 +383,6 @@ public class Item
                 DescriptionsInMission2.FirstMomentDescription = "Sem uma forma de reproduzi-la essa mídia não vai ser muito útil.";
                 DescriptionsInMission2.SecondMomentDescription = DescriptionsInMission2.FirstMomentDescription;
                 DescriptionsInMission2.ThirdMomentDescription = DescriptionsInMission2.FirstMomentDescription;
-                UpgradeFrom.Add(ItemName.TVComVHS);
                 break;
             case ItemName.Diario:
                 FriendlyName = "Diário";
@@ -468,7 +466,6 @@ public class Item
                 DescriptionsInMission3.FirstMomentDescription = "Um documentário sobre regionalismos trazido pelo professor, com uma longa duração, pode ser uma boa fonte para pesquisa dos alunos.";
                 DescriptionsInMission3.SecondMomentDescription = "Passar um vídeo durante a exposição, por mais que esteja dentro do assunto, pode tirar o foco dos alunos nesse momento.";
                 DescriptionsInMission3.ThirdMomentDescription = "O documentário possui muitas informações importantes, mas talvez seja melhor utilizado nos primeiros momentos da aula.";
-                UpgradeFrom.Add(ItemName.TVComVHS);
                 break;
             case ItemName.VHSregionalismoEditado:
                 FriendlyName = "VHS Editado de Regionalismo";
@@ -478,7 +475,6 @@ public class Item
                 DescriptionsInMission3.FirstMomentDescription = "O VHS editado pelo professor apresenta as informações mais pertinentes de forma sucinta, sendo uma boa fonte para a pesquisa dos alunos sobre a temática da aula.";
                 DescriptionsInMission3.SecondMomentDescription = "O VHS editado pelo professor apresenta as informações mais pertinentes, mas não ajuda os alunos a expor a sua pesquisa.";
                 DescriptionsInMission3.ThirdMomentDescription = "O documentário editado pelo professor compila muitas informações importantes, de forma suscinta, mas talvez seja melhor utilizado em outro momento da aula.";
-                UpgradeFrom.Add(ItemName.TVComVHS);
                 break;
             case ItemName.Enciclopedia:
                 FriendlyName = "Enciclopédia";
@@ -506,7 +502,6 @@ public class Item
                 DescriptionsInMission3.FirstMomentDescription = "O jogo da forca é bastante potente, pois trabalha com palavras e assim podem trazer a discussão sobre regionalismos, mas talvez seja melhor utilizada em uma atividade.";
                 DescriptionsInMission3.SecondMomentDescription = "O jogo da forca é bastante potente, pois trabalha com palavras e as mesmas podem trazer a discussão sobre regionalismos, mas talvez seja melhor utilizada em uma atividade.";
                 DescriptionsInMission3.ThirdMomentDescription = "O jogo da forca pode ser utilizado como recurso para apresentar diversas palavras e informações para os alunos em uma atividade atrativa de síntese.";
-                UpgradeFrom.Add(ItemName.QuadroNegro);
                 break;
             case ItemName.PalavrasCruzadas:
                 FriendlyName = "Jogo Palavras Cruzadas";
@@ -525,7 +520,6 @@ public class Item
                 DescriptionsInMission3.FirstMomentDescription = "O CD com uma entrevista sobre o tema da aula, pode ser um interessante meio de pesquisa para os alunos, em forma de áudio.";
                 DescriptionsInMission3.SecondMomentDescription = "A proposta é de uma apresentação dos resultados da pesquisa, o CD com a entrevista pode ser utilizado, mas não comporta os resultados da pesquisa dos alunos.";
                 DescriptionsInMission3.ThirdMomentDescription = "O CD com uma entrevista sobre o tema da aula, pode ser um interessante meio de pesquisa para os alunos, em forma de áudio. Melhor utilizado em outro momento.";
-                UpgradeFrom.Add(ItemName.ReprodutorAudio);
                 break;
             default:
                 FriendlyName = "Sem nome";

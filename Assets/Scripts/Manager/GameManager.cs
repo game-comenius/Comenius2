@@ -61,7 +61,14 @@ public class GameManager : MonoBehaviour
 
     public static ItemName[] MidiasExclusivasDaMissao3 = 
     {
-        
+        ItemName.FolhaSulfite,
+        ItemName.VHSregionalismo,
+        ItemName.VHSregionalismoEditado,
+        ItemName.Enciclopedia,
+        ItemName.Adedonha,
+        ItemName.Forca,
+        ItemName.PalavrasCruzadas,
+        ItemName.CDsotaques,
     };
 
     public static ItemName[] MidiasDisponiveisNaMissao3
