@@ -16,8 +16,9 @@ public class Mission3 : MonoBehaviour
         new QuestClass (3, "Fale com estudantes nos pátio", new CounterQuest(0, 6), new int[]{ }),
         new QuestClass (4, "Fale com o Paulino sobre as opniões dos alunos", new DoQuest(), new int[]{ }),
         new QuestClass (5, "Faça um planejamento na sala dos professores", new DoQuest(), new int[]{ 4 }),
-        new QuestClass (6, "Vá para a aula", new DoQuest(), new int[]{ }),
-        new QuestClass (7, "Vá para o pátio", new DoQuest(), new int[]{ })
+        new QuestClass (6, "Confirme o planejamento com o professor", new DoQuest(), new int[]{ }),
+        new QuestClass (7, "Vá para aula", new DoQuest(), new int[]{ }),
+        new QuestClass (8, "Vá para o pátio", new DoQuest(), new int[]{ })
     };
 
     public readonly static QuestClass[] _sideQuests =
@@ -62,7 +63,7 @@ public class Mission3 : MonoBehaviour
         new QuestClass (32301, "Controle: Pegar jogo da forca com o Vladmir", new DoQuest(), new int[]{ 32300 }),
 
         new QuestClass (32400, "Pegar enciclopedia na biblioteca", new DoQuest(), new int[]{ }),
-        new QuestClass (32401, "Controle: Pegar enciclopedia na biblioteca", new DoQuest(), new int[]{ }),
+        new QuestClass (32401, "Controle: Pegar enciclopedia na biblioteca", new DoQuest(), new int[]{ 32400 }),
 
         new QuestClass (32500, "Pegar papel sulfite na coordenação", new DoQuest(), new int[]{ }),
         new QuestClass (32501, "Controle: Pegar papel sulfite na coordenação", new DoQuest(), new int[]{ 32500 }),
