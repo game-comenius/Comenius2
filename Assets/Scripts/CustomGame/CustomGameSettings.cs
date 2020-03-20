@@ -13,28 +13,33 @@ public class CustomGameSettings {
 
     // Esta variável estática guarda as configurações do jogo atual,
     // ela é atribuída quando o jogador seleciona um custom game para jogar
+    private static CustomGameSettings currentSettings;
     public static CustomGameSettings CurrentSettings
     {
         get
         {
-            #if UNITY_EDITOR
-            var cgs = new CustomGameSettings();
-            cgs.Professor = CharacterName.Montanari;
-            cgs.Sala = SalaDeAula.Jean;
-            cgs.IntroducaoAula = "Introdução do custom";
-            cgs.DescricaoMomento1 = "Descrição do momento 1";
-            cgs.DescricaoMomento2 = "Descrição do momento 2";
-            cgs.DescricaoMomento3 = "Descrição do momento 3";
-            cgs.ArrayMidiaPoderFeedbackPorMomento = new CreateCustomGamePanel.MidiaPoderFeedback[3][];
-            cgs.ArrayMidiaPoderFeedbackPorMomento[0] = new CreateCustomGamePanel.MidiaPoderFeedback[2];
-            cgs.ArrayMidiaPoderFeedbackPorMomento[0][0] = new CreateCustomGamePanel.MidiaPoderFeedback();
-            cgs.ArrayMidiaPoderFeedbackPorMomento[0][0].Midia = ItemName.Caderno;
-            cgs.ArrayMidiaPoderFeedbackPorMomento[0][1].Midia = ItemName.CameraPolaroid;
-            return cgs;
-            #endif
-            return CurrentSettings;
+            if (currentSettings == null)
+            {
+                // O que está comentado aqui é para testes, o correto é retornar
+                // a propriedade CurrentSettings mesmo
+                var cgs = new CustomGameSettings();
+                cgs.Professor = CharacterName.Montanari;
+                cgs.Sala = SalaDeAula.SalaDeCiencias;
+                cgs.IntroducaoAula = "Introdução do custom";
+                cgs.DescricaoMomento1 = "Descrição do momento 1";
+                cgs.DescricaoMomento2 = "Descrição do momento 2";
+                cgs.DescricaoMomento3 = "Descrição do momento 3";
+                //cgs.ArrayMidiaPoderFeedbackPorMomento = new CreateCustomGamePanel.MidiaPoderFeedback[3][];
+                //cgs.ArrayMidiaPoderFeedbackPorMomento[0] = new CreateCustomGamePanel.MidiaPoderFeedback[2];
+                //cgs.ArrayMidiaPoderFeedbackPorMomento[0][0] = new CreateCustomGamePanel.MidiaPoderFeedback();
+                //cgs.ArrayMidiaPoderFeedbackPorMomento[0][0].Midia = ItemName.Caderno;
+                //cgs.ArrayMidiaPoderFeedbackPorMomento[0][1].Midia = ItemName.CameraPolaroid;
+                return cgs;
+            }
+            else
+                return currentSettings;
         }
-        set { CurrentSettings = value; }
+        set { currentSettings = value; }
     }
 
     private static readonly string uploadURI = "http://gamecomenius.com/gamecomenius2/custom/savecustom.php";
@@ -51,7 +56,7 @@ public class CustomGameSettings {
     public string DescricaoMomento1, DescricaoMomento2, DescricaoMomento3;
     public Procedimento Procedimento1, Procedimento2, Procedimento3;
     public Agrupamento Agrupamento1, Agrupamento2, Agrupamento3;
-    public CreateCustomGamePanel.MidiaPoderFeedback[][] ArrayMidiaPoderFeedbackPorMomento;
+    //public CreateCustomGamePanel.MidiaPoderFeedback[][] ArrayMidiaPoderFeedbackPorMomento;
     public string TituloDaAula;
     public string Autor;
 
@@ -146,16 +151,17 @@ public class CustomGameSettings {
 
     public ItemName[] MidiasDisponiveis()
     {
-        if (midiasDisponiveis != null) return midiasDisponiveis;
+        //if (midiasDisponiveis != null) return midiasDisponiveis;
 
-        var a = ArrayMidiaPoderFeedbackPorMomento[0];
-        var quantidade = a.Length;
-        var disponiveis = new ItemName[quantidade];
-        for (int i = 0; i < quantidade; i++)
-        {
-            disponiveis[i] = new ItemName();
-            disponiveis[i] = a[i].Midia;
-        }
-        return midiasDisponiveis = disponiveis;
+        //var a = ArrayMidiaPoderFeedbackPorMomento[0];
+        //var quantidade = a.Length;
+        //var disponiveis = new ItemName[quantidade];
+        //for (int i = 0; i < quantidade; i++)
+        //{
+        //    disponiveis[i] = new ItemName();
+        //    disponiveis[i] = a[i].Midia;
+        //}
+        //return midiasDisponiveis = disponiveis;
+        return new ItemName[3] { ItemName.CameraPolaroid, ItemName.Caderno, ItemName.TVComVHS };
     }
 }

@@ -7,6 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System;
+using System.Linq;
 
 public class CreateCustomGamePanel : MonoBehaviour
 {
@@ -21,16 +22,18 @@ public class CreateCustomGamePanel : MonoBehaviour
         public string Feedback;
     }
 
-
-    private NivelDeEnsinoDropdown dropdownNivelDeEnsino;
-    private AreaDeConhecimentoDropdown dropdownAreaDeConhecimento;
-
     // LinkedList não é serializable para o inspector, então popular um array
     // no inspector e no Start, jogar o array populado na LinkedList
     [SerializeField]
     private GameObject[] paginas;
     private LinkedList<GameObject> listaDePaginas;
     private LinkedListNode<GameObject> nodoPaginaAtual;
+
+    // Campos para não ter que procurar depois
+    private PaginaEscolherProfessor paginaEscolherProfessor;
+    private PaginaEscolherSalaDeAula paginaEscolherSalaDeAula;
+    private PaginaInformacoesBasicas paginaInformacoesBasicas;
+    private PaginaResumoSalvar paginaResumoSalvar;
 
     [SerializeField] private Button botaoVoltarPagina;
     [SerializeField] private Button botaoAvancarPagina;
@@ -42,11 +45,11 @@ public class CreateCustomGamePanel : MonoBehaviour
     private TMP_InputField descricaoMomento2;
     private TMP_InputField descricaoMomento3;
 
-    private MomentoUICriarCustom momento1;
-    private MomentoUICriarCustom momento2;
-    private MomentoUICriarCustom momento3;
+    //private MomentoUICriarCustom momento1;
+    //private MomentoUICriarCustom momento2;
+    //private MomentoUICriarCustom momento3;
 
-    private EditarPoderMidiasScrollView[] editarPoderMidiasScrollViews;
+    //private EditarPoderMidiasScrollView[] editarPoderMidiasScrollViews;
 
     [SerializeField]
     private TMP_InputField tituloDaAula;
@@ -58,19 +61,19 @@ public class CreateCustomGamePanel : MonoBehaviour
         // Pegar a lista de páginas pelas páginas definidas pelo inspector
         listaDePaginas = new LinkedList<GameObject>(paginas);
 
-        //// Ativar todas as páginas para coletar botões, campos, ...
-        //foreach (var pagina in listaDePaginas) pagina.SetActive(true);
-
-        //// Coletar dropdowns do nível de ensino e a área de conhecimento
-        //dropdownNivelDeEnsino = GetComponentInChildren<NivelDeEnsinoDropdown>();
-        //dropdownAreaDeConhecimento = GetComponentInChildren<AreaDeConhecimentoDropdown>();
+        // Ativar as páginas para buscar os scripts necessários
+        foreach (var pagina in listaDePaginas) pagina.SetActive(true);
+        paginaEscolherProfessor = GetComponentInChildren<PaginaEscolherProfessor>();
+        paginaEscolherSalaDeAula = GetComponentInChildren<PaginaEscolherSalaDeAula>();
+        paginaInformacoesBasicas = GetComponentInChildren<PaginaInformacoesBasicas>();
+        paginaResumoSalvar = GetComponentInChildren<PaginaResumoSalvar>();
 
         //// Coletar falas do professor na sala dos professores
-        //var falas = listaFalasProfessor.GetComponentsInChildren<TMP_InputField>();
-        //introducaoAula = falas[0];
-        //descricaoMomento1 = falas[1];
-        //descricaoMomento2 = falas[2];
-        //descricaoMomento3 = falas[3];
+        var falas = listaFalasProfessor.GetComponentsInChildren<TMP_InputField>();
+        introducaoAula = falas[0];
+        descricaoMomento1 = falas[1];
+        descricaoMomento2 = falas[2];
+        descricaoMomento3 = falas[3];
 
         //// Coletar os momentos que contém as configurações de proc. e agrup.
         //var momentos = this.GetComponentsInChildren<MomentoUICriarCustom>();
@@ -120,60 +123,89 @@ public class CreateCustomGamePanel : MonoBehaviour
         if (nodoPaginaAtual.Previous != null) IrParaPagina(nodoPaginaAtual.Previous);
     }
 
-    public void PressSubmitButton()
+    public void pressSubmit2() { Debug.Log("hehe"); }
+
+    public void PressButtonThatStartsCustomGame()
     {
         // Criar objeto para escrever no disco
         CustomGameSettings settings = new CustomGameSettings();
-        settings.Professor = GetComponentInChildren<PaginaEscolherProfessor>().ProfessorSelecionado;
-        // Alterar para a escolha do jogador
-        settings.Sala = SalaDeAula.Jean;
+        settings.Professor = paginaEscolherProfessor.ProfessorSelecionado;
+        settings.Sala = paginaEscolherSalaDeAula.SalaSelecionada;
 
-        settings.NivelDeEnsino = dropdownNivelDeEnsino.NivelDeEnsinoSelecionado().valor;
-        settings.AreaDeConhecimento = dropdownAreaDeConhecimento.AreaDeConhecimentoSelecionada().valor;
+        //settings.NivelDeEnsino = paginaInformacoesBasicas.NivelDeEnsinoSelecionado.valor;
+        //settings.AreaDeConhecimento = paginaInformacoesBasicas.AreaDeConhecimentoSelecionada.valor;
 
         settings.IntroducaoAula = introducaoAula.text;
         settings.DescricaoMomento1 = descricaoMomento1.text;
         settings.DescricaoMomento2 = descricaoMomento2.text;
         settings.DescricaoMomento3 = descricaoMomento3.text;
 
-        settings.Procedimento1 = momento1.ProcedimentoSelecionado;
-        settings.Procedimento2 = momento2.ProcedimentoSelecionado;
-        settings.Procedimento3 = momento3.ProcedimentoSelecionado;
+        //settings.Procedimento1 = momento1.ProcedimentoSelecionado;
+        //settings.Procedimento2 = momento2.ProcedimentoSelecionado;
+        //settings.Procedimento3 = momento3.ProcedimentoSelecionado;
 
-        settings.Agrupamento1 = momento1.AgrupamentoSelecionado;
-        settings.Agrupamento2 = momento2.AgrupamentoSelecionado;
-        settings.Agrupamento3 = momento3.AgrupamentoSelecionado;
+        //settings.Agrupamento1 = momento1.AgrupamentoSelecionado;
+        //settings.Agrupamento2 = momento2.AgrupamentoSelecionado;
+        //settings.Agrupamento3 = momento3.AgrupamentoSelecionado;
 
-        settings.ArrayMidiaPoderFeedbackPorMomento = MidiaPoderFeedback3Momentos();
+        //settings.ArrayMidiaPoderFeedbackPorMomento = MidiaPoderFeedback3Momentos();
 
         settings.TituloDaAula = tituloDaAula.text;
         settings.Autor = autorInputField.text;
 
-        settings.SaveToDisk();
+        //Debug.Log("Salvando jogo...\n" +
+        //    "Professor = " + settings.Professor.NomeCompleto() +
+        //    "\nSala = " + settings.Sala.NomeCompleto() +
+        //    "\nNível De Ensino = " + NivelDeEnsino.Get(settings.NivelDeEnsino) +
+        //    "\nÁrea de Conhecimento = " + AreaDeConhecimento.Get(settings.AreaDeConhecimento) +
+        //    "\nIntrodução da Aula = " + settings.IntroducaoAula +
+        //    "\nDescrição do Momento 1 = " + settings.DescricaoMomento1 +
+        //    "\nDescrição do Momento 2 = " + settings.DescricaoMomento2 +
+        //    "\nDescrição do Momento 3 = " + settings.DescricaoMomento3 +
+        //    "\nTitulo da Aula = " + settings.TituloDaAula +
+        //    "\nAutor = " + settings.Autor);
+
+        // Mais tarde, salvar sim no servidor, por enquanto jogar diretamente
+        // o jogo recém criado
+        //settings.SaveToDisk();
+
+        ////// Deletar o que há aqui abaixo depois, isso é temporário
+        //settings.ArrayMidiaPoderFeedbackPorMomento = new MidiaPoderFeedback[3][];
+        //settings.ArrayMidiaPoderFeedbackPorMomento[0] = new MidiaPoderFeedback[5];
+        //settings.ArrayMidiaPoderFeedbackPorMomento[1] = new MidiaPoderFeedback[5];
+        //settings.ArrayMidiaPoderFeedbackPorMomento[2] = new MidiaPoderFeedback[5];
+        //for (int i = 0; i < 5; i++)
+        //{
+        //    settings.ArrayMidiaPoderFeedbackPorMomento[0][i] = new MidiaPoderFeedback();
+        //    settings.ArrayMidiaPoderFeedbackPorMomento[0][i].Midia = (ItemName)i + 1;
+        //    settings.ArrayMidiaPoderFeedbackPorMomento[0][i].Poder = Poder.MuitoBoa;
+        //    settings.ArrayMidiaPoderFeedbackPorMomento[0][i].Feedback = "Incrível!";
+        //}
+        CustomGameSettings.CurrentSettings = settings;
     }
 
-    private MidiaPoderFeedback[][] MidiaPoderFeedback3Momentos()
-    {
-        var mpfs = new MidiaPoderFeedback[3][];
-        mpfs[0] = MidiaPoderFeedbackMomento(0);
-        mpfs[1] = MidiaPoderFeedbackMomento(1);
-        mpfs[2] = MidiaPoderFeedbackMomento(2);
-        return mpfs;
-    }
+    //private MidiaPoderFeedback[][] MidiaPoderFeedback3Momentos()
+    //{
+    //    var mpfs = new MidiaPoderFeedback[3][];
+    //    mpfs[0] = MidiaPoderFeedbackMomento(0);
+    //    mpfs[1] = MidiaPoderFeedbackMomento(1);
+    //    mpfs[2] = MidiaPoderFeedbackMomento(2);
+    //    return mpfs;
+    //}
 
-    private MidiaPoderFeedback[] MidiaPoderFeedbackMomento(int momento)
-    {
-        var faixasMomento = editarPoderMidiasScrollViews[momento].FaixasEditarPoderMidia;
-        var quantidadeMidias = faixasMomento.Count;
-        var mpfs = new MidiaPoderFeedback[quantidadeMidias];
-        for (int i = 0; i < quantidadeMidias; i++)
-        {
-            mpfs[i] = new MidiaPoderFeedback();
-            mpfs[i].Midia = faixasMomento[i].Midia;
-            mpfs[i].Poder = faixasMomento[i].Poder;
-            mpfs[i].Feedback = faixasMomento[i].Feedback();
-        }
+    //private MidiaPoderFeedback[] MidiaPoderFeedbackMomento(int momento)
+    //{
+    //    var faixasMomento = editarPoderMidiasScrollViews[momento].FaixasEditarPoderMidia;
+    //    var quantidadeMidias = faixasMomento.Count;
+    //    var mpfs = new MidiaPoderFeedback[quantidadeMidias];
+    //    for (int i = 0; i < quantidadeMidias; i++)
+    //    {
+    //        mpfs[i] = new MidiaPoderFeedback();
+    //        mpfs[i].Midia = faixasMomento[i].Midia;
+    //        mpfs[i].Poder = faixasMomento[i].Poder;
+    //        mpfs[i].Feedback = faixasMomento[i].Feedback();
+    //    }
 
-        return mpfs;
-    }
+    //    return mpfs;
+    //}
 }

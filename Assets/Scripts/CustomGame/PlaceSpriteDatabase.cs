@@ -14,13 +14,34 @@ public class PlaceSpriteDatabase : MonoBehaviour {
     [SerializeField]
     public List<PlaceSprite> SalaSprites;
 
-    private static PlaceSpriteDatabase Instance;
+    private static readonly object simpleLock = new object();
+    private static PlaceSpriteDatabase instance;
+    public static PlaceSpriteDatabase Instance
+    {
+        get
+        {
+            lock (simpleLock)
+            {
+                if (instance == null)
+                {
+                    // Search for existing instance
+                    instance = FindObjectOfType<PlaceSpriteDatabase>();
+
+                    if (instance == null)
+                        Debug.Log("Não há " + typeof(PlaceSpriteDatabase) + " nesta cena!");
+                    else
+                        DontDestroyOnLoad(instance.gameObject);
+                }
+                return instance;
+            }
+        }
+    }
 
     private void Awake()
     {
-        if (Instance == null)
+        if (instance == null)
         {
-            Instance = this;
+            instance = this;
             transform.parent = null;
             DontDestroyOnLoad(gameObject);
         }
