@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CustomPlanejamento : MonoBehaviour {
 
@@ -20,9 +21,20 @@ public class CustomPlanejamento : MonoBehaviour {
 
     private void ConfigurarPlanejamento(CustomGameSettings s)
     {
+        DefinirFotoDoProfessor(s.Professor);
         DefinirDescricaoDosMomentos();
         DefinirProcedimentos(s.Procedimento1, s.Procedimento2, s.Procedimento3);
         DefinirAgrupamentos(s.Agrupamento1, s.Agrupamento2, s.Agrupamento3);
+    }
+
+    private void DefinirFotoDoProfessor(CharacterName professor)
+    {
+        var objRetrato = GameObject.Find("ImageRetratoProfessor");
+        if (!objRetrato) return;
+        var imageRetrato = objRetrato.GetComponent<Image>();
+        if (!imageRetrato) return;
+        imageRetrato.sprite = CharacterSpriteDatabase.Foto(professor);
+        imageRetrato.SetNativeSize();
     }
 
     private void DefinirDescricaoDosMomentos()
