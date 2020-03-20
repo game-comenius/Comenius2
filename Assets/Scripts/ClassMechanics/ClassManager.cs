@@ -26,6 +26,7 @@ public class ClassManager : MonoBehaviour
     [SerializeField] private Canvas canvas;
 
     [SerializeField] private Camera mainCamera;
+
     #endregion
 
     #region MomentoAula
@@ -482,6 +483,7 @@ public class ClassManager : MonoBehaviour
         var cloudRectTransform = cloudGameObject.GetComponent<RectTransform>();
         cloudRectTransform.anchoredPosition = cloudPos;
 
+        cloudGameObject.GetComponent<AudioSource>().Play();
 
         clouds.Add(cloudGameObject.GetComponent<ProblemCloudScript>());
 
@@ -490,6 +492,7 @@ public class ClassManager : MonoBehaviour
         clouds[clouds.Count - 1].studentIndex = n;
 
         studentIsProblem[n] = true;
+
     }
 
     public void RemoveCloud(ProblemCloudScript problem)
