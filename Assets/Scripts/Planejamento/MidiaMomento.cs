@@ -34,6 +34,14 @@ public class MidiaMomento : MonoBehaviour
     public int retroprojetorSlidesLinhadoTempoPoints = 0;
     public int retroprojetorSlidesCicloDoTrabalhoPoints = 0;
     public int diarioPoints = 0;
+    public int folhasulfitePoints = 0;
+    public int vhsregionalismoPoints = 0;
+    public int vhsregionalismoeditadoPoints = 0;
+    public int enciclopediaPoints = 0;
+    public int adedonhaPoints = 0;
+    public int forcaPoints = 0;
+    public int palavrascruzadasPoints = 0;
+    public int cdsotaquesPoints = 0;
 
     private Image image;
 
@@ -79,6 +87,14 @@ public class MidiaMomento : MonoBehaviour
             case ItemName.CartazComCanetas: return cartasComCanetasPoints;
             case ItemName.VhsEditado: return vhsEditadoPoints;
             case ItemName.Diario: return diarioPoints;
+            case ItemName.FolhaSulfite: return folhasulfitePoints;
+            case ItemName.VHSregionalismo: return vhsregionalismoPoints;
+            case ItemName.VHSregionalismoEditado: return vhsregionalismoeditadoPoints;
+            case ItemName.Enciclopedia: return enciclopediaPoints;
+            case ItemName.Adedonha: return adedonhaPoints;
+            case ItemName.Forca: return forcaPoints;
+            case ItemName.PalavrasCruzadas: return palavrascruzadasPoints;
+            case ItemName.CDsotaques: return cdsotaquesPoints;
             default: return 0;
         }
     }
