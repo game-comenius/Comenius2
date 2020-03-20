@@ -13,7 +13,7 @@ public class Mission3 : MonoBehaviour
     {
         new QuestClass (1, "Fale como o Diretor no começo do terceiro dia", new DoQuest(), new int[]{ }),
         new QuestClass (2, "Fale com o Paulino na sala dos professores", new DoQuest(), new int[]{ }),
-        new QuestClass (3, "Fale com estudantes nos pátio", new CounterQuest(0, 5), new int[]{ }),
+        new QuestClass (3, "Fale com estudantes nos pátio", new CounterQuest(0, 6), new int[]{ }),
         new QuestClass (4, "Fale com o Paulino sobre as opniões dos alunos", new DoQuest(), new int[]{ }),
         new QuestClass (5, "Faça um planejamento na sala dos professores", new DoQuest(), new int[]{ 4 }),
         new QuestClass (6, "Vá para a aula", new DoQuest(), new int[]{ }),
@@ -47,7 +47,10 @@ public class Mission3 : MonoBehaviour
         new QuestClass (30801, "Controle: Falar com Madá no sandbox 1", new DoQuest(), new int[]{ 30800 }),
 
         new QuestClass (30900, "Falar com Ornitóloga no sandbox 1", new DoQuest(), new int[]{ }),
-        new QuestClass (30901, "Controle: Falar com Ornitóloga no sandbox 1", new DoQuest(), new int[]{ 30900 })
+        new QuestClass (30901, "Controle: Falar com Ornitóloga no sandbox 1", new DoQuest(), new int[]{ 30900 }),
+
+        new QuestClass (31100, "Falar com o Garoto Estranho no sandbox 2", new DoQuest(), new int[]{ }),
+        new QuestClass (31200, "Falar com Meio Ambiente no sandbox 2", new DoQuest(), new int[]{ })
 
     };
 }
