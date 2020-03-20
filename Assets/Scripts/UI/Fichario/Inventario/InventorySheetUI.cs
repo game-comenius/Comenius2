@@ -14,6 +14,8 @@ public class InventorySheetUI : MonoBehaviour {
     private GameObject itemSlotPrefab;
     [SerializeField]
     protected TextMeshProUGUI descriptionBox;
+    [SerializeField]
+    private Animator animatorDestaqueDescricao;
 
     private Inventory inventory;
 
@@ -45,6 +47,11 @@ public class InventorySheetUI : MonoBehaviour {
     public void EmptyDescription()
     {
         descriptionBox.text = "";
+    }
+
+    public void HighlightDescription()
+    {
+        animatorDestaqueDescricao.SetTrigger("PulsarDestaque");
     }
 
     public virtual void ShowDescription(Item item)
