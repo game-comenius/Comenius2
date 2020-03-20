@@ -59,7 +59,13 @@ public class Mission3 : MonoBehaviour
         new QuestClass (32201, "Controle: Pegar VHS de regionalismos", new DoQuest(), new int[]{ 32200 }),
 
         new QuestClass (32300, "Pegar jogo da forca com o Vladmir", new DoQuest(), new int[]{ }),
-        new QuestClass (32301, "Controle: Pegar jogo da forca com o Vladmir", new DoQuest(), new int[]{ 32300 })
+        new QuestClass (32301, "Controle: Pegar jogo da forca com o Vladmir", new DoQuest(), new int[]{ 32300 }),
+
+        new QuestClass (32400, "Pegar enciclopedia na biblioteca", new DoQuest(), new int[]{ }),
+        new QuestClass (32401, "Controle: Pegar enciclopedia na biblioteca", new DoQuest(), new int[]{ }),
+
+        new QuestClass (32500, "Pegar papel sulfite na coordenação", new DoQuest(), new int[]{ }),
+        new QuestClass (32501, "Controle: Pegar papel sulfite na coordenação", new DoQuest(), new int[]{ 32500 })
 
     };
 }
