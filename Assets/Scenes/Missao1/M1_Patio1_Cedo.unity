@@ -616,7 +616,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 308995891}
-  - component: {fileID: 308995892}
+  - component: {fileID: 308995889}
   m_Layer: 0
   m_Name: MissoesQueVaoParaAJanela
   m_TagString: Untagged
@@ -624,6 +624,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &308995889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 308995888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0072b59adab0240298adc1789f58dda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objetivo: 0
+  IndiceDaMissaoAlvo: 3
+  IndiceDaRespostaAlvo: 0
+  Momento: 1
+  Dialogo: {fileID: 683037571}
 --- !u!4 &308995891
 Transform:
   m_ObjectHideFlags: 0
@@ -637,22 +653,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &308995892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 308995888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0072b59adab0240298adc1789f58dda7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Objetivo: 0
-  IndiceDaMissaoAlvo: 0
-  IndiceDaRespostaAlvo: 0
-  Momento: 1
-  Dialogo: {fileID: 683037571}
 --- !u!20 &322350082 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20545476364865102, guid: d11b1c849be53453587e960dd2049b74,
