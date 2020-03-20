@@ -118,6 +118,7 @@ public class InventoryItemSlotUI : MonoBehaviour, IPointerDownHandler
         // O tab no início da descrição é para "escapar" do clip
         // do canto da folha do inventário
         inventoryUI.ShowDescription(myItem);
+        inventoryUI.HighlightDescription();
     }
 
     public void OnPointerDown(PointerEventData eventData)
