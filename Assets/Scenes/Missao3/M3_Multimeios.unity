@@ -2352,7 +2352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _index: 11000
+  _index: 0
   questComplete:
     m_PersistentCalls:
       m_Calls:
@@ -2404,11 +2404,17 @@ MonoBehaviour:
   dialogoObrigatorio: 0
   esperaDialogoObrigatorio: 2
   dialogoPrincipal:
-    nodulos: []
+    nodulos:
+    - falas:
+      - personagem: 12
+        emocao: 0
+        fala: "Adoro o professor Paulino! Ele sempre considera bastante nossas opni\xF5es
+          sobre a aula!"
+      respostas: []
   dialogosSecundarios:
   - nodulos: []
   interactOffset:
-  - {x: 1.09, y: -0.93000007, z: 0}
+  - {x: 0.55231625, y: -0.8270395, z: 0}
 --- !u!212 &1037421320
 SpriteRenderer:
   m_ObjectHideFlags: 0
