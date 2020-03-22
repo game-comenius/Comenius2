@@ -36,8 +36,8 @@ public class CreateCustomGamePanel : MonoBehaviour
     private PaginaEscolherMidias paginaEscolherMidias;
     private PaginaResumoSalvar paginaResumoSalvar;
 
-    [SerializeField] private Button botaoVoltarPagina;
-    [SerializeField] private Button botaoAvancarPagina;
+    public Button botaoVoltarPagina;
+    public Button botaoAvancarPagina;
 
     [SerializeField]
     private GameObject listaFalasProfessor;

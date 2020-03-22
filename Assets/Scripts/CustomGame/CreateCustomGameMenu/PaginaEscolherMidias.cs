@@ -7,6 +7,8 @@ using TMPro;
 
 public class PaginaEscolherMidias : MonoBehaviour {
 
+    private CreateCustomGamePanel parentPanel;
+
     [SerializeField]
     private GameObject espacoParaBotoesMidiaDisponivelCustom;
     [SerializeField]
@@ -16,10 +18,24 @@ public class PaginaEscolherMidias : MonoBehaviour {
     [SerializeField]
     private Sprite bordaMidiaSelecionada;
 
-    public List<ItemName> MidiasSelecionadas { get; private set; }
+    private List<ItemName> midiasSelecionadas;
+    public List<ItemName> MidiasSelecionadas
+    {
+        get
+        {
+            if (midiasSelecionadas == null)
+                midiasSelecionadas = new List<ItemName>();
+            return midiasSelecionadas;
+        }
+    }
 
-	// Use this for initialization
-	void Start () {
+    private void Awake()
+    {
+        parentPanel = GetComponentInParent<CreateCustomGamePanel>();
+    }
+
+    // Use this for initialization
+    void Start () {
         ItemName[] midiasDisponiveis =
         {
             ItemName.ReprodutorAudio,
@@ -37,6 +53,9 @@ public class PaginaEscolherMidias : MonoBehaviour {
         };
         var ItemList = midiasDisponiveis.Select((midia) => new Item(midia));
 
+        // Desativar botão de próx. página enquanto player não selecionar mídias
+        parentPanel.botaoAvancarPagina.gameObject.SetActive(false);
+
         foreach (var midia in ItemList)
         {
             var botao = Instantiate(botaoMidiaDisponivelCustom);
@@ -48,6 +67,7 @@ public class PaginaEscolherMidias : MonoBehaviour {
             var spriteDaMidia = botao.GetComponentInChildren<ItemInUserInterface>();
             spriteDaMidia.ItemName = midia.ItemName;
 
+            //
             var button = spriteDaMidia.GetComponent<Button>();
             button.onClick.AddListener(() =>
             {
@@ -58,15 +78,19 @@ public class PaginaEscolherMidias : MonoBehaviour {
                     MidiasSelecionadas.Remove(midia.ItemName);
                     var bordaObj = button.transform.parent;
                     bordaObj.GetComponent<Image>().sprite = bordaMidiaNaoSelecionada;
+                    // Se esta era a única mídia selecionada e portanto agora o
+                    // jogador não tem nenhuma, desativar botão de próx. página
+                    if (!midiasSelecionadas.Any())
+                        parentPanel.botaoAvancarPagina.gameObject.SetActive(false);
                 }
                 else
                 {
                     MidiasSelecionadas.Add(midia.ItemName);
                     var bordaObj = button.transform.parent;
                     bordaObj.GetComponent<Image>().sprite = bordaMidiaSelecionada;
+                    parentPanel.botaoAvancarPagina.gameObject.SetActive(true);
                 }
             });
         }
-        MidiasSelecionadas = new List<ItemName>();
 	}
 }
