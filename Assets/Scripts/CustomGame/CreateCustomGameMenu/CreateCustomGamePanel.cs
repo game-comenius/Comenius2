@@ -33,6 +33,7 @@ public class CreateCustomGamePanel : MonoBehaviour
     private PaginaEscolherProfessor paginaEscolherProfessor;
     private PaginaEscolherSalaDeAula paginaEscolherSalaDeAula;
     private PaginaInformacoesBasicas paginaInformacoesBasicas;
+    private PaginaEscolherMidias paginaEscolherMidias;
     private PaginaResumoSalvar paginaResumoSalvar;
 
     [SerializeField] private Button botaoVoltarPagina;
@@ -66,6 +67,7 @@ public class CreateCustomGamePanel : MonoBehaviour
         paginaEscolherProfessor = GetComponentInChildren<PaginaEscolherProfessor>();
         paginaEscolherSalaDeAula = GetComponentInChildren<PaginaEscolherSalaDeAula>();
         paginaInformacoesBasicas = GetComponentInChildren<PaginaInformacoesBasicas>();
+        paginaEscolherMidias = GetComponentInChildren<PaginaEscolherMidias>();
         paginaResumoSalvar = GetComponentInChildren<PaginaResumoSalvar>();
 
         //// Coletar falas do professor na sala dos professores
@@ -169,18 +171,36 @@ public class CreateCustomGamePanel : MonoBehaviour
         // o jogo recém criado
         //settings.SaveToDisk();
 
-        ////// Deletar o que há aqui abaixo depois, isso é temporário
-        //settings.ArrayMidiaPoderFeedbackPorMomento = new MidiaPoderFeedback[3][];
-        //settings.ArrayMidiaPoderFeedbackPorMomento[0] = new MidiaPoderFeedback[5];
-        //settings.ArrayMidiaPoderFeedbackPorMomento[1] = new MidiaPoderFeedback[5];
-        //settings.ArrayMidiaPoderFeedbackPorMomento[2] = new MidiaPoderFeedback[5];
-        //for (int i = 0; i < 5; i++)
-        //{
-        //    settings.ArrayMidiaPoderFeedbackPorMomento[0][i] = new MidiaPoderFeedback();
-        //    settings.ArrayMidiaPoderFeedbackPorMomento[0][i].Midia = (ItemName)i + 1;
-        //    settings.ArrayMidiaPoderFeedbackPorMomento[0][i].Poder = Poder.MuitoBoa;
-        //    settings.ArrayMidiaPoderFeedbackPorMomento[0][i].Feedback = "Incrível!";
-        //}
+        // Deletar o que há aqui abaixo depois, isso é temporário
+        var midiasSelecionadas = paginaEscolherMidias.MidiasSelecionadas;
+        var quantidadeMidias = midiasSelecionadas.Count;
+        settings.ArrayMidiaPoderFeedbackMomento1 = new MidiaPoderFeedback[quantidadeMidias];
+        settings.ArrayMidiaPoderFeedbackMomento2 = new MidiaPoderFeedback[quantidadeMidias];
+        settings.ArrayMidiaPoderFeedbackMomento3 = new MidiaPoderFeedback[quantidadeMidias];
+        // Momento 1
+        for (int i = 0; i < quantidadeMidias; i++)
+        {
+            settings.ArrayMidiaPoderFeedbackMomento1[i] = new MidiaPoderFeedback();
+            settings.ArrayMidiaPoderFeedbackMomento1[i].Midia = midiasSelecionadas[i];
+            settings.ArrayMidiaPoderFeedbackMomento1[i].Poder = Poder.MuitoBoa;
+            settings.ArrayMidiaPoderFeedbackMomento1[i].Feedback = "Incrível!";
+        }
+        // Momento 2
+        for (int i = 0; i < quantidadeMidias; i++)
+        {
+            settings.ArrayMidiaPoderFeedbackMomento2[i] = new MidiaPoderFeedback();
+            settings.ArrayMidiaPoderFeedbackMomento2[i].Midia = midiasSelecionadas[i];
+            settings.ArrayMidiaPoderFeedbackMomento2[i].Poder = Poder.MuitoBoa;
+            settings.ArrayMidiaPoderFeedbackMomento2[i].Feedback = "Incrível!";
+        }
+        // Momento 3
+        for (int i = 0; i < quantidadeMidias; i++)
+        {
+            settings.ArrayMidiaPoderFeedbackMomento3[i] = new MidiaPoderFeedback();
+            settings.ArrayMidiaPoderFeedbackMomento3[i].Midia = midiasSelecionadas[i];
+            settings.ArrayMidiaPoderFeedbackMomento3[i].Poder = Poder.MuitoBoa;
+            settings.ArrayMidiaPoderFeedbackMomento3[i].Feedback = "Incrível!";
+        }
         CustomGameSettings.CurrentSettings = settings;
     }
 

@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class CustomConfigSalaDeAula : MonoBehaviour
 {
-
     void Awake()
     {
         // Destruir todas as portas, esta é a última sala do custom
         var doors = FindObjectsOfType<DoorTransition>();
         foreach (var door in doors) Destroy(door);
+        var otherDoors = GameObject.FindGameObjectsWithTag("Door1");
+        foreach (var door in otherDoors) Destroy(door.gameObject);
     }
 
     // Use this for initialization

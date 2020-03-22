@@ -29,11 +29,35 @@ public class CustomGameSettings {
                 cgs.DescricaoMomento1 = "Descrição do momento 1";
                 cgs.DescricaoMomento2 = "Descrição do momento 2";
                 cgs.DescricaoMomento3 = "Descrição do momento 3";
-                //cgs.ArrayMidiaPoderFeedbackPorMomento = new CreateCustomGamePanel.MidiaPoderFeedback[3][];
-                //cgs.ArrayMidiaPoderFeedbackPorMomento[0] = new CreateCustomGamePanel.MidiaPoderFeedback[2];
-                //cgs.ArrayMidiaPoderFeedbackPorMomento[0][0] = new CreateCustomGamePanel.MidiaPoderFeedback();
-                //cgs.ArrayMidiaPoderFeedbackPorMomento[0][0].Midia = ItemName.Caderno;
-                //cgs.ArrayMidiaPoderFeedbackPorMomento[0][1].Midia = ItemName.CameraPolaroid;
+                var midiasSelecionadas = new List<ItemName> { ItemName.Caderno, ItemName.TVComVHS };
+                var quantidadeMidias = midiasSelecionadas.Count;
+                cgs.ArrayMidiaPoderFeedbackMomento1 = new CreateCustomGamePanel.MidiaPoderFeedback[quantidadeMidias];
+                cgs.ArrayMidiaPoderFeedbackMomento2 = new CreateCustomGamePanel.MidiaPoderFeedback[quantidadeMidias];
+                cgs.ArrayMidiaPoderFeedbackMomento3 = new CreateCustomGamePanel.MidiaPoderFeedback[quantidadeMidias];
+                // Momento 1
+                for (int i = 0; i < quantidadeMidias; i++)
+                {
+                    cgs.ArrayMidiaPoderFeedbackMomento1[i] = new CreateCustomGamePanel.MidiaPoderFeedback();
+                    cgs.ArrayMidiaPoderFeedbackMomento1[i].Midia = midiasSelecionadas[i];
+                    cgs.ArrayMidiaPoderFeedbackMomento1[i].Poder = Poder.MuitoBoa;
+                    cgs.ArrayMidiaPoderFeedbackMomento1[i].Feedback = "Incrível!";
+                }
+                // Momento 2
+                for (int i = 0; i < quantidadeMidias; i++)
+                {
+                    cgs.ArrayMidiaPoderFeedbackMomento2[i] = new CreateCustomGamePanel.MidiaPoderFeedback();
+                    cgs.ArrayMidiaPoderFeedbackMomento2[i].Midia = midiasSelecionadas[i];
+                    cgs.ArrayMidiaPoderFeedbackMomento2[i].Poder = Poder.MuitoBoa;
+                    cgs.ArrayMidiaPoderFeedbackMomento2[i].Feedback = "Incrível!";
+                }
+                // Momento 3
+                for (int i = 0; i < quantidadeMidias; i++)
+                {
+                    cgs.ArrayMidiaPoderFeedbackMomento3[i] = new CreateCustomGamePanel.MidiaPoderFeedback();
+                    cgs.ArrayMidiaPoderFeedbackMomento3[i].Midia = midiasSelecionadas[i];
+                    cgs.ArrayMidiaPoderFeedbackMomento3[i].Poder = Poder.MuitoBoa;
+                    cgs.ArrayMidiaPoderFeedbackMomento3[i].Feedback = "Incrível!";
+                }
                 return cgs;
             }
             else
@@ -57,6 +81,9 @@ public class CustomGameSettings {
     public Procedimento Procedimento1, Procedimento2, Procedimento3;
     public Agrupamento Agrupamento1, Agrupamento2, Agrupamento3;
     //public CreateCustomGamePanel.MidiaPoderFeedback[][] ArrayMidiaPoderFeedbackPorMomento;
+    public CreateCustomGamePanel.MidiaPoderFeedback[] ArrayMidiaPoderFeedbackMomento1;
+    public CreateCustomGamePanel.MidiaPoderFeedback[] ArrayMidiaPoderFeedbackMomento2;
+    public CreateCustomGamePanel.MidiaPoderFeedback[] ArrayMidiaPoderFeedbackMomento3;
     public string TituloDaAula;
     public string Autor;
 
@@ -151,17 +178,16 @@ public class CustomGameSettings {
 
     public ItemName[] MidiasDisponiveis()
     {
-        //if (midiasDisponiveis != null) return midiasDisponiveis;
+        if (midiasDisponiveis != null) return midiasDisponiveis;
 
-        //var a = ArrayMidiaPoderFeedbackPorMomento[0];
-        //var quantidade = a.Length;
-        //var disponiveis = new ItemName[quantidade];
-        //for (int i = 0; i < quantidade; i++)
-        //{
-        //    disponiveis[i] = new ItemName();
-        //    disponiveis[i] = a[i].Midia;
-        //}
-        //return midiasDisponiveis = disponiveis;
-        return new ItemName[3] { ItemName.CameraPolaroid, ItemName.Caderno, ItemName.TVComVHS };
+        var a = ArrayMidiaPoderFeedbackMomento1;
+        var quantidade = a.Length;
+        var disponiveis = new ItemName[quantidade];
+        for (int i = 0; i < quantidade; i++)
+        {
+            disponiveis[i] = new ItemName();
+            disponiveis[i] = a[i].Midia;
+        }
+        return midiasDisponiveis = disponiveis;
     }
 }
