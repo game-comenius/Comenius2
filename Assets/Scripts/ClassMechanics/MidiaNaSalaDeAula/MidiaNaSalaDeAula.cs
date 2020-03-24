@@ -25,11 +25,20 @@ public class MidiaNaSalaDeAula : MonoBehaviour {
             case ItemName.CartazComColecaoDePenas:
                 if (quadroNegro) quadroNegro.ColocarItem(midia);
                 break;
-            case ItemName.TVComVHS:
             case ItemName.ReprodutorAudio:
             case ItemName.GravacaoPassaro:
             case ItemName.Mapa:
                 if (mesaDoProfessor) mesaDoProfessor.ColocarItem(midia);
+                break;
+            case ItemName.TVComVHS:
+            case ItemName.VHS:
+            case ItemName.TVComVHSPassaros:
+            case ItemName.TVComVHSRevolucaoIndustrial:
+            case ItemName.TVComVHSRevolucaoIndustrialEditado:
+            case ItemName.VhsEditado:
+            case ItemName.VHSregionalismo:
+            case ItemName.VHSregionalismoEditado:
+                if (mesaDoProfessor) mesaDoProfessor.ColocarItem(ItemName.TVComVHS);
                 break;
             default:
                 foreach (var mesaDoAluno in mesasDosAlunos)
