@@ -27,6 +27,8 @@ public class MidiaNaSalaDeAula : MonoBehaviour {
                 break;
             case ItemName.TVComVHS:
             case ItemName.ReprodutorAudio:
+            case ItemName.GravacaoPassaro:
+            case ItemName.Mapa:
                 if (mesaDoProfessor) mesaDoProfessor.ColocarItem(midia);
                 break;
             default:

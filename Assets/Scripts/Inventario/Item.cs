@@ -68,6 +68,8 @@ public class Item
                 DescriptionsInMission2.FirstMomentDescription = DescriptionsInMission1.FirstMomentDescription;
                 DescriptionsInMission2.SecondMomentDescription = DescriptionsInMission2.FirstMomentDescription;
                 DescriptionsInMission2.ThirdMomentDescription = DescriptionsInMission2.FirstMomentDescription;
+
+                UpgradeFrom.Add(ItemName.ReprodutorAudio);
                 break;
             case ItemName.Gravador:
                 FriendlyName = "Gravador";
@@ -159,6 +161,7 @@ public class Item
                 DescriptionsInMission1.FirstMomentDescription = "Esse cartaz pode ser útil para ilustrar as características dos pássaros pelo professor, o que seria mais rico do que somente uma fotografia.";
                 DescriptionsInMission1.SecondMomentDescription = "O cartaz com as penas é interessante, pois ilustra de forma real os pássaros, mas seria a melhor escolha em uma atividade individual, sendo que só há um cartaz?";
                 DescriptionsInMission1.ThirdMomentDescription = "Talvez o cartaz com penas possa ser melhor utilizado para a apresentação das características gerais dos pássaros, pois fala pouco sobre regionalidades.";
+                UpgradeFrom.Add(ItemName.Cartazes);
                 break;
             case ItemName.LivroDidatico:
                 FriendlyName = "Livro Didático";
@@ -248,6 +251,7 @@ public class Item
                 FriendlyName = "Mapa";
                 Description = "Um cartaz de um mapa";
                 FullDescription = "Um cartaz de um mapa";
+                DescriptionsInMission1.StandardDescription = "Um mapa-mundi atualizado, contendo uma representação cartográfica plana, em escala reduzida, de toda a superfície do planeta Terra.";
                 DescriptionsInMission1.FirstMomentDescription = "O mapa é uma mídia para representação de um espaço geográfico por imagens. Pode ser um complemento a aula expositiva do professor, apresentando o habitat dos pássaros. Mas acho que seria mais indicado falando da regionalidade.";
                 DescriptionsInMission1.SecondMomentDescription = "O Mapa, por conta da leitura associada a imagens, pode ser interessante na utilização dos alunos para uma pesquisa ou atividade. Apesar de não ser a mídia mais completa.";
                 DescriptionsInMission1.ThirdMomentDescription = "Como o momento da aula é para falar sobre pássaros locais e regionais, o mapa pode ser um bom aliado.";

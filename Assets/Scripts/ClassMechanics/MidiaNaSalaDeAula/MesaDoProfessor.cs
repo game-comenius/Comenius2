@@ -25,6 +25,9 @@ public class MesaDoProfessor : LocalParaColocarItem {
                 sr.transform.localScale = Vector3.one * .5f;
                 sr.flipX = true;
                 break;
+            case ItemName.GravacaoPassaro:
+                sr.transform.localScale = Vector3.one * .4f;
+                break;
             default:
                 break;
         }
