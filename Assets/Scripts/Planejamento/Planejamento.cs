@@ -5,7 +5,16 @@ using UnityEngine;
 
 public class Planejamento : MonoBehaviour {
 
-    public bool Disponivel { get; set; }
+    private bool disponivel;
+    public bool Disponivel
+    {
+        get { return disponivel; }
+        set
+        {
+            disponivel = value;
+            GetComponentInChildren<PranchetaPlanejamento>().DaParaInteragir = disponivel;
+        }
+    }
 
     public bool Momento1Confirmado { get; set; }
     public bool Momento2Confirmado { get; set; }

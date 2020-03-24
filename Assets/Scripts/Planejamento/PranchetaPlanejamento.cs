@@ -5,9 +5,27 @@ using UnityEngine.UI;
 
 public class PranchetaPlanejamento : MonoBehaviour
 {
+    private bool daParaInteragir;
+    public bool DaParaInteragir
+    {
+        get { return daParaInteragir; }
+        set
+        {
+            daParaInteragir = value;
+            var cursor = GetComponent<DynamicCursor>();
+            if (!daParaInteragir)
+            {
+                if (cursor) Destroy(cursor);
+            }
+            else
+            {
+                if (!cursor) gameObject.AddComponent<DynamicCursor>();
+            }
+        }
+    }
+
 
     [SerializeField] private Vector3[] interactOffset = new Vector3[1];
-
 
     private void OnMouseUp()
     {
