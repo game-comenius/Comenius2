@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,8 +26,13 @@ public class Planejamento : MonoBehaviour {
     private FolhaInventarioNoPlanejamento inventario;
     private PlanejamentoUI planejamentoUI;
 
-	//Use this for initialization
-	void Start () {
+    // Funções que serão executadas quando o planejamento for confirmado
+    // Para cadastrar uma função neste evento é só escrever:
+    // QuandoTerminarPlanejamentoEvent += SuaFuncao;
+    public event Action QuandoConfirmarPlanejamentoEvent;
+
+    //Use this for initialization
+    void Start () {
         inventario = GetComponentInChildren<FolhaInventarioNoPlanejamento>();
         planejamentoUI = GetComponentInChildren<PlanejamentoUI>();
 
@@ -98,8 +104,12 @@ public class Planejamento : MonoBehaviour {
 
     public void ConfirmarPlanejamento()
     {
-        if (!Momento2Confirmado) return;
         // Só continua se o jogador confirmou o momento 2
+        if (!Momento2Confirmado) return;
+
+        // Executar funções cadastradas no evento, se existirem
+        if (QuandoConfirmarPlanejamentoEvent != null) QuandoConfirmarPlanejamentoEvent();
+
         GetComponentInChildren<PlanManager>().ConfirmPlan();
 
         var questGuest = GetComponent<QuestGuest>();

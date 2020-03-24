@@ -15,9 +15,18 @@ public class CustomConfigSalaDeAula : MonoBehaviour
     }
 
     // Use this for initialization
-    void Start()
+    private IEnumerator Start()
     {
         ConfigurarSalaDeAula(CustomGameSettings.CurrentSettings);
+
+        // Remover missão "Ir para a aula" da janela de missões assim que
+        // a Lurdinha chega na sala de aula
+        var questIrParaAula = CustomConfigSalaProfessores.questIrParaAula;
+        if (questIrParaAula != null)
+        {
+            yield return new WaitUntil(() => ConselheiroComenius.JanelaMissoes != null);
+            ConselheiroComenius.JanelaMissoes.RemoverMissao(questIrParaAula);
+        }
     }
 
     private void ConfigurarSalaDeAula(CustomGameSettings settings)
