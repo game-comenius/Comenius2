@@ -458,6 +458,8 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission3.StandardDescription = "Folhas brancas de dimensão A4, que pode ter diversos usos de acordo com a situação, sejam desenhos, avisos, dobraduras, etc.";
+
                 DescriptionsInMission3.FirstMomentDescription = "A folha sulfite está em branco, podendo ser registradas muitas informações, mas sem nenhum registro para pesquisar.";
                 DescriptionsInMission3.SecondMomentDescription = "Com a folha sulfite é potente para a exposição da pesquisa, mas é muito pequena e talvez seja difícil dos alunos de trás enxergarem.";
                 DescriptionsInMission3.ThirdMomentDescription = "O professor pode solicitar que os alunos escrevam diversas palavras regionais na folha sulfite, mas não foge do que elas já fazem durante os dias na escola.";
@@ -466,6 +468,8 @@ public class Item
                 FriendlyName = "VHS Documentário sobre Regionalismo";
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
+
+                DescriptionsInMission3.StandardDescription = "Essas mídias (TV-VHS) combinadas com o aparelho reprodutor de VHS serão usadas para ver o documentário sobre os diferentes costumes ou tradições regionais.";
 
                 DescriptionsInMission3.FirstMomentDescription = "Um documentário sobre regionalismos trazido pelo professor, com uma longa duração, pode ser uma boa fonte para pesquisa dos alunos.";
                 DescriptionsInMission3.SecondMomentDescription = "Passar um vídeo durante a exposição, por mais que esteja dentro do assunto, pode tirar o foco dos alunos nesse momento.";
@@ -476,6 +480,8 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission3.StandardDescription = "Essas mídias (TV-VHS) combinadas com o aparelho reprodutor de VHS serão usadas para ver partes selecionadas pelo professor sobre o documentário sobre regionalismo.";
+
                 DescriptionsInMission3.FirstMomentDescription = "O VHS editado pelo professor apresenta as informações mais pertinentes de forma sucinta, sendo uma boa fonte para a pesquisa dos alunos sobre a temática da aula.";
                 DescriptionsInMission3.SecondMomentDescription = "O VHS editado pelo professor apresenta as informações mais pertinentes, mas não ajuda os alunos a expor a sua pesquisa.";
                 DescriptionsInMission3.ThirdMomentDescription = "O documentário editado pelo professor compila muitas informações importantes, de forma suscinta, mas talvez seja melhor utilizado em outro momento da aula.";
@@ -484,6 +490,8 @@ public class Item
                 FriendlyName = "Enciclopédia";
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
+
+                DescriptionsInMission3.StandardDescription = "Coletânea de livros e textos que tratam com maior profundidade o conhecimento humano.";
 
                 DescriptionsInMission3.FirstMomentDescription = "A enciclopédia compila muitas informações importantes para a realização da pesquisa dos alunos sobre regionalismo, possuindo imagens e textos sobre a temática.";
                 DescriptionsInMission3.SecondMomentDescription = "A Enciclopédia possui muitos textos sobre regionalismos e exemplos, talvez seja melhor utilizada em outro momento.";
@@ -494,6 +502,8 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission3.StandardDescription = "Adedonha ou Stop! consiste em um jogo de conhecimentos gerais onde cada coluna da tabela recebe o nome de uma categoria de palavras como animais, carros, cidades, cores etc., e cada linha representa uma rodada do jogo.";
+
                 DescriptionsInMission3.FirstMomentDescription = "O jogo da Adedonha é bastante rico, pois trabalha com palavras que podem trazer a discussão sobre regionalismo, mas talvez seja melhor utilizada em atividade.";
                 DescriptionsInMission3.SecondMomentDescription = "O jogo da Adedonha é bastante rico, pois trabalha com palavras e assim trazer a discussão sobre regionalismos, mas talvez seja melhor utilizada em uma atividade.";
                 DescriptionsInMission3.ThirdMomentDescription = "Trazer a realidade dos alunos e incluir jogos educativos em atividade de síntese torna a aula mais divertida. É possível trabalhar diferentes palavras regionais com jogo.";
@@ -502,6 +512,8 @@ public class Item
                 FriendlyName = "Jogo da Forca";
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
+
+                DescriptionsInMission3.StandardDescription = "Este é um jogo em que o jogador precisa acertar a palavra, tendo somente o número de letras e o tema como dica, antes que o boneco seja enforcado, com um número limitado de erros.";
 
                 DescriptionsInMission3.FirstMomentDescription = "O jogo da forca é bastante potente, pois trabalha com palavras e assim podem trazer a discussão sobre regionalismos, mas talvez seja melhor utilizada em uma atividade.";
                 DescriptionsInMission3.SecondMomentDescription = "O jogo da forca é bastante potente, pois trabalha com palavras e as mesmas podem trazer a discussão sobre regionalismos, mas talvez seja melhor utilizada em uma atividade.";
@@ -512,6 +524,8 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission3.StandardDescription = "O jogo de palavras cruzadas é um passatempo bastante popular e consiste em linhas e colunas que devem ser preenchidas por palavras descobertas pelo jogador.";
+
                 DescriptionsInMission3.FirstMomentDescription = "O jogo das Palavras Cruzadas é bastante rico, pois trabalha com palavras e essas podem trazer a discussão sobre regionalismos, mas talvez seja melhor usar em atividade.";
                 DescriptionsInMission3.SecondMomentDescription = "O jogo das Palavras Cruzadas é bastante rico, pois trabalha com palavras e elas podem trazer a discussão sobre regionalismos, mas talvez seja melhor usar em atividade.";
                 DescriptionsInMission3.ThirdMomentDescription = "O jogo das palavras cruzadas faz parte do dia a dia das crianças, trazer a ludicidade para a aula, em momentos de atividade pode enriquecer a apropriação do conhecimento.";
@@ -520,6 +534,8 @@ public class Item
                 FriendlyName = "CD Sotaques do Brasil";
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
+
+                DescriptionsInMission3.StandardDescription = "Um CD com uma entrevista sobre o tema da aula, contendo uma entrevista falando sobre sotaques e regionalismos.";
 
                 DescriptionsInMission3.FirstMomentDescription = "O CD com uma entrevista sobre o tema da aula, pode ser um interessante meio de pesquisa para os alunos, em forma de áudio.";
                 DescriptionsInMission3.SecondMomentDescription = "A proposta é de uma apresentação dos resultados da pesquisa, o CD com a entrevista pode ser utilizado, mas não comporta os resultados da pesquisa dos alunos.";
