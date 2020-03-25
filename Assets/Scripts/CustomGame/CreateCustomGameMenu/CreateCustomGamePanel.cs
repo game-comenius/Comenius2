@@ -33,6 +33,7 @@ public class CreateCustomGamePanel : MonoBehaviour
     private PaginaEscolherProfessor paginaEscolherProfessor;
     private PaginaEscolherSalaDeAula paginaEscolherSalaDeAula;
     private PaginaInformacoesBasicas paginaInformacoesBasicas;
+    private PaginaProcedimentoAgrupamento paginaProcedimentoAgrupamento;
     private PaginaEscolherMidias paginaEscolherMidias;
     private PaginaResumoSalvar paginaResumoSalvar;
 
@@ -45,12 +46,6 @@ public class CreateCustomGamePanel : MonoBehaviour
     private TMP_InputField descricaoMomento1;
     private TMP_InputField descricaoMomento2;
     private TMP_InputField descricaoMomento3;
-
-    //private MomentoUICriarCustom momento1;
-    //private MomentoUICriarCustom momento2;
-    //private MomentoUICriarCustom momento3;
-
-    //private EditarPoderMidiasScrollView[] editarPoderMidiasScrollViews;
 
     [SerializeField]
     private TMP_InputField tituloDaAula;
@@ -67,6 +62,7 @@ public class CreateCustomGamePanel : MonoBehaviour
         paginaEscolherProfessor = GetComponentInChildren<PaginaEscolherProfessor>();
         paginaEscolherSalaDeAula = GetComponentInChildren<PaginaEscolherSalaDeAula>();
         paginaInformacoesBasicas = GetComponentInChildren<PaginaInformacoesBasicas>();
+        paginaProcedimentoAgrupamento = GetComponentInChildren<PaginaProcedimentoAgrupamento>();
         paginaEscolherMidias = GetComponentInChildren<PaginaEscolherMidias>();
         paginaResumoSalvar = GetComponentInChildren<PaginaResumoSalvar>();
 
@@ -76,14 +72,6 @@ public class CreateCustomGamePanel : MonoBehaviour
         descricaoMomento1 = falas[1];
         descricaoMomento2 = falas[2];
         descricaoMomento3 = falas[3];
-
-        //// Coletar os momentos que contém as configurações de proc. e agrup.
-        //var momentos = this.GetComponentsInChildren<MomentoUICriarCustom>();
-        //momento1 = momentos[0];
-        //momento2 = momentos[1];
-        //momento3 = momentos[2];
-
-        //editarPoderMidiasScrollViews = GetComponentsInChildren<EditarPoderMidiasScrollView>();
 
         // Desativar todas as páginas deste panel e ativar apenas a primeira
         foreach (var pagina in listaDePaginas) pagina.SetActive(false);
@@ -125,8 +113,6 @@ public class CreateCustomGamePanel : MonoBehaviour
         if (nodoPaginaAtual.Previous != null) IrParaPagina(nodoPaginaAtual.Previous);
     }
 
-    public void pressSubmit2() { Debug.Log("hehe"); }
-
     public void PressButtonThatStartsCustomGame()
     {
         // Criar objeto para escrever no disco
@@ -134,42 +120,21 @@ public class CreateCustomGamePanel : MonoBehaviour
         settings.Professor = paginaEscolherProfessor.ProfessorSelecionado;
         settings.Sala = paginaEscolherSalaDeAula.SalaSelecionada;
 
-        //settings.NivelDeEnsino = paginaInformacoesBasicas.NivelDeEnsinoSelecionado.valor;
-        //settings.AreaDeConhecimento = paginaInformacoesBasicas.AreaDeConhecimentoSelecionada.valor;
+        settings.NivelDeEnsino = paginaInformacoesBasicas.NivelDeEnsinoSelecionado.valor;
+        settings.AreaDeConhecimento = paginaInformacoesBasicas.AreaDeConhecimentoSelecionada.valor;
 
         settings.IntroducaoAula = introducaoAula.text;
         settings.DescricaoMomento1 = descricaoMomento1.text;
         settings.DescricaoMomento2 = descricaoMomento2.text;
         settings.DescricaoMomento3 = descricaoMomento3.text;
 
-        //settings.Procedimento1 = momento1.ProcedimentoSelecionado;
-        //settings.Procedimento2 = momento2.ProcedimentoSelecionado;
-        //settings.Procedimento3 = momento3.ProcedimentoSelecionado;
+        settings.Procedimento1 = paginaProcedimentoAgrupamento.ProcedimentoMomento1;
+        settings.Procedimento2 = paginaProcedimentoAgrupamento.ProcedimentoMomento2;
+        settings.Procedimento3 = paginaProcedimentoAgrupamento.ProcedimentoMomento3;
 
-        //settings.Agrupamento1 = momento1.AgrupamentoSelecionado;
-        //settings.Agrupamento2 = momento2.AgrupamentoSelecionado;
-        //settings.Agrupamento3 = momento3.AgrupamentoSelecionado;
-
-        //settings.ArrayMidiaPoderFeedbackPorMomento = MidiaPoderFeedback3Momentos();
-
-        settings.TituloDaAula = tituloDaAula.text;
-        settings.Autor = autorInputField.text;
-
-        //Debug.Log("Salvando jogo...\n" +
-        //    "Professor = " + settings.Professor.NomeCompleto() +
-        //    "\nSala = " + settings.Sala.NomeCompleto() +
-        //    "\nNível De Ensino = " + NivelDeEnsino.Get(settings.NivelDeEnsino) +
-        //    "\nÁrea de Conhecimento = " + AreaDeConhecimento.Get(settings.AreaDeConhecimento) +
-        //    "\nIntrodução da Aula = " + settings.IntroducaoAula +
-        //    "\nDescrição do Momento 1 = " + settings.DescricaoMomento1 +
-        //    "\nDescrição do Momento 2 = " + settings.DescricaoMomento2 +
-        //    "\nDescrição do Momento 3 = " + settings.DescricaoMomento3 +
-        //    "\nTitulo da Aula = " + settings.TituloDaAula +
-        //    "\nAutor = " + settings.Autor);
-
-        // Mais tarde, salvar sim no servidor, por enquanto jogar diretamente
-        // o jogo recém criado
-        //settings.SaveToDisk();
+        settings.Agrupamento1 = paginaProcedimentoAgrupamento.AgrupamentoMomento1;
+        settings.Agrupamento2 = paginaProcedimentoAgrupamento.AgrupamentoMomento2;
+        settings.Agrupamento3 = paginaProcedimentoAgrupamento.AgrupamentoMomento3;
 
         // Deletar o que há aqui abaixo depois, isso é temporário
         var midiasSelecionadas = paginaEscolherMidias.MidiasSelecionadas;
@@ -201,7 +166,27 @@ public class CreateCustomGamePanel : MonoBehaviour
             settings.ArrayMidiaPoderFeedbackMomento3[i].Poder = Poder.MuitoBoa;
             settings.ArrayMidiaPoderFeedbackMomento3[i].Feedback = "Incrível!";
         }
+
+        settings.TituloDaAula = tituloDaAula.text;
+        settings.Autor = autorInputField.text;
+
         CustomGameSettings.CurrentSettings = settings;
+
+        //Debug.Log("Salvando jogo...\n" +
+        //    "Professor = " + settings.Professor.NomeCompleto() +
+        //    "\nSala = " + settings.Sala.NomeCompleto() +
+        //    "\nNível De Ensino = " + NivelDeEnsino.Get(settings.NivelDeEnsino) +
+        //    "\nÁrea de Conhecimento = " + AreaDeConhecimento.Get(settings.AreaDeConhecimento) +
+        //    "\nIntrodução da Aula = " + settings.IntroducaoAula +
+        //    "\nDescrição do Momento 1 = " + settings.DescricaoMomento1 +
+        //    "\nDescrição do Momento 2 = " + settings.DescricaoMomento2 +
+        //    "\nDescrição do Momento 3 = " + settings.DescricaoMomento3 +
+        //    "\nTitulo da Aula = " + settings.TituloDaAula +
+        //    "\nAutor = " + settings.Autor);
+
+        // Mais tarde, salvar sim no servidor, por enquanto jogar diretamente
+        // o jogo recém criado
+        //settings.SaveToDisk();
     }
 
     //private MidiaPoderFeedback[][] MidiaPoderFeedback3Momentos()

@@ -6,3 +6,18 @@ public enum Procedimento
     AulaExpositiva,
     Atividade,
 }
+
+public static class ProcedimentoExtensions
+{
+    public static string Nome(this Procedimento procedimento)
+    {
+        switch (procedimento)
+        {
+            case Procedimento.Pesquisa: return "Pesquisa";
+            case Procedimento.DiscussaoEntreAlunos: return "Discussão entre alunos";
+            case Procedimento.AulaExpositiva: return "Aula expositiva";
+            case Procedimento.Atividade: return "Atividade";
+            default: return "";
+        }
+    }
+}

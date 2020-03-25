@@ -19,7 +19,7 @@ public class PranchetaPlanejamento : MonoBehaviour
             }
             else
             {
-                if (!cursor) gameObject.AddComponent<DynamicCursor>();
+                gameObject.AddComponent<DynamicCursor>();
             }
         }
     }
