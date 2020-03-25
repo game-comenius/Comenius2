@@ -3,5 +3,6 @@ public enum Procedimento
 {
     Pesquisa,
     DiscussaoEntreAlunos,
-    AulaExpositiva
+    AulaExpositiva,
+    Atividade,
 }
