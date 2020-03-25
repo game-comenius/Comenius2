@@ -258,14 +258,16 @@ public class ClassManager : MonoBehaviour
 
     private void EndClassFunction()
     {
-        professor.professor.gameObject.GetComponent<NpcDialogo>().enabled = true;
-
         foreach (StudentScript aluno in alunosComentaristas)
         {
             aluno.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
         }
 
-        professor.professor.GetComponent<NpcDialogo>().Restart();
+        if (professor.professor)
+        {
+            professor.professor.gameObject.GetComponent<NpcDialogo>().enabled = true;
+            professor.professor.GetComponent<NpcDialogo>().Restart();
+        }
     }
 
     //Método para que os estudantes possam ser adicionados na lista students
@@ -324,7 +326,8 @@ public class ClassManager : MonoBehaviour
                 GameManager.UISendoUsada();
             }
 
-            TeacherScript.teacher.StartWalk();
+            var teacher = TeacherScript.teacher;
+            if (teacher) teacher.StartWalk();
 
             momentTimer -= Time.deltaTime * _timeAcceleration;
 
@@ -371,16 +374,18 @@ public class ClassManager : MonoBehaviour
 
                     SistemaDialogo.sistemaDialogo.ComecarDialogo(Falas[classMoment], null);
 
-                    TeacherScript.teacher.PauseWalk();
+                    if (teacher) teacher.PauseWalk();
                 }
             }
 
             CloudsCountdown();
         }
 
-        professor.professor.FimDaAula();
-
-        yield return new WaitWhile(() => (professor.professor.walkCoroutine != null));
+        if (professor.professor)
+        {
+            professor.professor.FimDaAula();
+            yield return new WaitWhile(() => (professor.professor.walkCoroutine != null));
+        }
 
         timer.text = "Aula terminada";
 

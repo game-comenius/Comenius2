@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,10 @@ public class CustomConfigSalaDeAula : MonoBehaviour
         foreach (var door in doors) Destroy(door);
         var otherDoors = GameObject.FindGameObjectsWithTag("Door1");
         foreach (var door in otherDoors) Destroy(door.gameObject);
+
+        // Para impedir que o professor ande, destruir script TeacherScript.cs
+        var teacherScripts = FindObjectsOfType<TeacherScript>();
+        foreach (var teacherScript in teacherScripts) Destroy(teacherScript);
     }
 
     // Use this for initialization
