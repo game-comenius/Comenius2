@@ -56,4 +56,12 @@ public class PopUpNPCRequestBalloon : MonoBehaviour {
         interiorDoBalao.SetActive(false);
         spriteRenderer.enabled = false;
     }
+
+    // Quando o jogador apertar sobre o balão, é como se ele apertasse no
+    // NPC que possui este balão para conversar
+    private void OnMouseUp()
+    {
+        var dialogo = transform.parent.GetComponent<NpcDialogo>();
+        if (dialogo) dialogo.OnMouseUp();
+    }
 }
