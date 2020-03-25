@@ -19,6 +19,7 @@ public class PaginaEscolherProfessor : MonoBehaviour {
     [SerializeField] private Image imageCelestino;
     [SerializeField] private Image imageAntonia;
     [SerializeField] private Image imageMontanari;
+    [SerializeField] private Image imageDiretor;
     private List<Image> imagesDosProfessores;
 
     [SerializeField] private TextMeshProUGUI balaoTexto1;
@@ -38,12 +39,13 @@ public class PaginaEscolherProfessor : MonoBehaviour {
         professoresDisponiveis.AddLast(CharacterName.Paulino);
         professoresDisponiveis.AddLast(CharacterName.Alice);
         professoresDisponiveis.AddLast(CharacterName.Celestino);
+        professoresDisponiveis.AddLast(CharacterName.Diretor);
 
         imageFotoProfessor.preserveAspect = true;
         imagesDosProfessores = new List<Image>()
         {
             imageJean, imageAlice, imageVladmir, imagePaulino,
-            imageCelestino, imageAntonia, imageMontanari
+            imageCelestino, imageAntonia, imageMontanari, imageDiretor,
         };
         foreach (var image in imagesDosProfessores) image.preserveAspect = true;
 
@@ -61,7 +63,7 @@ public class PaginaEscolherProfessor : MonoBehaviour {
         {
             case CharacterName.Jean:
                 imageJean.enabled = true;
-                balaoTexto2.text = "Eu sou um professor tradicional, penso que sou uma figura central no processo de ensino-aprendizagem, pois sou aquele que detém o conhecimento que os alunos aprenderão. Dessa forma, sinto-me confortável quando os alunos têm sua atenção focada em mim, para que não percam conteúdos e não se dispersem.";
+                balaoTexto2.text = "Eu sou um professor progressivista. Acredito que devemos proporcionar vivências com desafios e situações-problema que estimulem os alunos a buscarem soluções. Os alunos devem aprender fazendo, de acordo com o seu tempo e desenvolvimento, por isso dou espaço para tentativas experimentais, pesquisa e descoberta.";
                 break;
             case CharacterName.Vladmir:
                 imageVladmir.enabled = true;
@@ -86,6 +88,10 @@ public class PaginaEscolherProfessor : MonoBehaviour {
             case CharacterName.Antonia:
                 imageAntonia.enabled = true;
                 balaoTexto2.text = "Acredito que o aprendizado é indissociável da realidade social. A escola é um potente transformador da sociedade, então os conteúdos escolares devem ter ressonância na vida dos alunos. O conhecimento novo se apóia no que o aluno já sabe, no seu próprio contexto, e a partir daí eu sistematizo uma sequência de aprendizagem cada vez mais complexa.";
+                break;
+            case CharacterName.Diretor:
+                imageDiretor.enabled = true;
+                balaoTexto2.text = "Eu sou um professor tradicional, penso que sou uma figura central no processo de ensino-aprendizagem, pois sou aquele que detém o conhecimento que os alunos aprenderão. Dessa forma, sinto-me confortável quando os alunos têm sua atenção focada em mim, para que não percam conteúdos e não se dispersem.";
                 break;
             default:
                 balaoTexto2.text = "";

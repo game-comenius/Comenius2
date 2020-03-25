@@ -7,6 +7,7 @@
     Montanari,
     Antonia,
     Alice,
+    Diretor,
 }
 
 public static class CharacterNameExtensions
@@ -29,6 +30,8 @@ public static class CharacterNameExtensions
                 return "Antônia";
             case CharacterName.Alice:
                 return "Alice Menezes";
+            case CharacterName.Diretor:
+                return "João Frederico";
             default:
                 return "";
         }
