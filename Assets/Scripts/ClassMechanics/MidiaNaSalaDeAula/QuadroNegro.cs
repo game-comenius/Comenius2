@@ -27,7 +27,7 @@ public class QuadroNegro : LocalParaColocarItem {
                 sr.flipX = true;
                 break;
             default:
-                Debug.Log("Não é possível colocar esta mídia sobre o quadro");
+                Debug.LogWarning("Não é possível colocar esta mídia sobre o quadro");
                 break;
         }
 

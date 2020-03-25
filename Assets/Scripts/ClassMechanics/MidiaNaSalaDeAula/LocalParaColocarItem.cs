@@ -14,10 +14,9 @@ public abstract class LocalParaColocarItem : MonoBehaviour {
 
     public void RemoverItem()
     {
-        if (itemNesteLocal)
-            itemNesteLocal.GetComponent<SpriteRenderer>().enabled = false;
+        if (itemNesteLocal) Destroy(itemNesteLocal.gameObject);
+        itemNesteLocal = null;
     }
-
 
     // Desenhar ponto no editor para mostrar onde vai ficar o objeto na mesa
     private void OnDrawGizmos()

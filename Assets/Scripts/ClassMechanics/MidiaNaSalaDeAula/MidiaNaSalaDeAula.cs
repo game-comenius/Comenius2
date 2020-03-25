@@ -28,6 +28,10 @@ public class MidiaNaSalaDeAula : MonoBehaviour {
             case ItemName.ReprodutorAudio:
             case ItemName.GravacaoPassaro:
             case ItemName.Mapa:
+            case ItemName.Retroprojetor:
+            case ItemName.RetroprojetorSlideCicloTrabalho:
+            case ItemName.RetroprojetorSlideLinhaTempo:
+            case ItemName.RetroprojetorSlideMapa:
                 if (mesaDoProfessor) mesaDoProfessor.ColocarItem(midia);
                 break;
             case ItemName.TVComVHS:
