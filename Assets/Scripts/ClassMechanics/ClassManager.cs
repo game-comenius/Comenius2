@@ -171,6 +171,7 @@ public class ClassManager : MonoBehaviour
         for (int i = 0; i < problemQuantity.Length; i++) 
         {
             problemQuantity[i] = TraduzirPontoProblema((int)Player.Instance.MissionHistory[Player.Instance.missionID].points[i]);
+            Player.Instance.SomarProblemasTotais(problemQuantity[i]);
         }
 
         TeacherSetUp();
