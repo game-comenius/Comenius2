@@ -5,6 +5,7 @@ public enum Procedimento
     DiscussaoEntreAlunos,
     AulaExpositiva,
     Atividade,
+    Seminario,
 }
 
 public static class ProcedimentoExtensions
@@ -17,6 +18,7 @@ public static class ProcedimentoExtensions
             case Procedimento.DiscussaoEntreAlunos: return "Discussão entre alunos";
             case Procedimento.AulaExpositiva: return "Aula expositiva";
             case Procedimento.Atividade: return "Atividade";
+            case Procedimento.Seminario: return "Seminário";
             default: return "";
         }
     }
