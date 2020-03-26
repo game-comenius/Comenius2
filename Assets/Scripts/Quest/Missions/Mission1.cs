@@ -39,11 +39,19 @@ public class Mission1
         new QuestClass (10400, "Fale com o Jean. (4)", new DontQuest(), new int[]{ 10300, -7 }),
         new QuestClass (10410, "Fale com o Jean. (5)", new DoQuest(), new int[]{ }),
         new QuestClass (10411, "Confirme o planejamento com o Jean", new DoQuest(), new int[]{}),
+
         new QuestClass (10500, "Falar com o Menino Ambiente no Pátio.", new DoQuest(), new int[]{ }),
+        new QuestClass (10510, "Responder corretamente o Menino Ambiente", new DoQuest(), new int[]{ }),
+        new QuestClass (10511, "Controle: Responder corretamente o Menino Ambiente", new DoQuest(), new int[]{ 10510 }),
+
         new QuestClass (10600, "Falar com o 021 no Pátio.", new DoQuest(), new int[]{ }),
         new QuestClass (10800, "Falar com o 031 no Pátio.", new DoQuest(), new int[]{ }),
         new QuestClass (10900, "Falar com o Pássaro no Pátio.", new DoQuest(), new int[]{ }),
+
         new QuestClass (11000, "Falar com o Literatura na Biblioteca.", new DoQuest(), new int[]{ }),
+        new QuestClass (11010, "Responder corretamente o Literatura", new DoQuest(), new int[]{ }),
+        new QuestClass (11011, "Controle: Responder corretamente o Literatura", new DoQuest(), new int[]{ 11010 }),
+
         new QuestClass (11100, "Falar com o 101 na Biblioteca.", new DoQuest(), new int[]{ }),
         new QuestClass (11200, "Falar com a Antônia na Coordenação.", new DoQuest(), new int[]{ }),
         new QuestClass (11300, "Falar com a Drica (1) na Multimeios.", new DoQuest(), new int[]{ 100600 }),
