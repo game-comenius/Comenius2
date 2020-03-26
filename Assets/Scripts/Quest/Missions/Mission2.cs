@@ -27,8 +27,14 @@ public class Mission2 : MonoBehaviour
         new QuestClass (10400, "Falar com o garoto esquisito no pátio sobre a fotografia", new DoQuest(), new int[]{ }),
         new QuestClass (10401, "Controle: Pegar fotografia", new DoQuest(), new int[]{ 10400 }),
         new QuestClass (10600, "Falar com o 031 no Pátio", new DoQuest(), new int[]{ }),
-        new QuestClass (10700, "Falar com o Garoto Ambiente no Pátio 2", new DoQuest(), new int[]{ }),        
+
+        new QuestClass (10700, "Falar com o Garoto Ambiente no Pátio 2", new DoQuest(), new int[]{ }),    
+        new QuestClass (10710, "Responder corretamente o Garoto Ambiente", new DoQuest(), new int[]{ }),
+        new QuestClass (10711, "Controle: Responder corretamente o Garoto Ambiente", new DoQuest(), new int[]{ 10710 }),
+
         new QuestClass (10900, "Falar com a Menina Cadeirante no Pátio 2", new DoQuest(), new int[]{ }),
+        new QuestClass (10901, "Controle: Falar com a Menina Cadeirante", new DoQuest(), new int[]{ 10900 }),
+
         new QuestClass (11000, "Falar com a 061 na Multimeios", new DoQuest(), new int[]{ }),
 
         new QuestClass (11100, "Falar com a Drica na Multimeios", new DoQuest(), new int[]{ }),

@@ -42,6 +42,8 @@ public class MidiaMomento : MonoBehaviour
     public int forcaPoints = 0;
     public int palavrascruzadasPoints = 0;
     public int cdsotaquesPoints = 0;
+    public int fotogratiarevinustrialpoints = 0;
+    public int cdrevintrialpoints = 0;
 
     private Image image;
 
@@ -135,6 +137,8 @@ public class MidiaMomento : MonoBehaviour
             case ItemName.Forca: return forcaPoints;
             case ItemName.PalavrasCruzadas: return palavrascruzadasPoints;
             case ItemName.CDsotaques: return cdsotaquesPoints;
+            case ItemName.FotografiaRevolucaoIndustrial: return fotogratiarevinustrialpoints;
+            case ItemName.ReprodutorAudioComCDRevolucaoIndustrial: return cdrevintrialpoints;
             default: return 0;
         }
     }
