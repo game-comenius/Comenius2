@@ -19,6 +19,24 @@ public class PaginaFeedbackMidias : MonoBehaviour {
         get { return linhasEscolherFeedback.Select((linha) => linha.Midia).ToArray(); }
     }
 
+    public CreateCustomGamePanel.MidiaPoderFeedback[] ArrayMidiaPoderFeedback
+    {
+        get
+        {
+            var mpfList = new List<CreateCustomGamePanel.MidiaPoderFeedback>();
+            foreach (var linhaFeedback in linhasEscolherFeedback)
+            {
+                var mpf = new CreateCustomGamePanel.MidiaPoderFeedback();
+                mpf.Midia = linhaFeedback.Midia;
+                mpf.Poder = linhaFeedback.Poder;
+                mpf.Feedback = linhaFeedback.Feedback;
+                mpfList.Add(mpf);
+            }
+            return mpfList.ToArray();
+        }
+    }
+
+
     private void Awake()
     {
         linhasEscolherFeedback = new List<LinhaEscolherFeedback>();

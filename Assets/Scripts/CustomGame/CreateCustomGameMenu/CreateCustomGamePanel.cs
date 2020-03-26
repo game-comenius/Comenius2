@@ -11,7 +11,6 @@ using System.Linq;
 
 public class CreateCustomGamePanel : MonoBehaviour
 {
-
     // struct útil para transferir as informações criadas para o disco
     // e depois resgatá-las para a memória durante o load de um jogo criado
     [Serializable()]
@@ -22,20 +21,20 @@ public class CreateCustomGamePanel : MonoBehaviour
         public string Feedback;
     }
 
-    // LinkedList não é serializable para o inspector, então popular um array
-    // no inspector e no Start, jogar o array populado na LinkedList
-    [SerializeField]
-    private GameObject[] paginas;
+    // Campos para não ter que procurar depois
+    public PaginaEscolherProfessor paginaEscolherProfessor;
+    public PaginaEscolherSalaDeAula paginaEscolherSalaDeAula;
+    public PaginaInformacoesBasicas paginaInformacoesBasicas;
+    public PaginaProcedimentoAgrupamento paginaProcedimentoAgrupamento;
+    public PaginaEscolherMidias paginaEscolherMidias;
+    public PaginaFeedbackMidias paginaFeedbackMidiasMomento1;
+    public PaginaFeedbackMidias paginaFeedbackMidiasMomento2;
+    public PaginaFeedbackMidias paginaFeedbackMidiasMomento3;
+    public PaginaResumoSalvar paginaResumoSalvar;
+
+    // Colocar as páginas acima em uma linked list para caminhar por elas
     private LinkedList<GameObject> listaDePaginas;
     private LinkedListNode<GameObject> nodoPaginaAtual;
-
-    // Campos para não ter que procurar depois
-    private PaginaEscolherProfessor paginaEscolherProfessor;
-    private PaginaEscolherSalaDeAula paginaEscolherSalaDeAula;
-    private PaginaInformacoesBasicas paginaInformacoesBasicas;
-    private PaginaProcedimentoAgrupamento paginaProcedimentoAgrupamento;
-    private PaginaEscolherMidias paginaEscolherMidias;
-    private PaginaResumoSalvar paginaResumoSalvar;
 
     public Button botaoVoltarPagina;
     public Button botaoAvancarPagina;
@@ -54,17 +53,20 @@ public class CreateCustomGamePanel : MonoBehaviour
 
     private void Awake()
     {
-        // Pegar a lista de páginas pelas páginas definidas pelo inspector
-        listaDePaginas = new LinkedList<GameObject>(paginas);
+        // Colocar as páginas em uma lista para caminhar por elas depois
+        listaDePaginas = new LinkedList<GameObject>();
+        listaDePaginas.AddLast(paginaEscolherProfessor.gameObject);
+        listaDePaginas.AddLast(paginaEscolherSalaDeAula.gameObject);
+        listaDePaginas.AddLast(paginaInformacoesBasicas.gameObject);
+        listaDePaginas.AddLast(paginaProcedimentoAgrupamento.gameObject);
+        listaDePaginas.AddLast(paginaEscolherMidias.gameObject);
+        listaDePaginas.AddLast(paginaFeedbackMidiasMomento1.gameObject);
+        listaDePaginas.AddLast(paginaFeedbackMidiasMomento2.gameObject);
+        listaDePaginas.AddLast(paginaFeedbackMidiasMomento3.gameObject);
+        listaDePaginas.AddLast(paginaResumoSalvar.gameObject);
 
         // Ativar as páginas para buscar os scripts necessários
         foreach (var pagina in listaDePaginas) pagina.SetActive(true);
-        paginaEscolherProfessor = GetComponentInChildren<PaginaEscolherProfessor>();
-        paginaEscolherSalaDeAula = GetComponentInChildren<PaginaEscolherSalaDeAula>();
-        paginaInformacoesBasicas = GetComponentInChildren<PaginaInformacoesBasicas>();
-        paginaProcedimentoAgrupamento = GetComponentInChildren<PaginaProcedimentoAgrupamento>();
-        paginaEscolherMidias = GetComponentInChildren<PaginaEscolherMidias>();
-        paginaResumoSalvar = GetComponentInChildren<PaginaResumoSalvar>();
 
         //// Coletar falas do professor na sala dos professores
         var falas = listaFalasProfessor.GetComponentsInChildren<TMP_InputField>();
@@ -136,36 +138,9 @@ public class CreateCustomGamePanel : MonoBehaviour
         settings.Agrupamento2 = paginaProcedimentoAgrupamento.AgrupamentoMomento2;
         settings.Agrupamento3 = paginaProcedimentoAgrupamento.AgrupamentoMomento3;
 
-        // Deletar o que há aqui abaixo depois, isso é temporário
-        var midiasSelecionadas = paginaEscolherMidias.MidiasSelecionadas;
-        var quantidadeMidias = midiasSelecionadas.Count;
-        settings.ArrayMidiaPoderFeedbackMomento1 = new MidiaPoderFeedback[quantidadeMidias];
-        settings.ArrayMidiaPoderFeedbackMomento2 = new MidiaPoderFeedback[quantidadeMidias];
-        settings.ArrayMidiaPoderFeedbackMomento3 = new MidiaPoderFeedback[quantidadeMidias];
-        // Momento 1
-        for (int i = 0; i < quantidadeMidias; i++)
-        {
-            settings.ArrayMidiaPoderFeedbackMomento1[i] = new MidiaPoderFeedback();
-            settings.ArrayMidiaPoderFeedbackMomento1[i].Midia = midiasSelecionadas[i];
-            settings.ArrayMidiaPoderFeedbackMomento1[i].Poder = Poder.MuitoBoa;
-            settings.ArrayMidiaPoderFeedbackMomento1[i].Feedback = "Incrível!";
-        }
-        // Momento 2
-        for (int i = 0; i < quantidadeMidias; i++)
-        {
-            settings.ArrayMidiaPoderFeedbackMomento2[i] = new MidiaPoderFeedback();
-            settings.ArrayMidiaPoderFeedbackMomento2[i].Midia = midiasSelecionadas[i];
-            settings.ArrayMidiaPoderFeedbackMomento2[i].Poder = Poder.MuitoBoa;
-            settings.ArrayMidiaPoderFeedbackMomento2[i].Feedback = "Incrível!";
-        }
-        // Momento 3
-        for (int i = 0; i < quantidadeMidias; i++)
-        {
-            settings.ArrayMidiaPoderFeedbackMomento3[i] = new MidiaPoderFeedback();
-            settings.ArrayMidiaPoderFeedbackMomento3[i].Midia = midiasSelecionadas[i];
-            settings.ArrayMidiaPoderFeedbackMomento3[i].Poder = Poder.MuitoBoa;
-            settings.ArrayMidiaPoderFeedbackMomento3[i].Feedback = "Incrível!";
-        }
+        settings.ArrayMidiaPoderFeedbackMomento1 = paginaFeedbackMidiasMomento1.ArrayMidiaPoderFeedback;
+        settings.ArrayMidiaPoderFeedbackMomento2 = paginaFeedbackMidiasMomento2.ArrayMidiaPoderFeedback;
+        settings.ArrayMidiaPoderFeedbackMomento3 = paginaFeedbackMidiasMomento3.ArrayMidiaPoderFeedback;
 
         settings.TituloDaAula = tituloDaAula.text;
         settings.Autor = autorInputField.text;
@@ -188,29 +163,4 @@ public class CreateCustomGamePanel : MonoBehaviour
         // o jogo recém criado
         //settings.SaveToDisk();
     }
-
-    //private MidiaPoderFeedback[][] MidiaPoderFeedback3Momentos()
-    //{
-    //    var mpfs = new MidiaPoderFeedback[3][];
-    //    mpfs[0] = MidiaPoderFeedbackMomento(0);
-    //    mpfs[1] = MidiaPoderFeedbackMomento(1);
-    //    mpfs[2] = MidiaPoderFeedbackMomento(2);
-    //    return mpfs;
-    //}
-
-    //private MidiaPoderFeedback[] MidiaPoderFeedbackMomento(int momento)
-    //{
-    //    var faixasMomento = editarPoderMidiasScrollViews[momento].FaixasEditarPoderMidia;
-    //    var quantidadeMidias = faixasMomento.Count;
-    //    var mpfs = new MidiaPoderFeedback[quantidadeMidias];
-    //    for (int i = 0; i < quantidadeMidias; i++)
-    //    {
-    //        mpfs[i] = new MidiaPoderFeedback();
-    //        mpfs[i].Midia = faixasMomento[i].Midia;
-    //        mpfs[i].Poder = faixasMomento[i].Poder;
-    //        mpfs[i].Feedback = faixasMomento[i].Feedback();
-    //    }
-
-    //    return mpfs;
-    //}
 }

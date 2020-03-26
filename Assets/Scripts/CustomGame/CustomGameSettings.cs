@@ -48,7 +48,7 @@ public class CustomGameSettings {
                     cgs.ArrayMidiaPoderFeedbackMomento2[i] = new CreateCustomGamePanel.MidiaPoderFeedback();
                     cgs.ArrayMidiaPoderFeedbackMomento2[i].Midia = midiasSelecionadas[i];
                     cgs.ArrayMidiaPoderFeedbackMomento2[i].Poder = Poder.MuitoBoa;
-                    cgs.ArrayMidiaPoderFeedbackMomento2[i].Feedback = "Incrível!";
+                    cgs.ArrayMidiaPoderFeedbackMomento2[i].Feedback = "Incrível 2!";
                 }
                 // Momento 3
                 for (int i = 0; i < quantidadeMidias; i++)
@@ -56,7 +56,7 @@ public class CustomGameSettings {
                     cgs.ArrayMidiaPoderFeedbackMomento3[i] = new CreateCustomGamePanel.MidiaPoderFeedback();
                     cgs.ArrayMidiaPoderFeedbackMomento3[i].Midia = midiasSelecionadas[i];
                     cgs.ArrayMidiaPoderFeedbackMomento3[i].Poder = Poder.MuitoBoa;
-                    cgs.ArrayMidiaPoderFeedbackMomento3[i].Feedback = "Incrível!";
+                    cgs.ArrayMidiaPoderFeedbackMomento3[i].Feedback = "Incrível 3!";
                 }
                 return cgs;
             }
@@ -80,7 +80,6 @@ public class CustomGameSettings {
     public string DescricaoMomento1, DescricaoMomento2, DescricaoMomento3;
     public Procedimento Procedimento1, Procedimento2, Procedimento3;
     public Agrupamento Agrupamento1, Agrupamento2, Agrupamento3;
-    //public CreateCustomGamePanel.MidiaPoderFeedback[][] ArrayMidiaPoderFeedbackPorMomento;
     public CreateCustomGamePanel.MidiaPoderFeedback[] ArrayMidiaPoderFeedbackMomento1;
     public CreateCustomGamePanel.MidiaPoderFeedback[] ArrayMidiaPoderFeedbackMomento2;
     public CreateCustomGamePanel.MidiaPoderFeedback[] ArrayMidiaPoderFeedbackMomento3;

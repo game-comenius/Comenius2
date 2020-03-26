@@ -20,7 +20,6 @@ public class CustomConfigSalaDeAula : MonoBehaviour
 
     }
 
-    // Use this for initialization
     private IEnumerator Start()
     {
         ConfigurarSalaDeAula(CustomGameSettings.CurrentSettings);
@@ -43,6 +42,7 @@ public class CustomConfigSalaDeAula : MonoBehaviour
         ConfigurarSpritesDoProfessor(professor, settings);
         ConfigurarFalasDoProfessorDuranteAula(classManager, settings);
         ConfigurarFalaDoProfessorPosAula(classManager, settings);
+        ConfigurarFalasDeFeedback(classManager, settings);
     }
 
     private void ConfigurarSpritesDoProfessor(GameObject professor, CustomGameSettings settings)
@@ -118,6 +118,67 @@ public class CustomConfigSalaDeAula : MonoBehaviour
             {
                 dialogo.nodulos[0].falas[0].personagem = (GameComenius.Dialogo.Personagens)p;
                 dialogo.nodulos[0].falas[0].emocao = GameComenius.Dialogo.Expressao.Sorrindo;
+            }
+        }
+    }
+
+    private void ConfigurarFalasDeFeedback(ClassManager classManager, CustomGameSettings settings)
+    {
+        // Configurar feedback geral sobre a aula do professor também?
+        // ...
+
+        // Configurar falas de feedback gerais sobre a aula
+        // Nas salas, as falas generalistas estão organizadas em ordem de
+        // qualidade de aula, as primeiras são sobre uma aula melhor e as
+        // últimas são sobre uma aula pior. São 4 categorias de aulas
+        string[] falasGeneralistas = { "A aula foi incrível!", "A aula foi muito boa!", "A aula foi boa!", "A aula foi ruim..."};
+        for (var i = 0; i < falasGeneralistas.Length; i++)
+        {
+            for (var j = 0; j < 2; j++)
+            {
+                classManager.falasGeneralistas[i].dialogos[j] = new GameComenius.Dialogo.Dialogo();
+                classManager.falasGeneralistas[i].dialogos[j].nodulos = new GameComenius.Dialogo.DialogoNodulo[1];
+                classManager.falasGeneralistas[i].dialogos[j].nodulos[0] = new GameComenius.Dialogo.DialogoNodulo();
+                classManager.falasGeneralistas[i].dialogos[j].nodulos[0].falas = new GameComenius.Dialogo.Fala[1];
+                classManager.falasGeneralistas[i].dialogos[j].nodulos[0].falas[0] = new GameComenius.Dialogo.Fala();
+                classManager.falasGeneralistas[i].dialogos[j].nodulos[0].falas[0].fala = falasGeneralistas[i];
+                classManager.falasGeneralistas[i].dialogos[j].nodulos[0].falas[0].personagem = GameComenius.Dialogo.Personagens.Aluno;
+                classManager.falasGeneralistas[i].dialogos[j].nodulos[0].falas[0].emocao = GameComenius.Dialogo.Expressao.Serio;
+            }
+        }
+
+        // Configurar falas de feedback específicas sobre as mídias
+        // Para cada momento, um aluno na sala falará sobre a mídia escolhida
+        // para aquele momento da aula
+        CreateCustomGamePanel.MidiaPoderFeedback[][] arraysMPF =
+        {
+            settings.ArrayMidiaPoderFeedbackMomento1,
+            settings.ArrayMidiaPoderFeedbackMomento2,
+            settings.ArrayMidiaPoderFeedbackMomento3,
+        };
+        foreach (var arrayMPF in arraysMPF) if (arrayMPF == null) return;
+
+        classManager.falasSobreMomentos = new ClassManager.FalasSobreMomentos[3];
+        var feedbacksDosMomentos = classManager.falasSobreMomentos;
+
+        for (var i = 0; i < 3; i++)
+        {
+            feedbacksDosMomentos[i] = new ClassManager.FalasSobreMomentos();
+            var quantidadeMidias = arraysMPF[i].Length;
+            feedbacksDosMomentos[i].falaSobreMidias = new ClassManager.FalaSobreMidias[quantidadeMidias];
+            for (var j = 0; j < quantidadeMidias; j++)
+            {
+                var mpf = arraysMPF[i][j];
+                feedbacksDosMomentos[i].falaSobreMidias[j] = new ClassManager.FalaSobreMidias();
+                feedbacksDosMomentos[i].falaSobreMidias[j].item = mpf.Midia;
+                feedbacksDosMomentos[i].falaSobreMidias[j].dialogo = new GameComenius.Dialogo.Dialogo();
+                feedbacksDosMomentos[i].falaSobreMidias[j].dialogo.nodulos = new GameComenius.Dialogo.DialogoNodulo[1];
+                feedbacksDosMomentos[i].falaSobreMidias[j].dialogo.nodulos[0] = new GameComenius.Dialogo.DialogoNodulo();
+                feedbacksDosMomentos[i].falaSobreMidias[j].dialogo.nodulos[0].falas = new GameComenius.Dialogo.Fala[1];
+                feedbacksDosMomentos[i].falaSobreMidias[j].dialogo.nodulos[0].falas[0] = new GameComenius.Dialogo.Fala();
+                feedbacksDosMomentos[i].falaSobreMidias[j].dialogo.nodulos[0].falas[0].fala = mpf.Feedback;
+                feedbacksDosMomentos[i].falaSobreMidias[j].dialogo.nodulos[0].falas[0].personagem = GameComenius.Dialogo.Personagens.Aluno;
+                feedbacksDosMomentos[i].falaSobreMidias[j].dialogo.nodulos[0].falas[0].emocao = GameComenius.Dialogo.Expressao.Serio;
             }
         }
     }
