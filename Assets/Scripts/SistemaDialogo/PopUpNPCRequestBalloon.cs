@@ -49,12 +49,17 @@ public class PopUpNPCRequestBalloon : MonoBehaviour {
         var npcSpriteHeight = npcDialogoSpriteRenderer.bounds.extents.y;
         var mySpriteHeight = spriteRenderer.bounds.extents.y;
         transform.localPosition = new Vector3(0, npcSpriteHeight + mySpriteHeight);
+
+        gameObject.AddComponent<DynamicCursor>();
     }
 
     private void HideRequestBalloon()
     {
         interiorDoBalao.SetActive(false);
         spriteRenderer.enabled = false;
+        
+        var cursorDiferente = GetComponent<DynamicCursor>();
+        if (cursorDiferente) Destroy(cursorDiferente);
     }
 
     // Quando o jogador apertar sobre o balão, é como se ele apertasse no
@@ -62,6 +67,6 @@ public class PopUpNPCRequestBalloon : MonoBehaviour {
     private void OnMouseUp()
     {
         var dialogo = transform.parent.GetComponent<NpcDialogo>();
-        if (dialogo) dialogo.OnMouseUp();
+        if (dialogo && dialogo.WantsToTalk) dialogo.OnMouseUp();
     }
 }
