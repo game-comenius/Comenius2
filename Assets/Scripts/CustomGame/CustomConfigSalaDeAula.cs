@@ -14,9 +14,10 @@ public class CustomConfigSalaDeAula : MonoBehaviour
         var otherDoors = GameObject.FindGameObjectsWithTag("Door1");
         foreach (var door in otherDoors) Destroy(door.gameObject);
 
-        // Para impedir que o professor ande, destruir script TeacherScript.cs
+        // Para impedir que o professor ande, nem todos tem sprite para andar
         var teacherScripts = FindObjectsOfType<TeacherScript>();
-        foreach (var teacherScript in teacherScripts) Destroy(teacherScript);
+        foreach (var teacherScript in teacherScripts) teacherScript.CanWalk = false;
+
     }
 
     // Use this for initialization
