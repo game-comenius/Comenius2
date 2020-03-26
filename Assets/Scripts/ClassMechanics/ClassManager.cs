@@ -99,7 +99,7 @@ public class ClassManager : MonoBehaviour
     }
 
     [Tooltip("O elemento 0 corresponde a Tier 1, e1 - t2, e2 - t3 e e3 - t4.")]
-    [SerializeField] private DialogoGeneralista[] falasGeneralistas = new DialogoGeneralista[4];
+    [SerializeField] public DialogoGeneralista[] falasGeneralistas = new DialogoGeneralista[4];
 
     [SerializeField] public FalasSobreMomentos[] falasSobreMomentos = new FalasSobreMomentos[3];
 
@@ -138,7 +138,7 @@ public class ClassManager : MonoBehaviour
         public DialogoGeneralista[] falasGeneralistas = new DialogoGeneralista[4];
     }
 
-    [System.Serializable] private class DialogoGeneralista
+    [System.Serializable] public class DialogoGeneralista
     {
         public Vector2 rangeNota = Vector2.zero;
 

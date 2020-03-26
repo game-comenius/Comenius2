@@ -9,7 +9,7 @@ public class CustomPortaSalaProfessores : MonoBehaviour {
         // porque este script vai enganar o jogo e a Lurdinha vai ignorar
         // o pátio quando sair da sala dos professores
         yield return new WaitUntil(() => Player.Instance != null);
-        Player.Instance.sceneName = "Patio_2";
+        Player.Instance.sceneName = "M1_Patio1_Dia";
 
         // Trocar o destino de todas as portas na sala dos professores para
         // a sala de aula selecionada pelo criador do jogo custom

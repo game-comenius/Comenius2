@@ -29,6 +29,7 @@ public class MesaDoProfessor : LocalParaColocarItem {
                 break;
             case ItemName.Mapa:
             case ItemName.GravacaoPassaro:
+            case ItemName.Gravador:
                 sr.transform.localScale = Vector3.one * .4f;
                 break;
             case ItemName.Retroprojetor:

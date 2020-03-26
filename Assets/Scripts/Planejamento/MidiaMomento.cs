@@ -60,6 +60,48 @@ public class MidiaMomento : MonoBehaviour
         UpdateSprite();
     }
 
+    public void SetPoints (ItemName itemName, int points)
+    {
+        switch (itemName)
+        {
+            case ItemName.ReprodutorAudio: reprodutorAudioPoints = points; break;
+            case ItemName.Cd: cdPoints = points; break;
+            case ItemName.Gravador: gravadorPoints = points; break;
+            case ItemName.GravacaoPassaro: gravacaoPassaroPoints = points; break;
+            case ItemName.CameraPolaroid: cameraPolaroidPoints = points; break;
+            case ItemName.FotografiaPassaro: fotografiaPassaroPoints = points; break;
+            case ItemName.TVComVHS: tvPoints = points; break;
+            case ItemName.VHS: vhsPoints = points; break;
+            case ItemName.CartazComColecaoDePenas: cartazComPenasPoints = points; break;
+            case ItemName.LivroDidatico: livroDidaticoPoints = points; break;
+            case ItemName.LivroIlustrado: livroilustradoPoints = points; break;
+            case ItemName.QuadroNegro: quadroNegroPoints = points; break;
+            case ItemName.TVComVHSPassaros: tvComVhsPoints = points; break;
+            case ItemName.Cartazes: cartazesPoints = points; break;
+            case ItemName.Mapa: mapaPoints = points; break;
+            case ItemName.Caderno: cadernoPoints = points; break;
+            case ItemName.Jornais: jornaisPoints = points; break;
+            case ItemName.JornaisERevistas: jornaiserevistasPoints = points; break;
+            case ItemName.RetroprojetorSlideMapa: retrorojetorSLidesMapaPoints = points; break;
+            case ItemName.RetroprojetorSlideLinhaTempo: retroprojetorSlidesLinhadoTempoPoints = points; break;
+            case ItemName.RetroprojetorSlideCicloTrabalho: retroprojetorSlidesCicloDoTrabalhoPoints = points; break;
+            case ItemName.CartazComCanetas: cartasComCanetasPoints = points; break;
+            case ItemName.VhsEditado: vhsEditadoPoints = points; break;
+            case ItemName.Diario: diarioPoints = points; break;
+            case ItemName.FolhaSulfite: folhasulfitePoints = points; break;
+            case ItemName.VHSregionalismo: vhsregionalismoPoints = points; break;
+            case ItemName.VHSregionalismoEditado: vhsregionalismoeditadoPoints = points; break;
+            case ItemName.Enciclopedia: enciclopediaPoints = points; break;
+            case ItemName.Adedonha: adedonhaPoints = points; break;
+            case ItemName.Forca: forcaPoints = points; break;
+            case ItemName.PalavrasCruzadas: palavrascruzadasPoints = points; break;
+            case ItemName.CDsotaques: cdsotaquesPoints = points; break;
+            case ItemName.FotografiaRevolucaoIndustrial: fotogratiarevinustrialpoints = points; break;
+            case ItemName.ReprodutorAudioComCDRevolucaoIndustrial: cdrevintrialpoints = points; break;
+            default: return;
+        }
+    }
+
     public double Points()
     {
         //pega pontuação no contexto do momento

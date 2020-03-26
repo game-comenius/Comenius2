@@ -11,6 +11,7 @@ public class PaginaInformacoesBasicas : MonoBehaviour {
     [SerializeField] private GameObject MoedasDaAlice;
     [SerializeField] private GameObject MoedasDaAntonia;
     [SerializeField] private GameObject MoedasDaMontanari;
+    [SerializeField] private GameObject MoedasDoDiretor;
     private List<GameObject> setsDeMoedasDosProfessores;
 
     private void Awake()
@@ -23,7 +24,8 @@ public class PaginaInformacoesBasicas : MonoBehaviour {
             MoedasDoCelestino,
             MoedasDaAlice,
             MoedasDaAntonia,
-            MoedasDaMontanari
+            MoedasDaMontanari,
+            MoedasDoDiretor
         };
     }
 
@@ -46,6 +48,7 @@ public class PaginaInformacoesBasicas : MonoBehaviour {
             case CharacterName.Alice: MoedasDaAlice.SetActive(true); break;
             case CharacterName.Antonia: MoedasDaAntonia.SetActive(true); break;
             case CharacterName.Montanari: MoedasDaMontanari.SetActive(true); break;
+            case CharacterName.Diretor: MoedasDoDiretor.SetActive(true); break;
         }
     }
 

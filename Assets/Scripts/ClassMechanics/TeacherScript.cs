@@ -68,6 +68,9 @@ public class TeacherScript : AgenteAulaScript
 
     private bool aulaAcabou = false;
 
+    public bool CanWalk = true;
+
+
     protected void Awake()
     {
         teacher = this;
@@ -101,10 +104,9 @@ public class TeacherScript : AgenteAulaScript
     
     public void StartWalk()
     {
-        if (walk == null)
-        {
-            walk = StartCoroutine(Walk());
-        }
+        if (!CanWalk) return;
+
+        if (walk == null) walk = StartCoroutine(Walk());
     }
 
     private void Gerar()
@@ -216,7 +218,7 @@ public class TeacherScript : AgenteAulaScript
     {
         posicao = ((Vector2)transform.position - inicio).x / vector.x;
 
-        StopCoroutine(walk);
+        if (walk != null) StopCoroutine(walk);
 
         sprite.sprite = sprites[0];
 
