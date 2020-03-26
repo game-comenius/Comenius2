@@ -23,6 +23,7 @@ public class CustomPlanejamento : MonoBehaviour {
     {
         DefinirFotoDoProfessor(s.Professor);
         DefinirDescricaoDosMomentos();
+        DefinirPoderDasMidias(s);
         DefinirProcedimentos(s.Procedimento1, s.Procedimento2, s.Procedimento3);
         DefinirAgrupamentos(s.Agrupamento1, s.Agrupamento2, s.Agrupamento3);
     }
@@ -42,6 +43,32 @@ public class CustomPlanejamento : MonoBehaviour {
         planejamento.descricaoMomento1 = "Escolha uma das mídias para o momento 1";
         planejamento.descricaoMomento2 = "Escolha uma das mídias para o momento 2";
         planejamento.descricaoMomento3 = "Escolha uma das mídias para o momento 3";
+    }
+
+    private void DefinirPoderDasMidias(CustomGameSettings s)
+    {
+        CreateCustomGamePanel.MidiaPoderFeedback[][] arraysMPF =
+        {
+            s.ArrayMidiaPoderFeedbackMomento1,
+            s.ArrayMidiaPoderFeedbackMomento2,
+            s.ArrayMidiaPoderFeedbackMomento3,
+        };
+        foreach (var arrayMPF in arraysMPF) if (arrayMPF == null) return;
+
+        MidiaMomento[] midiasMomento =
+        {
+            GameObject.Find("Midia1").GetComponent<MidiaMomento>(),
+            GameObject.Find("Midia2").GetComponent<MidiaMomento>(),
+            GameObject.Find("Midia3").GetComponent<MidiaMomento>(),
+        };
+        foreach (var mm in midiasMomento) if (mm == null) return;
+
+        for (var i = 0; i < 3; i++)
+        {
+            var midiaMomento = midiasMomento[i];
+            foreach (var mpf in arraysMPF[i])
+                midiaMomento.SetPoints(mpf.Midia, (int)mpf.Poder);
+        }
     }
 
     private void ZerarMidiasPadraoDoProfessor()
