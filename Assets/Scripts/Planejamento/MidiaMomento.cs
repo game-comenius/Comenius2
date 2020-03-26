@@ -96,6 +96,8 @@ public class MidiaMomento : MonoBehaviour
             case ItemName.Forca: forcaPoints = points; break;
             case ItemName.PalavrasCruzadas: palavrascruzadasPoints = points; break;
             case ItemName.CDsotaques: cdsotaquesPoints = points; break;
+            case ItemName.FotografiaRevolucaoIndustrial: fotogratiarevinustrialpoints = points; break;
+            case ItemName.ReprodutorAudioComCDRevolucaoIndustrial: cdrevintrialpoints = points; break;
             default: return;
         }
     }
