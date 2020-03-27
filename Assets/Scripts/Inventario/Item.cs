@@ -40,7 +40,7 @@ public class Item
                 Description = "Hmmm… Preciso achar um CD em algum lugar para isso daqui ser útil.";
                 FullDescription = "Um sistema reprodutor de áudio com leitor de CDs.";
 
-                DescriptionsInMission1.StandardDescription = "Esse aparelho reproduz fitas gravadas, CDs ou DVDs com diversos tipos de conteúdo sonoro como músicas, entrevistas ou sons ambientes.";
+                DescriptionsInMission1.StandardDescription = "Esse aparelho reproduz fitas gravadas, CDs ou DVDs com diversos tipos de conteúdo sonoro como músicas, entrevistas ou sons ambientes. É possivel ouvir a programação de rádio AM e FM.";
 
                 DescriptionsInMission1.FirstMomentDescription = "Um reprodutor de audio sem o CD só iria conseguir ter sons da rádio. Será que tem algo de útil passando agora para essa aula na rádio? Quem sabe na Biblioteca posso encontrar algum CD que me ajude.";
                 DescriptionsInMission1.SecondMomentDescription = "Um reprodutor de audio sem o CD só iria conseguir ter sons da rádio. Será que tem algo de útil passando agora para essa aula na rádio? Quem sabe na Biblioteca posso encontrar algum CD que seja útil.";
@@ -75,7 +75,7 @@ public class Item
                 FriendlyName = "Gravador";
                 Description = "Para capturar os sons da natureza… Os alunos também podem usar para gravar algo durante a aula. Uma entrevista, ou ainda o que aprenderam sobre o conteúdo.";
                 FullDescription = "É um aparelho de gravação e reprodução de áudio. Pode ser utilizado possibilitando uma maior autonomia para criação de conteúdo. Possui um uso mais específico, fazendo com que sua linguagem seja praticamente apenas verbal, a sua formalidade vai depender de quem está fazendo a produção do conteúdo.";
-                DescriptionsInMission1.StandardDescription = "Instrumento eletrônico que grava, cópia, edita e reproduz todo tipo de som. Com microfone acoplado, faz registro sonoro de vozes, músicas e ruídos, dentre outros.";
+                DescriptionsInMission1.StandardDescription = "Instrumento eletrônico que grava, cópia, edita e reproduz todo tipo de som. Com microfone acoplado, faz registro sonoro de vozes, músicas e ruídos, dentre outros. Pode gravar e editar programas de rádio.";
                 DescriptionsInMission1.FirstMomentDescription = "Durante a exposição de conteúdo, o gravador poderia ser utilizado somente para gravar os sons da aula. Talvez ele seja mais útil de outra forma.";
                 DescriptionsInMission1.SecondMomentDescription = "Pode ser utilizado para gravar os conteúdos dentro de sala de aula, ou até para gravar o som do canto de algum pássaro que apareça próximo à sala de aula.";
                 DescriptionsInMission1.ThirdMomentDescription = "Quem sabe se eu usasse o gravador para gravar um pássaro local antes da aula seria interessante.";
