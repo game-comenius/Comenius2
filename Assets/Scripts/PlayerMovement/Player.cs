@@ -5,15 +5,15 @@ using UnityEngine;
 [System.Serializable]
 public struct ChosenMediaPoints
 {
-    public ChosenMediaPoints (ItemName[] _chosenMedia, double[] _points, double _totalMissionPoints) {
+    public ChosenMediaPoints (ItemName[] _chosenMedia, int[] _points, int _totalMissionPoints) {
         chosenMedia = _chosenMedia;
         points = _points;
         totalMissionPoints = _totalMissionPoints;
     }
 
     public ItemName[] chosenMedia;
-    public double[] points;
-    public double totalMissionPoints;
+    public int[] points;
+    public int totalMissionPoints;
 
 }
 

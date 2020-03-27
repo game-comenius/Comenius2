@@ -102,7 +102,7 @@ public class MidiaMomento : MonoBehaviour
         }
     }
 
-    public double Points()
+    public int Points()
     {
         //pega pontuação no contexto do momento
         switch (item)

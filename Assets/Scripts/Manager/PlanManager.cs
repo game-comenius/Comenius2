@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlanManager : MonoBehaviour {
 
     private ItemName[] chosenMedia = new ItemName[3];
-    private double[] points = new double[3];
-    private double totalMissionPoints = 0;
+    private int[] points = new int[3];
+    private int totalMissionPoints = 0;
 
     public void ConfirmPlan()
     {
@@ -31,7 +31,7 @@ public class PlanManager : MonoBehaviour {
         //GameManager.UINaoSendoUsada();
     }
 
-    public double getTotalMissionPoints() {
+    public int getTotalMissionPoints() {
         return totalMissionPoints;
     }
 
