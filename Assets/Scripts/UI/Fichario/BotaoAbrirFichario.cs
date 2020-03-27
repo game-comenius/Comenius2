@@ -38,9 +38,8 @@ public class BotaoAbrirFichario : MonoBehaviour, IPointerClickHandler {
     [SerializeField]
     private Color corDesativado;
 
-    void Start() {
-        fichario = FindObjectOfType<Fichario>();
-
+    private void Awake()
+    {
         image = GetComponent<Image>();
 
         Visivel = false;
@@ -51,9 +50,13 @@ public class BotaoAbrirFichario : MonoBehaviour, IPointerClickHandler {
         // Porém, durante o desenvolvimento, ou seja, executar a partir de
         // qualquer cena, é interessante que este botão apareça.
         #if UNITY_EDITOR
-            Visivel = true;
-            Ativo = true;
+        Visivel = true;
+        Ativo = true;
         #endif
+    }
+
+    void Start() {
+        fichario = FindObjectOfType<Fichario>();
 
         // Botão fica desativado quando alguma coisa está acontecendo na UI
         // como por exemplo quando o fichário está aberto

@@ -150,18 +150,23 @@ public class MidiaMomento : MonoBehaviour
         return item;
     }
 
+    private void Awake()
+    {
+        image = GetComponent<Image>();
+        image.preserveAspect = true;
+    }
+
     // Use this for initialization
     void Start()
     {
         item = initialItem;
 
-        image = GetComponent<Image>();
-        image.preserveAspect = true;
         UpdateSprite();
     }
 
     private void UpdateSprite()
     {
+        if (!image) image = GetComponent<Image>();
         if (item == ItemName.SemNome)
         {
             image.enabled = false;

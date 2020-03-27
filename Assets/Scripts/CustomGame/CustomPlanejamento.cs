@@ -73,7 +73,7 @@ public class CustomPlanejamento : MonoBehaviour {
 
     private void ZerarMidiasPadraoDoProfessor()
     {
-        var momentos = planejamento.GetComponentsInChildren<MidiaMomento>(true);
+        var momentos = planejamento.GetComponentsInChildren<MidiaMomento>();
         foreach (var momento in momentos)
         {
             momento.initialItem = ItemName.SemNome;
@@ -85,7 +85,7 @@ public class CustomPlanejamento : MonoBehaviour {
     {
         Debug.Log("Procedimentos: " + p1 + ", " + p2 + " e " + p3);
 
-        var s = planejamento.GetComponentsInChildren<SlotProcedimento>(true);
+        var s = planejamento.GetComponentsInChildren<SlotProcedimento>();
         s[0].Procedimento = p1;
         s[1].Procedimento = p2;
         s[2].Procedimento = p3;
@@ -95,7 +95,7 @@ public class CustomPlanejamento : MonoBehaviour {
     {
         Debug.Log("Agrupamentos: " + a1 + ", " + a2 + " e " + a3);
 
-        var s = planejamento.GetComponentsInChildren<SlotAgrupamento>(true);
+        var s = planejamento.GetComponentsInChildren<SlotAgrupamento>();
         s[0].Agrupamento = a1;
         s[1].Agrupamento = a2;
         s[2].Agrupamento = a3;

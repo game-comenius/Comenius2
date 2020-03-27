@@ -65,6 +65,16 @@ public class CustomConfigSalaProfessores : MonoBehaviour {
     }
 
     private IEnumerator Start () {
+        // Ativar o ConselheiroComenius
+        ConselheiroComenius.Visivel = true;
+        // Ativar janela de missões
+        yield return new WaitUntil(() => ConselheiroComenius.JanelaMissoes != null);
+        ConselheiroComenius.JanelaMissoes.Ativa = true;
+
+        // Ativar o botão que abre o fichário
+        FindObjectOfType<BotaoAbrirFichario>().Visivel = true;
+        FindObjectOfType<BotaoAbrirFichario>().Ativo = true;
+
         // Remover ajuda da janela de missões se ela existir na cena
         var ajudaJanelaMissoes = FindObjectOfType<AjudaComeniusJanelaMissoes>();
         if (ajudaJanelaMissoes) Destroy(ajudaJanelaMissoes.gameObject);
