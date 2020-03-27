@@ -26,5 +26,13 @@ public class CustomLurdinha : MonoBehaviour {
             foreach (var item in customItems)
                 player.Inventory.Add(item);
         }
+
+        // Os itens não terão descrição específica de um momento no custom
+        foreach (var item in player.Inventory.Items())
+        {
+            item.DescriptionsInMission1.FirstMomentDescription = item.DescriptionsInMission3.StandardDescription;
+            item.DescriptionsInMission1.SecondMomentDescription = item.DescriptionsInMission3.StandardDescription;
+            item.DescriptionsInMission1.ThirdMomentDescription = item.DescriptionsInMission3.StandardDescription;
+        }
     }
 }
