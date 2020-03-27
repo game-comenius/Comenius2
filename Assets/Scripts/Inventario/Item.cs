@@ -316,11 +316,13 @@ public class Item
                 UpgradeFrom.Add(ItemName.Jornais);
                 break;
             case ItemName.Retroprojetor:
-                FriendlyName = "Retroprojetor sem um slide";
+                FriendlyName = "Retroprojetor";
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
-                DescriptionsInMission2.StandardDescription = "Aparelho óptico utilizado para a projeção de imagens por meio de transparências.";
 
+                DescriptionsInMission1.StandardDescription = "Aparelho óptico utilizado para a projeção de imagens por meio de transparências.";
+
+                DescriptionsInMission2.StandardDescription = DescriptionsInMission1.StandardDescription;
                 DescriptionsInMission2.FirstMomentDescription = "O retroprojetor é uma ótima mídia, se aliada com bons slides, pois sozinho só reflete a luz.";
                 DescriptionsInMission2.SecondMomentDescription = DescriptionsInMission2.FirstMomentDescription;
                 DescriptionsInMission2.ThirdMomentDescription = DescriptionsInMission2.FirstMomentDescription;
