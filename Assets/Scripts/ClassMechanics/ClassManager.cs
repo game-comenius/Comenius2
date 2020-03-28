@@ -303,15 +303,16 @@ public class ClassManager : MonoBehaviour
             nextProblemTime = NextProblem(0f); //Gera o tempo para o primeiro problema. Este pode ter tmin = 0 pois o previousProblemTime controlará para que não se gere problema antes do que se quer.
         }
 
+        var jogador = Player.Instance;
+        var historicoMissao = jogador.MissionHistory[jogador.missionID];
+        var midia = historicoMissao.chosenMedia[classMoment];
+        // Apresentar como objeto da sala a mídia escolhida para o momento
         var midiaNaSalaDeAula = FindObjectOfType<MidiaNaSalaDeAula>();
-        if (midiaNaSalaDeAula)
-        {
-            // Apresentar a mídia escolhida pelo jogador para este momento
-            var jogador = Player.Instance;
-            var historicoMissao = jogador.MissionHistory[jogador.missionID];
-            var midia = historicoMissao.chosenMedia[classMoment];
-            midiaNaSalaDeAula.ApresentarMidia(midia);
-        }
+        if (midiaNaSalaDeAula) midiaNaSalaDeAula.ApresentarMidia(midia);
+
+        // Apresentar no painel dos momentos a mídia escolhida para o momento
+        var painelMomentos = FindObjectOfType<PainelMomentosNaAula>();
+        if (painelMomentos) painelMomentos.MostrarMidiaSelecionada(classMoment);
 
         SistemaDialogo.sistemaDialogo.ComecarDialogo(Falas[0], null);
 
@@ -353,16 +354,16 @@ public class ClassManager : MonoBehaviour
 
                 if (classMoment < 3) //a seguir são resetadas as variáveis para se gerar um tempo de problema para o novo momento de aula
                 {
+                    midia = historicoMissao.chosenMedia[classMoment];
                     if (midiaNaSalaDeAula)
                     {
                         // Esconder a mídia do último momento desta aula
                         midiaNaSalaDeAula.EsconderMidiaAtual();
                         // Apresentar a mídia escolhida pelo jogador para este momento
-                        var jogador = Player.Instance;
-                        var historicoMissao = jogador.MissionHistory[jogador.missionID];
-                        var midia = historicoMissao.chosenMedia[classMoment];
                         midiaNaSalaDeAula.ApresentarMidia(midia);
                     }
+                    // Apresentar no painel dos momentos a mídia escolhida para o momento
+                    if (painelMomentos) painelMomentos.MostrarMidiaSelecionada(classMoment);
 
                     momentTimer = momentsTime[classMoment].x;
 
