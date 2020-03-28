@@ -21,6 +21,13 @@ public class PlanejamentoUI : MonoBehaviour {
     [SerializeField]
     private Button botaoConfirmarPlanejamento;
 
+    [SerializeField]
+    private SlotProcedimento slotProcMomento1;
+    [SerializeField]
+    private SlotProcedimento slotProcMomento2;
+    [SerializeField]
+    private SlotProcedimento slotProcMomento3;
+
     private MidiaMomento midiaMomento1;
     private MidiaMomento midiaMomento2;
     private MidiaMomento midiaMomento3;
@@ -133,5 +140,18 @@ public class PlanejamentoUI : MonoBehaviour {
         midiaMomento1.ResetItem();
         midiaMomento2.ResetItem();
         midiaMomento3.ResetItem();
+    }
+
+    public void DefinirProcedimentoMomento1(Procedimento procedimento)
+    {
+        slotProcMomento1.Procedimento = procedimento;
+    }
+    public void DefinirProcedimentoMomento2(Procedimento procedimento)
+    {
+        slotProcMomento2.Procedimento = procedimento;
+    }
+    public void DefinirProcedimentoMomento3(Procedimento procedimento)
+    {
+        slotProcMomento3.Procedimento = procedimento;
     }
 }

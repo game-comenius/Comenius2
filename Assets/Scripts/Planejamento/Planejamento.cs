@@ -126,4 +126,17 @@ public class Planejamento : MonoBehaviour {
 
         CancelarPlanejamento();
     }
+
+    public void DefinirProcedimentoMomento1(Procedimento procedimento)
+    {
+        planejamentoUI.DefinirProcedimentoMomento1(procedimento);
+    }
+    public void DefinirProcedimentoMomento2(Procedimento procedimento)
+    {
+        planejamentoUI.DefinirProcedimentoMomento2(procedimento);
+    }
+    public void DefinirProcedimentoMomento3(Procedimento procedimento)
+    {
+        planejamentoUI.DefinirProcedimentoMomento3(procedimento);
+    }
 }

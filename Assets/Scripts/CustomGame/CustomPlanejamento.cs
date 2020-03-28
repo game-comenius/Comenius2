@@ -81,14 +81,13 @@ public class CustomPlanejamento : MonoBehaviour {
         }
     }
 
-    void DefinirProcedimentos(Procedimento p1, Procedimento p2, Procedimento p3)
+    private void DefinirProcedimentos(Procedimento p1, Procedimento p2, Procedimento p3)
     {
         Debug.Log("Procedimentos: " + p1 + ", " + p2 + " e " + p3);
 
-        var s = planejamento.GetComponentsInChildren<SlotProcedimento>();
-        s[0].Procedimento = p1;
-        s[1].Procedimento = p2;
-        s[2].Procedimento = p3;
+        planejamento.DefinirProcedimentoMomento1(p1);
+        planejamento.DefinirProcedimentoMomento2(p2);
+        planejamento.DefinirProcedimentoMomento3(p3);
     }
 
     void DefinirAgrupamentos(Agrupamento a1, Agrupamento a2, Agrupamento a3)

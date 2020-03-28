@@ -23,7 +23,7 @@ public class PaginaProcedimentoAgrupamento : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {
+    private void Awake () {
         carrosselProc1.QuandoValorMudar +=
             () => ProcedimentoMomento1 = carrosselProc1.Selecionado;
         carrosselProc2.QuandoValorMudar +=

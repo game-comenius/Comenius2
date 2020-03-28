@@ -156,6 +156,9 @@ public class CreateCustomGamePanel : MonoBehaviour
         //    "\nDescrição do Momento 1 = " + settings.DescricaoMomento1 +
         //    "\nDescrição do Momento 2 = " + settings.DescricaoMomento2 +
         //    "\nDescrição do Momento 3 = " + settings.DescricaoMomento3 +
+        //    "\nProcedimento do Momento 1 = " + settings.Procedimento1 +
+        //    "\nProcedimento do Momento 2 = " + settings.Procedimento2 +
+        //    "\nProcedimento do Momento 3 = " + settings.Procedimento3 +
         //    "\nTitulo da Aula = " + settings.TituloDaAula +
         //    "\nAutor = " + settings.Autor);
 

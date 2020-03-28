@@ -29,6 +29,9 @@ public class CustomGameSettings {
                 cgs.DescricaoMomento1 = "Descrição do momento 1";
                 cgs.DescricaoMomento2 = "Descrição do momento 2";
                 cgs.DescricaoMomento3 = "Descrição do momento 3";
+                cgs.Procedimento1 = Procedimento.DiscussaoEntreAlunos;
+                cgs.Procedimento2 = Procedimento.Atividade;
+                cgs.Procedimento3 = Procedimento.Pesquisa;
                 var midiasSelecionadas = new List<ItemName> { ItemName.Caderno, ItemName.TVComVHS };
                 var quantidadeMidias = midiasSelecionadas.Count;
                 cgs.ArrayMidiaPoderFeedbackMomento1 = new CreateCustomGamePanel.MidiaPoderFeedback[quantidadeMidias];
