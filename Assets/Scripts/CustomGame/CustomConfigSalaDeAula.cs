@@ -60,20 +60,31 @@ public class CustomConfigSalaDeAula : MonoBehaviour
         var mySP = teacherScript.GetComponent<SpriteRenderer>();
         mySP.sprite = spriteSE;
 
+        // Alguns casos especiais, não quero mexer no .png
+        // Basicamente, alterar o tamanho de alguns professores
+        var professorTransform = professor.transform;
+        switch (professorName)
+        {
+            case CharacterName.Vladmir:
+            case CharacterName.Paulino:
+                professorTransform.localScale = Vector3.one * 0.7f;
+                break;
+        }
+
         // Configurar sprites no componente TeacherScript
-        teacherScript.Sprites[0] = spriteSE;
-        teacherScript.Sprites[1] = spriteSW;
-        teacherScript.Sprites[2] = spriteNE;
-        teacherScript.Sprites[3] = spriteNW;
+        //teacherScript.Sprites[0] = spriteSE;
+        //teacherScript.Sprites[1] = spriteSW;
+        //teacherScript.Sprites[2] = spriteNE;
+        //teacherScript.Sprites[3] = spriteNW;
 
         // Configurar sprites do professor caminhando
         // Por enquanto estamos usando os mesmos sprites dos professores parados
         // porque alguns professores do custom não tem sprites caminhando ainda
-        for (int i = 0; i < teacherScript.GoLeft.Length; i++)
-            teacherScript.GoLeft[i] = spriteSW;
+        //for (int i = 0; i < teacherScript.GoLeft.Length; i++)
+        //    teacherScript.GoLeft[i] = spriteSW;
 
-        for (int i = 0; i < teacherScript.GoRight.Length; i++)
-            teacherScript.GoRight[i] = spriteNE;
+        //for (int i = 0; i < teacherScript.GoRight.Length; i++)
+        //    teacherScript.GoRight[i] = spriteNE;
     }
 
     private void ConfigurarFalasDoProfessorDuranteAula(ClassManager classManager, CustomGameSettings settings)

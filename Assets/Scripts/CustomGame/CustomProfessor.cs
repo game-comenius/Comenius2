@@ -55,6 +55,17 @@ public class CustomProfessor : MonoBehaviour
                 mySP.sprite = spriteSW;
                 break;
         }
+
+        // Alguns casos especiais, não quero mexer no .png
+        // Basicamente, alterar o tamanho de alguns professores
+        var professorTransform = professorGO.transform;
+        switch (professor)
+        {
+            case CharacterName.Vladmir:
+            case CharacterName.Paulino:
+                professorTransform.localScale = Vector3.one * 0.7f;
+                break;
+        }
     }
 
     private void DividirEInserirFalas(GameObject professorGO)
