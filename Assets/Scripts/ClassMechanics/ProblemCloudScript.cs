@@ -88,7 +88,7 @@ public class ProblemCloudScript : MonoBehaviour
     private void RightSolution()
     {
         Debug.Log("Parabens");
-
+        Player.Instance.SolvedProblem();
         StartCoroutine(WaitToDestroy());
     }
 
