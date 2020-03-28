@@ -44,6 +44,11 @@ public class EndgameAnimation : MonoBehaviour {
     //a página que vai ser animada (ou acabou de ser animada)
     private Animator animatorNextPage;
 
+    private void Start()
+    {
+        PageAmbiente();
+    }
+
     private void PageTransitionAnimation()
     {
         animatorNextPage.SetBool("Enter", true);
@@ -89,14 +94,16 @@ public class EndgameAnimation : MonoBehaviour {
             case true:
                 animatorNextPage = CadeiranteTrue;
                 gameObject.transform.Find("CadeiranteFalse").gameObject.SetActive(false);
+                PageTransitionAnimation();
                 break;
             default:
                 //animatorNextPage = CadeiranteFalse;
                 //gameObject.transform.Find("CadeiranteTrue").gameObject.SetActive(false);
+                animatorNextPage = CadeiranteTrue;
                 PageLiteratura();
                 break;
         }
-        PageTransitionAnimation();
+        
     }
 
     public void PageLiteratura()
@@ -140,14 +147,16 @@ public class EndgameAnimation : MonoBehaviour {
             case true:
                 animatorNextPage = EstranhoTrue;
                 gameObject.transform.Find("EstranhoFalse").gameObject.SetActive(false);
+                PageTransitionAnimation();
                 break;
             default:
                 //animatorNextPage = EstranhoFalse;
                 //gameObject.transform.Find("EstranhoTrue").gameObject.SetActive(false);
+                animatorNextPage = EstranhoTrue;
                 PageProblemas();
                 break;
         }
-        PageTransitionAnimation();
+        
     }
 
     public void PageProblemas()
