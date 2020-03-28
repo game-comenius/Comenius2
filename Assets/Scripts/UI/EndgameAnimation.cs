@@ -11,7 +11,7 @@ public class EndgameAnimation : MonoBehaviour {
     public Animator MeioAmbiente2;
     public Animator MeioAmbiente3;
 
-    public Animator CadeiranteFalse;
+    //public Animator CadeiranteFalse;
     public Animator CadeiranteTrue;
 
     public Animator Literatura0;
@@ -19,7 +19,7 @@ public class EndgameAnimation : MonoBehaviour {
     public Animator Literatura2;
     public Animator Literatura3;
 
-    public Animator EstranhoFalse;
+    //public Animator EstranhoFalse;
     public Animator EstranhoTrue;
 
     public Animator Problemas0a30;
@@ -91,8 +91,9 @@ public class EndgameAnimation : MonoBehaviour {
                 gameObject.transform.Find("CadeiranteFalse").gameObject.SetActive(false);
                 break;
             default:
-                animatorNextPage = CadeiranteFalse;
-                gameObject.transform.Find("CadeiranteTrue").gameObject.SetActive(false);
+                //animatorNextPage = CadeiranteFalse;
+                //gameObject.transform.Find("CadeiranteTrue").gameObject.SetActive(false);
+                PageLiteratura();
                 break;
         }
         PageTransitionAnimation();
@@ -141,8 +142,9 @@ public class EndgameAnimation : MonoBehaviour {
                 gameObject.transform.Find("EstranhoFalse").gameObject.SetActive(false);
                 break;
             default:
-                animatorNextPage = EstranhoFalse;
-                gameObject.transform.Find("EstranhoTrue").gameObject.SetActive(false);
+                //animatorNextPage = EstranhoFalse;
+                //gameObject.transform.Find("EstranhoTrue").gameObject.SetActive(false);
+                PageProblemas();
                 break;
         }
         PageTransitionAnimation();
