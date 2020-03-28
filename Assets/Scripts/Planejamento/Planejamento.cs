@@ -139,4 +139,17 @@ public class Planejamento : MonoBehaviour {
     {
         planejamentoUI.DefinirProcedimentoMomento3(procedimento);
     }
+
+    public void DefinirAgrupamentoMomento1(Agrupamento agrupamento)
+    {
+        planejamentoUI.DefinirAgrupamentoMomento1(agrupamento);
+    }
+    public void DefinirAgrupamentoMomento2(Agrupamento agrupamento)
+    {
+        planejamentoUI.DefinirAgrupamentoMomento2(agrupamento);
+    }
+    public void DefinirAgrupamentoMomento3(Agrupamento agrupamento)
+    {
+        planejamentoUI.DefinirAgrupamentoMomento3(agrupamento);
+    }
 }

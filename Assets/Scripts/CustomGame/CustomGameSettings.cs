@@ -20,8 +20,13 @@ public class CustomGameSettings {
         {
             if (currentSettings == null)
             {
-                // O que está comentado aqui é para testes, o correto é retornar
-                // a propriedade CurrentSettings mesmo
+                // De preferência, currentSettings nunca será igual a null em
+                // circunstâncias normais e fluxo de jogo normal
+                // O objeto cgs que está sendo criado aqui é para testes
+                // Quando damos play diretamente de uma das 2 cenas do custom:
+                // sala dos professores e sala de aula, currentSettings será
+                // igual a null e precisaremos de um objeto de testes
+                // Este será o nosso objeto com campos pré-determinados
                 var cgs = new CustomGameSettings();
                 cgs.Professor = CharacterName.Montanari;
                 cgs.Sala = SalaDeAula.SalaDeCiencias;
@@ -32,6 +37,9 @@ public class CustomGameSettings {
                 cgs.Procedimento1 = Procedimento.DiscussaoEntreAlunos;
                 cgs.Procedimento2 = Procedimento.Atividade;
                 cgs.Procedimento3 = Procedimento.Pesquisa;
+                cgs.Agrupamento1 = Agrupamento.Duplas;
+                cgs.Agrupamento2 = Agrupamento.Individual;
+                cgs.Agrupamento3 = Agrupamento.Grupos;
                 var midiasSelecionadas = new List<ItemName> { ItemName.Caderno, ItemName.TVComVHS };
                 var quantidadeMidias = midiasSelecionadas.Count;
                 cgs.ArrayMidiaPoderFeedbackMomento1 = new CreateCustomGamePanel.MidiaPoderFeedback[quantidadeMidias];

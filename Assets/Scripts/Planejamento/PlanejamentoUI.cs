@@ -28,6 +28,13 @@ public class PlanejamentoUI : MonoBehaviour {
     [SerializeField]
     private SlotProcedimento slotProcMomento3;
 
+    [SerializeField]
+    private SlotAgrupamento slotAgrupMomento1;
+    [SerializeField]
+    private SlotAgrupamento slotAgrupMomento2;
+    [SerializeField]
+    private SlotAgrupamento slotAgrupMomento3;
+
     private MidiaMomento midiaMomento1;
     private MidiaMomento midiaMomento2;
     private MidiaMomento midiaMomento3;
@@ -153,5 +160,18 @@ public class PlanejamentoUI : MonoBehaviour {
     public void DefinirProcedimentoMomento3(Procedimento procedimento)
     {
         slotProcMomento3.Procedimento = procedimento;
+    }
+
+    public void DefinirAgrupamentoMomento1(Agrupamento agrupamento)
+    {
+        slotAgrupMomento1.Agrupamento = agrupamento;
+    }
+    public void DefinirAgrupamentoMomento2(Agrupamento agrupamento)
+    {
+        slotAgrupMomento2.Agrupamento = agrupamento;
+    }
+    public void DefinirAgrupamentoMomento3(Agrupamento agrupamento)
+    {
+        slotAgrupMomento3.Agrupamento = agrupamento;
     }
 }

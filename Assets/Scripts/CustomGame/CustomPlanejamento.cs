@@ -94,9 +94,8 @@ public class CustomPlanejamento : MonoBehaviour {
     {
         Debug.Log("Agrupamentos: " + a1 + ", " + a2 + " e " + a3);
 
-        var s = planejamento.GetComponentsInChildren<SlotAgrupamento>();
-        s[0].Agrupamento = a1;
-        s[1].Agrupamento = a2;
-        s[2].Agrupamento = a3;
+        planejamento.DefinirAgrupamentoMomento1(a1);
+        planejamento.DefinirAgrupamentoMomento2(a2);
+        planejamento.DefinirAgrupamentoMomento3(a3);
     }
 }
