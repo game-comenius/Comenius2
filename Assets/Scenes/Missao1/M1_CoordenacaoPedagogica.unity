@@ -2642,7 +2642,14 @@ MonoBehaviour:
         fala: "Que \xF3tima ideia, Ant\xF4nia! Irei fazer isso mesmo. Agora preciso
           achar a m\xEDdia dessa sala, mas muito obrigada mesmo."
       respostas: []
-  dialogosSecundarios: []
+  dialogosSecundarios:
+  - nodulos:
+    - falas:
+      - personagem: 6
+        emocao: 2
+        fala: "Lurdinha, acho que por enquanto n\xE3o posso te ajudar com mais nada.
+          Por que n\xE3o procura pelas m\xEDdias aqui na Coordena\xE7\xE3o?"
+      respostas: []
   interactOffset:
   - {x: 0.6999998, y: -1.15, z: 0}
 --- !u!60 &1704199095
@@ -2802,18 +2809,7 @@ MonoBehaviour:
   _index: 11200
   questComplete:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1704199095}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   questAvailable:

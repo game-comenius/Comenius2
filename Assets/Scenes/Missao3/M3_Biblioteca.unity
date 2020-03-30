@@ -1171,7 +1171,13 @@ MonoBehaviour:
         fala: "\xD3tima ideia! Acho que d\xE1 pr\xF3xima vez eu \xE9 quem vou pedir
           a sua ajuda! At\xE9 mais garotinho inteligente!"
       respostas: []
-  dialogosSecundarios: []
+  dialogosSecundarios:
+  - nodulos:
+    - falas:
+      - personagem: 3
+        emocao: 2
+        fala: "Agrade\xE7o pela ajuda, professora, mas agora eu preciso ir estudar."
+      respostas: []
   interactOffset:
   - {x: -0.6420306, y: -0.90501595, z: 0}
 --- !u!212 &315525028
@@ -2676,7 +2682,14 @@ MonoBehaviour:
         fala: "Tudo bem, Alice! Voc\xEA j\xE1 me ajudou bastante com a enciclop\xE9dia.
           <i>Eu vou pegar ela</i>, ok? Obrigada e at\xE9 mais!"
       respostas: []
-  dialogosSecundarios: []
+  dialogosSecundarios:
+  - nodulos:
+    - falas:
+      - personagem: 7
+        emocao: 2
+        fala: "Ah Lurdinha, acho que por enquanto n\xE3o posso te ajudar com mais
+          nada. Por que n\xE3o procura pelas m\xEDdias aqui na Biblioteca? "
+      respostas: []
   interactOffset:
   - {x: -0.72, y: -1.12, z: 0}
 --- !u!60 &967595644
@@ -4305,8 +4318,18 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
         type: 2}
+      propertyPath: dialogosSecundarios.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
       propertyPath: dialogoPrincipal.nodulos.Array.size
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogosSecundarios.Array.data[0].nodulos.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
         type: 2}
@@ -4351,6 +4374,11 @@ Prefab:
     - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
         type: 2}
       propertyPath: dialogoPrincipal.nodulos.Array.data[1].respostas.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogosSecundarios.Array.data[0].nodulos.Array.data[0].falas.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4323690141640222, guid: a1cf818579acdde4f96b99ea030f29d7, type: 2}
@@ -5092,6 +5120,21 @@ Prefab:
       propertyPath: dialogoPrincipal.nodulos.Array.data[4].falas.Array.data[7].fala
       value: "\xD3tima ideia! Acho que d\xE1 pr\xF3xima vez eu \xE9 quem vou pedir
         a sua ajuda! At\xE9 mais garotinho inteligente!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogosSecundarios.Array.data[0].nodulos.Array.data[0].falas.Array.data[0].personagem
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogosSecundarios.Array.data[0].nodulos.Array.data[0].falas.Array.data[0].emocao
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogosSecundarios.Array.data[0].nodulos.Array.data[0].falas.Array.data[0].fala
+      value: "Agrade\xE7o pela ajuda, professora, mas agora eu preciso ir estudar."
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

@@ -1011,6 +1011,16 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
         type: 2}
+      propertyPath: dialogosSecundarios.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogosSecundarios.Array.data[0].nodulos.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
       propertyPath: dialogoPrincipal.nodulos.Array.data[0].falas.Array.size
       value: 21
       objectReference: {fileID: 0}
@@ -1028,6 +1038,11 @@ Prefab:
         type: 2}
       propertyPath: dialogoPrincipal.nodulos.Array.data[0].respostas.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogosSecundarios.Array.data[0].nodulos.Array.data[0].falas.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4323690141640222, guid: a1cf818579acdde4f96b99ea030f29d7, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1589,6 +1604,21 @@ Prefab:
         type: 2}
       propertyPath: dialogoPrincipal.nodulos.Array.data[0].falas.Array.data[14].personagem
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogosSecundarios.Array.data[0].nodulos.Array.data[0].falas.Array.data[0].fala
+      value: "Agrade\xE7o pela ajuda, professora, mas agora eu preciso ir estudar."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogosSecundarios.Array.data[0].nodulos.Array.data[0].falas.Array.data[0].personagem
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114542602983017712, guid: a1cf818579acdde4f96b99ea030f29d7,
+        type: 2}
+      propertyPath: dialogosSecundarios.Array.data[0].nodulos.Array.data[0].falas.Array.data[0].emocao
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -3814,18 +3844,7 @@ MonoBehaviour:
   _index: 11600
   questComplete:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1312474133}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   questAvailable:
@@ -3942,7 +3961,14 @@ MonoBehaviour:
         fala: "Perfeito, Alice! Muito obrigada! Eu vou procurar essas p\xE1ginas agora
           mesmo! At\xE9 mais!"
       respostas: []
-  dialogosSecundarios: []
+  dialogosSecundarios:
+  - nodulos:
+    - falas:
+      - personagem: 7
+        emocao: 2
+        fala: "Ah Lurdinha, acho que por enquanto n\xE3o posso te ajudar com mais
+          nada. Por que n\xE3o procura pelas m\xEDdias aqui na Biblioteca?"
+      respostas: []
   interactOffset:
   - {x: -0.72, y: -1.12, z: 0}
 --- !u!60 &1312474133
@@ -4458,7 +4484,13 @@ MonoBehaviour:
         emocao: 4
         fala: "Mas voc\xEA \xE9 quem sabe, n\xE9\u2026"
       respostas: []
-  dialogosSecundarios: []
+  dialogosSecundarios:
+  - nodulos:
+    - falas:
+      - personagem: 3
+        emocao: 2
+        fala: "Agrade\xE7o pela ajuda, professora, mas agora eu preciso ir estudar."
+      respostas: []
   interactOffset:
   - {x: -0.64720833, y: -0.9021796, z: 0}
 --- !u!60 &1549134298
@@ -4597,18 +4629,7 @@ MonoBehaviour:
   _index: 11400
   questComplete:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   questAvailable:
