@@ -283,4 +283,20 @@ public class EndgameAnimation : MonoBehaviour {
         }
         PageTransitionAnimation();
     }
+
+    //estava indo tudo de acordo com o plano até eu notar que um botão não pode ter uma função com mais de um parâmetro (???) então ok unity, vamo lá:
+    public void PageJean2()
+    {
+        PageJean(25, 20, 13);
+    }
+
+    public void PageVladmir2()
+    {
+        PageVladmir(25, 20, 13);
+    }
+
+    public void PagePaulino2()
+    {
+        PagePaulino(25, 20, 13);
+    }
 }
