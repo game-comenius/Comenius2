@@ -104,9 +104,6 @@ public class TeacherScript : AgenteAulaScript
     
     public void StartWalk()
     {
-        var balloon = GetComponentInChildren<TeacherPopUpBalloon>();
-        if (balloon) balloon.ShowBalloon();
-
         if (!CanWalk) return;
 
         if (walk == null) walk = StartCoroutine(Walk());

@@ -329,7 +329,13 @@ public class ClassManager : MonoBehaviour
             }
 
             var teacher = TeacherScript.teacher;
-            if (teacher) teacher.StartWalk();
+            if (teacher)
+            {
+                var balloon = teacher.GetComponentInChildren<TeacherPopUpBalloon>();
+                if (balloon) balloon.ShowBalloon(midia);
+
+                teacher.StartWalk();
+            }
 
             momentTimer -= Time.deltaTime * _timeAcceleration;
 

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,16 +12,27 @@ public class TeacherPopUpBalloon : MonoBehaviour
 	[SerializeField]
 	private GameObject balloonContent;
 
-	public void ShowBalloon()
+    [SerializeField]
+    private SpriteRenderer rendererMidiaMencionada;
+
+	public void ShowBalloon(ItemName midiaMencionada)
 	{
 		spriteRenderer.enabled = true;
-		balloonContent.SetActive(true);
 		// Posicionar o sprite logo acima do sprite do npcDialogo
 		var npcDialogoSpriteRenderer = teacher.GetComponent<SpriteRenderer>();
 		var npcSpriteHeight = npcDialogoSpriteRenderer.bounds.extents.y;
 		var mySpriteHeight = spriteRenderer.bounds.extents.y;
 		transform.localPosition = new Vector3(0, npcSpriteHeight + mySpriteHeight);
-	}
+
+        // Apresentar conteúdo do balão e fazer com que a mídia ocupe o espaço
+        // aproximado do interior do balão
+		balloonContent.SetActive(true);
+        rendererMidiaMencionada.sprite = ItemSpriteDatabase.GetSpriteOf(midiaMencionada);
+        var balloonBounds = spriteRenderer.bounds;
+        var itemBounds = rendererMidiaMencionada.sprite.bounds;
+        var factor = 0.7f * Math.Max((balloonBounds.size.x / itemBounds.size.x), (balloonBounds.size.y / itemBounds.size.y));
+        rendererMidiaMencionada.transform.localScale = new Vector3(factor, factor, factor);
+    }
 
 	public void HideBalloon()
 	{
