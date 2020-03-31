@@ -104,6 +104,9 @@ public class TeacherScript : AgenteAulaScript
     
     public void StartWalk()
     {
+        var balloon = GetComponentInChildren<TeacherPopUpBalloon>();
+        if (balloon) balloon.ShowBalloon();
+
         if (!CanWalk) return;
 
         if (walk == null) walk = StartCoroutine(Walk());
@@ -228,6 +231,9 @@ public class TeacherScript : AgenteAulaScript
     private void EndClass()
     {
         GridScript.gridScript.ChangeGrid(GridScript.gridScript.P2G((Vector2)transform.position + offsetDaBase), false);
+
+        var balloon = GetComponentInChildren<TeacherPopUpBalloon>();
+        if (balloon) balloon.HideBalloon();
     }
 
     private void OnDrawGizmosSelected()
