@@ -11,51 +11,25 @@ public class TrocaDoDia : MonoBehaviour {
     [SerializeField][Tooltip("Primeira cena do dia seguinte")]
     private string primeiraCenaDiaSeguinte;
 
-    Canvas canvas;
-
-    Image backgroundTranslucido;
-    JanelaTrocaDoDia janelaTrocaDoDia;
-
 	// Use this for initialization
 	private void Start () {
-        canvas = GetComponentInChildren<Canvas>();
-        canvas.enabled = false;
-
-        var obj = canvas.transform.GetChild(0);
-        backgroundTranslucido = obj.GetComponent<Image>();
-        backgroundTranslucido.color = new Color(0, 0, 0, 0.7f);
-        backgroundTranslucido.enabled = false;
-
-        janelaTrocaDoDia = GetComponentInChildren<JanelaTrocaDoDia>();
-
-        dialogoQueAtivaEstaTroca.OnEndDialogueEvent += DispararCoroutineApresentarJanela;
+        dialogoQueAtivaEstaTroca.OnEndDialogueEvent += Trocar;
 	}
 
-    private void DispararCoroutineApresentarJanela() { StartCoroutine(ApresentarJanela()); }
-
-    private IEnumerator ApresentarJanela()
+    private void Trocar()
     {
-        GameManager.UISendoUsada();
-
-        canvas.enabled = true;
-
-        backgroundTranslucido.enabled = true;
-        yield return new WaitForSeconds(1);
-
-        janelaTrocaDoDia.Mostrar();
-
-        GameManager.UINaoSendoUsada();
-    }
-
-    public void DispararCoroutineTrocar() { StartCoroutine(Trocar()); }
-
-    private IEnumerator Trocar()
-    {
-        janelaTrocaDoDia.Esconder();
-        yield return new WaitForSeconds(0.5f);
-
         GetComponent<PreparadorDaProximaMissao>().LimparMissaoAtual();
 
-        GetComponent<SceneLoader>().LoadNewScene(primeiraCenaDiaSeguinte);
+        var sceneLoader = GetComponent<SceneLoader>();
+        if (sceneLoader)
+        {
+            sceneLoader.LoadNewScene(primeiraCenaDiaSeguinte);
+        }
+        else
+        {
+            // Se não tem SceneLoader, tentar com GoToScene
+            var goToScene = GetComponent<GoToScene>();
+            if (goToScene) goToScene.IrParaCena();
+        }
     }
 }
