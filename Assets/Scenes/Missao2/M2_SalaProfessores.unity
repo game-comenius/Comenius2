@@ -4060,7 +4060,7 @@ Prefab:
     - target: {fileID: 114227520223563780, guid: 1cd248e9a89c14dd19e401416c538be0,
         type: 2}
       propertyPath: questComplete.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4523191823698756, guid: 1cd248e9a89c14dd19e401416c538be0, type: 2}
       propertyPath: m_LocalPosition.x
@@ -4111,12 +4111,12 @@ Prefab:
     - target: {fileID: 114492019958268272, guid: 1cd248e9a89c14dd19e401416c538be0,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114492019958268272, guid: 1cd248e9a89c14dd19e401416c538be0,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224205653026084594, guid: 1cd248e9a89c14dd19e401416c538be0,
         type: 2}
@@ -4221,7 +4221,7 @@ Prefab:
     - target: {fileID: 224339748931664858, guid: 1cd248e9a89c14dd19e401416c538be0,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000036529465
+      value: 0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 114657589562029450, guid: 1cd248e9a89c14dd19e401416c538be0,
         type: 2}
@@ -4498,9 +4498,75 @@ Prefab:
       propertyPath: retroprojetorSlidesCicloDoTrabalhoPoints
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114227520223563780, guid: 1cd248e9a89c14dd19e401416c538be0,
+        type: 2}
+      propertyPath: questComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227520223563780, guid: 1cd248e9a89c14dd19e401416c538be0,
+        type: 2}
+      propertyPath: questComplete.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224339748931664858, guid: 1cd248e9a89c14dd19e401416c538be0,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114949749913087030, guid: 1cd248e9a89c14dd19e401416c538be0,
+        type: 2}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001187900599672, guid: 1cd248e9a89c14dd19e401416c538be0,
+        type: 2}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224071981062739858, guid: 1cd248e9a89c14dd19e401416c538be0,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227520223563780, guid: 1cd248e9a89c14dd19e401416c538be0,
+        type: 2}
+      propertyPath: questComplete.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227520223563780, guid: 1cd248e9a89c14dd19e401416c538be0,
+        type: 2}
+      propertyPath: questComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1215951181}
+    - target: {fileID: 114227520223563780, guid: 1cd248e9a89c14dd19e401416c538be0,
+        type: 2}
+      propertyPath: questComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_Disponivel
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227520223563780, guid: 1cd248e9a89c14dd19e401416c538be0,
+        type: 2}
+      propertyPath: questComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227520223563780, guid: 1cd248e9a89c14dd19e401416c538be0,
+        type: 2}
+      propertyPath: questComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114227520223563780, guid: 1cd248e9a89c14dd19e401416c538be0,
+        type: 2}
+      propertyPath: questComplete.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cd248e9a89c14dd19e401416c538be0, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1215951181 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114798857444326038, guid: 1cd248e9a89c14dd19e401416c538be0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1215951180}
+  m_Script: {fileID: 11500000, guid: f3525075d4b3c40379ade36ebc6f9448, type: 3}
 --- !u!1 &1273589140
 GameObject:
   m_ObjectHideFlags: 0
