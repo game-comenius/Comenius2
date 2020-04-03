@@ -52,6 +52,12 @@ public class Mission2 : MonoBehaviour
         new QuestClass (11700, "Pegar fita VHS na biblioteca", new DoQuest(), new int[]{ }),
         new QuestClass (11701, "Controle: Pegar fita VHS na biblioteca", new DoQuest(), new int[]{ 11700 }),
 
+        new QuestClass (11800, "Pegar TV na sala multimeios", new DoQuest(), new int[]{ }),
+        new QuestClass (11801, "Controle: Pegar TV na sala multimeios", new DoQuest(), new int[]{ 11800 }),
+
+        new QuestClass (11900, "Pegar Reprodutor de Áudio na sala multimeios", new DoQuest(), new int[]{ }),
+        new QuestClass (11901, "Controle: Pegar Reprodutor de Áudio na sala multimeios", new DoQuest(), new int[]{ 11900 }),
+
         new QuestClass (12000, "Pegar o retroprojetor na sala multimeios", new DoQuest(), new int[]{ }),
         new QuestClass (12001, "Controle: Pegar o retroprojetor na sala multimeios", new DoQuest(), new int[]{ 12000 }),
 

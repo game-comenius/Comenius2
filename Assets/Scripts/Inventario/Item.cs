@@ -386,9 +386,10 @@ public class Item
 
                 DescriptionsInMission2.StandardDescription = "O VHS (Video Home System) consiste em um sistema de captação e reprodução de vídeo e áudio, contendo informações selecionadas sobre a revolução industrial.";
 
-                DescriptionsInMission2.FirstMomentDescription = "Sem uma forma de reproduzi-la essa mídia não vai ser muito útil.";
-                DescriptionsInMission2.SecondMomentDescription = DescriptionsInMission2.FirstMomentDescription;
-                DescriptionsInMission2.ThirdMomentDescription = DescriptionsInMission2.FirstMomentDescription;
+                DescriptionsInMission2.FirstMomentDescription = "O VHS foi editado pelo professor, contendo os principais tópicos que ele quer trabalhar em seu planejamento, de duração suficiente para manter a atenção da turma.";
+                DescriptionsInMission2.SecondMomentDescription = "Por conta do cuidado do professor em editar as principais partes do documentário, ele tem duração e conteúdo suficiente para manter a atenção dos alunos e mediar a discussão.";
+                DescriptionsInMission2.ThirdMomentDescription = "Com a atenção dos alunos voltadas para a realização do trabalho de síntese, talvez eles não prestem muita atenção nos detalhes escolhidos pelo professor.";
+                UpgradeFrom.Add(ItemName.TVComVHS);
                 break;
             case ItemName.Diario:
                 FriendlyName = "Diário";
@@ -443,6 +444,7 @@ public class Item
                 DescriptionsInMission2.FirstMomentDescription = "Levar uma entrevista com um especialista no assunto enriquece muito a exposição.";
                 DescriptionsInMission2.SecondMomentDescription = "Esse é um momento de discussão entre a turma, talvez um audío de entrevista ajude a guiar a conversa.";
                 DescriptionsInMission2.ThirdMomentDescription = "O CD traz muitas informações sobre o fato histórico escolhido, mas esse é um momento de criação e síntese dos alunos, por isso não deve ser uma boa escolha.";
+                UpgradeFrom.Add(ItemName.ReprodutorAudio);
                 break;
             case ItemName.TVComVHSRevolucaoIndustrialEditado:
                 FriendlyName = "TV com VHS Editado sobre Revolução Industrial";
@@ -542,6 +544,7 @@ public class Item
                 DescriptionsInMission3.FirstMomentDescription = "O CD com uma entrevista sobre o tema da aula, pode ser um interessante meio de pesquisa para os alunos, em forma de áudio.";
                 DescriptionsInMission3.SecondMomentDescription = "A proposta é de uma apresentação dos resultados da pesquisa, o CD com a entrevista pode ser utilizado, mas não comporta os resultados da pesquisa dos alunos.";
                 DescriptionsInMission3.ThirdMomentDescription = "O CD com uma entrevista sobre o tema da aula, pode ser um interessante meio de pesquisa para os alunos, em forma de áudio. Melhor utilizado em outro momento.";
+                UpgradeFrom.Add(ItemName.ReprodutorAudio);
                 break;
             default:
                 FriendlyName = "Sem nome";
