@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class FolhaMapaGrande : MonoBehaviour {
 
+    private bool aberto;
+    public bool Aberto
+    {
+        get { return aberto; }
+        set
+        {
+            aberto = value;
+            canvasGroup.blocksRaycasts = aberto;
+            canvasGroup.alpha = aberto ? 1 : 0;
+        }
+    }
+
     public LocalNoMapa PatioEsquerdo;
     public LocalNoMapa PatioDireito;
     public LocalNoMapa SalaDiretor;
@@ -17,6 +29,14 @@ public class FolhaMapaGrande : MonoBehaviour {
     public LocalNoMapa SalaAulaVladmir;
     public LocalNoMapa SalaAulaJean;
 
+    private CanvasGroup canvasGroup;
+
+    private void Awake()
+    {
+        canvasGroup = GetComponent<CanvasGroup>();
+
+        Aberto = false;
+    }
 
     // Use this for initialization
     void Start () {
@@ -32,8 +52,6 @@ public class FolhaMapaGrande : MonoBehaviour {
         //SalaAulaPaulino.NomeDaCena = null;
         //SalaAulaVladmir.NomeDaCena = null;
         //SalaAulaJean.NomeDaCena = "Sala_de_aula_Jean";
-
-        gameObject.SetActive(false);
     }
 
     public bool Teletransportar(LocalNoMapa local)
