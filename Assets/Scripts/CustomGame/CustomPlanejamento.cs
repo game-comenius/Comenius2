@@ -35,7 +35,7 @@ public class CustomPlanejamento : MonoBehaviour {
         var imageRetrato = objRetrato.GetComponent<Image>();
         if (!imageRetrato) return;
         imageRetrato.sprite = CharacterSpriteDatabase.Foto(professor);
-        imageRetrato.SetNativeSize();
+        imageRetrato.preserveAspect = true;
     }
 
     private void DefinirDescricaoDosMomentos()
