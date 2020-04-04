@@ -92,6 +92,8 @@ public class Item
                 FriendlyName = "Gravação do Pássaro";
                 Description = "Gravação do canto do pássaro no pátio da escola";
                 FullDescription = "Gravação do canto do pássaro no pátio da escola";
+
+                DescriptionsInMission1.StandardDescription = "Gravação do canto do pássaro no pátio da escola.";
                 DescriptionsInMission1.FirstMomentDescription = "Uma ótima forma de ilustrar o canto de um pássaro da mesma região que a escola, mas isso não ajuda os alunos a entender sobre os diferentes tipos de pássaros.";
                 DescriptionsInMission1.SecondMomentDescription = "Acho que essa gravação pode não ser muito interessante em uma atividade...";
                 DescriptionsInMission1.ThirdMomentDescription = "A gravação pode ser boa nesse momento por apresentar um exemplo de um passáro da mesma regionalidade que os alunos.";
