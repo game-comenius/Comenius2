@@ -20,6 +20,8 @@ public class SistemaDialogo : MonoBehaviour
 
     [SerializeField] private Button botao;
     [SerializeField] private Button botaoRetornar;
+    [SerializeField] private Button botaoDiminuirFonte;
+    [SerializeField] private Button botaoAumentarFonte;
 
     [SerializeField] private TMP_Dropdown dropdown;
 
@@ -91,6 +93,9 @@ public class SistemaDialogo : MonoBehaviour
         botaoRetornar.gameObject.SetActive(false);
 
         botao.onClick.AddListener(() => { ComecarProximaFala(); });
+
+        // Botão diminuir fonte desabilitado pois começamos com a fonte mínima
+        botaoDiminuirFonte.interactable = false;
     }
 
 #if UNITY_EDITOR
@@ -506,12 +511,18 @@ public class SistemaDialogo : MonoBehaviour
     {
         textoDialogo.fontSize = Mathf.Min(textoDialogo.fontSize + 4f, 26);
         npcNome.fontSize = Mathf.Min(npcNome.fontSize + 4f, 32);
+
+        botaoDiminuirFonte.interactable = true;
+        if (textoDialogo.fontSize >= 26) botaoAumentarFonte.interactable = false;
     }
 
     public void DecreaseFontSize()
     {
         textoDialogo.fontSize = Mathf.Max(textoDialogo.fontSize - 4f, 14);
         npcNome.fontSize = Mathf.Max(npcNome.fontSize - 4f, 20);
+
+        if (textoDialogo.fontSize <= 14) botaoDiminuirFonte.interactable = false;
+        botaoAumentarFonte.interactable = true;
     }
     #endregion 
 }
