@@ -7,6 +7,9 @@ public class FichaDesempenhoAula : MonoBehaviour {
 
     public TextMeshProUGUI Titulo;
 
+    public CharacterName Professor;
+    public Image ImageFotoProfessor;
+
     [SerializeField] private Sprite spriteMidiaFraca;
     [SerializeField] private Sprite spriteMidiaBoa;
     [SerializeField] private Sprite spriteMidiaMuitoBoa;
@@ -31,6 +34,7 @@ public class FichaDesempenhoAula : MonoBehaviour {
     public void Mostrar()
     {
         DefinirTitulo();
+        DefinirFotoProfessor();
         DefinirMidiasESeusPoderes();
     }
 
@@ -44,6 +48,12 @@ public class FichaDesempenhoAula : MonoBehaviour {
             case 2: @string += "Português"; break;
         }
         Titulo.text = @string;
+    }
+
+    private void DefinirFotoProfessor()
+    {
+        ImageFotoProfessor.sprite = CharacterSpriteDatabase.Foto(Professor);
+        ImageFotoProfessor.preserveAspect = true;
     }
 
     private void DefinirMidiasESeusPoderes()
