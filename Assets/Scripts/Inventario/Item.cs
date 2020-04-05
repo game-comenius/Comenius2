@@ -435,6 +435,8 @@ public class Item
                 DescriptionsInMission2.FirstMomentDescription = "Um documentário sobre a temática da aula é uma ótima opção para tratar do tema, mas talvez o tempo de duração cause algumas dispersões.";
                 DescriptionsInMission2.SecondMomentDescription = "O documentário é bastante extenso, a idéia desse momento é que os alunos foquem na discussão entre si e não em prestar atenção em um documentário.";
                 DescriptionsInMission2.ThirdMomentDescription = "O documentário traz informações muito importantes sobre a temática, mas esse é um momento de síntese e atividades, talvez ele seja melhor utilizado em outro momento.";
+
+                UpgradeFrom.Add(ItemName.TVComVHS);
                 break;
             case ItemName.ReprodutorAudioComCDRevolucaoIndustrial:
                 FriendlyName = "Reprodutor de Áudio + CD sobre Pássaros";
@@ -458,6 +460,8 @@ public class Item
                 DescriptionsInMission2.FirstMomentDescription = "O VHS foi editado pelo professor, contendo os principais tópicos que ele quer trabalhar em seu planejamento, de duração suficiente para manter a atenção da turma.";
                 DescriptionsInMission2.SecondMomentDescription = "Por conta do cuidado do professor em editar as principais partes do documentário, ele tem duração e conteúdo suficiente para manter a atenção dos alunos e mediar a discussão.";
                 DescriptionsInMission2.ThirdMomentDescription = "Com a atenção dos alunos voltadas para a realização do trabalho de síntese, talvez eles não prestem muita atenção nos detalhes escolhidos pelo professor.";
+
+                UpgradeFrom.Add(ItemName.TVComVHS);
                 break;
             case ItemName.FolhaSulfite:
                 FriendlyName = "Folha Sulfite";
@@ -480,6 +484,8 @@ public class Item
                 DescriptionsInMission3.FirstMomentDescription = "Um documentário sobre regionalismos trazido pelo professor, com uma longa duração, pode ser uma boa fonte para pesquisa dos alunos.";
                 DescriptionsInMission3.SecondMomentDescription = "Passar um vídeo durante a exposição, por mais que esteja dentro do assunto, pode tirar o foco dos alunos nesse momento.";
                 DescriptionsInMission3.ThirdMomentDescription = "O documentário possui muitas informações importantes, mas talvez seja melhor utilizado nos primeiros momentos da aula.";
+
+                UpgradeFrom.Add(ItemName.TVComVHS);
                 break;
             case ItemName.VHSregionalismoEditado:
                 FriendlyName = "VHS Editado de Regionalismo";
@@ -491,6 +497,8 @@ public class Item
                 DescriptionsInMission3.FirstMomentDescription = "O VHS editado pelo professor apresenta as informações mais pertinentes de forma sucinta, sendo uma boa fonte para a pesquisa dos alunos sobre a temática da aula.";
                 DescriptionsInMission3.SecondMomentDescription = "O VHS editado pelo professor apresenta as informações mais pertinentes, mas não ajuda os alunos a expor a sua pesquisa.";
                 DescriptionsInMission3.ThirdMomentDescription = "O documentário editado pelo professor compila muitas informações importantes, de forma suscinta, mas talvez seja melhor utilizado em outro momento da aula.";
+
+                UpgradeFrom.Add(ItemName.TVComVHS);
                 break;
             case ItemName.Enciclopedia:
                 FriendlyName = "Enciclopédia";
