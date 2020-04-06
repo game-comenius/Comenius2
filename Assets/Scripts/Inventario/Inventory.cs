@@ -8,6 +8,8 @@ public class Inventory
 
     private TextMeshProUGUI uiMidiaCounter;
 
+    private bool hasReceivedTheFirstItem;
+
     public Inventory() {
         items = new Dictionary<ItemName, Item>();
 
@@ -64,8 +66,15 @@ public class Inventory
             uiMidiaCounter.SetText("Mídias Obtidas: " + Count + "/13");
 
             DisplayItems();
-        }
 
+            // Se este é o primeiro item que será adicionado ao inventário,
+            // deixar visível o botão de abrir fichário
+            if (!hasReceivedTheFirstItem)
+            {
+                Object.FindObjectOfType<BotaoAbrirFichario>().Visivel = true;
+                hasReceivedTheFirstItem = true;
+            }
+        }
     }
 
     public void Remove(ItemName itemName)

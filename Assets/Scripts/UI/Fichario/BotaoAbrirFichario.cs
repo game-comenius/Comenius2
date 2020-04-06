@@ -16,6 +16,12 @@ public class BotaoAbrirFichario : MonoBehaviour, IPointerClickHandler {
         {
             visivel = value;
             image.enabled = visivel;
+
+            if (visivel && nuncaEsteveVisivelAntes)
+            {
+                MostrarAjudaFichario();
+                nuncaEsteveVisivelAntes = false;
+            }
         }
     }
 
@@ -32,6 +38,9 @@ public class BotaoAbrirFichario : MonoBehaviour, IPointerClickHandler {
     }
 
     private Fichario fichario;
+
+    private bool nuncaEsteveVisivelAntes = true;
+    [SerializeField] private AjudaComeniusFichario prefabAjudaComeniusFichario;
 
     // UI
     private Image image;
@@ -50,7 +59,8 @@ public class BotaoAbrirFichario : MonoBehaviour, IPointerClickHandler {
         // Porém, durante o desenvolvimento, ou seja, executar a partir de
         // qualquer cena, é interessante que este botão apareça.
         #if UNITY_EDITOR
-        Visivel = true;
+        visivel = true;
+        image.enabled = visivel;
         Ativo = true;
         #endif
     }
@@ -62,6 +72,11 @@ public class BotaoAbrirFichario : MonoBehaviour, IPointerClickHandler {
         // como por exemplo quando o fichário está aberto
         GameManager.uiSendoUsadaEvent += () => { Ativo = false; };
         GameManager.uiNaoSendoUsadaEvent += () => { Ativo = true; };
+    }
+
+    public void MostrarAjudaFichario()
+    {
+        Instantiate(prefabAjudaComeniusFichario).Mostrar();
     }
 
     public void OnPointerClick(PointerEventData eventData)

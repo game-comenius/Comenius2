@@ -8,18 +8,12 @@ using UnityEngine.UI;
 // Essa ajuda é chamada ativamente através do public void Mostrar()
 public class AjudaComeniusFichario : MonoBehaviour
 {
-    [SerializeField]
-    private Button BotaoQueAtivaEstaAjuda;
-
     private BotaoAbrirFichario botaoFichario;
 
     private Canvas canvas;
     private FadeEffect backgroundFadeEffect;
 
     private CanvasGroup conteudo;
-
-    private CanvasGroup balaoDireita;
-    private GameObject botaoEntendi1;
 
     private CanvasGroup baloesEsquerda;
 
@@ -28,8 +22,7 @@ public class AjudaComeniusFichario : MonoBehaviour
     private Transform botaoPularT;
 
 
-    // Use this for initialization
-    private void Start()
+    private void Inicializar()
     {
         botaoFichario = FindObjectOfType<BotaoAbrirFichario>();
 
@@ -42,13 +35,8 @@ public class AjudaComeniusFichario : MonoBehaviour
         var canvasGroups = canvas.GetComponentsInChildren<CanvasGroup>();
         conteudo = canvasGroups[0];
         conteudo.alpha = 0;
-        
-        balaoDireita = canvasGroups[1];
-        balaoDireita.alpha = 0;
 
-        botaoEntendi1 = balaoDireita.GetComponentInChildren<Button>().gameObject;
-
-        baloesEsquerda = canvasGroups[2];
+        baloesEsquerda = canvasGroups[1];
         baloesEsquerda.alpha = 0;
         baloesEsquerda.blocksRaycasts = false;
 
@@ -57,18 +45,18 @@ public class AjudaComeniusFichario : MonoBehaviour
 
         // Botão para pular tutorial aparecerá no início e desaparecerá no fim
         botaoPularT = conteudo.transform.GetChild(conteudo.transform.childCount - 1);
-
-        BotaoQueAtivaEstaAjuda.onClick.AddListener(Mostrar);
     }
 
-    // Este método será chamado quando o BotaoQueAtivaEstaAjuda for apertado
-    private void Mostrar()
+    public void Mostrar()
     {
+        Inicializar();
         StartCoroutine(MostrarCoroutine());
     }
 
     private IEnumerator MostrarCoroutine()
     {
+        yield return new WaitWhile(() => GameManager.uiSendoUsada);
+
         GameManager.UISendoUsada();
 
         canvas.enabled = true;
@@ -85,22 +73,8 @@ public class AjudaComeniusFichario : MonoBehaviour
         // Pegar o animator do ImageComeniusFantasma
         conteudo.GetComponentInChildren<Animator>().Play("Flutuar");
 
-        // Apresentar o primeiro conjunto de balões
+        // Apresentar conjunto de balões
         yield return new WaitForSeconds(0.6f);
-        balaoDireita.alpha = 1;
-
-        // Espera o jogador apertar no botão entendi e confirmar deseja passar
-        var entendiPrimeiraParte = false;
-        botaoEntendi1.GetComponent<Button>().onClick.AddListener
-        (
-            () => { entendiPrimeiraParte = true; }
-        );
-        yield return new WaitUntil( () => entendiPrimeiraParte );
-
-        yield return new WaitForSeconds(0.4f);
-        botaoEntendi1.SetActive(false);
-
-        // Apresentar o segundo conjunto de balões
 
         // O último balão vai aparecer alguns segundos depois, desativado agora
         var ultimoBalao = baloesEsquerda.transform.GetChild(1).gameObject;
@@ -131,7 +105,6 @@ public class AjudaComeniusFichario : MonoBehaviour
 
     private IEnumerator FecharCoroutine()
     {
-        balaoDireita.alpha = 0;
         baloesEsquerda.alpha = 0;
         conteudo.alpha = 0;
         yield return new WaitForSeconds(0.4f);
@@ -142,9 +115,6 @@ public class AjudaComeniusFichario : MonoBehaviour
         GameManager.UINaoSendoUsada();
 
         botaoFichario.Ativo = true;
-
-        // Esta ajuda será vista apenas 1 vez
-        BotaoQueAtivaEstaAjuda.onClick.RemoveListener(Mostrar);
     }
 
     public void PularAjuda()
