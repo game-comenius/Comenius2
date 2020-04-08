@@ -1,10 +1,35 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class CollectItem : MonoBehaviour {
 
     public ItemName target;
-    bool done = false;
+    private bool done;
+
+    private bool CanCollect
+    {
+        get
+        {
+            bool canCollect = false;
+
+            var item = new Item(target);
+            if (!item.IsAnUpgrade())
+            {
+                canCollect = true;
+            }
+            else
+            {
+                var baseItems = item.UpgradeFrom;
+                foreach (var baseItem in baseItems)
+                {
+                    if (Player.Instance.Inventory.Contains(baseItem))
+                        canCollect = true;
+                }
+            }
+            return canCollect;
+        }
+    }
 
     private void Start()
     {
@@ -40,10 +65,21 @@ public class CollectItem : MonoBehaviour {
         }
     }
 
-    public void addItem() {
-        if (!done) {
+    public void addItem()
+    {
+        if (!done)
+        {
             Player.Instance.Inventory.Add(target);
             done = true;
         }
-    }	
+    }
+
+    // Impede que o jogador colete esta mídia se ele não possui a mídia base
+    private void Update()
+    {
+        var polygonCollider = GetComponentInChildren<PolygonCollider2D>();
+        if (polygonCollider) polygonCollider.enabled = CanCollect;
+    }
+
+    
 }
