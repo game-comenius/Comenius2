@@ -47,6 +47,10 @@ public class PlacaApresentacaoDia : MonoBehaviour {
         }
         var tMPro = GetComponentInChildren<TextMeshProUGUI>();
         tMPro.text = textoDaPlaca;
+
+        // Impedir que o jogador caminhe enquanto a animação está executando
+        // A animação será executada sem parâmetros, ou seja, na criação deste
+        GameManager.UISendoUsada();
     }
 
     private IEnumerator RestartDialogosAposAnimacao(List<NpcDialogo> npcDialogos)
@@ -56,6 +60,7 @@ public class PlacaApresentacaoDia : MonoBehaviour {
         // fez mais que 99% da animação atual, ou seja, se ela terminou
         System.Func<bool> animacaoAcabou = () => animator.GetCurrentAnimatorStateInfo(0).normalizedTime > .99f;
         yield return new WaitUntil(animacaoAcabou);
+
         yield return new WaitForSeconds(1);
         foreach (var npcDialogo in npcDialogos)
             StartCoroutine(npcDialogo.Interact());
