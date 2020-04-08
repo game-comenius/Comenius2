@@ -160,6 +160,9 @@ public class Item
                 FriendlyName = "Cartaz com Coleção de Penas";
                 Description = "Um cartaz com uma coleção de penas";
                 FullDescription = "Um cartaz com uma coleção de penas";
+
+                DescriptionsInMission1.StandardDescription = "Cartaz feito por um ornitólogo, avô de um aluno da escola, contendo penas de algumas espécies de pássaros da região.";
+
                 DescriptionsInMission1.FirstMomentDescription = "Esse cartaz pode ser útil para ilustrar as características dos pássaros pelo professor, o que seria mais rico do que somente uma fotografia.";
                 DescriptionsInMission1.SecondMomentDescription = "O cartaz com as penas é interessante, pois ilustra de forma real os pássaros, mas seria a melhor escolha em uma atividade individual, sendo que só há um cartaz?";
                 DescriptionsInMission1.ThirdMomentDescription = "Talvez o cartaz com penas possa ser melhor utilizado para a apresentação das características gerais dos pássaros, pois fala pouco sobre regionalidades.";
