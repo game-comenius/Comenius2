@@ -46,6 +46,16 @@ public class PathFinder : MonoBehaviour
 
     public bool hasTarget = false; //Serve para impedir que a Lurdinha, em uma mesma frame, tenha vários destinos. Assim sendo, deve ser resetado para false TODO FINAL DE LATEUPDATE.
 
+    private void Awake()
+    {
+        // Definir velocidade da Lurdinha
+        velocity = 2.2f;
+        // Para alivar os programadores lurdinha terá super velocidade no editor
+        #if UNITY_EDITOR
+        velocity = 5;
+        #endif
+    }
+
     private void Start()
     {
         StartCoroutine(WalkDecision());
