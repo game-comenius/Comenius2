@@ -46,6 +46,12 @@ public class MidiaNaSalaDeAula : MonoBehaviour {
             case ItemName.VHSregionalismoEditado:
                 if (mesaDoProfessor) mesaDoProfessor.ColocarItem(ItemName.TVComVHS);
                 break;
+            case ItemName.Cd:
+            case ItemName.ReprodutorAudioComCDPassaros:
+            case ItemName.ReprodutorAudioComCDRevolucaoIndustrial:
+            case ItemName.CDsotaques:
+                if (mesaDoProfessor) mesaDoProfessor.ColocarItem(ItemName.ReprodutorAudio);
+                break;
             default:
                 foreach (var mesaDoAluno in mesasDosAlunos)
                     mesaDoAluno.ColocarItem(midia);
