@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Planejamento : MonoBehaviour {
 
@@ -123,6 +124,18 @@ public class Planejamento : MonoBehaviour {
 
         var questGuest = GetComponent<QuestGuest>();
         if (questGuest) ManagerQuest.QuestTakeStep(questGuest.index);
+
+        // Retirar missão "Ajudar com o Planejamento" da janela
+        var gameMission = Player.Instance.missionID;
+        switch (gameMission)
+        {
+            case 0:
+                // Na missão 1 do jogo, a missão do planejamento índice == 6
+                var m = Mission1._mainQuests.Where((q) => q.index == 6);
+                if (m.Any()) ConselheiroComenius.JanelaMissoes.RemoverMissao(m.First());
+                break;
+        }
+        
 
         CancelarPlanejamento();
     }

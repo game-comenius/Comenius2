@@ -2321,6 +2321,7 @@ GameObject:
   - component: {fileID: 827239677}
   - component: {fileID: 827239676}
   - component: {fileID: 827239674}
+  - component: {fileID: 827239675}
   m_Layer: 0
   m_Name: PortaBiblioteca
   m_TagString: Door1
@@ -2353,6 +2354,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d882bdab05745a4e9f44cd031e622b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &827239675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 827239672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 13
+  questComplete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &827239676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2859,6 +2887,9 @@ GameObject:
   m_Component:
   - component: {fileID: 972675396}
   - component: {fileID: 972675395}
+  - component: {fileID: 972675397}
+  - component: {fileID: 972675399}
+  - component: {fileID: 972675398}
   m_Layer: 0
   m_Name: AdministradorDeMissoesNaJanelaDeMissoes
   m_TagString: Untagged
@@ -2895,6 +2926,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &972675397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 972675394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0072b59adab0240298adc1789f58dda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objetivo: 0
+  IndiceDaMissaoAlvo: 12
+  IndiceDaRespostaAlvo: 0
+  Momento: 1
+  Dialogo: {fileID: 1097884176}
+--- !u!114 &972675398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 972675394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0072b59adab0240298adc1789f58dda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objetivo: 0
+  IndiceDaMissaoAlvo: 13
+  IndiceDaRespostaAlvo: 0
+  Momento: 1
+  Dialogo: {fileID: 1097884176}
+--- !u!114 &972675399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 972675394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0072b59adab0240298adc1789f58dda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objetivo: 0
+  IndiceDaMissaoAlvo: 11200
+  IndiceDaRespostaAlvo: 0
+  Momento: 1
+  Dialogo: {fileID: 1097884176}
 --- !u!1 &994203925
 GameObject:
   m_ObjectHideFlags: 0
