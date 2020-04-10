@@ -36,7 +36,7 @@ public class Item
         switch (itemName)
         {
             case ItemName.ReprodutorAudio:
-                FriendlyName = "Reprodutor de Áudio";
+                FriendlyName = "CD Player";
                 Description = "Hmmm… Preciso achar um CD em algum lugar para isso daqui ser útil.";
                 FullDescription = "Um sistema reprodutor de áudio com leitor de CDs.";
 
@@ -61,7 +61,7 @@ public class Item
 
                 DescriptionsInMission1.StandardDescription = "É um dispositivo eletrônico que armazena informações em formato compacto, que podem apenas ser lidas, mas seu conteúdo não poder ser alterado pelo usuário.";
 
-                DescriptionsInMission1.FirstMomentDescription = "Sem uma forma de reproduzi-la essa mídia não vai ser muito útil.";
+                DescriptionsInMission1.FirstMomentDescription = "Já que eu tenho um reprodutor de áudio, posso usar esse CD em aula!";
                 DescriptionsInMission1.SecondMomentDescription = DescriptionsInMission1.FirstMomentDescription;
                 DescriptionsInMission1.ThirdMomentDescription = DescriptionsInMission1.FirstMomentDescription;
 
@@ -409,8 +409,8 @@ public class Item
                 break;
             case ItemName.ReprodutorAudioComCDPassaros:
                 FriendlyName = "Reprodutor de Áudio + CD sobre Pássaros";
-                Description = "Uma coleção de jornais e revistas";
-                FullDescription = "Uma coleção de jornais e revistas";
+                Description = "O CD pode ser ouvido pela turma para agregar conhecimento sobre o conteúdo estudado.";
+                FullDescription = "O CD pode ser ouvido pela turma para agregar conhecimento sobre o conteúdo estudado.";
 
                 DescriptionsInMission2.StandardDescription = "Essas mídias combinadas possibilitam a reprodução do áudio com o som do canto dos pássaros.";
 
@@ -443,8 +443,8 @@ public class Item
                 break;
             case ItemName.ReprodutorAudioComCDRevolucaoIndustrial:
                 FriendlyName = "Reprodutor de Áudio + CD sobre Pássaros";
-                Description = "Sem descrição";
-                FullDescription = "Sem texto";
+                Description = "Essas mídias combinadas possibilitam a reprodução do áudio com uma entrevista de um especialista sobre a revolução industrial.";
+                FullDescription = "Essas mídias combinadas possibilitam a reprodução do áudio com uma entrevista de um especialista sobre a revolução industrial.";
 
                 DescriptionsInMission2.StandardDescription = "Essas mídias combinadas possibilitam a reprodução do áudio com uma entrevista de um especialista sobre a revolução industrial.";
 
