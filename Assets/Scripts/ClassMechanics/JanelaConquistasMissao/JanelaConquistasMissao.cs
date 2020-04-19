@@ -42,5 +42,9 @@ public class JanelaConquistasMissao : MonoBehaviour {
         yield return new WaitWhile(() => Aberta);
         // Quando alguém definir a propriedade Aberta=false, esconder a janela
         ConteudoVisivel = false;
+        // Escurecer completamente a tela antes de trocar de cena
+        var fadeEffects = GetComponentsInChildren<FadeEffect>();
+        if (fadeEffects.Length == 2)
+            yield return StartCoroutine(fadeEffects[1].Fade(1));
     }
 }
