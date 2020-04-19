@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using GameComenius.Dialogo;
+using System;
+using Random = UnityEngine.Random;
 
 public class ClassManager : MonoBehaviour
 {
@@ -228,7 +230,26 @@ public class ClassManager : MonoBehaviour
             if (Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints >= falasGeneralistas[j].rangeNota.x 
                 && Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints <= falasGeneralistas[j].rangeNota.y)
             {
+                // Adicionar fala de despedida e recomendação à Lurdinha para
+                // que converse com os alunos após esta conversa (pós-aula)
+                var falaDespedida = "Neste momento, posso ver que os alunos estão falando sobre a aula, você pode conversar com eles para saber suas opiniões. Eu espero ver você em uma próxima oportunidade, até mais!";
+                // Extrair o array de falas do professor
+                var falas = professor.falasGeneralistas[j].dialogos[0].nodulos[0].falas;
+                // Redimensionar o array para aceitar mais um paragrafo de fala
+                Array.Resize(ref falas, falas.Length + 1);
+
+                var ultimoIndice = falas.Length - 1;
+                falas[ultimoIndice] = new Fala
+                {
+                    fala = falaDespedida,
+                    personagem = falas[ultimoIndice - 1].personagem,
+                    emocao = falas[ultimoIndice - 1].emocao
+                };
+
+                // Encaixar o array com as (falas originais + fala nova) no
+                // conjunto de falas do professor
                 dialogo.dialogoPrincipal = professor.falasGeneralistas[j].dialogos[0].Clone();
+                dialogo.dialogoPrincipal.nodulos[0].falas = falas;
             }
         }
     }
