@@ -79,8 +79,12 @@ public class Inventory
 
     public void Remove(ItemName itemName)
     {
-        items.Remove(itemName);
+        if (!Contains(itemName)) return;
 
+        items.Remove(itemName);
+        DisplayItems();
+
+        // Atualizar contador de mídias
         uiMidiaCounter = GameObject.Find("ContadorMidias").GetComponent<TextMeshProUGUI>();
         uiMidiaCounter.SetText("Mídias Obtidas: " + Count + "/13");
     }

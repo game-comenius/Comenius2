@@ -18,7 +18,18 @@ public class TrocaDoDia : MonoBehaviour {
 
     private void Trocar()
     {
-        GetComponent<PreparadorDaProximaMissao>().LimparMissaoAtual();
+        StartCoroutine(TrocarCoroutine());
+    }
+
+    private IEnumerator TrocarCoroutine()
+    {
+        var preparador = GetComponent<PreparadorDaProximaMissao>();
+        if (preparador) preparador.LimparMissaoAtual();
+
+        // Escurecer a tela se houver um FadeEffect como filho deste objeto
+        var fade = GetComponentInChildren<FadeEffect>();
+        if (fade) yield return StartCoroutine(fade.Fade(1));
+        yield return new WaitForSeconds(0.5f);
 
         var sceneLoader = GetComponent<SceneLoader>();
         if (sceneLoader)
