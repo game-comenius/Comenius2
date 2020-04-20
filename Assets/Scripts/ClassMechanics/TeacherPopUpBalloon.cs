@@ -18,11 +18,6 @@ public class TeacherPopUpBalloon : MonoBehaviour
 	public void ShowBalloon(ItemName midiaMencionada)
 	{
 		spriteRenderer.enabled = true;
-		// Posicionar o sprite logo acima do sprite do npcDialogo
-		var npcDialogoSpriteRenderer = teacher.GetComponent<SpriteRenderer>();
-		var npcSpriteHeight = npcDialogoSpriteRenderer.bounds.extents.y;
-		var mySpriteHeight = spriteRenderer.bounds.extents.y;
-		transform.localPosition = new Vector3(0, npcSpriteHeight + mySpriteHeight);
 
         // Apresentar conteúdo do balão e fazer com que a mídia ocupe o espaço
         // aproximado do interior do balão
