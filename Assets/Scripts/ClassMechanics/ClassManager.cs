@@ -146,6 +146,9 @@ public class ClassManager : MonoBehaviour
 
         public Dialogo[] dialogos = new Dialogo[2];
     }
+
+    private int quantidadeDeAlunosQueDeramSeusFeedbacks;
+
     #endregion
     #endregion
 
@@ -232,7 +235,7 @@ public class ClassManager : MonoBehaviour
             {
                 // Adicionar fala de despedida e recomendação à Lurdinha para
                 // que converse com os alunos após esta conversa (pós-aula)
-                var falaDespedida = "Neste momento, posso ver que os alunos estão falando sobre a aula, você pode conversar com eles para saber suas opiniões. Eu espero ver você em uma próxima oportunidade, até mais!";
+                var falaDespedida = "Neste momento, posso ver que os alunos estão falando sobre a aula, você pode conversar com eles para saber suas opiniões.";
                 // Extrair o array de falas do professor
                 var falas = professor.falasGeneralistas[j].dialogos[0].nodulos[0].falas;
                 // Redimensionar o array para aceitar mais um paragrafo de fala
@@ -275,7 +278,48 @@ public class ClassManager : MonoBehaviour
             {
                 dialogo.dialogoPrincipal = falasSobreMomentos[i - 2].EncontrarFalaCerta(Player.Instance.MissionHistory[Player.Instance.missionID].chosenMedia[i - 2]).Clone();
             }
+
+            dialogo.OnEndDialogueEvent += AceitarFeedbackDeUmAluno;
         }
+    }
+
+    private void AceitarFeedbackDeUmAluno()
+    {
+        quantidadeDeAlunosQueDeramSeusFeedbacks++;
+
+        if (quantidadeDeAlunosQueDeramSeusFeedbacks >= alunosComentaristas.Length)
+        {
+            StartCoroutine(DispararFalaDoProfessorAposFeedbackDeTodosOsAlunos());
+        }
+    }
+
+    private IEnumerator DispararFalaDoProfessorAposFeedbackDeTodosOsAlunos()
+    {
+        // Esperar até que a fala possa aparecer
+        yield return new WaitWhile(() => GameManager.uiSendoUsada);
+
+        // Criar o diálogo que o professor vai falar após os feedbacks
+        Dialogo dialogo = new Dialogo();
+        dialogo.nodulos = new DialogoNodulo[1];
+        dialogo.nodulos[0] = new DialogoNodulo();
+        dialogo.nodulos[0].falas = new Fala[2];
+        // Adicionar fala da Lurdinha (em branco por enquanto, mas o código
+        // está pronto aqui caso queiram adicionar uma fala da Lurdinha)
+        dialogo.nodulos[0].falas[0] = new Fala
+        {
+            fala = "",
+            personagem = GameComenius.Dialogo.Personagens.Lurdinha,
+            emocao = GameComenius.Dialogo.Expressao.Sorrindo
+        };
+        // Adicionar fala do professor
+        var npcDialogoProfessor = professor.professor.GetComponent<NpcDialogo>();
+        dialogo.nodulos[0].falas[1] = new Fala
+        {
+            personagem = npcDialogoProfessor.dialogoPrincipal.nodulos[0].falas[1].personagem,
+            emocao = npcDialogoProfessor.dialogoPrincipal.nodulos[0].falas[1].emocao,
+            fala = "O feedback dos alunos foi bastante esclarecedor. Eu espero ver você em uma próxima oportunidade, até mais!"
+        };
+        SistemaDialogo.sistemaDialogo.ComecarDialogo(dialogo.Clone(), null);
     }
 
     private void EndClassFunction()
