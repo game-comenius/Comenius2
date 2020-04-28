@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class JanelaMissoes : MonoBehaviour
 {
@@ -26,6 +27,12 @@ public class JanelaMissoes : MonoBehaviour
         #if UNITY_EDITOR
         Ativa = true;
         #endif
+
+        // Para ajudar no desenvolvimento, este objeto sempre começará visível
+        // quando a equipe começa o jogo direto na missão 2 ou na missão 3
+        var currentScene = SceneManager.GetActiveScene().name;
+        if (currentScene.Equals("M2_Patio1_inicio") || currentScene.Equals("M3_Patio1_Chamado"))
+            Ativa = true;
     }
 
     // Esse método deve ser chamado quando você quiser cadastrar uma missão
