@@ -505,7 +505,6 @@ GameObject:
   - component: {fileID: 138194080}
   - component: {fileID: 138194086}
   - component: {fileID: 138194085}
-  - component: {fileID: 138194084}
   - component: {fileID: 138194083}
   - component: {fileID: 138194082}
   - component: {fileID: 138194081}
@@ -590,38 +589,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &138194084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 138194079}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogoObrigatorio: 0
-  esperaDialogoObrigatorio: 2
-  dialogoPrincipal:
-    nodulos:
-    - falas:
-      - personagem: 0
-        emocao: 0
-        fala: "Tem um mapa da regi\xE3o aqui!"
-      - personagem: 0
-        emocao: 0
-        fala: "Isso pode ser \xFAtil para a aula do professor Jean."
-      respostas: []
-  dialogosSecundarios:
-  - nodulos:
-    - falas:
-      - personagem: 0
-        emocao: 0
-        fala: "J\xE1 peguei o que queria daqui."
-      respostas: []
-  interactOffset:
-  - {x: 0.71000004, y: -1.37, z: 0}
 --- !u!60 &138194085
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5242,9 +5209,8 @@ Prefab:
     - target: {fileID: 114643760213871238, guid: 47f69a8aad4a74c49b603b76cb768fb5,
         type: 2}
       propertyPath: dialogoPrincipal.nodulos.Array.data[0].falas.Array.data[20].fala
-      value: "Realmente\u2026 Voc\xEA s\xF3 me d\xE1 boas ideias\u2026 Da\xED no \xFAltimo
-        momento podemos fazer uma atividade usando as m\xEDdias que os alunos mais
-        gostam\u2026"
+      value: "Isso mesmo\u2026 Da\xED no \xFAltimo momento podemos fazer uma atividade
+        usando as m\xEDdias que os alunos mais gostam\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 114643760213871238, guid: 47f69a8aad4a74c49b603b76cb768fb5,
         type: 2}
