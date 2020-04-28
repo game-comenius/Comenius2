@@ -8,16 +8,17 @@ public class CustomPlanejamento : MonoBehaviour {
 
     private Planejamento planejamento;
 
-
     void Start()
     {
         planejamento = FindObjectOfType<Planejamento>();
-        planejamento.Disponivel = true;
 
         ZerarMidiasPadraoDoProfessor();
 
         ConfigurarPlanejamento(CustomGameSettings.CurrentSettings);
+
+        BloquearPlanejamentoAteFalarComProfessor();
     }
+
 
     private void ConfigurarPlanejamento(CustomGameSettings s)
     {
@@ -26,6 +27,18 @@ public class CustomPlanejamento : MonoBehaviour {
         DefinirPoderDasMidias(s);
         DefinirProcedimentos(s.Procedimento1, s.Procedimento2, s.Procedimento3);
         DefinirAgrupamentos(s.Agrupamento1, s.Agrupamento2, s.Agrupamento3);
+    }
+
+    private void BloquearPlanejamentoAteFalarComProfessor()
+    {
+        planejamento.Disponivel = false;
+
+        var professor = GameObject.Find("JeanSalaProfessores");
+        var dialogos = professor.GetComponents<NpcDialogo>();
+        dialogos[dialogos.Length - 1].OnEndDialogueEvent += () =>
+        {
+            planejamento.Disponivel = true;
+        };
     }
 
     private void DefinirFotoDoProfessor(CharacterName professor)
