@@ -12,6 +12,9 @@ public class CustomConfigSalaProfessores : MonoBehaviour {
 
     private void Awake()
     {
+        // Definir que este é um jogo custom
+        GameManager.IsCustomGame = true;
+
         // A sala dos professores do custom é baseada/cópia da sala da missão 1
         nomeObjetoProfessor = "JeanSalaProfessores";
 

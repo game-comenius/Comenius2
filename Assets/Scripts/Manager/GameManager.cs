@@ -88,6 +88,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public static bool IsCustomGame { get; set; }
 
     private static GameManager _gameManager;
 

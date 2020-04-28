@@ -17,7 +17,7 @@ public class BotaoAbrirFichario : MonoBehaviour, IPointerClickHandler {
             visivel = value;
             image.enabled = visivel;
 
-            if (visivel && nuncaEsteveVisivelAntes)
+            if (!GameManager.IsCustomGame && visivel && nuncaEsteveVisivelAntes)
             {
                 MostrarAjudaFichario();
                 nuncaEsteveVisivelAntes = false;
