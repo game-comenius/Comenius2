@@ -69,6 +69,12 @@ public class ConselheiroComenius : MonoBehaviour
         #if UNITY_EDITOR
         Visivel = true;
         #endif
+
+        // Para ajudar no desenvolvimento, este objeto sempre começará visível
+        // quando a equipe começa o jogo direto na missão 2 ou na missão 3
+        var currentScene = SceneManager.GetActiveScene().name;
+        if (currentScene.Equals("M2_Patio1_inicio") || currentScene.Equals("M3_Patio1_Chamado"))
+            Visivel = true;
     }
 
     // Provisório, depois poderemos escolher entre apresentar a janela de
