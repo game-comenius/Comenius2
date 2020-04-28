@@ -56,6 +56,12 @@ public class CustomConfigSalaDeAula : MonoBehaviour
         var spriteSE = CharacterSpriteDatabase.SpriteSE(professorName);
         var spriteSW = CharacterSpriteDatabase.SpriteSW(professorName);
 
+        // Configurar sprites no componente TeacherScript
+        teacherScript.Sprites[0] = spriteSE;
+        teacherScript.Sprites[1] = spriteSW;
+        teacherScript.Sprites[2] = spriteNE;
+        teacherScript.Sprites[3] = spriteNW;
+
         // Inicialmente o professor vai olhar para o sudeste (SE)
         var mySP = teacherScript.GetComponent<SpriteRenderer>();
         mySP.sprite = spriteSE;
@@ -71,11 +77,6 @@ public class CustomConfigSalaDeAula : MonoBehaviour
                 break;
         }
 
-        // Configurar sprites no componente TeacherScript
-        //teacherScript.Sprites[0] = spriteSE;
-        //teacherScript.Sprites[1] = spriteSW;
-        //teacherScript.Sprites[2] = spriteNE;
-        //teacherScript.Sprites[3] = spriteNW;
 
         // Configurar sprites do professor caminhando
         // Por enquanto estamos usando os mesmos sprites dos professores parados
