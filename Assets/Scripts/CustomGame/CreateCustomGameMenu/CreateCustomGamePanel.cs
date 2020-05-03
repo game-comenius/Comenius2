@@ -22,6 +22,7 @@ public class CreateCustomGamePanel : MonoBehaviour
     }
 
     // Campos para não ter que procurar depois
+    public PaginaIntroducaoCustom paginaIntroducaoCustom;
     public PaginaEscolherProfessor paginaEscolherProfessor;
     public PaginaEscolherSalaDeAula paginaEscolherSalaDeAula;
     public PaginaInformacoesBasicas paginaInformacoesBasicas;
@@ -55,6 +56,7 @@ public class CreateCustomGamePanel : MonoBehaviour
     {
         // Colocar as páginas em uma lista para caminhar por elas depois
         listaDePaginas = new LinkedList<GameObject>();
+        listaDePaginas.AddLast(paginaIntroducaoCustom.gameObject);
         listaDePaginas.AddLast(paginaEscolherProfessor.gameObject);
         listaDePaginas.AddLast(paginaEscolherSalaDeAula.gameObject);
         listaDePaginas.AddLast(paginaInformacoesBasicas.gameObject);

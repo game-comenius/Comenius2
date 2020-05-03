@@ -11,7 +11,6 @@ public class PaginaEscolherProfessor : MonoBehaviour {
     {
         get { return professorSelecionado != null ? professorSelecionado.Value : CharacterName.Jean; }
     }
-    [SerializeField] private Image imageFotoProfessor;
     [SerializeField] private Image imageJean;
     [SerializeField] private Image imageAlice;
     [SerializeField] private Image imageVladmir;
@@ -41,7 +40,6 @@ public class PaginaEscolherProfessor : MonoBehaviour {
         professoresDisponiveis.AddLast(CharacterName.Celestino);
         professoresDisponiveis.AddLast(CharacterName.Diretor);
 
-        imageFotoProfessor.preserveAspect = true;
         imagesDosProfessores = new List<Image>()
         {
             imageJean, imageAlice, imageVladmir, imagePaulino,
@@ -55,7 +53,6 @@ public class PaginaEscolherProfessor : MonoBehaviour {
     public void SelecionarProfessor(LinkedListNode<CharacterName> professor)
     {
         professorSelecionado = professor;
-        imageFotoProfessor.sprite = CharacterSpriteDatabase.Foto(professor.Value);
         foreach (var image in imagesDosProfessores) image.enabled = false;
 
         balaoTexto1.text = "Olá jogador(a), muito prazer! Me chamo " + professor.Value.NomeCompleto() + " e irei auxiliar você durante a customização de uma missão do Game Comenius - Módulo 2,  onde eu serei o professor. Você é livre para escolher as características da aula, mas gostaria de falar um pouco de como eu penso educação para você.";
