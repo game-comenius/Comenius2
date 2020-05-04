@@ -6,16 +6,30 @@ public class AjudaMenuCustom : MonoBehaviour {
 
 	private bool jaFoiExibida;
 
-    private void OnEnable()
-    {
-        if (jaFoiExibida) return;
+    private Canvas canvas;
 
-        Exibir();
-        jaFoiExibida = true;
+    private void Awake()
+    {
+        canvas = GetComponent<Canvas>();
+        DefinirVisibilidadeDoCanvasAjuda(false);
     }
 
     public void Exibir()
     {
-        Debug.Log("exibir!");
+        if (jaFoiExibida) return;
+
+        DefinirVisibilidadeDoCanvasAjuda(true);
+    }
+
+    public void EsconderAjuda()
+    {
+        DefinirVisibilidadeDoCanvasAjuda(false);
+
+        jaFoiExibida = true;
+    }
+
+    private void DefinirVisibilidadeDoCanvasAjuda(bool visibilidade)
+    {
+        canvas.enabled = visibilidade;
     }
 }

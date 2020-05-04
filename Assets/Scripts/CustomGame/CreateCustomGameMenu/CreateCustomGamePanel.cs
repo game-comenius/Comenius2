@@ -104,6 +104,11 @@ public class CreateCustomGamePanel : MonoBehaviour
             botaoAvancarPagina.gameObject.SetActive(false);
         else
             botaoAvancarPagina.gameObject.SetActive(true);
+
+        // Se a página possuir uma ajuda, exibir esta ajuda
+        var ajudas = GetComponentsInChildren<AjudaMenuCustom>();
+        if (ajudas.Any())
+            foreach (var ajuda in ajudas) ajuda.Exibir();
     }
 
     // Métodos vinculados a botões

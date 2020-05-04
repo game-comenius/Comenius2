@@ -3,9 +3,4 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PaginaIntroducaoCustom : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
 }
