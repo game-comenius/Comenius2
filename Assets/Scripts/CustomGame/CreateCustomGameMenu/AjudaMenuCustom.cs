@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class AjudaMenuCustom : MonoBehaviour {
 
-	public bool JaFoiExibida { get; set; }
+    public bool JaFoiExibida;
 
     private Canvas canvas;
 
