@@ -1,23 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AjudaMenuCustom : MonoBehaviour {
 
-	private bool jaFoiExibida;
+	public bool JaFoiExibida { get; set; }
 
     private Canvas canvas;
+
+    private BotaoAjudaMenuCustom botaoAjuda;
 
     private void Awake()
     {
         canvas = GetComponent<Canvas>();
+
+        botaoAjuda = FindObjectOfType<BotaoAjudaMenuCustom>();
+
         DefinirVisibilidadeDoCanvasAjuda(false);
     }
 
     public void Exibir()
     {
-        if (jaFoiExibida) return;
-
         DefinirVisibilidadeDoCanvasAjuda(true);
     }
 
@@ -25,7 +29,7 @@ public class AjudaMenuCustom : MonoBehaviour {
     {
         DefinirVisibilidadeDoCanvasAjuda(false);
 
-        jaFoiExibida = true;
+        JaFoiExibida = true;
     }
 
     private void DefinirVisibilidadeDoCanvasAjuda(bool visibilidade)

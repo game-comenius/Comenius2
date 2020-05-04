@@ -52,6 +52,9 @@ public class CreateCustomGamePanel : MonoBehaviour
     [SerializeField]
     private TMP_InputField autorInputField;
 
+    [SerializeField]
+    private BotaoAjudaMenuCustom BotaoAjudaMenuCustom;
+
     private void Awake()
     {
         // Colocar as páginas em uma lista para caminhar por elas depois
@@ -105,10 +108,19 @@ public class CreateCustomGamePanel : MonoBehaviour
         else
             botaoAvancarPagina.gameObject.SetActive(true);
 
-        // Se a página possuir uma ajuda, exibir esta ajuda
-        var ajudas = GetComponentsInChildren<AjudaMenuCustom>();
-        if (ajudas.Any())
-            foreach (var ajuda in ajudas) ajuda.Exibir();
+        // Se a página possuir uma ajuda, exibir esta ajuda se ela ainda não
+        // foi exibida. Também cadastrar esta ajuda no botão de ajuda da página
+        // para que ela possa ser acessada sempre que o jogador quiser
+        var ajuda = GetComponentInChildren<AjudaMenuCustom>();
+        if (ajuda)
+        {
+            if (!ajuda.JaFoiExibida) ajuda.Exibir();
+            BotaoAjudaMenuCustom.CadastrarAjuda(ajuda);
+        }
+        else
+        {
+            BotaoAjudaMenuCustom.DescadastrarAjuda();
+        }
     }
 
     // Métodos vinculados a botões
