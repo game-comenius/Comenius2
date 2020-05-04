@@ -55,6 +55,14 @@ public class PaginaEscolherSalaDeAula : MonoBehaviour {
             imageDaSala.Value.enabled = imageDaSala.Key == salaAlvo.Value;
 
         textoBalao.text = salaAlvo.Value.NomeCompleto();
+
+        // Salas de português e de história ainda não estão funcionando, por
+        // isso, impedir que o jogador prossiga caso uma delas seja selecionada
+        // Este código deve ser atualizado no futuro quando eles estiverem ok
+        if (salaSelecionada.Value == SalaDeAula.SalaDeHistoria || salaSelecionada.Value == SalaDeAula.SalaDePortugues)
+            GetComponentInParent<CreateCustomGamePanel>().botaoAvancarPagina.gameObject.SetActive(false);
+        else
+            GetComponentInParent<CreateCustomGamePanel>().botaoAvancarPagina.gameObject.SetActive(true);
     }
 
     public void SelecionarSalaSeguinte()

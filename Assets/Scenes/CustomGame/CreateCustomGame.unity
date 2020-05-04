@@ -4765,11 +4765,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -5568,7 +5568,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -320.1, y: -61}
-  m_SizeDelta: {x: 1054.9, y: 597.6}
+  m_SizeDelta: {x: 1050, y: 595}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &388254039
 MonoBehaviour:
@@ -5590,7 +5590,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7e59d9ac50f86fc4bbf28acc6b963b87, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 286759d5b261e4a81abf4a4cae269320, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -6736,7 +6736,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -328.1, y: -61}
-  m_SizeDelta: {x: 1054.9, y: 597.6}
+  m_SizeDelta: {x: 1050, y: 596}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &537866701
 MonoBehaviour:
@@ -6758,7 +6758,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 502943d4bebd8c640a5bb893dd237281, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a86ff5adc44e42bb85d4c0e999829f2, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -7128,7 +7128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &577780775
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7147,6 +7147,7 @@ RectTransform:
   - {fileID: 1606236788}
   - {fileID: 1268091}
   - {fileID: 1211086158}
+  - {fileID: 1638428560}
   m_Father: {fileID: 604211954}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7425,16 +7426,6 @@ Prefab:
     - target: {fileID: 1979391294605174, guid: 96ee49a8399664829a846f4547880d37, type: 2}
       propertyPath: m_Name
       value: AjudaPaginaProfessor
-      objectReference: {fileID: 0}
-    - target: {fileID: 114927063240530614, guid: 96ee49a8399664829a846f4547880d37,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114927063240530614, guid: 96ee49a8399664829a846f4547880d37,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96ee49a8399664829a846f4547880d37, type: 2}
@@ -9335,7 +9326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &718419551
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10385,7 +10376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &870841326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15998,7 +15989,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 16, y: -44.57538}
+  m_AnchoredPosition: {x: 16, y: -44.575317}
   m_SizeDelta: {x: -52.399902, y: -89.15015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1307322629
@@ -19852,6 +19843,64 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1608354211}
   m_CullTransparentMesh: 0
+--- !u!1001 &1638428559
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 577780775}
+    m_Modifications:
+    - target: {fileID: 114927063240530614, guid: 96ee49a8399664829a846f4547880d37,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114927063240530614, guid: 96ee49a8399664829a846f4547880d37,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224570821145756360, guid: 96ee49a8399664829a846f4547880d37,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1979391294605174, guid: 96ee49a8399664829a846f4547880d37, type: 2}
+      propertyPath: m_Name
+      value: AjudaPaginaLocal
+      objectReference: {fileID: 0}
+    - target: {fileID: 114927063240530614, guid: 96ee49a8399664829a846f4547880d37,
+        type: 2}
+      propertyPath: m_text
+      value: "Aqui voc\xEA dever\xE1 escolher o local onde seu professor escolhido
+        dar\xE1 sua aula. Depois de escolher, \xE9 s\xF3 clicar na seta no canto direito
+        e ir para o pr\xF3ximo passo.\n\nImportante: Caso queira voltar \xE0 tela
+        anterior para corrigir alguma coisa, voc\xEA pode clicar na seta no canto
+        esquerdo."
+      objectReference: {fileID: 0}
+    - target: {fileID: 114927063240530614, guid: 96ee49a8399664829a846f4547880d37,
+        type: 2}
+      propertyPath: m_textInfo.characterCount
+      value: 281
+      objectReference: {fileID: 0}
+    - target: {fileID: 114927063240530614, guid: 96ee49a8399664829a846f4547880d37,
+        type: 2}
+      propertyPath: m_textInfo.spaceCount
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 114927063240530614, guid: 96ee49a8399664829a846f4547880d37,
+        type: 2}
+      propertyPath: m_textInfo.wordCount
+      value: 49
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 96ee49a8399664829a846f4547880d37, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!224 &1638428560 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 224570821145756360, guid: 96ee49a8399664829a846f4547880d37,
+    type: 2}
+  m_PrefabInternal: {fileID: 1638428559}
 --- !u!1 &1644169842
 GameObject:
   m_ObjectHideFlags: 0
@@ -22480,11 +22529,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 1
+  m_isInputParsingRequired: 0
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
