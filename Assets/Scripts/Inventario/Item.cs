@@ -155,7 +155,7 @@ public class Item
                 FullDescription = "É uma fitas em  formato VHS (Vídeo Home System) contendo um documentário curta metragem. Seu uso pedagógico é relacionado a apresentação de conteúdos pelo meio visual, contato com outras culturas sociais e linguísticas. Utiliza de uma linguagem audiovisual, que tende a ser mais interessante para os alunos.";
 
                 //DescriptionsInMission1.StandardDescription = "O VHS é a sigla para Video Home System, que consiste em um sistema de captação e reprodução de vídeo e áudio.";
-                DescriptionsInMission1.StandardDescription = "Uma TV com VHS! Os alunos adoram assistir alguma coisa na aula!";
+                DescriptionsInMission1.StandardDescription = "Um VHS! Os alunos adoram assistir alguma coisa na aula!";
 
                 DescriptionsInMission1.FirstMomentDescription = "Sem uma forma de reproduzi-la essa mídia não vai ser muito útil.";
                 DescriptionsInMission1.SecondMomentDescription = DescriptionsInMission1.FirstMomentDescription;

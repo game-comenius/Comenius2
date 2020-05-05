@@ -43,6 +43,8 @@ public class PaginaEscolherMidias : MonoBehaviour {
             ItemName.CameraPolaroid,
             ItemName.TVComVHS,
             ItemName.LivroDidatico,
+            ItemName.LivroIlustrado,
+            ItemName.VHS,
             ItemName.QuadroNegro,
             ItemName.Caderno,
             ItemName.Cartazes,

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
         ItemName.Gravador,
         ItemName.CameraPolaroid,
         ItemName.TVComVHS,
+        ItemName.VHS,
         ItemName.LivroDidatico,
         ItemName.LivroIlustrado,
         ItemName.QuadroNegro,

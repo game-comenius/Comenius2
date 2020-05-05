@@ -97,7 +97,7 @@ public class LinhaEscolherFeedback : MonoBehaviour {
     private void AtualizarPlaceholderFeedback(Poder novoPoder)
     {
         Poder = novoPoder;
-        string f = Midia.ToString() + " é uma mídia ";
+        string f = (new Item(Midia).FriendlyName) + " é uma mídia ";
         switch (Poder)
         {
             case Poder.Fraca: f += "fraca"; break;
