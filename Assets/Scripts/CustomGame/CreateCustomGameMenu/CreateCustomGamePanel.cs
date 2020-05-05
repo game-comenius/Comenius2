@@ -137,12 +137,22 @@ public class CreateCustomGamePanel : MonoBehaviour
     public void PressButtonThatStartsCustomGame()
     {
         // Criar objeto para escrever no disco
+        CustomGameSettings settings = CriarCustomGameSettings();
+
+        // Mais tarde, salvar sim no servidor, por enquanto jogar diretamente
+        // o jogo recém criado
+        //settings.SaveToDisk();
+        CustomGameSettings.CurrentSettings = settings;
+    }
+
+    public CustomGameSettings CriarCustomGameSettings()
+    {
         CustomGameSettings settings = new CustomGameSettings();
         settings.Professor = paginaEscolherProfessor.ProfessorSelecionado;
         settings.Sala = paginaEscolherSalaDeAula.SalaSelecionada;
 
-        settings.NivelDeEnsino = paginaInformacoesBasicas.NivelDeEnsinoSelecionado.valor;
-        settings.AreaDeConhecimento = paginaInformacoesBasicas.AreaDeConhecimentoSelecionada.valor;
+        settings.ValorNivelDeEnsino = paginaInformacoesBasicas.NivelDeEnsinoSelecionado.valor;
+        settings.ValorAreaDeConhecimento = paginaInformacoesBasicas.AreaDeConhecimentoSelecionada.valor;
 
         settings.IntroducaoAula = introducaoAula.text;
         settings.DescricaoMomento1 = descricaoMomento1.text;
@@ -164,25 +174,6 @@ public class CreateCustomGamePanel : MonoBehaviour
         settings.TituloDaAula = tituloDaAula.text;
         settings.Autor = autorInputField.text;
 
-        CustomGameSettings.CurrentSettings = settings;
-
-        //Debug.Log("Salvando jogo...\n" +
-        //    "Professor = " + settings.Professor.NomeCompleto() +
-        //    "\nSala = " + settings.Sala.NomeCompleto() +
-        //    "\nNível De Ensino = " + NivelDeEnsino.Get(settings.NivelDeEnsino) +
-        //    "\nÁrea de Conhecimento = " + AreaDeConhecimento.Get(settings.AreaDeConhecimento) +
-        //    "\nIntrodução da Aula = " + settings.IntroducaoAula +
-        //    "\nDescrição do Momento 1 = " + settings.DescricaoMomento1 +
-        //    "\nDescrição do Momento 2 = " + settings.DescricaoMomento2 +
-        //    "\nDescrição do Momento 3 = " + settings.DescricaoMomento3 +
-        //    "\nProcedimento do Momento 1 = " + settings.Procedimento1 +
-        //    "\nProcedimento do Momento 2 = " + settings.Procedimento2 +
-        //    "\nProcedimento do Momento 3 = " + settings.Procedimento3 +
-        //    "\nTitulo da Aula = " + settings.TituloDaAula +
-        //    "\nAutor = " + settings.Autor);
-
-        // Mais tarde, salvar sim no servidor, por enquanto jogar diretamente
-        // o jogo recém criado
-        //settings.SaveToDisk();
+        return settings;
     }
 }

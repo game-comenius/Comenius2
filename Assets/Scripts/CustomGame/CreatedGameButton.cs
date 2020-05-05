@@ -34,11 +34,11 @@ public class CreatedGameButton : MonoBehaviour, IPointerClickHandler
         autor.text = "Autor(a): " + settings.Autor;
 
         var nivelDeEnsinoDesc = "Nível de Ensino: ";
-        nivelDeEnsinoDesc += NivelDeEnsino.Get(settings.NivelDeEnsino).nome;
+        nivelDeEnsinoDesc += NivelDeEnsino.Get(settings.ValorNivelDeEnsino).nome;
         nivelDeEnsino.text = nivelDeEnsinoDesc;
 
         var areaDesc = "Área de Conhecimento: ";
-        areaDesc += AreaDeConhecimento.Get(settings.AreaDeConhecimento).nome;
+        areaDesc += AreaDeConhecimento.Get(settings.ValorAreaDeConhecimento).nome;
         areaDeConhecimento.text = areaDesc;
 
         professorImage.sprite = CharacterSpriteDatabase.SpriteSW(settings.Professor);

@@ -28,6 +28,8 @@ public class CustomGameSettings {
                 // igual a null e precisaremos de um objeto de testes
                 // Este será o nosso objeto com campos pré-determinados
                 var cgs = new CustomGameSettings();
+                cgs.TituloDaAula = "Aula Custom Teste";
+                cgs.Autor = "Grupo Comenius";
                 cgs.Professor = CharacterName.Montanari;
                 cgs.Sala = SalaDeAula.SalaDeCiencias;
                 cgs.IntroducaoAula = "Introdução do custom";
@@ -85,8 +87,8 @@ public class CustomGameSettings {
     // Dados da tela customizar que serão salvos no disco
     public CharacterName Professor;
     public SalaDeAula Sala;
-    public int NivelDeEnsino;
-    public int AreaDeConhecimento;
+    public int ValorNivelDeEnsino;
+    public int ValorAreaDeConhecimento;
     public string IntroducaoAula;
     public string DescricaoMomento1, DescricaoMomento2, DescricaoMomento3;
     public Procedimento Procedimento1, Procedimento2, Procedimento3;
@@ -96,7 +98,6 @@ public class CustomGameSettings {
     public CreateCustomGamePanel.MidiaPoderFeedback[] ArrayMidiaPoderFeedbackMomento3;
     public string TituloDaAula;
     public string Autor;
-
 
     // Deve ser usada sempre como uma Coroutine porque faz uma requisição web e
     // não seria legal travar o jogo enquanto esperamos por essa requisição
@@ -199,5 +200,54 @@ public class CustomGameSettings {
             disponiveis[i] = a[i].Midia;
         }
         return midiasDisponiveis = disponiveis;
+    }
+
+    public string ToHTMLString()
+    {
+        string s = "";
+
+        s += "<h2>" + TituloDaAula + "</h2>";
+        s += "Autor: " + Autor;
+        s += "</br></br>";
+
+        s += "Nível de ensino: " + NivelDeEnsino.Get(ValorNivelDeEnsino).nome;
+        s += "</br>";
+        s += "Área de conhecimento: " + AreaDeConhecimento.Get(ValorAreaDeConhecimento).nome;
+        s += "</br></br>";
+
+        s += "Professor(a) selecionado(a): " + Professor.NomeCompleto();
+        s += "</br>";
+        s += "Sala selecionada: " + Sala.NomeCompleto();
+        s += "</br>";
+
+        s += "<h3>== Introdução da Aula ==</h3>";
+        s += IntroducaoAula;
+        s += "</br>";
+
+        s += "<h3>== Momento 1 da Aula ==</h3>";
+        s += DescricaoMomento1;
+        s += "</br></br>";
+        s += "Procedimento: " + Procedimento1.Nome() + "   " + "Agrupamento: " + Agrupamento1.Nome();
+        s += "</br>";
+
+        s += "<h3>== Momento 2 da Aula ==</h3>";
+        s += DescricaoMomento2;
+        s += "</br></br>";
+        s += "Procedimento: " + Procedimento2.Nome() + "   " + "Agrupamento: " + Agrupamento2.Nome();
+        s += "</br>";
+
+        s += "<h3>== Momento 3 da Aula ==</h3>";
+        s += DescricaoMomento3;
+        s += "</br></br>";
+        s += "Procedimento: " + Procedimento3.Nome() + "   " + "Agrupamento: " + Agrupamento3.Nome();
+        s += "</br>";
+
+        s += "<h3>== Mídias disponíveis ==</h3>";
+        s += "<ul>";
+        foreach (var midia in MidiasDisponiveis())
+            s += "<li>" + (new Item(midia).FriendlyName) + "</li>";
+        s += "</ul>";
+
+        return s;
     }
 }
