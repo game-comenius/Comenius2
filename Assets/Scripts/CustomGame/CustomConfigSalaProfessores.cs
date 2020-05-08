@@ -106,6 +106,8 @@ public class CustomConfigSalaProfessores : MonoBehaviour {
         };
         dialogoProfessor.OnEndDialogueEvent += funcaoAdicionarMissaoFazerPlanejamento;
 
+        // Remover missão fazer planejamento da janela de missões assim que o
+        // jogador confirmar o planejamento
         var plan = FindObjectOfType<Planejamento>();
         Action funcaoRemoverMissaoFazerPlanejamento = null;
         funcaoRemoverMissaoFazerPlanejamento = () =>
@@ -114,6 +116,21 @@ public class CustomConfigSalaProfessores : MonoBehaviour {
             plan.QuandoConfirmarPlanejamentoEvent -= funcaoRemoverMissaoFazerPlanejamento;
         };
         plan.QuandoConfirmarPlanejamentoEvent += funcaoRemoverMissaoFazerPlanejamento;
+
+        // Fazer prancheta do planejamento brilhar após falar com o professor
+        Action funcaoBrilharPlanejamento = null;
+        funcaoBrilharPlanejamento = () =>
+        {
+            plan.GetComponentInChildren<ParticleSystem>().Play();
+            dialogoProfessor.OnEndDialogueEvent -= funcaoBrilharPlanejamento;
+        };
+        dialogoProfessor.OnEndDialogueEvent += funcaoBrilharPlanejamento;
+
+        // Fazer prancheta parar de brilhar após planejamento
+        plan.QuandoConfirmarPlanejamentoEvent += () =>
+        {
+            plan.GetComponentInChildren<ParticleSystemRenderer>().enabled = false;
+        };
 
         // Adicionar quest ir para a aula
         questIrParaAula = new QuestClass(3, "Ir para a aula", new DoQuest(), new int[] { }, "Saia da sala dos professores", "Vá para a sala de aula");
