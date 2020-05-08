@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PaginaResumoSalvar : MonoBehaviour {
 
+    [Header("Símbolos das Moedas")]
     [SerializeField] private GameObject MoedasDoJean;
     [SerializeField] private GameObject MoedasDoVladmir;
     [SerializeField] private GameObject MoedasDoPaulino;
@@ -13,6 +16,13 @@ public class PaginaResumoSalvar : MonoBehaviour {
     [SerializeField] private GameObject MoedasDaMontanari;
     [SerializeField] private GameObject MoedasDoDiretor;
     private List<GameObject> setsDeMoedasDosProfessores;
+
+    [Header("Input Fields")]
+    [SerializeField] TMP_InputField tituloDaAulaInputField;
+    [SerializeField] TMP_InputField AutorInputField;
+
+    [Header("Botões")]
+    [SerializeField] Button botaoSalvar;
 
     private void Awake()
     {
@@ -27,6 +37,32 @@ public class PaginaResumoSalvar : MonoBehaviour {
             MoedasDaMontanari,
             MoedasDoDiretor
         };
+
+        // Botão Salvar começa desabilitado
+        botaoSalvar.interactable = false;
+    }
+
+    private void Start()
+    {
+        // Quando título da aula for alterado, liberar botão de salvar se tanto
+        // o título da aula quanto o nome do autor estiverem ok
+        tituloDaAulaInputField.onValueChanged.AddListener((s) =>
+        {
+            if (!string.IsNullOrEmpty(s) && !string.IsNullOrEmpty(AutorInputField.text))
+                botaoSalvar.interactable = true;
+            else
+                botaoSalvar.interactable = false;
+        });
+
+        // Quando nome do autor for alterado, liberar botão de salvar se tanto
+        // o título da aula quanto o nome do autor estiverem ok
+        AutorInputField.onValueChanged.AddListener((s) =>
+        {
+            if (!string.IsNullOrEmpty(s) && !string.IsNullOrEmpty(tituloDaAulaInputField.text))
+                botaoSalvar.interactable = true;
+            else
+                botaoSalvar.interactable = false;
+        });
     }
 
     private void OnEnable()
