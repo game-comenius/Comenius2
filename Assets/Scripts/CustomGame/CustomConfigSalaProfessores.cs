@@ -141,5 +141,11 @@ public class CustomConfigSalaProfessores : MonoBehaviour {
             plan.QuandoConfirmarPlanejamentoEvent -= funcaoAdicionarMissaoIrParaAula;
         };
         plan.QuandoConfirmarPlanejamentoEvent += funcaoAdicionarMissaoIrParaAula;
+
+        // Remover mapa do fichário da Lurdinha
+        var folhaMapa = GameObject.Find("FolhaMapa");
+        if (folhaMapa) folhaMapa.SetActive(false);
+        var botaoFolhaMapa = GameObject.Find("BotaoAbaFolhaMapa");
+        if (botaoFolhaMapa) botaoFolhaMapa.SetActive(false);
     }
 }
