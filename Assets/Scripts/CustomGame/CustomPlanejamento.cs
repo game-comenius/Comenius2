@@ -23,7 +23,7 @@ public class CustomPlanejamento : MonoBehaviour {
     private void ConfigurarPlanejamento(CustomGameSettings s)
     {
         DefinirFotoDoProfessor(s.Professor);
-        DefinirDescricaoDosMomentos();
+        DefinirDescricaoDosMomentos(s);
         DefinirPoderDasMidias(s);
         DefinirProcedimentos(s.Procedimento1, s.Procedimento2, s.Procedimento3);
         DefinirAgrupamentos(s.Agrupamento1, s.Agrupamento2, s.Agrupamento3);
@@ -51,11 +51,11 @@ public class CustomPlanejamento : MonoBehaviour {
         imageRetrato.preserveAspect = true;
     }
 
-    private void DefinirDescricaoDosMomentos()
+    private void DefinirDescricaoDosMomentos(CustomGameSettings s)
     {
-        planejamento.descricaoMomento1 = "Escolha uma das mídias para o momento 1";
-        planejamento.descricaoMomento2 = "Escolha uma das mídias para o momento 2";
-        planejamento.descricaoMomento3 = "Escolha uma das mídias para o momento 3";
+        planejamento.descricaoMomento1 = s.DescricaoMomento1;
+        planejamento.descricaoMomento2 = s.DescricaoMomento2;
+        planejamento.descricaoMomento3 = s.DescricaoMomento3;
     }
 
     private void DefinirPoderDasMidias(CustomGameSettings s)
