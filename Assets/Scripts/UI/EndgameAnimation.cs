@@ -146,12 +146,12 @@ public class EndgameAnimation : MonoBehaviour {
         {
             case true:
                 animatorNextPage = EstranhoTrue;
-                gameObject.transform.Find("EstranhoFalse").gameObject.SetActive(false);
+                //gameObject.transform.Find("EstranhoFalse").gameObject.SetActive(false);
                 PageTransitionAnimation();
                 break;
             default:
                 //animatorNextPage = EstranhoFalse;
-                //gameObject.transform.Find("EstranhoTrue").gameObject.SetActive(false);
+                gameObject.transform.Find("EstranhoTrue").gameObject.SetActive(false);
                 animatorNextPage = EstranhoTrue;
                 PageProblemas();
                 break;
