@@ -39,9 +39,10 @@ public class LinhaEscolherFeedback : MonoBehaviour {
     }
     private Poder[] poderes;
 
+    private string stringFeedbackPadrao;
     public string Feedback
     {
-        get { return placeholder.enabled ? placeholder.text : feedback.text; }
+        get { return placeholder.enabled ? stringFeedbackPadrao : feedback.text; }
     }
 
     [SerializeField] private Image imagePoderMidia;
@@ -107,5 +108,8 @@ public class LinhaEscolherFeedback : MonoBehaviour {
         }
         f += " para este momento da aula!";
         placeholder.SetText(f);
+
+        // Caso o jogador não escreva nada, esta string f será o feedback
+        stringFeedbackPadrao = f;
     }
 }
