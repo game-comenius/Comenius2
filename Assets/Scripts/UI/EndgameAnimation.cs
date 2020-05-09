@@ -166,7 +166,7 @@ public class EndgameAnimation : MonoBehaviour {
         {
             animatorNextPage = Problemas61a100;
             gameObject.transform.Find("Problemas0a30").gameObject.SetActive(false);
-            gameObject.transform.Find("Problemas61a60").gameObject.SetActive(false);
+            gameObject.transform.Find("Problemas31a60").gameObject.SetActive(false);
         } else if (Player.Instance.porcentagemproblemas > 30)
         {
             animatorNextPage = Problemas31a60;
