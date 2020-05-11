@@ -188,246 +188,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &27830630
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1838146933834438, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 27830636}
-  - component: {fileID: 27830635}
-  - component: {fileID: 27830634}
-  - component: {fileID: 27830633}
-  - component: {fileID: 27830632}
-  - component: {fileID: 27830631}
-  m_Layer: 0
-  m_Name: Drica(NPC)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!60 &27830631
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 27830630}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.67832166, y: 1.5734266}
-    newSize: {x: 6.02, y: 14.44}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.3216783, y: -0.6993007}
-      - {x: 0.21678321, y: -0.5944056}
-      - {x: 0.1958042, y: -0.32867134}
-      - {x: 0.25874126, y: -0.27272728}
-      - {x: 0.25174826, y: -0.16783217}
-      - {x: 0.23776224, y: 0.16083916}
-      - {x: 0.23076923, y: 0.25874126}
-      - {x: 0.22377622, y: 0.28671327}
-      - {x: 0.26573426, y: 0.46853146}
-      - {x: 0.27272728, y: 0.8041958}
-      - {x: 0.24475524, y: 0.86713284}
-      - {x: 0.12587413, y: 0.91608393}
-      - {x: 0.07692307, y: 0.9230769}
-      - {x: -0.027972028, y: 0.9230769}
-      - {x: -0.09090909, y: 0.91608393}
-      - {x: -0.17482518, y: 0.8951049}
-      - {x: -0.28671327, y: 0.8391608}
-      - {x: -0.32867134, y: 0.72727275}
-      - {x: -0.32867134, y: 0.62237763}
-      - {x: -0.28671327, y: 0.45454544}
-      - {x: -0.15384614, y: 0.35664335}
-      - {x: -0.21678321, y: 0.3216783}
-      - {x: -0.28671327, y: 0.25174826}
-      - {x: -0.3076923, y: 0.16783217}
-      - {x: -0.32867134, y: 0.09090909}
-      - {x: -0.3216783, y: -0.07692307}
-      - {x: -0.27972028, y: -0.13286713}
-      - {x: -0.27972028, y: -0.25874126}
-      - {x: -0.23776224, y: -0.2937063}
-      - {x: -0.24475524, y: -0.55944055}
-      - {x: -0.27272728, y: -0.68531466}
-      - {x: -0.26573426, y: -0.8041958}
-      - {x: -0.18881118, y: -0.8391608}
-      - {x: -0.07692307, y: -0.8811189}
-      - {x: 0.04895105, y: -0.8811189}
-      - {x: 0.09090909, y: -0.87412584}
-      - {x: 0.18881118, y: -0.8181818}
-      - {x: 0.25174826, y: -0.8181818}
-      - {x: 0.3216783, y: -0.7622377}
---- !u!114 &27830632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 27830630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _index: 30700
-  questComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 27830631}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questAvailable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questNotAvailable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &27830633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 27830630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &27830634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 27830630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogoObrigatorio: 0
-  esperaDialogoObrigatorio: 0
-  dialogoPrincipal:
-    nodulos:
-    - falas:
-      - personagem: 0
-        emocao: 2
-        fala: "Oi Drica, que bom que voc\xEA est\xE1 aqui! Tenho uma perguntinha pra
-          te fazer, \xE9 pra usar no planejamento da aula do Paulino, tudo bem pra
-          voc\xEA?"
-      - personagem: 1
-        emocao: 0
-        fala: Oi professora. Eu adoraria te ajudar com isso!
-      - personagem: 0
-        emocao: 4
-        fala: "Como voc\xEA acha que poderia ser a aula para que ficasse mais legal
-          para voc\xEA?"
-      - personagem: 1
-        emocao: 0
-        fala: "Ent\xE3o, boa pergunta. Acho que eu gosto mais de atividades."
-      - personagem: 0
-        emocao: 0
-        fala: "Certo! Mas com que m\xEDdias voc\xEA gosta mais de aprender em atividades? "
-      - personagem: 1
-        emocao: 0
-        fala: "Boa pergunta\u2026 Se eu n\xE3o puder desenhar e pintar, eu acho que
-          eu gostaria de aprender com jogos. Principalmente se eles forem coloridos!"
-      - personagem: 0
-        emocao: 4
-        fala: "Est\xE1 bem! Obrigada pela ajuda! "
-      respostas: []
-  dialogosSecundarios: []
-  interactOffset:
-  - {x: -0.3720193, y: -0.81068593, z: 0}
---- !u!212 &27830635
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 212297905960005212, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 27830630}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e11efaeae2d448044be56f8592debda1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 6.02, y: 14.44}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &27830636
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4378633177701612, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 27830630}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.39, y: 1.56, z: 0.93}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1051444509}
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &74379610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,6 +823,145 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &376803588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1838146933834438, guid: f1268a7483cc78a4a8b18eb7bec17529,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 376803591}
+  - component: {fileID: 376803590}
+  - component: {fileID: 376803589}
+  m_Layer: 0
+  m_Name: Leitura(NPC)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!60 &376803589
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 376803588}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.6503497, y: 1.5734266}
+    newSize: {x: 6.02, y: 14.44}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.22027972, y: -0.17832167}
+      - {x: 0.26223776, y: -0.12237762}
+      - {x: 0.27622378, y: 0.024475524}
+      - {x: 0.26223776, y: 0.12237762}
+      - {x: 0.17132866, y: 0.22027972}
+      - {x: 0.24825175, y: 0.31118882}
+      - {x: 0.2972028, y: 0.47202796}
+      - {x: 0.2972028, y: 0.548951}
+      - {x: 0.26923075, y: 0.6048951}
+      - {x: 0.15734266, y: 0.7237762}
+      - {x: 0.045454547, y: 0.7237762}
+      - {x: -0.031468533, y: 0.7167832}
+      - {x: -0.2062937, y: 0.6888112}
+      - {x: -0.26923075, y: 0.5}
+      - {x: -0.26923075, y: 0.47902098}
+      - {x: -0.26223776, y: 0.45804197}
+      - {x: -0.2062937, y: 0.3881119}
+      - {x: -0.15034965, y: 0.26923075}
+      - {x: -0.115384616, y: 0.22027972}
+      - {x: -0.17832167, y: 0.09440559}
+      - {x: -0.16433567, y: -0.073426574}
+      - {x: -0.12237762, y: -0.17132866}
+      - {x: -0.12937063, y: -0.46503496}
+      - {x: -0.17832167, y: -0.52797204}
+      - {x: -0.17132866, y: -0.59090906}
+      - {x: -0.12937063, y: -0.6258741}
+      - {x: -0.05944056, y: -0.6188811}
+      - {x: 0.0034965035, y: -0.5769231}
+      - {x: 0.05244755, y: -0.520979}
+      - {x: -0.01048951, y: -0.5979021}
+      - {x: -0.031468533, y: -0.6258741}
+      - {x: 0.01048951, y: -0.6818182}
+      - {x: 0.108391605, y: -0.6818182}
+      - {x: 0.22027972, y: -0.6188811}
+      - {x: 0.22727272, y: -0.43706292}
+      - {x: 0.2062937, y: -0.18531469}
+--- !u!212 &376803590
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 212297905960005212, guid: f1268a7483cc78a4a8b18eb7bec17529,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 376803588}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: dd29055a36866a64584f2e85050e50cd, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.02, y: 14.44}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &376803591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4378633177701612, guid: f1268a7483cc78a4a8b18eb7bec17529,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 376803588}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.98, y: -0.85, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &419595736
 GameObject:
@@ -2149,73 +2048,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &737350781
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 737350782}
-  - component: {fileID: 737350783}
-  m_Layer: 0
-  m_Name: Controle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &737350782
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 737350781}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1482289911}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &737350783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 737350781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _index: 30501
-  questComplete:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questAvailable:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 737350783}
-        m_MethodName: TakeStep
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questNotAvailable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &741894824
 GameObject:
   m_ObjectHideFlags: 0
@@ -2291,73 +2123,154 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &780575323
+--- !u!1 &825679455
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1838146933834438, guid: f1268a7483cc78a4a8b18eb7bec17529,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 780575324}
-  - component: {fileID: 780575325}
+  - component: {fileID: 825679458}
+  - component: {fileID: 825679457}
+  - component: {fileID: 825679456}
   m_Layer: 0
-  m_Name: Controle
+  m_Name: "Mad\xE1(NPC)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &780575324
+--- !u!60 &825679456
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 825679455}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.856, y: 1.8}
+    newSize: {x: 6.02, y: 14.44}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.18, y: -0.564}
+      - {x: 0.18800001, y: -0.44400004}
+      - {x: 0.26000002, y: -0.34}
+      - {x: 0.22800002, y: -0.156}
+      - {x: 0.268, y: -0.004}
+      - {x: 0.252, y: 0.18}
+      - {x: 0.22000001, y: 0.22800002}
+      - {x: 0.39600003, y: 0.46800002}
+      - {x: 0.356, y: 0.52400005}
+      - {x: 0.404, y: 0.588}
+      - {x: 0.404, y: 0.64400005}
+      - {x: 0.39600003, y: 0.66}
+      - {x: 0.30800003, y: 0.69200003}
+      - {x: 0.324, y: 0.804}
+      - {x: 0.30800003, y: 0.82800007}
+      - {x: 0.18800001, y: 0.82000005}
+      - {x: 0.1, y: 0.88400006}
+      - {x: 0.052, y: 0.892}
+      - {x: -0.076000005, y: 0.892}
+      - {x: -0.132, y: 0.85200006}
+      - {x: -0.21200001, y: 0.78800005}
+      - {x: -0.268, y: 0.72400004}
+      - {x: -0.316, y: 0.74}
+      - {x: -0.356, y: 0.72400004}
+      - {x: -0.34, y: 0.67600006}
+      - {x: -0.36400002, y: 0.564}
+      - {x: -0.404, y: 0.51600003}
+      - {x: -0.404, y: 0.492}
+      - {x: -0.324, y: 0.46}
+      - {x: -0.34, y: 0.372}
+      - {x: -0.24400002, y: 0.284}
+      - {x: -0.20400001, y: 0.27600002}
+      - {x: -0.268, y: 0.052}
+      - {x: -0.23600002, y: -0.060000002}
+      - {x: -0.23600002, y: -0.18800001}
+      - {x: -0.21200001, y: -0.372}
+      - {x: -0.21200001, y: -0.532}
+      - {x: -0.22800002, y: -0.63600004}
+      - {x: -0.21200001, y: -0.75600004}
+      - {x: -0.156, y: -0.79600006}
+      - {x: -0.004, y: -0.85200006}
+      - {x: 0.1, y: -0.85200006}
+      - {x: 0.21200001, y: -0.82000005}
+      - {x: 0.3, y: -0.75600004}
+      - {x: 0.316, y: -0.66}
+--- !u!212 &825679457
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 212297905960005212, guid: f1268a7483cc78a4a8b18eb7bec17529,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 825679455}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: d9ad558e7bf2e8d4a8dcb82c869bceb3, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.02, y: 14.44}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &825679458
 Transform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4378633177701612, guid: f1268a7483cc78a4a8b18eb7bec17529,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 780575323}
+  m_GameObject: {fileID: 825679455}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.62, y: -1.48, z: 0.93}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
-  m_Father: {fileID: 2098938061}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &780575325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 780575323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _index: 30101
-  questComplete:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questAvailable:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 780575325}
-        m_MethodName: TakeStep
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questNotAvailable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &851754243
 Prefab:
   m_ObjectHideFlags: 0
@@ -2609,372 +2522,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1051444508
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1051444509}
-  - component: {fileID: 1051444510}
-  m_Layer: 0
-  m_Name: Controle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1051444509
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1051444508}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 27830636}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1051444510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1051444508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _index: 30701
-  questComplete:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questAvailable:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1051444510}
-        m_MethodName: TakeStep
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questNotAvailable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!1 &1067025167
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1838146933834438, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1067025173}
-  - component: {fileID: 1067025172}
-  - component: {fileID: 1067025171}
-  - component: {fileID: 1067025170}
-  - component: {fileID: 1067025169}
-  - component: {fileID: 1067025168}
-  m_Layer: 0
-  m_Name: Ornitologa(NPC)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!60 &1067025168
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1067025167}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.11, y: 2.25}
-    newSize: {x: 6.02, y: 14.44}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.3216783, y: -0.6993007}
-      - {x: 0.21678321, y: -0.5944056}
-      - {x: 0.1958042, y: -0.32867134}
-      - {x: 0.25874126, y: -0.27272728}
-      - {x: 0.25174826, y: -0.16783217}
-      - {x: 0.23776224, y: 0.16083916}
-      - {x: 0.23076923, y: 0.25874126}
-      - {x: 0.22377622, y: 0.28671327}
-      - {x: 0.26573426, y: 0.46853146}
-      - {x: 0.27272728, y: 0.8041958}
-      - {x: 0.24475524, y: 0.86713284}
-      - {x: 0.12587413, y: 0.91608393}
-      - {x: 0.07692307, y: 0.9230769}
-      - {x: -0.027972028, y: 0.9230769}
-      - {x: -0.09090909, y: 0.91608393}
-      - {x: -0.17482518, y: 0.8951049}
-      - {x: -0.28671327, y: 0.8391608}
-      - {x: -0.32867134, y: 0.72727275}
-      - {x: -0.32867134, y: 0.62237763}
-      - {x: -0.28671327, y: 0.45454544}
-      - {x: -0.15384614, y: 0.35664335}
-      - {x: -0.21678321, y: 0.3216783}
-      - {x: -0.28671327, y: 0.25174826}
-      - {x: -0.3076923, y: 0.16783217}
-      - {x: -0.32867134, y: 0.09090909}
-      - {x: -0.3216783, y: -0.07692307}
-      - {x: -0.27972028, y: -0.13286713}
-      - {x: -0.27972028, y: -0.25874126}
-      - {x: -0.23776224, y: -0.2937063}
-      - {x: -0.24475524, y: -0.55944055}
-      - {x: -0.27272728, y: -0.68531466}
-      - {x: -0.26573426, y: -0.8041958}
-      - {x: -0.18881118, y: -0.8391608}
-      - {x: -0.07692307, y: -0.8811189}
-      - {x: 0.04895105, y: -0.8811189}
-      - {x: 0.09090909, y: -0.87412584}
-      - {x: 0.18881118, y: -0.8181818}
-      - {x: 0.25174826, y: -0.8181818}
-      - {x: 0.3216783, y: -0.7622377}
---- !u!114 &1067025169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1067025167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _index: 30900
-  questComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1067025168}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questAvailable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questNotAvailable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &1067025170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1067025167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1067025171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1067025167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogoObrigatorio: 0
-  esperaDialogoObrigatorio: 0
-  dialogoPrincipal:
-    nodulos:
-    - falas:
-      - personagem: 0
-        emocao: 2
-        fala: "Oi querida! Eu gostaria de fazer uma perguntinha sobre sua experi\xEAncia
-          em sala de aula, tudo bem pra voc\xEA?"
-      - personagem: 12
-        emocao: 0
-        fala: Oi professora. Tudo bem!
-      - personagem: 0
-        emocao: 0
-        fala: "Como voc\xEA acha que poderia ser a aula para que ficasse mais legal
-          para voc\xEA?"
-      - personagem: 12
-        emocao: 0
-        fala: Eu gosto bastante de jogos, adoro ganhar pontos, quanto mais melhor!
-      - personagem: 0
-        emocao: 0
-        fala: "Est\xE1 bem! Obrigada pela ajuda!"
-      respostas: []
-  dialogosSecundarios: []
-  interactOffset:
-  - {x: 0.41292763, y: -0.7259683, z: 0}
---- !u!212 &1067025172
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 212297905960005212, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1067025167}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fd650364a75aa584ea6f15047425f5e9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 6.02, y: 14.44}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1067025173
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4378633177701612, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1067025167}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.94, y: 0.73, z: 0.93}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
-  m_Children:
-  - {fileID: 2083639254}
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1077707174
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1077707175}
-  - component: {fileID: 1077707176}
-  m_Layer: 0
-  m_Name: Controle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1077707175
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1077707174}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1331847873}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1077707176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1077707174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _index: 30301
-  questComplete:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questAvailable:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1077707176}
-        m_MethodName: TakeStep
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questNotAvailable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &1136541353
 Prefab:
   m_ObjectHideFlags: 0
@@ -3554,251 +3101,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1331847867
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1838146933834438, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1331847873}
-  - component: {fileID: 1331847872}
-  - component: {fileID: 1331847871}
-  - component: {fileID: 1331847870}
-  - component: {fileID: 1331847869}
-  - component: {fileID: 1331847868}
-  m_Layer: 0
-  m_Name: Aluno(NPC)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!60 &1331847868
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1331847867}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.688, y: 1.144}
-    newSize: {x: 6.02, y: 14.44}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.296, y: -0.324}
-      - {x: 0.29200003, y: -0.312}
-      - {x: 0.24000001, y: -0.27600002}
-      - {x: 0.208, y: -0.284}
-      - {x: 0.19600001, y: -0.19600001}
-      - {x: 0.156, y: -0.148}
-      - {x: 0.08400001, y: -0.108}
-      - {x: 0.040000003, y: -0.060000002}
-      - {x: 0.024, y: -0.016}
-      - {x: 0.016, y: 0.076000005}
-      - {x: 0.004, y: 0.15200001}
-      - {x: -0.020000001, y: 0.18800001}
-      - {x: 0.012, y: 0.22000001}
-      - {x: 0.032, y: 0.24800001}
-      - {x: 0.056, y: 0.36400002}
-      - {x: 0.052, y: 0.432}
-      - {x: 0.028, y: 0.47200003}
-      - {x: -0.004, y: 0.508}
-      - {x: -0.036000002, y: 0.52400005}
-      - {x: -0.116000004, y: 0.536}
-      - {x: -0.128, y: 0.536}
-      - {x: -0.216, y: 0.52400005}
-      - {x: -0.24800001, y: 0.512}
-      - {x: -0.316, y: 0.432}
-      - {x: -0.32000002, y: 0.37600002}
-      - {x: -0.32000002, y: 0.28800002}
-      - {x: -0.316, y: 0.252}
-      - {x: -0.32000002, y: 0.128}
-      - {x: -0.30800003, y: 0.120000005}
-      - {x: -0.312, y: 0.076000005}
-      - {x: -0.30800003, y: -0.008}
-      - {x: -0.296, y: -0.064}
-      - {x: -0.28800002, y: -0.08800001}
-      - {x: -0.26000002, y: -0.17600001}
-      - {x: -0.22800002, y: -0.19600001}
-      - {x: -0.15200001, y: -0.24800001}
-      - {x: -0.016, y: -0.312}
-      - {x: 0.008, y: -0.372}
-      - {x: 0.016, y: -0.42800003}
-      - {x: 0.036000002, y: -0.47200003}
-      - {x: 0.072000004, y: -0.504}
-      - {x: 0.132, y: -0.504}
-      - {x: 0.2, y: -0.46}
-      - {x: 0.284, y: -0.388}
-      - {x: 0.296, y: -0.356}
---- !u!114 &1331847869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1331847867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _index: 30300
-  questComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1331847868}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questAvailable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questNotAvailable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &1331847870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1331847867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1331847871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1331847867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogoObrigatorio: 0
-  esperaDialogoObrigatorio: 0
-  dialogoPrincipal:
-    nodulos:
-    - falas:
-      - personagem: 0
-        emocao: 2
-        fala: "Ol\xE1! Eu gostaria de fazer uma perguntinha sobre sua experi\xEAncia
-          em sala de aula, tudo bem pra voc\xEA?"
-      - personagem: 12
-        emocao: 0
-        fala: "Ol\xE1! Tudo bem sim!"
-      - personagem: 0
-        emocao: 4
-        fala: "Como voc\xEA acha que poderia ser a aula para que ficasse mais legal
-          para voc\xEA?"
-      - personagem: 12
-        emocao: 0
-        fala: "Eu n\xE3o sei\u2026 Acho para mim seria legal qualquer aula que n\xE3o
-          envolvesse ci\xEAncias ou biologia. "
-      - personagem: 0
-        emocao: 4
-        fala: "Beleza! Mas com o que voc\xEA gostaria de aprender?"
-      - personagem: 12
-        emocao: 0
-        fala: "Vish, acho que com jogos ou v\xEDdeos. S\xF3 que mais com jogos."
-      - personagem: 0
-        emocao: 4
-        fala: "Est\xE1 bem! Obrigada pela ajuda!"
-      respostas: []
-  dialogosSecundarios: []
-  interactOffset:
-  - {x: 0.45673895, y: -0.59792817, z: 0}
---- !u!212 &1331847872
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 212297905960005212, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1331847867}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a95dcd28d20e4a7488912415062a35c0, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 6.02, y: 14.44}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1331847873
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4378633177701612, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1331847867}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.31, y: -0.42, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1077707175}
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1346407299
 Prefab:
   m_ObjectHideFlags: 0
@@ -3862,6 +3164,149 @@ Prefab:
     - {fileID: 114337595524292166, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 82139aaa99d936a4ea4dcc2454a3fbb6, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1379052320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1838146933834438, guid: f1268a7483cc78a4a8b18eb7bec17529,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1379052323}
+  - component: {fileID: 1379052322}
+  - component: {fileID: 1379052321}
+  m_Layer: 0
+  m_Name: Drica(NPC)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!60 &1379052321
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1379052320}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.61538464, y: 1.5734266}
+    newSize: {x: 6.02, y: 14.44}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.25874126, y: -0.5}
+      - {x: 0.24475524, y: -0.24125874}
+      - {x: 0.27972028, y: 0.031468533}
+      - {x: 0.26573426, y: 0.14335664}
+      - {x: 0.18881118, y: 0.21328671}
+      - {x: 0.24475524, y: 0.28321677}
+      - {x: 0.28671327, y: 0.37412587}
+      - {x: 0.2937063, y: 0.4160839}
+      - {x: 0.2937063, y: 0.513986}
+      - {x: 0.27972028, y: 0.555944}
+      - {x: 0.23076923, y: 0.6258741}
+      - {x: 0.18181819, y: 0.66083914}
+      - {x: 0.08391608, y: 0.66783214}
+      - {x: -0.006993007, y: 0.6958042}
+      - {x: -0.062937066, y: 0.6958042}
+      - {x: -0.11888112, y: 0.63986015}
+      - {x: -0.21678321, y: 0.64685315}
+      - {x: -0.24475524, y: 0.63986015}
+      - {x: -0.27272728, y: 0.58391607}
+      - {x: -0.27272728, y: 0.5629371}
+      - {x: -0.21678321, y: 0.44405594}
+      - {x: -0.23776224, y: 0.4160839}
+      - {x: -0.2027972, y: 0.34615386}
+      - {x: -0.21678321, y: 0.31118882}
+      - {x: -0.17482518, y: 0.21328671}
+      - {x: -0.16083916, y: 0.08741259}
+      - {x: -0.17482518, y: 0.01048951}
+      - {x: -0.16783217, y: -0.08741259}
+      - {x: -0.2027972, y: -0.17132866}
+      - {x: -0.2097902, y: -0.2902098}
+      - {x: -0.13986014, y: -0.36013985}
+      - {x: -0.11188811, y: -0.36713287}
+      - {x: -0.11188811, y: -0.5629371}
+      - {x: -0.22377622, y: -0.59090906}
+      - {x: -0.23076923, y: -0.7027972}
+      - {x: -0.0979021, y: -0.75874126}
+      - {x: 0.0979021, y: -0.75874126}
+      - {x: 0.1958042, y: -0.7307692}
+      - {x: 0.23776224, y: -0.6958042}
+      - {x: 0.27272728, y: -0.6328671}
+--- !u!212 &1379052322
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 212297905960005212, guid: f1268a7483cc78a4a8b18eb7bec17529,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1379052320}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 4e466cbc7ac0bff428e9231bb59780cd, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.02, y: 14.44}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1379052323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4378633177701612, guid: f1268a7483cc78a4a8b18eb7bec17529,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1379052320}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.53, y: -1.45, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1422038025
 GameObject:
   m_ObjectHideFlags: 0
@@ -4012,239 +3457,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1482289905
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1838146933834438, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1482289911}
-  - component: {fileID: 1482289910}
-  - component: {fileID: 1482289909}
-  - component: {fileID: 1482289908}
-  - component: {fileID: 1482289907}
-  - component: {fileID: 1482289906}
-  m_Layer: 0
-  m_Name: Meio Ambiente(NPC)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!60 &1482289906
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1482289905}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.17, y: 2.25}
-    newSize: {x: 6.02, y: 14.44}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.3216783, y: -0.6993007}
-      - {x: 0.21678321, y: -0.5944056}
-      - {x: 0.1958042, y: -0.32867134}
-      - {x: 0.25874126, y: -0.27272728}
-      - {x: 0.25174826, y: -0.16783217}
-      - {x: 0.23776224, y: 0.16083916}
-      - {x: 0.23076923, y: 0.25874126}
-      - {x: 0.22377622, y: 0.28671327}
-      - {x: 0.26573426, y: 0.46853146}
-      - {x: 0.27272728, y: 0.8041958}
-      - {x: 0.24475524, y: 0.86713284}
-      - {x: 0.12587413, y: 0.91608393}
-      - {x: 0.07692307, y: 0.9230769}
-      - {x: -0.027972028, y: 0.9230769}
-      - {x: -0.09090909, y: 0.91608393}
-      - {x: -0.17482518, y: 0.8951049}
-      - {x: -0.28671327, y: 0.8391608}
-      - {x: -0.32867134, y: 0.72727275}
-      - {x: -0.32867134, y: 0.62237763}
-      - {x: -0.28671327, y: 0.45454544}
-      - {x: -0.15384614, y: 0.35664335}
-      - {x: -0.21678321, y: 0.3216783}
-      - {x: -0.28671327, y: 0.25174826}
-      - {x: -0.3076923, y: 0.16783217}
-      - {x: -0.32867134, y: 0.09090909}
-      - {x: -0.3216783, y: -0.07692307}
-      - {x: -0.27972028, y: -0.13286713}
-      - {x: -0.27972028, y: -0.25874126}
-      - {x: -0.23776224, y: -0.2937063}
-      - {x: -0.24475524, y: -0.55944055}
-      - {x: -0.27272728, y: -0.68531466}
-      - {x: -0.26573426, y: -0.8041958}
-      - {x: -0.18881118, y: -0.8391608}
-      - {x: -0.07692307, y: -0.8811189}
-      - {x: 0.04895105, y: -0.8811189}
-      - {x: 0.09090909, y: -0.87412584}
-      - {x: 0.18881118, y: -0.8181818}
-      - {x: 0.25174826, y: -0.8181818}
-      - {x: 0.3216783, y: -0.7622377}
---- !u!114 &1482289907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1482289905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _index: 30500
-  questComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1482289906}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questAvailable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questNotAvailable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &1482289908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1482289905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1482289909
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1482289905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogoObrigatorio: 0
-  esperaDialogoObrigatorio: 0
-  dialogoPrincipal:
-    nodulos:
-    - falas:
-      - personagem: 0
-        emocao: 2
-        fala: "Oi querido! Eu gostaria de fazer uma perguntinha sobre sua experi\xEAncia
-          em sala de aula, tudo bem pra voc\xEA?"
-      - personagem: 12
-        emocao: 0
-        fala: Oi professora. Claro!
-      - personagem: 0
-        emocao: 4
-        fala: "Como voc\xEA acha que poderia ser a aula para que ficasse mais legal
-          para voc\xEA?"
-      - personagem: 12
-        emocao: 0
-        fala: "Adoro ver document\xE1rios, principalmente sobre o reino animal e sobre
-          a natureza em geral. Uma aula dessas seria maravilhosa!"
-      - personagem: 0
-        emocao: 4
-        fala: "Est\xE1 bem! Obrigada pela ajuda!"
-      respostas: []
-  dialogosSecundarios: []
-  interactOffset:
-  - {x: -0.32807088, y: -0.50027263, z: 0}
---- !u!212 &1482289910
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 212297905960005212, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1482289905}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ae96405251103414a91ded450cd11a16, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 6.02, y: 14.44}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1482289911
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4378633177701612, guid: f1268a7483cc78a4a8b18eb7bec17529,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1482289905}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.67, y: -1.64, z: -3}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
-  m_Children:
-  - {fileID: 737350782}
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1508112140
 GameObject:
   m_ObjectHideFlags: 0
@@ -4841,6 +4053,294 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2001912200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1838146933834438, guid: f1268a7483cc78a4a8b18eb7bec17529,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2001912206}
+  - component: {fileID: 2001912205}
+  - component: {fileID: 2001912204}
+  - component: {fileID: 2001912203}
+  - component: {fileID: 2001912202}
+  - component: {fileID: 2001912201}
+  m_Layer: 0
+  m_Name: Meio Ambiente(NPC)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!60 &2001912201
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2001912200}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.17, y: 2.25}
+    newSize: {x: 6.02, y: 14.44}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.265, y: -0.885}
+      - {x: 0.275, y: -0.73499995}
+      - {x: 0.325, y: -0.625}
+      - {x: 0.275, y: -0.375}
+      - {x: 0.305, y: -0.285}
+      - {x: 0.315, y: -0.035}
+      - {x: 0.315, y: 0.065}
+      - {x: 0.285, y: 0.205}
+      - {x: 0.24499999, y: 0.255}
+      - {x: 0.39499998, y: 0.325}
+      - {x: 0.405, y: 0.465}
+      - {x: 0.475, y: 0.575}
+      - {x: 0.505, y: 0.66499996}
+      - {x: 0.505, y: 0.695}
+      - {x: 0.475, y: 0.705}
+      - {x: 0.39499998, y: 0.72499996}
+      - {x: 0.345, y: 0.865}
+      - {x: 0.285, y: 0.905}
+      - {x: 0.185, y: 0.965}
+      - {x: 0.095, y: 1.005}
+      - {x: -0.065, y: 1.005}
+      - {x: -0.205, y: 0.965}
+      - {x: -0.255, y: 1.045}
+      - {x: -0.285, y: 1.045}
+      - {x: -0.345, y: 0.995}
+      - {x: -0.39499998, y: 0.84499997}
+      - {x: -0.53499997, y: 0.815}
+      - {x: -0.49499997, y: 0.715}
+      - {x: -0.545, y: 0.685}
+      - {x: -0.545, y: 0.645}
+      - {x: -0.475, y: 0.525}
+      - {x: -0.24499999, y: 0.255}
+      - {x: -0.325, y: 0.195}
+      - {x: -0.435, y: 0.055}
+      - {x: -0.385, y: -0.065}
+      - {x: -0.305, y: -0.13499999}
+      - {x: -0.275, y: -0.125}
+      - {x: -0.24499999, y: -0.175}
+      - {x: -0.205, y: -0.205}
+      - {x: -0.21499999, y: -0.805}
+      - {x: -0.305, y: -0.825}
+      - {x: -0.385, y: -0.865}
+      - {x: -0.375, y: -0.98499995}
+      - {x: -0.305, y: -1.035}
+      - {x: -0.205, y: -1.0749999}
+      - {x: -0.015, y: -1.0749999}
+      - {x: 0.055, y: -1.045}
+      - {x: 0.195, y: -1.015}
+      - {x: 0.255, y: -0.995}
+--- !u!114 &2001912202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2001912200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _index: 3
+  questComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2001912201}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  questNotAvailable:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &2001912203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2001912200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2001912204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2001912200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogoObrigatorio: 1
+  esperaDialogoObrigatorio: 1
+  dialogoPrincipal:
+    nodulos:
+    - falas:
+      - personagem: 0
+        emocao: 4
+        fala: "Oi queridos! Eu gostaria de fazer uma perguntinha sobre suas experi\xEAncias
+          em sala de aula, tudo bem pra voc\xEAs?"
+      - personagem: 0
+        emocao: 2
+        fala: "\xC9 pra usar no planejamento da aula do Paulino, ok?"
+      - personagem: 5
+        emocao: 2
+        fala: Fala Duds! Claro que pode!
+      - personagem: 1
+        emocao: 2
+        fala: Oi professora. Eu adoraria te ajudar com isso!
+      - personagem: 4
+        emocao: 2
+        fala: Oi professora. Claro!
+      - personagem: 3
+        emocao: 2
+        fala: Oi professora. Tudo bem sim!
+      - personagem: 13
+        emocao: 2
+        fala: "Sauda\xE7\xF5es brilhante mestra do conhecimento midi\xE1tico! Mais
+          do que pode, voc\xEA deve! Ser\xE1 uma honra para minha linhagem!"
+      - personagem: 0
+        emocao: 4
+        fala: "Como voc\xEAs acham que poderia ser a aula para que ficasse mais legal
+          para voc\xEAs?"
+      - personagem: 5
+        emocao: 4
+        fala: "Adorei a pergunta! Eu tenho maior dificuldade de aprender quando a
+          aula \xE9 muito parada, ent\xE3o se tiver algum joguinho que faz a gente
+          aprender e se mexer, essa vai ser a minha aula favorita!"
+      - personagem: 1
+        emocao: 4
+        fala: "Ent\xE3o, boa pergunta. Acho que eu gosto mais de atividades."
+      - personagem: 4
+        emocao: 4
+        fala: "Adoro ver document\xE1rios, principalmente sobre o reino animal e sobre
+          a natureza em geral. Uma aula dessas seria maravilhosa!"
+      - personagem: 3
+        emocao: 4
+        fala: "Eu acho mais legal as aulas com materiais mais simples. E as que a
+          gente n\xE3o precisa aprender matem\xE1tica! "
+      - personagem: 13
+        emocao: 4
+        fala: "As minhas aulas favoritas s\xE3o aquelas nas quais podemos discutir
+          sobre l\xEDnguas mortas como Latim e Sum\xE9rio antigo."
+      - personagem: 0
+        emocao: 4
+        fala: "Ah, entendo. Mas de que forma voc\xEAs gostaria de aprender? "
+      - personagem: 1
+        emocao: 2
+        fala: "Boa pergunta\u2026 Se eu n\xE3o puder desenhar e pintar, eu acho que
+          eu gostaria de aprender com jogos. Principalmente se eles forem coloridos!"
+      - personagem: 3
+        emocao: 2
+        fala: Ah, entendi. Acho que eu gostaria de aprender mais com jogos.
+      - personagem: 3
+        emocao: 4
+        fala: "Eles s\xE3o bem mais divertidos do que uma aula chata em que o professor
+          s\xF3 fica falando ou usando o quadro negro!"
+      - personagem: 0
+        emocao: 4
+        fala: "Est\xE1 bem! Obrigada pela ajuda, gente!"
+      respostas: []
+  dialogosSecundarios: []
+  interactOffset:
+  - {x: -2.0288992, y: 0.5124419, z: 0}
+--- !u!212 &2001912205
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 212297905960005212, guid: f1268a7483cc78a4a8b18eb7bec17529,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2001912200}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: ae96405251103414a91ded450cd11a16, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.02, y: 14.44}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &2001912206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4378633177701612, guid: f1268a7483cc78a4a8b18eb7bec17529,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2001912200}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.34, y: -1.39, z: -3}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2050557247
 GameObject:
   m_ObjectHideFlags: 0
@@ -4980,78 +4480,11 @@ MonoBehaviour:
   cellAngle: 30
   gridDim: {x: 25, y: 30}
   gridRotation: 210
-  vacancy: 2161003e0000003c00000038f80f0630f80fc63f1800c73f1800c63f190306389807063c800f063e800f063f990f863f180fc63f190ee63f1900f63f1900f63f0000fc3f001efe3f001eff3f00beff3f83ffff3f07ffff3f0ffeff3f1ffeff3f3ffcff3f
+  vacancy: 2160003e0000003c00000038f80f0630f81fc63f183cc63f1840c63f182306389817063c800f063e800f063f980f863f180fc63f190ee63f1900f63f1900f63f0000fc3f001efe3f001eff3f00beff3f83ffff3f07ffff3f0ffeff3f1ffeff3f3ffcff3f
   gridColor: {r: 1, g: 0, b: 0, a: 1}
   debug: 0
   cell: {x: 0, y: 0}
---- !u!1 &2083639253
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2083639254}
-  - component: {fileID: 2083639255}
-  m_Layer: 0
-  m_Name: Controle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2083639254
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2083639253}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1067025173}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2083639255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2083639253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _index: 30901
-  questComplete:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questAvailable:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2083639255}
-        m_MethodName: TakeStep
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questNotAvailable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!1 &2098938055
+--- !u!1 &2125168075
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 1838146933834438, guid: f1268a7483cc78a4a8b18eb7bec17529,
@@ -5059,26 +4492,23 @@ GameObject:
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2098938061}
-  - component: {fileID: 2098938060}
-  - component: {fileID: 2098938059}
-  - component: {fileID: 2098938058}
-  - component: {fileID: 2098938057}
-  - component: {fileID: 2098938056}
+  - component: {fileID: 2125168078}
+  - component: {fileID: 2125168077}
+  - component: {fileID: 2125168076}
   m_Layer: 0
-  m_Name: Cadeirante(NPC)
+  m_Name: Estranho(NPC)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!60 &2098938056
+--- !u!60 &2125168076
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2098938055}
-  m_Enabled: 1
+  m_GameObject: {fileID: 2125168075}
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -5088,7 +4518,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.75, y: 2.87}
+    oldSize: {x: 0.8666667, y: 1.875}
     newSize: {x: 6.02, y: 14.44}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5096,164 +4526,52 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.575, y: -1.115}
-      - {x: 0.635, y: -1.165}
-      - {x: 0.675, y: -1.165}
-      - {x: 0.73499995, y: -1.095}
-      - {x: 0.72499996, y: -1.005}
-      - {x: 0.79499996, y: -0.84499997}
-      - {x: 0.815, y: -0.775}
-      - {x: 0.815, y: -0.635}
-      - {x: 0.805, y: -0.59499997}
-      - {x: 0.73499995, y: -0.53499997}
-      - {x: 0.675, y: -0.405}
-      - {x: 0.555, y: -0.235}
-      - {x: 0.53499997, y: -0.085}
-      - {x: 0.615, y: -0.035}
-      - {x: 0.615, y: 0.015}
-      - {x: 0.505, y: 0.13499999}
-      - {x: 0.225, y: 0.185}
-      - {x: 0.185, y: 0.275}
-      - {x: 0.114999995, y: 0.505}
-      - {x: 0.16499999, y: 0.645}
-      - {x: 0.255, y: 0.78499997}
-      - {x: 0.225, y: 1.2149999}
-      - {x: 0.16499999, y: 1.295}
-      - {x: 0.055, y: 1.355}
-      - {x: -0.085, y: 1.395}
-      - {x: -0.305, y: 1.395}
-      - {x: -0.415, y: 1.365}
-      - {x: -0.60499996, y: 1.3349999}
-      - {x: -0.765, y: 1.185}
-      - {x: -0.78499997, y: 0.945}
-      - {x: -0.745, y: 0.775}
-      - {x: -0.825, y: 0.635}
-      - {x: -0.745, y: 0.585}
-      - {x: -0.635, y: 0.655}
-      - {x: -0.575, y: 0.585}
-      - {x: -0.475, y: 0.59499997}
-      - {x: -0.415, y: 0.575}
-      - {x: -0.565, y: 0.525}
-      - {x: -0.865, y: 0.515}
-      - {x: -0.875, y: 0.49499997}
-      - {x: -0.875, y: 0.39499998}
-      - {x: -0.72499996, y: 0.315}
-      - {x: -0.565, y: -0.205}
-      - {x: -0.575, y: -0.39499998}
-      - {x: -0.655, y: -0.45499998}
-      - {x: -0.72499996, y: -0.585}
-      - {x: -0.72499996, y: -0.85499996}
-      - {x: -0.715, y: -0.965}
-      - {x: -0.645, y: -1.155}
-      - {x: -0.48499998, y: -1.285}
-      - {x: -0.375, y: -1.3149999}
-      - {x: -0.235, y: -1.3249999}
-      - {x: -0.055, y: -1.175}
-      - {x: -0.005, y: -1.015}
-      - {x: 0.044999998, y: -0.84499997}
-      - {x: 0.055, y: -1.125}
-      - {x: 0.035, y: -1.185}
-      - {x: 0.015, y: -1.295}
-      - {x: 0.085, y: -1.3249999}
-      - {x: 0.205, y: -1.3249999}
-      - {x: 0.235, y: -1.265}
-      - {x: 0.33499998, y: -1.175}
-      - {x: 0.565, y: -1.0749999}
---- !u!114 &2098938057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2098938055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d97debf5751d842a04075b054c67ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _index: 30100
-  questComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2098938056}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questAvailable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  questNotAvailable:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &2098938058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2098938055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bfbd0c504806d446b0b6eda05e20952, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2098938059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2098938055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3d587745719eca42b7882b1be7af2ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogoObrigatorio: 0
-  esperaDialogoObrigatorio: 0
-  dialogoPrincipal:
-    nodulos:
-    - falas:
-      - personagem: 0
-        emocao: 2
-        fala: "Oi querida! Tudo bem com voc\xEA? Eu gostaria de fazer uma perguntinha
-          sobre sua experi\xEAncia em sala de aula, tudo bem pra voc\xEA?"
-      - personagem: 12
-        emocao: 0
-        fala: "Oi professora. Tudo e voc\xEA? E tudo sim, pode me perguntar o que
-          quiser!"
-      - personagem: 0
-        emocao: 4
-        fala: "Como voc\xEA acha que poderia ser a aula para que ficasse mais legal
-          para voc\xEA? "
-      - personagem: 12
-        emocao: 0
-        fala: "Ent\xE3o, acho as aulas seriam mais legais se tivessem mais v\xEDdeos.
-          Eu adoro aprender com eles."
-      - personagem: 0
-        emocao: 4
-        fala: "Est\xE1 bem! Obrigada pela ajuda!"
-      respostas: []
-  dialogosSecundarios: []
-  interactOffset:
-  - {x: 0.3815589, y: -0.7328578, z: 0}
---- !u!212 &2098938060
+    - - {x: 0.3216783, y: -0.6993007}
+      - {x: 0.21678321, y: -0.5944056}
+      - {x: 0.1958042, y: -0.32867134}
+      - {x: 0.25874126, y: -0.27272728}
+      - {x: 0.25174826, y: -0.16783217}
+      - {x: 0.23776224, y: 0.16083916}
+      - {x: 0.23076923, y: 0.25874126}
+      - {x: 0.22377622, y: 0.28671327}
+      - {x: 0.26573426, y: 0.46853146}
+      - {x: 0.27272728, y: 0.8041958}
+      - {x: 0.24475524, y: 0.86713284}
+      - {x: 0.12587413, y: 0.91608393}
+      - {x: 0.07692307, y: 0.9230769}
+      - {x: -0.027972028, y: 0.9230769}
+      - {x: -0.09090909, y: 0.91608393}
+      - {x: -0.17482518, y: 0.8951049}
+      - {x: -0.28671327, y: 0.8391608}
+      - {x: -0.32867134, y: 0.72727275}
+      - {x: -0.32867134, y: 0.62237763}
+      - {x: -0.28671327, y: 0.45454544}
+      - {x: -0.15384614, y: 0.35664335}
+      - {x: -0.21678321, y: 0.3216783}
+      - {x: -0.28671327, y: 0.25174826}
+      - {x: -0.3076923, y: 0.16783217}
+      - {x: -0.32867134, y: 0.09090909}
+      - {x: -0.3216783, y: -0.07692307}
+      - {x: -0.27972028, y: -0.13286713}
+      - {x: -0.27972028, y: -0.25874126}
+      - {x: -0.23776224, y: -0.2937063}
+      - {x: -0.24475524, y: -0.55944055}
+      - {x: -0.27272728, y: -0.68531466}
+      - {x: -0.26573426, y: -0.8041958}
+      - {x: -0.18881118, y: -0.8391608}
+      - {x: -0.07692307, y: -0.8811189}
+      - {x: 0.04895105, y: -0.8811189}
+      - {x: 0.09090909, y: -0.87412584}
+      - {x: 0.18881118, y: -0.8181818}
+      - {x: 0.25174826, y: -0.8181818}
+      - {x: 0.3216783, y: -0.7622377}
+--- !u!212 &2125168077
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 212297905960005212, guid: f1268a7483cc78a4a8b18eb7bec17529,
     type: 2}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2098938055}
+  m_GameObject: {fileID: 2125168075}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -5282,8 +4600,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f3015469c6b06994eb707649430e2892, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 6de1a1f2d0277ba4c9d2dd4a9e4f58d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5294,18 +4612,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &2098938061
+--- !u!4 &2125168078
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 4378633177701612, guid: f1268a7483cc78a4a8b18eb7bec17529,
     type: 2}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2098938055}
+  m_GameObject: {fileID: 2125168075}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.22, y: 1.72, z: 3}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_Children:
-  - {fileID: 780575324}
+  m_LocalPosition: {x: 1.08, y: -0.27, z: 0.93}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
