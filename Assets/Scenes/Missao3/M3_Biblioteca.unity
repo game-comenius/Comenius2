@@ -894,6 +894,7 @@ GameObject:
   - component: {fileID: 315525026}
   - component: {fileID: 315525025}
   - component: {fileID: 315525024}
+  - component: {fileID: 315525022}
   m_Layer: 0
   m_Name: Leitura(NPC)
   m_TagString: Diretor
@@ -901,6 +902,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &315525022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 315525021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0072b59adab0240298adc1789f58dda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objetivo: 0
+  IndiceDaMissaoAlvo: 33300
+  IndiceDaRespostaAlvo: 0
+  Momento: 1
+  Dialogo: {fileID: 315525027}
 --- !u!4 &315525023
 Transform:
   m_ObjectHideFlags: 0
@@ -6020,6 +6037,7 @@ GameObject:
   - component: {fileID: 1939661838}
   - component: {fileID: 1939661837}
   - component: {fileID: 1939661836}
+  - component: {fileID: 1939661840}
   m_Layer: 0
   m_Name: Estante 1
   m_TagString: Untagged
@@ -6160,6 +6178,22 @@ PolygonCollider2D:
       - {x: 0.12, y: -1.6}
       - {x: 1.23, y: -2.22}
       - {x: 1.81, y: -1.9}
+--- !u!114 &1939661840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1939661834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0072b59adab0240298adc1789f58dda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objetivo: 0
+  IndiceDaMissaoAlvo: 33100
+  IndiceDaRespostaAlvo: 0
+  Momento: 1
+  Dialogo: {fileID: 1939661838}
 --- !u!1 &1950234848
 GameObject:
   m_ObjectHideFlags: 0

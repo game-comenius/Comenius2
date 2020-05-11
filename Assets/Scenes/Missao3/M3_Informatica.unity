@@ -1250,6 +1250,11 @@ GameObject:
   - component: {fileID: 171331793}
   - component: {fileID: 171331792}
   - component: {fileID: 171331791}
+  - component: {fileID: 171331798}
+  - component: {fileID: 171331797}
+  - component: {fileID: 171331801}
+  - component: {fileID: 171331800}
+  - component: {fileID: 171331799}
   m_Layer: 0
   m_Name: Montanari
   m_TagString: Untagged
@@ -1434,25 +1439,25 @@ MonoBehaviour:
         questIndex: 0
       - personagem: 0
         emocao: 2
-        fala: "Sim, d\xE1 uma olhada aqui!"
+        fala: "Sim, d\xE1 uma olhada nesse VHS!"
         resumo: Editar VHS
         conexao: 2
         questIndex: 33100
       - personagem: 0
         emocao: 2
-        fala: "Sim, d\xE1 uma olhada aqui!"
+        fala: Sim, tenho uma ideia para um jogo de adedonha!
         resumo: Jogo Adenonha
         conexao: 2
         questIndex: 33200
       - personagem: 0
         emocao: 2
-        fala: "Sim, d\xE1 uma olhada aqui!"
+        fala: Sim, tenho uma ideia para um jogo de palavras cruzadas!
         resumo: Jogo Palavras Cruzadas
         conexao: 2
         questIndex: 33300
       - personagem: 0
         emocao: 2
-        fala: "Sim, d\xE1 uma olhada aqui!"
+        fala: Sim, tenho uma ideia para um jogo de forca!
         resumo: Jogo Forca
         conexao: 2
         questIndex: 33400
@@ -1465,9 +1470,6 @@ MonoBehaviour:
         fala: Beleza, volte assim que tas tiver encontrado.
       respostas: []
     - falas:
-      - personagem: 0
-        emocao: 2
-        fala: "Sim, d\xE1 uma olhada aqui!"
       - personagem: 9
         emocao: 2
         fala: "Perfeito! S\xF3 espere um segundinho que eu j\xE1 te trago a m\xEDdia
@@ -1549,6 +1551,86 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &171331797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 171331790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0072b59adab0240298adc1789f58dda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objetivo: 1
+  IndiceDaMissaoAlvo: 33100
+  IndiceDaRespostaAlvo: 1
+  Momento: 2
+  Dialogo: {fileID: 171331794}
+--- !u!114 &171331798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 171331790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0072b59adab0240298adc1789f58dda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objetivo: 1
+  IndiceDaMissaoAlvo: 33500
+  IndiceDaRespostaAlvo: 0
+  Momento: 1
+  Dialogo: {fileID: 171331794}
+--- !u!114 &171331799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 171331790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0072b59adab0240298adc1789f58dda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objetivo: 1
+  IndiceDaMissaoAlvo: 33400
+  IndiceDaRespostaAlvo: 4
+  Momento: 2
+  Dialogo: {fileID: 171331794}
+--- !u!114 &171331800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 171331790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0072b59adab0240298adc1789f58dda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objetivo: 1
+  IndiceDaMissaoAlvo: 33300
+  IndiceDaRespostaAlvo: 3
+  Momento: 2
+  Dialogo: {fileID: 171331794}
+--- !u!114 &171331801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 171331790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0072b59adab0240298adc1789f58dda7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objetivo: 1
+  IndiceDaMissaoAlvo: 33200
+  IndiceDaRespostaAlvo: 2
+  Momento: 2
+  Dialogo: {fileID: 171331794}
 --- !u!1 &181652200
 GameObject:
   m_ObjectHideFlags: 0
