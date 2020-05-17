@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using System;
 using System.Linq;
+using System.Globalization;
 
 public class CreateCustomGamePanel : MonoBehaviour
 {
@@ -136,13 +137,21 @@ public class CreateCustomGamePanel : MonoBehaviour
 
     public void PressButtonThatStartsCustomGame()
     {
-        // Criar objeto para escrever no disco
+        // Criar configurações a partir das escolhas do jogador
         CustomGameSettings settings = CriarCustomGameSettings();
 
-        // Mais tarde, salvar sim no servidor, por enquanto jogar diretamente
-        // o jogo recém criado
-        //settings.SaveToDisk();
+        // Definir essa configuração como a configuração atual
         CustomGameSettings.CurrentSettings = settings;
+    }
+
+    public void PressButtonThatSavesCustomGame()
+    {
+        // Criar configurações a partir das escolhas do jogador e
+        // criar objeto para escrever no disco
+        CustomGameSettings settings = CriarCustomGameSettings();
+
+        // Salvar no servidor
+        settings.SaveToDisk();
     }
 
     public CustomGameSettings CriarCustomGameSettings()
@@ -173,6 +182,9 @@ public class CreateCustomGamePanel : MonoBehaviour
 
         settings.TituloDaAula = tituloDaAula.text;
         settings.Autor = autorInputField.text;
+
+        // Definir a data de criação do jogo
+        settings.dataDeCriacao = DateTime.Now.ToUniversalTime().AddHours(-3).ToShortDateString();
 
         return settings;
     }

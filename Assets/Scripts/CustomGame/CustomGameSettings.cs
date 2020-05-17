@@ -81,6 +81,7 @@ public class CustomGameSettings {
 
     private static readonly string uploadURI = "http://gamecomenius.com/gamecomenius2/custom/savecustom.php";
     private static readonly string downloadURI = "http://gamecomenius.com/gamecomenius2/custom/loadcustom.php";
+    private static readonly string deleteURI = "http://gamecomenius.com/gamecomenius2/custom/deletecustom.php";
 
     private ItemName[] midiasDisponiveis;
 
@@ -98,6 +99,9 @@ public class CustomGameSettings {
     public CreateCustomGamePanel.MidiaPoderFeedback[] ArrayMidiaPoderFeedbackMomento3;
     public string TituloDaAula;
     public string Autor;
+
+    // Também salvar a data de criação do jogo custom
+    public string dataDeCriacao;
 
     // Deve ser usada sempre como uma Coroutine porque faz uma requisição web e
     // não seria legal travar o jogo enquanto esperamos por essa requisição
@@ -132,7 +136,7 @@ public class CustomGameSettings {
 
             string converted = Encoding.ASCII.GetString(response, 0, response.Length);
 
-            string[] separator = { "$$$" };
+            string[] separator = { "$%$%$" };
 
             var objsStrings = converted.Split(separator, StringSplitOptions.None);
 
@@ -166,6 +170,17 @@ public class CustomGameSettings {
             // chamar a callbackAction passada como argumento para esta função
             callbackAction(allGames);
         }
+    }
+
+    public static void DeleteFromServerByIndex(int index)
+    {
+        var PostFieldName = "deleteindex";
+
+        List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
+        formData.Add(new MultipartFormDataSection(PostFieldName, index.ToString()));
+
+        UnityWebRequest webRequest = UnityWebRequest.Post(deleteURI, formData);
+        webRequest.SendWebRequest();
     }
 
     public void SaveToDisk()
