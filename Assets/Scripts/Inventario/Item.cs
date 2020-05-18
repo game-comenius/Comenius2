@@ -192,7 +192,7 @@ public class Item
                 DescriptionsInMission1.ThirdMomentDescription = "O conteúdo enriquecido com imagem e leitura específicos da disciplina pode ser útil, pois os alunos podem acompanhar a explicação de forma individualizada";
 
                 DescriptionsInMission2.FirstMomentDescription = "O Livro didático apresenta algumas informações mais gerais da história da época, dando acesso a todos os alunos.";
-                DescriptionsInMission2.SecondMomentDescription = "Os conteúdos sistematizados do livro didático podem auxiliar bastante os alunso durante a discussão, por ser uma linguagem mais acessível.";
+                DescriptionsInMission2.SecondMomentDescription = "Os conteúdos sistematizados do livro didático podem auxiliar bastante os alunos durante a discussão, por ser uma linguagem mais acessível.";
                 DescriptionsInMission2.ThirdMomentDescription = "O livro não é muito interessante para produzir algo nesse momento da aula.";
 
                 DescriptionsInMission3.FirstMomentDescription = "Livros didáticos, além de são muito utilizados na escola, trazem muitas palavras de diversas regiões.";
@@ -264,7 +264,7 @@ public class Item
                 DescriptionsInMission1.ThirdMomentDescription = "Semelhante ao quadro negro, o professor pode elaborar tabelas e esquemas para a sistematização do conteúdo da aula, além da colar imagens para ilustrar.";
 
                 DescriptionsInMission2.FirstMomentDescription = "O cartaz possibilita a apresentação dos conteúdos para os alunos, mas alem de ele não ser uma novidade para eles não possibilita muita versatilidade no trabalho de exposição do professor.";
-                DescriptionsInMission2.SecondMomentDescription = "O cartaz tem muitas possibilidades em meio a construção de uma apresentação ou sistematização, mas esse é um momento de discussões, talvez gere dispersões e seja melhor utilizado em outro momento.";
+                DescriptionsInMission2.SecondMomentDescription = "O cartaz tem muitas possibilidades em meio a construção de uma apresentação ou sistematização, mas esse é um momento de discussões, talvez gere dispersão e seja melhor utilizado em outro momento.";
                 DescriptionsInMission2.ThirdMomentDescription = "O cartaz é uma mídia bastante conhecida pelos alunos na elaboração de atividades, eles já estão acostumados com ela e sabem como utilizá-la, por isso pode ser uma boa escolha.";
                 break;
             case ItemName.Mapa:
@@ -290,7 +290,7 @@ public class Item
                 DescriptionsInMission1.ThirdMomentDescription = "O caderno pode ser utilizado como uma mídia de registro ou leitura de conteúdos, mas por si só não seria um bom recurso para o professor utilizar na exposição.car";
 
                 DescriptionsInMission2.FirstMomentDescription = "Como o principal objetivo da aula nesse momento é expor os conteúdos, só o caderno não seria suficiente.";
-                DescriptionsInMission2.SecondMomentDescription = "O caderno é bom para anotar pontos importantes da discussão, mas o processode anotar enquanto prestão atenção pode deixar os alunos um pouco confusos.";
+                DescriptionsInMission2.SecondMomentDescription = "O caderno é bom para anotar pontos importantes da discussão, mas o processo de anotar enquanto prestam atenção pode deixar os alunos um pouco confusos.";
                 DescriptionsInMission2.ThirdMomentDescription = "O caderno é potente na realização de atividades de síntese, porém é bastante individual e não proporciona muita interação entre os colegas.";
 
                 DescriptionsInMission3.FirstMomentDescription = "A proposta da atividade é pesquisar sobre regionalismo, o caderno seria útil para escrever esquemas e sínteses e não tanto para esse caso.";
