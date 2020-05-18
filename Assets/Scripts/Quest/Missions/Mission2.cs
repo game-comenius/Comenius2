@@ -81,6 +81,8 @@ public class Mission2 : MonoBehaviour
         new QuestClass (12401, "Editar o VHS", new DoQuest(), new int[]{ 11700 }),
         new QuestClass (12402, "Controle: Fazer VHS editado", new DoQuest(), new int[]{ 12401 }),
 
-        new QuestClass (13000, "Fazer todas as mídias editadas", new CounterQuest(0, 4), new int[]{  })
+        new QuestClass (13000, "Fazer todas as mídias editadas", new CounterQuest(0, 4), new int[]{  }),
+
+        new QuestClass (14000, "Falar com o Comenius no final do dia", new DoQuest(), new int[]{ })
     };
 }
