@@ -90,7 +90,9 @@ public class Mission3 : MonoBehaviour
         new QuestClass (33400, "Fazer jogo Forca", new DoQuest(), new int[]{ 32300 }),
         new QuestClass (33401, "Controle: Fazer jogo Forca", new DoQuest(), new int[]{ 33400 }),
 
-        new QuestClass (33500, "Falar com a Montanari na sala de informática", new DoQuest(), new int[]{ })
+        new QuestClass (33500, "Falar com a Montanari na sala de informática", new DoQuest(), new int[]{ }),
+
+        new QuestClass (33600, "Falar com a Alice na biblioteca", new DoQuest(), new int[]{ })
 
     };
 }

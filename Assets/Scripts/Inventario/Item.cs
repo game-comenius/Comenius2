@@ -227,7 +227,7 @@ public class Item
                 FullDescription = "É um espaço plano reutilizável geralmente riscado com giz branco para transmissão de conteúdo.  Exposição da matéria para grande quantidade de estudantes. Possibilita ao aluno expor suas elaborações sobre os conteúdos e experiências. Tanto o professor quanto o aluno podem utilizá-lo de forma visual, expondo o assunto trabalhado de forma expositiva e/ou colaborativa.";
 
                 //DescriptionsInMission1.StandardDescription = "Superfície reutilizável geralmente riscada com giz branco para exposição do conteúdo ou usado de forma colaborativa entre professor e estudante.";
-                DescriptionsInMission1.StandardDescription = "Um quadro negro! Essa mídia é tão clássica! Os professores adoram ela!";
+                DescriptionsInMission1.StandardDescription = "Um quadro negro! Essa mídia é tão clássica! Os professores o adoram!";
 
                 DescriptionsInMission1.FirstMomentDescription = "O quadro é a mídia mais comumente ultilizada em aulas expositivas, podendo ser utilizada pelo professor para  exposição e sistematização de conteúdos.";
                 DescriptionsInMission1.SecondMomentDescription = "Os alunos podem usar o quadro negro como um recurso adicional ao apresentar suas falas durante atividade.";
@@ -303,7 +303,7 @@ public class Item
                 FullDescription = "Esta mídia teve seu início no formato impresso. É utilizada para transmitir informações, contém um gênero textual amplamente estudado em sala de aula, expressam diferentes perspectivas políticas, econômicas, culinárias, de lazer, entre outras que são produzidas socialmente, registram os acontecimentos históricos da época.  É acessível somente a pessoas letradas. Sua prática pedagógica serve para introduzir os estudantes nos conhecimentos da alfabetização, demonstra a diferença de produção textual na perspectiva da diversidade de opiniões, modos, vertentes no ensino e aprendizagem de conteúdos. Assim como os livros didáticos, traz texto escrito complementado por imagens, porém com um estilo de escrita geralmente diferente.";
 
                 //DescriptionsInMission1.StandardDescription = "São um meio de comunicação impresso e um produto derivado do conjunto de atividades denominado jornalismo.";
-                DescriptionsInMission1.StandardDescription = "Jornais! Eles são mais do que notícias aglomeradas, quando se trata de usar eles na sua de aula!";
+                DescriptionsInMission1.StandardDescription = "Jornais! Eles são mais do que notícias aglomeradas, quando se trata de usar eles na sala de aula!";
 
                 DescriptionsInMission1.FirstMomentDescription = "Jornais podem auxiliar na exposição por conter imagens e textos em linguagem mais simples. Mas é fundamental encontrar um jornal com reportagem sobre o tema de estudo.";
                 DescriptionsInMission1.SecondMomentDescription = "Os Jornais apresentam muitos conteúdos de leitura e algumas imagens, de fácil interpretação, e pode ser utilizado pelos alunos para a criação de um mural, por exemplo.";
