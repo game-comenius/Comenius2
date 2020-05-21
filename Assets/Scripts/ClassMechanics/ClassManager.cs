@@ -47,7 +47,7 @@ public class ClassManager : MonoBehaviour
     [SerializeField] private Vector2Int[] traducaoPontoProblema = new Vector2Int[4];
 
     [Tooltip("Se refere a quantidade de problemas cada momento da aula terá.")]
-    [SerializeField] private int[] problemQuantity = new int[3];
+    private int[] problemQuantity = new int[3];
 
     [Tooltip("Aceleração do tempo quando não houverem problemas")]
     [SerializeField] [Range(1, 300)] private float timeAcceleration;
@@ -597,6 +597,6 @@ public class ClassManager : MonoBehaviour
 
         Debug.Log("Pontuação não tem quantidade de problema");
 
-        return 3;
+        return 1;
     }
 }
