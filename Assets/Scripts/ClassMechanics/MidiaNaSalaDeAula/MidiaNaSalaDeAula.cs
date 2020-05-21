@@ -25,16 +25,18 @@ public class MidiaNaSalaDeAula : MonoBehaviour {
             case ItemName.CartazComColecaoDePenas:
                 if (quadroNegro) quadroNegro.ColocarItem(midia);
                 break;
+            case ItemName.Gravador:
             case ItemName.ReprodutorAudio:
-            case ItemName.GravacaoPassaro:
             case ItemName.Mapa:
             case ItemName.Retroprojetor:
             case ItemName.RetroprojetorSlideCicloTrabalho:
             case ItemName.RetroprojetorSlideLinhaTempo:
             case ItemName.RetroprojetorSlideMapa:
-            case ItemName.Gravador:
             case ItemName.CameraPolaroid:
                 if (mesaDoProfessor) mesaDoProfessor.ColocarItem(midia);
+                break;
+            case ItemName.GravacaoPassaro:
+                if (mesaDoProfessor) mesaDoProfessor.ColocarItem(ItemName.Gravador);
                 break;
             case ItemName.TVComVHS:
             case ItemName.VHS:
