@@ -8,6 +8,8 @@ using System;
 
 public class PlanejamentoUI : MonoBehaviour {
 
+    private static bool jaFuiAbertoPeloMenosUmaVez;
+
     [SerializeField]
     private TextMeshProUGUI descricaoMomento;
     [SerializeField]
@@ -35,6 +37,9 @@ public class PlanejamentoUI : MonoBehaviour {
     [SerializeField]
     private SlotAgrupamento slotAgrupMomento3;
 
+    [SerializeField]
+    private GameObject telaTutorial;
+
     private MidiaMomento midiaMomento1;
     private MidiaMomento midiaMomento2;
     private MidiaMomento midiaMomento3;
@@ -49,6 +54,23 @@ public class PlanejamentoUI : MonoBehaviour {
         midiaMomento1 = mms[0];
         midiaMomento2 = mms[1];
         midiaMomento3 = mms[2];
+
+        telaTutorial.SetActive(false);
+    }
+
+    public void Abrir()
+    {
+        if (!jaFuiAbertoPeloMenosUmaVez)
+        {
+            StartCoroutine(ApresentarTutorial());
+            jaFuiAbertoPeloMenosUmaVez = true;
+        }
+    }
+
+    private IEnumerator ApresentarTutorial()
+    {
+        yield return new WaitForSeconds(0.6f);
+        telaTutorial.SetActive(true);
     }
 
     public void BloquearTodosOsMomentos()

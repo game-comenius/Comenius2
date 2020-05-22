@@ -55,6 +55,8 @@ public class Planejamento : MonoBehaviour {
     {
         if (!Disponivel) return;
 
+        planejamentoUI.Abrir();
+
         canvas.enabled = true;
         backgroundPreto.Fadein();
         GameManager.UISendoUsada();
