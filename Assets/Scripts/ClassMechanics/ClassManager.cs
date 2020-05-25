@@ -29,6 +29,12 @@ public class ClassManager : MonoBehaviour
 
     [SerializeField] private Camera mainCamera;
 
+    [SerializeField] private GameObject fader;
+
+    public GameObject AgrupamentoIndividual;
+    public GameObject AgrupamentoDuplas;
+    public GameObject AgrupamentoGrandeGrupo;
+
     #endregion
 
     #region MomentoAula
@@ -85,6 +91,8 @@ public class ClassManager : MonoBehaviour
 
     #region Momento Pós-Aula
     [Header("Post-Class Moment")]
+
+    public GameObject AgrupamentoFimDeAula;
 
     [Tooltip("Os dois primeiros são os generalistas. O resto, em ordem, correspondem a cada momento de aula.")]
     [SerializeField] private StudentScript[] alunosComentaristas = new StudentScript[5];
@@ -344,6 +352,21 @@ public class ClassManager : MonoBehaviour
         studentIsProblem.Add(false);
     }
 
+    private void DestruirAgrupamentos()
+    {
+        GameObject individual = GameObject.Find("CadeirasEMesasIndividual(Clone)");
+        if (individual != null)
+            Destroy(individual);
+
+        GameObject duplas = GameObject.Find("CadeirasEMesasDuplas(Clone)");
+        if (duplas != null)
+            Destroy(duplas);
+
+        GameObject grupo = GameObject.Find("CadeirasEMesasGrandeGrupo(Clone)");
+        if (grupo != null)
+            Destroy(grupo);
+    }
+
     private IEnumerator StartClass()
     {
         timer.text = "Iniciando aula";
@@ -381,13 +404,21 @@ public class ClassManager : MonoBehaviour
 
         SistemaDialogo.sistemaDialogo.ComecarDialogo(Falas[0], null);
 
+        yield return StartCoroutine(FadeEffect.instance.Fade(1f));
+        AgrupamentoFimDeAula.gameObject.SetActive(false);
+        students.Clear();
+        studentIsProblem.Clear();
+        Instantiate(AgrupamentoDuplas, new Vector3(0, 0, 0), Quaternion.identity);
+        yield return StartCoroutine(FadeEffect.instance.Fade(1f));
+
         while (classMoment < 3)
-        {
-            timer.text = "M" + (classMoment + 1) + " - " + Mathf.FloorToInt(momentTimer / 60).ToString("00") + ":" + Mathf.FloorToInt(momentTimer % 60).ToString("00");
+        {            
+            timer.text = "M" + (classMoment + 1) + " - " + Mathf.FloorToInt(momentTimer / 60).ToString("00") + ":" + Mathf.FloorToInt(momentTimer % 60).ToString("00");                    
+            
 
             // Esperar o professor falar com os alunos
             yield return new WaitUntil(() => !SistemaDialogo.sistemaDialogo.transform.GetChild(0).gameObject.activeSelf);
-
+                       
             if (!GameManager.uiSendoUsada) 
             {
                 GameManager.UISendoUsada();
@@ -401,6 +432,7 @@ public class ClassManager : MonoBehaviour
 
                 teacher.StartWalk();
             }
+
 
             momentTimer -= Time.deltaTime * _timeAcceleration;
 
@@ -422,6 +454,15 @@ public class ClassManager : MonoBehaviour
             else if (momentTimer < 0)
             {
                 classMoment += 1;
+
+                yield return StartCoroutine(FadeEffect.instance.Fade(1f));
+                DestruirAgrupamentos();
+                //students.RemoveRange(students.Count - 12, 12);
+                //studentIsProblem.RemoveRange(studentIsProblem.Count - 12, 12);
+                students.Clear();
+                studentIsProblem.Clear();
+                Instantiate(AgrupamentoGrandeGrupo, new Vector3(0, 0, 0), Quaternion.identity);
+                yield return StartCoroutine(FadeEffect.instance.Fade(1f));
 
                 if (classMoment < 3) //a seguir são resetadas as variáveis para se gerar um tempo de problema para o novo momento de aula
                 {
@@ -466,7 +507,8 @@ public class ClassManager : MonoBehaviour
 
         // Retirar todas as mídias da sala de aula
         if (midiaNaSalaDeAula) midiaNaSalaDeAula.EsconderMidiaAtual();
-
+        DestruirAgrupamentos();
+        AgrupamentoFimDeAula.gameObject.SetActive(true);
         // Alterar a sala de acordo com a pontuação do jogador
         Desempenho.instance.TrocarSala();
 
