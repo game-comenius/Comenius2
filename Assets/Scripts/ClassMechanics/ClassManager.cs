@@ -267,27 +267,61 @@ public class ClassManager : MonoBehaviour
 
     private void AlunosComentaristasSetUp()
     {
+        // Obter o conjunto de feedbacks da missão atual
+        var missaoAtual = Player.Instance.missionID;
+        FeedbacksDosAlunos feedbacks;
+        switch (missaoAtual)
+        {
+            default:
+                feedbacks = FeedbacksDosAlunos.FeedbacksNaMissao1;
+                break;
+            case 1:
+                feedbacks = FeedbacksDosAlunos.FeedbacksNaMissao2;
+                break;
+            case 2:
+                feedbacks = FeedbacksDosAlunos.FeedbacksNaMissao3;
+                break;
+        }
+
+        var alunosComComentariosGerais = 0;
+        var alunosComComentariosSobreMidias = 0;
+
+        // Obter feedbacks gerais sobre a aula
+        var pontuacaoDaAula = Player.Instance.MissionHistory[missaoAtual].totalMissionPoints;
+        var feedbacksGerais = feedbacks.ObterFeedbacksGeraisDaAula(pontuacaoDaAula);
+
+        // Dar os feedbacks corretos para os alunos na sala de aula
         for (int i = 0; i < alunosComentaristas.Length; i++)
         {
-            NpcDialogo dialogo = alunosComentaristas[i].GetComponent<NpcDialogo>();
+            NpcDialogo npcDialogoComponent = alunosComentaristas[i].GetComponent<NpcDialogo>();
 
+            // Se i <= 1, distribuir feedbacks gerais sobre a aula
             if (i <= 1)
             {
-                for (int j = 0; j < falasGeneralistas.Length; j++)
-                {
-                    if (Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints >= falasGeneralistas[j].rangeNota.x
-                        && Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints <= falasGeneralistas[j].rangeNota.y)
-                    {
-                        dialogo.dialogoPrincipal = falasGeneralistas[j].dialogos[i].Clone();
-                    }
-                }
+                // Construção de um diálogo para o aluno i
+                Dialogo d = new Dialogo();
+                d.nodulos = new DialogoNodulo[1];
+                d.nodulos[0] = new DialogoNodulo();
+                d.nodulos[0].falas = new Fala[1];
+                d.nodulos[0].falas[0] = new Fala();
+                d.nodulos[0].falas[0].emocao = Expressao.Serio;
+                d.nodulos[0].falas[0].personagem = Personagens.Aluno;
+                // Se não há falas novas para o aluno, usar fala 0
+                if (alunosComComentariosGerais >= feedbacksGerais.Length)
+                    d.nodulos[0].falas[0].fala = feedbacksGerais[0];
+                else
+                    d.nodulos[0].falas[0].fala = feedbacksGerais[alunosComComentariosGerais];
+                npcDialogoComponent.dialogoPrincipal = d;
+
+                alunosComComentariosGerais++;
             }
+            // Se i > 1, distribuir feedbacks específicos sobre as mídias
             else
             {
-                dialogo.dialogoPrincipal = falasSobreMomentos[i - 2].EncontrarFalaCerta(Player.Instance.MissionHistory[Player.Instance.missionID].chosenMedia[i - 2]).Clone();
+                npcDialogoComponent.dialogoPrincipal = falasSobreMomentos[i - 2].EncontrarFalaCerta(Player.Instance.MissionHistory[Player.Instance.missionID].chosenMedia[i - 2]).Clone();
             }
 
-            dialogo.OnEndDialogueEvent += AceitarFeedbackDeUmAluno;
+            npcDialogoComponent.OnEndDialogueEvent += AceitarFeedbackDeUmAluno;
         }
     }
 
