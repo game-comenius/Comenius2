@@ -367,6 +367,24 @@ public class ClassManager : MonoBehaviour
             Destroy(grupo);
     }
 
+    private void CriarAgrupamentos(AgrupamentosEmSala agrupamento)
+    {
+        switch (agrupamento)
+        {
+            case AgrupamentosEmSala.Individual:
+                Instantiate(AgrupamentoIndividual, new Vector3(0, 0, 0), Quaternion.identity);
+                break;
+            case AgrupamentosEmSala.Duplas:
+                Instantiate(AgrupamentoDuplas, new Vector3(0, 0, 0), Quaternion.identity);
+                break;
+            case AgrupamentosEmSala.GrandeGrupo:
+                Instantiate(AgrupamentoGrandeGrupo, new Vector3(0, 0, 0), Quaternion.identity);
+                break;
+            default:
+                break;
+        }
+    }
+
     private IEnumerator StartClass()
     {
         timer.text = "Iniciando aula";
@@ -408,7 +426,7 @@ public class ClassManager : MonoBehaviour
         AgrupamentoFimDeAula.gameObject.SetActive(false);
         students.Clear();
         studentIsProblem.Clear();
-        Instantiate(AgrupamentoDuplas, new Vector3(0, 0, 0), Quaternion.identity);
+        CriarAgrupamentos(Player.Instance.MissionHistory[Player.Instance.missionID].agrupamento[classMoment]);
         yield return StartCoroutine(FadeEffect.instance.Fade(1f));
 
         while (classMoment < 3)
@@ -457,11 +475,9 @@ public class ClassManager : MonoBehaviour
 
                 yield return StartCoroutine(FadeEffect.instance.Fade(1f));
                 DestruirAgrupamentos();
-                //students.RemoveRange(students.Count - 12, 12);
-                //studentIsProblem.RemoveRange(studentIsProblem.Count - 12, 12);
                 students.Clear();
                 studentIsProblem.Clear();
-                Instantiate(AgrupamentoGrandeGrupo, new Vector3(0, 0, 0), Quaternion.identity);
+                CriarAgrupamentos(Player.Instance.MissionHistory[Player.Instance.missionID].agrupamento[classMoment]);
                 yield return StartCoroutine(FadeEffect.instance.Fade(1f));
 
                 if (classMoment < 3) //a seguir são resetadas as variáveis para se gerar um tempo de problema para o novo momento de aula

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlanManager : MonoBehaviour {
 
+    private AgrupamentosEmSala[] agrupamentos = new AgrupamentosEmSala[3];
     private ItemName[] chosenMedia = new ItemName[3];
     private int[] points = new int[3];
     private int totalMissionPoints = 0;
@@ -18,6 +19,10 @@ public class PlanManager : MonoBehaviour {
         points[1] = GameObject.Find("Midia2").GetComponent<MidiaMomento>().Points();
         points[2] = GameObject.Find("Midia3").GetComponent<MidiaMomento>().Points();
 
+        agrupamentos[0] = GameObject.Find("Midia1").GetComponent<MidiaMomento>().agrupamento;
+        agrupamentos[1] = GameObject.Find("Midia2").GetComponent<MidiaMomento>().agrupamento;
+        agrupamentos[2] = GameObject.Find("Midia3").GetComponent<MidiaMomento>().agrupamento;
+
         totalMissionPoints = points[0] + points[1] + points[2];
 
         Debug.Log("pontuação da missão: " + totalMissionPoints);
@@ -26,7 +31,7 @@ public class PlanManager : MonoBehaviour {
         //Player.Instance.points = points;
         //Player.Instance.totalMissionPoints = totalMissionPoints;
 
-        Player.Instance.MissionHistory[Player.Instance.missionID] = new ChosenMediaPoints(chosenMedia, points, totalMissionPoints);
+        Player.Instance.MissionHistory[Player.Instance.missionID] = new ChosenMediaPoints(agrupamentos, chosenMedia, points, totalMissionPoints);
 
         //GameManager.UINaoSendoUsada();
     }

@@ -6,7 +6,9 @@ public class MidiaMomento : MonoBehaviour
     // Item inicial do slot
     public ItemName initialItem;
     // Item que está atualmente no slot
-    private ItemName item; 
+    private ItemName item;
+    // Agrupamento do momento
+    public AgrupamentosEmSala agrupamento;
 
     //se você tiver uma ideia melhor pra fazer isso, por favor melhore isso.
     //está feito assim porque cada momento tem pontuações diferentes pra cada mídia, por isso todos são públicos para serem editados no unity.
