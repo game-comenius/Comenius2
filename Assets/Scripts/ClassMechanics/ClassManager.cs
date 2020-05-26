@@ -426,6 +426,7 @@ public class ClassManager : MonoBehaviour
         AgrupamentoFimDeAula.gameObject.SetActive(false);
         students.Clear();
         studentIsProblem.Clear();
+        Debug.Log("classMoment = " + classMoment);
         CriarAgrupamentos(Player.Instance.MissionHistory[Player.Instance.missionID].agrupamento[classMoment]);
         yield return StartCoroutine(FadeEffect.instance.Fade(1f));
 
@@ -473,12 +474,16 @@ public class ClassManager : MonoBehaviour
             {
                 classMoment += 1;
 
-                yield return StartCoroutine(FadeEffect.instance.Fade(1f));
-                DestruirAgrupamentos();
-                students.Clear();
-                studentIsProblem.Clear();
-                CriarAgrupamentos(Player.Instance.MissionHistory[Player.Instance.missionID].agrupamento[classMoment]);
-                yield return StartCoroutine(FadeEffect.instance.Fade(1f));
+                if (classMoment < 3)
+                {
+                    yield return StartCoroutine(FadeEffect.instance.Fade(1f));
+                    DestruirAgrupamentos();
+                    students.Clear();
+                    studentIsProblem.Clear();
+                    Debug.Log("classMoment = " + classMoment);
+                    CriarAgrupamentos(Player.Instance.MissionHistory[Player.Instance.missionID].agrupamento[classMoment]);
+                    yield return StartCoroutine(FadeEffect.instance.Fade(1f));
+                }
 
                 if (classMoment < 3) //a seguir são resetadas as variáveis para se gerar um tempo de problema para o novo momento de aula
                 {
