@@ -64,7 +64,7 @@ public class PaginaEscolherMidias : MonoBehaviour {
             botao.transform.SetParent(espacoParaBotoesMidiaDisponivelCustom.transform);
             botao.transform.localScale = Vector3.one;
 
-            botao.GetComponentInChildren<TextMeshProUGUI>().text = midia.DescriptionsInMission3.StandardDescription;
+            botao.GetComponentInChildren<TextMeshProUGUI>().text = midia.FriendlyName;
 
             var spriteDaMidia = botao.GetComponentInChildren<ItemInUserInterface>();
             spriteDaMidia.ItemName = midia.ItemName;

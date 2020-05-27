@@ -22,6 +22,7 @@ public class PaginaResumoSalvar : MonoBehaviour {
     [SerializeField] TMP_InputField AutorInputField;
 
     [Header("Botões")]
+    [SerializeField] Button botaoImprimir;
     [SerializeField] Button botaoSalvar;
 
     private void Awake()
@@ -38,8 +39,8 @@ public class PaginaResumoSalvar : MonoBehaviour {
             MoedasDoDiretor
         };
 
-        // Botão Salvar começa desabilitado
-        botaoSalvar.interactable = false;
+        // Botão Imprimir e Salvar começam desabilitados
+        DefinirInteratividadeDosBotoes(false);
     }
 
     private void Start()
@@ -49,9 +50,9 @@ public class PaginaResumoSalvar : MonoBehaviour {
         tituloDaAulaInputField.onValueChanged.AddListener((s) =>
         {
             if (!string.IsNullOrEmpty(s) && !string.IsNullOrEmpty(AutorInputField.text))
-                botaoSalvar.interactable = true;
+                DefinirInteratividadeDosBotoes(true);
             else
-                botaoSalvar.interactable = false;
+                DefinirInteratividadeDosBotoes(false);
         });
 
         // Quando nome do autor for alterado, liberar botão de salvar se tanto
@@ -59,9 +60,9 @@ public class PaginaResumoSalvar : MonoBehaviour {
         AutorInputField.onValueChanged.AddListener((s) =>
         {
             if (!string.IsNullOrEmpty(s) && !string.IsNullOrEmpty(tituloDaAulaInputField.text))
-                botaoSalvar.interactable = true;
+                DefinirInteratividadeDosBotoes(true);
             else
-                botaoSalvar.interactable = false;
+                DefinirInteratividadeDosBotoes(false);
         });
     }
 
@@ -86,5 +87,11 @@ public class PaginaResumoSalvar : MonoBehaviour {
             case CharacterName.Montanari: MoedasDaMontanari.SetActive(true); break;
             case CharacterName.Diretor: MoedasDoDiretor.SetActive(true); break;
         }
+    }
+
+    private void DefinirInteratividadeDosBotoes(bool interativo)
+    {
+        botaoImprimir.interactable = interativo;
+        botaoSalvar.interactable = interativo;
     }
 }
