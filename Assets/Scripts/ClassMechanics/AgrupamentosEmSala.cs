@@ -2,5 +2,6 @@
 {
     Individual,
     Duplas,
-    GrandeGrupo
+    GrandeGrupo,
+    Grupos4
 }

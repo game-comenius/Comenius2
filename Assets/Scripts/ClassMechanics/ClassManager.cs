@@ -34,6 +34,7 @@ public class ClassManager : MonoBehaviour
     public GameObject AgrupamentoIndividual;
     public GameObject AgrupamentoDuplas;
     public GameObject AgrupamentoGrandeGrupo;
+    public GameObject AgrupamentoGrupos4;
 
     #endregion
 
@@ -399,6 +400,10 @@ public class ClassManager : MonoBehaviour
         GameObject grupo = GameObject.Find("CadeirasEMesasGrandeGrupo(Clone)");
         if (grupo != null)
             Destroy(grupo);
+
+        GameObject grupos4 = GameObject.Find("CadeirasEMerasGrupos4(Clone)");
+        if (grupos4 != null)
+            Destroy(grupos4);
     }
 
     private void CriarAgrupamentos(AgrupamentosEmSala agrupamento)
@@ -413,6 +418,9 @@ public class ClassManager : MonoBehaviour
                 break;
             case AgrupamentosEmSala.GrandeGrupo:
                 Instantiate(AgrupamentoGrandeGrupo, new Vector3(0, 0, 0), Quaternion.identity);
+                break;
+            case AgrupamentosEmSala.Grupos4:
+                Instantiate(AgrupamentoGrupos4, new Vector3(0, 0, 0), Quaternion.identity);
                 break;
             default:
                 break;
