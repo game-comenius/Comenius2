@@ -95,8 +95,8 @@ public class ClassManager : MonoBehaviour
 
     public GameObject AgrupamentoFimDeAula;
 
-    [Tooltip("Os 3 primeiros falam sobre cada um dos momentos e os outros, falam sobre a aula de maneira geral.")]
-    [SerializeField] private StudentScript[] alunosComentaristas = new StudentScript[3];
+    [Tooltip("Os 3 primeiros falam sobre cada um dos momentos e os outros, se existirem, falam sobre a aula de maneira geral.")]
+    [SerializeField] public StudentScript[] alunosComentaristas = new StudentScript[3];
 
     [SerializeField] private ComentarioProfessor professor = new ComentarioProfessor();
 
@@ -108,11 +108,6 @@ public class ClassManager : MonoBehaviour
             dialogos[i] = professor.falasGeneralistas[i].dialogos[0];
         return dialogos;
     }
-
-    [Tooltip("O elemento 0 corresponde a Tier 1, e1 - t2, e2 - t3 e e3 - t4.")]
-    [SerializeField] public DialogoGeneralista[] falasGeneralistas = new DialogoGeneralista[4];
-
-    [SerializeField] public FalasSobreMomentos[] falasSobreMomentos = new FalasSobreMomentos[3];
 
     #region Classes
 
@@ -190,7 +185,17 @@ public class ClassManager : MonoBehaviour
 
         TeacherSetUp();
 
-        AlunosComentaristasSetUp();
+        // Obter o conjunto de feedbacks da missão atual e usar ele para
+        // configurar as falas dos alunos comentaristas da aula
+        var missaoAtual = Player.Instance.missionID;
+        FeedbacksDosAlunos feedbacks;
+        switch (missaoAtual)
+        {
+            default: feedbacks = FeedbacksDosAlunos.FeedbacksNaMissao1; break;
+            case 1: feedbacks = FeedbacksDosAlunos.FeedbacksNaMissao2; break;
+            case 2: feedbacks = FeedbacksDosAlunos.FeedbacksNaMissao3; break;
+        }
+        AlunosComentaristasSetUp(feedbacks);
 
         //Configura o final da aula.
         EndClass += EndClassFunction;
@@ -239,8 +244,8 @@ public class ClassManager : MonoBehaviour
 
         for (int j = 0; j < professor.falasGeneralistas.Length; j++)
         {
-            if (Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints >= falasGeneralistas[j].rangeNota.x 
-                && Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints <= falasGeneralistas[j].rangeNota.y)
+            if (Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints >= professor.falasGeneralistas[j].rangeNota.x 
+                && Player.Instance.MissionHistory[Player.Instance.missionID].totalMissionPoints <= professor.falasGeneralistas[j].rangeNota.y)
             {
                 // Adicionar fala de despedida e recomendação à Lurdinha para
                 // que converse com os alunos após esta conversa (pós-aula)
@@ -266,32 +271,16 @@ public class ClassManager : MonoBehaviour
         }
     }
 
-    private void AlunosComentaristasSetUp()
+    public void AlunosComentaristasSetUp(FeedbacksDosAlunos feedbacks)
     {
-        // Obter o conjunto de feedbacks da missão atual
+        // Obter feedbacks gerais sobre a aula
         var missaoAtual = Player.Instance.missionID;
-        FeedbacksDosAlunos feedbacks;
-        switch (missaoAtual)
-        {
-            default:
-                feedbacks = FeedbacksDosAlunos.FeedbacksNaMissao1;
-                break;
-            case 1:
-                feedbacks = FeedbacksDosAlunos.FeedbacksNaMissao2;
-                break;
-            case 2:
-                feedbacks = FeedbacksDosAlunos.FeedbacksNaMissao3;
-                break;
-        }
+        var historicoDaMissao = Player.Instance.MissionHistory[missaoAtual];
+        var pontuacaoDaAula = historicoDaMissao.totalMissionPoints;
+        var feedbacksGerais = feedbacks.ObterFeedbacksGeraisDaAula(pontuacaoDaAula);
 
         var alunosComComentariosGerais = 0;
         var alunosComComentariosSobreMidias = 0;
-
-        // Obter feedbacks gerais sobre a aula
-        var historicoDaMissao = Player.Instance.MissionHistory[missaoAtual];
-        var pontuacaoDaAula = historicoDaMissao.totalMissionPoints;
-
-        var feedbacksGerais = feedbacks.ObterFeedbacksGeraisDaAula(pontuacaoDaAula);
 
         // Dar os feedbacks corretos para os alunos na sala de aula
         for (int i = 0; i < alunosComentaristas.Length; i++)
@@ -351,6 +340,10 @@ public class ClassManager : MonoBehaviour
             }
 
             npcDialogoComponent.dialogoPrincipal = d;
+
+            // Apagar link antigo, se existir
+            npcDialogoComponent.OnEndDialogueEvent -= AceitarFeedbackDeUmAluno;
+            // Adicionar link novo
             npcDialogoComponent.OnEndDialogueEvent += AceitarFeedbackDeUmAluno;
         }
     }

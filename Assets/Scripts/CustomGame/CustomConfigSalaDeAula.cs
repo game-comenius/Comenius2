@@ -42,7 +42,9 @@ public class CustomConfigSalaDeAula : MonoBehaviour
         ConfigurarSpritesDoProfessor(professor, settings);
         ConfigurarFalasDoProfessorDuranteAula(classManager, settings);
         ConfigurarFalaDoProfessorPosAula(classManager, settings);
-        ConfigurarFalasDeFeedback(classManager, settings);
+
+        // Configurar falas de feedback dos alunos quando a aula terminar
+        ClassManager.EndClass += () => ConfigurarFalasDeFeedback(classManager, settings);
     }
 
     private void ConfigurarSpritesDoProfessor(GameObject professor, CustomGameSettings settings)
@@ -139,29 +141,11 @@ public class CustomConfigSalaDeAula : MonoBehaviour
         // Configurar feedback geral sobre a aula do professor também?
         // ...
 
-        // Configurar falas de feedback gerais sobre a aula
-        // Nas salas, as falas generalistas estão organizadas em ordem de
-        // qualidade de aula, as primeiras são sobre uma aula melhor e as
-        // últimas são sobre uma aula pior. São 4 categorias de aulas
-        string[] falasGeneralistas = { "A aula foi incrível!", "A aula foi muito boa!", "A aula foi boa!", "A aula foi ruim..."};
-        for (var i = 0; i < falasGeneralistas.Length; i++)
-        {
-            for (var j = 0; j < 2; j++)
-            {
-                classManager.falasGeneralistas[i].dialogos[j] = new GameComenius.Dialogo.Dialogo();
-                classManager.falasGeneralistas[i].dialogos[j].nodulos = new GameComenius.Dialogo.DialogoNodulo[1];
-                classManager.falasGeneralistas[i].dialogos[j].nodulos[0] = new GameComenius.Dialogo.DialogoNodulo();
-                classManager.falasGeneralistas[i].dialogos[j].nodulos[0].falas = new GameComenius.Dialogo.Fala[1];
-                classManager.falasGeneralistas[i].dialogos[j].nodulos[0].falas[0] = new GameComenius.Dialogo.Fala();
-                classManager.falasGeneralistas[i].dialogos[j].nodulos[0].falas[0].fala = falasGeneralistas[i];
-                classManager.falasGeneralistas[i].dialogos[j].nodulos[0].falas[0].personagem = GameComenius.Dialogo.Personagens.Aluno;
-                classManager.falasGeneralistas[i].dialogos[j].nodulos[0].falas[0].emocao = GameComenius.Dialogo.Expressao.Serio;
-            }
-        }
-
         // Configurar falas de feedback específicas sobre as mídias
         // Para cada momento, um aluno na sala falará sobre a mídia escolhida
         // para aquele momento da aula
+
+        // Obter feedbacks escritos pelo criador do custom
         CreateCustomGamePanel.MidiaPoderFeedback[][] arraysMPF =
         {
             settings.ArrayMidiaPoderFeedbackMomento1,
@@ -170,28 +154,53 @@ public class CustomConfigSalaDeAula : MonoBehaviour
         };
         foreach (var arrayMPF in arraysMPF) if (arrayMPF == null) return;
 
-        classManager.falasSobreMomentos = new ClassManager.FalasSobreMomentos[3];
-        var feedbacksDosMomentos = classManager.falasSobreMomentos;
-
-        for (var i = 0; i < 3; i++)
+        // Criar 3 Dictionary, um para cada momento, para guardarem o link entre
+        // uma mídia e o seu feedback
+        var feedbacksPorMidiaNoMomento1Custom = new Dictionary<ItemName, string>();
+        var feedbacksPorMidiaNoMomento2Custom = new Dictionary<ItemName, string>();
+        var feedbacksPorMidiaNoMomento3Custom = new Dictionary<ItemName, string>();
+        Dictionary<ItemName, string>[] feedbacksPorMidiaArray =
         {
-            feedbacksDosMomentos[i] = new ClassManager.FalasSobreMomentos();
-            var quantidadeMidias = arraysMPF[i].Length;
-            feedbacksDosMomentos[i].falaSobreMidias = new ClassManager.FalaSobreMidias[quantidadeMidias];
+            feedbacksPorMidiaNoMomento1Custom,
+            feedbacksPorMidiaNoMomento2Custom,
+            feedbacksPorMidiaNoMomento3Custom
+        };
+
+        // Guardar as informações escritas pelo criador nos Dictionary
+        // Depois, esses Dictionary serão usados para instanciar um objeto da
+        // classe FeedbacksDosAlunos
+        for (var momento = 0; momento < 3; momento++)
+        {
+            var quantidadeMidias = arraysMPF[momento].Length;
             for (var j = 0; j < quantidadeMidias; j++)
             {
-                var mpf = arraysMPF[i][j];
-                feedbacksDosMomentos[i].falaSobreMidias[j] = new ClassManager.FalaSobreMidias();
-                feedbacksDosMomentos[i].falaSobreMidias[j].item = mpf.Midia;
-                feedbacksDosMomentos[i].falaSobreMidias[j].dialogo = new GameComenius.Dialogo.Dialogo();
-                feedbacksDosMomentos[i].falaSobreMidias[j].dialogo.nodulos = new GameComenius.Dialogo.DialogoNodulo[1];
-                feedbacksDosMomentos[i].falaSobreMidias[j].dialogo.nodulos[0] = new GameComenius.Dialogo.DialogoNodulo();
-                feedbacksDosMomentos[i].falaSobreMidias[j].dialogo.nodulos[0].falas = new GameComenius.Dialogo.Fala[1];
-                feedbacksDosMomentos[i].falaSobreMidias[j].dialogo.nodulos[0].falas[0] = new GameComenius.Dialogo.Fala();
-                feedbacksDosMomentos[i].falaSobreMidias[j].dialogo.nodulos[0].falas[0].fala = mpf.Feedback;
-                feedbacksDosMomentos[i].falaSobreMidias[j].dialogo.nodulos[0].falas[0].personagem = GameComenius.Dialogo.Personagens.Aluno;
-                feedbacksDosMomentos[i].falaSobreMidias[j].dialogo.nodulos[0].falas[0].emocao = GameComenius.Dialogo.Expressao.Serio;
+                var mpf = arraysMPF[momento][j];
+                feedbacksPorMidiaArray[momento][mpf.Midia] = mpf.Feedback;
             }
         }
+
+        // Configurar falas de feedback gerais sobre a aula
+        string[] feedbacksAulaMelhor = { "A aula foi incrível!" };
+        string[] feedbacksAulaMuitoBoa = { "A aula foi muito boa!" };
+        string[] feedbacksAulaBoa = { "A aula foi boa!" };
+        string[] feedbacksAulaFraca = { "A aula foi ruim..." };
+
+        // Criar novo objeto FeedbacksDosAlunos, que conterá falas específicas
+        // sobre as mídias e falas gerais sobre a aula de acordo com as escolhas
+        // feitas pelo criador da missão custom
+        FeedbacksDosAlunos feedbacksDosAlunos = new FeedbacksDosAlunos
+        (
+            feedbacksPorMidiaNoMomento1Custom,
+            feedbacksPorMidiaNoMomento2Custom,
+            feedbacksPorMidiaNoMomento3Custom,
+            feedbacksAulaMelhor,
+            feedbacksAulaMuitoBoa,
+            feedbacksAulaBoa,
+            feedbacksAulaFraca
+        );
+
+        // Pedir para o ClassManager configurar as falas dos alunos
+        // comentaristas com os feedbacks custom
+        classManager.AlunosComentaristasSetUp(feedbacksDosAlunos);
     }
 }
