@@ -95,8 +95,8 @@ public class ClassManager : MonoBehaviour
 
     public GameObject AgrupamentoFimDeAula;
 
-    [Tooltip("Os dois primeiros são os generalistas. O resto, em ordem, correspondem a cada momento de aula.")]
-    [SerializeField] private StudentScript[] alunosComentaristas = new StudentScript[5];
+    [Tooltip("Os 3 primeiros falam sobre cada um dos momentos e os outros, falam sobre a aula de maneira geral.")]
+    [SerializeField] private StudentScript[] alunosComentaristas = new StudentScript[3];
 
     [SerializeField] private ComentarioProfessor professor = new ComentarioProfessor();
 
@@ -288,40 +288,69 @@ public class ClassManager : MonoBehaviour
         var alunosComComentariosSobreMidias = 0;
 
         // Obter feedbacks gerais sobre a aula
-        var pontuacaoDaAula = Player.Instance.MissionHistory[missaoAtual].totalMissionPoints;
+        var historicoDaMissao = Player.Instance.MissionHistory[missaoAtual];
+        var pontuacaoDaAula = historicoDaMissao.totalMissionPoints;
+
         var feedbacksGerais = feedbacks.ObterFeedbacksGeraisDaAula(pontuacaoDaAula);
 
         // Dar os feedbacks corretos para os alunos na sala de aula
         for (int i = 0; i < alunosComentaristas.Length; i++)
         {
-            NpcDialogo npcDialogoComponent = alunosComentaristas[i].GetComponent<NpcDialogo>();
+            // Construção de um objeto diálogo para o aluno i
+            Dialogo d = new Dialogo();
+            d.nodulos = new DialogoNodulo[1];
+            d.nodulos[0] = new DialogoNodulo();
+            d.nodulos[0].falas = new Fala[1];
+            d.nodulos[0].falas[0] = new Fala();
+            d.nodulos[0].falas[0].emocao = Expressao.Serio;
+            d.nodulos[0].falas[0].personagem = Personagens.Aluno;
 
-            // Se i <= 1, distribuir feedbacks gerais sobre a aula
-            if (i <= 1)
+            // Obter componente que irá receber o diálogo recém criado
+            var npcDialogoComponent = alunosComentaristas[i].GetComponent<NpcDialogo>();
+
+            // Se i < 3, distribuir feedbacks específicos sobre as mídias
+            if (i < 3)
             {
-                // Construção de um diálogo para o aluno i
-                Dialogo d = new Dialogo();
-                d.nodulos = new DialogoNodulo[1];
-                d.nodulos[0] = new DialogoNodulo();
-                d.nodulos[0].falas = new Fala[1];
-                d.nodulos[0].falas[0] = new Fala();
-                d.nodulos[0].falas[0].emocao = Expressao.Serio;
-                d.nodulos[0].falas[0].personagem = Personagens.Aluno;
+                var momentoAtual = i;
+
+                // Obter feedbacks por mídia considerando o momento atual da aula
+                // Momento 1 = 0; Momento 2 = 1; Momento 3 = 2
+                Dictionary<ItemName, string> feedbacksPorMidia;
+                switch (momentoAtual)
+                {
+                    default:
+                        feedbacksPorMidia = feedbacks.FeedbacksPorMidiaNoMomento1;
+                        break;
+                    case 1:
+                        feedbacksPorMidia = feedbacks.FeedbacksPorMidiaNoMomento2;
+                        break;
+                    case 2:
+                        feedbacksPorMidia = feedbacks.FeedbacksPorMidiaNoMomento3;
+                        break;
+                }
+
+                // Obter feedback para a mídia selecionada
+                var midiaSelecionada = historicoDaMissao.chosenMedia[momentoAtual];
+                var feedbackParaEstaMidiaSelecionada = feedbacksPorMidia[midiaSelecionada];
+
+                // Colocar feedback na fala do aluno
+                d.nodulos[0].falas[0].fala = feedbackParaEstaMidiaSelecionada;
+
+                alunosComComentariosSobreMidias++;
+            }
+            // Se i >= 3, distribuir feedbacks gerais sobre a aula
+            else
+            {
                 // Se não há falas novas para o aluno, usar fala 0
                 if (alunosComComentariosGerais >= feedbacksGerais.Length)
                     d.nodulos[0].falas[0].fala = feedbacksGerais[0];
                 else
                     d.nodulos[0].falas[0].fala = feedbacksGerais[alunosComComentariosGerais];
-                npcDialogoComponent.dialogoPrincipal = d;
 
                 alunosComComentariosGerais++;
             }
-            // Se i > 1, distribuir feedbacks específicos sobre as mídias
-            else
-            {
-                npcDialogoComponent.dialogoPrincipal = falasSobreMomentos[i - 2].EncontrarFalaCerta(Player.Instance.MissionHistory[Player.Instance.missionID].chosenMedia[i - 2]).Clone();
-            }
 
+            npcDialogoComponent.dialogoPrincipal = d;
             npcDialogoComponent.OnEndDialogueEvent += AceitarFeedbackDeUmAluno;
         }
     }
