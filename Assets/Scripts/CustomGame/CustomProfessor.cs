@@ -22,6 +22,7 @@ public class CustomProfessor : MonoBehaviour
     private Sprite spriteSW;
 
 
+
     public void ConfigurarProfessor(GameObject professorGO, CustomGameSettings settings)
     {
         professor = settings.Professor;
@@ -109,68 +110,70 @@ public class CustomProfessor : MonoBehaviour
             npc.dialogoPrincipal.nodulos[0].falas[i + 1].emocao = GameComenius.Dialogo.Expressao.Sorrindo;
         }
 
-        // Versão anterior que dividia o parágrafo caso ele fosse muito grande
+        TrocarDialogoAposPlanejamento(professorGO);
+    }
 
-        //// Número máximo de characteres em um parágrafo do jogo
-        //var maxChars = 300;
+    private void TrocarDialogoAposPlanejamento(GameObject professorGO)
+    {
+        var plan = FindObjectOfType<Planejamento>();
+        Action funcaoTrocarDialogoAposPlanejamento = null;
+        funcaoTrocarDialogoAposPlanejamento = () =>
+        {
+            // Esta função só será executada 1 vez
+            plan.QuandoConfirmarPlanejamentoEvent -= funcaoTrocarDialogoAposPlanejamento;
 
-        //// Dividir fala muito grande criada pelo jogador em parágrafos
-        //List<string> listaDeFalas = new List<string>();
+            // Trocar diálogo
+            // Novas falas
+            var paragrafos = new string[2];
+            // Fala do professor
+            paragrafos[0] = "Muito bom, Lurdinha! Agora que planejou a aula, vamos para a sala?";
+            // Fala da Lurdinha
+            paragrafos[1] = "Claro!";
 
-        //var startIndex = 0;
-        //while (startIndex < novaFala.Length)
-        //{
-        //    var length = Math.Min(maxChars, (novaFala.Length - startIndex));
-        //    var paragrafo = novaFala.Substring(startIndex, length).Trim();
-        //    startIndex += length;
+            // Substituir componentes relacionados ao diálogo
+            var npc = professorGO.GetComponent<NpcDialogo>();
+            var originalInteractOffset = npc.interactOffset;
+            Destroy(npc);
+            Destroy(professorGO.GetComponent<QuestGuest>());
+            professorGO.AddComponent<QuestGuest>();
+            npc = professorGO.AddComponent<NpcDialogo>();
+            npc.interactOffset = originalInteractOffset;
+            npc.dialogoPrincipal = new GameComenius.Dialogo.Dialogo();
+            npc.dialogoPrincipal.nodulos = new GameComenius.Dialogo.DialogoNodulo[1];
+            npc.dialogoPrincipal.nodulos[0] = new GameComenius.Dialogo.DialogoNodulo();
+            npc.dialogoPrincipal.nodulos[0].falas = new GameComenius.Dialogo.Fala[1 + paragrafos.Length];
 
-        //    // Consertando palavras cortadas ao meio...
-        //    try
-        //    {
-        //        var nextChar = novaFala[startIndex];
-        //        if (!char.IsWhiteSpace(nextChar))
-        //        {
-        //            var ultimoEspaco = paragrafo.LastIndexOf(' ');
-        //            if (ultimoEspaco > 0)
-        //            {
-        //                paragrafo = paragrafo.Substring(0, ultimoEspaco).Trim();
-        //                startIndex -= (length - ultimoEspaco);
-        //            }
-        //        }
-        //    }
-        //    // try ~ catch vazio para ignorar "array index out of bounds"
-        //    catch { /* Do nothing */ }
+            // Fala da Lurdinha, obrigatoriamente ela deve iniciar um diálogo
+            npc.dialogoPrincipal.nodulos[0].falas[0] = new GameComenius.Dialogo.Fala
+            {
+                // Uma fala em branco da Lurdinha é suficiente para o jogo fazer
+                // um "skip" da fala dela mesmo que precise aqui no código
+                fala = "",
+                personagem = GameComenius.Dialogo.Personagens.Lurdinha,
+                emocao = GameComenius.Dialogo.Expressao.Sorrindo
+            };
 
-        //    listaDeFalas.Add(paragrafo);
-        //}
+            // Adicionar falas do professor
+            npc.dialogoPrincipal.nodulos[0].falas[1] = new GameComenius.Dialogo.Fala();
+            npc.dialogoPrincipal.nodulos[0].falas[1].fala = paragrafos[0];
+            var a = Enum.Parse(typeof(GameComenius.Dialogo.Personagens), professor.ToString(), true);
+            npc.dialogoPrincipal.nodulos[0].falas[1].personagem = (GameComenius.Dialogo.Personagens)a;
+            npc.dialogoPrincipal.nodulos[0].falas[1].emocao = GameComenius.Dialogo.Expressao.Sorrindo;
 
-        //// Adicionar falas ao diálogo do professor
-        //var npc = professorGO.GetComponent<NpcDialogo>();
-        //npc.dialogoPrincipal = new GameComenius.Dialogo.Dialogo();
-        //npc.dialogoPrincipal.nodulos = new GameComenius.Dialogo.DialogoNodulo[1];
-        //npc.dialogoPrincipal.nodulos[0] = new GameComenius.Dialogo.DialogoNodulo();
-        //npc.dialogoPrincipal.nodulos[0].falas = new GameComenius.Dialogo.Fala[1 + listaDeFalas.Count];
+            // Adicionar fala da Lurdinha
+            npc.dialogoPrincipal.nodulos[0].falas[2] = new GameComenius.Dialogo.Fala();
+            npc.dialogoPrincipal.nodulos[0].falas[2].fala = paragrafos[1];
+            npc.dialogoPrincipal.nodulos[0].falas[2].personagem = GameComenius.Dialogo.Personagens.Lurdinha;
+            npc.dialogoPrincipal.nodulos[0].falas[2].emocao = GameComenius.Dialogo.Expressao.Sorrindo;
 
-        //// Fala da Lurdinha, obrigatoriamente ela deve iniciar um diálogo
-        //npc.dialogoPrincipal.nodulos[0].falas[0] = new GameComenius.Dialogo.Fala
-        //{
-        //    // Uma fala em branco da Lurdinha é suficiente para o jogo fazer
-        //    // um "skip" da fala dela mesmo que precise aqui no código
-        //    fala = "",
-        //    personagem = GameComenius.Dialogo.Personagens.Lurdinha,
-        //    emocao = GameComenius.Dialogo.Expressao.Sorrindo
-        //};
+            // Carregar cena da sala de aula custom quando esse diálogo terminar
+            npc.OnEndDialogueEvent += () => FindObjectOfType<SceneLoader>().LoadNewScene("CustomSalaDeAula");
 
-        //// Adicionar falas do professor
-        //for (var i = 0; i < listaDeFalas.Count; i++)
-        //{
-        //    npc.dialogoPrincipal.nodulos[0].falas[i + 1] = new GameComenius.Dialogo.Fala();
-        //    npc.dialogoPrincipal.nodulos[0].falas[i + 1].fala = listaDeFalas[i];
-        //    var a = Enum.Parse(typeof(GameComenius.Dialogo.Personagens), professor.ToString(), true);
-        //    npc.dialogoPrincipal.nodulos[0].falas[i + 1].personagem = (GameComenius.Dialogo.Personagens) a;
-        //    npc.dialogoPrincipal.nodulos[0].falas[i + 1].emocao = GameComenius.Dialogo.Expressao.Sorrindo;
-        //}
-
-
+            // Fazer o diálogo começar logo após esta confirmação de planejamento
+            npc.dialogoObrigatorio = true;
+            npc.esperaDialogoObrigatorio = 1.5f;
+            npc.Restart();
+        };
+        plan.QuandoConfirmarPlanejamentoEvent += funcaoTrocarDialogoAposPlanejamento;
     }
 }
