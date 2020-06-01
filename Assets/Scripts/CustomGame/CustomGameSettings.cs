@@ -7,6 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
+using System.Linq;
 
 [System.Serializable]
 public class CustomGameSettings {
@@ -221,6 +222,11 @@ public class CustomGameSettings {
     {
         string s = "";
 
+        s += "<a href=\"javascript:if(window.print)window.print()\">" +
+                "<i>Para imprimir esta página, clique aqui.</i>" +
+             "</a>";
+        s += "</br>";
+
         s += "<h2>" + TituloDaAula + "</h2>";
         s += "Autor: " + Autor;
         s += "</br></br>";
@@ -258,10 +264,30 @@ public class CustomGameSettings {
         s += "</br>";
 
         s += "<h3>== Mídias disponíveis ==</h3>";
-        s += "<ul>";
-        foreach (var midia in MidiasDisponiveis())
-            s += "<li>" + (new Item(midia).FriendlyName) + "</li>";
-        s += "</ul>";
+        // Criar uma tabela para as mídias selecionadas pelo criador do custom
+        // As colunas da tabela serão 4: mídia Selecionada e poderes nos momentos
+        s += "<table style=\"border: 1px solid black; border-collapse: collapse;\">" +
+                "<tr>" +
+                    "<th style=\"padding: 5px; border: 1px solid black; border-collapse: collapse;\">Mídia</th>" +
+                    "<th style=\"padding: 5px; border: 1px solid black; border-collapse: collapse;\">Primeiro Momento</th>" +
+                    "<th style=\"padding: 5px; border: 1px solid black; border-collapse: collapse;\">Segundo Momento</th>" +
+                    "<th style=\"padding: 5px; border: 1px solid black; border-collapse: collapse;\">Terceiro Momento</th>" +
+                "</tr>";
+        var midiasDisponiveis = MidiasDisponiveis();
+        for (int i = 0; i < midiasDisponiveis.Length; i++)
+        {
+            var nomeDaMidia = new Item(midiasDisponiveis[i]).FriendlyName;
+            var poderNoMomento1 = ArrayMidiaPoderFeedbackMomento1[i].Poder.Nome();
+            var poderNoMomento2 = ArrayMidiaPoderFeedbackMomento2[i].Poder.Nome();
+            var poderNoMomento3 = ArrayMidiaPoderFeedbackMomento3[i].Poder.Nome();
+            s += "<tr>" +
+                    "<td style=\"padding: 5px; border: 1px solid black; border-collapse: collapse;\">" + nomeDaMidia + "</td>" +
+                    "<td style=\"padding: 5px; border: 1px solid black; border-collapse: collapse;\">" + poderNoMomento1 + "</td>" +
+                    "<td style=\"padding: 5px; border: 1px solid black; border-collapse: collapse;\">" + poderNoMomento2 + "</td>" +
+                    "<td style=\"padding: 5px; border: 1px solid black; border-collapse: collapse;\">" + poderNoMomento3 + "</td>" +
+                 "</tr>";
+        }
+        s += "</table>";
 
         return s;
     }
