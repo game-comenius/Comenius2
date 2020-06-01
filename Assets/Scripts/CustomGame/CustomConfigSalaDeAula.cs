@@ -6,18 +6,13 @@ using UnityEngine;
 
 public class CustomConfigSalaDeAula : MonoBehaviour
 {
+    [SerializeField] Canvas canvasJanelaFinalCustomGame;
+
     void Awake()
     {
-        // Destruir todas as portas, esta é a última sala do custom
-        var doors = FindObjectsOfType<DoorTransition>();
-        foreach (var door in doors) Destroy(door);
-        var otherDoors = GameObject.FindGameObjectsWithTag("Door1");
-        foreach (var door in otherDoors) Destroy(door.gameObject);
-
         // Para impedir que o professor ande, nem todos tem sprite para andar
         var teacherScripts = FindObjectsOfType<TeacherScript>();
         foreach (var teacherScript in teacherScripts) teacherScript.CanWalk = false;
-
     }
 
     private IEnumerator Start()
@@ -45,6 +40,8 @@ public class CustomConfigSalaDeAula : MonoBehaviour
 
         // Configurar falas de feedback dos alunos quando a aula terminar
         ClassManager.EndClass += () => ConfigurarFalasDeFeedback(classManager, settings);
+
+        ConfigurarPortas(settings);
     }
 
     private void ConfigurarSpritesDoProfessor(GameObject professor, CustomGameSettings settings)
@@ -202,5 +199,63 @@ public class CustomConfigSalaDeAula : MonoBehaviour
         // Pedir para o ClassManager configurar as falas dos alunos
         // comentaristas com os feedbacks custom
         classManager.AlunosComentaristasSetUp(feedbacksDosAlunos);
+    }
+
+    private void ConfigurarPortas(CustomGameSettings settings)
+    {
+        // Aplicar sobre todas as portas da sala
+        var doors = GameObject.FindGameObjectsWithTag("Door1");
+        foreach (var door in doors)
+        {
+            // Trocar diálogo
+            // Novas falas
+            var paragrafos = new string[2];
+            // Fala da Lurdinha
+            paragrafos[0] = "Vou indo então, até mais " + settings.Professor.NomeCompleto() + "!";
+            // Fala do professor
+            paragrafos[1] = "Tudo bem, obrigado pela ajuda!!";
+
+            // Substituir componentes relacionados ao diálogo
+            var npc = door.GetComponent<NpcDialogo>();
+            var originalInteractOffset = npc.interactOffset;
+            Destroy(npc);
+            Destroy(door.GetComponent<QuestGuest>());
+            door.AddComponent<QuestGuest>();
+            npc = door.AddComponent<NpcDialogo>();
+            npc.interactOffset = originalInteractOffset;
+            npc.dialogoPrincipal = new GameComenius.Dialogo.Dialogo();
+            npc.dialogoPrincipal.nodulos = new GameComenius.Dialogo.DialogoNodulo[1];
+            npc.dialogoPrincipal.nodulos[0] = new GameComenius.Dialogo.DialogoNodulo();
+            npc.dialogoPrincipal.nodulos[0].falas = new GameComenius.Dialogo.Fala[paragrafos.Length];
+
+            // Adicionar fala da Lurdinha
+            npc.dialogoPrincipal.nodulos[0].falas[0] = new GameComenius.Dialogo.Fala
+            {
+                fala = paragrafos[0],
+                personagem = GameComenius.Dialogo.Personagens.Lurdinha,
+                emocao = GameComenius.Dialogo.Expressao.Sorrindo
+            };
+
+            // Adicionar fala do professor
+            npc.dialogoPrincipal.nodulos[0].falas[1] = new GameComenius.Dialogo.Fala();
+            npc.dialogoPrincipal.nodulos[0].falas[1].fala = paragrafos[1];
+            var a = Enum.Parse(typeof(GameComenius.Dialogo.Personagens), settings.Professor.ToString(), true);
+            npc.dialogoPrincipal.nodulos[0].falas[1].personagem = (GameComenius.Dialogo.Personagens)a;
+            npc.dialogoPrincipal.nodulos[0].falas[1].emocao = GameComenius.Dialogo.Expressao.Sorrindo;
+
+            // Ativar collider da porta, caso esteja desativado
+            door.GetComponent<Collider2D>().enabled = true;
+
+            // Configurar o que irá acontecer quando interagir com a porta
+            npc.OnEndDialogueEvent += () => StartCoroutine(FinalizarCustomGame());
+        }
+    }
+
+    private IEnumerator FinalizarCustomGame()
+    {
+        var janelaConquistasMissao = FindObjectOfType<JanelaConquistasMissao>();
+        if (janelaConquistasMissao)
+            yield return StartCoroutine(janelaConquistasMissao.Apresentar());
+        canvasJanelaFinalCustomGame.enabled = true;
     }
 }
