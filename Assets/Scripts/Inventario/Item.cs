@@ -132,7 +132,7 @@ public class Item
                 UpgradeFrom.Add(ItemName.CameraPolaroid);
                 break;
             case ItemName.TVComVHS:
-                FriendlyName = "TV com reprodutor de VHS";
+                FriendlyName = "TV Escola VHS";
                 Description = "Sem uma fita VHS vai ser difícil achar algo de interessante passando na TV";
                 FullDescription = "É um aparelho de exibição de canais sintonizados por satélite e imagens conectados a um reprodutor VHS. Seu uso pedagógico pode ser através de programas que estejam passando ao vivo ou naquele momento, tende a motivar o aprendizado por conta do conteúdo audiovisual. Assim como o reprodutor VHS possui uma linguagem visual, podendo trabalhar em conjunto com ele, ou utilizando canais de televisão.";
                 //DescriptionsInMission1.StandardDescription = "Sistema eletrônico de recepção/reprodução de imagens e sons de programas televisivos jornalísticos, esportivos, educacionais e ficcionais, gravados ou ao vivo.";
@@ -141,9 +141,9 @@ public class Item
                 DescriptionsInMission1.SecondMomentDescription = "Somente a televisão, caso não esteja passando algo específico sobre pássaros, não contribuirá com o real objetivo da aula.";
                 DescriptionsInMission1.ThirdMomentDescription = "Será que a TV aberta pode auxiliar a exposição do professor sobre os pássaros? Teria que ter muita sorte de passar um documentário ou matéria no exato momento da aula.";
 
-                DescriptionsInMission2.FirstMomentDescription = "Sem um VHS específico da época historica de estudo , a TV poderia atrapalhar o andamento da aula.";
-                DescriptionsInMission2.SecondMomentDescription = "Sem um VHS específico, a TV só teria os canais abertos locais, o que poderia atrapalhar o andamento da aula por conta da dispersão.";
-                DescriptionsInMission2.ThirdMomentDescription = DescriptionsInMission2.SecondMomentDescription;
+                DescriptionsInMission2.FirstMomentDescription = "Um VHS da TV Escola sobre a Revoluação Industrial.";
+                DescriptionsInMission2.SecondMomentDescription = "Um VHS da TV Escola sobre o Trabalho Infantil pode fomentar a discussão sobre a temática.";
+                DescriptionsInMission2.ThirdMomentDescription = "O VHS específico da TV Escola traz informções muito importantes sobre a temática.";
 
                 DescriptionsInMission3.FirstMomentDescription = "A televisão aberta apresenta informações sobre as regiões do país, mas talvez cause dispersão em sala de aula.";
                 DescriptionsInMission3.SecondMomentDescription = "A Televisão poderia ser mais bem utilizada com um vídeo.  Ligada em canal aberto, durante a apresentação da pesquisa, causaria dispersão dos alunos.";
