@@ -423,7 +423,7 @@ public class ClassManager : MonoBehaviour
         if (grupo != null)
             Destroy(grupo);
 
-        GameObject grupos4 = GameObject.Find("CadeirasEMerasGrupos4(Clone)");
+        GameObject grupos4 = GameObject.Find("CadeirasEMesasGrupos4(Clone)");
         if (grupos4 != null)
             Destroy(grupos4);
     }

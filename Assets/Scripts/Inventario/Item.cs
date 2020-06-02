@@ -48,13 +48,13 @@ public class Item
                 DescriptionsInMission1.SecondMomentDescription = "Um reprodutor de audio sem o CD só iria conseguir ter sons da rádio. Será que tem algo de útil passando agora para essa aula na rádio? Quem sabe na Biblioteca posso encontrar algum CD que seja útil.";
                 DescriptionsInMission1.ThirdMomentDescription = "Um reprodutor de audio sem o CD só iria conseguir ter sons da rádio. Será que tem algo de útil passando agora para essa aula na rádio? Quem sabe na Biblioteca possa encontrar algum CD que me ajude.";
 
-                DescriptionsInMission2.FirstMomentDescription = "O reprodutor de audio pode ser bem utilizado para trabalhar com exposição de conteúdos, mas somente se houver um bom CD sobre o tema.";
-                DescriptionsInMission2.SecondMomentDescription = "O reprodutor de audio pode ser bem utilizado para trabalhar com exposição de conteúdos, mas somente se houver um bom CD sobre o tema.";
-                DescriptionsInMission2.ThirdMomentDescription = "O reprodutor de audio pode ser bem utilizado para trabalhar com exposição de conteúdos, mas somente se houver um bom CD sobre o tema.";
+                DescriptionsInMission2.FirstMomentDescription = "O reprodutor de áudio pode ser bem utilizado para trabalhar com exposição de conteúdos.";
+                DescriptionsInMission2.SecondMomentDescription = "O reprodutor de audio pode ser bem utilizado para trabalhar com exposição de conteúdo e para gravar momentos de discussões dos alunos.";
+                DescriptionsInMission2.ThirdMomentDescription = "O reprodutor de áudio pode ser bem utilizado em atividades práticas, podendo ser usado para sistematização de conteúdos discutidos e depois apresentado para a turma.";
 
-                DescriptionsInMission3.FirstMomentDescription = "O reprodutor de áudio pode ser bem utilizado para trabalhar com exposição de conteúdos, se houver um CD sobre o tema.";
-                DescriptionsInMission3.SecondMomentDescription = "O reprodutor de áudio pode ser bem utilizado para trabalhar com exposição de conteúdos, se houver um CD sobre o tema.";
-                DescriptionsInMission3.ThirdMomentDescription = "O reprodutor de áudio pode ser bem utilizado para trabalhar com exposição de conteúdos, se houver um CD sobre o tema.";
+                DescriptionsInMission3.FirstMomentDescription = "Com essa mídia os alunos podem gravar diferentes vozes e regionalismos de seus colegas.";
+                DescriptionsInMission3.SecondMomentDescription = "Essa mídia pode ser bem utilizada para escutar as vozes gravadas pelos alunos durante a exposição.";
+                DescriptionsInMission3.ThirdMomentDescription = "Essa mídia reproduz fitas gravadas e CDS com diversos tipos de conteúdo sonoro como músicas, entrevistas ou sons ambientes, como também faz gravações de áudio.";
                 break;
             case ItemName.Cd:
                 FriendlyName = "CD";
@@ -89,9 +89,9 @@ public class Item
                 DescriptionsInMission2.SecondMomentDescription = "Como o momento é de discussão, os alunos podem utilizar o gravador para gravar algumas sínteses e conclusões da dupla para apresentar aos colegas.";
                 DescriptionsInMission2.ThirdMomentDescription = "Nesse momento de elaboração de sínteses, utilizar o gravador pode ser um pouco confuso.";
 
-                DescriptionsInMission3.FirstMomentDescription = "Os alunos podem gravar diferentes vozes e regionalismos de seus colegas. No entanto, apenas a gravação de exemplos não traria informações suficientes para a pesquisa.";
-                DescriptionsInMission3.SecondMomentDescription = "O gravador poderia ser utilizado para escutar as vozes gravadas pelos alunos durante a exposição.";
-                DescriptionsInMission3.ThirdMomentDescription = "A proposta é trazer algo que faz parte do dia a dia das crianças para esse último momento, talvez o gravador seja melhor aproveitado em outra parte.";
+                DescriptionsInMission3.FirstMomentDescription = "Os alunos podem gravar diferentes vozes e regionalismos de seus colegas. ";
+                DescriptionsInMission3.SecondMomentDescription = "O gravador pode ser utilizado para escutar as vozes gravadas pelos alunos durante a exposição.";
+                DescriptionsInMission3.ThirdMomentDescription = "Dispositivo de gravação de sons, dentro ou fora da sala de aula.";
                 break;
             case ItemName.GravacaoPassaro:
                 FriendlyName = "Gravação do Pássaro";
@@ -132,7 +132,7 @@ public class Item
                 UpgradeFrom.Add(ItemName.CameraPolaroid);
                 break;
             case ItemName.TVComVHS:
-                FriendlyName = "TV com reprodutor de VHS";
+                FriendlyName = "TV Escola VHS";
                 Description = "Sem uma fita VHS vai ser difícil achar algo de interessante passando na TV";
                 FullDescription = "É um aparelho de exibição de canais sintonizados por satélite e imagens conectados a um reprodutor VHS. Seu uso pedagógico pode ser através de programas que estejam passando ao vivo ou naquele momento, tende a motivar o aprendizado por conta do conteúdo audiovisual. Assim como o reprodutor VHS possui uma linguagem visual, podendo trabalhar em conjunto com ele, ou utilizando canais de televisão.";
                 //DescriptionsInMission1.StandardDescription = "Sistema eletrônico de recepção/reprodução de imagens e sons de programas televisivos jornalísticos, esportivos, educacionais e ficcionais, gravados ou ao vivo.";
@@ -141,13 +141,13 @@ public class Item
                 DescriptionsInMission1.SecondMomentDescription = "Somente a televisão, caso não esteja passando algo específico sobre pássaros, não contribuirá com o real objetivo da aula.";
                 DescriptionsInMission1.ThirdMomentDescription = "Será que a TV aberta pode auxiliar a exposição do professor sobre os pássaros? Teria que ter muita sorte de passar um documentário ou matéria no exato momento da aula.";
 
-                DescriptionsInMission2.FirstMomentDescription = "Sem um VHS específico da época historica de estudo , a TV poderia atrapalhar o andamento da aula.";
-                DescriptionsInMission2.SecondMomentDescription = "Sem um VHS específico, a TV só teria os canais abertos locais, o que poderia atrapalhar o andamento da aula por conta da dispersão.";
-                DescriptionsInMission2.ThirdMomentDescription = DescriptionsInMission2.SecondMomentDescription;
+                DescriptionsInMission2.FirstMomentDescription = "Um VHS da TV Escola sobre a Revoluação Industrial.";
+                DescriptionsInMission2.SecondMomentDescription = "Um VHS da TV Escola sobre o Trabalho Infantil pode fomentar a discussão sobre a temática.";
+                DescriptionsInMission2.ThirdMomentDescription = "O VHS específico da TV Escola traz informções muito importantes sobre a temática.";
 
-                DescriptionsInMission3.FirstMomentDescription = "A televisão aberta apresenta informações sobre as regiões do país, mas talvez cause dispersão em sala de aula.";
-                DescriptionsInMission3.SecondMomentDescription = "A Televisão poderia ser mais bem utilizada com um vídeo.  Ligada em canal aberto, durante a apresentação da pesquisa, causaria dispersão dos alunos.";
-                DescriptionsInMission3.ThirdMomentDescription = "A televisão, embora faça parte da realidade das crianças, pode causar muitas dispersões.";
+                DescriptionsInMission3.FirstMomentDescription = "Um VHS da TV Escola sobre regionalismo é uma ótima opção para tratar do tema.";
+                DescriptionsInMission3.SecondMomentDescription = "Os alunos podem usar a televisão com um VHS da TV Escola sobre regionalismo para mostrar algumas partes do assunto pesquisado.";
+                DescriptionsInMission3.ThirdMomentDescription = "Televisão conectada a TV Escola com programação e VHS específicos.";
                 break;
             case ItemName.VHS:
                 FriendlyName = "Fita VHS";
@@ -161,10 +161,11 @@ public class Item
                 DescriptionsInMission1.SecondMomentDescription = DescriptionsInMission1.FirstMomentDescription;
                 DescriptionsInMission1.ThirdMomentDescription = DescriptionsInMission1.FirstMomentDescription;
 
-                DescriptionsInMission2.FirstMomentDescription = DescriptionsInMission1.FirstMomentDescription;
-                DescriptionsInMission2.SecondMomentDescription = DescriptionsInMission2.FirstMomentDescription;
-                DescriptionsInMission2.ThirdMomentDescription = DescriptionsInMission2.FirstMomentDescription;
-                
+                DescriptionsInMission2.FirstMomentDescription = "Um sistema de captação e reprodução de vídeo e áudio. VHS  sobre a revolução industrial.";
+                DescriptionsInMission2.SecondMomentDescription = "Um sistema de captação e reprodução de vídeo e áudio. VHS  sobre a revolução industrial.";
+                DescriptionsInMission2.ThirdMomentDescription = "Um sistema de captação e reprodução de vídeo e áudio. VHS  sobre a revolução industrial.";
+
+
                 UpgradeFrom.Add(ItemName.TVComVHS);
                 break;
             case ItemName.CartazComColecaoDePenas:
@@ -195,9 +196,9 @@ public class Item
                 DescriptionsInMission2.SecondMomentDescription = "Os conteúdos sistematizados do livro didático podem auxiliar bastante os alunos durante a discussão, por ser uma linguagem mais acessível.";
                 DescriptionsInMission2.ThirdMomentDescription = "O livro não é muito interessante para produzir algo nesse momento da aula.";
 
-                DescriptionsInMission3.FirstMomentDescription = "Livros didáticos, além de são muito utilizados na escola, trazem muitas palavras de diversas regiões.";
-                DescriptionsInMission3.SecondMomentDescription = "O livro didático contêm muitas informações e é acessível aos alunos. No entanto, para uma apresentação expositiva a visualização individual pode dispersar a atenção.";
-                DescriptionsInMission3.ThirdMomentDescription = "O livro didático já faz parte do dia a dia da escola das crianças, é bastante útil, mas talvez não seja interessante nesse momento.";
+                DescriptionsInMission3.FirstMomentDescription = "O Livro didático apresenta algumas informações mais gerais sobre o assunto.";
+                DescriptionsInMission3.SecondMomentDescription = "O livro didático contêm muitas informações e é acessível aos alunos.";
+                DescriptionsInMission3.ThirdMomentDescription = "O livro didático já faz parte do dia a dia da escola das crianças.";
                 break;
             case ItemName.LivroIlustrado:
                 FriendlyName = "Livro Ilustrado";
@@ -216,8 +217,8 @@ public class Item
                 DescriptionsInMission2.ThirdMomentDescription = "O livro não é muito interessante para produzir algo nesse momento da aula.";
 
                 DescriptionsInMission3.FirstMomentDescription = "O livro ilustrado traz informações e imagens ilustrando as diversas regiões brasileiras e sendo um bom material de pesquisa.";
-                DescriptionsInMission3.SecondMomentDescription = "O livro ilustrado traz imagens e informações importantes para a pesquisa, mas a proposta é de exposição da pesquisa, por isso pode não ser uma boa mídia para o momento.";
-                DescriptionsInMission3.ThirdMomentDescription = "O livro ilustrado já faz parte do dia a dia da escola das crianças, é bastante útil, mas talvez não seja interessante nesse momento.";
+                DescriptionsInMission3.SecondMomentDescription = "O livro ilustrado traz imagens e informações importantes para a pesquisa.";
+                DescriptionsInMission3.ThirdMomentDescription = "O livro ilustrado já faz parte do dia a dia da escola das crianças.";
 
                 UpgradeFrom.Add(ItemName.LivroDidatico);
                 break;
@@ -237,9 +238,9 @@ public class Item
                 DescriptionsInMission2.SecondMomentDescription = "O quadro negro é bastante útil para a mediação das discussões, mas ele não é uma novidade para os alunos.";
                 DescriptionsInMission2.ThirdMomentDescription = "O quadro negro, embora muito importante, acaba gerando uma centralidade de quem está escrevendo. A intenção da aula é a interação entre os indivíduos.";
 
-                DescriptionsInMission3.FirstMomentDescription = "O quadro negro não possui informações para uma atividade de pesquisa sobre regionalismo, talvez seja mais útil em um momento expositivo.";
-                DescriptionsInMission3.SecondMomentDescription = "O quadro negro pode ser usado na criação de esquemas e sínteses das pesquisas dos alunos, Também interessa por geralmente ser usado pelo professor.";
-                DescriptionsInMission3.ThirdMomentDescription = "O quadro negro é muito versátil e pode ser utilizado para a síntese dos conteúdos da aula, mas a proposta continua sendo a de trazer a realidade dos alunos de fora da escola.";
+                DescriptionsInMission3.FirstMomentDescription = "O quadro negro pode ser usado para exposição, anotações do conteúdo ou usado de forma colaborativa entre professor e estudante.";
+                DescriptionsInMission3.SecondMomentDescription = "O quadro negro pode ser usado na criação de esquemas e sínteses das pesquisas dos alunos.";
+                DescriptionsInMission3.ThirdMomentDescription = "O quadro negro é muito versátil e pode ser utilizado para a síntese dos conteúdos da aula.";
                 break;
             case ItemName.TVComVHSPassaros:
                 FriendlyName = "TV com VHS sobre pássaros";
@@ -266,6 +267,10 @@ public class Item
                 DescriptionsInMission2.FirstMomentDescription = "O cartaz possibilita a apresentação dos conteúdos para os alunos, mas alem de ele não ser uma novidade para eles não possibilita muita versatilidade no trabalho de exposição do professor.";
                 DescriptionsInMission2.SecondMomentDescription = "O cartaz tem muitas possibilidades em meio a construção de uma apresentação ou sistematização, mas esse é um momento de discussões, talvez gere dispersão e seja melhor utilizado em outro momento.";
                 DescriptionsInMission2.ThirdMomentDescription = "O cartaz é uma mídia bastante conhecida pelos alunos na elaboração de atividades, eles já estão acostumados com ela e sabem como utilizá-la, por isso pode ser uma boa escolha.";
+
+                DescriptionsInMission3.FirstMomentDescription = "Papel ou cartolina em branco, que pode ser usado pelo professor e pelos alunos.";
+                DescriptionsInMission3.SecondMomentDescription = "Papel ou cartolina em branco, que pode ser usado pelo professor e pelos alunos durante a aula para atividades de apresentação.";
+                DescriptionsInMission3.ThirdMomentDescription = "O cartaz é uma mídia bastante conhecida pelos alunos na elaboração de atividades de síntese.";
                 break;
             case ItemName.Mapa:
                 FriendlyName = "Mapa";
@@ -293,9 +298,9 @@ public class Item
                 DescriptionsInMission2.SecondMomentDescription = "O caderno é bom para anotar pontos importantes da discussão, mas o processo de anotar enquanto prestam atenção pode deixar os alunos um pouco confusos.";
                 DescriptionsInMission2.ThirdMomentDescription = "O caderno é potente na realização de atividades de síntese, porém é bastante individual e não proporciona muita interação entre os colegas.";
 
-                DescriptionsInMission3.FirstMomentDescription = "A proposta da atividade é pesquisar sobre regionalismo, o caderno seria útil para escrever esquemas e sínteses e não tanto para esse caso.";
-                DescriptionsInMission3.SecondMomentDescription = "O caderno é uma mídia de registro individual e a proposta é uma exposição da pesquisa para a turma, talvez seja melhor utilizado em outro momento.";
-                DescriptionsInMission3.ThirdMomentDescription = "O caderno é útil para escrever esquemas e sínteses, mas o professor pensa em trazer algo de fora do cotidiano escolar.";
+                DescriptionsInMission3.FirstMomentDescription = "O caderno pode ser usado para registro, estudo ou anotações escritas, desenhos ou colagens com uso de diversos recursos e materiais.";
+                DescriptionsInMission3.SecondMomentDescription = "O caderno pode ser usado para registro, estudo ou anotações escritas, desenhos ou colagens com uso de diversos recursos e materiais.";
+                DescriptionsInMission3.ThirdMomentDescription = "O caderno é útil para escrever esquemas e sínteses sobre o assunto.";
                 break;
             case ItemName.Jornais:
                 FriendlyName = "Jornais";
@@ -309,13 +314,13 @@ public class Item
                 DescriptionsInMission1.SecondMomentDescription = "Os Jornais apresentam muitos conteúdos de leitura e algumas imagens, de fácil interpretação, e pode ser utilizado pelos alunos para a criação de um mural, por exemplo.";
                 DescriptionsInMission1.ThirdMomentDescription = "As matérias contidas nos jornais não contribuem muito para a temática da aula, mas as figuras e textos podem ser utilizados em outros momentos.";
 
-                DescriptionsInMission2.FirstMomentDescription = "Os jornais possuem informações sobre o ocorrido, mas não possuem exemplares iguais para todos os alunos nesse momento.. então os alunos iriam ficar perdidos durante a exposição.";
-                DescriptionsInMission2.SecondMomentDescription = "Os jornais possuem poucas informações sobre o trabalho infantil, além de não possuirem exemplares iguais para todos os alunos nesse momento.. então os alunos iriam ficar perdidos durante a exposição.";
+                DescriptionsInMission2.FirstMomentDescription = "Os jornais podem possuir informações sobre a Revolução Industrial.";
+                DescriptionsInMission2.SecondMomentDescription = "Os jornais podem possuir informações sobre o trabalho infantil e levantar questões para a discussão.";
                 DescriptionsInMission2.ThirdMomentDescription = "Esses jornais contém imagens e textos que podem ser resignificados e que, depois podem ser recortados ou utilizados pelos alunos na elaboração da síntese.";
 
                 DescriptionsInMission3.FirstMomentDescription = "Os jornais trazem algumas informações sobre palavras regionais em suas entrevistas e notícias.";
-                DescriptionsInMission3.SecondMomentDescription = "Os jornais trazem informações sobre as palavras regionais e os costumes das diferentes regiões brasileiras, talvez seja útil para uma pesquisa.";
-                DescriptionsInMission3.ThirdMomentDescription = "Os jornais fazem mais parte da realidade dos adultos do que das crianças, mas pelo menos podem trazer algumas informações sobre regionalismo em suas colunas.";
+                DescriptionsInMission3.SecondMomentDescription = "Os jornais trazem informações sobre as palavras regionais e os costumes das diferentes regiões brasileiras, pode ser usado para a apresentação da pesquisa.";
+                DescriptionsInMission3.ThirdMomentDescription = "Os jornais trazem algumas informações sobre regionalismo em suas colunas.";
                 break;
             case ItemName.JornaisERevistas:
                 FriendlyName = "Jornais e Revistas";
@@ -329,13 +334,13 @@ public class Item
                 DescriptionsInMission1.SecondMomentDescription = "Se for possível encontra matérias específicas sobre os pássaros, se torna bastante rico para a utilização dos alunos em atividades dentro da sala de aula.";
                 DescriptionsInMission1.ThirdMomentDescription = "Os jornais e, principalmente, as revistas sobre pássaros trazidas pelo professor podem ser aliadas importantes durante a sistematização de conteúdos. Mas não falam muito sobre as questões de regionalidade.";
 
-                DescriptionsInMission2.FirstMomentDescription = "Os jornais e revistas possuem informações sobre o ocorrido, mas não possuem exemplares iguais para todos os alunos nesse momento..";
-                DescriptionsInMission2.SecondMomentDescription = "Os jornais e revistas possuem poucas informações sobre o trabalho infantil, além de não possuem exemplares iguais para todos os alunos nesse momento..";
+                DescriptionsInMission2.FirstMomentDescription = "Os jornais e revistas podem possuir informações sobre a Revolução Industrial.";
+                DescriptionsInMission2.SecondMomentDescription = "Os jornais e revistas podem possuir informações sobre o trabalho infantil e levantar questões para a discussão.";
                 DescriptionsInMission2.ThirdMomentDescription = "As revistas e jornais contém imagens e algumas informações sobre a temática do trabalho, que podem ser recortadas ou utilizada pelos alunos na elaboração da síntese.";
 
                 DescriptionsInMission3.FirstMomentDescription = "As revistas e jornais possuem diversas entrevistas, matérias e notícias onde se é possível encontrar regionalismo.";
-                DescriptionsInMission3.SecondMomentDescription = "As revistas e jornais possuem diversas entrevistas, matérias e notícias onde se é possível encontrar regionalismo, talvez seja útil para uma pesquisa.";
-                DescriptionsInMission3.ThirdMomentDescription = "As revistas e jornais não fazem tanto parte da realidade dos alunos, mas trazem em suas colunas e entrevistas, diversos exemplos de regionalismos.";
+                DescriptionsInMission3.SecondMomentDescription = "As revistas e jornais possuem diversas entrevistas, matérias e notícias onde se é possível encontrar regionalismo, podendo servir de exemplo para a exposição do tema.";
+                DescriptionsInMission3.ThirdMomentDescription = "As revistas e jornais trazem em suas colunas e entrevistas diversos exemplos de regionalismos.";
                 UpgradeFrom.Add(ItemName.Jornais);
                 break;
             case ItemName.Retroprojetor:
@@ -347,9 +352,9 @@ public class Item
                 DescriptionsInMission1.StandardDescription = "Um retroprojetor! Que maravilha! Agora eu só preciso dos slides para usar com ele! Mas onde posso achar elas?";
 
                 DescriptionsInMission2.StandardDescription = DescriptionsInMission1.StandardDescription;
-                DescriptionsInMission2.FirstMomentDescription = "O retroprojetor é uma ótima mídia, se aliada com bons slides, pois sozinho só reflete a luz.";
-                DescriptionsInMission2.SecondMomentDescription = DescriptionsInMission2.FirstMomentDescription;
-                DescriptionsInMission2.ThirdMomentDescription = DescriptionsInMission2.FirstMomentDescription;
+                DescriptionsInMission2.FirstMomentDescription = "O retroprojetor é uma ótima mídia, se aliada com bons slides.";
+                DescriptionsInMission2.SecondMomentDescription = "O retroprojetor é uma ótima mídia, se aliada com bons slides.";
+                DescriptionsInMission2.ThirdMomentDescription = "O retroprojetor é uma ótima mídia, se aliada com bons slides. Os alunos podem produzir sínteses do contéudo e depois apresentar para turma.";
                 break;
             case ItemName.RetroprojetorSlideMapa:
                 FriendlyName = "Retroprojetor com Slide e  Mapa ";
@@ -361,7 +366,7 @@ public class Item
 
                 DescriptionsInMission2.FirstMomentDescription = "O slide com mapa pode ser utilizado para ilustrar as regiões onde ocorreu a Revolução Industrial durante a explicação do professor, tornando mais rico o aprendizado do aluno.";
                 DescriptionsInMission2.SecondMomentDescription = "Esse slide, embora trate de questões menos específicas, pode ser utilizado durante a  discussão para localizar os alunos sobre o tema e os locais mencionados durante a discussão.";
-                DescriptionsInMission2.ThirdMomentDescription = "A atenção dos alunos está voltada para a realização de uma atividade de síntese e de discussão sobre o trabalho no período estudado e na atualidade, talvez esse slide possa ser melhor utilizado em outro momento.";
+                DescriptionsInMission2.ThirdMomentDescription = "A atenção dos alunos está voltada para a realização de uma atividade de síntese sobre o trabalho no período estudado e na atualidade.";
                 UpgradeFrom.Add(ItemName.Retroprojetor);
                 break;
             case ItemName.RetroprojetorSlideLinhaTempo:
@@ -374,7 +379,7 @@ public class Item
 
                 DescriptionsInMission2.FirstMomentDescription = "O slide com linha do tempo ajuda na compreensão dos fatos trabalhados, de forma esquemática, auxiliando durante a explicação do professor.";
                 DescriptionsInMission2.SecondMomentDescription = "Esse slide, embora trate de questões mais gerais, pode ser utilizado para ajudar na localização temporal dos alunos durante a discussão.";
-                DescriptionsInMission2.ThirdMomentDescription = "A atenção dos alunos está voltada para a realização de um trabalho de síntese e de discussão sobre o trabalho no período trabalhado e na atualidade, talvez esse slide possa ser melhor utilizado em outro momento.";
+                DescriptionsInMission2.ThirdMomentDescription = "A atenção dos alunos está voltada para a realização de um trabalho de síntese  sobre o trabalho no período estudado e na atualidade.";
                 UpgradeFrom.Add(ItemName.Retroprojetor);
                 break;
             case ItemName.RetroprojetorSlideCicloTrabalho:
@@ -385,9 +390,9 @@ public class Item
                 //DescriptionsInMission2.StandardDescription = "Transparência contendo uma linha do tempo sobre o ciclo do trabalho infantil desde a  revolução industrial, que combinadas com o retroprojetor, são refletidas na parede.";
                 DescriptionsInMission2.StandardDescription = "Um slide com um ciclo do trabalho infantil para mim usar com o retroprojetor! O ciclo do trabalho infantil vai ser muito útil para explicar mais sobre a revolução industrial!";
 
-                DescriptionsInMission2.FirstMomentDescription = "Esse slide seria melhor utilizado em outro momento da aula, por hora o professor pretende trabalhar características mais gerais da Revolução Industrial.";
-                DescriptionsInMission2.SecondMomentDescription = "Um slide com informações sobre o ciclo do trabalho infantil pode ser usado para iniciar discussões sobre os tópicos específicos trabalhados nesse momento, me parece uma ótima ideia.";
-                DescriptionsInMission2.ThirdMomentDescription = "A atenção dos alunos está voltada para a realização de um trabalho de síntese e de discussão sobre o trabalho no período trabalhado e na atualidade, talvez esse slide possa ser melhor utilizado em outro momento.";
+                DescriptionsInMission2.FirstMomentDescription = "Esse slide é específico sobre o Trabalho Infantil. Nesse momento o professor pretente fazer uma exposição sobre as características mais gerais da Revolução Industrial.";
+                DescriptionsInMission2.SecondMomentDescription = "Um slide com informações sobre o ciclo do Trabalho Infantil pode ser usado para iniciar discussões sobre os tópicos específicos trabalhados nesse momento.";
+                DescriptionsInMission2.ThirdMomentDescription = "A atenção dos alunos está voltada para a realização de um trabalho de síntese sobre o trabalho no período estudado e na atualidade.";
                 UpgradeFrom.Add(ItemName.Retroprojetor);
                 break;
             case ItemName.CartazComCanetas:
@@ -398,9 +403,9 @@ public class Item
                 //DescriptionsInMission2.StandardDescription = "Um conjunto de canetas coloridas junto de cartazes, geralmente utilizados para trabalhos expositivos.";
                 DescriptionsInMission2.StandardDescription = "Um cartaz com canetas coloridas! Isso pode ser muito útil, principalmente nos momentos de atividade de aprendizagem!";
 
-                DescriptionsInMission2.FirstMomentDescription = "Embora as canetas coloridas sejam bastante atrativas aos alunos, não seria o melhor momento para esse conjunto.";
-                DescriptionsInMission2.SecondMomentDescription = "Como a proposta é uma discussão, talvez essa mídia expositiva acabe dispersando os alunos e possa ser usada em outro momento de atividade mais prática.";
-                DescriptionsInMission2.ThirdMomentDescription = "As canetas coloridas são muito atrativas para os alunos, além do cartaz que já estão habituados a utilizar. Provavelmente não haverão problemas em relação a utilização da mídia para esse trabalho.";
+                DescriptionsInMission2.FirstMomentDescription = "Papel ou cartolina em branco e canetas coloridas que podem ser usados pelo professor e alunos.";
+                DescriptionsInMission2.SecondMomentDescription = "Papel ou cartolina em branco e canetas coloridas que podem ser usados pelo professor e alunos.";
+                DescriptionsInMission2.ThirdMomentDescription = "Papel ou cartolina em branco e canetas coloridas são muito atrativas para os alunos, e podem auxiliar nas atividades de síntese.";
 
                 DescriptionsInMission3.FirstMomentDescription = "O cartaz em branco, junto das canetas coloridas, talvez sejam melhor utilizados em uma atividade de apresentação.";
                 DescriptionsInMission3.SecondMomentDescription = "O cartaz em branco, junto das canetas coloridas, é uma mídia bastante utilizada e de domínio dos alunos da turma, onde podem expor os resultados de sua pesquisa.";
@@ -415,9 +420,9 @@ public class Item
                 //DescriptionsInMission2.StandardDescription = "O VHS (Video Home System) consiste em um sistema de captação e reprodução de vídeo e áudio, contendo informações selecionadas sobre a revolução industrial.";
                 DescriptionsInMission2.StandardDescription = "Um VHS editado! Ele é mais curto, assim fica mais fácil prender a atenção dos alunos!";
 
-                DescriptionsInMission2.FirstMomentDescription = "O VHS foi editado pelo professor, contendo os principais tópicos que ele quer trabalhar em seu planejamento, de duração suficiente para manter a atenção da turma.";
-                DescriptionsInMission2.SecondMomentDescription = "Por conta do cuidado do professor em editar as principais partes do documentário, ele tem duração e conteúdo suficiente para manter a atenção dos alunos e mediar a discussão.";
-                DescriptionsInMission2.ThirdMomentDescription = "Com a atenção dos alunos voltadas para a realização do trabalho de síntese, talvez eles não prestem muita atenção nos detalhes escolhidos pelo professor.";
+                DescriptionsInMission2.FirstMomentDescription = "Um sistema de captação e reprodução de vídeo e áudio. VHS editado sobre a revolução industrial.";
+                DescriptionsInMission2.SecondMomentDescription = "Um sistema de captação e reprodução de vídeo e áudio. VHS editado sobre a revolução industrial.";
+                DescriptionsInMission2.ThirdMomentDescription = "Um sistema de captação e reprodução de vídeo e áudio. VHS editado sobre a revolução industrial.";
                 UpgradeFrom.Add(ItemName.TVComVHS);
                 break;
             case ItemName.Diario:
@@ -428,9 +433,9 @@ public class Item
                 //DescriptionsInMission2.StandardDescription = "Diário escrito à mão por uma criança que viveu no período da revolução industrial, contendo registros de suas vivências e seu trabalho na fábrica.";
                 DescriptionsInMission2.StandardDescription = "Um diário! E um diário de uma criança que trabalhava na época da Revolução Industrial! Isso pode ser muito útil para a aula!";
 
-                DescriptionsInMission2.FirstMomentDescription = "O diário possui muitas informações sobre o dia a dia de uma criança naquele período, de uma perspectiva pouco geral dos fatos, o que pode ajudar um pouco na exposição do professor.";
-                DescriptionsInMission2.SecondMomentDescription = "O diário tem informações pessoais e bem específicas sobre a condição do trabalho de uma criança durante esse período histórico, ótimo para utilizar em uma discussão.";
-                DescriptionsInMission2.ThirdMomentDescription = "O diário possui muitas informações sobre o dia a dia de uma criança naquele período, mas para esse momento não deve ser muito interessante.";
+                DescriptionsInMission2.FirstMomentDescription = "O diário possui muitas informações sobre o dia a dia de uma criança naquele período, o que pode ajudar na exposição do professor.";
+                DescriptionsInMission2.SecondMomentDescription = "O diário tem informações pessoais e bem específicas sobre a condição do trabalho de uma criança durante esse período histórico.";
+                DescriptionsInMission2.ThirdMomentDescription = "O diário possui muitas informações sobre o dia a dia de uma criança naquele período.";
                 break;
             case ItemName.ReprodutorAudioComCDPassaros:
                 FriendlyName = "Reprodutor de Áudio + CD sobre Pássaros";
@@ -450,9 +455,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
                 DescriptionsInMission2.StandardDescription = "Processo e arte de registrar e reproduzir, através de reações químicas e em superfícies preparadas para o efeito, as imagens que se tiram no fundo de uma câmara escura.";
-                DescriptionsInMission2.FirstMomentDescription = "Fotografias são importantes para a ambientação do aluno dentro daquela perspectiva, durante a explicação do professor, mas podem não ser suficiente nesse caso.";
+                DescriptionsInMission2.FirstMomentDescription = "Fotografia de uma criança em situação de Trabalho Infantil pode sensibilizar os alunos";
                 DescriptionsInMission2.SecondMomentDescription = "A fotografia de uma criança em situação de trabalho infantil na Revolução Industrial pode ilustrar muitas das condições apresentadas pelo professor e ajudar a sensibilizar os alunos para a discussão.";
-                DescriptionsInMission2.ThirdMomentDescription = "A fotografia, por ser apenas uma, não seria muito útil em uma atividade.";
+                DescriptionsInMission2.ThirdMomentDescription = "A fotografia de uma criança em situação de Trabalho Infantil.";
                 break;
             case ItemName.TVComVHSRevolucaoIndustrial:
                 FriendlyName = "TV com VHS sobre Revolução Industrial";
@@ -462,14 +467,14 @@ public class Item
                 //DescriptionsInMission2.StandardDescription = "Essas mídias(TV-VHS) combinadas com o aparelho reprodutor de VHS serão usadas para ver o filme sobre a revolução industrial.";
                 DescriptionsInMission2.StandardDescription = "Uma foto! Ela pode ser útil para a aula, só preciso pensar com cuidado na forma que posso usar essa mídia!";
 
-                DescriptionsInMission2.FirstMomentDescription = "Um documentário sobre a temática da aula é uma ótima opção para tratar do tema, mas talvez o tempo de duração cause algumas dispersões.";
-                DescriptionsInMission2.SecondMomentDescription = "O documentário é bastante extenso, a idéia desse momento é que os alunos foquem na discussão entre si e não em prestar atenção em um documentário.";
-                DescriptionsInMission2.ThirdMomentDescription = "O documentário traz informações muito importantes sobre a temática, mas esse é um momento de síntese e atividades, talvez ele seja melhor utilizado em outro momento.";
+                DescriptionsInMission2.FirstMomentDescription = "Um sistema de captação e reprodução de vídeo e áudio. VHS  sobre a revolução industrial.";
+                DescriptionsInMission2.SecondMomentDescription = "Um sistema de captação e reprodução de vídeo e áudio. VHS  sobre a revolução industrial.";
+                DescriptionsInMission2.ThirdMomentDescription = "Um sistema de captação e reprodução de vídeo e áudio. VHS  sobre a revolução industrial.";
 
                 UpgradeFrom.Add(ItemName.TVComVHS);
                 break;
             case ItemName.ReprodutorAudioComCDRevolucaoIndustrial:
-                FriendlyName = "Reprodutor de Áudio + CD sobre Pássaros";
+                FriendlyName = "CD Revolução Industrial";
                 Description = "Essas mídias combinadas possibilitam a reprodução do áudio com uma entrevista de um especialista sobre a revolução industrial.";
                 FullDescription = "Essas mídias combinadas possibilitam a reprodução do áudio com uma entrevista de um especialista sobre a revolução industrial.";
 
@@ -477,8 +482,8 @@ public class Item
                 DescriptionsInMission2.StandardDescription = "Um CD! Com o reprodutor de áudio isso vai ser uma ótima mídia!";
 
                 DescriptionsInMission2.FirstMomentDescription = "Levar uma entrevista com um especialista no assunto enriquece muito a exposição.";
-                DescriptionsInMission2.SecondMomentDescription = "Esse é um momento de discussão entre a turma, talvez um audío de entrevista ajude a guiar a conversa.";
-                DescriptionsInMission2.ThirdMomentDescription = "O CD traz muitas informações sobre o fato histórico escolhido, mas esse é um momento de criação e síntese dos alunos, por isso não deve ser uma boa escolha.";
+                DescriptionsInMission2.SecondMomentDescription = "Esse é um momento de discussão entre a turma,  um áudio de entrevista pode ajudar a guiar a conversa.";
+                DescriptionsInMission2.ThirdMomentDescription = "O CD traz muitas informações sobre o fato histórico escolhido.";
                 UpgradeFrom.Add(ItemName.ReprodutorAudio);
                 break;
             case ItemName.TVComVHSRevolucaoIndustrialEditado:
@@ -489,9 +494,9 @@ public class Item
                 //DescriptionsInMission2.StandardDescription = "Essas mídias(TV-VHS) combinadas com o aparelho reprodutor de VHS serão usadas para ver o filme sobre a revolução industrial.";
                 DescriptionsInMission2.StandardDescription = "Um VHS editado! Ele é mais curto, assim fica mais fácil prender a atenção dos alunos!";
 
-                DescriptionsInMission2.FirstMomentDescription = "O VHS foi editado pelo professor, contendo os principais tópicos que ele quer trabalhar em seu planejamento, de duração suficiente para manter a atenção da turma.";
-                DescriptionsInMission2.SecondMomentDescription = "Por conta do cuidado do professor em editar as principais partes do documentário, ele tem duração e conteúdo suficiente para manter a atenção dos alunos e mediar a discussão.";
-                DescriptionsInMission2.ThirdMomentDescription = "Com a atenção dos alunos voltadas para a realização do trabalho de síntese, talvez eles não prestem muita atenção nos detalhes escolhidos pelo professor.";
+                DescriptionsInMission2.FirstMomentDescription = "Um sistema de captação e reprodução de vídeo e áudio. VHS editado sobre a revolução industrial.";
+                DescriptionsInMission2.SecondMomentDescription = "Um sistema de captação e reprodução de vídeo e áudio. VHS editado sobre a revolução industrial.";
+                DescriptionsInMission2.ThirdMomentDescription = "Um sistema de captação e reprodução de vídeo e áudio. VHS editado sobre a revolução industrial.";
 
                 UpgradeFrom.Add(ItemName.TVComVHS);
                 break;
@@ -503,9 +508,9 @@ public class Item
                 //DescriptionsInMission3.StandardDescription = "Folhas brancas de dimensão A4, que pode ter diversos usos de acordo com a situação, sejam desenhos, avisos, dobraduras, etc.";
                 DescriptionsInMission3.StandardDescription = "Folhas sulfite! Há tantas coisas que podemos fazer usando elas!";
 
-                DescriptionsInMission3.FirstMomentDescription = "A folha sulfite está em branco, podendo ser registradas muitas informações, mas sem nenhum registro para pesquisar.";
-                DescriptionsInMission3.SecondMomentDescription = "Com a folha sulfite é potente para a exposição da pesquisa, mas é muito pequena e talvez seja difícil dos alunos de trás enxergarem.";
-                DescriptionsInMission3.ThirdMomentDescription = "O professor pode solicitar que os alunos escrevam diversas palavras regionais na folha sulfite, mas não foge do que elas já fazem durante os dias na escola.";
+                DescriptionsInMission3.FirstMomentDescription = "A folha sulfite está em branco, podendo ser usada para registrar muitas informações.";
+                DescriptionsInMission3.SecondMomentDescription = "A folha sulfite pode ser usada para expor o contéudo da pesquisa.";
+                DescriptionsInMission3.ThirdMomentDescription = "O professor pode solicitar que os alunos escrevam diversas palavras regionais na folha sulfite ou que façam uma síntese do que foi discutido.";
                 break;
             case ItemName.VHSregionalismo:
                 FriendlyName = "VHS Documentário sobre Regionalismo";
@@ -515,9 +520,9 @@ public class Item
                 //DescriptionsInMission3.StandardDescription = "Essas mídias (TV-VHS) combinadas com o aparelho reprodutor de VHS serão usadas para ver o documentário sobre os diferentes costumes ou tradições regionais.";
                 DescriptionsInMission3.StandardDescription = "Um VHS!  Com a TV isso vai ser uma ótima mídia!";
 
-                DescriptionsInMission3.FirstMomentDescription = "Um documentário sobre regionalismos trazido pelo professor, com uma longa duração, pode ser uma boa fonte para pesquisa dos alunos.";
-                DescriptionsInMission3.SecondMomentDescription = "Passar um vídeo durante a exposição, por mais que esteja dentro do assunto, pode tirar o foco dos alunos nesse momento.";
-                DescriptionsInMission3.ThirdMomentDescription = "O documentário possui muitas informações importantes, mas talvez seja melhor utilizado nos primeiros momentos da aula.";
+                DescriptionsInMission3.FirstMomentDescription = "Um documentário sobre regionalismos trazido pelo professor  pode ser uma boa fonte para pesquisa dos alunos.";
+                DescriptionsInMission3.SecondMomentDescription = "Os alunos podem escolher algumas partes documentário sobre regionalismo para enriquecer a exposição.";
+                DescriptionsInMission3.ThirdMomentDescription = "O documentário possui muitas informações importantes sobre o tema estudado.";
 
                 UpgradeFrom.Add(ItemName.TVComVHS);
                 break;
@@ -529,9 +534,9 @@ public class Item
                 //DescriptionsInMission3.StandardDescription = "Essas mídias (TV-VHS) combinadas com o aparelho reprodutor de VHS serão usadas para ver partes selecionadas pelo professor sobre o documentário sobre regionalismo.";
                 DescriptionsInMission3.StandardDescription = "Um VHS editado! Ele é mais curto, assim fica mais fácil prender a atenção dos alunos!";
 
-                DescriptionsInMission3.FirstMomentDescription = "O VHS editado pelo professor apresenta as informações mais pertinentes de forma sucinta, sendo uma boa fonte para a pesquisa dos alunos sobre a temática da aula.";
-                DescriptionsInMission3.SecondMomentDescription = "O VHS editado pelo professor apresenta as informações mais pertinentes, mas não ajuda os alunos a expor a sua pesquisa.";
-                DescriptionsInMission3.ThirdMomentDescription = "O documentário editado pelo professor compila muitas informações importantes, de forma suscinta, mas talvez seja melhor utilizado em outro momento da aula.";
+                DescriptionsInMission3.FirstMomentDescription = "O VHS editado pelo professor apresenta muitas informações pertinentes de forma sucinta, sendo uma boa fonte para a pesquisa dos alunos sobre a temática da aula";
+                DescriptionsInMission3.SecondMomentDescription = "O VHS editado pelo professor apresenta as partes mais importantes do assunto abordado. Os alunos podem escolher alguns momentos para expor ao grupo.";
+                DescriptionsInMission3.ThirdMomentDescription = "O documentário editado pelo professor compila muitas informações importantes.";
 
                 UpgradeFrom.Add(ItemName.TVComVHS);
                 break;
@@ -544,8 +549,8 @@ public class Item
                 DescriptionsInMission3.StandardDescription = "Uma enciclopédia! Os alunos podem achar muitas palavras regionais nela!";
 
                 DescriptionsInMission3.FirstMomentDescription = "A enciclopédia compila muitas informações importantes para a realização da pesquisa dos alunos sobre regionalismo, possuindo imagens e textos sobre a temática.";
-                DescriptionsInMission3.SecondMomentDescription = "A Enciclopédia possui muitos textos sobre regionalismos e exemplos, talvez seja melhor utilizada em outro momento.";
-                DescriptionsInMission3.ThirdMomentDescription = "A Enciclopédia não faz parte do dia a dia de muitas crianças, fora da escola. É uma mídia muito útil para pesquisas, mas não para sínteses.";
+                DescriptionsInMission3.SecondMomentDescription = "A Enciclopédia possui textos e imagens sobre regionalismos.";
+                DescriptionsInMission3.ThirdMomentDescription = "A Enciclopédia possui textos e imagens sobre regionalismos.";
                 break;
             case ItemName.Adedonha:
                 FriendlyName = "Jogo Adedonha (Stop)";
@@ -555,8 +560,8 @@ public class Item
                 //DescriptionsInMission3.StandardDescription = "Adedonha ou Stop! consiste em um jogo de conhecimentos gerais onde cada coluna da tabela recebe o nome de uma categoria de palavras como animais, carros, cidades, cores etc., e cada linha representa uma rodada do jogo.";
                 DescriptionsInMission3.StandardDescription = "Um jogo de adedonha! Os alunos adoram jogos durante a aula!";
 
-                DescriptionsInMission3.FirstMomentDescription = "O jogo da Adedonha é bastante rico, pois trabalha com palavras que podem trazer a discussão sobre regionalismo, mas talvez seja melhor utilizada em atividade.";
-                DescriptionsInMission3.SecondMomentDescription = "O jogo da Adedonha é bastante rico, pois trabalha com palavras e assim trazer a discussão sobre regionalismos, mas talvez seja melhor utilizada em uma atividade.";
+                DescriptionsInMission3.FirstMomentDescription = "O jogo de Stop é bastante rico, pode trabalhar e trazer a discussão sobre regionalismos.";
+                DescriptionsInMission3.SecondMomentDescription = "O jogo de Stop é bastante rico, pode trabalhar e trazer a discussão sobre regionalismos.";
                 DescriptionsInMission3.ThirdMomentDescription = "Trazer a realidade dos alunos e incluir jogos educativos em atividade de síntese torna a aula mais divertida. É possível trabalhar diferentes palavras regionais com jogo.";
                 break;
             case ItemName.Forca:
@@ -567,8 +572,8 @@ public class Item
                 //DescriptionsInMission3.StandardDescription = "Este é um jogo em que o jogador precisa acertar a palavra, tendo somente o número de letras e o tema como dica, antes que o boneco seja enforcado, com um número limitado de erros.";
                 DescriptionsInMission3.StandardDescription = "Um jogo de forca! Os alunos adoram jogos durante a aula!";
 
-                DescriptionsInMission3.FirstMomentDescription = "O jogo da forca é bastante potente, pois trabalha com palavras e assim podem trazer a discussão sobre regionalismos, mas talvez seja melhor utilizada em uma atividade.";
-                DescriptionsInMission3.SecondMomentDescription = "O jogo da forca é bastante potente, pois trabalha com palavras e as mesmas podem trazer a discussão sobre regionalismos, mas talvez seja melhor utilizada em uma atividade.";
+                DescriptionsInMission3.FirstMomentDescription = "O jogo da forca é bastante potente, pois trabalha com palavras e assim podem trazer a discussão sobre regionalismos.";
+                DescriptionsInMission3.SecondMomentDescription = "O jogo da forca é bastante potente, pois trabalha com palavras e as mesmas podem trazer a discussão sobre regionalismos.";
                 DescriptionsInMission3.ThirdMomentDescription = "O jogo da forca pode ser utilizado como recurso para apresentar diversas palavras e informações para os alunos em uma atividade atrativa de síntese.";
                 break;
             case ItemName.PalavrasCruzadas:
@@ -579,9 +584,9 @@ public class Item
                 //DescriptionsInMission3.StandardDescription = "O jogo de palavras cruzadas é um passatempo bastante popular e consiste em linhas e colunas que devem ser preenchidas por palavras descobertas pelo jogador.";
                 DescriptionsInMission3.StandardDescription = "Um jogo de palavras cruzadas! Os alunos adoram jogos durante a aula!";
 
-                DescriptionsInMission3.FirstMomentDescription = "O jogo das Palavras Cruzadas é bastante rico, pois trabalha com palavras e essas podem trazer a discussão sobre regionalismos, mas talvez seja melhor usar em atividade.";
-                DescriptionsInMission3.SecondMomentDescription = "O jogo das Palavras Cruzadas é bastante rico, pois trabalha com palavras e elas podem trazer a discussão sobre regionalismos, mas talvez seja melhor usar em atividade.";
-                DescriptionsInMission3.ThirdMomentDescription = "O jogo das palavras cruzadas faz parte do dia a dia das crianças, trazer a ludicidade para a aula, em momentos de atividade pode enriquecer a apropriação do conhecimento.";
+                DescriptionsInMission3.FirstMomentDescription = "O jogo das Palavras Cruzadas é bastante rico, com ele podem ser abordados várias temáticas.";
+                DescriptionsInMission3.SecondMomentDescription = "O jogo das Palavras Cruzadas é bastante rico, com ele podem ser abordados várias temáticas.";
+                DescriptionsInMission3.ThirdMomentDescription = "O jogo das palavras cruzadas faz parte do dia a dia das crianças, trazer a ludicidade para a aula em momentos de atividade pode enriquecer a apropriação do conhecimento.";
                 break;
             case ItemName.CDsotaques:
                 FriendlyName = "CD Sotaques do Brasil";
@@ -591,9 +596,9 @@ public class Item
                 //DescriptionsInMission3.StandardDescription = "Um CD com uma entrevista sobre o tema da aula, contendo uma entrevista falando sobre sotaques e regionalismos.";
                 DescriptionsInMission3.StandardDescription = "Um CD! Com o reprodutor de áudio isso vai ser uma ótima mídia!";
 
-                DescriptionsInMission3.FirstMomentDescription = "O CD com uma entrevista sobre o tema da aula, pode ser um interessante meio de pesquisa para os alunos, em forma de áudio.";
-                DescriptionsInMission3.SecondMomentDescription = "A proposta é de uma apresentação dos resultados da pesquisa, o CD com a entrevista pode ser utilizado, mas não comporta os resultados da pesquisa dos alunos.";
-                DescriptionsInMission3.ThirdMomentDescription = "O CD com uma entrevista sobre o tema da aula, pode ser um interessante meio de pesquisa para os alunos, em forma de áudio. Melhor utilizado em outro momento.";
+                DescriptionsInMission3.FirstMomentDescription = "O CD com uma entrevista sobre os sotaques do Basil pode ser um interessante meio de pesquisa para os alunos.";
+                DescriptionsInMission3.SecondMomentDescription = "Os alunos podem escolher algumas partes do CD com uma entrevista sobre o tema para enriquecer a exposição.";
+                DescriptionsInMission3.ThirdMomentDescription = "O CD com uma entrevista sobre o tema da aula.";
                 UpgradeFrom.Add(ItemName.ReprodutorAudio);
                 break;
             default:
