@@ -125,40 +125,113 @@ public class FeedbacksDosAlunos
         feedbacksPorMidiaNoMomento1: new Dictionary<ItemName, string>()
         {
             // Mídias Melhores
-            { ItemName.Gravador, "Achei legal poder gravar tudo que a gente pesquisou sobre os pássaros no primeiro momento." }
+            { ItemName.TVComVHSRevolucaoIndustrialEditado, "Eita! Que legal foi ver aquele vídeo, falou tudo sobre a revolução industrial e ainda pulou todas as partes chatas. Quero mais vídeos como esse nas outras aulas." },
+            { ItemName.RetroprojetorSlideMapa, "Com aquele mapa todo colorido e projetado na parede, explicando direitinho a revolução industrial, ficou muito mais fácil de aprender." },
+            { ItemName.RetroprojetorSlideLinhaTempo, "Com aquela linha do tempo toda colorida e projetada na parede, explicando direitinho a revolução industrial, ficou muito mais fácil de aprender." },
             // Mídias Muito Boas
-
+            { ItemName.ReprodutorAudioComCDRevolucaoIndustrial, "Que entrevista mais interessante! Gostei!" },
+            { ItemName.RetroprojetorSlideCicloTrabalho, "Era uma transparência legal esse do ciclo do trabalho infantil, mas parecia que foi muito pouco para ajudar a explicar sobre todo conteúdo de revolução industrial." },
+            { ItemName.TVComVHS, "O Vídeo era bem bacana professora, acho que deu pra aprender legal sobre a revolução industrial." },
             // Mídias Boas
-
+            { ItemName.ReprodutorAudio, "O reprodutor de áudio foi bem interessante durante a exposição." },
+            { ItemName.Retroprojetor, "O retroprojetor foi bem interessante durante a exposição." },
+            { ItemName.QuadroNegro, "O quadro negro foi bem interessante durante a exposição, pena que já estamos muito acostumados aos professores quase sempre usarem ele." },
+            { ItemName.JornaisERevistas, "Eram jornais e revistas bem interessantes, mas pareciam que foram muito pouco para ajudar a explicar sobre todo conteúdo de revolução industrial." },
+            { ItemName.Jornais, "Eram jornais bem interessantes, mas pareciam que foram muito pouco para ajudar a explicar sobre todo conteúdo de revolução industrial." },
+            { ItemName.FotografiaRevolucaoIndustrial, "Era uma foto bem interessante, mas parecia que foi muito pouco para ajudar a explicar sobre todo conteúdo de revolução industrial." },
             // Mídias Fracas
+            { ItemName.Gravador, "O primeiro momento da aula foi confuso… não gostei." },
+            { ItemName.CameraPolaroid, "O primeiro momento da aula foi confuso… não gostei." },
+            { ItemName.VHS, "O primeiro momento da aula foi confuso… não gostei." },
+            { ItemName.LivroDidatico, "O primeiro momento da aula foi confuso… não gostei." },
+            { ItemName.LivroIlustrado, "O primeiro momento da aula foi confuso… não gostei." },
+            { ItemName.Caderno, "O primeiro momento da aula foi confuso… não gostei." },
+            { ItemName.Cartazes, "O primeiro momento da aula foi confuso… não gostei." },
+            { ItemName.Diario, "O primeiro momento da aula foi confuso… não gostei." },
+            { ItemName.CartazComCanetas, "O primeiro momento da aula foi confuso… não gostei." },
+            { ItemName.TVComVHSRevolucaoIndustrial, "O primeiro momento da aula foi confuso… não gostei." },
         },
 
         feedbacksPorMidiaNoMomento2: new Dictionary<ItemName, string>()
         {
             // Mídias Melhores
+            { ItemName.FotografiaRevolucaoIndustrial, "Ver aquela foto de um menino da minha idade naquelas condições me fez sentir na pele o que ele deve ter passado, professora. Isso ajudou muito na hora da discussão, parecia que tava todo mundo interessado no assunto." },
+            { ItemName.Diario, "Ter aquele diário sobre aquele menino que trabalhou na revolução industrial foi excelente pra entender o conteúdo e poder discutir sobre esse assunto." },
+            { ItemName.RetroprojetorSlideCicloTrabalho, "Ter aquela transparência sobre o ciclo do trabalho infantil foi muito bom pra entender o conteúdo e poder discutir melhor sobre esse assunto." },
+            { ItemName.ReprodutorAudio, "O reprodutor de áudio foi bem interessante durante o segundo momento da aula." },
+            { ItemName.Gravador, "Poder gravar toda essa discussão que a gente fez foi muito útil na hora da atividade." },
             // Mídias Muito Boas
-            { ItemName.Gravador, "Gostei das coisas que gravei na aula. É divertido aprender assim." }
-
+            { ItemName.ReprodutorAudioComCDRevolucaoIndustrial, "A entrevista que foi passada no Reprodutor de Áudio era legal, ajudou a dar temas na hora da discussão." },
+            { ItemName.LivroDidatico, "Ler e discutir é uma coisa que ajuda muito mais a entender o conteúdo! Eu consegui visualizar melhor como era o trabalho infantil com a discussão." },
+            { ItemName.LivroIlustrado, "As imagens do Livro Ilustrado ajudavam a gente a entender o contexto da revolução industrial. Foi bacana." },
+            { ItemName.RetroprojetorSlideMapa, "Usar o mapa projetado para discutir foi bem interessante. Nunca imaginei que fosse possível fazer uma discussão a partir de um mapa!" },
+            { ItemName.RetroprojetorSlideLinhaTempo, "Usar a linha do tempo projetada para discutir foi bem interessante. Nunca imaginei que fosse possível fazer uma discussão a partir de uma linha do tempo!" },
+            { ItemName.TVComVHSRevolucaoIndustrialEditado, "Discutir o que acontecia no vídeo foi legal, professora. Parece que ele ser mais curtinho ajudou bastante." },
             // Mídias Boas
-
+            { ItemName.TVComVHS, "Eu achei bem legal ver aquele documentário no segundo momento, mas senti que o vídeo atrapalhou a discussão." },
+            { ItemName.JornaisERevistas, "As revistas e jornais ajudaram um pouco na discussão, mas eu preferiria que tivessemos outro tipo de material de apoio." },
+            { ItemName.QuadroNegro, "A parte em que a gente tinha que discutir enquanto o professor anotava no quadro negro foi legalzinha, mas parece que podia ter sido melhor..." },
+            { ItemName.Caderno, "Usar o caderno no meio do debate de aula foi um pouco confuso, eu não sabia se anotava ou se prestava atenção no que os colegas estavam falando." },
+            { ItemName.CartazComCanetas, "Adoro escrever com as canetas coloridas, mas fazer isso no meio da discussão ficou um tantinho estranho, profe." },
             // Mídias Fracas
+            { ItemName.Retroprojetor, "O segundo momento da aula foi chato… Aquela discussão, com aquela mídia, não fazia sentido." },
+            { ItemName.Jornais, "O segundo momento da aula foi chato… Aquela discussão, com aquela mídia, não fazia sentido." },
+            { ItemName.CameraPolaroid, "O segundo momento da aula foi chato… Aquela discussão, com aquela mídia, não fazia sentido." },
+            { ItemName.VHS, "O segundo momento da aula foi chato… Aquela discussão, com aquela mídia, não fazia sentido." },
+            { ItemName.Cartazes, "O segundo momento da aula foi chato… Aquela discussão, com aquela mídia, não fazia sentido." },
+            { ItemName.TVComVHSRevolucaoIndustrial, "O segundo momento da aula foi chato… Aquela discussão, com aquela mídia, não fazia sentido." },
         },
 
         feedbacksPorMidiaNoMomento3: new Dictionary<ItemName, string>()
         {
             // Mídias Melhores
+            { ItemName.Gravador, "Usar o gravador foi legal, adorei gravar nossa atividade na aula!" },
+            { ItemName.Retroprojetor, "Adorei o jeito que usamos o retroprojetor na nossa atividade!" },
+            { ItemName.ReprodutorAudio, "Adorei o jeito que usamos o retroprojetor na nossa atividade!" },
+            { ItemName.CartazComCanetas, "Depois de ter ouvido falar bastante sobre o que foi a revolução industrial, ter discutido sobre como era o trabalho infantil, ficou muito fácil de interagir com meus colegas e  pintar aquele cartaz!! Valeu profe!" },
             // Mídias Muito Boas
-
+            { ItemName.RetroprojetorSlideMapa, "Adorei o jeito que usamos o retroprojetor com slide com mapa na nossa atividade!" },
+            { ItemName.RetroprojetorSlideLinhaTempo, "Adorei o jeito que usamos o retroprojetor com slide com linha do tempo na nossa atividade!" },
+            { ItemName.RetroprojetorSlideCicloTrabalho, "Adorei o jeito que usamos o retroprojetor com slide com ciclo do trabalho na nossa atividade!" },
+            { ItemName.JornaisERevistas, "Gostei bastante de recortar aqueles jornais e revistas para a atividade." },
+            { ItemName.Cartazes, "Nossa, professora! Quando eu tava interagindo com meus colegas e fazendo o cartaz sobre o trabalho infantil foi legal." },
             // Mídias Boas
-
+            { ItemName.Jornais, "Gostei de recortar aqueles jornais para a atividade." },
+            { ItemName.QuadroNegro, "Professora, gostei de como você usou o quadro negro, mas acho que seria mais legal se fosse uma mídia que desse pra interagir melhor com meus colegas." },
+            { ItemName.ReprodutorAudioComCDRevolucaoIndustrial, "Gostei de ter na sala o reprodutor de áudio na atividade, mas ele não me foi muito útil." },
+            { ItemName.TVComVHSRevolucaoIndustrialEditado, "Gostei de ter na sala a TV com VHS editado na atividade, mas ele não me foi muito útil." },
+            { ItemName.TVComVHS, "Gostei de ter na sala a TV com VHS na atividade, mas ele não me foi muito útil." },
+            { ItemName.FotografiaRevolucaoIndustrial, "Gostei de ter na sala a foto para a atividade, mas ele não me foi muito útil." },
+            { ItemName.Diario, "Gostei de ter na sala  diário de uma criança no trabalho infantil para a atividade, mas ele não me foi muito útil." },
             // Mídias Fracas
-            { ItemName.Gravador, "A terceira parte da aula foi estranha, não sei como aquilo me ajuda a entender sobre os pássaros da minha região..." }
+            { ItemName.LivroDidatico, "Não fez muito sentido usar aquela mídia para uma atividade..." },
+            { ItemName.LivroIlustrado, "Não fez muito sentido usar aquela mídia para uma atividade..." },
+            { ItemName.Caderno, "Não fez muito sentido usar aquela mídia para uma atividade..." },
+            { ItemName.CameraPolaroid, "Não fez muito sentido usar aquela mídia para uma atividade..." },
+            { ItemName.VHS, "Não fez muito sentido usar aquela mídia para uma atividade..." },
+            { ItemName.TVComVHSRevolucaoIndustrial, "Não fez muito sentido usar aquela mídia para uma atividade..." },
         },
 
-        feedbacksAulaMelhor: new[] { "a2", "b2" },
-        feedbacksAulaMuitoBoa: new[] { "a", "b" },
-        feedbacksAulaBoa: new[] { "a", "b" },
-        feedbacksAulaFraca: new[] { "a", "b" }
+        feedbacksAulaMelhor: new[]
+        {
+            "Nossa! Que aula incrível! Não vejo a hora de contar para os meus pais tudo o que aprendi.",
+            "Essa foi a melhor aula do ano! Na próxima será que vamos aprender mais sobre a revolução industrial?"
+        },
+        feedbacksAulaMuitoBoa: new[]
+        {
+            "Foi divertida a aula! Não achei que ia gostar muito, mas acabei me surpreendendo.",
+            "Gostei da aula! Agora já sei mais sobre a revolução industrial..."
+        },
+        feedbacksAulaBoa: new[]
+        {
+            "Foi legal a aula hoje. Mas algumas coisas ficaram confusas para mim.",
+            "A aula foi boa, mas fiquei com sono em alguns momentos..."
+        },
+        feedbacksAulaFraca: new[]
+        {
+            "Não gostei da aula, fiquei confuso o tempo todo.",
+            "Que aula chata, até dormi em alguns momentos."
+        }
     );
 
     public static readonly FeedbacksDosAlunos FeedbacksNaMissao3 = new FeedbacksDosAlunos
