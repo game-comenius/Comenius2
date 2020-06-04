@@ -36,21 +36,21 @@ public class Item
         switch (itemName)
         {
             case ItemName.ReprodutorAudio:
-                FriendlyName = "CD Player";
+                FriendlyName = "Aparelho de Som";
                 Description = "Hmmm… Preciso achar um CD em algum lugar para isso daqui ser útil.";
-                FullDescription = "Um sistema reprodutor de áudio com leitor de CDs.";
+                FullDescription = "Um sistema aparelho de som com leitor de CDs.";
 
                 //DescriptionsInMission1.StandardDescription = "Esse aparelho reproduz fitas gravadas, CDs ou DVDs com diversos tipos de conteúdo sonoro como músicas, entrevistas ou sons ambientes. É possivel ouvir a programação de rádio AM e FM.";
-                DescriptionsInMission1.StandardDescription = "Um CD Player! Agora só falta achar um CD ou fita gravada para usar com ele!";
+                DescriptionsInMission1.StandardDescription = "Um aparelho de som! Agora só falta achar um CD ou fita gravada para usar com ele!";
 
 
-                DescriptionsInMission1.FirstMomentDescription = "Um reprodutor de audio sem o CD só iria conseguir ter sons da rádio. Será que tem algo de útil passando agora para essa aula na rádio? Quem sabe na Biblioteca posso encontrar algum CD que me ajude.";
-                DescriptionsInMission1.SecondMomentDescription = "Um reprodutor de audio sem o CD só iria conseguir ter sons da rádio. Será que tem algo de útil passando agora para essa aula na rádio? Quem sabe na Biblioteca posso encontrar algum CD que seja útil.";
-                DescriptionsInMission1.ThirdMomentDescription = "Um reprodutor de audio sem o CD só iria conseguir ter sons da rádio. Será que tem algo de útil passando agora para essa aula na rádio? Quem sabe na Biblioteca possa encontrar algum CD que me ajude.";
+                DescriptionsInMission1.FirstMomentDescription = "Um aparelho de som sem o CD só iria conseguir ter sons da rádio. Será que tem algo de útil passando agora para essa aula na rádio? Quem sabe na Biblioteca posso encontrar algum CD que me ajude.";
+                DescriptionsInMission1.SecondMomentDescription = "Um aparelho de som sem o CD só iria conseguir ter sons da rádio. Será que tem algo de útil passando agora para essa aula na rádio? Quem sabe na Biblioteca posso encontrar algum CD que seja útil.";
+                DescriptionsInMission1.ThirdMomentDescription = "Um aparelho de som sem o CD só iria conseguir ter sons da rádio. Será que tem algo de útil passando agora para essa aula na rádio? Quem sabe na Biblioteca possa encontrar algum CD que me ajude.";
 
-                DescriptionsInMission2.FirstMomentDescription = "O reprodutor de áudio pode ser bem utilizado para trabalhar com exposição de conteúdos.";
-                DescriptionsInMission2.SecondMomentDescription = "O reprodutor de audio pode ser bem utilizado para trabalhar com exposição de conteúdo e para gravar momentos de discussões dos alunos.";
-                DescriptionsInMission2.ThirdMomentDescription = "O reprodutor de áudio pode ser bem utilizado em atividades práticas, podendo ser usado para sistematização de conteúdos discutidos e depois apresentado para a turma.";
+                DescriptionsInMission2.FirstMomentDescription = "O aparelho de som pode ser bem utilizado para trabalhar com exposição de conteúdos.";
+                DescriptionsInMission2.SecondMomentDescription = "O aparelho de som pode ser bem utilizado para trabalhar com exposição de conteúdo e para gravar momentos de discussões dos alunos.";
+                DescriptionsInMission2.ThirdMomentDescription = "O aparelho de som pode ser bem utilizado em atividades práticas, podendo ser usado para sistematização de conteúdos discutidos e depois apresentado para a turma.";
 
                 DescriptionsInMission3.FirstMomentDescription = "Com essa mídia os alunos podem gravar diferentes vozes e regionalismos de seus colegas.";
                 DescriptionsInMission3.SecondMomentDescription = "Essa mídia pode ser bem utilizada para escutar as vozes gravadas pelos alunos durante a exposição.";
@@ -59,12 +59,12 @@ public class Item
             case ItemName.Cd:
                 FriendlyName = "CD";
                 Description = "É um CD.";
-                FullDescription = "Um CD para ser utilizado com um reprodutor de áudio";
+                FullDescription = "Um CD para ser utilizado com um aparelho de som";
 
                 //DescriptionsInMission1.StandardDescription = "É um dispositivo eletrônico que armazena informações em formato compacto, que podem apenas ser lidas, mas seu conteúdo não poder ser alterado pelo usuário.";
-                DescriptionsInMission1.StandardDescription = "Um reprodutor de áudio com CD! Isso pode fazer os alunos se divertirem mais na aula!";
+                DescriptionsInMission1.StandardDescription = "Um aparelho de som com CD! Isso pode fazer os alunos se divertirem mais na aula!";
 
-                DescriptionsInMission1.FirstMomentDescription = "Já que eu tenho um reprodutor de áudio, posso usar esse CD em aula!";
+                DescriptionsInMission1.FirstMomentDescription = "Já que eu tenho um aparelho de som, posso usar esse CD em aula!";
                 DescriptionsInMission1.SecondMomentDescription = DescriptionsInMission1.FirstMomentDescription;
                 DescriptionsInMission1.ThirdMomentDescription = DescriptionsInMission1.FirstMomentDescription;
 
@@ -99,7 +99,7 @@ public class Item
                 FullDescription = "Gravação do canto do pássaro no pátio da escola";
 
                 //DescriptionsInMission1.StandardDescription = "Gravação do canto do pássaro no pátio da escola.";
-                DescriptionsInMission1.StandardDescription = "Um reprodutor de áudio com gravação! Isso pode fazer os alunos se divertirem mais na aula!";
+                DescriptionsInMission1.StandardDescription = "Um aparelho de som com gravação! Isso pode fazer os alunos se divertirem mais na aula!";
 
                 DescriptionsInMission1.FirstMomentDescription = "Uma ótima forma de ilustrar o canto de um pássaro da mesma região que a escola, mas isso não ajuda os alunos a entender sobre os diferentes tipos de pássaros.";
                 DescriptionsInMission1.SecondMomentDescription = "Acho que essa gravação pode não ser muito interessante em uma atividade...";
@@ -438,12 +438,12 @@ public class Item
                 DescriptionsInMission2.ThirdMomentDescription = "O diário possui muitas informações sobre o dia a dia de uma criança naquele período.";
                 break;
             case ItemName.ReprodutorAudioComCDPassaros:
-                FriendlyName = "Reprodutor de Áudio + CD sobre Pássaros";
+                FriendlyName = "Aparelho de Som + CD sobre Pássaros";
                 Description = "O CD pode ser ouvido pela turma para agregar conhecimento sobre o conteúdo estudado.";
                 FullDescription = "O CD pode ser ouvido pela turma para agregar conhecimento sobre o conteúdo estudado.";
 
                 //DescriptionsInMission2.StandardDescription = "Essas mídias combinadas possibilitam a reprodução do áudio com o som do canto dos pássaros.";
-                DescriptionsInMission2.StandardDescription = "Um CD! Com o reprodutor de áudio isso vai ser uma ótima mídia!";
+                DescriptionsInMission2.StandardDescription = "Um CD! Com o aparelho de som isso vai ser uma ótima mídia!";
 
                 DescriptionsInMission1.FirstMomentDescription = "O CD com o som do canto dos pássaros, mesmo que não apresente imagens, pode ser uma boa ferramenta para complementar a explicação do professor.";
                 DescriptionsInMission1.SecondMomentDescription = "A reprodução por CD durante a realização da atividade pode proporcionar uma imersão dos alunos na temática dos pássaros, mas não facilita o registro da informação.";
@@ -479,7 +479,7 @@ public class Item
                 FullDescription = "Essas mídias combinadas possibilitam a reprodução do áudio com uma entrevista de um especialista sobre a revolução industrial.";
 
                 //DescriptionsInMission2.StandardDescription = "Essas mídias combinadas possibilitam a reprodução do áudio com uma entrevista de um especialista sobre a revolução industrial.";
-                DescriptionsInMission2.StandardDescription = "Um CD! Com o reprodutor de áudio isso vai ser uma ótima mídia!";
+                DescriptionsInMission2.StandardDescription = "Um CD! Com o aparelho de som isso vai ser uma ótima mídia!";
 
                 DescriptionsInMission2.FirstMomentDescription = "Levar uma entrevista com um especialista no assunto enriquece muito a exposição.";
                 DescriptionsInMission2.SecondMomentDescription = "Esse é um momento de discussão entre a turma,  um áudio de entrevista pode ajudar a guiar a conversa.";
@@ -594,7 +594,7 @@ public class Item
                 FullDescription = "Sem texto";
 
                 //DescriptionsInMission3.StandardDescription = "Um CD com uma entrevista sobre o tema da aula, contendo uma entrevista falando sobre sotaques e regionalismos.";
-                DescriptionsInMission3.StandardDescription = "Um CD! Com o reprodutor de áudio isso vai ser uma ótima mídia!";
+                DescriptionsInMission3.StandardDescription = "Um CD! Com o aparelho de som isso vai ser uma ótima mídia!";
 
                 DescriptionsInMission3.FirstMomentDescription = "O CD com uma entrevista sobre os sotaques do Basil pode ser um interessante meio de pesquisa para os alunos.";
                 DescriptionsInMission3.SecondMomentDescription = "Os alunos podem escolher algumas partes do CD com uma entrevista sobre o tema para enriquecer a exposição.";
