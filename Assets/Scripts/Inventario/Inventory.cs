@@ -16,6 +16,7 @@ public class Inventory
         // Itens iniciais
         items.Add(ItemName.Cartazes, new Item(ItemName.Cartazes));
         items.Add(ItemName.Jornais, new Item(ItemName.Jornais));
+        items.Add(ItemName.JornaisERevistas, new Item(ItemName.JornaisERevistas));
         items.Add(ItemName.LivroDidatico, new Item(ItemName.LivroDidatico));
         items.Add(ItemName.Caderno, new Item(ItemName.Caderno));
         items.Add(ItemName.QuadroNegro, new Item(ItemName.QuadroNegro));
