@@ -15,7 +15,7 @@ public class AjudaComeniusJanelaMissoes : MonoBehaviour {
 
     private readonly string[] falas =
     {
-        "Muito bem Lurdinha! Agora que você falou com o professor Jean e já sabe sua missão, você pode consultá-la sempre que quiser neste botão.",
+        "Muito bem, Lurdinha! Agora que você falou com o professor Jean e já sabe sua missão, você pode consultá-la sempre que quiser neste botão.",
         "No momento, podemos ver que você tem 2 missões! Aperte nos botões azuis para ver objetivos específicos e dicas.",
         "Ótimo! Sempre que quiser fechar a janela de missões, basta usar o mesmo botão que usou para abri-la.",
     };
