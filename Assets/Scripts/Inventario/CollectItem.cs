@@ -44,7 +44,21 @@ public class CollectItem : MonoBehaviour {
         if (npcDialogo)
         {
             // Descricao que será adicionada à fala de Lurdinha
-            var descricao = new Item(target).DescriptionsInMission3.StandardDescription;
+            var idDaMissao = Player.Instance.missionID;
+            ItemDescriptionsInOneMission descricoes;
+            switch (idDaMissao)
+            {
+                case 0:
+                    descricoes = new Item(target).DescriptionsInMission1;
+                    break;
+                case 1:
+                    descricoes = new Item(target).DescriptionsInMission2;
+                    break;
+                default:
+                    descricoes = new Item(target).DescriptionsInMission3;
+                    break;
+            }
+            var descricao = descricoes.DialogueWhenAcquired;
 
             // Extrair o array de falas da Lurdinha
             var falas = npcDialogo.dialogoPrincipal.nodulos[0].falas;
