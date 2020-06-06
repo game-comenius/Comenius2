@@ -70,7 +70,7 @@ public class InventorySheetUI : MonoBehaviour {
                 descriptions = item.DescriptionsInMission3;
                 break;
         }
-        descriptionBox.text = descriptions.StandardDescription;
+        descriptionBox.text = descriptions.InventoryDescription;
     }
 
     private InventoryItemSlotUI FindItemSlot(ItemName itemName)
