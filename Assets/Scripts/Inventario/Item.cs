@@ -216,7 +216,7 @@ public class Item
                 DescriptionsInMission1.SecondMomentDescription = "Somente a televisão, caso não esteja passando algo específico sobre pássaros, não contribuirá com o real objetivo da aula.";
                 DescriptionsInMission1.ThirdMomentDescription = "Será que a TV aberta pode auxiliar a exposição do professor sobre os pássaros? Teria que ter muita sorte de passar um documentário ou matéria no exato momento da aula.";
 
-                DescriptionsInMission2.FirstMomentDescription = "Um VHS da TV Escola sobre a Revoluação Industrial.";
+                DescriptionsInMission2.FirstMomentDescription = "Um VHS da TV Escola sobre a Revolução Industrial.";
                 DescriptionsInMission2.SecondMomentDescription = "Um VHS da TV Escola sobre o Trabalho Infantil pode fomentar a discussão sobre a temática.";
                 DescriptionsInMission2.ThirdMomentDescription = "O VHS específico da TV Escola traz informções muito importantes sobre a temática.";
 
