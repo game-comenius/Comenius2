@@ -6,6 +6,7 @@ using System;
 public class FichaDesempenhoAula : MonoBehaviour {
 
     public TextMeshProUGUI Titulo;
+    public string textoTituloPadrao;
 
     public CharacterName Professor;
     public Image ImageFotoProfessor;
@@ -31,23 +32,27 @@ public class FichaDesempenhoAula : MonoBehaviour {
 
     public Image imageResultadoAula;
 
+    private void Start()
+    {
+        textoTituloPadrao = "Ficha de Desempenho: Aula de ";
+        switch (Player.Instance.missionID)
+        {
+            case 0: textoTituloPadrao += "Ciências"; break;
+            case 1: textoTituloPadrao += "História"; break;
+            case 2: textoTituloPadrao += "Português"; break;
+        }
+        DefinirTitulo(textoTituloPadrao);
+    }
+
     public void Mostrar()
     {
-        DefinirTitulo();
         DefinirFotoProfessor();
         DefinirMidiasESeusPoderes();
     }
 
-    private void DefinirTitulo()
+    public void DefinirTitulo(string texto)
     {
-        var @string = "Ficha de Desempenho: Aula de ";
-        switch (Player.Instance.missionID)
-        {
-            case 0: @string += "Ciências"; break;
-            case 1: @string += "História"; break;
-            case 2: @string += "Português"; break;
-        }
-        Titulo.text = @string;
+        Titulo.text = texto;
     }
 
     private void DefinirFotoProfessor()

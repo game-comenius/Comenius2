@@ -255,7 +255,16 @@ public class CustomConfigSalaDeAula : MonoBehaviour
     {
         var janelaConquistasMissao = FindObjectOfType<JanelaConquistasMissao>();
         if (janelaConquistasMissao)
+        {
+            var fichaDesempenho = janelaConquistasMissao.GetComponentInChildren<FichaDesempenhoAula>();
+            if (fichaDesempenho)
+            {
+                fichaDesempenho.Professor = CustomGameSettings.CurrentSettings.Professor;
+                fichaDesempenho.DefinirTitulo("Ficha de Desempenho da Aula");
+            }
             yield return StartCoroutine(janelaConquistasMissao.Apresentar());
+        }
+
         canvasJanelaFinalCustomGame.enabled = true;
     }
 }
