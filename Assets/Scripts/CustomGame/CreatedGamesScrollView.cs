@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CreatedGamesScrollView : MonoBehaviour {
 
@@ -9,17 +10,23 @@ public class CreatedGamesScrollView : MonoBehaviour {
     private GameObject content;
     [SerializeField]
     private CreatedGameButton createdGameButtonPrefab;
+    [SerializeField]
+    private Button botaoJogar;
 
     private List<CreatedGameButton> createdGameButtons;
 
     private void Awake()
     {
         createdGameButtons = new List<CreatedGameButton>();
+
+        // Botão jogar começa desabilitado
+        botaoJogar.interactable = false;
     }
 
     private IEnumerator Start () {
         yield return StartCoroutine(CustomGameSettings.LoadAndUseAllSettings(AddCreatedGameButtons));
 
+        StartCoroutine(AguardarSelecaoELiberarBotaoJogar());
         StartCoroutine(AguardarSenhaELiberarExclusao());
     }
 
@@ -38,6 +45,14 @@ public class CreatedGamesScrollView : MonoBehaviour {
         button.Configure(settings, index);
 
         createdGameButtons.Add(button);
+    }
+
+    private IEnumerator AguardarSelecaoELiberarBotaoJogar()
+    {
+        // Aguardar o jogador selecionar um jogo criado
+        yield return new WaitUntil(() => CreatedGameButton.currentlySelectedButton);
+        // Liberar botão jogar
+        botaoJogar.interactable = true;
     }
 
     // Senha = del
