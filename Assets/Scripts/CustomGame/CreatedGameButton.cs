@@ -11,6 +11,8 @@ public class CreatedGameButton : MonoBehaviour, IPointerClickHandler
     private int index;
 
     [SerializeField]
+    private Image backgroundImage;
+    [SerializeField]
     private TMP_Text tituloDaAula;
     [SerializeField]
     private TMP_Text autor;
@@ -26,7 +28,7 @@ public class CreatedGameButton : MonoBehaviour, IPointerClickHandler
     private TMP_Text dataDaCriacao;
 
 
-    private static CreatedGameButton currentlySelectedButton;
+    public static CreatedGameButton currentlySelectedButton;
     private static Color offColor = new Color(0.7924528f, 0.7866229f, 0.5868636f, 0);
     private static Color onColor = new Color(0.7924528f, 0.7866229f, 0.5868636f, 0.2f);
 
@@ -74,13 +76,13 @@ public class CreatedGameButton : MonoBehaviour, IPointerClickHandler
     {
         if (currentlySelectedButton != null)
         {
-            var offBackground = currentlySelectedButton.transform.GetChild(0);
-            offBackground.GetComponent<Image>().color = offColor;
+            var offBackground = currentlySelectedButton.backgroundImage;
+            offBackground.color = offColor;
         }
 
         currentlySelectedButton = this;
-        var onBackground = this.transform.GetChild(0);
-        onBackground.GetComponent<Image>().color = onColor;
+        var onBackground = this.backgroundImage;
+        onBackground.color = onColor;
 
         CustomGameSettings.CurrentSettings = this.settings;
     }
