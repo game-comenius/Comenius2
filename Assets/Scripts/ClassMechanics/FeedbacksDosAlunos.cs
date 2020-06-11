@@ -23,24 +23,24 @@ public class FeedbacksDosAlunos
             { ItemName.Gravador, "Achei legal poder gravar tudo que a gente pesquisou sobre os pássaros no primeiro momento." },
             { ItemName.CameraPolaroid, "Achei bem legal ver a foto do pássaro para a nossa pesquisa no primeiro momento." },
             { ItemName.LivroIlustrado, "Que bacana o livro ilustrado que a gente usou! Quanta gravura linda, consegui entender muito bem como são os pássaros." },
+            { ItemName.TVComVHS, "Adorei a programação da TV Escola, aprendi muito sobre os pássaros!" },
             // Mídias Muito Boas
             { ItemName.TVComVHSPassaros, "Caramba, que videozinho massa! Consegui entender bem melhor o conteúdo com as imagens e o som que foi mostrado!" },
             { ItemName.GravacaoPassaro, "Achei bem legal escutar o som do passarinho da gravação. Mas isso não me ajudou a entender a diferença entre os tipos de pássaros." },
             { ItemName.LivroDidatico, "Achei legal o que deu para aprender lendo no livro didático. Ele até que é bem completinho." },
-            { ItemName.CartazComColecaoDePenas, "Essas penas daquela coleção são tão coloridas... Ver todas colocada juntinhas assim dessa forma deixou mais fácil de imaginar os diferentes tipos de pássaros." },
+            { ItemName.CartazComColecaoDePenas, "Essas penas daquela coleção são tão coloridas... Ver todas colocadas juntinhas assim dessa forma deixou mais fácil de imaginar os diferentes tipos de pássaros." },
             { ItemName.JornaisERevistas, "As matérias e as fotos de pássaros nos jornais e revistas que o professor trouxe contaram muito sobre a vida deles. Adoro esse tipo de texto!" },
             { ItemName.FotografiaPassaro, "A foto é bem bonita! Mas isso não me ajudou a entender a diferença entre os tipos de pássaros." },
-            { ItemName.ReprodutorAudio, "Achei muito útil o reprodutor de áudio para a nossa pesquisa." },
-            { ItemName.ReprodutorAudioComCDPassaros, "Achei muito útil o reprodutor de áudio com CD para a nossa pesquisa." },
+            { ItemName.ReprodutorAudio, "Achei muito útil o aparelho de som para a nossa pesquisa." },
+            { ItemName.ReprodutorAudioComCDPassaros, "Achei muito útil o aparelho de som com CD sobre pássaros para a nossa pesquisa." },
             // Mídias Boas
-            { ItemName.Cartazes, "Vou poder lembrar todos os dias do que eu aprendi na aula hoje com esse cartaz pendurado na parede. Que massa!" },
             { ItemName.Mapa, "Adoro mapas, eles são tão grandes e bonitos. Mas me pareceu meio inadequado para esse momento da aula." },
             { ItemName.Jornais, "Até que naquele jornal tinha matérias e imagens interessantes, mas parece que estava faltando alguma coisa." },
             // Mídias Fracas
-            { ItemName.QuadroNegro, "O primeiro momento da aula foi confuso… não gostei." },
-            { ItemName.Caderno, "O primeiro momento da aula foi confuso… não gostei." },
-            { ItemName.TVComVHS, "O primeiro momento da aula foi confuso… não gostei." },
-            { ItemName.Cd, "O primeiro momento da aula foi confuso… não gostei." },
+            { ItemName.Cartazes, "Não entendi muito bem como o cartaz em branco foi usado no primeiro momento, pois a aula era de pesquisa." },
+            { ItemName.QuadroNegro, "O quadro me pareceu meio inadequado para o primeiro momento, pois achei que fossemos pesquisar..." },
+            { ItemName.Caderno, "Meu caderno não tinha informações sobre os pássaros, não consegui pesquisar nele." },
+            { ItemName.Cd, "O CD me pareceu bem interessante para pesquisarmos, mas o professor esqueceu de levar o Aparelho de Som..." },
             { ItemName.VHS, "O primeiro momento da aula foi confuso… não gostei." }
         },
 
@@ -49,26 +49,26 @@ public class FeedbacksDosAlunos
             // Mídias Melhores
             { ItemName.Cartazes, "Fazer cartazes é tão divertido. Parece que eu aprendo melhor assim." },
             { ItemName.Caderno, "Essa atividade me inspirou para deixar o meu caderno super colorido e bonitão. Ótima ideia!" },
-            { ItemName.CartazComColecaoDePenas, "As penas da coleção eram bonitas, mas eu não consegui muito tempo com elas para fazer a atividade..." },
+            { ItemName.CartazComColecaoDePenas, "As penas da coleção eram bonitas, me ajudou muito para fazer entender a atividade..." },
             { ItemName.LivroIlustrado, "Adorei a atividade, na pesquisa que fiz no livro ilustrado eu fiquei ainda mais curioso sobre os pássaros." },
-            { ItemName.ReprodutorAudio, "Achei muito útil o reprodutor de áudio para a nossa atividade." },
+            { ItemName.Gravador, "Gostei das coisas que gravei na aula. É divertido aprender assim, gravando nossas ideias." },
             // Mídias Muito Boas
+            { ItemName.ReprodutorAudio, "Achei muito útil o aparelho de som para a nossa atividade, pois nele podemos também gravar as sistematizações da aula..." },
             { ItemName.LivroDidatico, "Adorei a atividade, na pesquisa que fiz no livro didático eu fiquei ainda mais curioso sobre os pássaros." },
-            { ItemName.Gravador, "Gostei das coisas que gravei na aula. É divertido aprender assim." },
+            { ItemName.FotografiaPassaro, "Gostei da fotografia que você escolheu para o segundo momento da aula, me ajudou a entender melhor o tema." },
+            { ItemName.CameraPolaroid, "Tirar fotos com a câmera me ajudou com a sistematização dos conteúdos no segundo momento da aula." },
             // Mídias Boas
-            { ItemName.TVComVHS, "A atividade de registrar as coisas enquanto passava o vídeo foi legal, mas não deu pra prestar muita atenção nas imagens assim." },
+            { ItemName.TVComVHS, "Gostei muito da programação da TV Escola sobre os pássaros, entendi muito melhor o conteúdo com ela!" },
             { ItemName.ReprodutorAudioComCDPassaros, "A atividade de registrar as coisas enquanto tocava o CD foi legal, mas não deu pra prestar muita atenção nos sons assim." },
             { ItemName.Mapa, "Mexer com mapa é sempre legal, mas se eu pudesse ter uma ilustração de um passarinho aqui seria mais legal ainda." },
             { ItemName.JornaisERevistas, "Tinha muita imagem legal para recortar nos jornais e revistas." },
             { ItemName.QuadroNegro, "Eu fico meio nervoso de apresentar algo lá na frente, mas usar a superfície do quadro negro para aprender é bem divertido." },
-            { ItemName.Jornais, "Recortar coisas de jornais é sempre bacana, mas faltou material e no final eram poucas imagens." },
-            { ItemName.GravacaoPassaro, "A gravação do pássaro foi uma boa escolha!" }, // Essa descrição foi o Bruno que inventou pois não tinha nada escrito no documento, revisar!
+            { ItemName.Jornais, "Recortar coisas de jornais é sempre bacana, mas eu prefiro as imagens coloridas como nos vídeos!" },
+            { ItemName.GravacaoPassaro, "A gravação do pássaro foi uma boa escolha, me ajudou a entender melhor o conteúdo!" },
             // Mídias Fracas
-            { ItemName.CameraPolaroid, "O segundo momento da aula foi chato… Aquela atividade não fazia sentido." },
             { ItemName.TVComVHSPassaros, "O segundo momento da aula foi chato… Aquela atividade não fazia sentido." },
-            { ItemName.FotografiaPassaro, "O segundo momento da aula foi chato… Aquela atividade não fazia sentido." },
-            { ItemName.Cd, "O segundo momento da aula foi chato… Aquela atividade não fazia sentido." },
-            { ItemName.VHS, "O segundo momento da aula foi chato… Aquela atividade não fazia sentido." }
+            { ItemName.Cd, "Esse CD sobre os pássaros parecia tão interessante para o segundo momento... mas não tinha o aparelho para ouvir..." },
+            { ItemName.VHS, "Esse VHS parecia tão interessante para o segundo momento... mas não tinha o aparelho para assistir..." }
         },
 
         feedbacksPorMidiaNoMomento3: new Dictionary<ItemName, string>()
@@ -76,24 +76,24 @@ public class FeedbacksDosAlunos
             // Mídias Melhores
             { ItemName.Mapa, "Não sabia que tinham tantos pássaros regionais e que ficavam onde ficam. Entendi tudo melhor com o mapa." },
             { ItemName.CartazComColecaoDePenas, "A coleção de penas era bacana, ver tantas penas durante a aula foi bem interessante." },
+            { ItemName.TVComVHS, "Adorei a programação da TV Escola, aprendi muito sobre os pássaros com a exposição durante a aula!" },
             // Mídias Muito Boas
             { ItemName.LivroIlustrado, "Aquele livro ilustrado era muito completo! Deu para ver as diferenças entre os pássaros de cada região certinho." },
             { ItemName.LivroDidatico, "A explicação do nosso livro didático é bem completa, deu pra entender sobre quais são os pássaros naturais da nossa região." },
             { ItemName.FotografiaPassaro, "Aquela foto do passarinho era super maneira, eu sempre vejo ele voando aqui pelo pátio!" },
             { ItemName.GravacaoPassaro, "Sério que aquela gravação era de um pássaro aqui da escola mesmo? Quem diria que a gente pode aprender com as coisas que tem no pátio. Uau!" },
-            { ItemName.QuadroNegro, "Vendo a tabela que o professor fez no quadro negro ficou mais fácil de entender a matéria da aula." },
-            { ItemName.Cartazes, "Vendo a tabela que o professor fez para a gente no cartaz ficou mais fácil de entender a matéria da aula." },
+            { ItemName.QuadroNegro, "Vendo a tabela no quadro negro ficou mais fácil de entender a matéria da aula." },
+            { ItemName.Cartazes, "Vendo a tabela que a gente fez no cartaz ficou mais fácil de entender a matéria da aula." },
             // Mídias Boas
-            { ItemName.TVComVHS, "O vídeo era bem bacana, mas tinha muitos pássaros que não eram dessa região, o que acabou deixando essa parte da aula confusa." },
-            { ItemName.ReprodutorAudioComCDPassaros, "O CD era bem bacana, mas tinha muitos pássaros que não eram dessa região, o que acabou deixando essa parte da aula confusa." },
-            { ItemName.JornaisERevistas, "As matérias nos jornais e revistas eram bacanas, mas tinha muitos pássaros que não eram dessa região, o que acabou deixando essa parte da aula confusa." },
+            { ItemName.TVComVHSPassaros, "O vídeo era bem bacana, tinha muitos pássaros dessa região." },
+            { ItemName.ReprodutorAudioComCDPassaros, "O CD era bem bacana, conheci muitos pássaros dessa região." },
+            { ItemName.JornaisERevistas, "As matérias nos jornais e revistas foram bem bacanas na hora da exposição." },
+            { ItemName.Gravador, "Achei a escolha do gravador legal, pois conseguiu reproduzir as sínteses dos alunos." },
+            { ItemName.ReprodutorAudio, "Achei a escolha do Aparelho de Som legal, pois conseguiu reproduzir as sínteses dos alunos ou CDs." },
+            { ItemName.Jornais, "As matérias nos jornais foram bem bacanas para a exposição da pesquisa." },
             // Mídias Fracas
-            { ItemName.Gravador, "A terceira parte da aula foi estranha, não sei como aquilo me ajuda a entender sobre os pássaros da minha região..." },
-            { ItemName.Caderno, "A terceira parte da aula foi estranha, não sei como aquilo me ajuda a entender sobre os pássaros da minha região..." },
-            { ItemName.ReprodutorAudio, "A terceira parte da aula foi estranha, não sei como aquilo me ajuda a entender sobre os pássaros da minha região..." },
-            { ItemName.Jornais, "A terceira parte da aula foi estranha, não sei como aquilo me ajuda a entender sobre os pássaros da minha região..." },
-            { ItemName.CameraPolaroid, "A terceira parte da aula foi estranha, não sei como aquilo me ajuda a entender sobre os pássaros da minha região..." },
-            { ItemName.TVComVHSPassaros, "A terceira parte da aula foi estranha, não sei como aquilo me ajuda a entender sobre os pássaros da minha região..." },
+            { ItemName.Caderno, "A terceira parte da aula foi estranha, o caderno não foi a melhor escolha para essa exposição." },
+            { ItemName.CameraPolaroid, "A terceira parte da aula foi estranha, a câmera não foi a melhor escolha para essa exposição." },
             { ItemName.Cd, "A terceira parte da aula foi estranha, não sei como aquilo me ajuda a entender sobre os pássaros da minha região..." },
             { ItemName.VHS, "A terceira parte da aula foi estranha, não sei como aquilo me ajuda a entender sobre os pássaros da minha região..." }
         },
