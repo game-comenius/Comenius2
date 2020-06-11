@@ -509,8 +509,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission1.InventoryDescription = "Aparelho óptico utilizado para a projeção de imagens  e textos por meio de transparências.";
+
                 DescriptionsInMission2.DialogueWhenAcquired = "Um retroprojetor! Que maravilha! Agora eu só preciso dos slides para usar com ele! Mas onde posso achar?";
-                DescriptionsInMission2.InventoryDescription = "Aparelho óptico utilizado para a projeção de imagens  e textos por meio de transparências.";
                 DescriptionsInMission2.Geral = "Máquina que projeta em uma parede uma imagem, texto e gráficos.";
                 DescriptionsInMission2.Com = "Esse recurso pode exibir imagens, textos impressos ou escritos com caneta hidrográfica em uma transparência.";
                 DescriptionsInMission2.Sobre = "Refletir sobre os assuntos abordados com o auxílio do retroprojetor.";
@@ -529,8 +530,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission1.InventoryDescription = "Transparência contendo um mapa na época da revolução industrial, que combinadas com um retroprojetor, podem ser refletidas na parede.";
+
                 DescriptionsInMission2.DialogueWhenAcquired = "Um mapa vai ser muito útil para explicar mais sobre a Revolução Industrial!";
-                DescriptionsInMission2.InventoryDescription = "Transparência contendo um mapa na época da revolução industrial, que combinadas com um retroprojetor, podem ser refletidas na parede.";
                 DescriptionsInMission2.Geral = "Transparência, contendo um mapa da época, que combinadas com um retroprojetor, podem ser refletidas na parede.";
                 DescriptionsInMission2.Com = "É possível ser utilizado durante as aulas como recurso metodológico, principalmente em disciplinas de história e geografia, para auxiliar nas explicações do professor.";
                 DescriptionsInMission2.Sobre = "Refletir sobre o processo da Revolução Industrial em espaços e contextos diferentes.";
@@ -549,8 +551,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission1.InventoryDescription = "Slide contendo uma linha do tempo sobre as condições do trabalho desde a  revolução industrial, que combinadas com o retroprojetor, são refletidas na parede.";
+
                 DescriptionsInMission2.DialogueWhenAcquired = "Essa página contém uma linha do tempo sobre a Revolução Industrial!";
-                DescriptionsInMission2.InventoryDescription = "Slide contendo uma linha do tempo sobre as condições do trabalho desde a  revolução industrial, que combinadas com o retroprojetor, são refletidas na parede.";
                 DescriptionsInMission2.Geral = "Transparência contendo uma linha do tempo sobre as condições do trabalho desde a  revolução industrial, que combinadas com o retroprojetor, são refletidas na parede.";
                 DescriptionsInMission2.Com = "É possível ser utilizado durante as aulas como recurso metodológico, principalmente em disciplinas de história e geografia, para auxiliar nas explicações do professor.";
                 DescriptionsInMission2.Sobre = "Refletir sobre as datas utilizadas como marco de fatos históricos e o entendimento desses marcos como um processo que não se inicia e termina em uma data específica, mas sim em um período.";
@@ -569,8 +572,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission1.InventoryDescription = "Transparência contendo uma linha do tempo sobre o ciclo do trabalho infantil desde a Revolução Industrial, que combinadas com o retroprojetor, são refletidas na parede.";
+
                 DescriptionsInMission2.DialogueWhenAcquired = "Essa página contém um bom texto sobre o ciclo do trabalho infantil na Revolução Industrial. Pode ser útil para a aula de hoje.";
-                DescriptionsInMission2.InventoryDescription = "Transparência contendo uma linha do tempo sobre o ciclo do trabalho infantil desde a Revolução Industrial, que combinadas com o retroprojetor, são refletidas na parede.";
                 DescriptionsInMission2.Geral = "Transparência contendo uma linha do tempo sobre o ciclo do trabalho infantil desde a  revolução industrial.";
                 DescriptionsInMission2.Com = "Pode ser utilizada como recurso metodológico para aulas expositivas ou dialogadas sobre a temática do trabalho infantil.";
                 DescriptionsInMission2.Sobre = "Reflexão sobre os processos de exploração infantil no mundo do trabalho e quais as mudanças desde a criação do Estatuto da Criança e do Adolescente.";
@@ -589,8 +593,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission1.InventoryDescription = "Um conjunto de canetas coloridas junto de cartazes, geralmente utilizados para trabalhos expositivos, atividades de síntese e sistematização de conteúdos.";
+
                 DescriptionsInMission2.DialogueWhenAcquired = "Um cartaz com canetas coloridas! Podemos usar essa recurso nos momentos de atividades práticas e de exposição.";
-                DescriptionsInMission2.InventoryDescription = "Um conjunto de canetas coloridas junto de cartazes, geralmente utilizados para trabalhos expositivos, atividades de síntese e sistematização de conteúdos.";
                 DescriptionsInMission2.Geral = "Instrumentos para fazer desenhos e textos coloridos em cartazes.";
                 DescriptionsInMission2.Com = "É possível construir cartazes de sistematização de conteúdos ou informativos para os ambientes escolares e/ou fora da escola.";
                 DescriptionsInMission2.Sobre = "Refletir sobre os tipos de cartazes que encontramos em nosso dia-a-dia e quais as estratégias utilizadas para que alcancem o maior número de visualizações possível.";
@@ -613,8 +618,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission1.InventoryDescription = "Essas mídias (TV-VHS) serão usadas para ver partes selecionadas do filme pelo professor sobre a Revolução Industrial.";
+
                 DescriptionsInMission2.DialogueWhenAcquired = "Uma TV com VHS! Como o VHS é editado, e portanto mais curto, é mais fácil prender a atenção dos alunos!";
-                DescriptionsInMission2.InventoryDescription = "Essas mídias (TV-VHS) serão usadas para ver partes selecionadas do filme pelo professor sobre a Revolução Industrial.";
                 DescriptionsInMission2.Geral = "O VHS capta e reproduz vídeo e áudio, contém na fita apenas as cenas mais importantes do filme sobre a Revolução Industrial.";
                 DescriptionsInMission2.Com = "Assistir cenas do filme para compreender o momento histórico vivido.";
                 DescriptionsInMission2.Sobre = "Analisar como as crianças eram exploradas e analisar o contexto histórico que elas viviam.";
@@ -633,8 +639,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission1.InventoryDescription = "Um diário de uma criança que trabalhava na época da Revolução Industrial! Isso pode ser muito útil para a aula!";
+
                 DescriptionsInMission2.DialogueWhenAcquired = "Um diário de uma criança que trabalhava na época da Revolução Industrial! Isso pode ser muito útil para a aula!";
-                DescriptionsInMission2.InventoryDescription = "Um diário de uma criança que trabalhava na época da Revolução Industrial! Isso pode ser muito útil para a aula!";
                 DescriptionsInMission2.Geral = "Caderno com textos escritos a mão por uma criança que trabalhava durante a revolução industrial.";
                 DescriptionsInMission2.Com = "Os registros escritos de momentos históricos pode pode ser utilizado para auxiliar a entender como era a realidade das crianças e dos adultos daquela época.";
                 DescriptionsInMission2.Sobre = "Refletir sobre as diferenças de um registro pessoal e de uma informação de mídia de massa, pois contém a subjetividade de quem escreve, sem o interesse de parecer imparcial.";
@@ -672,8 +679,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission1.InventoryDescription = "A fotografia é o processo e a arte que permite registar e reproduzir, através de reações químicas e em superfícies preparadas para o efeito, as imagens que se tiram no fundo de uma câmara escura.";
+
                 DescriptionsInMission2.DialogueWhenAcquired = "Uma foto! Ela pode ser útil para a aula, só preciso pensar com cuidado o momento certo para usá-la!";
-                DescriptionsInMission2.InventoryDescription = "A fotografia é o processo e a arte que permite registar e reproduzir, através de reações químicas e em superfícies preparadas para o efeito, as imagens que se tiram no fundo de uma câmara escura.";
                 DescriptionsInMission2.Geral = "Imagem impressa de uma criança em uma fábrica na época da Revolução Industrial.";
                 DescriptionsInMission2.Com = "É um recurso interessante para ilustrar um determinado momento histórico. Com ela é possível analisar e entender o contexto ao qual as fotos foram tiradas.";
                 DescriptionsInMission2.Sobre = "Refletir sobre como o registro fotográfico oferece mais do que a própria imagem em si, mas é uma ferramenta que comporta uma memória, sentimentos e percepções.";
@@ -689,8 +697,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission1.InventoryDescription = "Essas mídias (TV-VHS) combinadas serão usadas para ver um documentário sobre a Revolução Industrial.";
+
                 DescriptionsInMission2.DialogueWhenAcquired = "Aqui! Achei um documentário sobre a Revolução Industrial.  Mas ele me parece ser bem longo… Não daria tempo de mostrar o documentário todo...";
-                DescriptionsInMission2.InventoryDescription = "Essas mídias (TV-VHS) combinadas serão usadas para ver um documentário sobre a Revolução Industrial.";
                 DescriptionsInMission2.Geral = "Consiste em um sistema de captação e reprodução de vídeo e áudio. Vai ser usado para ver o filme sobre a revolução industrial.";
                 DescriptionsInMission2.Com = "Assistir o filme para conhecer detalhes da época.";
                 DescriptionsInMission2.Sobre = "Analisar como as crianças eram exploradas a partir das imagens e informações.";
@@ -710,8 +719,9 @@ public class Item
                 Description = "Essas mídias combinadas possibilitam a reprodução do áudio com uma entrevista de um especialista sobre a revolução industrial.";
                 FullDescription = "Essas mídias combinadas possibilitam a reprodução do áudio com uma entrevista de um especialista sobre a revolução industrial.";
 
+                DescriptionsInMission1.InventoryDescription = "É um dispositivo eletrônico que armazena informações em formato compacto, que podem apenas ser lidas, mas seu conteúdo não poder ser alterado pelo usuário.";
+
                 DescriptionsInMission2.DialogueWhenAcquired = "Um CD com entrevista de um especialista vai ser muito importante para a aula!";
-                DescriptionsInMission2.InventoryDescription = "É um dispositivo eletrônico que armazena informações em formato compacto, que podem apenas ser lidas, mas seu conteúdo não poder ser alterado pelo usuário.";
                 DescriptionsInMission2.Geral = "Áudio com uma entrevista de um especialista sobre a revolução industrial.";
                 DescriptionsInMission2.Com = "O CD pode ser ouvido pela turma para agregar conhecimento sobre o conteúdo estudado.";
                 DescriptionsInMission2.Sobre = "Com a entrevista contida neste recurso, os estudantes terão que refletir em grupos e em seguida escrever um texto apontando o que significou mais para eles do que ouviram na entrevista.";
@@ -730,8 +740,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission1.InventoryDescription = "Essas mídias (TV-VHS) serão usadas para ver partes selecionadas do filme pelo professor sobre a Revolução Industrial. ";
+
                 DescriptionsInMission2.DialogueWhenAcquired = "Uma TV com VHS! Como o VHS é editado, e portanto mais curto, é mais fácil prender a atenção dos alunos!";
-                DescriptionsInMission2.InventoryDescription = "Essas mídias (TV-VHS) serão usadas para ver partes selecionadas do filme pelo professor sobre a Revolução Industrial. ";
                 DescriptionsInMission2.Geral = "O VHS capta e reproduz vídeo e áudio, contém na fita apenas as cenas mais importantes do filme sobre a Revolução Industrial.";
                 DescriptionsInMission2.Com = "Assistir cenas do filme para compreender o momento histórico vivido.";
                 DescriptionsInMission2.Sobre = "Analisar como as crianças eram exploradas e analisar o contexto histórico que elas viviam.";
@@ -751,8 +762,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission1.InventoryDescription = "Folhas brancas de dimensão A4, que pode ter diversos usos de acordo com a situação, sejam desenhos, anotações, avisos, dobraduras, etc.";
+
                 DescriptionsInMission3.DialogueWhenAcquired = "Folhas sulfite! Com ela podemos fazer desenhos, anotações, avisos, dobraduras. Há tantas possibilidades!";
-                DescriptionsInMission3.InventoryDescription = "Folhas brancas de dimensão A4, que pode ter diversos usos de acordo com a situação, sejam desenhos, anotações, avisos, dobraduras, etc.";
                 DescriptionsInMission3.Geral = "Papel branco, que pode ser usado pelos alunos durante uma atividade de aula para desenhos, anotações, avisos, dobraduras, etc.";
                 DescriptionsInMission3.Com = "Mídia impressa que pode ser utilizada para passar informações, avisos ou apresentar trabalhos.";
                 DescriptionsInMission3.Sobre = "É possível fazer uma análise crítica das formas de comunicações que podem ser feitas por meio das folhas A4 como anúncios, propagandas e até cartazes.";
@@ -770,8 +782,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission1.InventoryDescription = "As mídias (TV-VHS) combinadas serão usadas para ver o documentário sobre os diferentes costumes ou tradições regionais. ";
+
                 DescriptionsInMission3.DialogueWhenAcquired = "Um VHS sobre regionalismo! Essa mídia chama muita atenção dos alunos.";
-                DescriptionsInMission3.InventoryDescription = "As mídias (TV-VHS) combinadas serão usadas para ver o documentário sobre os diferentes costumes ou tradições regionais. ";
                 DescriptionsInMission3.Geral = "O VHS capta e reproduz vídeo e áudio, essas mídias permite que o documentário sobre regionalismos possa ser exibido na sala de aula.";
                 DescriptionsInMission3.Com = "Assistir o documentário para entender os diferentes traços culturais e linguísticos de cada região.";
                 DescriptionsInMission3.Sobre = "Analisar como a cultura é apropriada e modificada ao mesmo tempo pelas pessoas que vivem em diferentes regiões.";
@@ -791,8 +804,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission1.InventoryDescription = "Essas mídias (TV-VHS) combinadas serão usadas para ver partes selecionadas pelo professor do documentário sobre regionalismo.";
+
                 DescriptionsInMission3.DialogueWhenAcquired = "Uma TV com VHS! Como o VHS é editado, e portanto mais curto, é mais fácil prender a atenção dos alunos!";
-                DescriptionsInMission3.InventoryDescription = "Essas mídias (TV-VHS) combinadas serão usadas para ver partes selecionadas pelo professor do documentário sobre regionalismo.";
                 DescriptionsInMission3.Geral = "O VHS capta e reproduz vídeo e áudio, contém na fita apenas as cenas mais importantes do filme sobre regionalismo.";
                 DescriptionsInMission3.Com = "Assistir a edição do documentário para entender os diferentes traços culturais e linguísticos de cada região, de acordo com a seleção do professor.";
                 DescriptionsInMission3.Sobre = " Analisar como a cultura é apropriada e modificada ao mesmo tempo pelas pessoas que vivem em diferentes regiões.";
@@ -812,8 +826,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission1.InventoryDescription = "Coletânea de livros e textos que tratam com maior profundidade o conhecimento humano.";
+
                 DescriptionsInMission3.DialogueWhenAcquired = "Uma enciclopédia! Os alunos podem achar muitos exemplos de regionalismo nela!";
-                DescriptionsInMission3.InventoryDescription = "Coletânea de livros e textos que tratam com maior profundidade o conhecimento humano.";
                 DescriptionsInMission3.Geral = "A Enciclopédia foi desenvolvida a partir do dicionário no século XVIII, em busca de aprofundar os conceitos para além das informações limitadas do dicionário.";
                 DescriptionsInMission3.Com = "Pode ser utilizado como fonte de pesquisa em diversas disciplinas.";
                 DescriptionsInMission3.Sobre = "Permite reflexão sobre o acúmulo do conhecimento adquirido pelo ser humano ao longo do tempo e sobre o trabalho de compilação dos mesmos.";
@@ -831,8 +846,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission1.InventoryDescription = "Adedonha ou Stop! consiste em um jogo de conhecimentos gerais. Cada coluna da tabela recebe o nome de uma categoria de palavras como animais, carros, cidades, cores etc., e cada linha representa uma rodada do jogo.";
+
                 DescriptionsInMission3.DialogueWhenAcquired = "Os alunos se divertem muito jogando Stop!";
-                DescriptionsInMission3.InventoryDescription = "Adedonha ou Stop! consiste em um jogo de conhecimentos gerais. Cada coluna da tabela recebe o nome de uma categoria de palavras como animais, carros, cidades, cores etc., e cada linha representa uma rodada do jogo.";
                 DescriptionsInMission3.Geral = "Adedonha ou Stop! consiste em um jogo de conhecimentos gerais. Cada coluna da tabela recebe o nome de uma categoria de palavras como animais, carros, cidades, cores etc., e cada linha representa uma rodada do jogo. No início da rodada é sorteado a letra inicial e o primeiro que terminar todas as colunas termina a rodada e os jogadores vão pontuando por resposta correta na coluna.";
                 DescriptionsInMission3.Com = "O professor pode criar categorias dos conteúdos trabalhados na disciplina.";
                 DescriptionsInMission3.Sobre = "Propor a reflexão sobre a difusão desse tipo de jogo no dia-a-dia da população e sua historicidade.";
@@ -850,8 +866,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission1.InventoryDescription = "O jogo da forca é um jogo em que o jogador precisa acertar a palavra co, tendo somente o número de letras e o tema como dica, antes que o boneco seja enforcado. A cada erro é desenhado uma parte do corpo na forca.";
+
                 DescriptionsInMission3.DialogueWhenAcquired = "Um jogo de forca! Mais uma novidade para levar para a aula.";
-                DescriptionsInMission3.InventoryDescription = "O jogo da forca é um jogo em que o jogador precisa acertar a palavra co, tendo somente o número de letras e o tema como dica, antes que o boneco seja enforcado. A cada erro é desenhado uma parte do corpo na forca.";
                 DescriptionsInMission3.Geral = "O jogo da forca é um jogo que consiste na descoberta de uma palavra tendo somente o  número de letras e o tema ligado à palavra. A cada letra errada, é desenhada uma parte do corpo do enforcado. O jogo termina ou com o acerto da palavra ou com o término do preenchimento das partes corpóreas do enforcado.";
                 DescriptionsInMission3.Com = "O professor pode criar o jogo com palavras chave do conteúdos trabalhados na disciplina.";
                 DescriptionsInMission3.Sobre = "Propor a reflexão sobre a difusão desse tipo de jogo no dia-a-dia da população e sua historicidade.";
@@ -869,8 +886,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission1.InventoryDescription = "O jogo de palavras cruzadas é um passatempo bastante popular e consiste em linhas e colunas que devem ser preenchidas por palavras descobertas pelo jogador.";
+
                 DescriptionsInMission3.DialogueWhenAcquired = "Um jogo de palavras cruzadas! Os alunos adoram jogos durante a aula!";
-                DescriptionsInMission3.InventoryDescription = "O jogo de palavras cruzadas é um passatempo bastante popular e consiste em linhas e colunas que devem ser preenchidas por palavras descobertas pelo jogador.";
                 DescriptionsInMission3.Geral = "O jogo de palavras cruzadas é um passatempo bastante popular e consiste em linhas e colunas que devem ser preenchidas por palavras descobertas pelo jogador. Ao se preencher uma das linhas, automaticamente se preenche alguns quadrados das outras linhas que a cruzam, tornando mais fácil sua resolução. É encontrada geralmente em jornais e revistas.";
                 DescriptionsInMission3.Com = "O professor pode criar a própria palavra cruzada utilizando palavras chave dos conteúdos trabalhados na disciplina.";
                 DescriptionsInMission3.Sobre = "Propor a reflexão sobre a difusão desse tipo de jogo no dia-a-dia da população e sua historicidade.";
@@ -888,8 +906,9 @@ public class Item
                 Description = "Sem descrição";
                 FullDescription = "Sem texto";
 
+                DescriptionsInMission1.InventoryDescription = "É um dispositivo eletrônico que armazena informações em formato compacto, que podem apenas ser lidas, mas seu conteúdo não poder ser alterado pelo usuário.";
+
                 DescriptionsInMission3.DialogueWhenAcquired = "Um CD sobre sotaques do Brasil! Os alunos podem gostar.";
-                DescriptionsInMission3.InventoryDescription = "É um dispositivo eletrônico que armazena informações em formato compacto, que podem apenas ser lidas, mas seu conteúdo não poder ser alterado pelo usuário.";
                 DescriptionsInMission3.Geral = "Áudio explicando e dando exemplos dos diferentes sotaques do Brasil.";
                 DescriptionsInMission3.Com = "Pode ser ouvido pela turma para que se tenha uma maior entendimento do tema.";
                 DescriptionsInMission3.Sobre = "Depois de ouvir o conteúdo do CD analisar e refletir com o grupo, podem ser feitos debates e discussão apontando sua percepção sobre as diferenças e semelhanças.";
