@@ -239,39 +239,40 @@ public class FeedbacksDosAlunos
         feedbacksPorMidiaNoMomento1: new Dictionary<ItemName, string>()
         {
             // Mídias Melhores
-            { ItemName.Gravador, "Eu adorei gravar a minha pesquisa, assim posso recorrer a ela qundo quiser no futuro." },
+            { ItemName.Gravador, "Eu adorei gravar a minha pesquisa, assim posso recorrer a ela quando quiser no futuro." },
             { ItemName.Enciclopedia, "Nossa, adorei essa aula! A Enciclopédia era muito completa! Eu achei tudo nela." },
             { ItemName.VHSregionalismoEditado, "Caramba, fazer a pesquisa vendo um documentário sobre regionalismo foi muito mais simples! E ele ser editado foi ainda melhor, não tinha partes chatas!" },
             { ItemName.CDsotaques, "Aquela entrevista foi bem interessante, deu para fazer a pesquisa tranquilamente com ela." },
+            { ItemName.TVComVHS, "Gostei muito da programação da TV Escola sobre a Regionalismos, ajudou muito na nossa pesquisa." },
             // Mídias Muito Boas
             { ItemName.VHSregionalismo, "Aquele documentário foi bem interessante, deu para fazer a pesquisa tranquilamente com ele." },
             { ItemName.JornaisERevistas, "Achei legal usar aqueles jornais e revistas para fazer a pesquisa! Nunca reparei em quantas palavras das regiões tem nelas." },
             { ItemName.LivroIlustrado, "Achei interessante fazer a pesquisa no livro ilustrado! Tinha muitas ilustrações dahora, e dava para achar tudo bem facilmente." },
             // Mídias Boas
-            { ItemName.Caderno, "Eu gostei de ver o meu caderno para a pequisa sobre regionalismo, mas acho que podiamos ter acessado um material mais focado nisso." },
+            { ItemName.Caderno, "Eu gostei de ver o meu caderno para a pesquisa sobre regionalismo, mas acho que podíamos ter acessado um material mais focado nisso." },
             { ItemName.Jornais, "Os jornais foram interessantes para fazer a pesquisa, mas não tinha muita variedade de palavras de muitas regiões." },
             { ItemName.LivroDidatico, "Achei legal usar o livro didático para fazer a pesquisa! Nunca reparei em quantas palavras das regiões tem nele." },
             // Mídias Fracas
+            { ItemName.Cartazes, "Prof, eu não entendi por que nos deram um cartaz em branco durante a pesquisa, pois não tinha nada lá para eu ler..." },
+            { ItemName.QuadroNegro, "Prof, eu não entendi por que usamos o quadro negro durante a pesquisa, não tinha nada pra eu ler lá..." },
+            { ItemName.FolhaSulfite, "Prof, eu não entendi por que usamos as folhas sulfite durante a pesquisa, não tinha nada pra eu ler lá..." },
+            { ItemName.Adedonha, "Eu adoro jogar Stop com meus amigos, mas não tinha a ver com a atividade que o professor pediu..." },
+            { ItemName.PalavrasCruzadas, "Eu adoro jogar palavras cruzadas, mas não tinha a ver com a atividade que o professor pediu..." },
+            { ItemName.Forca, "Eu adoro jogar forca com meus amigos, mas não tinha a ver com a atividade que o professor pediu..." },
             { ItemName.ReprodutorAudio, "O primeiro momento da aula foi chato… Fazer a pesquisa com aquela mídia, não fazia sentido." },
             { ItemName.CameraPolaroid, "O primeiro momento da aula foi chato… Fazer a pesquisa com aquela mídia, não fazia sentido." },
-            { ItemName.TVComVHS, "O primeiro momento da aula foi chato… Fazer a pesquisa com aquela mídia, não fazia sentido." },
             { ItemName.VHS, "O primeiro momento da aula foi chato… Fazer a pesquisa com aquela mídia, não fazia sentido." },
-            { ItemName.QuadroNegro, "O primeiro momento da aula foi chato… Fazer a pesquisa com aquela mídia, não fazia sentido." },
-            { ItemName.Cartazes, "O primeiro momento da aula foi chato… Fazer a pesquisa com aquela mídia, não fazia sentido." },
-            { ItemName.FolhaSulfite, "O primeiro momento da aula foi chato… Fazer a pesquisa com aquela mídia, não fazia sentido." },
-            { ItemName.Adedonha, "O primeiro momento da aula foi chato… Fazer a pesquisa com aquela mídia, não fazia sentido." },
-            { ItemName.Forca, "O primeiro momento da aula foi chato… Fazer a pesquisa com aquela mídia, não fazia sentido." },
-            { ItemName.PalavrasCruzadas, "O primeiro momento da aula foi chato… Fazer a pesquisa com aquela mídia, não fazia sentido." },
         },
 
         feedbacksPorMidiaNoMomento2: new Dictionary<ItemName, string>()
         {
             // Mídias Melhores
-            { ItemName.ReprodutorAudio, "O reprodutor de áudio foi muito bom para a exposição da nossa pesquisa." },
-            { ItemName.CDsotaques, "O reprodutor de áudio com CD foi muito bom para a exposição da nossa pesquisa." },
+            { ItemName.ReprodutorAudio, "O aparelho de som foi muito bom para a exposição da nossa pesquisa." },
+            { ItemName.CDsotaques, "O aparelho de som com CD foi muito bom para a exposição da nossa pesquisa." },
             { ItemName.VHSregionalismo, "A TV com VHS sobre regionalismo foi muito boa para a exposição da nossa pesquisa." },
             { ItemName.VHSregionalismoEditado, "A TV com VHS editado sobre regionalismo foi muito boa para a exposição da nossa pesquisa." },
             { ItemName.Gravador, "Poder gravar a minha pesquisa e mostrar para a classe ouvir foi muito útil, professora." },
+            { ItemName.TVComVHS, "Gostei muito da programação da TV Escola sobre a Regionalismos, pude usar ele na minha apresentação para os colegas." },
             // Mídias Muito Boas
             { ItemName.Enciclopedia, "Foi muito bom poder usar a enciclopédia para expor a minha pesquisa sobre regionalismo." },
             { ItemName.JornaisERevistas, "Foi muito bom poder usar os jornais e as revistas para expor a minha pesquisa sobre regionalismo." },
@@ -279,17 +280,16 @@ public class FeedbacksDosAlunos
             // Mídias Boas
             { ItemName.FolhaSulfite, "A parte em que a gente tinha que escrever nossa pesquisa na folha sulfite foi legalzinha, mas parece que podia ter sido melhor..." },
             { ItemName.Caderno, "Usar o caderno para registrar nossas pesquisas é sempre legal, né? Mas achei que dessa forma foi um pouco difícil de dividir com os colegas o que eu tinha escrito." },
-            { ItemName.Jornais, "Achei meio estranho usar um jornal para expor a minha pesquisa, mas ajudou às vezes na hora de dar alguns exemplos. " },
-            { ItemName.LivroDidatico, "Achei meio estranho usar um livro didático  para expor a minha pesquisa, mas ajudou às vezes na hora de dar alguns exemplos." },
-            { ItemName.LivroIlustrado, "Achei meio estranho usar um livro ilustrado para expor a minha pesquisa, mas ajudou às vezes na hora de dar alguns exemplos." },
+            { ItemName.Jornais, "Achei meio estranho usar um jornal para expor a minha pesquisa, mas ajudou na hora de dar alguns exemplos." },
+            { ItemName.LivroDidatico, "Achei meio estranho usar um livro didático  para expor a minha pesquisa, mas ajudou na hora de dar alguns exemplos." },
+            { ItemName.LivroIlustrado, "Achei meio estranho usar um livro ilustrado para expor a minha pesquisa, mas ajudou na hora de dar alguns exemplos." },
             { ItemName.Cartazes, "Foi muito bom fazer os cartazes com as nossas pesquisas, professora." },
             // Mídias Fracas
+            { ItemName.Adedonha, "Eu adoro jogar Stop com meus amigos, mas não tinha a ver com a apresentação que o professor pediu..." },
+            { ItemName.Forca, "Eu adoro jogar forca com meus amigos, mas não tinha a ver com a apresentação que o professor pediu..." },
+            { ItemName.PalavrasCruzadas, "Eu adoro jogar palavras cruzadas, mas não tinha a ver com a apresentação que o professor pediu..." },
             { ItemName.CameraPolaroid, "O segundo momento da aula foi chato… Expor a nossa pesquisa com aquela mídia, não fazia o menor sentido." },
-            { ItemName.TVComVHS, "O segundo momento da aula foi chato… Expor a nossa pesquisa com aquela mídia, não fazia o menor sentido." },
             { ItemName.VHS, "O segundo momento da aula foi chato… Expor a nossa pesquisa com aquela mídia, não fazia o menor sentido." },
-            { ItemName.Adedonha, "O segundo momento da aula foi chato… Expor a nossa pesquisa com aquela mídia, não fazia o menor sentido." },
-            { ItemName.Forca, "O segundo momento da aula foi chato… Expor a nossa pesquisa com aquela mídia, não fazia o menor sentido." },
-            { ItemName.PalavrasCruzadas, "O segundo momento da aula foi chato… Expor a nossa pesquisa com aquela mídia, não fazia o menor sentido." },
         },
 
         feedbacksPorMidiaNoMomento3: new Dictionary<ItemName, string>()
@@ -309,14 +309,14 @@ public class FeedbacksDosAlunos
             { ItemName.LivroIlustrado, "Usar o livro ilustrado pra praticar o vocabulário foi legalzinho, mas ficou chato bem rápido." },
             { ItemName.Cartazes, "Usar o cartaz pra praticar o vocabulário foi legalzinho, mas ficou chato bem rápido." },
             // Mídias Fracas
+            { ItemName.CDsotaques, "Gostei muito do CD, mas não achei o melhor momento pois estávamos em atividade prática." },
+            { ItemName.VHSregionalismo, "O documentário sobre regionalismo que o professor passou é muito interessante, mas não fazia muito sentido para essa atividade prática..." },
+            { ItemName.VHSregionalismoEditado, "O documentário sobre regionalismo que o professor passou é muito interessante, mas não fazia muito sentido para essa atividade prática..." },
+            { ItemName.Gravador, "Não achei que fez muito sentido usar o gravador para essa atividade prática, prof..." },
+            { ItemName.Jornais, "Não achei que fez muito sentido usar os jornais para essa atividade prática, prof..." },
+            { ItemName.TVComVHS, "O documentário sobre regionalismo que da TV Escola é muito interessante, mas não fazia muito sentido para essa atividade prática..." },
             { ItemName.ReprodutorAudio, "Não fez muito sentido usar aquela mídia para uma atividade..." },
-            { ItemName.CDsotaques, "Não fez muito sentido usar aquela mídia para uma atividade..." },
-            { ItemName.VHSregionalismo, "Não fez muito sentido usar aquela mídia para uma atividade..." },
-            { ItemName.VHSregionalismoEditado, "Não fez muito sentido usar aquela mídia para uma atividade..." },
-            { ItemName.Gravador, "Não fez muito sentido usar aquela mídia para uma atividade..." },
-            { ItemName.Jornais, "Não fez muito sentido usar aquela mídia para uma atividade..." },
             { ItemName.CameraPolaroid, "Não fez muito sentido usar aquela mídia para uma atividade..." },
-            { ItemName.TVComVHS, "Não fez muito sentido usar aquela mídia para uma atividade..." },
             { ItemName.VHS, "Não fez muito sentido usar aquela mídia para uma atividade..." },
         },
 
