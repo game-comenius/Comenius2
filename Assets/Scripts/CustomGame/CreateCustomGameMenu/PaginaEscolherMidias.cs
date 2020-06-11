@@ -51,6 +51,7 @@ public class PaginaEscolherMidias : MonoBehaviour {
             ItemName.Jornais,
             ItemName.Retroprojetor,
             ItemName.Enciclopedia,
+            ItemName.PalavrasCruzadas,
             ItemName.FolhaSulfite,
         };
         var ItemList = midiasDisponiveis.Select((midia) => new Item(midia));
