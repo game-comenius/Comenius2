@@ -100,7 +100,7 @@ public class Item
                 //DescriptionsInMission1.StandardDescription = "É um dispositivo eletrônico que armazena informações em formato compacto, que podem apenas ser lidas, mas seu conteúdo não poder ser alterado pelo usuário.";
                 DescriptionsInMission1.StandardDescription = "Um aparelho de som com CD! Isso pode fazer os alunos se divertirem mais na aula!";
 
-                DescriptionsInMission1.FirstMomentDescription = "Já que eu tenho um aparelho de som, posso usar esse CD em aula!";
+                DescriptionsInMission1.FirstMomentDescription = "CD com o som do canto dos pássaros.";
                 DescriptionsInMission1.SecondMomentDescription = DescriptionsInMission1.FirstMomentDescription;
                 DescriptionsInMission1.ThirdMomentDescription = DescriptionsInMission1.FirstMomentDescription;
 
@@ -125,9 +125,9 @@ public class Item
                 //DescriptionsInMission1.StandardDescription = "Instrumento eletrônico que grava, cópia, edita e reproduz todo tipo de som. Com microfone acoplado, faz registro sonoro de vozes, músicas e ruídos, dentre outros. Pode gravar e editar programas de rádio.";
                 DescriptionsInMission1.StandardDescription = "Um gravador! Posso gravar muitas coisas com ele, mas é claro que durante a aula só posso gravar coisas dentro da sala de aula.";
 
-                DescriptionsInMission1.FirstMomentDescription = "Durante a exposição de conteúdo, o gravador poderia ser utilizado somente para gravar os sons da aula. Talvez ele seja mais útil de outra forma.";
-                DescriptionsInMission1.SecondMomentDescription = "Pode ser utilizado para gravar os conteúdos dentro de sala de aula, ou até para gravar o som do canto de algum pássaro que apareça próximo à sala de aula.";
-                DescriptionsInMission1.ThirdMomentDescription = "Quem sabe se eu usasse o gravador para gravar um pássaro local antes da aula seria interessante.";
+                DescriptionsInMission1.FirstMomentDescription = "Essa mídia pode ser usada para gravar o canto de diferentes pássaros.";
+                DescriptionsInMission1.SecondMomentDescription = "Pode ser utilizado para gravar os conteúdos ou até para gravar o som do canto de algum pássaro e ajudar na sitematização do assunto.";
+                DescriptionsInMission1.ThirdMomentDescription = "Essa mídia pode gravar o som de algum pássaro local e depois ser reproduzida para o grupo.";
 
                 DescriptionsInMission2.FirstMomentDescription = "Um gravador dificilmente conseguiria demonstrar com áudio as caracteristicas da época historica que é o tema da aula.";
                 DescriptionsInMission2.SecondMomentDescription = "Como o momento é de discussão, os alunos podem utilizar o gravador para gravar algumas sínteses e conclusões da dupla para apresentar aos colegas.";
@@ -152,9 +152,9 @@ public class Item
                 //DescriptionsInMission1.StandardDescription = "Gravação do canto do pássaro no pátio da escola.";
                 DescriptionsInMission1.StandardDescription = "Um aparelho de som com gravação! Isso pode fazer os alunos se divertirem mais na aula!";
 
-                DescriptionsInMission1.FirstMomentDescription = "Uma ótima forma de ilustrar o canto de um pássaro da mesma região que a escola, mas isso não ajuda os alunos a entender sobre os diferentes tipos de pássaros.";
-                DescriptionsInMission1.SecondMomentDescription = "Acho que essa gravação pode não ser muito interessante em uma atividade...";
-                DescriptionsInMission1.ThirdMomentDescription = "A gravação pode ser boa nesse momento por apresentar um exemplo de um passáro da mesma regionalidade que os alunos.";
+                DescriptionsInMission1.FirstMomentDescription = "Uma forma de ilustrar o canto de um pássaro da mesma região que a escola.";
+                DescriptionsInMission1.SecondMomentDescription = "A gravação do canto contribui em uma ativiade de sistematização.";
+                DescriptionsInMission1.ThirdMomentDescription = "A gravação do canto do pássaro pode ser útil para complementar a exposição.";
                 UpgradeFrom.Add(ItemName.Gravador);
                 break;
             case ItemName.CameraPolaroid:
@@ -171,9 +171,10 @@ public class Item
 
                 //DescriptionsInMission1.StandardDescription = "Máquina fotográfica utilizada para capturar imagens  de qualquer tipo de registro visual como pessoas, animais, espaços ou momentos que são impressas instantaneamente em papel.";
                 DescriptionsInMission1.StandardDescription = "Os alunos podem usar isso para tirar fotos durante a aula, só não sei se tem muito o que fotografar na sala de aula.";
-                DescriptionsInMission1.FirstMomentDescription = "Que foto interessante eu poderia tirar dentro da sala de aula? Talvez ela seja mais útil no pátio, se eu achar algo para fotografar.";
-                DescriptionsInMission1.SecondMomentDescription = "Como os alunos estão em sala de aula realizando a atividade, não parece ter boa aplicabilidade. Se estivessem no pátio, os alunos poderiam encontrar pássaros ou ninhos.";
-                DescriptionsInMission1.ThirdMomentDescription = "Que foto interessante eu poderia tirar dentro da sala de aula? Talvez ela seja mais útil no pátio, se eu achar algo para fotografar.";
+
+                DescriptionsInMission1.FirstMomentDescription = "Pode ser usada para tirar foto de algum pássaro.";
+                DescriptionsInMission1.SecondMomentDescription = "Depois dos alunos realizarem uma pesquisa sobre pássaros podem fazer várias fotos de diferentes espécies.";
+                DescriptionsInMission1.ThirdMomentDescription = "Com a câmera polaroid podemos incentivar os alunos para fazerem diferentes registros sobre temáticas variadas.";
 
                 DescriptionsInMission2.FirstMomentDescription = "Não há locais na sala que pudessem ser fotografados com a temática trabalhada pelo professor.";
                 DescriptionsInMission2.SecondMomentDescription = DescriptionsInMission2.FirstMomentDescription;
@@ -193,9 +194,9 @@ public class Item
 
                 //DescriptionsInMission1.StandardDescription = "Processo e arte de registrar e reproduzir, através de reações químicas e em superfícies preparadas para o efeito, as imagens que se tiram no fundo de uma câmara escura.";
                 DescriptionsInMission1.StandardDescription = "Uma foto! Ela pode ser útil para a aula, só preciso pensar com cuidado na forma que posso usar essa mídia!";
-                DescriptionsInMission1.FirstMomentDescription = "O professor pode utilizar essa fotografia de pássaro para ilustrar suas características. Complementando a fala e texto do conteúdo que ele quer trabalhar.";
-                DescriptionsInMission1.SecondMomentDescription = "Somente uma foto pode ser pouco para a realização de uma atividade pelo aluno.";
-                DescriptionsInMission1.ThirdMomentDescription = "A fotografia apresenta mais detalhes que uma figura do pássaro, como onde está localizado. Pode ser utilizada para complementar a explicação do professor.";
+                DescriptionsInMission1.FirstMomentDescription = "Com a fotografia de pássaro os alunos podem observar e analisar suas características.";
+                DescriptionsInMission1.SecondMomentDescription = "A fotografia do pássaro pode ajudar na elaboração da atividade.";
+                DescriptionsInMission1.ThirdMomentDescription = "A fotografia mostra vários detalhes das carcterísticas físicas do pássaro.";
                 UpgradeFrom.Add(ItemName.CameraPolaroid);
                 break;
             case ItemName.TVComVHS:
@@ -212,9 +213,10 @@ public class Item
 
                 //DescriptionsInMission1.StandardDescription = "Sistema eletrônico de recepção/reprodução de imagens e sons de programas televisivos jornalísticos, esportivos, educacionais e ficcionais, gravados ou ao vivo.";
                 DescriptionsInMission1.StandardDescription = "Uma TV! Eu posso achar um VHS para ter algo relacionado à aula para os alunos assistirem durante ela!";
-                DescriptionsInMission1.FirstMomentDescription = "Será que a TV aberta pode auxiliar a exposição do professor sobre os pássaros? Teria que ter muita sorte de passar um documentário ou matéria no exato momento da aula.";
-                DescriptionsInMission1.SecondMomentDescription = "Somente a televisão, caso não esteja passando algo específico sobre pássaros, não contribuirá com o real objetivo da aula.";
-                DescriptionsInMission1.ThirdMomentDescription = "Será que a TV aberta pode auxiliar a exposição do professor sobre os pássaros? Teria que ter muita sorte de passar um documentário ou matéria no exato momento da aula.";
+
+                DescriptionsInMission1.FirstMomentDescription = "Um VHS da TV Escola sobre pássaros pode ser usado como material de pesquisa, é uma ótima opção para tratar o tema.";
+                DescriptionsInMission1.SecondMomentDescription = "O VHS específico da TV Escola traz informções muito importantes sobre a temática.";
+                DescriptionsInMission1.ThirdMomentDescription = "A exposição com essa mídia é bem completa. Os alunos podem usar a televisão com um VHS da TV Escola sobre pássaros para mostrar algumas partes do assunto pesquisado.";
 
                 DescriptionsInMission2.FirstMomentDescription = "Um VHS da TV Escola sobre a Revolução Industrial.";
                 DescriptionsInMission2.SecondMomentDescription = "Um VHS da TV Escola sobre o Trabalho Infantil pode fomentar a discussão sobre a temática.";
@@ -246,9 +248,9 @@ public class Item
                 //DescriptionsInMission1.StandardDescription = "O VHS é a sigla para Video Home System, que consiste em um sistema de captação e reprodução de vídeo e áudio.";
                 DescriptionsInMission1.StandardDescription = "Um VHS! Os alunos adoram assistir alguma coisa na aula!";
 
-                DescriptionsInMission1.FirstMomentDescription = "Sem uma forma de reproduzi-la essa mídia não vai ser muito útil.";
-                DescriptionsInMission1.SecondMomentDescription = DescriptionsInMission1.FirstMomentDescription;
-                DescriptionsInMission1.ThirdMomentDescription = DescriptionsInMission1.FirstMomentDescription;
+                DescriptionsInMission1.FirstMomentDescription = "O VHS sobre pássaros trazido pelo professor pode ser uma boa fonte de pesquisa dos alunos.";
+                DescriptionsInMission1.SecondMomentDescription = "O documentário possui muitas informações importantes sobre o tema estudado.";
+                DescriptionsInMission1.ThirdMomentDescription = "Os alunos podem escolher algumas partes do VHS para apresentar para a turma.";
 
                 DescriptionsInMission2.FirstMomentDescription = "Um sistema de captação e reprodução de vídeo e áudio. VHS  sobre a revolução industrial.";
                 DescriptionsInMission2.SecondMomentDescription = "Um sistema de captação e reprodução de vídeo e áudio. VHS  sobre a revolução industrial.";
@@ -271,9 +273,9 @@ public class Item
 
                 DescriptionsInMission1.StandardDescription = "Cartaz feito por um ornitólogo, avô de um aluno da escola, contendo penas de algumas espécies de pássaros da região.";
 
-                DescriptionsInMission1.FirstMomentDescription = "Esse cartaz pode ser útil para ilustrar as características dos pássaros pelo professor, o que seria mais rico do que somente uma fotografia.";
-                DescriptionsInMission1.SecondMomentDescription = "O cartaz com as penas é interessante, pois ilustra de forma real os pássaros, mas seria a melhor escolha em uma atividade individual, sendo que só há um cartaz?";
-                DescriptionsInMission1.ThirdMomentDescription = "Talvez o cartaz com penas possa ser melhor utilizado para a apresentação das características gerais dos pássaros, pois fala pouco sobre regionalidades.";
+                DescriptionsInMission1.FirstMomentDescription = "O cartaz com as penas é interessante, pois ilustra de forma real as penas de algumas espécies de pássaros.";
+                DescriptionsInMission1.SecondMomentDescription = "Esse cartaz pode ser útil para ilustrar as características dos pássaros e ajudar na atividade de sistematização.";
+                DescriptionsInMission1.ThirdMomentDescription = "Esse cartaz pode ser usado na apresentação por conter penas de algumas espécies de pássaros da região.";
                 UpgradeFrom.Add(ItemName.Cartazes);
                 break;
             case ItemName.LivroDidatico:
@@ -291,9 +293,9 @@ public class Item
                 //DescriptionsInMission1.StandardDescription = "É um livro impresso de cunho pedagógico composto de exercícios, textos e imagens do conteúdo estudado em sala que acompanha o currículo escolar.";
                 DescriptionsInMission1.StandardDescription = "Um livro didático! Os alunos aprendem tanto com essa mídia! Pena que alguns não gostam tanto de ler...";
 
-                DescriptionsInMission1.FirstMomentDescription = "Apresenta o conteúdo por imagem e pela leitura de forma mais específica. O professor pode utilizar trechos do livro para complementar sua exposição.";
-                DescriptionsInMission1.SecondMomentDescription = "Um dos maiores aliados dos alunos e professores por apresentar o conteúdo com imagens, conteúdos específicos sobre o tema do currículo, atividades interessantes e linguagem didática.";
-                DescriptionsInMission1.ThirdMomentDescription = "O conteúdo enriquecido com imagem e leitura específicos da disciplina pode ser útil, pois os alunos podem acompanhar a explicação de forma individualizada";
+                DescriptionsInMission1.FirstMomentDescription = "Um grande aliado dos alunos e professores por apresentar o conteúdo com imagens, conteúdos sobre o tema, exercícios e linguagem apropriada.";
+                DescriptionsInMission1.SecondMomentDescription = "O livro didátio traz informações em forma de imagem, textos e exercícios sobre todos os conteúdos das disciplinas.";
+                DescriptionsInMission1.ThirdMomentDescription = "Apresenta conteúdo por imagem e texto de forma mais específica. Pode ser utilizado trechos do livro para complementar a exposição.";
 
                 DescriptionsInMission2.FirstMomentDescription = "O Livro didático apresenta algumas informações mais gerais da história da época, dando acesso a todos os alunos.";
                 DescriptionsInMission2.SecondMomentDescription = "Os conteúdos sistematizados do livro didático podem auxiliar bastante os alunos durante a discussão, por ser uma linguagem mais acessível.";
@@ -318,9 +320,9 @@ public class Item
                 //DescriptionsInMission1.StandardDescription = "É um livro com imagens que ajudam o aluno a entender o conteúdo da aula. As ilustrações podem ser usadas nas aulas de forma a complementar outras mídias mais básicas.";
                 DescriptionsInMission1.StandardDescription = "Um livro ilustrado! Os alunos adoram coisas coloridas como esse livro!";
 
-                DescriptionsInMission1.FirstMomentDescription = "O professor apresenta as características gerais dos pássaros no livro ilustrado, mostrando as figuras aos alunos. Essa exposição é mais rica do que só usar palavras.";
-                DescriptionsInMission1.SecondMomentDescription = "O livro ilustrado possui além de texto, varias imagens sobre os conteúdos trabalhados em aula. É bastante rico, tanto para exposição, quanto para as atividades de sistematização.";
-                DescriptionsInMission1.ThirdMomentDescription = "Para além das palavras e ilustrações, é possível encontrar no livro, escritos sobre onde encontrar tais espécies, que fazem parte do momento da aula.";
+                DescriptionsInMission1.FirstMomentDescription = "Traz informações e imagens ilustrando as diversas características dos pássaros, sendo um bom material de pesquisa.";
+                DescriptionsInMission1.SecondMomentDescription = "O livro ilustrado possui além de texto, varias imagens sobre os conteúdos trabalhados em aula, auxiliando nas atividades de sistematização.";
+                DescriptionsInMission1.ThirdMomentDescription = "Pode ser usado para apresentar as características gerais dos pássaros e mostrar suas ilustrações para complementar a apresentação.";
 
                 DescriptionsInMission2.FirstMomentDescription = "O Livro ilustrado possui muitas informações e imagens da época de forma didática e atrativa aos alunos.";
                 DescriptionsInMission2.SecondMomentDescription = "Os conteúdos do livro, além das diversas ilustrações, são ótimos para gerar discussões.";
@@ -348,8 +350,8 @@ public class Item
                 DescriptionsInMission1.StandardDescription = "Um quadro negro! Essa mídia é tão clássica! Os professores o adoram!";
 
                 DescriptionsInMission1.FirstMomentDescription = "O quadro é a mídia mais comumente ultilizada em aulas expositivas, podendo ser utilizada pelo professor para  exposição e sistematização de conteúdos.";
-                DescriptionsInMission1.SecondMomentDescription = "Os alunos podem usar o quadro negro como um recurso adicional ao apresentar suas falas durante atividade.";
-                DescriptionsInMission1.ThirdMomentDescription = "Com o quadro negro o professor pode elaborar tabelas e esquemas para a sistematização do conteúdo da aula.";
+                DescriptionsInMission1.SecondMomentDescription = "Com o quadro negro os alunos podem criar tabelas e esquemas para a sistematização do conteúdo da aula.";
+                DescriptionsInMission1.ThirdMomentDescription = "Os alunos podem usar o quadro negro como um recurso adicional ao apresentar suas falas durante a exposição.";
 
                 DescriptionsInMission2.FirstMomentDescription = "O quadro negro é bastante útil para apresentações e sistematizações dos conteúdos, mas ele não é uma novidade para os alunos.";
                 DescriptionsInMission2.SecondMomentDescription = "O quadro negro é bastante útil para a mediação das discussões, mas ele não é uma novidade para os alunos.";
@@ -372,9 +374,9 @@ public class Item
                 DescriptionsInMission1.Atraves = "Gravar ou fazer um vídeo dsobre o tema estudado.";
 
                 DescriptionsInMission1.StandardDescription = "Uma TV com VHS! Os alunos adoram assistir alguma coisa na aula!";
-                DescriptionsInMission1.FirstMomentDescription = "A exposição de informações é bastante completa nesta mídia. Apresenta imagens, sons, oralidade e leitura.";
-                DescriptionsInMission1.SecondMomentDescription = "Passar um vídeo enquanto os alunos fazem um atividade pode ser um pouco confuso...";
-                DescriptionsInMission1.ThirdMomentDescription = "A exposição de informações é bastante completa nesta mídia. Apresenta imagens, sons, oralidade e leitura.  Mas como o vídeo não especifica a regionalidade dos pássaros, pode confundir um pouco os alunos.";
+                DescriptionsInMission1.FirstMomentDescription = "O VHS sobre pássaros trazido pelo professor pode ser uma boa fonte de pesquisa dos alunos.";
+                DescriptionsInMission1.SecondMomentDescription = "O documentário possui muitas informações importantes sobre o tema estudado.";
+                DescriptionsInMission1.ThirdMomentDescription = "Os alunos podem escolher algumas partes do VHS para apresentar para a turma.";
                 UpgradeFrom.Add(ItemName.TVComVHS);
                 break;
             case ItemName.Cartazes:
@@ -392,9 +394,9 @@ public class Item
                 //DescriptionsInMission1.StandardDescription = "Anúncio ou aviso de dimensões variadas, geralmente ilustrado com desenhos ou fotografias, apropriado para ser afixado em lugares públicos.";
                 DescriptionsInMission1.StandardDescription = "Minha nossa, um cartaz! São tantos os jeitos que se pode usar um cartaz em sala de aula!";
 
-                DescriptionsInMission1.FirstMomentDescription = "O cartaz em branco funciona de forma semelhante ao quadro negro, porém é possível colar ilustrações e utilizar diversas cores de canetas para a exposição.";
-                DescriptionsInMission1.SecondMomentDescription = "O cartaz é uma mídia bastante interessante para atividades práticas dos alunos por conta da versatilidade. Proporciona a escrita, colagem de imagens, desenho, etc.";
-                DescriptionsInMission1.ThirdMomentDescription = "Semelhante ao quadro negro, o professor pode elaborar tabelas e esquemas para a sistematização do conteúdo da aula, além da colar imagens para ilustrar.";
+                DescriptionsInMission1.FirstMomentDescription = "Papel ou cartolina em branco, que pode ser usado pelo professor e pelos alunos.";
+                DescriptionsInMission1.SecondMomentDescription = "O cartaz é uma mídia interessante para atividades práticas dos alunos por conta da versatilidade. Proporciona a escrita, colagem de imagens, desenho, etc.";
+                DescriptionsInMission1.ThirdMomentDescription = "Os alunos podem elaborar tabelas e esquemas para a exposição do conteúdo da aula, além da colar imagens para ilustrar.";
 
                 DescriptionsInMission2.FirstMomentDescription = "O cartaz possibilita a apresentação dos conteúdos para os alunos, mas alem de ele não ser uma novidade para eles não possibilita muita versatilidade no trabalho de exposição do professor.";
                 DescriptionsInMission2.SecondMomentDescription = "O cartaz tem muitas possibilidades em meio a construção de uma apresentação ou sistematização, mas esse é um momento de discussões, talvez gere dispersão e seja melhor utilizado em outro momento.";
@@ -417,9 +419,9 @@ public class Item
                 DescriptionsInMission1.Atraves = "É possível construir um pequeno mapa do bairro ou cidade com os alunos.";
 
                 DescriptionsInMission1.StandardDescription = "Um mapa-mundi atualizado, contendo uma representação cartográfica plana, em escala reduzida, de toda a superfície do planeta Terra.";
-                DescriptionsInMission1.FirstMomentDescription = "O mapa é uma mídia para representação de um espaço geográfico por imagens. Pode ser um complemento a aula expositiva do professor, apresentando o habitat dos pássaros. Mas acho que seria mais indicado falando da regionalidade.";
-                DescriptionsInMission1.SecondMomentDescription = "O Mapa, por conta da leitura associada a imagens, pode ser interessante na utilização dos alunos para uma pesquisa ou atividade. Apesar de não ser a mídia mais completa.";
-                DescriptionsInMission1.ThirdMomentDescription = "Como o momento da aula é para falar sobre pássaros locais e regionais, o mapa pode ser um bom aliado.";
+                DescriptionsInMission1.FirstMomentDescription = "O Mapa, por conta da leitura associada a imagens, pode ser interessante para uma pesquisa sobre os locais e regiões de onde vivem.";
+                DescriptionsInMission1.SecondMomentDescription = "O Mapa pode auxiliar na atividade de sistematização.";
+                DescriptionsInMission1.ThirdMomentDescription = "O mapa pode ser um bom aliado na exposição dos alunos. Auxiliando a demonstrar os locais e regiões onde os pássaros vivem.";
                 UpgradeFrom.Add(ItemName.Cartazes);
                 break;
             case ItemName.Caderno:
@@ -437,9 +439,9 @@ public class Item
                 //DescriptionsInMission1.StandardDescription = "Conjunto de folhas de papel agrupadas num formato portátil, usado para registro, estudo ou anotações escritas, desenhos ou colagens com uso de diversos recursos e materiais para tanto.";
                 DescriptionsInMission1.StandardDescription = "Um caderno! Alguns alunos adoram decorar eles e deixar eles lindíssimos! Pena que outros alunos não gostam tanto dessa mídia…";
 
-                DescriptionsInMission1.FirstMomentDescription = "O caderno pode ser utilizado como uma mídia de registro ou leitura de conteúdos, bem adequada para os alunos, mas por si só não seria um bom recurso para o professor na exposição.";
-                DescriptionsInMission1.SecondMomentDescription = "É o melhor aliado dos alunos para registro e sistematização dos conteúdos. É individual, de fácil acesso e os usuários podem desenvolver esquemas pessoais de registro.";
-                DescriptionsInMission1.ThirdMomentDescription = "O caderno pode ser utilizado como uma mídia de registro ou leitura de conteúdos, mas por si só não seria um bom recurso para o professor utilizar na exposição.car";
+                DescriptionsInMission1.FirstMomentDescription = "Conjunto de folhas de papel em branco, uma ferramenta de uso pessoal do aluno.";
+                DescriptionsInMission1.SecondMomentDescription = "É um ótimo aliado dos alunos para registro e sistematização dos conteúdos. É de fácil acesso e os usuários podem desenvolver esquemas e tabelas sobre o tema.";
+                DescriptionsInMission1.ThirdMomentDescription = "O caderno pode ser utilizado como uma mídia de registro ou leitura de conteúdos.";
 
                 DescriptionsInMission2.FirstMomentDescription = "Como o principal objetivo da aula nesse momento é expor os conteúdos, só o caderno não seria suficiente.";
                 DescriptionsInMission2.SecondMomentDescription = "O caderno é bom para anotar pontos importantes da discussão, mas o processo de anotar enquanto prestam atenção pode deixar os alunos um pouco confusos.";
@@ -464,9 +466,9 @@ public class Item
                 //DescriptionsInMission1.StandardDescription = "São um meio de comunicação impresso e um produto derivado do conjunto de atividades denominado jornalismo.";
                 DescriptionsInMission1.StandardDescription = "Jornais! Eles são mais do que notícias aglomeradas, quando se trata de usar eles na sala de aula!";
 
-                DescriptionsInMission1.FirstMomentDescription = "Jornais podem auxiliar na exposição por conter imagens e textos em linguagem mais simples. Mas é fundamental encontrar um jornal com reportagem sobre o tema de estudo.";
-                DescriptionsInMission1.SecondMomentDescription = "Os Jornais apresentam muitos conteúdos de leitura e algumas imagens, de fácil interpretação, e pode ser utilizado pelos alunos para a criação de um mural, por exemplo.";
-                DescriptionsInMission1.ThirdMomentDescription = "As matérias contidas nos jornais não contribuem muito para a temática da aula, mas as figuras e textos podem ser utilizados em outros momentos.";
+                DescriptionsInMission1.FirstMomentDescription = "Os jornais podem possuir informações sobre pássaros.";
+                DescriptionsInMission1.SecondMomentDescription = "Esses jornais contém imagens e textos que podem ser resignificados, recortados ou utilizados pelos alunos na elaboração da síntese.";
+                DescriptionsInMission1.ThirdMomentDescription = "Jornais podem auxiliar na exposição por conter imagens e textos em linguagem mais simples. Mas é fundamental encontrar um jornal com reportagem sobre o tema de estudo.";
 
                 DescriptionsInMission2.FirstMomentDescription = "Os jornais podem possuir informações sobre a Revolução Industrial.";
                 DescriptionsInMission2.SecondMomentDescription = "Os jornais podem possuir informações sobre o trabalho infantil e levantar questões para a discussão.";
@@ -495,9 +497,9 @@ public class Item
                 DescriptionsInMission1.SecondMomentDescription = "Se for possível encontra matérias específicas sobre os pássaros, se torna bastante rico para a utilização dos alunos em atividades dentro da sala de aula.";
                 DescriptionsInMission1.ThirdMomentDescription = "Os jornais e, principalmente, as revistas sobre pássaros trazidas pelo professor podem ser aliadas importantes durante a sistematização de conteúdos. Mas não falam muito sobre as questões de regionalidade.";
 
-                DescriptionsInMission2.FirstMomentDescription = "Os jornais e revistas podem possuir informações sobre a Revolução Industrial.";
-                DescriptionsInMission2.SecondMomentDescription = "Os jornais e revistas podem possuir informações sobre o trabalho infantil e levantar questões para a discussão.";
-                DescriptionsInMission2.ThirdMomentDescription = "As revistas e jornais contém imagens e algumas informações sobre a temática do trabalho, que podem ser recortadas ou utilizada pelos alunos na elaboração da síntese.";
+                DescriptionsInMission2.FirstMomentDescription = "Uma coleção de jornais e revistas trazidas pelo professor com essa temática pode ajudar os alunos na pesquisa.";
+                DescriptionsInMission2.SecondMomentDescription = "A coleção de jornais e revistas sobre pássaros pode auxiliar os alunos na atividade de sistematização.";
+                DescriptionsInMission2.ThirdMomentDescription = "Essas mídias podem complementar a aula expositiva com pequenos textos e ilustrações.";
 
                 DescriptionsInMission3.FirstMomentDescription = "As revistas e jornais possuem diversas entrevistas, matérias e notícias onde se é possível encontrar regionalismo.";
                 DescriptionsInMission3.SecondMomentDescription = "As revistas e jornais possuem diversas entrevistas, matérias e notícias onde se é possível encontrar regionalismo, podendo servir de exemplo para a exposição do tema.";
@@ -669,9 +671,9 @@ public class Item
                 //DescriptionsInMission1.StandardDescription = "Essas mídias combinadas possibilitam a reprodução do áudio com o som do canto dos pássaros.";
                 DescriptionsInMission1.StandardDescription = "Um CD! Com o aparelho de som isso vai ser uma ótima mídia!";
 
-                DescriptionsInMission1.FirstMomentDescription = "O CD com o som do canto dos pássaros, mesmo que não apresente imagens, pode ser uma boa ferramenta para complementar a explicação do professor.";
-                DescriptionsInMission1.SecondMomentDescription = "A reprodução por CD durante a realização da atividade pode proporcionar uma imersão dos alunos na temática dos pássaros, mas não facilita o registro da informação.";
-                DescriptionsInMission1.ThirdMomentDescription = "A reprodução do CD poderia contribuir para outro momento da aula, visto que não fala sobre regionalidades. Lembrando que é uma mídia somente sonora, sem conteúdo visual.";
+                DescriptionsInMission1.FirstMomentDescription = "O CD com o som do canto dos pássaros pode ser um interessante meio de pesquisa para os alunos.";
+                DescriptionsInMission1.SecondMomentDescription = "Um CD com o canto de pássaros de diferentes regiões.";
+                DescriptionsInMission1.ThirdMomentDescription = "A reprodução do CD mesmo que não apresente imagens, pode ser uma boa ferramenta para complementar a explicação dos alunos.";
                 UpgradeFrom.Add(ItemName.ReprodutorAudio);
                 break;
             case ItemName.FotografiaRevolucaoIndustrial:
