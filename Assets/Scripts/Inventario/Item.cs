@@ -66,9 +66,9 @@ public class Item
                 DescriptionsInMission1.StandardDescription = "Um aparelho de som! Agora só falta achar um CD ou fita gravada para usar com ele!";
 
 
-                DescriptionsInMission1.FirstMomentDescription = "Um aparelho de som sem o CD só iria conseguir ter sons da rádio. Será que tem algo de útil passando agora para essa aula na rádio? Quem sabe na Biblioteca posso encontrar algum CD que me ajude.";
-                DescriptionsInMission1.SecondMomentDescription = "Um aparelho de som sem o CD só iria conseguir ter sons da rádio. Será que tem algo de útil passando agora para essa aula na rádio? Quem sabe na Biblioteca posso encontrar algum CD que seja útil.";
-                DescriptionsInMission1.ThirdMomentDescription = "Um aparelho de som sem o CD só iria conseguir ter sons da rádio. Será que tem algo de útil passando agora para essa aula na rádio? Quem sabe na Biblioteca possa encontrar algum CD que me ajude.";
+                DescriptionsInMission1.FirstMomentDescription = "O aparelho de som pode ser usado para gravar o canto de algum pássaro ou até quem sabe pegar algum CD na bibiloteca.";
+                DescriptionsInMission1.SecondMomentDescription = "O aparelho de som pode ser usado para gravar o canto de algum pássaro.";
+                DescriptionsInMission1.ThirdMomentDescription = "Com essa mídia os alunos podem fazer gravações de áudio que podem ser usadas na exposição da pesquisa.";
 
                 DescriptionsInMission2.FirstMomentDescription = "O aparelho de som pode ser bem utilizado para trabalhar com exposição de conteúdos.";
                 DescriptionsInMission2.SecondMomentDescription = "O aparelho de som pode ser bem utilizado para trabalhar com exposição de conteúdo e para gravar momentos de discussões dos alunos.";
