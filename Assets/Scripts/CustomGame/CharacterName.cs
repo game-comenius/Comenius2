@@ -36,4 +36,29 @@ public static class CharacterNameExtensions
                 return "";
         }
     }
+
+    public static string PrimeiroNome(this CharacterName characterName)
+    {
+        switch (characterName)
+        {
+            case CharacterName.Jean:
+                return "Jean";
+            case CharacterName.Vladmir:
+                return "Vladmir";
+            case CharacterName.Paulino:
+                return "Paulino";
+            case CharacterName.Celestino:
+                return "Celestino";
+            case CharacterName.Montanari:
+                return "Maria";
+            case CharacterName.Antonia:
+                return "Antônia";
+            case CharacterName.Alice:
+                return "Alice";
+            case CharacterName.Diretor:
+                return "João";
+            default:
+                return "";
+        }
+    }
 }

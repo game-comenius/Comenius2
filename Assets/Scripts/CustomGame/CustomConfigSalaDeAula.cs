@@ -211,7 +211,7 @@ public class CustomConfigSalaDeAula : MonoBehaviour
             // Novas falas
             var paragrafos = new string[2];
             // Fala da Lurdinha
-            paragrafos[0] = "Vou indo então, até mais " + settings.Professor.NomeCompleto() + "!";
+            paragrafos[0] = "Vou indo então, até mais " + settings.Professor.PrimeiroNome() + "!";
             // Fala do professor
             paragrafos[1] = "Tudo bem, obrigado pela ajuda!!";
 

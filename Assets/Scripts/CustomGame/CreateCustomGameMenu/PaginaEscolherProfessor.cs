@@ -55,7 +55,7 @@ public class PaginaEscolherProfessor : MonoBehaviour {
         professorSelecionado = professor;
         foreach (var image in imagesDosProfessores) image.enabled = false;
 
-        balaoTexto1.text = "Olá jogador(a), muito prazer! Me chamo " + professor.Value.NomeCompleto() + " e irei auxiliar você durante a customização de uma missão do Game Comenius - Módulo 2,  onde eu serei o professor. Você é livre para escolher as características da aula, mas gostaria de falar um pouco de como eu penso educação para você.";
+        balaoTexto1.text = "Olá jogador(a), muito prazer! Me chamo " + professor.Value.PrimeiroNome() + " e irei auxiliar você durante a customização de uma missão do Game Comenius - Módulo 2,  onde eu serei o professor. Você é livre para escolher as características da aula, mas gostaria de falar um pouco de como eu penso educação para você.";
         switch (professor.Value)
         {
             case CharacterName.Jean:

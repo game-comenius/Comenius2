@@ -236,7 +236,7 @@ public class CustomGameSettings {
         s += "Área de conhecimento: " + AreaDeConhecimento.Get(ValorAreaDeConhecimento).nome;
         s += "</br></br>";
 
-        s += "Professor(a) selecionado(a): " + Professor.NomeCompleto();
+        s += "Professor(a) selecionado(a): " + Professor.PrimeiroNome();
         s += "</br>";
         s += "Sala selecionada: " + Sala.NomeCompleto();
         s += "</br>";
