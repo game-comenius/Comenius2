@@ -92,7 +92,11 @@ public class Mission3 : MonoBehaviour
 
         new QuestClass (33500, "Falar com a Montanari na sala de informática", new DoQuest(), new int[]{ }),
 
-        new QuestClass (33600, "Falar com a Alice na biblioteca", new DoQuest(), new int[]{ })
+        new QuestClass (33600, "Falar com a Alice na biblioteca", new DoQuest(), new int[]{ }),
+
+        new QuestClass (33700, "Pegar TV Escola", new DoQuest(), new int[]{ }),
+
+        new QuestClass (33800, "Pegar Aparelho de Som", new DoQuest(), new int[]{ })
 
     };
 }
