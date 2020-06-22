@@ -59,7 +59,7 @@ public sealed class NivelDeEnsino
         new int[]
         {
             AreaDeConhecimento.LinguaPortuguesa.valor,
-            AreaDeConhecimento.LinguagensSuasTecnologias.valor,
+            AreaDeConhecimento.LinguisticaLetrasArtes.valor,
             AreaDeConhecimento.Matematica.valor,
             AreaDeConhecimento.CienciasDaNatureza.valor,
             AreaDeConhecimento.CienciasHumanas.valor,
@@ -108,8 +108,7 @@ public sealed class NivelDeEnsino
             AreaDeConhecimento.CienciasAgrarias.valor,
             AreaDeConhecimento.CienciasSociaisAplicadas.valor,
             AreaDeConhecimento.CienciasHumanas.valor,
-            AreaDeConhecimento.LinguagensSuasTecnologias.valor,
-            AreaDeConhecimento.Artes.valor
+            AreaDeConhecimento.LinguisticaLetrasArtes.valor,
         }
     );
 
