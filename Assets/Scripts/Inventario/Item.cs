@@ -205,7 +205,7 @@ public class Item
                 FullDescription = "É um aparelho de exibição de canais sintonizados por satélite e imagens conectados a um reprodutor VHS. Seu uso pedagógico pode ser através de programas que estejam passando ao vivo ou naquele momento, tende a motivar o aprendizado por conta do conteúdo audiovisual. Assim como o reprodutor VHS possui uma linguagem visual, podendo trabalhar em conjunto com ele, ou utilizando canais de televisão.";
 
                 DescriptionsInMission1.DialogueWhenAcquired = "Uma TV! Com ela podemos conectar a TV Escola e ver as  programações diárias ou assistir algum VHS com temas específicos da aula. Que maravilha! ";
-                DescriptionsInMission1.InventoryDescription = "Uma TV conectada a emissora TV Escola, com ela os launos podem ver as  programações diárias ou assistir algum VHS com temas específicos da aula.";
+                DescriptionsInMission1.InventoryDescription = "Uma TV conectada a emissora TV Escola, com ela os alunos podem ver as  programações diárias ou assistir algum VHS com temas específicos da aula.";
                 DescriptionsInMission1.Geral = "A TV é um sistema de recepção/reprodução de imagens e sons de programas televisivos, como o da TV Escola, por exemplo.";
                 DescriptionsInMission1.Com = "Pode ser utilizada na sala de aula para mostrar vídeos, filmes e documentários para contribuir com os conteúdos trabalhados.";
                 DescriptionsInMission1.Sobre = "É possível refletir sobre a televisão como um veículo de informação de massa, que pode atingir diversos lugares ao mesmo tempo. Além disso, discutir sobre a criticidade das informações que são passadas, bem como os pontos de vistas e a quais interesses essa mídia atende.";
