@@ -643,7 +643,7 @@ public class Item
 
                 DescriptionsInMission1.InventoryDescription = "Um diário de uma criança que trabalhava na época da Revolução Industrial! Isso pode ser muito útil para a aula!";
 
-                DescriptionsInMission2.DialogueWhenAcquired = "Um diário de uma criança que trabalhava na época da Revolução Industrial! Isso pode ser muito útil para a aula!";
+                DescriptionsInMission2.DialogueWhenAcquired = "Um livro para uma criança aprendendo a ler, deixa eu ver...";
                 DescriptionsInMission2.Geral = "Caderno com textos escritos a mão por uma criança que trabalhava durante a revolução industrial.";
                 DescriptionsInMission2.Com = "Os registros escritos de momentos históricos pode pode ser utilizado para auxiliar a entender como era a realidade das crianças e dos adultos daquela época.";
                 DescriptionsInMission2.Sobre = "Refletir sobre as diferenças de um registro pessoal e de uma informação de mídia de massa, pois contém a subjetividade de quem escreve, sem o interesse de parecer imparcial.";
