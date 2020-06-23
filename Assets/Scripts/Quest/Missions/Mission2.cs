@@ -68,15 +68,15 @@ public class Mission2 : MonoBehaviour
         //ao fazer cada slide, aumenta o contador até ter feito todos, nesse ponto troca o diálogo da montanari
         //explicando que acabaram os slides em branco ou algo assim
 
-        new QuestClass (12100, "Pegar página do livro com mapa", new DoQuest(), new int[]{ 11200 }),
+        new QuestClass (12100, "Pegar página do livro com mapa", new DoQuest(), new int[]{ 11600 }),
         new QuestClass (12101, "Fazer slide com mapa", new DoQuest(), new int[]{ 12100 }),
         new QuestClass (12102, "Controle: Fazer slide com mapa", new DoQuest(), new int[]{ 12101 }),
 
-        new QuestClass (12200, "Pegar página do livro com linha do tempo", new DoQuest(), new int[]{ 11200 }),
+        new QuestClass (12200, "Pegar página do livro com linha do tempo", new DoQuest(), new int[]{ 11600 }),
         new QuestClass (12201, "Fazer slide com linha do tempo", new DoQuest(), new int[]{ 12200 }),
         new QuestClass (12202, "Controle: Fazer slide com linha do tempo", new DoQuest(), new int[]{ 12201 }),
 
-        new QuestClass (12300, "Pegar página do livro com ciclo do trabalho", new DoQuest(), new int[]{ 11200 }),
+        new QuestClass (12300, "Pegar página do livro com ciclo do trabalho", new DoQuest(), new int[]{ 11600 }),
         new QuestClass (12301, "Fazer slide com ciclo do trabalho", new DoQuest(), new int[]{ 12300 }),
         new QuestClass (12302, "Controle: Fazer slide com ciclo do trabalho", new DoQuest(), new int[]{ 12301 }),
 
