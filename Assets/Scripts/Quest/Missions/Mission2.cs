@@ -40,13 +40,15 @@ public class Mission2 : MonoBehaviour
         new QuestClass (11100, "Falar com a Drica na Multimeios", new DoQuest(), new int[]{ }),
         new QuestClass (11110, "Falar com a Drica sobre as canetas", new DoQuest(), new int[]{ }),
         new QuestClass (10800, "Encontrar aluna com canetas coloridas", new DoQuest(), new int[]{ 11110 }),
-        new QuestClass (10801, "Controle: pegar canetar no Pátio 2", new DoQuest(), new int[]{ 10800 }),
+        new QuestClass (10801, "Controle: pegar canetas no Pátio 2", new DoQuest(), new int[]{ 10800 }),
 
         new QuestClass (11200, "Falar com a Montanari na Sala de Informática", new DoQuest(), new int[]{ }),
+
         new QuestClass (11300, "Falar com a Antônia na Coordenação", new DoQuest(), new int[]{ }),
         new QuestClass (11400, "Falar com o Literatura na Biblioteca", new DoQuest(), new int[]{ }),
         new QuestClass (11401, "Controle: Pegar o Diário com o Literatura na Biblioteca", new DoQuest(), new int[]{ 11400 }),
         new QuestClass (11500, "Falar com o 101 na Biblioteca", new DoQuest(), new int[]{ }),
+
         new QuestClass (11600, "Falar com a Alice na Biblioteca", new DoQuest(), new int[]{ }),
 
         new QuestClass (11700, "Pegar fita VHS na biblioteca", new DoQuest(), new int[]{ }),
@@ -66,15 +68,15 @@ public class Mission2 : MonoBehaviour
         //ao fazer cada slide, aumenta o contador até ter feito todos, nesse ponto troca o diálogo da montanari
         //explicando que acabaram os slides em branco ou algo assim
 
-        new QuestClass (12100, "Pegar página do livro com mapa", new DoQuest(), new int[]{ 11200 }),
+        new QuestClass (12100, "Pegar página do livro com mapa", new DoQuest(), new int[]{ 11600 }),
         new QuestClass (12101, "Fazer slide com mapa", new DoQuest(), new int[]{ 12100 }),
         new QuestClass (12102, "Controle: Fazer slide com mapa", new DoQuest(), new int[]{ 12101 }),
 
-        new QuestClass (12200, "Pegar página do livro com linha do tempo", new DoQuest(), new int[]{ 11200 }),
+        new QuestClass (12200, "Pegar página do livro com linha do tempo", new DoQuest(), new int[]{ 11600 }),
         new QuestClass (12201, "Fazer slide com linha do tempo", new DoQuest(), new int[]{ 12200 }),
         new QuestClass (12202, "Controle: Fazer slide com linha do tempo", new DoQuest(), new int[]{ 12201 }),
 
-        new QuestClass (12300, "Pegar página do livro com ciclo do trabalho", new DoQuest(), new int[]{ 11200 }),
+        new QuestClass (12300, "Pegar página do livro com ciclo do trabalho", new DoQuest(), new int[]{ 11600 }),
         new QuestClass (12301, "Fazer slide com ciclo do trabalho", new DoQuest(), new int[]{ 12300 }),
         new QuestClass (12302, "Controle: Fazer slide com ciclo do trabalho", new DoQuest(), new int[]{ 12301 }),
 
