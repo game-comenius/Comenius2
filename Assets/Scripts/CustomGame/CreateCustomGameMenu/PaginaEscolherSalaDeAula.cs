@@ -27,11 +27,9 @@ public class PaginaEscolherSalaDeAula : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        // Definir quais professores estão disponíveis para serem escolhidos
+        // Definir quais salas estão disponíveis para serem escolhidas
         salasDisponiveis = new LinkedList<SalaDeAula>();
         salasDisponiveis.AddLast(SalaDeAula.SalaDeCiencias);
-        salasDisponiveis.AddLast(SalaDeAula.SalaDeHistoria);
-        salasDisponiveis.AddLast(SalaDeAula.SalaDePortugues);
 
         // Fazer o vínculo entre SalaDeAula e Image da cena menu criar custom
         imagesDasSalas = new Dictionary<SalaDeAula, Image>
