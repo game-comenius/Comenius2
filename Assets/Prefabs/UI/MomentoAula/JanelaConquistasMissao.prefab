@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 222816483479653238}
   - component: {fileID: 114297830321375190}
   m_Layer: 0
-  m_Name: TituloFichaAula
+  m_Name: FeedbackDoProfessor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -724,7 +724,7 @@ GameObject:
   - component: {fileID: 222392023297146500}
   - component: {fileID: 114253088054019840}
   m_Layer: 0
-  m_Name: ImageDescricao
+  m_Name: PapelFundoDoFeedbackDoProfessor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -875,6 +875,23 @@ GameObject:
   - component: {fileID: 114407732956505904}
   m_Layer: 0
   m_Name: Conteudo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1857102949179038
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224909596751291126}
+  - component: {fileID: 222163146704867314}
+  - component: {fileID: 114830198250256870}
+  m_Layer: 0
+  m_Name: TituloFichaAula
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1353,10 +1370,13 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Ficha de Desempenho: Aula de *'
+  m_text: "Talvez voc\xEA precise se aprofundar mais nas potencialidades que as m\xEDdias
+    audiovisuais oferecem. Elas podem te ajudar a planejar aulas mais atrativas e
+    despertar a curiosidade e a aten\xE7\xE3o dos seus alunos, motivando-os a aprender
+    mais! O melhor professor \xE9 aquele que n\xE3o desiste nunca!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1fbcd9ffba25e4de1b738bfff20648bf, type: 2}
-  m_sharedMaterial: {fileID: 21931857621128088, guid: 1fbcd9ffba25e4de1b738bfff20648bf,
+  m_fontAsset: {fileID: 11400000, guid: 75e41a00fc29a489dad78935be536d51, type: 2}
+  m_sharedMaterial: {fileID: 21856183054213622, guid: 75e41a00fc29a489dad78935be536d51,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1381,14 +1401,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 33.35
-  m_fontSizeBase: 35
+  m_fontSize: 26.4
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 32
-  m_fontSizeMax: 37
+  m_fontSizeMin: 20
+  m_fontSizeMax: 28
   m_fontStyle: 0
-  m_textAlignment: 514
+  m_textAlignment: 520
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1422,12 +1442,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 114297830321375190}
-    characterCount: 30
+    characterCount: 284
     spriteCount: 0
-    spaceCount: 5
-    wordCount: 5
+    spaceCount: 44
+    wordCount: 45
     linkCount: 0
-    lineCount: 1
+    lineCount: 7
     pageCount: 1
     materialCount: 1
   m_havePropertiesChanged: 0
@@ -1737,9 +1757,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d742fff0b0f64e18ab14b5a1e9b7522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Titulo: {fileID: 114297830321375190}
+  Titulo: {fileID: 114830198250256870}
+  textoTituloPadrao: 
   Professor: 0
   ImageFotoProfessor: {fileID: 114643252181870762}
+  FeedbackProfessor: {fileID: 114297830321375190}
   spriteMidiaFraca: {fileID: 21300000, guid: f1bc120f72e1711469d79a78e75be05d, type: 3}
   spriteMidiaBoa: {fileID: 21300000, guid: 0afd65b60cbd6494688e9c9bde784432, type: 3}
   spriteMidiaMuitoBoa: {fileID: 21300000, guid: a86f27d733751d243bbc77cb64618b34,
@@ -2447,6 +2469,120 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114830198250256870
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1857102949179038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_text: 'Ficha de Desempenho: Aula de *'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 1fbcd9ffba25e4de1b738bfff20648bf, type: 2}
+  m_sharedMaterial: {fileID: 21931857621128088, guid: 1fbcd9ffba25e4de1b738bfff20648bf,
+    type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4285220650
+  m_fontColor: {r: 0.16470589, g: 0.2784314, b: 0.41960785, a: 1}
+  m_enableVertexGradient: 0
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontSize: 33.35
+  m_fontSizeBase: 35
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 32
+  m_fontSizeMax: 37
+  m_fontStyle: 0
+  m_textAlignment: 514
+  m_isAlignmentEnumConverted: 1
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_firstOverflowCharacterIndex: -1
+  m_linkedTextComponent: {fileID: 0}
+  m_isLinkedTextComponent: 0
+  m_isTextTruncated: 0
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_ignoreRectMaskCulling: 0
+  m_ignoreCulling: 1
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_firstVisibleCharacter: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_textInfo:
+    textComponent: {fileID: 114830198250256870}
+    characterCount: 30
+    spriteCount: 0
+    spaceCount: 5
+    wordCount: 5
+    linkCount: 0
+    lineCount: 1
+    pageCount: 1
+    materialCount: 1
+  m_havePropertiesChanged: 0
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_spriteAnimator: {fileID: 0}
+  m_isInputParsingRequired: 0
+  m_inputSource: 0
+  m_hasFontAssetChanged: 0
+  m_subTextObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &114907662946082670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2704,6 +2840,13 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1679319001344098}
+  m_CullTransparentMesh: 0
+--- !u!222 &222163146704867314
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1857102949179038}
   m_CullTransparentMesh: 0
 --- !u!222 &222180663958900672
 CanvasRenderer:
@@ -3264,13 +3407,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 224332343631487772}
+  m_Father: {fileID: 224441366688067084}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -33.6, y: 480.4}
-  m_SizeDelta: {x: 735.7, y: 58.2}
+  m_AnchoredPosition: {x: 64.6, y: 14.7}
+  m_SizeDelta: {x: 440, y: 215}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224224252436924994
 RectTransform:
@@ -3432,7 +3575,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.9000001, y: 0.9000001, z: 0.9000001}
   m_Children:
-  - {fileID: 224191175684658746}
+  - {fileID: 224909596751291126}
   - {fileID: 224441366688067084}
   - {fileID: 224040104495903842}
   - {fileID: 224879295358157056}
@@ -3550,7 +3693,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 224191175684658746}
   m_Father: {fileID: 224332343631487772}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3995,6 +4139,24 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -30, y: -30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224909596751291126
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1857102949179038}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224332343631487772}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -33.6, y: 480.4}
+  m_SizeDelta: {x: 735.7, y: 58.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224910709976858188
 RectTransform:

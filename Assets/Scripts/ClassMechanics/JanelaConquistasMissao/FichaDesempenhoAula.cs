@@ -11,6 +11,8 @@ public class FichaDesempenhoAula : MonoBehaviour {
     public CharacterName Professor;
     public Image ImageFotoProfessor;
 
+    public TextMeshProUGUI FeedbackProfessor;
+
     [SerializeField] private Sprite spriteMidiaFraca;
     [SerializeField] private Sprite spriteMidiaBoa;
     [SerializeField] private Sprite spriteMidiaMuitoBoa;
@@ -96,12 +98,24 @@ public class FichaDesempenhoAula : MonoBehaviour {
         };
 
         if (PontuacaoEntre(26, 30))
+        {
             imageResultadoAula.sprite = spriteResultadoAulaMelhor;
+            FeedbackProfessor.text = "Você encontrou as mídias audiovisuais pela escola e conseguiu usá-las da melhor forma possível na elaboração do seu planejamento deixando-o mais diversificado e atrativo.  Parabéns, os alunos aprenderam muito com a sua aula!";
+        }
         else if (PontuacaoEntre(21, 25))
+        {
             imageResultadoAula.sprite = spriteResultadoAulaMuitoBoa;
+            FeedbackProfessor.text = "Você demonstrou um ótimo domínio na utilização das mídias audiovisuais na elaboração do seu planejamento, e os alunos gostaram da aula que você planejou! Continue se dedicando em aprender mais sobre o uso das mídias na educação.";
+        }
         else if (PontuacaoEntre(14, 20))
+        {
             imageResultadoAula.sprite = spriteResultadoAulaBoa;
+            FeedbackProfessor.text = "Faltou você analisar melhor os conteúdos e a metodologia, para assim poder utilizar as melhores mídias audiovisuais para deixar seu planejamento mais interessante para seus alunos. Você está no caminho, não desista!";
+        }
         else
+        {
             imageResultadoAula.sprite = spriteResultadoAulaFraca;
+            FeedbackProfessor.text = "Talvez você precise se aprofundar mais nas potencialidades que as mídias audiovisuais oferecem. Elas podem te ajudar a planejar aulas mais atrativas e despertar a curiosidade e a atenção dos seus alunos, motivando-os a aprender mais! O melhor professor é aquele que não desiste nunca!";
+        }
     }
 }
