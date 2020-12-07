@@ -25,7 +25,6 @@ public class CreateCustomGamePanel : MonoBehaviour
     // Campos para não ter que procurar depois
     public PaginaIntroducaoCustom paginaIntroducaoCustom;
     public PaginaEscolherProfessor paginaEscolherProfessor;
-    public PaginaEscolherSalaDeAula paginaEscolherSalaDeAula;
     public PaginaInformacoesBasicas paginaInformacoesBasicas;
     public PaginaProcedimentoAgrupamento paginaProcedimentoAgrupamento;
     public PaginaEscolherMidias paginaEscolherMidias;
@@ -62,7 +61,6 @@ public class CreateCustomGamePanel : MonoBehaviour
         listaDePaginas = new LinkedList<GameObject>();
         listaDePaginas.AddLast(paginaIntroducaoCustom.gameObject);
         listaDePaginas.AddLast(paginaEscolherProfessor.gameObject);
-        listaDePaginas.AddLast(paginaEscolherSalaDeAula.gameObject);
         listaDePaginas.AddLast(paginaInformacoesBasicas.gameObject);
         listaDePaginas.AddLast(paginaProcedimentoAgrupamento.gameObject);
         listaDePaginas.AddLast(paginaEscolherMidias.gameObject);
@@ -158,7 +156,7 @@ public class CreateCustomGamePanel : MonoBehaviour
     {
         CustomGameSettings settings = new CustomGameSettings();
         settings.Professor = paginaEscolherProfessor.ProfessorSelecionado;
-        settings.Sala = paginaEscolherSalaDeAula.SalaSelecionada;
+        settings.Sala = SalaDeAula.SalaDeCiencias;
 
         settings.ValorNivelDeEnsino = paginaInformacoesBasicas.NivelDeEnsinoSelecionado.valor;
         settings.ValorAreaDeConhecimento = paginaInformacoesBasicas.AreaDeConhecimentoSelecionada.valor;
