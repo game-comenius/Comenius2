@@ -24,7 +24,6 @@ public class PaginaResumoSalvar : MonoBehaviour {
     [Header("Botões")]
     [SerializeField] Button botaoImprimir;
     [SerializeField] Button botaoJogarSemSalvar;
-    [SerializeField] Button botaoSalvar;
 
     private void Awake()
     {
@@ -94,6 +93,5 @@ public class PaginaResumoSalvar : MonoBehaviour {
     {
         botaoImprimir.interactable = interativo;
         botaoJogarSemSalvar.interactable = interativo;
-        botaoSalvar.interactable = interativo;
     }
 }
